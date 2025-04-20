@@ -21,7 +21,7 @@ jobs:
 
       - name: Generate natives
         run: |
-          wget https://github.com/thelindat/rage-lua-natives/archive/master.zip -O repo.zip
+          wget https://github.com/ihyajb/rage-lua-natives/archive/master.zip -O repo.zip
           unzip repo.zip
           cd rage-lua-natives-master
           pnpm i --frozen-lockfile
