@@ -575,6 +575,15 @@ function DisableEditorRuntime() end
 function DisableIdleCamera(state) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8BCF0014)  
+---Disables the specified `rawKeyIndex`, making it not trigger the regular `IS_RAW_KEY_*` natives.
+---
+---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+---@param rawKeyIndex integer
+---@return boolean
+function DisableRawKeyThisFrame(rawKeyIndex) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5C140555)  
 ---Disables the game's afk camera that starts panning around after 30 seconds of inactivity(While riding in a car as a passenger)
 ---@param state boolean
@@ -1296,6 +1305,13 @@ function GetEntityOrphanMode(entity) end
 function GetEntityPopulationType(entity) end
 
 ---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x91B38FB6)  
+---This native does not have an official description.
+---@param entity integer
+---@return boolean
+function GetEntityRemoteSyncedScenesAllowed(entity) end
+
+---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8FF45B04)  
 ---This native does not have an official description.
 ---@param entity integer
@@ -1489,7 +1505,7 @@ function GetGameTimer() end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78951816)  
----A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](#\_0x1c47f6ac).
+---A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](#\_0x1C47F6AC).
 ---@return number
 function GetGlobalPassengerMassMultiplier() end
 
@@ -1876,6 +1892,19 @@ function GetMapdataFromHashKey(mapdataHandle) end
 function GetMapZoomDataLevel(index) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6FF71C9)  
+---Get the minimap type:
+---
+---```
+---0 = Off,---
+---1 = Regular,---
+---2 = Expanded,---
+---3 = Simple,
+---```
+---@return integer
+function GetMinimapType() end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CAFD5E9)  
 ---This native does not have an official description.
 ---@return boolean
@@ -1948,7 +1977,7 @@ function GetNumPlayerTokens(playerSrc) end
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x776E864)  
 ---Gets the amount of metadata values with the specified key existing in the specified resource's manifest.---
----See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+---See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/)
 ---@param resourceName string
 ---@param metadataKey string
 ---@return integer
@@ -1985,6 +2014,14 @@ function GetPauseMapPointerWorldPosition() end
 ---@param ped integer
 ---@return integer
 function GetPedArmour(ped) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9C5E7C9C)  
+---Returns the bone matrix of the specified bone id. usefull for entity attachment
+---@param ped integer
+---@param boneId integer
+---@return vector3, vector3, vector3, vector3
+function GetPedBoneMatrix(ped, boneId) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x63458C27)  
@@ -2615,7 +2652,7 @@ function GetResourceKvpString(key) end
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x964BAB1D)  
 ---Gets the metadata value at a specified key/index from a resource's manifest.---
----See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+---See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/)
 ---@param resourceName string
 ---@param metadataKey string
 ---@param index integer
@@ -3675,9 +3712,16 @@ function GetVehicleXenonLightsCustomColor(vehicle) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x16605B30)  
----A getter for [SET_VEHICLE_XMAS_SNOW_FACTOR](#\_80cc4c9e).
+---A getter for [SET_VEHICLE_XMAS_SNOW_FACTOR](#\_0x80CC4C9E).
 ---@return number
 function GetVehicleXmasSnowFactor() end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x15346B4D)  
+---A getter for [SET_VISUAL_SETTING_FLOAT](#\_0xD1D31681).
+---@param name string
+---@return number
+function GetVisualSettingFloat(name) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14088095)  
@@ -3957,6 +4001,42 @@ function IsBoatAnchoredAndFrozen(vehicle) end
 function IsBoatWrecked(vehicle) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x36366EC3)  
+---Gets if the specified `rawKeyIndex` is pressed down, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014).
+---
+---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+---@param rawKeyIndex integer
+---@return boolean
+function IsDisabledRawKeyDown(rawKeyIndex) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1F7CBBAA)  
+---Gets if the specified `rawKeyIndex` is pressed, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014).
+---
+---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+---@param rawKeyIndex integer
+---@return boolean
+function IsDisabledRawKeyPressed(rawKeyIndex) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x72B66C09)  
+---Gets if the specified `rawKeyIndex` was released, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014).
+---
+---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+---@param rawKeyIndex integer
+---@return boolean
+function IsDisabledRawKeyReleased(rawKeyIndex) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2C033875)  
+---Gets if the specified `rawKeyIndex` is up, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014).
+---
+---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+---@param rawKeyIndex integer
+---@return boolean
+function IsDisabledRawKeyUp(rawKeyIndex) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7AAC3B4C)  
 ---Returns whether or not a browser is created for a specified DUI browser object.
 ---@param duiObject integer
@@ -4147,7 +4227,9 @@ function IsPrincipalAceAllowed(principal, object) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD95A7387)  
----Can be used to get state of raw key on keyboard.
+---Gets if the specified `rawKeyIndex` is pressed down on the keyboard.
+---
+---This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014)
 ---
 ---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 ---@param rawKeyIndex integer
@@ -4156,7 +4238,9 @@ function IsRawKeyDown(rawKeyIndex) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x69F7C29E)  
----Can be used to get state of raw key on keyboard.
+---Gets if the specified `rawKeyIndex` is pressed on the keyboard.
+---
+---This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014)
 ---
 ---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 ---@param rawKeyIndex integer
@@ -4165,7 +4249,9 @@ function IsRawKeyPressed(rawKeyIndex) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEAA50861)  
----Can be used to get release state of raw key on keyboard.
+---Gets if the specified `rawKeyIndex` was just released on the keyboard.
+---
+---This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014)
 ---
 ---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 ---@param rawKeyIndex integer
@@ -4174,7 +4260,9 @@ function IsRawKeyReleased(rawKeyIndex) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x36F4E505)  
----Can be used to get state of raw key on keyboard.
+---Gets if the specified `rawKeyIndex` is up  on the keyboard.
+---
+---This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](#\_0x8BCF0014)
 ---
 ---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 ---@param rawKeyIndex integer
@@ -4732,6 +4820,22 @@ function RegisterNuiCallback(callbackType, callback) end
 function RegisterNuiCallbackType(callbackType) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x49C1F6DC)  
+---Registers a keymap that will be triggered whenever `rawKeyIndex` is pressed or released.
+---
+---`onKeyUp` and `onKeyDown` will not provide any arguments.
+---
+---```ts
+---function onStateChange();
+---```
+---@param keymapName string
+---@param onKeyUp function
+---@param onKeyDown function
+---@param rawKeyIndex integer
+---@param canBeDisabled boolean
+function RegisterRawKeymap(keymapName, onKeyUp, onKeyDown, rawKeyIndex, canBeDisabled) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8AE9C2F)  
 ---This native does not have an official description.
 ---@param callbackType string
@@ -4832,6 +4936,15 @@ function RegisterStreamingFileFromUrl(registerAs, url) end
 ---@param direction boolean
 ---@return integer
 function RegisterTrackJunction(trackIndex, trackNode, newIndex, newNode, direction) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x6E38C1B9)  
+---Remaps the keymap bound to `keymapName` to `newRawKeyIndex`
+---
+---Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+---@param keymapName string
+---@param newRawKeyIndex integer
+function RemapRawKeymap(keymapName, newRawKeyIndex) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA44CE817)  
@@ -5419,6 +5532,15 @@ function SetEntityMatrix(entity, forwardX, forwardY, forwardZ, rightX, rightY, r
 ---@param entity integer
 ---@param orphanMode integer
 function SetEntityOrphanMode(entity, orphanMode) end
+
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD3FC9D88)  
+---Enables or disables the owner check for the specified entity in network-synchronized scenes. When set to `false`, the entity cannot participate in synced scenes initiated by clients that do not own the entity.
+---
+---By default, this is `false` for all entities, meaning only the entity's owner can include it in networked synchronized scenes.
+---@param entity integer
+---@param allow boolean
+function SetEntityRemoteSyncedScenesAllowed(entity, allow) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA345EFE)  
