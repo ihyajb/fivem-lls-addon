@@ -1862,13 +1862,13 @@ function GetVehicleDoorsLockedForPlayer(vehicle, player) end
 ---**Note**: When using this native, the hash of the vehicle needs to be loaded into the client's memory. This can be done by requesting the model with [`REQUEST_MODEL`](#\_0x963D27A58DF860AC) or by simply having the vehicle spawned.
 ---
 ---```cpp
-------
----enum eVehicleDrivetrainType---
----{---
----    INVALID = 0,---
----    FWD = 1,---
----    RWD = 2,---
----    AWD = 3---
+---
+---enum eVehicleDrivetrainType
+---{
+---    INVALID = 0,
+---    FWD = 1,
+---    RWD = 2,
+---    AWD = 3
 ---};
 ---```
 ---
@@ -6443,14 +6443,14 @@ SetVehicleLightsCanBeVisiblyDamaged = SetVehicleHasUnbreakableLights
 ---```
 ---
 ---```cpp
----enum eVehicleHeadlightShadowFlags {---
----    // Default (Lights can be toggled between off, normal and high beams)---
----    NO_HEADLIGHT_SHADOWS = 0,---
----    // Lights Disabled (Lights are fully disabled, cannot be toggled)---
----    HEADLIGHTS_CAST_DYNAMIC_SHADOWS = 1,---
----    // Always On (Lights can be toggled between normal and high beams)---
----    HEADLIGHTS_CAST_STATIC_SHADOWS = 2,---
----    HEADLIGHTS_CAST_FULL_SHADOWS = 3 ---
+---enum eVehicleHeadlightShadowFlags {
+---    // Default (Lights can be toggled between off, normal and high beams)
+---    NO_HEADLIGHT_SHADOWS = 0,
+---    // Lights Disabled (Lights are fully disabled, cannot be toggled)
+---    HEADLIGHTS_CAST_DYNAMIC_SHADOWS = 1,
+---    // Always On (Lights can be toggled between normal and high beams)
+---    HEADLIGHTS_CAST_STATIC_SHADOWS = 2,
+---    HEADLIGHTS_CAST_FULL_SHADOWS = 3 
 ---};
 ---```
 ---@param vehicle integer
@@ -6590,20 +6590,20 @@ function SetVehicleLightMultiplier(vehicle, multiplier) end
 ---```
 ---
 ---```cpp
----enum eVehicleLightSetting {---
----    // Normal light behavior. Lights cycle through off, then low beams, then high beams.---
----    // Note: It's affected by day or night; high beams don't exist in daytime.---
----    NO_VEHICLE_LIGHT_OVERRIDE = 0,---
----    // Vehicle doesn't have lights, always off.---
----    FORCE_VEHICLE_LIGHTS_OFF  = 1, ---
----    // Vehicle has always-on lights.---
----    // During day: Cycles between low beams and high beams. ---
----    // At night: Cycles between low beams, low beams, and high beams.---
----    FORCE_VEHICLE_LIGHTS_ON   = 2,---
----    // Sets vehicle lights on. Behaves like normal lights (same as 0).---
----    SET_VEHICLE_LIGHTS_ON     = 3,---
----    // Sets vehicle lights off. Behaves like normal lights (same as 0).---
----    SET_VEHICLE_LIGHTS_OFF    = 4 ---
+---enum eVehicleLightSetting {
+---    // Normal light behavior. Lights cycle through off, then low beams, then high beams.
+---    // Note: It's affected by day or night; high beams don't exist in daytime.
+---    NO_VEHICLE_LIGHT_OVERRIDE = 0,
+---    // Vehicle doesn't have lights, always off.
+---    FORCE_VEHICLE_LIGHTS_OFF  = 1, 
+---    // Vehicle has always-on lights.
+---    // During day: Cycles between low beams and high beams. 
+---    // At night: Cycles between low beams, low beams, and high beams.
+---    FORCE_VEHICLE_LIGHTS_ON   = 2,
+---    // Sets vehicle lights on. Behaves like normal lights (same as 0).
+---    SET_VEHICLE_LIGHTS_ON     = 3,
+---    // Sets vehicle lights off. Behaves like normal lights (same as 0).
+---    SET_VEHICLE_LIGHTS_OFF    = 4 
 ---};
 ---```
 ---@param vehicle integer
