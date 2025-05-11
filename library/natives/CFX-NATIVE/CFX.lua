@@ -206,21 +206,16 @@ function AddTextEntryByHash(entryKey, entryText) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC1C0855A)  
----Applies a force to the specified entity.
----
 ---```cpp
----enum eForceType
----{
----MinForce = 0,
----MaxForceRot = 1,
----MinForce2 = 2,
----MaxForceRot2 = 3,
----ForceNoRot = 4,
----ForceRotPlusForce = 5
+---enum eApplyForceTypes {
+---APPLY_TYPE_FORCE = 0,
+---APPLY_TYPE_IMPULSE = 1,
+---APPLY_TYPE_EXTERNAL_FORCE = 2,
+---APPLY_TYPE_EXTERNAL_IMPULSE = 3,
+---APPLY_TYPE_TORQUE = 4,
+---APPLY_TYPE_ANGULAR_IMPULSE = 5
 ---}
 ---```
----
----Research/documentation on the gtaforums can be found [here](https://gtaforums.com/topic/885669-precisely-define-object-physics/) and [here](https://gtaforums.com/topic/887362-apply-forces-and-momentums-to-entityobject/).
 ---
 ---**This is the server-side RPC native equivalent of the client native [APPLY_FORCE_TO_ENTITY](?\_0xC5F68BE9613E2D18).**
 ---@param entity integer
@@ -231,13 +226,13 @@ function AddTextEntryByHash(entryKey, entryText) end
 ---@param offX number
 ---@param offY number
 ---@param offZ number
----@param boneIndex integer
----@param isDirectionRel boolean
----@param ignoreUpVec boolean
----@param isForceRel boolean
----@param p12 boolean
----@param p13 boolean
-function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
+---@param nComponent integer
+---@param bLocalForce boolean
+---@param bLocalOffset boolean
+---@param bScaleByMass boolean
+---@param bPlayAudio boolean
+---@param bScaleByTimeWarp boolean
+function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, nComponent, bLocalForce, bLocalOffset, bScaleByMass, bPlayAudio, bScaleByTimeWarp) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3422291C)  
@@ -634,6 +629,13 @@ function DoesPlayerOwnSku(playerSrc, skuId) end
 function DoesPlayerOwnSkuExt(playerSrc, skuId) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8B25BC20)  
+---In compare to `0x31DC8D3F216D8509` return true if texture its created when `0x31DC8D3F216D8509` return true if you put there any id in valid range
+---@param textureId integer
+---@return boolean
+function DoesTextureExist(textureId) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC53BB6D3)  
 ---This native does not have an official description.
 ---@param modifierName string
@@ -876,7 +878,7 @@ function EnterCursorMode() end
 
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x561C060B)  
----This native does not have an official description.
+---Depending on your use case you may need to use `add_acl resource.<your_resource_name> command.<command_name> allow` to use this native in your resource.
 ---@param commandString string
 function ExecuteCommand(commandString) end
 
@@ -987,6 +989,13 @@ function FlushResourceKvp() end
 ---Forces the game snow pass to render.
 ---@param enabled boolean
 function ForceSnowPass(enabled) end
+
+---**`CFX` `shared`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD70C3BCA)  
+---An internal function for converting a stack trace object to a string.
+---@param traceData table
+---@return string
+function FormatStackTrace(traceData) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x65C16D57)  
@@ -1185,6 +1194,18 @@ function GetCurrentPedWeapon(ped) end
 function GetCurrentResourceName() end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x337F0116)  
+---Gets the current screen resolution.
+---
+---```lua
+---local  width, height = GetCurrentScreenResolution()
+---print(string.format("Current screen resolution: %dx%d", width, height))
+---
+---```
+---@return integer, integer
+function GetCurrentScreenResolution() end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEA11BFBA)  
 ---Returns the peer address of the remote game server that the user is currently connected to.
 ---@return string
@@ -1196,6 +1217,46 @@ function GetCurrentServerEndpoint() end
 ---@param duiObject integer
 ---@return string
 function GetDuiHandle(duiObject) end
+
+---**`CFX` `shared`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDFFBA12F)  
+---### Supported types
+---
+---*   \[1] : Peds (including animals) and players.
+---*   \[2] : Vehicles.
+---*   \[3] : Objects (props), doors, and projectiles.
+---
+---### Coordinates need to be send unpacked (x,y,z)
+---
+---```lua
+---
+----- Define the allowed model hashes
+---local allowedModelHashes = { GetHashKey("p_crate03x"), GetHashKey("p_crate22x") }
+---
+----- Get the player's current coordinates
+---local playerCoords = GetEntityCoords(PlayerPedId())
+---
+----- Retrieve all entities of type Object (type 3) within a radius of 10.0 units
+----- that match the allowed model hashes
+----- and sort output entities by distance
+---local entities = GetEntitiesInRadius(playerCoords.x, playerCoords.y, playerCoords.z, 10.0, 3, true, allowedModelHashes)
+---
+----- Iterate through the list of entities and print their ids
+---for i = 1, #entities do
+---    local entity = entities[i]
+---    print(entity)
+---end
+---
+---```
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@param entityType integer
+---@param sortByDistance boolean
+---@param models table
+---@return table
+function GetEntitiesInRadius(x, y, z, radius, entityType, sortByDistance, models) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9A3144BC)  
@@ -2455,8 +2516,44 @@ function GetPlayerName(playerSrc) end
 function GetPlayerPed(playerSrc) end
 
 ---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9A928294)  
+---```cpp
+---const int ENET_PACKET_LOSS_SCALE = 65536;
+---
+---enum PeerStatistics
+---{
+---	// PacketLoss will only update once every 10 seconds, use PacketLossEpoch if you want the time
+---	// since the last time the packet loss was updated.
+---
+---	// the amount of packet loss the player has, needs to be scaled with PACKET_LOSS_SCALE
+---	PacketLoss = 0,
+---	// The variance in the packet loss
+---	PacketLossVariance = 1,
+---	// The time since the last packet update in ms, relative to the peers connection time
+---	PacketLossEpoch = 2,
+---	// The mean amount of time it takes for a packet to get to the client (ping)
+---	RoundTripTime = 3,
+---	// The variance in the round trip time
+---	RoundTripTimeVariance = 4,
+---	// Despite their name, these are only updated once every 5 seconds, you can get the last time this was updated with PacketThrottleEpoch
+---	// The last recorded round trip time of a packet
+---	LastRoundTripTime = 5,
+---	// The last round trip time variance
+---	LastRoundTripTimeVariance = 6,
+---	// The time since the last packet throttle update, relative to the peers connection time
+---	PacketThrottleEpoch = 7,
+---};
+---```
+---
+---These statistics only update once every 10 seconds.
+---@param playerSrc string
+---@param peerStatistic integer
+---@return integer
+function GetPlayerPeerStatistics(playerSrc, peerStatistic) end
+
+---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF1290D4)  
----This native does not have an official description.
+---See [GET_PLAYER_PEER_STATISTICS](#\_0x9A928294) if you want more detailed information, like packet loss, and packet/rtt variance
 ---@param playerSrc string
 ---@return integer
 function GetPlayerPing(playerSrc) end
@@ -4994,6 +5091,20 @@ function RemoveReplaceTexture(origTxd, origTxn) end
 function RemoveStateBagChangeHandler(cookie) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1582C7F2)  
+---Removes the specified texture and remove it from the ped.
+---Unlike `0x6BEFAA907B076859` which only marks the texture as "can be reused" (and keeps it until will be reused), this function deletes it right away. Can fix some sync issues. `DOES_TEXTURE_EXIST` can be use to wait until fully unloaded by game
+---
+---```lua
+---RemoveTexture(textureId)
+---while DoesTextureExist(textureId) do 
+---    Wait(0)
+---end
+---```
+---@param textureId integer
+function RemoveTexture(textureId) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x36DF8612)  
 ---This native does not have an official description.
 ---@param modifierName string
@@ -6847,16 +6958,28 @@ function SetPedResetFlag(ped, flagId, doReset) end
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_TO_RAGDOLL](?\_0xAE99FB955581844A).**
 ---@param ped integer
----@param time1 integer
----@param time2 integer
+---@param minTime integer
+---@param maxTime integer
 ---@param ragdollType integer
----@param p4 boolean
----@param p5 boolean
----@param p6 boolean
-function SetPedToRagdoll(ped, time1, time2, ragdollType, p4, p5, p6) end
+---@param bAbortIfInjured boolean
+---@param bAbortIfDead boolean
+---@param bForceScriptControl boolean
+function SetPedToRagdoll(ped, minTime, maxTime, ragdollType, bAbortIfInjured, bAbortIfDead, bForceScriptControl) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFA12E286)  
+---```cpp
+---enum eNMFallType {
+---TYPE_FROM_HIGH = 0,
+---TYPE_OVER_WALL = 1,
+---TYPE_DOWN_STAIRS = 2,
+---TYPE_DIE_TYPES = 3,
+---TYPE_DIE_FROM_HIGH = 4,
+---TYPE_DIE_OVER_WALL = 5,
+---TYPE_DIE_DOWN_STAIRS = 6
+---}
+---```
+---
 ---```
 ---Return variable is never used in R*'s scripts.
 ---Not sure what p2 does. It seems like it would be a time judging by it's usage in R*'s scripts, but didn't seem to affect anything in my testings.
@@ -6869,20 +6992,20 @@ function SetPedToRagdoll(ped, time1, time2, ragdollType, p4, p5, p6) end
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_TO_RAGDOLL_WITH_FALL](?\_0xD76632D99E4966C8).**
 ---@param ped integer
----@param time integer
----@param p2 integer
----@param ragdollType integer
----@param x number
----@param y number
----@param z number
----@param p7 number
----@param p8 number
----@param p9 number
----@param p10 number
----@param p11 number
----@param p12 number
----@param p13 number
-function SetPedToRagdollWithFall(ped, time, p2, ragdollType, x, y, z, p7, p8, p9, p10, p11, p12, p13) end
+---@param minTime integer
+---@param maxTime integer
+---@param nFallType integer
+---@param dirX number
+---@param dirY number
+---@param dirZ number
+---@param fGroundHeight number
+---@param grab1X number
+---@param grab1Y number
+---@param grab1Z number
+---@param grab2X number
+---@param grab2Y number
+---@param grab2Z number
+function SetPedToRagdollWithFall(ped, minTime, maxTime, nFallType, dirX, dirY, dirZ, fGroundHeight, grab1X, grab1Y, grab1Z, grab2X, grab2Y, grab2Z) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB300F03)  
