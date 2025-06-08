@@ -539,7 +539,7 @@ function DeleteFunctionReference(referenceIdentity) end
 ---@param key string
 function DeleteResourceKvp(key) end
 
----**`CFX` `server`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4152C90)  
 ---Nonsynchronous [DELETE_RESOURCE_KVP](#\_0x7389B5DF) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---@param key string
@@ -3045,6 +3045,13 @@ function GetTrainSpeed(train) end
 function GetTrainState(train) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9AA339D)  
+---This native does not have an official description.
+---@param train integer
+---@return integer
+function GetTrainTrackIndex(train) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC62AAC98)  
 ---This native does not have an official description.
 ---@param vehicle integer
@@ -3934,6 +3941,13 @@ function GetWaveQuadCount() end
 ---@param waveQuad integer
 ---@return boolean, number, number
 function GetWaveQuadDirection(waveQuad) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x5343721)  
+---A getter for the accuracy spread of a weapon.
+---@param weaponHash integer | string
+---@return number
+function GetWeaponAccuracySpread(weaponHash) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x63ED2E7)  
@@ -4926,11 +4940,11 @@ function RegisterNuiCallbackType(callbackType) end
 ---function onStateChange();
 ---```
 ---@param keymapName string
----@param onKeyUp function
 ---@param onKeyDown function
+---@param onKeyUp function
 ---@param rawKeyIndex integer
 ---@param canBeDisabled boolean
-function RegisterRawKeymap(keymapName, onKeyUp, onKeyDown, rawKeyIndex, canBeDisabled) end
+function RegisterRawKeymap(keymapName, onKeyDown, onKeyUp, rawKeyIndex, canBeDisabled) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8AE9C2F)  
@@ -5637,9 +5651,11 @@ function SetEntityMatrix(entity, forwardX, forwardY, forwardZ, rightX, rightY, r
 ---}
 ---```
 ---
----Sets what happens when the entity is orphaned and no longer has its original owner.
+---Sets what the server will do when the entity no longer has its original owner. By default the server will cleanup entities that it considers "no longer relevant".
 ---
----**NOTE**: This native doesn't guarantee the persistence of the entity.
+---When used on trains, this native will recursively call onto all attached carriages.
+---
+---**NOTE**: When used with `KeepEntity` (2) this native only guarantees that the ***server*** will not delete the entity, client requests to delete the entity will still work perfectly fine.
 ---@param entity integer
 ---@param orphanMode integer
 function SetEntityOrphanMode(entity, orphanMode) end
@@ -7151,7 +7167,7 @@ function SetResourceKvp(key, value) end
 ---@param value number
 function SetResourceKvpFloat(key, value) end
 
----**`CFX` `server`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3517BFBE)  
 ---Nonsynchronous [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---@param key string
@@ -7165,14 +7181,14 @@ function SetResourceKvpFloatNoSync(key, value) end
 ---@param value integer
 function SetResourceKvpInt(key, value) end
 
----**`CFX` `server`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x26AEB707)  
 ---Nonsynchronous [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---@param key string
 ---@param value integer
 function SetResourceKvpIntNoSync(key, value) end
 
----**`CFX` `server`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCF9A2FF)  
 ---Nonsynchronous [SET_RESOURCE_KVP](#\_0x21C7A35B) operation; see [FLUSH_RESOURCE_KVP](#\_0x5240DA5A).
 ---@param key string
@@ -7966,6 +7982,13 @@ function SetWaveQuadBounds(waveQuad, minX, minY, maxX, maxY) end
 ---@param directionY number
 ---@return boolean
 function SetWaveQuadDirection(waveQuad, directionX, directionY) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x598DD6AE)  
+---A setter for the accuracy spread of a weapon.
+---@param weaponHash integer | string
+---@param spread number
+function SetWeaponAccuracySpread(weaponHash, spread) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9864312F)  
