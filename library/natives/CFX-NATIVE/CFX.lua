@@ -182,8 +182,8 @@ function AddReplaceTexture(origTxd, origTxn, newTxd, newTxn) end
 ---
 ---At this time, the change handler can't opt to reject changes.
 ---
----If bagName refers to an entity, use [GET_ENTITY_FROM_STATE_BAG_NAME](?\_0x4BDF1868) to get the entity handle
----If bagName refers to a player, use [GET_PLAYER_FROM_STATE_BAG_NAME](?\_0xA56135E0) to get the player handle
+---If bagName refers to an entity, use [GET_ENTITY_FROM_STATE_BAG_NAME](#\_0x4BDF1867) to get the entity handle
+---If bagName refers to a player, use [GET_PLAYER_FROM_STATE_BAG_NAME](#\_0xA56135E0) to get the player handle
 ---@param keyFilter string
 ---@param bagFilter string
 ---@param handler function
@@ -643,7 +643,7 @@ function DoesTextureExist(textureId) end
 ---@return boolean
 function DoesTimecycleModifierHasVar(modifierName, varName) end
 
----**`CFX` `client`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x77CC80DC)  
 ---This native does not have an official description.
 ---@param train integer
@@ -1057,6 +1057,17 @@ function GetAllPeds() end
 function GetAllRopes() end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x81A08523)  
+---Returns all track junctions on the client
+---The data returned adheres to the following structure:
+---
+---```
+---[1, 2, 4, 6, 69, 420]
+---```
+---@return table
+function GetAllTrackJunctions() end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7531645)  
 ---Returns all registered vehicle model names, including non-dlc vehicles and custom vehicles in no particular order.
 ---
@@ -1092,6 +1103,17 @@ function GetAmbientPedRangeMultiplier() end
 ---A getter for [SET_AMBIENT_VEHICLE_RANGE_MULTIPLIER_THIS_FRAME](#\_0x90B6DA738A9A25DA).
 ---@return number
 function GetAmbientVehicleRangeMultiplier() end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2CA8F641)  
+---Gets the current aspect ratio
+---
+---```lua
+---local ratio = GetAspectRatio()
+---print(string.format("%.2f", ratio))
+---```
+---@return number
+function GetAspectRatio() end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x870E8B40)  
@@ -1301,7 +1323,7 @@ function GetEntityCoords(entity) end
 
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4BDF1867)  
----Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](?\_0x5BA35AAF).
+---Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](#\_0x5BA35AAF).
 ---@param bagName string
 ---@return integer
 function GetEntityFromStateBagName(bagName) end
@@ -1566,7 +1588,7 @@ function GetGameTimer() end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x78951816)  
----A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](#\_0x1C47F6AC).
+---A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](#\_0x3422291C).
 ---@return number
 function GetGlobalPassengerMassMultiplier() end
 
@@ -2428,9 +2450,9 @@ function GetPlayerGuid(playerSrc) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7302DBCF)  
----To get the number of identifiers, use [GET_NUM_PLAYER_IDENTIFIERS](?\_0xFF7F66AB)
+---To get the number of identifiers, use [GET_NUM_PLAYER_IDENTIFIERS](#\_0xFF7F66AB)
 ---
----To get a specific type of identifier, use [GET_PLAYER_IDENTIFIER_BY_TYPE](?\_0xA61C8FC6)
+---To get a specific type of identifier, use [GET_PLAYER_IDENTIFIER_BY_TYPE](#\_0xA61C8FC6)
 ---@param playerSrc string
 ---@param identiferIndex integer
 ---@return string
@@ -2981,6 +3003,13 @@ function GetTrackNodeCoords(trackIndex, trackNode) end
 function GetTrackNodeCount(trackIndex) end
 
 ---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x456E34A)  
+---This native does not have an official description.
+---@param train integer
+---@return integer
+function GetTrainBackwardCarriage(train) end
+
+---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x95070FA)  
 ---This native does not have an official description.
 ---@param train integer
@@ -2994,7 +3023,7 @@ function GetTrainCarriageEngine(train) end
 ---@return integer
 function GetTrainCarriageIndex(train) end
 
----**`CFX` `client`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA4921EF5)  
 ---Gets the trains desired speed.
 ---@param train integer
@@ -3008,7 +3037,7 @@ function GetTrainCruiseSpeed(train) end
 ---@return integer
 function GetTrainCurrentTrackNode(train) end
 
----**`CFX` `client`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8DAF79B6)  
 ---Gets the direction the train is facing
 ---@param train integer
@@ -3030,6 +3059,13 @@ function GetTrainDoorCount(train) end
 ---@return number
 function GetTrainDoorOpenRatio(train, doorIndex) end
 
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x24DC88D9)  
+---This native does not have an official description.
+---@param train integer
+---@return integer
+function GetTrainForwardCarriage(train) end
+
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x428668B7)  
 ---Gets the speed the train is currently going.
@@ -3037,14 +3073,14 @@ function GetTrainDoorOpenRatio(train, doorIndex) end
 ---@return number
 function GetTrainSpeed(train) end
 
----**`CFX` `client`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x81B50033)  
 ---This native does not have an official description.
 ---@param train integer
 ---@return integer
 function GetTrainState(train) end
 
----**`CFX` `client`**  
+---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9AA339D)  
 ---This native does not have an official description.
 ---@param train integer
@@ -3371,7 +3407,7 @@ function GetVehicleHomingLockonState(vehicle) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEA49773)  
----This is a getter for the client-side native [`START_VEHICLE_HORN`](https://docs.fivem.net/natives/?\_0x9C8C6504B5B63D2C), which allows you to return the horn type of the vehicle.
+---This is a getter for the client-side native [`START_VEHICLE_HORN`](#\_0x9C8C6504B5B63D2C), which allows you to return the horn type of the vehicle.
 ---
 ---**Note**: This native only gets the hash value set with `START_VEHICLE_HORN`. If a wrong hash is passed into `START_VEHICLE_HORN`, it will return this wrong hash.
 ---
@@ -4391,17 +4427,24 @@ function IsStreamingFileReady(registerAs) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x31E695CB)  
----Getter for [SET_TRACK_ENABLED](?\_0x4b41e84c)
+---Getter for [SET_TRACK_ENABLED](#\_0x4B41E84C)
 ---@param track integer
 ---@return boolean
 function IsTrackEnabled(track) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0C53765)  
----Getter for [SWITCH_TRAIN_TRACK](?\_0xFD813BB7DB977F20). Determines if ambient trains are able to spawn on this track.
+---Getter for [SWITCH_TRAIN_TRACK](#\_0xFD813BB7DB977F20). Determines if ambient trains are able to spawn on this track.
 ---@param track integer
 ---@return boolean
 function IsTrackSwitchedOff(track) end
+
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA9336E5)  
+---This native does not have an official description.
+---@param train integer
+---@return boolean
+function IsTrainCaboose(train) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDC921211)  
@@ -4471,7 +4514,7 @@ function IsVehicleWanted(vehicle) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAC4EF23D)  
----See the client-side [IS_VEHICLE_WINDOW_INTACT](https://docs.fivem.net/natives/?\_0x46E571A0E20D01F1) for a window indexes list.
+---See the client-side [IS_VEHICLE_WINDOW_INTACT](#\_0x46E571A0E20D01F1) for a window indexes list.
 ---@param vehicle integer
 ---@param windowIndex integer
 ---@return boolean
@@ -4991,7 +5034,7 @@ function RegisterResourceBuildTaskFactory(factoryId, factoryFn) end
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF213AE8D)  
 ---Registers a custom rope data with the game. For guidance on what these values should be use common:/data/ropedata.xml as a reference.
----Returns a rope type which can be passed into [ADD_ROPE](?\_0xE832D760399EB220) to use a custom rope design.
+---Returns a rope type which can be passed into [ADD_ROPE](#\_0xE832D760399EB220) to use a custom rope design.
 ---Once a rope data is registered it can be used indefinitely and you should take caution not too register too many as to exceed the games limit.
 ---@param numSections integer
 ---@param radius number
@@ -5191,6 +5234,11 @@ function RequestPlayerCommerceSession(playerSrc, skuId) end
 ---@param setName string
 ---@return boolean
 function RequestResourceFileSet(setName) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8EB6EC38)  
+---This function undoes changes made by [`SET_ENTITY_DRAW_OUTLINE_RENDER_TECHNIQUE`](#\_0x68DFF2DD), restoring the original outline rendering behavior. The default render technique group is `unlit`.
+function ResetEntityDrawOutlineRenderTechnique() end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6D712937)  
@@ -5587,6 +5635,63 @@ function SetEntityDrawOutline(entity, enabled) end
 ---@param blue integer
 ---@param alpha integer
 function SetEntityDrawOutlineColor(red, green, blue, alpha) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x68DFF2DD)  
+---Sets the render technique for drawing an entity's outline. This function allows you to specify a technique group name to control how the entity's outline is rendered in the game.
+---
+---List of known technique group's:
+---
+---```
+---alt0
+---alt1
+---alt2
+---alt3
+---alt4
+---alt5
+---alt6
+---alt7
+---alt8
+---blit
+---cube
+---default
+---geometry
+---imposter
+---imposterdeferred
+---lightweight0
+---lightweight0CutOut
+---lightweight0CutOutTint
+---lightweight0WaterRefractionAlpha
+---lightweight4
+---lightweight4CutOut
+---lightweight4CutOutTint
+---lightweight4WaterRefractionAlpha
+---lightweight8
+---lightweight8CutOut
+---lightweight8CutOutTint
+---lightweight8WaterRefractionAlpha
+---lightweightHighQuality0
+---lightweightHighQuality0CutOut
+---lightweightHighQuality0WaterRefractionAlpha
+---lightweightHighQuality4
+---lightweightHighQuality4CutOut
+---lightweightHighQuality4WaterRefractionAlpha
+---lightweightHighQuality8
+---lightweightHighQuality8CutOut
+---lightweightHighQuality8WaterRefractionAlpha
+---lightweightNoCapsule4
+---lightweightNoCapsule8
+---multilight
+---tessellate
+---ui
+---unlit
+---waterreflection
+---waterreflectionalphaclip
+---waterreflectionalphacliptint
+---wdcascade
+---```
+---@param techniqueGroup string
+function SetEntityDrawOutlineRenderTechnique(techniqueGroup) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5261A01A)  
@@ -6137,7 +6242,7 @@ function SetPedCollectionPreloadPropData(ped, anchorPoint, collection, propIndex
 ---
 ---The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
 ---
----Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](#\_0x5C612867) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](#\_0x94EB1FE4) natives.
+---Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](#\_0xD6BBA48B) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](#\_0x94EB1FE4) natives.
 ---@param ped integer
 ---@param componentId integer
 ---@param collection string
@@ -8032,6 +8137,13 @@ function SetWeatherCycleEntry(index, typeName, timeMult) end
 ---To be able to use [\_SET_WEATHER_TYPE_TRANSITION](#\_0x578C752848ECFA0C), this has to be set to false.
 ---@param network boolean
 function SetWeatherOwnedByNetwork(network) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF1BD2CEF)  
+---Modifies the radius scale used in the simulation of wet cloth physics.
+---This affects how cloth behaves when wet, changing how it sticks or reacts to movement.
+---@param scale number
+function SetWetClothPinRadiusScale(scale) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9234AFB)  
