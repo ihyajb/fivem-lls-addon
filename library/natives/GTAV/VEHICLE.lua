@@ -4581,6 +4581,12 @@ function SetCamberedWheelsDisabled(vehicle, toggle) end
 function SetCanResprayVehicle(vehicle, state) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFC40CBF7B90CA77C)  
+---This native does not have an official description.
+---@param vehicle integer
+function SetCarBootOpen(vehicle) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1F34B0626C594380)  
 ---Prevents a specified entity from being detached from a Cargobob, even in the event of collisions.
 ---@param cargobob integer
@@ -5214,7 +5220,7 @@ function SetPickupRopeLengthForCargobob(cargobob, length1, length2, state) end
 SetCargobobHookPosition = SetPickupRopeLengthForCargobob
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xFC40CBF7B90CA77C)  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBAFB99B304BC52A7)  
 ---```
 ---NativeDB Introduced: v3407
 ---```

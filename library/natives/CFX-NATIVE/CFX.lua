@@ -100,6 +100,23 @@ function AddBlipForRadius(posX, posY, posZ, radius) end
 function AddConvarChangeListener(conVarFilter, handler) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9CBFD5C1)  
+---Adds new health config.
+---@param configName string
+---@param defaultHealth number
+---@param defaultArmor number
+---@param defaultEndurance number
+---@param fatiguedHealthThreshold number
+---@param injuredHealthThreshold number
+---@param dyingHealthThreshold number
+---@param hurtHealthThreshold number
+---@param dogTakedownThreshold number
+---@param writheFromBulletThreshold number
+---@param meleeCardinalFatalAttack boolean
+---@param invincible boolean
+function AddHealthConfig(configName, defaultHealth, defaultArmor, defaultEndurance, fatiguedHealthThreshold, injuredHealthThreshold, dyingHealthThreshold, hurtHealthThreshold, dogTakedownThreshold, writheFromBulletThreshold, meleeCardinalFatalAttack, invincible) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4AFD2499)  
 ---Loads a minimap overlay from a GFx file in the current resource.
 ---
@@ -1533,6 +1550,7 @@ function GetFuelConsumptionState() end
 ---    *   3258
 ---    *   3323
 ---    *   3407
+---    *   3570
 ---*   RedM
 ---    *   1311
 ---    *   1355
@@ -1987,6 +2005,73 @@ function GetMapZoomDataLevel(index) end
 ---@return integer
 function GetMinimapType() end
 
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x23B2A641)  
+---Gets the specific entity type (as an integer), which can be one of the following defined down below:
+---
+---#### FiveM:
+---
+---```cpp
+---enum eNetObjEntityType
+---{
+---    Automobile = 0,
+---    Bike = 1,
+---    Boat = 2,
+---    Door = 3,
+---    Heli = 4,
+---    Object = 5,
+---    Ped = 6,
+---    Pickup = 7,
+---    PickupPlacement = 8,
+---    Plane = 9,
+---    Submarine = 10,
+---    Player = 11,
+---    Trailer = 12,
+---    Train = 13
+---};
+---```
+---
+---#### RedM:
+---
+---```cpp
+---enum eNetObjEntityType
+---{
+---    Animal = 0,
+---    Automobile = 1,
+---    Bike = 2,
+---    Boat = 3,
+---    Door = 4,
+---    Heli = 5,
+---    Object = 6,
+---    Ped = 7,
+---    Pickup = 8,
+---    PickupPlacement = 9,
+---    Plane = 10,
+---    Submarine = 11,
+---    Player = 12,
+---    Trailer = 13,
+---    Train = 14,
+---    DraftVeh = 15,
+---    StatsTracker = 16,
+---    PropSet = 17,
+---    AnimScene = 18,
+---    GroupScenario = 19,
+---    Herd = 20,
+---    Horse = 21,
+---    WorldState = 22,
+---    WorldProjectile = 23,
+---    Incident = 24,
+---    Guardzone = 25,
+---    PedGroup = 26,
+---    CombatDirector = 27,
+---    PedSharedTargeting = 28,
+---    Persistent = 29
+---};
+---```
+---@param entity integer
+---@return integer
+function GetNetTypeFromEntity(entity) end
+
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CAFD5E9)  
 ---This native does not have an official description.
@@ -2283,6 +2368,13 @@ function GetPedInVehicleSeat(vehicle, seatIndex) end
 ---@param ped integer
 ---@return integer
 function GetPedMaxHealth(ped) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF71542F7)  
+---Gets a ped model's health config.
+---@param modelHash integer | string
+---@return integer
+function GetPedModelHealthConfig(modelHash) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE08CAD6)  
@@ -4512,6 +4604,14 @@ function IsVehicleTyreBurst(vehicle, wheelID, completely) end
 ---@return boolean
 function IsVehicleWanted(vehicle) end
 
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCF1BC668)  
+---Getter for [BREAK_OFF_VEHICLE_WHEEL](?\_0xA274CADB).
+---@param vehicle integer
+---@param wheelIndex integer
+---@return boolean
+function IsVehicleWheelBrokenOff(vehicle, wheelIndex) end
+
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAC4EF23D)  
 ---See the client-side [IS_VEHICLE_WINDOW_INTACT](#\_0x46E571A0E20D01F1) for a window indexes list.
@@ -4856,6 +4956,21 @@ function OverridePedsUseDefaultDriveByClipset(flag) end
 function OverridePopGroups(path) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3F3EB3F7)  
+---Setting the state to true and a value between 0 and 2 will cause pedestrian vehicles to react accordingly to sirens.
+---
+---```cpp
+---enum Reactions {
+---    Left = 0,
+---    Right = 1,
+---    Stop = 2
+---}
+---```
+---@param state boolean
+---@param reaction integer
+function OverrideReactionToVehicleSiren(state, reaction) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7FA03E76)  
 ---Overrides whether or not peds can stand on top of the specified vehicle.
 ---
@@ -5131,6 +5246,12 @@ function RemoveConvarChangeListener(cookie) end
 ---See CREATE_DRY_VOLUME for more info
 ---@param handle integer
 function RemoveDryVolume(handle) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE0ED5FB)  
+---Removes health config.
+---@param configName string
+function RemoveHealthConfig(configName) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA896B20A)  
@@ -5830,6 +5951,12 @@ function SetFlashLightKeepOnWhileMoving(state) end
 function SetFlyThroughWindscreenParams(vehMinSpeed, unkMinSpeed, unkModifier, minDamage) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFBC64DA3)  
+---This completely disables rendering of fog volumes (vfxfogvolumeinfo.ymt).
+---@param state boolean
+function SetFogVolumeRenderDisabled(state) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x845F3E5C)  
 ---Sets fuel consumption rate multiplier for all vehicles operated by a player. This is a way to slow down or speed up fuel consumption for all vehicles at a time. If 0 - it practically means that fuel will not be consumed. By default is set to 1.
 ---
@@ -5897,6 +6024,83 @@ function SetHandlingInt(vehicle, class_, fieldName, value) end
 ---@param fieldName string
 ---@param value vector3
 function SetHandlingVector(vehicle, class_, fieldName, value) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x20A1E6A2)  
+---Sets default armor value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigDefaultArmor(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x60F20B81)  
+---Sets default endurance value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigDefaultEndurance(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC705C778)  
+---Sets default health value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigDefaultHealth(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9A995E96)  
+---Sets default dog takedown threshold value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigDogTakedownThreshold(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9B00FD77)  
+---Sets default dying health threshold value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigDyingThreshold(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC58953FD)  
+---Sets default fatigued health threshold value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigFatiguedThreshold(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x98DF1A83)  
+---Sets default hurt health threshold value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigHurtThreshold(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF9D9B647)  
+---Sets default injured health threshold value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigInjuredThreshold(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4A9EEDE6)  
+---Sets default invincible value for specific health config.
+---@param configName string
+---@param newValue boolean
+function SetHealthConfigInvincible(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD443E53)  
+---Sets default melee cardinal fatal attack value for specific health config.
+---@param configName string
+---@param newValue boolean
+function SetHealthConfigMeleeFatalAttack(configName, newValue) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE97633CB)  
+---Sets default writhe from bullet threshold value for specific health config.
+---@param configName string
+---@param newValue number
+function SetHealthConfigWritheFromBulletThreshold(configName, newValue) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF5C6330C)  
@@ -6990,6 +7194,14 @@ function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 function SetPedMeleeCombatLimits(primaryCount, secondaryCount, populationPedCount) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xAF12A05D)  
+---Sets a ped model's health config.
+---Takes effect only after setting player model with `SET_PLAYER_MODEL`.
+---@param modelHash integer | string
+---@param configName string
+function SetPedModelHealthConfig(modelHash, configName) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46F6B38B)  
 ---Overrides a ped model personality type.
 ---@param modelHash integer | string
@@ -7257,6 +7469,12 @@ function SetPlayerTalkingOverride(player, state) end
 ---@param wantedLevel integer
 ---@param delayedResponse boolean
 function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB90BBC6E)  
+---This completely disables pedestrian vehicles from reacting to sirens. They will not try to do any maneuver to evade.
+---@param state boolean
+function SetReactionToVehicleWithSirenDisabled(state) end
 
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21C7A35B)  
