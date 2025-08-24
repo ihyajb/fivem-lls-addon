@@ -711,11 +711,12 @@ function FinalizeHeadBlend(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2208438012482A1A)  
----This native does not have an official description.
+---Forces an instant ped AI and Animation update. Use this if your transitions between animations (especially secondary upper body animations) are janky or not smooth.
+---Do note this is an expensive function.
 ---@param ped integer
----@param p1 boolean
----@param p2 boolean
-function ForcePedAiAndAnimationUpdate(ped, p1, p2) end
+---@param forceAiPreCameraUpdate boolean
+---@param forceZeroTimestep boolean
+function ForcePedAiAndAnimationUpdate(ped, forceAiPreCameraUpdate, forceZeroTimestep) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF28965D04F570DCA)  
