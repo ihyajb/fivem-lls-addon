@@ -765,6 +765,11 @@ function DrawGizmo(matrixPtr, id) end
 function DrawGlowSphere(posX, posY, posZ, radius, colorR, colorG, colorB, intensity, invert, marker) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x374E5298)  
+---Draw the prepared light.
+function DrawLight() end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB3426BCC)  
 ---This native does not have an official description.
 ---@param x1 number
@@ -1519,6 +1524,18 @@ function GetExternalKvpInt(resource, key) end
 function GetExternalKvpString(resource, key) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2C048945)  
+---A getter for [SET_FALL_DAMAGE_LAND_ON_FOOT_MULTIPLIER](#\_0x164A08C9).
+---@return number
+function GetFallDamageLandOnFootMultiplier() end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7C46A6F0)  
+---A getter for [SET_FALL_DAMAGE_MULTIPLIER](#\_0xF2E1A531).
+---@return number
+function GetFallDamageMultiplier() end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5550BF9F)  
 ---This native does not have an official description.
 ---@return number
@@ -1933,6 +1950,12 @@ function GetIsVehiclePrimaryColourCustom(vehicle) end
 ---@param vehicle integer
 ---@return boolean
 function GetIsVehicleSecondaryColourCustom(vehicle) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57888D4C)  
+---A getter for [SET_KILL_FALL_HEIGHT](#\_0x7E8D83E4).
+---@return number
+function GetKillFallHeight() end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6F02670)  
@@ -2572,6 +2595,12 @@ function GetPlayerInvincible(playerSrc) end
 ---@param player integer
 ---@return boolean
 function GetPlayerInvincible_2(player) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xBFB2990C)  
+---A getter for [SET_PLAYER_KILL_FALL_HEIGHT](#\_0xAEF2C6A4).
+---@return number
+function GetPlayerKillFallHeight() end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x427E8E6A)  
@@ -4994,6 +5023,20 @@ function PerformHttpRequestInternal(requestData, requestDataLength) end
 ---@return integer
 function PerformHttpRequestInternalEx(requestData) end
 
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x584B4C99)  
+---Create a new light with specified type, flags, position, color, and intensity.
+---@param lightType integer
+---@param flags integer
+---@param x number
+---@param y number
+---@param z number
+---@param r integer
+---@param g integer
+---@param b integer
+---@param intensity number
+function PrepareLight(lightType, flags, x, y, z, r, g, b, intensity) end
+
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x90892DED)  
 ---Prints 'structured trace' data to the server `file descriptor 3` channel. This is not generally useful outside of
@@ -5935,6 +5978,18 @@ function SetEntityRoutingBucket(entity, bucket) end
 function SetEntityVelocity(entity, x, y, z) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA9EC9A79)  
+---A setter for [GET_FALL_DAMAGE_LAND_ON_FOOT_MULTIPLIER](#\_0x3C8A1C92).
+---@param multiplier number
+function SetFallDamageLandOnFootMultiplier(multiplier) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB43B621B)  
+---A setter for [GET_FALL_DAMAGE_MULTIPLIER](#\_0x2D6A0A83).
+---@param multiplier number
+function SetFallDamageMultiplier(multiplier) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7635B349)  
 ---Allows Weapon-Flashlight beams to stay visible while moving. Normally it only stays on while aiming.
 ---@param state boolean
@@ -6257,6 +6312,189 @@ function SetInteriorRoomTimecycle(interiorId, roomIndex, timecycleHash) end
 ---Toggles the visibility of resource names in the FiveM key mapping page.
 ---@param hide boolean
 function SetKeyMappingHideResources(hide) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x24091E09)  
+---A setter for [GET_KILL_FALL_HEIGHT](#\_0x884C8B5A).
+---@param height number
+function SetKillFallHeight(height) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC0EBC38)  
+---Set the alpha transparency of the light.
+---@param alpha number
+function SetLightAlpha(alpha) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE155B53B)  
+---Set ambient occlusion (AO) parameters for a specified light.
+---@param intensity number
+---@param radius number
+---@param bias number
+---@param intensity2 number
+function SetLightAo(intensity, radius, bias, intensity2) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA3881271)  
+---Set the capsule size of a specified light.
+---@param size number
+function SetLightCapsuleSize(size) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD9DD0717)  
+---Set the clip rectangle for a created light.
+---@param x integer
+---@param y integer
+---@param width integer
+---@param height integer
+function SetLightClipRect(x, y, width, height) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x65FE5132)  
+---Set the color of a specified light.
+---@param r integer
+---@param g integer
+---@param b integer
+function SetLightColor(r, g, b) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x9FE89EF5)  
+---Set the inner and outer cone angles of a specified light.
+---@param innerConeAngle number
+---@param outerConeAngle number
+function SetLightCone(innerConeAngle, outerConeAngle) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8950BD08)  
+---Set the world coordinates of a specified light.
+---@param x number
+---@param y number
+---@param z number
+function SetLightCoords(x, y, z) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA6FE1977)  
+---Set the forward and tangent direction vectors for an existing light, allowing control over its orientation (useful for spotlights and directional lights).
+---@param xDir number
+---@param yDir number
+---@param zDir number
+---@param xTanDir number
+---@param yTanDir number
+---@param zTanDir number
+function SetLightDirection(xDir, yDir, zDir, xTanDir, yTanDir, zTanDir) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xB2D37E97)  
+---Set additional configuration flags for an existing light
+---@param extraFlags integer
+function SetLightExtraflags(extraFlags) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFA46714D)  
+---Set the fade distance.
+---@param fadeDistance integer
+function SetLightFadeDistance(fadeDistance) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4D7F6E03)  
+---Adjust the falloff parameter for an existing light, affecting how light intensity decreases over distance.
+---@param falloff number
+function SetLightFalloff(falloff) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x28B22733)  
+---Set or update specific flags for a created light to control its behavior or properties.
+---@param flags integer
+function SetLightFlags(flags) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xFF44D502)  
+---Set the headlight properties of a created light, adjusting its intensity and range.
+---@param intensity number
+---@param range number
+function SetLightHeadlight(intensity, range) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2CC9A71C)  
+---Set the intensity of an existing light.
+---@param intensity number
+function SetLightIntensity(intensity) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x1CC72443)  
+---Set the interior and room where the light should be active.
+---@param interiorId integer
+---@param isPortal boolean
+---@param roomIndex integer
+function SetLightInterior(interiorId, isPortal, roomIndex) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE46E0CDF)  
+---Set the plane parameters for a light.
+---@param x number
+---@param y number
+---@param z number
+---@param w number
+function SetLightPlane(x, y, z, w) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4A4B5CBE)  
+---Set the radius of a created light.
+---@param radius number
+function SetLightRadius(radius) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA40EAC1A)  
+---Set the shadow details for a created light.
+---@param shadowFlags integer
+---@param shadowDistance number
+---@param shadowFade number
+---@param shadowDepthBiasScale number
+function SetLightShadowDetails(shadowFlags, shadowDistance, shadowFade, shadowDepthBiasScale) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3C54C2A8)  
+---Set the fade distance for the shadows of a created light.
+---@param fadeDistance integer
+function SetLightShadowFadeDistance(fadeDistance) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xC3A35A50)  
+---Set the specular fade distance for a created light.
+---@param fadeDistance integer
+function SetLightSpecularFadeDistance(fadeDistance) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x55A50736)  
+---Assign a texture to an existing light source, allowing custom light shapes or patterns using textures from streaming assets.
+---@param textureDict string
+---@param textureHash integer
+function SetLightTexture(textureDict, textureHash) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xCB58679D)  
+---Change the light type of a already created light.
+---Certain light type needs more configurations to work properly (Like direction, flags or size)
+---@param lightType integer
+function SetLightType(lightType) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2F731AE7)  
+---Set volumetric light properties for an existing light, enabling custom volumetric effects such as fog-like glow.
+---@param volIntensity number
+---@param volSizeScale number
+---@param r number
+---@param g number
+---@param b number
+---@param i number
+---@param outerExponent number
+function SetLightVolumeDetails(volIntensity, volSizeScale, r, g, b, i, outerExponent) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xE1F41605)  
+---Set the fade distance for volumetric lightingn.
+---@param volumetricFadeDistance integer
+function SetLightVolumetricFadeDistance(volumetricFadeDistance) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1722C938)  
@@ -7416,6 +7654,12 @@ function SetPlayerCullingRadius(playerSrc, radius) end
 ---@param player integer
 ---@param bInvincible boolean
 function SetPlayerInvincible(player, bInvincible) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x86BD5722)  
+---A setter for [GET_PLAYER_KILL_FALL_HEIGHT](#\_0x13BC2C63).
+---@param height number
+function SetPlayerKillFallHeight(height) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x35594F67)  
