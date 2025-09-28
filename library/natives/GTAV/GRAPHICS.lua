@@ -609,7 +609,7 @@ ResetExtraTimecycleModifierStrength = DisableMoonCycleOverride
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3669F1B198DCAA4F)  
----This native does not have an official description.
+---This disables all occluders that cause the 'flickering' rendering under the map and inside buildings with no interiors, note that this may impact performance on lower end systems.
 function DisableOcclusionThisFrame() end
 
 ---**`GRAPHICS` `client`**  
@@ -3893,7 +3893,7 @@ StartParticleFxLoopedOnEntityBone_2 = StartNetworkedParticleFxLoopedOnEntityBone
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)  
 ---NOTE: the [USE_PARTICLE_FX_ASSET](#\_0x6C38AF3693A69A91) needs to be called before EVERY StartNetworkedParticleFxNonLoopedAtCoord(....) call!
 ---
----List with lots of particle effects: https://vespura.com/fivem/particle-list/
+---List with lots of particle effects: https://gist.githubusercontent.com/alexguirre/af70f0122957f005a5c12bef2618a786/raw/899e93c5611ba58138c56873bb6f56664a776af4/Particles%2520Effects%2520Dump.txt
 ---
 ---Note: Not all particles on this list are for non looped and vice versa, neither are all of them suited/meant to have SetParticleFxNonLoopedColour(....) called on them.
 ---

@@ -1643,7 +1643,7 @@ function SetUnkGlobalBoolRelatedToDamage(value) end
 ---```
 ---Returns true if the object has finished moving.  
 ---If false, moves the object towards the specified X, Y and Z coordinates with the specified X, Y and Z speed.  
----See also: https://gtagmodding.com/opcode-database/opcode/034E/
+---See also: https://gtag.sannybuilder.com/opcode-database/opcode/034E/
 ---Has to be looped until it returns true.   
 ---```
 ---@param object integer

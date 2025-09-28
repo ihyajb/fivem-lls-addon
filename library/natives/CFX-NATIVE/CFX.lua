@@ -5271,7 +5271,7 @@ function RemoveAllPedWeapons(ped, p1) end
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8C3C1CD)  
 ---Removes the blip from your map.
----**Note:** This function only works on the script that created the blip, if you wish to remove blips created by other scripts, see [`SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT`](#\_0x86A652570E5F25DD).
+---**Note:** This function only works on the script that created the blip, if you wish to remove blips created by other scripts, see [`SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT`](#\_0xB98236CAAECEF897).
 ---
 ---**This is the server-side RPC native equivalent of the client native [REMOVE_BLIP](?\_0x86A652570E5F25DD).**
 ---@param blip integer
@@ -7339,9 +7339,9 @@ SetPedHairColor = SetPedHairTint
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x60746B88)  
----For more info please refer to [this](https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset-ped-head-blend-data-explained) topic.
+---For more info and the list of faceIDs please refer to [this](https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset-ped-head-blend-data-explained) topic. Note that the Skin and Shape IDs are shared. This native will use this same list for both Skin and Shape IDs.
 ---**Other information:**
----IDs start at zero and go Male Non-DLC, Female Non-DLC, Male DLC, and Female DLC.</br>
+---IDs start at zero and go Male Non-DLC, Female Non-DLC, Male DLC, and Female DLC.
 ---This native function is often called prior to calling natives such as:
 ---
 ---*   [`SetPedHairColor`](#\_0xA23FE32C)

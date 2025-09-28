@@ -1234,11 +1234,11 @@ SetNotificationMessageClanTag_2 = EndTextCommandThefeedPostMessagetextWithCrewTa
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF020C96915705B3A)  
----This native does not have an official description.
----@param blink boolean
----@param bHasTokens boolean
+---Exactly the same as [`END_TEXT_COMMAND_THEFEED_POST_TICKER`](#\_0x2ED7843F8F801023).
+---@param isImportant boolean
+---@param showInBrief boolean
 ---@return integer
-function EndTextCommandThefeedPostMpticker(blink, bHasTokens) end
+function EndTextCommandThefeedPostMpticker(isImportant, showInBrief) end
 
 ---@deprecated
 DrawNotification_4 = EndTextCommandThefeedPostMpticker
@@ -1307,35 +1307,50 @@ SetNotificationMessage_2 = EndTextCommandThefeedPostStats
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2ED7843F8F801023)  
----Example output preview:
+---Posts a generic feed notification:
 ---
----![](https://i.imgur.com/TJvqkYq.png)
+---![](https://i.ibb.co/GkHcFvf/image.png)
+---
+---````
+---## Parameters
+---* **isImportant**: Makes the notification flash on the screen.
+---* **showInBrief**: Makes the notification appear in the "Pause Menu > Info/Brief > Notifications" section.
+---
+---## Return value
+---The notification handle.
+---
+---## Examples
+---```lua
+---AddTextEntry("MyFeedMessage", "Hello " .. GetPlayerName(PlayerId()) .. ".")
+---BeginTextCommandThefeedPost("MyFeedMessage")
+---EndTextCommandThefeedPostTicker(true, true)
+---````
 ---@param isImportant boolean
----@param bHasTokens boolean
+---@param showInBrief boolean
 ---@return integer
-function EndTextCommandThefeedPostTicker(isImportant, bHasTokens) end
+function EndTextCommandThefeedPostTicker(isImportant, showInBrief) end
 
 ---@deprecated
 DrawNotification = EndTextCommandThefeedPostTicker
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x44FA03975424A0EE)  
----This native does not have an official description.
----@param blink boolean
----@param bHasTokens boolean
+---Posts an above minimap feed notification that is forced (Previous messages will be cleared).
+---@param isImportant boolean
+---@param showInBrief boolean
 ---@return integer
-function EndTextCommandThefeedPostTickerForced(blink, bHasTokens) end
+function EndTextCommandThefeedPostTickerForced(isImportant, showInBrief) end
 
 ---@deprecated
 DrawNotification_2 = EndTextCommandThefeedPostTickerForced
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x378E809BF61EC840)  
----This native does not have an official description.
+---Posts an above minimap feed message with tokens support (blips, input keys, etc...)
 ---@param isImportant boolean
----@param bHasTokens boolean
+---@param showInBrief boolean
 ---@return integer
-function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
+function EndTextCommandThefeedPostTickerWithTokens(isImportant, showInBrief) end
 
 ---@deprecated
 DrawNotification_3 = EndTextCommandThefeedPostTickerWithTokens
@@ -3101,7 +3116,7 @@ function ReloadMapMenu() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x86A652570E5F25DD)  
 ---Removes the blip from your map.
 ---
----**Note:** This function only works on the script that created the blip, if you wish to remove blips created by other scripts, see [`SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT`](#\_0x86A652570E5F25DD).
+---**Note:** This function only works on the script that created the blip, if you wish to remove blips created by other scripts, see [`SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT`](#\_0xB98236CAAECEF897).
 ---@param blip integer
 function RemoveBlip(blip) end
 
@@ -5161,29 +5176,31 @@ function SuppressFrontendRenderingThisFrame() end
 function TakeControlOfFrontend() end
 
 ---**`HUD` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xADED7F5748ACAFE6)  
+---Disables tip notifications enabled by [`THEFEED_AUTO_POST_GAMETIPS_ON`](#\_0x56C8B608CFD49854)
+function ThefeedAutoPostGametipsOff() end
+
+---@deprecated
+ThefeedShowGtaoTooltips = ThefeedAutoPostGametipsOff
+---@deprecated
+ThefeedCommentTeleportPoolOff = ThefeedAutoPostGametipsOff
+
+---**`HUD` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x56C8B608CFD49854)  
+---Enables loading screen tips to be be shown, blocks other kinds of notifications from being displayed.
+---Call [`THEFEED_AUTO_POST_GAMETIPS_OFF`](#\_0xADED7F5748ACAFE6) to undo this.
+function ThefeedAutoPostGametipsOn() end
+
+---@deprecated
+ThefeedCommentTeleportPoolOn = ThefeedAutoPostGametipsOn
+
+---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x80FE4F3AB4E1B62A)  
 ---This native does not have an official description.
 function ThefeedClearFrozenPost() end
 
 ---@deprecated
 ThefeedFlushPersistent = ThefeedClearFrozenPost
-
----**`HUD` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xADED7F5748ACAFE6)  
----```
----Displays "normal" notifications again after calling `_0x56C8B608CFD49854` (those that were drawn before calling this native too), though those will have a weird offset and stay on screen forever (tested with notifications created from same script).
----```
-function ThefeedCommentTeleportPoolOff() end
-
----@deprecated
-ThefeedShowGtaoTooltips = ThefeedCommentTeleportPoolOff
-
----**`HUD` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0x56C8B608CFD49854)  
----```
----Enables loading screen tips to be be shown (`_0x15CFA549788D35EF` and `_0x488043841BBE156F`), blocks other kinds of notifications from being displayed (at least from current script). Call `0xADED7F5748ACAFE6` to display those again.
----```
-function ThefeedCommentTeleportPoolOn() end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x32888337579A5970)  
