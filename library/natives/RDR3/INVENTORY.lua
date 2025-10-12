@@ -360,6 +360,14 @@ function InventoryGetInventoryItemInUse(inventoryId) end
 function InventoryGetInventoryItemIsAnimalPelt(item) end
 
 ---**`INVENTORY` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x112BCA290D2EB53C)  
+---Outputs the last creation date of the item for the selected inventory. Returns true if successful, false otherwise.
+---@param inventoryId integer
+---@param item integer | string
+---@return boolean, integer, integer, integer, integer, integer, integer
+function InventoryGetInventoryItemLastCreation(inventoryId, item) end
+
+---**`INVENTORY` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2E1CDC1FF3B8473E)  
 ---soundType: see 0x2BAE4880DCDD560B
 ---Returns item Hash to be used with _IS_SCRIPTED_AUDIO_CUSTOM and _PLAY_SOUND_FROM_ITEM (p0)
@@ -575,14 +583,6 @@ function InventoryUseSatchelItem(inventoryId, eInventoryItem, p2) end
 ---@param inventoryId integer
 ---@return any
 function N_0x0349404a22736740(p0, inventoryId) end
-
----**`INVENTORY` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x112BCA290D2EB53C)  
----Only used in R* SP Scripts
----@param inventoryId integer
----@param p1 integer | string
----@return boolean, integer, integer, integer, integer, integer, integer
-function N_0x112bca290d2eb53c(inventoryId, p1) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46DB71883EE9D5AF)  

@@ -237,21 +237,22 @@ function IsVehiclePropSetLoaded(vehicle) end
 function IsVehiclePropSetLoadedAdditional(vehicle) end
 
 ---**`PROPSET` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC4B67EF3FD65622D)  
+---Relocates an existing prop set to specified coordinates and adjusts its heading (rotation) without affecting the prop set's internal layout or structure.
+---When `onGroundProperly` is true, the prop set automatically aligns accurately with the terrain.
+---@param propSet integer
+---@param x number
+---@param y number
+---@param z number
+---@param onGroundProperly boolean
+---@param heading number
+function MovePropsetCoordsAndHeading(propSet, x, y, z, onGroundProperly, heading) end
+
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x58E0B01D45CA7357)  
 ---This native does not have an official description.
 ---@param p0 any
 function N_0x58e0b01d45ca7357(p0) end
-
----**`PROPSET` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC4B67EF3FD65622D)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
-function N_0xc4b67ef3fd65622d(p0, p1, p2, p3, p4, p5) end
 
 ---**`PROPSET` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB1964A83B345B4AB)  

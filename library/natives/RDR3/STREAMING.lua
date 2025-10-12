@@ -661,13 +661,14 @@ function RequestPtfxAsset() end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19A6BE7D9C6884D3)  
----This native does not have an official description.
+---entityModel can be 0 or using Hash or using GET_ENTITY_MODEL
+---conditionalAnim can be 0 or using Hash also accepts GET_ACTIVE_DYNAMIC_SCENARIO.
 ---@param scenarioType integer | string
 ---@param p1 integer
----@param p2 any
----@param p3 any
+---@param entityModel integer | string
+---@param conditionalAnim integer | string
 ---@return integer
-function RequestScenarioType(scenarioType, p1, p2, p3) end
+function RequestScenarioType(scenarioType, p1, entityModel, conditionalAnim) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x19ABCC581D28E6F9)  

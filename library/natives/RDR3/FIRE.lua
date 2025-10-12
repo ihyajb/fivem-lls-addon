@@ -301,12 +301,12 @@ function RemoveScriptFire(fireHandle) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC4DC7418A44D6822)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function StartEntityFire(p0, p1, p2, p3) end
+---fireFlags: 2 = zone/env fire, 8 = scorched carcass.
+---@param entity integer
+---@param intensity number
+---@param boneIndex integer
+---@param fireFlags integer
+function StartEntityFire(entity, intensity, boneIndex, fireFlags) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6B83617E04503888)  

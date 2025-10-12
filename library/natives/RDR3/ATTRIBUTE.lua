@@ -106,18 +106,18 @@ function GetDefaultAttributePointsNeededForRank(modelHash, attributeIndex, rank)
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x958DD43D41F89A47)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param modelHash integer | string
 ---@param attributeIndex integer
 ---@return integer
-function GetDefaultAttributeRank(ped, attributeIndex) end
+function GetDefaultAttributeRank(modelHash, attributeIndex) end
 
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C059C55AD940CB4)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param modelHash integer | string
 ---@param attributeIndex integer
 ---@return integer
-function GetDefaultMaxAttributeRank(ped, attributeIndex) end
+function GetDefaultMaxAttributeRank(modelHash, attributeIndex) end
 
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x223BF310F854871C)  

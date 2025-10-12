@@ -307,10 +307,17 @@ function DeleteIncident(incidentId) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x40D72189F46D2E15)  
----This native does not have an official description.
+---Disables composite eat prompt.
 ---@param compositeId integer
 ---@param p1 boolean
 function DisableLootingCompositeLootableThisFrame(compositeId, p1) end
+
+---**`MISC` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x082C043C7AFC3747)  
+---Disables composite pick prompt.
+---@param compositeId integer
+---@param p1 boolean
+function DisableLootingCompositePickableThisFrame(compositeId, p1) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x044131118D8DB3CD)  
@@ -597,6 +604,23 @@ function GetGameTimer() end
 ---Returns rage::fwTimer::sm_nonScaledClippedTime
 ---@return integer
 function GetGameTimerNonScaledClipped() end
+
+---**`MISC` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBE5B63EFFB08E68)  
+---Raycasts downward from coords to find terrain/water.
+---
+---- flags: collision mask (R* scripts commonly use 17, 129, or 3423).
+---- outGroundZ: receives the hit Z.
+---- outMaterialHash: receives the surface/material hash.
+---- outFlags: receives hit flags (bitfield; water/special cases may set bits).
+---
+---Returns true on hit, false otherwise.
+---@param x number
+---@param y number
+---@param z number
+---@param flags integer
+---@return boolean, number, integer, integer
+function GetGroundZAndMaterialFor_3dCoord(x, y, z, flags) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A29CA9A6319E6AB)  
@@ -1217,13 +1241,6 @@ function N_0x0358b8a41916c613(p0, p1, p2, p3) end
 function N_0x0730e518486deec3(p0) end
 
 ---**`MISC` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x082C043C7AFC3747)  
----This native does not have an official description.
----@param compositeId integer
----@param p1 boolean
-function N_0x082c043c7afc3747(compositeId, p1) end
-
----**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0A487CC74A517FB5)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1579,19 +1596,6 @@ function N_0xb711eb4bc8d06013() end
 ---@param p0 any
 ---@param p1 any
 function N_0xbb282cf5d2333fb8(p0, p1) end
-
----**`MISC` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBBE5B63EFFB08E68)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@return any
-function N_0xbbe5b63effb08e68(p0, p1, p2, p3, p4, p5, p6) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC1BAF72D571DB8D)  

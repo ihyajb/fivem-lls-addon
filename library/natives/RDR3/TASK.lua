@@ -178,6 +178,21 @@ function ClearPedTasksImmediately(ped, p1, resetCrouch) end
 function ClearSequenceTask(taskSequenceId) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x141BC64C8D7C5529)  
+---Clears all active tasks assigned to the specified vehicle.
+---This cancels ongoing behaviors such as TASK_VEHICLE_DRIVE_TO_DESTINATION_2.
+---And even tasks triggered by horses pulling the vehicle when they start moving due to gunfire etc.
+---@param vehicle integer
+function ClearVehicleTasks(vehicle) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBA2081E0A5F4D17)  
+---Clears the vehicle's secondary/aux AI task slot (behaviors/overlays).
+---In R* Scripts, this is often called right after _CLEAR_VEHICLE_TASKS to fully stop/flush vehicle behavior.
+---@param vehicle integer
+function ClearVehicleTasksSecondary(vehicle) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB043ECA801B8CBC1)  
 ---This native does not have an official description.
 function ClosePatrolRoute() end
@@ -349,12 +364,33 @@ function DoesScenarioPointHaveProps(scenario) end
 function DoesScriptedCoverPointExistAtCoords(p0, p1, p2, p3) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1ECF56C040FD839C)  
+---This native does not have an official description.
+---@param ped integer
+---@param direction number
+function EmitPedCarriableStruggleDirection(ped, direction) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD1C3C0F271C39D3)  
+---This native does not have an official description.
+---@param ped integer
+---@param intensity number
+function EmitPedCarriableStruggleIntensity(ped, intensity) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEED08A3A98B847E2)  
 ---This native does not have an official description.
 ---@param ped integer
 ---@param p1 boolean
 ---@param p2 number
 function EndDuel(ped, p1, p2) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6AFD84AEAA3EA538)  
+---This native does not have an official description.
+---@param ped integer
+---@return boolean
+function EvaluatePedCarriableStruggleAvailable(ped) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE47DD64B9F02677D)  
@@ -473,6 +509,21 @@ function GetItemInteractionState(ped) end
 function GetLedHorseFromPed(ped) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE7BBC4E56B989449)  
+---Fills an output array with scenario points linked ("chained") to a given parent scenario point. Returns the number of linked points found. Writes up to maxPoints and zeroes remaining entries. Useful for flows like chained put-down scenarios.
+---
+---Params:
+---- scenarioPoint: Parent scenario point handle.
+---- outPoints: Pointer to an int array that receives the linked scenario point handles.
+---- maxPoints: Capacity of outPoints.
+---
+---Returns: Count of linked scenario points written (0 if none).
+---@param scenarioPoint integer
+---@param maxPoints integer
+---@return integer, integer
+function GetLinkedScenarioPoints(scenarioPoint, maxPoints) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8517D4A6CA8513ED)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -515,6 +566,14 @@ function GetPedWaypointOverrideSpeed(ped) end
 function GetPedWaypointProgress(ped) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x03D741CB4052E26C)  
+---Returns the current 'Break Free' prompt progress for a hogtied/knocked-out (writhing) ped.
+---Range: 0.0–1.0 (hits 1.0 when the ped breaks free). Returns -1.0 if not applicable.
+---@param ped integer
+---@return number
+function GetPedWritheBreakFreeProgress(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x295514F198EFD0CA)  
 ---Old name: _GET_SCENARIO_POINT_ENTITY
 ---@param scenarioPoint integer
@@ -523,18 +582,43 @@ function GetPedWaypointProgress(ped) end
 function GetPropForScenarioPoint(scenarioPoint, name) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD04241BBF6D03A5E)  
----This native does not have an official description.
----@param ped integer
----@return any
-function GetRansackScenarioPointPedIsUsing(ped) end
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x640A602946A8C972)  
+---Returns the total number of compartments (drawers, lids, etc.) the specified scenario container entity has.
+---For example, a chest has 1 compartment, while a cabinet with 3 drawers returns 3.
+---@param entity integer
+---@return integer
+function GetRansackScenarioContainerNumCompartments(entity) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x849791EBBDBA0362)  
+---Returns the number of currently open compartments for the specified scenario container entity.
+---If the container has closeable compartments (like drawers), this will return how many of them are currently open.
+---If the container is not closeable (like a chest or safe that cannot be closed again), it will return 0.
+---@param entity integer
+---@return integer
+function GetRansackScenarioContainerNumOpenCompartments(entity) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB219612B5568E9EC)  
 ---Returns m_eContainerState
 ---@param entity integer
 ---@return boolean
-function GetScenarioContainerOpeningState(entity) end
+function GetRansackScenarioContainerOpeningState(entity) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01AF8A3729231A43)  
+---Returns the total number of lootable items currently inside the specified scenario container entity.
+---This value decreases as items are looted.Before opening, it may return 0 because contents are not always loaded until the container is opened.
+---@param entity integer
+---@return integer
+function GetRansackScenarioContainerRemainingLootCount(entity) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD04241BBF6D03A5E)  
+---This native does not have an official description.
+---@param ped integer
+---@return any
+function GetRansackScenarioPointPedIsUsing(ped) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA8452DD321607029)  
@@ -645,6 +729,16 @@ function GetScriptTaskStatus(ped, taskHash, p2) end
 function GetSequenceProgress(ped) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5EA655F01D93667A)  
+---Returns true if the ped is in a ranged-attack task and is about to fire (ready/primed to shoot or throw).
+---Covers firearms and projectiles (throwables/molotov/poison), not melee.
+---Useful to block other actions just before the shot. Note: different from IS_PED_SHOOTING, which triggers only after the shot.
+---May return true even in cases where IS_PED_WEAPON_READY_TO_SHOOT returns false.
+---@param ped integer
+---@return boolean
+function GetTaskCombatReadyToShoot(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF3735ACD11ACD500)  
 ---Fishing Research: https://pastebin.com/NmK5ZLVs
 ---Only used in R* Scripts fishing_core and av_fishing_river
@@ -684,6 +778,24 @@ function GetTaskMoveNetworkPhaseFloat(ped, phaseName) end
 function GetTaskMoveNetworkState(ped) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BA606AB3A83BC4D)  
+---Returns 0.0–1.0 progress for the current mount-leap task, or -1.0f if no leap is active.
+---Video demo: https://youtu.be/YZuw9lhqDms
+---@param ped integer
+---@return number
+function GetTaskPedMountLeapProgress(ped) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9420FB11B8D77948)  
+---Returns a coarse state for the mount-leap task (jumping from your mount onto another mount/wagon/train).
+----1 = no task; 0 = in-air/ongoing; 1 = boarded/mounted; 2 = boarded rear train trailer.
+---Use with _GET_TASK_PED_MOUNT_LEAP_PROGRESS for timing.
+---Video demo: https://youtu.be/YZuw9lhqDms
+---@param ped integer
+---@return integer
+function GetTaskPedMountLeapState(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3DC971EB22F73447)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -714,10 +826,10 @@ function GetWaypointDistanceAlongRoute(waypointRecording, p1) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB8F52A3F84A7CC59)  
----This native does not have an official description.
----@param config integer | string
+---carriableConfig: see _REQUEST_CARRIABLE_CONFIG
+---@param carriableConfig integer | string
 ---@return boolean
-function HasRequestedCarriableConfigLoaded(config) end
+function HasRequestedCarriableConfigLoaded(carriableConfig) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x8785E6E40C7A8818)  
@@ -815,6 +927,14 @@ function IsPedArrestingAnyPed(ped) end
 function IsPedBeingArrested(ped) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAC5045AB7F1A34FD)  
+---Returns true if the given ped (usually a horse) is currently being led by a ped (lead/rope).
+---Mirrors usage with _IS_PED_LEADING_HORSE(ped) and _GET_LED_HORSE_FROM_PED(ped).
+---@param ped integer
+---@return boolean
+function IsPedBeingLed(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x74E559B3BC910685)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -863,6 +983,17 @@ function IsPedInWrithe(ped) end
 ---@param ped integer
 ---@return boolean
 function IsPedLeadingHorse(ped) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x508F5053E3F6F0C4)  
+---Returns true if the ped’s current 'IK look-at' target is within `radius` of (x, y, z). This checks the active look-at point (head/eyes) — not LOS or heading — and returns false if the ped has no active look-at target. Typical radius range: 1.0–30.0.
+---@param ped integer
+---@param x number
+---@param y number
+---@param z number
+---@param radius number
+---@return boolean
+function IsPedLookingAtCoord(ped, x, y, z, radius) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC5286FFC176F28A2)  
@@ -927,6 +1058,14 @@ function IsScenarioGroupEnabled(scenarioGroup) end
 ---@param scenarioGroup integer | string
 ---@return boolean
 function IsScenarioGroupEnabledHash(scenarioGroup) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1ACBC313966C21F3)  
+---Checks whether a specified scenario is currently being used (actively played) by any entity (player or ped).
+---Returns true if the scenario is already occupied, otherwise false.
+---@param scenario integer
+---@return boolean
+function IsScenarioInUse(scenario) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x788756D73AC2E07C)  
@@ -1026,25 +1165,11 @@ function N_0x0000a8acdc2e1b6a(ped, p1) end
 function N_0x00ffe0f85253c572(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x01AF8A3729231A43)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x01af8a3729231a43(p0) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0365000D8BF86531)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@return any
 function N_0x0365000d8bf86531(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x03D741CB4052E26C)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x03d741cb4052e26c(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x098036CAB8373D36)  
@@ -1086,15 +1211,6 @@ function N_0x0e184495b27bb57d() end
 function N_0x0f4f6c4ce471259d(p0, p1) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0FE797DD9F70DFA6)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x0fe797dd9f70dfa6(p0, p1, p2, p3) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x10ADFDF07B7DFFBA)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1115,12 +1231,6 @@ function N_0x10c44f633e2d6d9e(p0) end
 ---@param p0 any
 ---@return any
 function N_0x11c7ce1ae38911b5(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x141BC64C8D7C5529)  
----This native does not have an official description.
----@param vehicle integer
-function N_0x141bc64c8d7c5529(vehicle) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x152664AA3188B193)  
@@ -1163,13 +1273,6 @@ function N_0x1a7d63cb1b0bb223(p0) end
 function N_0x1ac5a8ab50cfaa33(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1ACBC313966C21F3)  
----This native does not have an official description.
----@param scenario integer
----@return any
-function N_0x1acbc313966c21f3(scenario) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D125814EBC517EB)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1177,13 +1280,6 @@ function N_0x1acbc313966c21f3(scenario) end
 ---@param p2 any
 ---@param p3 any
 function N_0x1d125814ebc517eb(p0, p1, p2, p3) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1ECF56C040FD839C)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x1ecf56c040fd839c(p0, p1) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1F298C7BD30D1240)  
@@ -1452,18 +1548,6 @@ function N_0x4e806a395d43a458(p0) end
 function N_0x4f57397388e1dff8() end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x508F5053E3F6F0C4)  
----Only used in R* SP Scripts
----Params: p4 = 1.0f - 30.0f
----@param ped integer
----@param x number
----@param y number
----@param z number
----@param p4 number
----@return boolean
-function N_0x508f5053e3f6f0c4(ped, x, y, z, p4) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x50AA09A0DA64E73C)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1496,16 +1580,6 @@ function N_0x517d01bf27b682d1(ped, entity, p2, p3, p4, p5, p6) end
 ---@param p3 any
 ---@param p4 any
 function N_0x5217b7b6db78e1f3(p0, p1, p2, p3, p4) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x583AE9AF9CEE0958)  
----This native does not have an official description.
----@param vehicle integer
----@param x number
----@param y number
----@param z number
----@return boolean
-function N_0x583ae9af9cee0958(vehicle, x, y, z) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5952DFA38FA529FE)  
@@ -1545,26 +1619,12 @@ function N_0x5b68d0007d9c92eb(p0, p1) end
 function N_0x5d9b0baaf04cf65b(p0, p1, p2, p3) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5EA655F01D93667A)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x5ea655f01d93667a(p0) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x615DC4A82E90BB48)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
 function N_0x615dc4a82e90bb48(p0, p1, p2) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x640A602946A8C972)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x640a602946a8c972(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x643FD1556F621772)  
@@ -1608,32 +1668,6 @@ function N_0x673a8779d229ba5a(p0, p1, p2, p3, p4, p5) end
 ---@param p1 boolean
 ---@return integer
 function N_0x678d3226cf70b9c8(ped, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A1AF481407BF6E9)  
----This native does not have an official description.
----@param p0 any
-function N_0x6a1af481407bf6e9(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6AFD84AEAA3EA538)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x6afd84aeaa3ea538(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6AFDA2264925BD11)  
----This native does not have an official description.
----@param p0 any
-function N_0x6afda2264925bd11(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6BA606AB3A83BC4D)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x6ba606ab3a83bc4d(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C269F673C47031E)  
@@ -1737,13 +1771,6 @@ function N_0x7fb78b2199c10e92(p0) end
 function N_0x801bd27403f3cba0(p0, p1, p2, p3) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x816A3ACD265E2297)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x816a3acd265e2297(p0, p1) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x827A58CED9D4D5B4)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1756,13 +1783,6 @@ function N_0x827a58ced9d4d5b4(p0, p1) end
 ---@param p0 any
 ---@param p1 any
 function N_0x82ed59f095056550(p0, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x849791EBBDBA0362)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x849791ebbdba0362(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x865732725536EE39)  
@@ -1847,13 +1867,6 @@ function N_0x91cb5e431f579ba1(p0) end
 ---@param p0 any
 ---@return any
 function N_0x920684be432875b1(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9420FB11B8D77948)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x9420fb11b8d77948(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x954451EA2D2120FB)  
@@ -1964,13 +1977,6 @@ function N_0xa7479fb665361edb(p0, p1) end
 function N_0xa9e7672f8c6c6f74(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAC5045AB7F1A34FD)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0xac5045ab7f1a34fd(p0) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xADC45010BC17AF0E)  
 ---_SET_SCENARIO_POINT_*
 ---@param p0 any
@@ -2045,13 +2051,6 @@ function N_0xbaab791aa72c2821(p0, p1) end
 ---@param p0 any
 ---@param p1 any
 function N_0xbc3f847ae2c3dc65(p0, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD1C3C0F271C39D3)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0xbd1c3c0f271c39d3(p0, p1) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBD70108D01875299)  
@@ -2209,15 +2208,6 @@ function N_0xe69fda40aac3efc0(p0, p1) end
 function N_0xe6a151364c600b24(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE7BBC4E56B989449)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xe7bbc4e56b989449(p0, p1, p2) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE9225354FB7437A7)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -2246,12 +2236,6 @@ function N_0xeaf87da2be78a15b(p0, p1) end
 function N_0xeb67d4e056c85a81(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEBA2081E0A5F4D17)  
----This native does not have an official description.
----@param p0 any
-function N_0xeba2081e0a5f4d17(p0) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC516FE805D2CB2D)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -2273,14 +2257,6 @@ function N_0xefd875c2791ebefd(p0, p1, p2, p3) end
 ---@param entity integer
 ---@param p1 any
 function N_0xf3c3503276f4a034(entity, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF40A109B4B79A848)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0xf40a109b4b79a848(p0, p1, p2) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF718931A82EEB898)  
@@ -2308,12 +2284,6 @@ function N_0xf97f462779b31786(p0) end
 ---@param p0 any
 ---@param p1 any
 function N_0xfa30e2254461adeb(p0, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC7F71CF49F70B6B)  
----This native does not have an official description.
----@param p0 any
-function N_0xfc7f71cf49f70b6b(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFDECCA06E8B81346)  
@@ -2433,6 +2403,12 @@ function ReactLookAtEnd(ped, exitAnimation, p2) end
 function RemoveAllCoverBlockingAreas() end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6AFDA2264925BD11)  
+---carriableConfig: see _REQUEST_CARRIABLE_CONFIG
+---@param carriableConfig integer | string
+function RemoveCarriableConfig(carriableConfig) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xAE287C923D891715)  
 ---This native does not have an official description.
 ---@param coverpoint integer
@@ -2446,9 +2422,9 @@ function RemoveWaypointRecording(waypointRecording) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFF745B0346E19E2C)  
----Config: https://gist.github.com/WesternGamer/95a1f8daf02520cad2bf96af6d957e70
----@param config integer | string
-function RequestCarriableConfig(config) end
+---Config: https://pastebin.com/gZvuq7fV
+---@param carriableConfig integer | string
+function RequestCarriableConfig(carriableConfig) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x73F0D0327BFA0812)  
@@ -2510,6 +2486,15 @@ function SetAnimFilter(p0, p1, p2, p3) end
 ---@param p2 any
 ---@param p3 boolean
 function SetAnimRate(p0, p1, p2, p3) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x816A3ACD265E2297)  
+---Enables or disables the interaction prompt for a given carriable config (e.g. DEAD_CARRIABLE_HUMAN).
+---Use after loading the config; when disabled, pickup/use prompts will not appear.
+---carriableConfig: see _REQUEST_CARRIABLE_CONFIG
+---@param carriableConfig integer | string
+---@param toggle boolean
+function SetCarriableConfigPromptEnabled(carriableConfig, toggle) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE5B302114D8162EE)  
@@ -2578,6 +2563,17 @@ function SetHighFallTask(ped, p1, p2, p3) end
 ---@param ped integer
 ---@param time number
 function SetHogtieEscapeTimer(ped, time) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0FE797DD9F70DFA6)  
+---Controls intimidated/hogtied ped facing.
+---If useLimits=false, always face the player; if =true, clamp facing within [minAngle, maxAngle] degrees.
+---Angle note: the range defines the allowed yaw cone around the intimidator—e.g., [0,90] permits a quarter-turn, [-30,30] a tight ±30°, and wider ranges allow more swivel.
+---@param ped integer
+---@param useLimits boolean
+---@param minAngle number
+---@param maxAngle number
+function SetIntimidatedFacingAngle(ped, useLimits, minAngle, maxAngle) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB35370D5353995CB)  
@@ -2755,7 +2751,7 @@ function SetPedWaypointRouteOffset(ped, p1, p2, p3) end
 ---Opens/closes containers: ChestDugUp
 ---@param entity integer
 ---@param open boolean
-function SetScenarioContainerOpeningState(entity, open) end
+function SetRansackScenarioContainerOpeningState(entity, open) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x02C8E5B49848664E)  
@@ -2925,6 +2921,12 @@ function StopAnimPlayback(ped, p1, p2) end
 function StopAnimTask(ped, animDictionary, animationName, p3) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFC7F71CF49F70B6B)  
+---Swaps the wagon/coach reins control between the ped and their adjacent front-seat partner.
+---@param ped integer
+function SwapReinsForPeds(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x93B93A37987F1F3D)  
 ---Makes the specified ped achieve the specified heading.
 ---
@@ -2940,23 +2942,23 @@ function TaskAchieveHeading(ped, heading, timeout) end
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4AF1D73861212F52)  
 ---This native does not have an official description.
 ---@param ped integer
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
-function TaskAimAtCoord(ped, p1, p2, p3, p4, p5, p6) end
+---@param x number
+---@param y number
+---@param z number
+---@param time integer
+---@param p5 boolean
+---@param p6 boolean
+function TaskAimAtCoord(ped, x, y, z, time, p5, p6) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCF7569BD0FB480A0)  
 ---This native does not have an official description.
 ---@param ped integer
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
-function TaskAimAtEntity(ped, p1, p2, p3, p4) end
+---@param targetEntity integer
+---@param time integer
+---@param p3 boolean
+---@param p4 boolean
+function TaskAimAtEntity(ped, targetEntity, time, p3, p4) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6671F3EEC681BDA1)  
@@ -3009,11 +3011,11 @@ function TaskAnimalAlerted(ped, p1, p2) end
 ---This native does not have an official description.
 ---@param ped integer
 ---@param killer integer
----@param p2 boolean
+---@param flee boolean
 ---@param weaponHash integer | string
 ---@param p4 integer
----@param p5 integer
-function TaskAnimalBleedOut(ped, killer, p2, weaponHash, p4, p5) end
+---@param boneId integer
+function TaskAnimalBleedOut(ped, killer, flee, weaponHash, p4, boneId) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA899B61C66F09134)  
@@ -3379,6 +3381,16 @@ function TaskDumpCarriableFromParent(ped, ped2, entity) end
 ---@param p1 any
 ---@param p2 any
 function TaskEat(ped, p1, p2) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6A1AF481407BF6E9)  
+---Triggers the 'action / flourish' sub-clip of the ped's currently playing emote.
+---Returns true on success, false if no valid emote state.
+---Observed in ingame UIs to fire a flourish while an emote loop is active.
+---Internally resets the ped's synced-emote entity and sets a flag to play the action once.
+---@param ped integer
+---@return boolean
+function TaskEmoteAction(ped) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBDFEEB7600BCD938)  
@@ -3752,30 +3764,30 @@ function TaskForceMotionState(ped, motionStateHash, p2) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD76B57B44F1E6F8B)  
----This native does not have an official description.
+---Go to coords wihtout using navmesh, if timeBeforeTeleport is -1 then it never teleports p8 is 1 or 0 still unknown.
 ---@param ped integer
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param moveBlendSpeedY number
----@param p5 integer
----@param p6 number
----@param p7 number
+---@param timeBeforeTeleport integer
+---@param finalHeading number
+---@param targetRadius number
 ---@param p8 integer
-function TaskGoStraightToCoord(ped, x, y, z, moveBlendSpeedY, p5, p6, p7, p8) end
+function TaskGoStraightToCoord(ped, x, y, z, moveBlendSpeedY, timeBeforeTeleport, finalHeading, targetRadius, p8) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x61E360B7E040D12E)  
----This native does not have an official description.
+---Go to coords relative to entity wihtout using navmesh, if timeBeforeTeleport is -1 then it never teleports; p7 is 1 or 0 still unknown.
 ---@param ped integer
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
-function TaskGoStraightToCoordRelativeToEntity(ped, p1, p2, p3, p4, p5, p6, p7) end
+---@param entity integer
+---@param xOffset number
+---@param yOffset number
+---@param zOffset number
+---@param moveBlendRatio integer
+---@param timeBeforeTeleport integer
+---@param p7 integer
+function TaskGoStraightToCoordRelativeToEntity(ped, entity, xOffset, yOffset, zOffset, moveBlendRatio, timeBeforeTeleport, p7) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA55547801EB331FC)  
@@ -4278,11 +4290,12 @@ function TaskKnockedOut(ped, p1, permanently) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42AC6401ABB8C7E5)  
----This native does not have an official description.
+---koTimeOffset (seconds): offset applied to the knockout timer—positive delays recovery (longer KO), negative brings recovery sooner, 0.0 initializes with no extension (immediate baseline).
+---flags (bitmask): 1 = default variant (forwarded to the KO task ctor; R* commonly uses 1), 2 = sets an unk internal synced toggle for this task, 4 = sets another unk internal synced toggle.
 ---@param ped integer
----@param p1 number
----@param p2 boolean
-function TaskKnockedOutAndHogtied(ped, p1, p2) end
+---@param koTimeOffset number
+---@param flags integer
+function TaskKnockedOutAndHogtied(ped, koTimeOffset, flags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC716EB2BD16370A3)  
@@ -4751,6 +4764,14 @@ function TaskPlayEmoteWithHash(ped, emoteType, playbackMode, emote, isSecondaryT
 ---@param p13 integer
 ---@param p14 number
 function TaskPlayUpperAnimFacingEntity(ped, animDict, animName, entity, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF40A109B4B79A848)  
+---This native does not have an official description.
+---@param ped integer
+---@param targetEntity integer
+---@param durationMs integer
+function TaskPointAtEntity(ped, targetEntity, durationMs) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x87BE56724650408E)  
@@ -5493,6 +5514,17 @@ function TaskVehicleFollowWaypointRecording_2(p0, p1, p2, p3, p4, p5, p6, p7, p8
 ---@param behaviorFlag integer
 ---@param stoppingRange number
 function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stoppingRange) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x583AE9AF9CEE0958)  
+---Returns true if the vehicle’s current drive-to task is targeting the given coordinates (i.e., its active destination matches x,y,z).
+---Useful to avoid reissuing TASK_VEHICLE_DRIVE_TO_DESTINATION_2 when already en route.
+---@param vehicle integer
+---@param x number
+---@param y number
+---@param z number
+---@return boolean
+function TaskVehicleIsHeadingToCoords(vehicle, x, y, z) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x659427E0EF36BCDE)  

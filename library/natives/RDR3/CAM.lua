@@ -1038,13 +1038,6 @@ function N_0xe28f73212a813e82(p0, p1, p2, p3) end
 function N_0xe2bb2d6a9fe2ecde(p0) end
 
 ---**`CAM` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4B7945EF4F1BFB2)  
----This native does not have an official description.
----@param cam integer
----@return any
-function N_0xe4b7945ef4f1bfb2(cam) end
-
----**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE6F364DE6C2FDEFE)  
 ---This native does not have an official description.
 function N_0xe6f364de6c2fdefe() end
@@ -1227,6 +1220,13 @@ function SetCamControlsMiniMapHeading(cam, p1) end
 ---@param posY number
 ---@param posZ number
 function SetCamCoord(cam, posX, posY, posZ) end
+
+---**`CAM` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE4B7945EF4F1BFB2)  
+---This native does not have an official description.
+---@param cam integer
+---@return any
+function SetCamDofParams(cam) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5E32817BF6302111)  

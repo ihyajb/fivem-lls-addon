@@ -770,13 +770,6 @@ function N_0xb3b1546d23df8de1(p0, p1, p2, p3, p4) end
 function N_0xc07b91b996c1de89(p0, p1) end
 
 ---**`OBJECT` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCAAF2BCCFEF37F77)  
----_SET_OBJECT_*
----@param object integer
----@param p1 any
-function N_0xcaaf2bccfef37f77(object, p1) end
-
----**`OBJECT` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCBFBD38F2E0A263B)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1032,6 +1025,16 @@ function SetObjectBurnOpacity(object, opacity) end
 ---@param speed number
 ---@param p2 number
 function SetObjectBurnSpeed(object, speed, p2) end
+
+---**`OBJECT` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCAAF2BCCFEF37F77)  
+---Writes an interaction state/flags byte and sets an expiry.
+---Lower 3 bits = timeout preset: 0=none, 1=5s, 2=30s, 3=60s, 4=120s (5=custom, unused here).
+---Bits 3–5 = category (0–7). Bit 6 (0x40) = extra behavior flag.
+---Examples: https://pastebin.com/mwAi5iQY
+---@param object integer
+---@param presetFlags integer
+function SetObjectInteractionPreset(object, presetFlags) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB7017DA4D498269F)  

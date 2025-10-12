@@ -217,11 +217,6 @@ function GetTextSubstring_3(text, begin, length) end
 function HideHudAndRadarThisFrame() end
 
 ---**`HUD` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF4F34A85CA2970D)  
----This native does not have an official description.
-function HideHudThisFrame() end
-
----**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEA600AABAF4B9084)  
 ---This native does not have an official description.
 function HideLoadingOnFadeThisFrame() end
@@ -237,6 +232,20 @@ function HideLoadingOnFadeThisFrame() end
 ---@param p0 boolean
 ---@return integer
 function HudCheckClosestHorse(p0) end
+
+---**`HUD` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9C409BBC492CB5B1)  
+---Returns the hash of the currently highlighted item in the weapon wheel.
+---Only works while the wheel is open.
+---
+---Use in conjunction with IS_CONTROL_JUST_RELEASED(0, 'INPUT_OPEN_WHEEL_MENU') to detect item selection/usage.
+---@return integer
+function HudGetInventoryWheelCurrentlyHighlighted() end
+
+---**`HUD` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBF4F34A85CA2970D)  
+---This native does not have an official description.
+function HudHideThisFrame() end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x71B72B478F8189DC)  
@@ -472,27 +481,11 @@ function N_0x8b55b324a9123f6b(groupId, volume, p2, p3, p4, p5) end
 function N_0x958278b97c4affd8(p0, p1) end
 
 ---**`HUD` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9C409BBC492CB5B1)  
----Returns the hash of the currently highlighted item in the weapon wheel.
----Only works while the wheel is open.
----
----Use in conjunction with IS_CONTROL_JUST_RELEASED(0, 'INPUT_OPEN_WHEEL_MENU') to detect item selection/usage.
----@return integer
-function N_0x9c409bbc492cb5b1() end
-
----**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9D37EB5003E0F2CF)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
 function N_0x9d37eb5003e0f2cf(p0, p1) end
-
----**`HUD` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0E8599243B3F568)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0xb0e8599243b3f568(p0) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBFFF81E12A745A5F)  
@@ -887,6 +880,13 @@ function UiPromptHasMashModeCompleted(prompt) end
 ---@param prompt integer
 ---@return boolean
 function UiPromptHasMashModeFailed(prompt) end
+
+---**`HUD` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB0E8599243B3F568)  
+---This native does not have an official description.
+---@param prompt integer
+---@return boolean
+function UiPromptHasMashModeJustPressed(prompt) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3CE854D250A88DAF)  

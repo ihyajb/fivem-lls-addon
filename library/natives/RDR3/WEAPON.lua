@@ -173,8 +173,25 @@ function GetAmmoInClipByInventoryUid(ped) end
 function GetAmmoInPedWeapon(ped, weaponHash) end
 
 ---**`WEAPON` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4823F13A21F51964)  
+---Return total ammo in ped weapon from its guid, or false if 0
+---Example: https://pastebin.com/u2Hcah3C
+---@param ped integer
+---@return integer, any
+function GetAmmoInPedWeaponFromGuid(ped) end
+
+---**`WEAPON` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC97101A8F311282)  
+---Identical to _GET_AMMO_TYPE_FOR_WEAPON (0x5C2EA6C44F515F34) -> same native handler address
+---Technically returns the first type specified for a weapon
+---Example: local ammoType = _GET_AMMO_RECOMMENDED_TYPE_FOR_WEAPON(joaat('WEAPON_REVOLVER_CATTLEMAN')) -- AmmoType: AMMO_REVOLVER
+---@param weaponHash integer | string
+---@return integer
+function GetAmmoRecommendedTypeForWeapon(weaponHash) end
+
+---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5C2EA6C44F515F34)  
----This native does not have an official description.
+---Identical to _GET_AMMO_RECOMMENDED_TYPE_FOR_WEAPON (0xEC97101A8F311282) -> same native handler address
 ---@param weaponHash integer | string
 ---@return integer
 function GetAmmoTypeForWeapon(weaponHash) end
@@ -293,6 +310,13 @@ function GetDefaultUnarmedWeaponHash(ped) end
 ---@param weaponHash integer | string
 ---@return integer
 function GetDefaultWeaponAttachPoint(weaponHash) end
+
+---**`WEAPON` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3799EFCC3C8CD5E1)  
+---This native does not have an official description.
+---@param ped integer
+---@return number
+function GetLockonRange(ped) end
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC16122C7A20C933)  
@@ -1065,13 +1089,6 @@ function N_0x23bf601a42f329a0(p0) end
 function N_0x2ebf70e1d8c06683(ped, p1) end
 
 ---**`WEAPON` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3799EFCC3C8CD5E1)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x3799efcc3c8cd5e1(p0) end
-
----**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x404514D231DB27A0)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1105,14 +1122,6 @@ function N_0x457b16951ad77c1b(p0) end
 ---@param ped integer
 ---@param toggle boolean
 function N_0x45e57fdd531c9477(ped, toggle) end
-
----**`WEAPON` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4823F13A21F51964)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@return any
-function N_0x4823f13a21f51964(p0, p1) end
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x486C96A0DCD2BC92)  
@@ -1308,13 +1317,6 @@ function N_0xd63b4ba3a02a99e0(p0, p1) end
 ---@param p1 any
 ---@param p2 any
 function N_0xe9b3fec825668291(p0, p1, p2) end
-
----**`WEAPON` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEC97101A8F311282)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0xec97101a8f311282(p0) end
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xECBB26529A737EF6)  

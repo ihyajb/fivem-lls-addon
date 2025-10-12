@@ -1405,15 +1405,6 @@ function N_0x582f73acfe969571(p0, p1, p2) end
 function N_0x5e214112806591ea(entity, boneIndex) end
 
 ---**`ENTITY` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x669655FFB29EF1A9)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x669655ffb29ef1a9(p0, p1, p2, p3) end
-
----**`ENTITY` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C31B06E91518269)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -2237,6 +2228,16 @@ function SetEntityVelocity(entity, x, y, z) end
 ---@param entity integer
 ---@param toggle boolean
 function SetEntityVisible(entity, toggle) end
+
+---**`ENTITY` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x669655FFB29EF1A9)  
+---Sets a material fill level (e.g., stew, mug, chips, jugs).
+---Params: p1: 0 or 2; name: depth/degree of fill label name; fillState: 0.0–1.0 (some up to 3.0)
+---@param entity integer
+---@param expressionType integer
+---@param dofName  string
+---@param fillState number
+function SetMaterialFillLevelForEntity(entity, expressionType, dofName , fillState) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3AE22DEB5BA5A3E6)  

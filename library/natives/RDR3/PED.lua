@@ -209,6 +209,17 @@ function CanKnockPedOffVehicle(ped) end
 function CanPedBeMounted(ped) end
 
 ---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EA9EACBA3B01601)  
+---Returns true if `listener` can hear `source`.
+---If `includeNoiseBoost` is true, the source’s noise radius is applied (easier to hear).
+---It treats the source as louder—its current noise expands the effective hearing range (by subtracting noiseRadius² from dist²), while false uses the baseline distance-only check (stealth).
+---@param source integer
+---@param listener integer
+---@param includeNoiseBoost boolean
+---@return boolean
+function CanPedHearTargetPed(source, listener, includeNoiseBoost) end
+
+---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xEAD42DE3610D0721)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -428,6 +439,17 @@ function ClonePed(ped, isNetwork, bScriptHostPed, copyHeadBlendFlag) end
 ---@param ped integer
 ---@param targetPed integer
 function ClonePedToTarget(ped, targetPed) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB29C553BA582D09E)  
+---Computes the loot table for an animal/human carcass given its model and processing quality.
+---Returns the number of loot entries written. Results are written into outLoot starting at index 1.
+---Usage/Example: https://pastebin.com/LffcaAXy
+---@param model integer | string
+---@param damageCleanliness integer
+---@param skinningQuality integer
+---@return integer, any
+function ComputeLootForPedCarcass(model, damageCleanliness, skinningQuality) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6B89FAA36FC909A3)  
@@ -890,7 +912,8 @@ function GetCarriedAttachedInfoForSlot(p0, p1, p2, p3) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6F43C351A5D51E2F)  
----This native does not have an official description.
+---https://github.com/nativewrappers/nativewrappers/blob/main/src/redm/entities/HorsePeltEntries.ts
+---https://pastebin.com/D58XgYBm
 ---@param mount integer
 ---@return integer, any
 function GetCarriedPeltSkins(mount) end
@@ -1525,6 +1548,15 @@ function GetPedGroupIndex(ped) end
 function GetPedHasInteractedWithPlayer(targetPed, player, flag, durationMs) end
 
 ---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC3995D396F1D97B6)  
+---This native does not have an official description.
+---@param ped integer
+---@param memoryType integer
+---@param ms integer
+---@return boolean
+function GetPedHasSimplePlayerMemoryChanged(ped, memoryType, ms) end
+
+---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1D491CCF7211FB74)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -1544,6 +1576,15 @@ function GetPedIdRange(ped) end
 ---@param ped integer
 ---@return integer
 function GetPedIncapacitationHealth(ped) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE76687023D8C8505)  
+---Used for AUDIO / ANIMSCENE (REFERENCE_REGIONAL_CHARACTER)
+---Params: p1 = 0
+---@param persCharHash integer | string
+---@param p1 integer
+---@return integer
+function GetPedIndexFromPerscharHash(persCharHash, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD7AD3C7EBAF88C92)  
@@ -1790,6 +1831,15 @@ function GetPedsJacker(ped) end
 function GetPedSourceOfDeath(ped) end
 
 ---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C8AA850617651D9)  
+---Checks weather a speech relationship hash was applied on given ped or not.
+---_GET_PED_G* - _GET_PED_I* (INTERACTION?)
+---@param ped integer
+---@param p1 integer | string
+---@return boolean
+function GetPedSpeechRelationship(ped, p1) end
+
+---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x775A1CA7893AA8B5)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -1837,6 +1887,13 @@ function GetPedTranquilizer(ped) end
 ---@param ped integer
 ---@return integer
 function GetPedType(ped) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3D9F958834AB9C30)  
+---This native does not have an official description.
+---@param ped integer
+---@return integer
+function GetPedWhoHogitiedThisPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0CEEB6F4780B1F2F)  
@@ -1928,12 +1985,15 @@ function GetShopItemBaseLayers(shopItem, p1, ped, metapedType, p4) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x77BA37622E22023B)  
----This native does not have an official description.
+---Returns 0 if index invalid/unresolvable; else the shop component hash.
+---resolveSelection: true -> run the resolver (rebuild from ped meta/outfit - MP “net shop” style); false -> use cached entry only (singleplayer - offline).
+---outStatusFlag: Set to 1 if the entry’s internal status byte != 0.
+---outWearableState: See _UPDATE_SHOP_ITEM_WEARABLE_STATE
 ---@param ped integer
 ---@param index integer
----@param p2 boolean
----@return integer, any, any
-function GetShopItemComponentAtIndex(ped, index, p2) end
+---@param resolveSelection boolean
+---@return integer, boolean, integer
+function GetShopItemComponentAtIndex(ped, index, resolveSelection) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5FF9A878C3D115B8)  
@@ -2186,6 +2246,13 @@ function IsAnimalInteractionPossible(ped, animal) end
 ---@param ped integer
 ---@return boolean
 function IsAnimalInteractionRunning(ped) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88A5564B19C15391)  
+---This native does not have an official description.
+---@param ped integer
+---@return boolean
+function IsAnimalSkinned(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x68772DB2B2526F9F)  
@@ -2705,6 +2772,13 @@ function IsPedInMeleeCombat(ped) end
 ---@param modelHash integer | string
 ---@return boolean
 function IsPedInModel(ped, modelHash) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC88D06719070C39)  
+---Detects if ped is afloat in water like swimming or in a boat (driving or standing on it)
+---@param ped integer
+---@return boolean
+function IsPedInNavigableWater(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x078076AB50FB117F)  
@@ -3237,15 +3311,6 @@ function N_0x0d3b1568917ebda0(ped, p1) end
 function N_0x0d497aa69059fe40(p0, p1) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EA9EACBA3B01601)  
----_CAN_PED_B* - _CAN_PED_I*
----@param ped1 integer
----@param ped2 integer
----@param p2 boolean
----@return number
-function N_0x0ea9eacba3b01601(ped1, ped2, p2) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0EEF7A81C17679DB)  
 ---_IS_PED_L* - _IS_PED_M*
 ---@param ped integer
@@ -3376,14 +3441,6 @@ function N_0x1d23d3f70606d788(p0, p1) end
 function N_0x1d4636c90bbefacb(ped, p1) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E017404784AA6A3)  
----This native does not have an official description.
----@param ped integer
----@param p1 integer | string
----@return boolean
-function N_0x1e017404784aa6a3(ped, p1) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1F44B7E283C09EDE)  
 ---Only used in SP R* Scripts
 ---Params: p2 = same as p2 of 0x3C529A827998F9B3
@@ -3473,13 +3530,6 @@ function N_0x29924eb8ee9db926(ped, p1) end
 ---@param p0 any
 ---@param p1 any
 function N_0x29f3539189d3e277(p0, p1) end
-
----**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2B4CE170DE09F346)  
----This native does not have an official description.
----@param ped integer
----@param p1 integer | string
-function N_0x2b4ce170de09f346(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2BA9D7BF629F920C)  
@@ -3652,13 +3702,6 @@ function N_0x3aec4a410ecaf30d(ped) end
 function N_0x3c529a827998f9b3(ped, p1, p2) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3D9F958834AB9C30)  
----This native does not have an official description.
----@param ped integer
----@return integer
-function N_0x3d9f958834ab9c30(ped) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3EFED081B4834BA1)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -3737,16 +3780,6 @@ function N_0x41c23a8e6b344867(ped, p1) end
 ---@param ped integer
 ---@param p1 string
 function N_0x45fea6d5539bd474(ped, p1) end
-
----**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4642182A298187D0)  
----This native does not have an official description.
----@param ped integer
----@param p1 integer
----@param p3 integer
----@param p4 integer
----@return integer, any
-function N_0x4642182a298187d0(ped, p1, p3, p4) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x46BF2A810679D6E6)  
@@ -4207,14 +4240,6 @@ function N_0x7c08e7cb8d951b70(ped, p1) end
 function N_0x7c10221ce718aa72(ped, p1) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7C8AA850617651D9)  
----This native does not have an official description.
----@param ped integer
----@param p1 integer | string
----@return boolean
-function N_0x7c8aa850617651d9(ped, p1) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7E5185B979706210)  
 ---_SET_FORMATION_P*
 ---@param groupId integer
@@ -4238,6 +4263,7 @@ function N_0x7edb3c766b0d073f(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7EE3A8660F38797E)  
+---Seems to return true if the ped is in the intimidated on ass state. Checks if task index 478 (TASK_INTIMIDATED) is active.
 ---_IS_PED_H* - _IS_PED_I*
 ---@param ped integer
 ---@return boolean
@@ -4329,13 +4355,6 @@ function N_0x8822f124788b8d0a(ped, p1) end
 ---@param ped integer
 ---@return boolean
 function N_0x8822f139408b8d0a(ped) end
-
----**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88A5564B19C15391)  
----This native does not have an official description.
----@param ped integer
----@return boolean
-function N_0x88a5564b19c15391(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x88A95BB640FC186F)  
@@ -4823,15 +4842,6 @@ function N_0xb05cc690cde8a4a9(groupId, p1) end
 function N_0xb06f5f1def417216(p0, p1, p2, p3) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB29C553BA582D09E)  
----Used in Script Function SATCHEL_COUNT_BREAKDOWN_COMPONENTS
----@param model integer | string
----@param damageCleanliness integer
----@param p3 integer
----@return any, any
-function N_0xb29c553ba582d09e(model, damageCleanliness, p3) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB4B7C92FCE7347B7)  
 ---_RESET_PED_C*
 ---@param ped integer
@@ -4941,15 +4951,6 @@ function N_0xc2722b252c79e641(ped, p1, p2, p3) end
 ---@param p0 any
 ---@return any
 function N_0xc2ef407645beecdc(p0) end
-
----**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC3995D396F1D97B6)  
----_GET_PED_G* - _GET_PED_I*
----@param ped integer
----@param p1 integer
----@param p2 integer
----@return boolean
-function N_0xc3995d396f1d97b6(ped, p1, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC48AF420371C7407)  
@@ -5207,14 +5208,6 @@ function N_0xd8ceeed54c672b5d(p0, p1, p2, p3, p4, p5, p6) end
 function N_0xd97bc27ac039f681(p0, p1, p2, p3) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC88D06719070C39)  
----_IS_PED_IN_* (near water?)
----Returns true if ped is swimming in water
----@param ped integer
----@return boolean
-function N_0xdc88d06719070c39(ped) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xDC91F22F09BC6C2F)  
 ---Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_GAME
 ---_SET_RELATIONSHIP_*
@@ -5356,16 +5349,6 @@ function N_0xe735a7da22e88359(p0) end
 ---@param player integer
 ---@param p2 integer
 function N_0xe737d5f14304a2ec(ped, player, p2) end
-
----**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE76687023D8C8505)  
----Used for AUDIO / ANIMSCENE (REFERENCE_REGIONAL_CHARACTER)
----Params: p1 = 0
----_GET_PED_IN*
----@param perscharModel integer | string
----@param p1 integer
----@return integer
-function N_0xe76687023d8c8505(perscharModel, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE8ABE3B73FC7FE17)  
@@ -5529,13 +5512,6 @@ function N_0xf9331b3a314eb49d(ped) end
 function N_0xf9cbd46433e36713(ped, targetEntity, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---**`PED` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9CFF5BB70E8A2CB)  
----_SET_PED_WETNESS*
----@param ped integer
----@param p1 number
-function N_0xf9cff5bb70e8a2cb(ped, p1) end
-
----**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA0D206B489A6846)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -5606,6 +5582,14 @@ function N_0xffa1594703ed27ca(ped, p1) end
 function N_0xffde295662405b25(ped) end
 
 ---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1E017404784AA6A3)  
+---Applies speech relationship hash on given ped.
+---@param ped integer
+---@param p1 integer | string
+---@return boolean
+function PedApplySpeechRelationship(ped, p1) end
+
+---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x935CF6E42BAF7F4D)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -5649,6 +5633,13 @@ function PedDuelingDidPlayerHeadshotOpponent(ped) end
 function PedEmotionalPresetLocoMotion(ped, presetName, targetPed, duration, flag) end
 
 ---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2B4CE170DE09F346)  
+---Removes speech relationship hash on given ped.
+---@param ped integer
+---@param p1 integer | string
+function PedRemoveSpeechRelationship(ped, p1) end
+
+---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC494C76A34266E82)  
 ---memoryType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/_PED_SET_SIMPLE_PLAYER_MEMORY
 ---@param ped integer
@@ -5661,6 +5652,17 @@ function PedSetSimplePlayerMemory(ped, memoryType) end
 ---@param ped integer
 ---@return boolean
 function PedWasKilledByHeadshot(ped) end
+
+---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4642182A298187D0)  
+---Queries/refreshes the current 'carry' action for a ped and (optionally) returns involved entities.
+---Usage/Example: https://pastebin.com/qVstcVfz
+---@param ped integer
+---@param carryType integer
+---@param outEntsCount integer
+---@param filterFlags integer
+---@return integer, any
+function RefreshCarryStateForPed(ped, carryType, outEntsCount, filterFlags) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x5463C962BC7777C3)  
@@ -7817,6 +7819,13 @@ function SetPedVisualFieldPeripheralRange(ped, range) end
 function SetPedVoiceVolume(ped, volume) end
 
 ---**`PED` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xF9CFF5BB70E8A2CB)  
+---To be used with SET_PED_WETNESS_HEIGHT, see R* Scripts
+---@param ped integer
+---@param amount number
+function SetPedWetnessAmount(ped, amount) end
+
+---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB5485E4907B53019)  
 ---combined with PED::SET_PED_WETNESS_HEIGHT(), this native makes the ped drenched in water up to the height specified in the other function
 ---@param ped integer
@@ -8277,7 +8286,9 @@ function UpdatePedWoundEffect(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x66B957AAC2EAAEAB)  
----This native does not have an official description.
+---Possible way to pull up / down bandana for male and female models: https://imgur.com/a/Zr4pjze
+---Params: p3 = 0, p4 = true, p5 = 1
+---wearableState: https://github.com/Jump-On-Studios/RedM-jo_libs/blob/main/jo_libs/modules/component/g_client.lua#L138
 ---@param ped integer
 ---@param componentHash integer | string
 ---@param wearableState integer | string

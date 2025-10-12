@@ -8,10 +8,22 @@
 function AddPedToFlock(p0, ped) end
 
 ---**`FLOCK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x67A43EA3F6FE0076)  
+---This native does not have an official description.
+---@param herdHandle integer
+function ClearHerd(herdHandle) end
+
+---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCB4EF7EDAE2E16F1)  
 ---This native does not have an official description.
 ---@return integer
 function CreateHerd() end
+
+---**`FLOCK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE0961AED72642B80)  
+---This native does not have an official description.
+---@param herdHandle integer
+function DeleteHerd(herdHandle) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3B005FF0538ED2A9)  
@@ -69,6 +81,14 @@ function GetSpeciesTuningFloatParam(p0, p1, p2) end
 function IsHerdValid(herdHandle) end
 
 ---**`FLOCK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E13ACC38BA8F9C3)  
+---_IS_E* - _IS_M*
+---@param herdHandle integer
+---@param ped integer
+---@return boolean
+function IsPedInHerd(herdHandle, ped) end
+
+---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0816C31480764AB0)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -99,7 +119,7 @@ function N_0x1520626ffafffa8f(p0, p1) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x17E3E5C46ECCD308)  
----This native does not have an official description.
+---_SET_G* - _SET_H*
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
@@ -142,13 +162,6 @@ function N_0x34b9c4d86df2c2f3(p0) end
 function N_0x36486af7da93a464(p0) end
 
 ---**`FLOCK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x408D1149C5E39C1E)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x408d1149c5e39c1e(p0, p1) end
-
----**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x53187E563F938E76)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -156,14 +169,8 @@ function N_0x408d1149c5e39c1e(p0, p1) end
 function N_0x53187e563f938e76(p0) end
 
 ---**`FLOCK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x67A43EA3F6FE0076)  
----This native does not have an official description.
----@param p0 any
-function N_0x67a43ea3f6fe0076(p0) end
-
----**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x6C57BEA886A20C6B)  
----This native does not have an official description.
+---_SET_G* - _SET_H*
 ---@param p0 any
 ---@param p1 any
 function N_0x6c57bea886a20c6b(p0, p1) end
@@ -186,14 +193,6 @@ function N_0x706b434fefad6a24(p0) end
 ---@param p6 any
 ---@return any
 function N_0x8049b17bec937662(p0, p1, p2, p3, p4, p5, p6) end
-
----**`FLOCK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x9E13ACC38BA8F9C3)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@return any
-function N_0x9e13acc38ba8f9c3(p0, p1) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA881F5C77A560906)  
@@ -219,7 +218,7 @@ function N_0xc72ce37081dae625(p0, p1, p2, p3) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xC95611869E14F8AF)  
----This native does not have an official description.
+---_SET_G* - _SET_H*
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
@@ -228,7 +227,7 @@ function N_0xc95611869e14f8af(p0, p1, p2, p3) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xCC6B5AAFC87BFC7B)  
----This native does not have an official description.
+---_SET_G* - _SET_H*
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
@@ -241,12 +240,6 @@ function N_0xcc6b5aafc87bfc7b(p0, p1, p2) end
 ---@param p1 any
 ---@return any
 function N_0xd95f04a4e73be85e(p0, p1) end
-
----**`FLOCK` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE0961AED72642B80)  
----This native does not have an official description.
----@param p0 any
-function N_0xe0961aed72642b80(p0) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE36D2CB540597EF7)  
@@ -297,7 +290,7 @@ function N_0xf2cca7b68cfab2b9(species, x1, y1, z1, x2, y2, z2, x3, y3, z3, p10, 
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFA821997794F48E7)  
----This native does not have an official description.
+---_SET_G* - _SET_H*
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
@@ -323,6 +316,13 @@ function N_0xfdb008b3bcf5992f(p0, p1, p2) end
 ---@param p0 any
 ---@param p1 any
 function N_0xff1e339ce40eaaaf(p0, p1) end
+
+---**`FLOCK` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x408D1149C5E39C1E)  
+---This native does not have an official description.
+---@param herdHandle integer
+---@param ped integer
+function RemoveHerdPed(herdHandle, ped) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x96AA1304D30E6BC3)  

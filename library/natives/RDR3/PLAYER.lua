@@ -541,6 +541,13 @@ function GetPlayerHuntingWagon(player) end
 function GetPlayerIndex() end
 
 ---**`PLAYER` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBEA3A6E5F5F79A6F)  
+---Get the entity the player is aiming at with/without weapon.
+---@param player integer
+---@return boolean, integer
+function GetPlayerInteractionAimEntity(player) end
+
+---**`PLAYER` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3EE1F7A8C32F24E1)  
 ---This native does not have an official description.
 ---@param player integer
@@ -1728,14 +1735,6 @@ function N_0xbb6ea5d59e926095(category, emote) end
 ---@param p0 any
 ---@param p1 any
 function N_0xbd96185264ddaaea(p0, p1) end
-
----**`PLAYER` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBEA3A6E5F5F79A6F)  
----_GET_PLAYER_I*
----@param p0 any
----@param p1 any
----@return any
-function N_0xbea3a6e5f5f79a6f(p0, p1) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xBED386157F65942C)  

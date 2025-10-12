@@ -35,6 +35,14 @@ function AddTrainTemporaryStop(train, trackIndex, x, y, z) end
 function AreAnyVehicleSeatsFree(vehicle) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x18714953CCED17D3)  
+---Returns true if any wheel is destroyed
+---IS_VEHICLE_DRIVEABLE will still return true even though a wheel is destroyed, like vehicles with 4 wheels.
+---@param vehicle integer
+---@return boolean
+function AreAnyVehicleWheelsDestroyed(vehicle) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x316CDB5B6E8F4110)  
 ---This native does not have an official description.
 ---@param mount integer
@@ -59,6 +67,15 @@ function BreakOffDraftWheel(vehicle, wheelIndex, destroyingForce) end
 ---@param wheelIndex integer
 ---@return integer
 function BreakOffVehicleWheel(vehicle, wheelIndex) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD1EFA8D68BF5D63D)  
+---Only used to break draft vehicle log straps. Coords is always equal to the vehicle coords.
+---@param vehicle integer
+---@param x number
+---@param y number
+---@param z number
+function BreakVehicleStraps(vehicle, x, y, z) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x260BE8F09E326A20)  
@@ -327,6 +344,15 @@ function GetDraftVehicleDesiredSpeed(vehicle) end
 function GetDriverOfVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x785639D89F8451AB)  
+---Returns the world coordinates of a junction node for the given train track configuration.
+---trainTrack: see 0x09034479E6E3E269.
+---@param trainTrack integer | string
+---@param junctionIndex integer
+---@return vector3
+function GetJunctionCoordsForTrainTrack(trainTrack, junctionIndex) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA94F3E0AB9695E19)  
 ---This native does not have an official description.
 ---@return integer
@@ -369,6 +395,22 @@ function GetNumCarsFromTrainConfig(trainConfig) end
 ---@param modelHash integer | string
 ---@return integer
 function GetNumDraftVehicleHarnessPed(modelHash) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x288CBB414C3C2FBB)  
+---Return the number of logs on a draft vehicle.
+---Video demo: https://imgur.com/a/5JEeOij
+---@param vehicle integer
+---@return integer
+function GetNumDraftVehicleLogs(vehicle) end
+
+---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1121B07088ED3013)  
+---Return the number of straps that hold the logs of a draft vehicle.
+---Video demo: https://imgur.com/a/5JEeOij
+---@param vehicle integer
+---@return integer
+function GetNumDraftVehicleStraps(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xA8BA0BAE0173457B)  
@@ -519,7 +561,8 @@ function GetTrainTrackFromTrainVehicle(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x86AFC343CF7F0B34)  
----Outputs junctionIndex, to be used with 0xE6C5E2125EB210C1
+---Outputs junctionIndex, to be used with 0xE6C5E2125EB210C1.
+---trainTrack: see 0x09034479E6E3E269.
 ---@param trainTrack integer | string
 ---@param x number
 ---@param y number
@@ -1037,13 +1080,6 @@ function N_0x0fddee66e3465726(p0) end
 function N_0x104d9a7b1c0d0783(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1121B07088ED3013)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x1121b07088ed3013(p0) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1180A2974D251B7B)  
 ---Returns p1 for 0xBA958F68031DDBFC (stationIndex)
 ---_GET_N* (NEAREST_STATION_FOR_TRAIN?)
@@ -1121,25 +1157,11 @@ function N_0x16b86a49e072aa85() end
 function N_0x172e9dd35858dcd7(p0) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x18714953CCED17D3)  
----_ARE_ANY_VEHICLE_(WHEELS_DESTROYED?)*
----@param vehicle integer
----@return boolean
-function N_0x18714953cced17d3(vehicle) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1A861F899EBBE17C)  
 ---This native does not have an official description.
 ---@param train integer
 ---@param p1 boolean
 function N_0x1a861f899ebbe17c(train, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1BFBAFCC6760FF02)  
----This native does not have an official description.
----@param train integer
----@param p1 boolean
-function N_0x1bfbafcc6760ff02(train, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2045429505158D1A)  
@@ -1172,13 +1194,6 @@ function N_0x23f66c36f8e5eaab(p0, p1) end
 ---@param p0 any
 ---@param p1 any
 function N_0x27e3f2b57209fa54(p0, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x288CBB414C3C2FBB)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x288cbb414c3c2fbb(p0) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2A7413168F6CD5A8)  
@@ -1250,7 +1265,8 @@ function N_0x38e7dd70a242d5cb(trackIndex, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x3ABFA128F5BF5A70)  
----Called together with 0xE6C5E2125EB210C1 in R* Script medium_update
+---Called together with 0xE6C5E2125EB210C1 in R* Script medium_update.
+---trainTrack: see 0x09034479E6E3E269.
 ---@param trainTrack integer | string
 ---@param junctionIndex integer
 ---@param enabled boolean
@@ -1275,13 +1291,6 @@ function N_0x41365db586cd9e8e(trackIndex, p1) end
 ---_H*
 ---@param wagon integer
 function N_0x41f0b254ddf71473(wagon) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42404D57D621601A)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x42404d57d621601a(p0) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x427C919E9809E370)  
@@ -1477,14 +1486,6 @@ function N_0x762fdc4c19e5a981(trainCarriage, p1) end
 ---@param train integer
 ---@param p1 boolean
 function N_0x7840576c50a13dba(train, p1) end
-
----**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x785639D89F8451AB)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@return vector3
-function N_0x785639d89f8451ab(p0, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x7BE0746539DEF0C8)  
@@ -1765,15 +1766,6 @@ function N_0xd0ba1853d76683c8(trackIndex, x, y, z, p4) end
 function N_0xd1df5e54f4acbe1a(p0, p1, p2, p3, p4, p5, p6) end
 
 ---**`VEHICLE` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD1EFA8D68BF5D63D)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0xd1efa8d68bf5d63d(p0, p1, p2, p3) end
-
----**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xD21A3D421E7F09F7)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1944,6 +1936,15 @@ function N_0xff2b1f59fb892f14(p0) end
 function N_0xfffe15b433300b8c(p0, p1, p2) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x42404D57D621601A)  
+---Returns the log prop entity that is currently detaching/falling from a draft (log) wagon. Returns 0 if no log is in the falling phase.
+---R* scripts call this repeatedly to fetch each fallen piece, then apply forces to it.
+---Video demo: https://imgur.com/a/5JEeOij
+---@param vehicle integer
+---@return integer
+function RecoverDraftVehicleFallingLog(vehicle) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xFE9AB3354ACE6C9C)  
 ---This native does not have an official description.
 ---@param speedzone integer
@@ -2025,7 +2026,7 @@ function ResetVehicleStuckTimer(vehicle, nullAttributes) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x09034479E6E3E269)  
 ---Outputs track hash and junction index on given train vehicle handle.
----_RESET_VEHICLE_* (?)
+---trainTrack: https://pastebin.com/mhy0dTXs
 ---@param train integer
 ---@return boolean, integer, integer
 function ReturnTrainInfoFromHandle(train) end
@@ -2317,6 +2318,13 @@ function SetRandomBoats(toggle) end
 function SetRandomTrains(toggle) end
 
 ---**`VEHICLE` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1BFBAFCC6760FF02)  
+---Enables/disables the whistle on a specific train entity.
+---@param train integer
+---@param enabled boolean
+function SetRandomTrainsWhistleEnabled(train, enabled) end
+
+---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x1F91D44490E1EA0C)  
 ---This native does not have an official description.
 ---@param multiplier number
@@ -2371,7 +2379,7 @@ function SetTrainStopsForStations(train, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xE6C5E2125EB210C1)  
----trainTrack: FREIGHT_GROUP, TRAINS3, BRAITHWAITES2_TRACK_CONFIG, TRAINS_OLD_WEST01, TRAINS_OLD_WEST03, TRAINS_NB1, TRAINS_INTERSECTION1_ANN
+---trainTrack: see 0x09034479E6E3E269.
 ---@param trainTrack integer | string
 ---@param junctionIndex integer
 ---@param enabled boolean

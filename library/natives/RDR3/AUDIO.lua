@@ -1360,6 +1360,7 @@ function SetAnimalMood(animal, mood) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0xB9EFD5C25018725A)  
+---Audio flags can be found here: https://pastebin.com/40qPV6EJ
 ---https://github.com/femga/rdr3_discoveries/tree/master/audio/audio_flags
 ---@param flagName string
 ---@param toggle boolean
