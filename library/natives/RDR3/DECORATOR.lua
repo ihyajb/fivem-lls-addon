@@ -38,7 +38,7 @@ function DecorGetInt(entity, propertyName) end
 ---@param entity integer
 ---@param propertyName string
 ---@return integer
-function DecorGetUint8(entity, propertyName) end
+function DecorGetPlayerIndex(entity, propertyName) end
 
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x72355278C069F272)  
@@ -50,18 +50,28 @@ function DecorIsRegisteredAsType(propertyName, type) end
 
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0B253D644E3C36B3)  
----This native does not have an official description.
+---type:
+---enum eDecorType
+---{
+---	DECOR_TYPE_UNKNOWN,
+---	DECOR_TYPE_FLOAT,
+---	DECOR_TYPE_BOOL,
+---	DECOR_TYPE_INT,
+---	DECOR_TYPE_STRING,
+---	DECOR_TYPE_TIME,
+---	DECOR_TYPE_PLAYER_INDEX
+---};
 ---@param propertyName string
 ---@param type integer
 function DecorRegister(propertyName, type) end
 
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4587374F88B7F6C2)  
----This native does not have an official description.
+---type: see DECOR_REGISTER
 ---@param propertyName string
 ---@param type integer
----@param p2 boolean
-function DecorRegister_2(propertyName, type, p2) end
+---@param isNetworked boolean
+function DecorRegisterNetworked(propertyName, type, isNetworked) end
 
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x2BA7F5877A088A1D)  
@@ -106,6 +116,15 @@ function DecorSetFloat(entity, propertyName, value) end
 function DecorSetInt(entity, propertyName, value) end
 
 ---**`DECORATOR` `client`**  
+---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4BDC83150D43772D)  
+---This native does not have an official description.
+---@param entity integer
+---@param propertyName string
+---@param value integer
+---@return boolean
+function DecorSetPlayerIndex(entity, propertyName, value) end
+
+---**`DECORATOR` `client`**  
 ---[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x0671C1A3FF7AFDFC)  
 ---This native does not have an official description.
 ---@param entity integer
@@ -113,13 +132,4 @@ function DecorSetInt(entity, propertyName, value) end
 ---@param value string
 ---@return boolean
 function DecorSetString(entity, propertyName, value) end
-
----**`DECORATOR` `client`**  
----[Native Documentation](https://alloc8or.re/rdr3/nativedb/?n=0x4BDC83150D43772D)  
----This native does not have an official description.
----@param entity integer
----@param propertyName string
----@param value integer
----@return boolean
-function DecorSetUint8(entity, propertyName, value) end
 
