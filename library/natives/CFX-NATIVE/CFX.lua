@@ -1173,6 +1173,14 @@ function GetCalmingQuadDampening(waterQuad) end
 function GetCamMatrix(camera) end
 
 ---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xADA7DB9D)  
+---Returns whether a specific client configuration flag is currently enabled.
+---You can find a list of configuration flags in [`SET_CLIENT_CONFIG_BOOL`](#\_0xD174EF7E).
+---@param flagIndex integer
+---@return boolean
+function GetClientConfigBool(flagIndex) end
+
+---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x59FC24A7)  
 ---Get all track nodes and their track ids within the radius of the specified coordinates.
 ---@param position vector3
@@ -2029,6 +2037,13 @@ function GetMapZoomDataLevel(index) end
 function GetMinimapType() end
 
 ---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xDD31EC4E)  
+---returns the entity of the mount the ped is on
+---@param ped integer
+---@return integer
+function GetMount(ped) end
+
+---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23B2A641)  
 ---Gets the specific entity type (as an integer), which can be one of the following defined down below:
 ---
@@ -2452,6 +2467,13 @@ function GetPedPropGlobalIndexFromCollection(ped, anchorPoint, collection, propI
 ---@return integer
 function GetPedRelationshipGroupHash(ped) end
 
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xA0F3B420)  
+---This native does not have an official description.
+---@param ped integer
+---@return number
+function GetPedScale(ped) end
+
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84FE084)  
 ---Gets the script task command currently assigned to the ped.
@@ -2502,6 +2524,20 @@ function GetPedStealthMovement(ped) end
 ---@param ped integer
 ---@return number
 function GetPedSweat(ped) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xF402C171)  
+---This native does not have an official description.
+---@param ped integer
+---@return number
+function GetPedWetness(ped) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x2545ADE0)  
+---This native does not have an official description.
+---@param ped integer
+---@return number
+function GetPedWetnessHeight(ped) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x433C765D)  
@@ -2975,6 +3011,13 @@ function GetRuntimeTextureWidth(tex) end
 ---A getter for [SET_SCENARIO_PED_DENSITY_MULTIPLIER_THIS_FRAME](#\_0x7A556143A1C03898).
 ---@return number
 function GetScenarioPedDensityMultiplier() end
+
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x57B78C17)  
+---returns the seat index of the specified ped, if not seated or not in vehicle returns -3 just client natives
+---@param ped integer
+---@return integer
+function GetSeatPedIsUsing(ped) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD240123E)  
@@ -4417,6 +4460,28 @@ function IsPedComponentVariationGen9Exclusive(ped, componentId, drawableId) end
 function IsPedHandcuffed(ped) end
 
 ---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x3B0171EE)  
+---returns true if the specified ped is in any vehicle
+---@param ped integer
+---@return boolean
+function IsPedInAnyVehicle(ped) end
+
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x7DA6BC83)  
+---returns true if the specified ped is in the speficied vehicle
+---@param ped integer
+---@param vehicle integer
+---@return boolean
+function IsPedInVehicle(ped, vehicle) end
+
+---**`CFX` `server`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x43103006)  
+---returns true if the specified ped is on a mount
+---@param ped integer
+---@return boolean
+function IsPedOnMount(ped) end
+
+---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC833BBE1)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -5634,6 +5699,23 @@ function SetCalmingQuadBounds(waterQuad, minX, minY, maxX, maxY) end
 ---@param dampening number
 ---@return boolean
 function SetCalmingQuadDampening(calmingQuad, dampening) end
+
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0xD174EF7E)  
+---```cpp
+---enum ClientConfigFlag
+---{
+---    WeaponsNoAutoReload = 0,
+---	UIVisibleWhenDead = 1,
+---	DisableDeathAudioScene = 2
+---}
+---```
+---
+---Sets the value of a client configuration flag.
+---This native allows enabling or disabling specific one-time client-side features.
+---@param flagIndex integer
+---@param enabled boolean
+function SetClientConfigBool(flagIndex, enabled) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x341B16D2)  
@@ -7715,10 +7797,13 @@ function SetPlayerTalkingOverride(player, state) end
 function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
 
 ---**`CFX` `client`**  
----[Native Documentation](https://docs.fivem.net/natives/?_0xB90BBC6E)  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x8C3EC64F)  
 ---This completely disables pedestrian vehicles from reacting to sirens. They will not try to do any maneuver to evade.
 ---@param state boolean
-function SetReactionToVehicleWithSirenDisabled(state) end
+function SetReactionToVehicleSirenDisabled(state) end
+
+---@deprecated
+SetReactionToVehicleWithSirenDisabled = SetReactionToVehicleSirenDisabled
 
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x21C7A35B)  
