@@ -1576,6 +1576,7 @@ function GetFuelConsumptionState() end
 ---    *   3323
 ---    *   3407
 ---    *   3570
+---    *   3717
 ---*   RedM
 ---    *   1311
 ---    *   1355
@@ -2038,7 +2039,7 @@ function GetMinimapType() end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDD31EC4E)  
----returns the entity of the mount the ped is on
+---This native does not have an official description.
 ---@param ped integer
 ---@return integer
 function GetMount(ped) end
@@ -3014,7 +3015,7 @@ function GetScenarioPedDensityMultiplier() end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57B78C17)  
----returns the seat index of the specified ped, if not seated or not in vehicle returns -3 just client natives
+---This native does not have an official description.
 ---@param ped integer
 ---@return integer
 function GetSeatPedIsUsing(ped) end
@@ -4461,14 +4462,14 @@ function IsPedHandcuffed(ped) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3B0171EE)  
----returns true if the specified ped is in any vehicle
+---This native does not have an official description.
 ---@param ped integer
 ---@return boolean
 function IsPedInAnyVehicle(ped) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7DA6BC83)  
----returns true if the specified ped is in the speficied vehicle
+---This native does not have an official description.
 ---@param ped integer
 ---@param vehicle integer
 ---@return boolean
@@ -4476,7 +4477,7 @@ function IsPedInVehicle(ped, vehicle) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x43103006)  
----returns true if the specified ped is on a mount
+---This native does not have an official description.
 ---@param ped integer
 ---@return boolean
 function IsPedOnMount(ped) end
@@ -5707,7 +5708,8 @@ function SetCalmingQuadDampening(calmingQuad, dampening) end
 ---{
 ---    WeaponsNoAutoReload = 0,
 ---	UIVisibleWhenDead = 1,
----	DisableDeathAudioScene = 2
+---	DisableDeathAudioScene = 2,
+---	DisableRemoteAttachments = 3
 ---}
 ---```
 ---
@@ -6580,8 +6582,7 @@ function SetLightVolumetricFadeDistance(volumetricFadeDistance) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1722C938)  
----Sets whether or not `SHUTDOWN_LOADING_SCREEN` automatically shuts down the NUI frame for the loading screen. If this is enabled,
----you will have to manually invoke `SHUTDOWN_LOADING_SCREEN_NUI` whenever you want to hide the NUI loading screen.
+---**Note**: This native is deprecated and doesn't work anymore. Use [loadscreen_manual_shutdown](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/#loadscreen_manual_shutdown) in the fxmanifest.lua instead.
 ---@param manualShutdown boolean
 function SetManualShutdownLoadingScreenNui(manualShutdown) end
 
