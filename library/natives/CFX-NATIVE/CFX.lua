@@ -29,9 +29,6 @@ function AddAuthorizedParachutePackModel(modelNameHash) end
 ---Adds a rectangular blip for the specified coordinates/area.
 ---It is recommended to use [SET_BLIP_ROTATION](#\_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#\_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
 ---By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
----Example image:
----![minimap](https://i.imgur.com/qLbXWcQ.png)
----![big map](https://i.imgur.com/0j7O7Rh.png)
 ---(Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
 ---
 ---**This is the server-side RPC native equivalent of the client native [\_ADD_BLIP_FOR_AREA](?\_0xCE5D0E5E315DB238).**
@@ -59,9 +56,9 @@ function AddBlipForCoord(x, y, z) end
 ---Create a blip that by default is red (enemy), you can use [SET_BLIP_AS_FRIENDLY](#\_0xC6F43D0E) to make it blue (friend).\
 ---Can be used for objects, vehicles and peds.
 ---Example of enemy:
----![enemy](https://i.imgur.com/fl78svv.png)
+---![enemy](https://i.imgur.com/LIizV6S.png)
 ---Example of friend:
----![friend](https://i.imgur.com/Q16ho5d.png)
+---![friend](https://i.imgur.com/XrCuvZP.png)
 ---
 ---**This is the server-side RPC native equivalent of the client native [ADD_BLIP_FOR_ENTITY](?\_0x5CDE92C702A8FCE7).**
 ---@param entity integer
@@ -72,7 +69,7 @@ function AddBlipForEntity(entity) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4626756C)  
 ---Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](#\_0xC6F43D0E))
 ---Example image:
----![example](https://i.imgur.com/9hQl3DB.png)
+---![example](https://i.imgur.com/fDCmHVD.png)
 ---
 ---**This is the server-side RPC native equivalent of the client native [ADD_BLIP_FOR_RADIUS](?\_0x46818D79B1F7499A).**
 ---@param posX number
@@ -1576,7 +1573,7 @@ function GetFuelConsumptionState() end
 ---    *   3323
 ---    *   3407
 ---    *   3570
----    *   3717
+---    *   3751
 ---*   RedM
 ---    *   1311
 ---    *   1355
