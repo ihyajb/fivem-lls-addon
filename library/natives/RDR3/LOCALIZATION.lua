@@ -1,13 +1,13 @@
 ---@meta
 
----**`LOCALIZATION` ``**  
+---**`LOCALIZATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x45D50415E4D885FF)  
 ---Returns true if the current language is american, french, german, italian, spanish, brazilian or mexican.
 ---_DOES_*
 ---@return boolean
 function DoesCurrentLanguageSupportCondensedStyle() end
 
----**`LOCALIZATION` ``**  
+---**`LOCALIZATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDB917DA5C6835FCC)  
 ---0 = american (en-US)
 ---1 = french (fr-FR)
@@ -25,7 +25,7 @@ function DoesCurrentLanguageSupportCondensedStyle() end
 ---@return integer
 function GetCurrentLanguage() end
 
----**`LOCALIZATION` ``**  
+---**`LOCALIZATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x76E30B799EBEEA0F)  
 ---0 = DATE_FORMAT_DMY
 ---1 = DATE_FORMAT_MDY
@@ -35,7 +35,7 @@ function GetCurrentLanguage() end
 ---@return integer
 function LocalizationGetSystemDateType() end
 
----**`LOCALIZATION` ``**  
+---**`LOCALIZATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C1A05F86AE6ACB5)  
 ---Same return values as GET_CURRENT_LANGUAGE
 ---@return integer

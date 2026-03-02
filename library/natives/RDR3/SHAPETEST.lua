@@ -1,6 +1,6 @@
 ---@meta
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEDE8AC7C5108FB1D)  
 ---Returns the result of a shape test: 0 if the handle is invalid, 1 if the shape test is still pending, or 2 if the shape test has completed, and the handle should be invalidated.
 ---
@@ -16,7 +16,7 @@
 ---@return integer, boolean, vector3, vector3, integer
 function GetShapeTestResult(shapeTestHandle) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x04AA59CA40571C2E)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -24,7 +24,7 @@ function GetShapeTestResult(shapeTestHandle) end
 ---@return any
 function N_0x04aa59ca40571c2e(p0, p1) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x377906D8A31E5586)  
 ---Does the same as 0x7EE9F5D83DD4F90E, except blocking until the shape test completes.
 ---@param x1 number
@@ -39,7 +39,7 @@ function N_0x04aa59ca40571c2e(p0, p1) end
 ---@return integer
 function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entityToIgnore, p8) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE466162C4401D18)  
 ---This native does not have an official description.
 ---@param posX number
@@ -58,7 +58,7 @@ function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flag
 ---@return integer
 function StartShapeTestBox(posX, posY, posZ, dimensionsX, dimensionsY, dimensionsZ, rotX, rotY, rotZ, rotationOrder, flags, entityToIgnore, options) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x28579D1B8F8AAC80)  
 ---This native does not have an official description.
 ---@param x1 number
@@ -74,7 +74,7 @@ function StartShapeTestBox(posX, posY, posZ, dimensionsX, dimensionsY, dimension
 ---@return integer
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entityToIgnore, p9) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7EE9F5D83DD4F90E)  
 ---Asynchronously starts a line-of-sight (raycast) world probe shape test.
 ---
@@ -93,7 +93,7 @@ function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entityToIg
 ---@return integer
 function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9839013D8B6014F1)  
 ---Old name: _START_SHAPE_TEST_SURROUNDING_COORDS
 ---@param flag integer
@@ -102,7 +102,7 @@ function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 ---@return integer, vector3, vector3
 function StartShapeTestMouseCursorLosProbe(flag, entity, flag2) end
 
----**`SHAPETEST` ``**  
+---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAA5B7C8309F73230)  
 ---This native does not have an official description.
 ---@param x1 number

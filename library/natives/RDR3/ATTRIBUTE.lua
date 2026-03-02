@@ -1,6 +1,6 @@
 ---@meta
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75415EE0CB583760)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -8,14 +8,14 @@
 ---@param p2 integer
 function AddAttributePoints(ped, attributeIndex, p2) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF8DAC3D85636C241)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
 ---@param attributeIndex integer
 function DisableAttributeOverpower(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4AF5A4C7B9157D14)  
 ---coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
 ---
@@ -26,7 +26,7 @@ function DisableAttributeOverpower(ped, attributeIndex) end
 ---@param makeSound boolean
 function EnableAttributeCoreOverpower(ped, coreIndex, value, makeSound) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6A7C08DF2E28B28)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---
@@ -37,7 +37,7 @@ function EnableAttributeCoreOverpower(ped, coreIndex, value, makeSound) end
 ---@param makeSound boolean
 function EnableAttributeOverpower(ped, attributeIndex, value, makeSound) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x147149F2E909323C)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -45,7 +45,7 @@ function EnableAttributeOverpower(ped, attributeIndex, value, makeSound) end
 ---@return integer
 function GetAttributeBaseRank(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EFA71F4B4330E04)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -53,7 +53,7 @@ function GetAttributeBaseRank(ped, attributeIndex) end
 ---@return integer
 function GetAttributeBonusRank(ped, coreIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB429F58803D285B1)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -61,7 +61,7 @@ function GetAttributeBonusRank(ped, coreIndex) end
 ---@return number
 function GetAttributeCoreOverpowerSecondsLeft(ped, coreIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x36731AC041289BB1)  
 ---Gets the ped's core value on a scale of 0 to 100.
 ---coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
@@ -70,7 +70,7 @@ function GetAttributeCoreOverpowerSecondsLeft(ped, coreIndex) end
 ---@return integer
 function GetAttributeCoreValue(ped, coreIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C9F782180712742)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -78,7 +78,7 @@ function GetAttributeCoreValue(ped, coreIndex) end
 ---@return number
 function GetAttributeOverpowerSecondsLeft(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x219DA04BAA9CB065)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -86,7 +86,7 @@ function GetAttributeOverpowerSecondsLeft(ped, attributeIndex) end
 ---@return integer
 function GetAttributePoints(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4C8E23E29040DE0)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -94,7 +94,7 @@ function GetAttributePoints(ped, attributeIndex) end
 ---@return integer
 function GetAttributeRank(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x94A7F191DB49A44D)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param modelHash integer | string
@@ -103,7 +103,7 @@ function GetAttributeRank(ped, attributeIndex) end
 ---@return integer
 function GetDefaultAttributePointsNeededForRank(modelHash, attributeIndex, rank) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x958DD43D41F89A47)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -119,7 +119,7 @@ function GetDefaultAttributeRank(ped, attributeIndex) end
 ---@return integer
 function GetDefaultMaxAttributeRank(modelHash, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x223BF310F854871C)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -127,7 +127,7 @@ function GetDefaultMaxAttributeRank(modelHash, attributeIndex) end
 ---@return integer
 function GetMaxAttributePoints(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x704674A0535A471D)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -135,7 +135,7 @@ function GetMaxAttributePoints(ped, attributeIndex) end
 ---@return integer
 function GetMaxAttributeRank(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x200373A8DF081F22)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -143,7 +143,7 @@ function GetMaxAttributeRank(ped, attributeIndex) end
 ---@return boolean
 function IsAttributeCoreOverpowered(ped, coreIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x103C2F885ABEB00B)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -151,7 +151,7 @@ function IsAttributeCoreOverpowered(ped, coreIndex) end
 ---@return boolean
 function IsAttributeOverpowered(ped, attributeIndex) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5DA12E025D47D4E5)  
 ---attributeIndex:
 ---enum ePedAttribute
@@ -185,7 +185,7 @@ function IsAttributeOverpowered(ped, attributeIndex) end
 ---@param newValue integer
 function SetAttributeBaseRank(ped, attributeIndex, newValue) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x920F9488BD115EFB)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -193,7 +193,7 @@ function SetAttributeBaseRank(ped, attributeIndex, newValue) end
 ---@param newValue integer
 function SetAttributeBonusRank(ped, attributeIndex, newValue) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC6258F41D86676E0)  
 ---coreIndex:
 ---enum eAttributeCore
@@ -207,7 +207,7 @@ function SetAttributeBonusRank(ped, attributeIndex, newValue) end
 ---@param value integer
 function SetAttributeCoreValue(ped, coreIndex, value) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x09A59688C26D88DF)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---@param ped integer
@@ -215,7 +215,7 @@ function SetAttributeCoreValue(ped, coreIndex, value) end
 ---@param p2 integer
 function SetAttributePoints(ped, attributeIndex, p2) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4D3A1C008F250DF)  
 ---Displays status effects on core icons (includes warnings).
 ---
@@ -241,26 +241,26 @@ function SetAttributePoints(ped, attributeIndex, p2) end
 ---@param statusEffectType integer
 function SetStatusEffectCoreIcon(statusEffectType) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFB6E111908502871)  
 ---Starts core periodic icon.
 ---statusEffectType: see 0xA4D3A1C008F250DF
 ---@param statusEffectType integer
 function SetStatusEffectPeriodicIcon(statusEffectType) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7E2C766ADB2C5F1A)  
 ---Params: p1 is related to satchel_category
 ---@param p0 any
 ---@param p1 integer
 function StartItemPreview(p0, p1) end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD962F8579D702DB5)  
 ---This native does not have an official description.
 function StopItemPreview() end
 
----**`ATTRIBUTE` ``**  
+---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FC4C027FD0936F4)  
 ---Stops periodic icon.
 ---statusEffectType: see 0xA4D3A1C008F250DF

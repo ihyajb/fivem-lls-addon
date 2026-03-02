@@ -1,6 +1,6 @@
 ---@meta
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFEC4B0A1A3ED515)  
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
 ---@param transportEntity integer
@@ -8,7 +8,7 @@
 ---@return integer
 function GetPedInTransportSeat(transportEntity, seatIndex) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF382C92CCC1CCDBC)  
 ---flagId: see SET_TRANSPORT_CONFIG_FLAG
 ---@param transportEntity integer
@@ -17,14 +17,14 @@ function GetPedInTransportSeat(transportEntity, seatIndex) end
 ---@return boolean
 function GetTransportConfigFlag(transportEntity, flagId, p2) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE195C5A82156321D)  
 ---See _SET_TRANSPORT_USAGE_FLAGS
 ---@param transportEntity integer
 ---@return any, integer
 function GetTransportUsageFlags(transportEntity) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x619E63980BFC0096)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -33,7 +33,7 @@ function GetTransportUsageFlags(transportEntity) end
 ---@return boolean
 function IsPedEnteringTransport(ped, transportEntity, p2) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x660639BC60157048)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -41,7 +41,7 @@ function IsPedEnteringTransport(ped, transportEntity, p2) end
 ---@return boolean
 function IsPedExitingTransport(ped, transportEntity) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x159EF5B6EDCE00E8)  
 ---Checks if ped is placed on target transportEntity
 ---@param ped integer
@@ -49,7 +49,7 @@ function IsPedExitingTransport(ped, transportEntity) end
 ---@return boolean
 function IsPedOnTransportEntity(ped, transportEntity) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC44F405A6B98D03)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -57,7 +57,7 @@ function IsPedOnTransportEntity(ped, transportEntity) end
 ---@return boolean
 function IsPedOnTransportSeat(ped, p1) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x43FF27FC1829C202)  
 ---Called together with IS_VEHICLE_SEAT_FREE
 ---@param transportEntity integer
@@ -65,7 +65,7 @@ function IsPedOnTransportSeat(ped, p1) end
 ---@return boolean
 function IsTransportSeatFree(transportEntity, seatIndex) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2E2E06023D07631E)  
 ---This native does not have an official description.
 ---@param transportEntity integer
@@ -73,7 +73,7 @@ function IsTransportSeatFree(transportEntity, seatIndex) end
 ---@return boolean
 function IsTransportSeatOccupied(transportEntity, seatIndex) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4248AB2EEB3C75AD)  
 ---_SET_TRANSPORT_*
 ---@param transportEntity integer
@@ -81,47 +81,47 @@ function IsTransportSeatOccupied(transportEntity, seatIndex) end
 ---@param p2 boolean
 function N_0x4248ab2eeb3c75ad(transportEntity, ped, p2) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4B6C9A43F7D9109B)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
 function N_0x4b6c9a43f7d9109b(p0, p1) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5639FBEA922788DA)  
 ---_CLEAR_A*
 ---@param transportEntity integer
 function N_0x5639fbea922788da(transportEntity) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8C8371EDFAF014A0)  
 ---_SET_TRANSPORT_*
 ---@param ped integer
 ---@param p1 number
 function N_0x8c8371edfaf014a0(ped, p1) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF8C20282B237E3F7)  
 ---_SET_TRANSPORT_*
 ---@param ped integer
 function N_0xf8c20282b237e3f7(ped) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x67F7CEAC2391E114)  
 ---This native does not have an official description.
 ---@param transportEntity integer
 ---@param state boolean
 function SetAiCanUseTransport(transportEntity, state) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8886D83A430537FD)  
 ---This native does not have an official description.
 ---@param ped integer
 ---@param flags integer
 function SetPedOffTransportSeat(ped, flags) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE588B5A8A005CB5E)  
 ---seat: see CREATE_PED_INSIDE_VEHICLE
 ---@param ped integer
@@ -130,7 +130,7 @@ function SetPedOffTransportSeat(ped, flags) end
 ---@param flags integer
 function SetPedOnTransportSeat(ped, transportEntity, seat, flags) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7079F4C72896756)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -140,14 +140,14 @@ function SetPedOnTransportSeat(ped, transportEntity, seat, flags) end
 ---@param seatIndex integer
 function SetPedUseTransportSeatPreference(ped, transportEntity, preferenceSlot, p3, seatIndex) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDD0660C997DE94FD)  
 ---This native does not have an official description.
 ---@param transportEntity integer
 ---@param flags integer
 function SetTransportAccessibleSeatFlags(transportEntity, flags) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBA8818212633500A)  
 ---flagId:
 ---enum eTransportConfigFlags
@@ -179,14 +179,14 @@ function SetTransportAccessibleSeatFlags(transportEntity, flags) end
 ---@param value boolean
 function SetTransportConfigFlag(transportEntity, flagId, value) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x13F138225C202F66)  
 ---This native does not have an official description.
 ---@param transportEntity integer
 ---@param seatIndex integer
 function SetTransportPrioritySeat(transportEntity, seatIndex) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE2487779957FE897)  
 ---enum eTransportUsageFlags
 ---{
@@ -207,13 +207,13 @@ function SetTransportPrioritySeat(transportEntity, seatIndex) end
 ---@param flags integer
 function SetTransportUsageFlags(transportEntity, flags) end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAEE3ADD08829CB6F)  
 ---This native does not have an official description.
 ---@return any
 function TaskEnterTransport() end
 
----**`AITRANSPORT` ``**  
+---**`AITRANSPORT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC273A5B8488F7838)  
 ---This native does not have an official description.
 ---@return any

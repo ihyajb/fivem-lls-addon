@@ -1,34 +1,34 @@
 ---@meta
 
----**`INTERACTION` ``**  
+---**`INTERACTION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2B8B605F2A9E64BF)  
 ---Returns true if player is moving mouse while cursor is active
 ---_PI* - _PO*
 ---@return boolean
 function PointerIsBeingMoved() end
 
----**`INTERACTION` ``**  
+---**`INTERACTION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x61CAE9D1FD055E44)  
 ---Returns true if player is holding LMB while cursor is active
 ---_PI* - _PO*
 ---@return boolean
 function PointerIsLeftButtonHeld() end
 
----**`INTERACTION` ``**  
+---**`INTERACTION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF7F51A57349739F2)  
 ---Returns true if player releases LMB if cursor is active
 ---_PI* - _PO*
 ---@return boolean
 function PointerIsLeftButtonJustReleased() end
 
----**`INTERACTION` ``**  
+---**`INTERACTION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0546B117BB17548B)  
 ---Allows camera to be moved if middle mouse button is held while in first person
 ---Must be called every frame
 ---_SET*
 function SetAllowFirstPersonMouseCameraMovement() end
 
----**`INTERACTION` ``**  
+---**`INTERACTION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7F5858AAB5A58CCE)  
 ---Changes the mouse cursor's sprite.
 ---
@@ -38,7 +38,7 @@ function SetAllowFirstPersonMouseCameraMovement() end
 ---@param spriteId integer
 function SetMouseCursorStyle(spriteId) end
 
----**`INTERACTION` ``**  
+---**`INTERACTION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF12E4CCAF249DC10)  
 ---Shows the cursor on screen for one frame.
 ---

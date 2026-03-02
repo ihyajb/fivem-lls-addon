@@ -1,6 +1,6 @@
 ---@meta
 
----**`UIDEBUG` ``**  
+---**`UIDEBUG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16794E044C9EFB58)  
 ---Note: you must use VAR_STRING
 ---@param text string
@@ -8,7 +8,7 @@
 ---@param y number
 function BgDisplayText(text, x, y) end
 
----**`UIDEBUG` ``**  
+---**`UIDEBUG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16FA5CE47F184F1E)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/colours
 ---@param red integer
@@ -17,7 +17,7 @@ function BgDisplayText(text, x, y) end
 ---@param alpha integer
 function BgSetTextColor(red, green, blue, alpha) end
 
----**`UIDEBUG` ``**  
+---**`UIDEBUG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1253A3C870B6843)  
 ---This native does not have an official description.
 ---@param scaleX number

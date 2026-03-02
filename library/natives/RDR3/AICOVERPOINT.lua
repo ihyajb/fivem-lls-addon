@@ -1,6 +1,6 @@
 ---@meta
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x64340DC208D671D5)  
 ---activates a cover layer, these seem to be for specifc scenes in SP for example where a table is flipped using "grand_korr_poker_table_flipped" see more in levels\rdr3\coverlayers.rpf 
 ---@param coverLayer string
@@ -14,33 +14,33 @@ function ActivateCoverLayer(coverLayer) end
 ---@return any
 function AddCoverBlockingArea() end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x975BD6351648935F)  
 ---This native does not have an official description.
 ---@return integer, any
 function AddScriptedCoverPoint() end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8CBE916CFC64AD5C)  
 ---This native does not have an official description.
 ---@param ped integer
 ---@return boolean
 function AreLoadCoverAnimsLoaded(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7A1FDCF35EAA140F)  
 ---deactivates a cover layer activated with 0x64340DC208D671D5 coverLayer: see levels_0/levels/rdr3/coverlayers
 ---@param coverLayer string
 function DeactivateCoverLayer(coverLayer) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC276FE69DDA22BAD)  
 ---This native does not have an official description.
 ---@param handle integer
 ---@return boolean
 function DoesCoverPointExist(handle) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5F5B1B7E8E8F94C6)  
 ---1 = In cover while crouched
 ---2 = In cover while standing
@@ -49,7 +49,7 @@ function DoesCoverPointExist(handle) end
 ---@return integer
 function GetCoverPointStateFromPed(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x957D7E750216D74B)  
 ---returns the active transition state of a cover point for about 2 seconds unless its peeking
 --- 1 - transition from pointing a gun to not pointing a gun
@@ -68,58 +68,58 @@ function GetCoverPointStateFromPed(ped) end
 ---@return integer
 function GetPedCoverPointTransitionState(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x140B3CB1D424A945)  
 ---returns the ped that is using this cover point created by ADD_COVER_POINT and adding the ped using tasks like `TASK_PUT_PED_DIRECTLY_(*`
 ---@param coverpoint integer
 ---@return integer
 function GetPedFromCoverPoint(coverpoint) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C7A9C2C953128FE)  
 ---This native does not have an official description.
 ---@param ped integer
 function N_0x3c7a9c2c953128fe(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x53E4D0C079CA6855)  
 ---This native does not have an official description.
 ---@param handle integer
 ---@return integer
 function N_0x53e4d0c079ca6855(handle) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBA51A294C73292E)  
 ---This native does not have an official description.
 ---@return any
 function N_0xeba51a294c73292e() end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A31D13C5F021D0D)  
 ---Makes ped flinch (if in cover) like they have been shot at
 ---@param ped integer
 function RequestFlinchCoverAnim(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1A7A802B2301EDC0)  
 ---Stops running cover anims and releases them
 ---_STOP_RENDERING_* - _STOP_SCRIPTED*
 ---@param ped integer
 function StopRunningCoverAnims(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x89783FDDF079C88D)  
 ---This native does not have an official description.
 ---@return any
 function TaskAiSeekCoverToCoverPoint() end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4972A022AE6DAFA1)  
 ---This native does not have an official description.
 ---@param ped integer
 function TaskEnterCover(ped) end
 
----**`AICOVERPOINT` ``**  
+---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BC4A6D92D140112)  
 ---This native does not have an official description.
 ---@param ped integer

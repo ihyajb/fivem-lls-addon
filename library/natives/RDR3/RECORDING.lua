@@ -1,6 +1,6 @@
 ---@meta
 
----**`RECORDING` ``**  
+---**`RECORDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA8C44C13419634F2)  
 ---nullsub, doesn't do anything
 ---

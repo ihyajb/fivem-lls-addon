@@ -1,6 +1,6 @@
 ---@meta
 
----**`ZONE` ``**  
+---**`ZONE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x43AD8FC02B429D33)  
 ---Returns name hash, see common:/data/levels/rdr3/mapzones.meta
 ---
@@ -34,7 +34,7 @@
 ---@return integer
 function GetMapZoneAtCoords(x, y, z, type) end
 
----**`ZONE` ``**  
+---**`ZONE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5BA7A68A346A5A91)  
 ---Returns the zone's name hash if its type matches one of the following:
 ---- LAKE

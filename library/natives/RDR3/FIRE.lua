@@ -1,6 +1,6 @@
 ---@meta
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7D6F58F69DA92530)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/graphics/explosions
 ---
@@ -71,7 +71,7 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---@param cameraShake number
 function AddExplosionWithDamageCauser(entity, p1, x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x53BA259F3A67A99E)  
 ---explosionType: see ADD_EXPLOSION
 ---Change explosionFx (Visual Effect) for specified explosionType
@@ -104,7 +104,7 @@ function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScal
 ---@param cameraShake number
 function AddExplosionWithUserVfxAndDamageCauser(entity, p1, x, y, z, explosionType, explosionFx, damageScale, isAudible, isInvisible, cameraShake) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD84A917A64D4D016)  
 ---explosionType: see ADD_EXPLOSION
 ---@param ped integer
@@ -118,7 +118,7 @@ function AddExplosionWithUserVfxAndDamageCauser(entity, p1, x, y, z, explosionTy
 ---@param cameraShake number
 function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB646FB657F448261)  
 ---This native does not have an official description.
 ---@param x number
@@ -142,7 +142,7 @@ function GetClosestFirePos(x, y, z) end
 ---@return boolean, vector3
 function GetClosestFirePosInVolume(posX, posY, posZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9617BC6FAE61E08)  
 ---This native does not have an official description.
 ---@param x number
@@ -152,7 +152,7 @@ function GetClosestFirePosInVolume(posX, posY, posZ, rotX, rotY, rotZ, scaleX, s
 ---@return integer
 function GetNumberOfFiresInRange(x, y, z, radius) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8002DDAB58594D78)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
@@ -166,7 +166,7 @@ function GetNumberOfFiresInRange(x, y, z, radius) end
 ---@return integer
 function GetOwnerOfExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCDC25355C0D65963)  
 ---This native does not have an official description.
 ---@param entity integer
@@ -180,14 +180,14 @@ function IsEntityConsumedByFire(entity) end
 ---@return boolean
 function IsEntityDamagedByFire(entity) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1BD7C371CE257C3E)  
 ---This native does not have an official description.
 ---@param entity integer
 ---@return boolean
 function IsEntityOnFire(entity) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD96E82AEBFFAAFF0)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
@@ -200,7 +200,7 @@ function IsEntityOnFire(entity) end
 ---@return boolean
 function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5AE661ECD18524C9)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
@@ -214,7 +214,7 @@ function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 ---@return boolean
 function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, angle) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8391BA4313A25AD3)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
@@ -227,7 +227,7 @@ function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, angle) e
 ---@return boolean
 function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD62DD846D82CBB90)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
@@ -238,7 +238,7 @@ function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 ---@return boolean
 function IsExplosionInSphere(explosionType, x, y, z, radius) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE24822A4CFC9107A)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
@@ -246,7 +246,7 @@ function IsExplosionInSphere(explosionType, x, y, z, radius) end
 ---@return boolean
 function IsExplosionInVolume(explosionType, volume) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB7993BA61A4674F)  
 ---Tested with fire & dynamite. Only returns true using value p1 = 1 and when the ped is affected by fire.
 ---@param ped integer
@@ -254,13 +254,13 @@ function IsExplosionInVolume(explosionType, volume) end
 ---@return boolean
 function IsPedShockingEventActive(ped, p1) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x24DB6B9F2B719043)  
 ---Only used in R* SP Related Camp Scripts
 ---@param p0 number
 function N_0x24db6b9f2b719043(p0) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x41B87A6495EE13DD)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -276,7 +276,7 @@ function N_0x24db6b9f2b719043(p0) end
 ---@return any
 function N_0x41b87a6495ee13dd(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x68F6A75FDF5A70D6)  
 ---This native does not have an official description.
 ---@param x number
@@ -285,19 +285,19 @@ function N_0x41b87a6495ee13dd(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---@param p3 number
 function N_0x68f6a75fdf5a70d6(x, y, z, p3) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x754937C28271BC65)  
 ---This native does not have an official description.
 ---@param p0 any
 function N_0x754937c28271bc65(p0) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x790125C36E194069)  
 ---This native does not have an official description.
 ---@param fireHandle integer
 function RemoveScriptFire(fireHandle) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC4DC7418A44D6822)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -306,7 +306,7 @@ function RemoveScriptFire(fireHandle) end
 ---@param p3 any
 function StartEntityFire(p0, p1, p2, p3) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B83617E04503888)  
 ---Starts a fire:
 ---
@@ -325,14 +325,14 @@ function StartEntityFire(p0, p1, p2, p3) end
 ---@return integer
 function StartScriptFire(x, y, z, p3, p4, p5, soundsetName, p7, p8) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8390751DC40C1E98)  
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
 function StopEntityFire(p0, p1) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7C7BDC375AEA9A4)  
 ---This native does not have an official description.
 ---@param posX number
@@ -346,7 +346,7 @@ function StopEntityFire(p0, p1) end
 ---@param scaleZ number
 function StopFireInBox(posX, posY, posZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
----**`FIRE` ``**  
+---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDB38F247BD421708)  
 ---This native does not have an official description.
 ---@param x number

@@ -1,13 +1,13 @@
 ---@meta
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75F90E4051CC084C)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/vehicles/vehicle_modding/vehicle_propsets.lua
 ---@param vehicle integer
 ---@param propset integer | string
 function AddAdditionalPropSetForVehicle(vehicle, propset) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC0F0417A90402742)  
 ---To remove propsets either parse a zero as hash or call 0xE31C0CB1C3186D40
 ---0xA6A9712955F53D9C returns lightPropset Hashes
@@ -16,14 +16,14 @@ function AddAdditionalPropSetForVehicle(vehicle, propset) end
 ---@param lightPropset integer | string
 function AddLightPropSetToVehicle(vehicle, lightPropset) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD80FAF919A2E56EA)  
 ---List of vehicle propsets (wagons & trains): https://pastebin.com/1CsnvGLu / https://pastebin.com/v7TtqTgE
 ---@param vehicle integer
 ---@param propset integer | string
 function AddPropSetForVehicle(vehicle, propset) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE65C5CBA95F0E510)  
 ---propsetType: https://github.com/femga/rdr3_discoveries/blob/master/objects/propsets_list.lua
 ---placementType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/PlacementType
@@ -39,7 +39,7 @@ function AddPropSetForVehicle(vehicle, propset) end
 ---@return integer
 function CreatePropSet(propsetType, x, y, z, placementType, heading, zProbe, p7, useVegMod) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x899C97A1CCE7D483)  
 ---Same as _CREATE_PROP_SET
 ---@param propsetType integer | string
@@ -54,7 +54,7 @@ function CreatePropSet(propsetType, x, y, z, placementType, heading, zProbe, p7,
 ---@return integer
 function CreatePropSet_2(propsetType, x, y, z, placementType, heading, zProbe, p7, useVegMod) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9609DBDDE18FAD8C)  
 ---This native does not have an official description.
 ---@param hash integer | string
@@ -69,7 +69,7 @@ function CreatePropSet_2(propsetType, x, y, z, placementType, heading, zProbe, p
 ---@return integer
 function CreatePropSetInstanceAttachedToEntity(hash, x, y, z, entity, p5, p6, p7, p8) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xACA7FB30269096D4)  
 ---Same as CREATE_PROP_SET_INSTANCE_ATTACHED_TO_ENTITY
 ---@param hash integer | string
@@ -84,7 +84,7 @@ function CreatePropSetInstanceAttachedToEntity(hash, x, y, z, entity, p5, p6, p7
 ---@return integer
 function CreatePropSetInstanceAttachedToEntity_2(hash, x, y, z, entity, p5, p6, p7, p8) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58AC173A55D9D7B4)  
 ---This native does not have an official description.
 ---@param propSet integer
@@ -92,14 +92,14 @@ function CreatePropSetInstanceAttachedToEntity_2(hash, x, y, z, entity, p5, p6, 
 ---@param p2 boolean
 function DeletePropSet(propSet, p1, p2) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7DDDCF815E650FF5)  
 ---This native does not have an official description.
 ---@param propSet integer
 ---@return boolean
 function DoesPropSetExist(propSet) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x72068021F498E6E3)  
 ---This native does not have an official description.
 ---@param propsetHash integer | string
@@ -109,21 +109,21 @@ function DoesPropSetExist(propSet) end
 ---@return boolean
 function DoesPropSetOfTypeExistNearCoords(propsetHash, x, y, z) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC9B4B3A36F81FD75)  
 ---This native does not have an official description.
 ---@param vehicle integer
 ---@return boolean
 function DoesVehicleHaveAnyLightPropSet(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x53784CEA0159439B)  
 ---This native does not have an official description.
 ---@param vehicle integer
 ---@return boolean
 function DoesVehicleHaveAnyPropSet(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x738271B660FE0695)  
 ---This native does not have an official description.
 ---@param propSet integer
@@ -134,7 +134,7 @@ function DoesVehicleHaveAnyPropSet(vehicle) end
 ---@return integer
 function GetEntitiesFromPropSet(propSet, itemSet, model, p3, p4) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC061E50F8D299F95)  
 ---This native does not have an official description.
 ---@param propsetHash integer | string
@@ -144,56 +144,56 @@ function GetEntitiesFromPropSet(propSet, itemSet, model, p3, p4) end
 ---@return integer
 function GetPropSetAtCoords(propsetHash, x, y, z) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6A9712955F53D9C)  
 ---This native does not have an official description.
 ---@param propSet integer
 ---@return integer
 function GetPropSetModel(propSet) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCFC0BD09BB1B73FF)  
 ---Example before/after deleting a train carriage's propset: https://imgur.com/a/qRNrIrK
 ---@param trainCarriage integer
 ---@return integer
 function GetTrainCarriagePropSet(trainCarriage) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA079300AF757FB1A)  
 ---Returns PropSet handle to be used with _GET_PROP_SET_MODEL
 ---@param vehicle integer
 ---@return integer
 function GetVehicleLightPropSet(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE2ACD6F602803E5)  
 ---This native does not have an official description.
 ---@param vehicle integer
 ---@return integer
 function GetVehiclePropSet(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x36F69E7A22655653)  
 ---This native does not have an official description.
 ---@param vehicle integer
 ---@return integer
 function GetVehiclePropSetHash(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x48A88FC684C55FDC)  
 ---This native does not have an official description.
 ---@param hash integer | string
 ---@return boolean
 function HasPropSetLoaded(hash) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD090ABEF4D6A7D96)  
 ---Same as _HAS_PROP_SET_LOADED
 ---@param hash integer | string
 ---@return boolean
 function HasPropSetLoaded_2(hash) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8F3333F0A6900B3C)  
 ---This native does not have an official description.
 ---@param vehicle integer
@@ -201,35 +201,35 @@ function HasPropSetLoaded_2(hash) end
 ---@return boolean
 function HasVehicleTrailerPropSetLoaded(vehicle, wagonIndex) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF42DB680A8B2A4D9)  
 ---This native does not have an official description.
 ---@param propSet integer
 ---@return boolean
 function IsPropSetFullyLoaded(propSet) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0CE8AAFE9E433A23)  
 ---This native does not have an official description.
 ---@param propSet integer
 ---@return boolean
 function IsPropSetVisible(propSet) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0790473EEE1977D3)  
 ---This native does not have an official description.
 ---@param vehicle integer
 ---@return boolean
 function IsVehicleLightPropSetLoaded(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x155B2FBE72D7D1D0)  
 ---This native does not have an official description.
 ---@param vehicle integer
 ---@return boolean
 function IsVehiclePropSetLoaded(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7264F9CA87A9830B)  
 ---This native does not have an official description.
 ---@param vehicle integer
@@ -247,59 +247,59 @@ function IsVehiclePropSetLoadedAdditional(vehicle) end
 ---@param heading number
 function ModifyPropsetCoordsAndHeading(propset, posX, posY, posZ, onGroundProperly, heading) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58E0B01D45CA7357)  
 ---This native does not have an official description.
 ---@param p0 any
 function N_0x58e0b01d45ca7357(p0) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB1964A83B345B4AB)  
 ---This native does not have an official description.
 ---@param hash integer | string
 ---@return boolean
 function ReleasePropSet(hash) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE31C0CB1C3186D40)  
 ---This native does not have an official description.
 ---@param vehicle integer
 function RemoveVehicleLightPropSets(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3BCF32FF37EA9F1D)  
 ---This native does not have an official description.
 ---@param vehicle integer
 function RemoveVehiclePropSets(vehicle) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF3DE57A46D5585E9)  
 ---This native does not have an official description.
 ---@param hash integer | string
 ---@return boolean
 function RequestPropSet(hash) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE72F591958F3ACAB)  
 ---Same as _REQUEST_PROP_SET
 ---@param hash integer | string
 ---@return boolean
 function RequestPropSet_2(hash) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x909E3C7FAE539FB1)  
 ---This native does not have an official description.
 ---@param propSet integer
 function SetPropSetAsNoLongerNeeded(propSet) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC1AB7EEFD3E6EE49)  
 ---This native does not have an official description.
 ---@param propSet integer
 ---@param flag integer
 function SetPropSetFlag(propSet, flag) end
 
----**`PROPSET` ``**  
+---**`PROPSET` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D096A5BD02F953E)  
 ---This native does not have an official description.
 ---@param propSet integer

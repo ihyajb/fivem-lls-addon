@@ -1,12 +1,12 @@
 ---@meta
 
----**`SOCIALCLUBFEED` ``**  
+---**`SOCIALCLUBFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x068332D20CB6F897)  
 ---This native does not have an official description.
 ---@return boolean
 function ScFeedHubHasNewData() end
 
----**`SOCIALCLUBFEED` ``**  
+---**`SOCIALCLUBFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEFB64240F6B17817)  
 ---This native does not have an official description.
 ---@param type integer

@@ -1,34 +1,34 @@
 ---@meta
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11E019C8F43ACC8A)  
 ---Rounds a float value up to the next whole number
 ---@param value number
 ---@return integer
 function Ceil(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD0FFB162F40A139C)  
 ---This native does not have an official description.
 ---@param value number
 ---@return number
 function Cos(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF34EE736CF047844)  
 ---Rounds a float value down to the next whole number
 ---@param value number
 ---@return integer
 function Floor(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE816E655DE37FE20)  
 ---Old name: _LOG10
 ---@param value number
 ---@return number
 function Log10(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE3621CC40F31FE2E)  
 ---This native does not have an official description.
 ---@param base number
@@ -36,14 +36,14 @@ function Log10(value) end
 ---@return number
 function Pow(base, exponent) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2DB717A73826179)  
 ---This native does not have an official description.
 ---@param value number
 ---@return integer
 function Round(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42B65DEEF2EDF2A1)  
 ---THREAD_PRIO_HIGHEST = 0
 ---THREAD_PRIO_NORMAL = 1
@@ -52,19 +52,19 @@ function Round(value) end
 ---@param priority integer
 function SetThisThreadPriority(priority) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC1B1E9A034A63A62)  
 ---This native does not have an official description.
 ---@param value integer
 function Settimera(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5AE11BC36633DE4E)  
 ---This native does not have an official description.
 ---@param value integer
 function Settimerb(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEDD95A39E5544DE8)  
 ---This native does not have an official description.
 ---@param value integer
@@ -72,7 +72,7 @@ function Settimerb(value) end
 ---@return integer
 function ShiftLeft(value, bitShift) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97EF1E5BCE9DC075)  
 ---This native does not have an official description.
 ---@param value integer
@@ -80,46 +80,46 @@ function ShiftLeft(value, bitShift) end
 ---@return integer
 function ShiftRight(value, bitShift) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0BADBFA3B172435F)  
 ---This native does not have an official description.
 ---@param value number
 ---@return number
 function Sin(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x71D93B57D07F9804)  
 ---This native does not have an official description.
 ---@param value number
 ---@return number
 function Sqrt(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x83666F9FB8FEBD4B)  
 ---Counts up. Every 1000 is 1 real-time second. Use SETTIMERA(int value) to set the timer (e.g.: SETTIMERA(0)).
 ---@return integer
 function Timera() end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC9D9444186B5A374)  
 ---This native does not have an official description.
 ---@return integer
 function Timerb() end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0000000050597EE2)  
 ---Gets the current frame time.
 ---@return number
 function Timestep() end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBBDA792448DB5A89)  
 ---This native does not have an official description.
 ---@param value integer
 ---@return number
 function ToFloat(value) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A488C176D52CCA5)  
 ---Calculates distance between vectors.
 ---The value returned will be in meters.
@@ -132,7 +132,7 @@ function ToFloat(value) end
 ---@return number
 function Vdist(x1, y1, z1, x2, y2, z2) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7A628320EFF8E47)  
 ---Calculates distance between vectors but does not perform Sqrt operations. (Its way faster)
 ---The value returned will be in RAGE units.
@@ -145,7 +145,7 @@ function Vdist(x1, y1, z1, x2, y2, z2) end
 ---@return number
 function Vdist2(x1, y1, z1, x2, y2, z2) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x652D2EEEF1D3E62C)  
 ---Calculates the magnitude of a vector.
 ---@param x number
@@ -154,7 +154,7 @@ function Vdist2(x1, y1, z1, x2, y2, z2) end
 ---@return number
 function Vmag(x, y, z) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA8CEACB4F35AE058)  
 ---Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)
 ---@param x number
@@ -163,7 +163,7 @@ function Vmag(x, y, z) end
 ---@return number
 function Vmag2(x, y, z) end
 
----**`BUILTIN` ``**  
+---**`BUILTIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4EDE34FBADD967A6)  
 ---This native does not have an official description.
 ---@param ms integer

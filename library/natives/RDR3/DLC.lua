@@ -1,24 +1,24 @@
 ---@meta
 
----**`DLC` ``**  
+---**`DLC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x71D4BF5890659B0C)  
 ---This native does not have an official description.
 ---@return boolean
 function GetIsLoadingScreenActive() end
 
----**`DLC` ``**  
+---**`DLC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1DB9D61E505AE3FC)  
 ---This native does not have an official description.
 ---@return boolean
 function GetSpecialEditionCashCampBonusEnabled() end
 
----**`DLC` ``**  
+---**`DLC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA16B4FBA7887D7BA)  
 ---This native does not have an official description.
 ---@return boolean
 function GetSpecialEditionCoreStatsBonusEnabled() end
 
----**`DLC` ``**  
+---**`DLC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2763DC12BBE2BB6F)  
 ---This native does not have an official description.
 ---@param dlcHash integer | string

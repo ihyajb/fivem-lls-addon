@@ -1,18 +1,18 @@
 ---@meta
 
----**`UITUTORIAL` ``**  
+---**`UITUTORIAL` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2CC24A2A7A1489C4)  
 ---This native does not have an official description.
 ---@return boolean
 function UitutorialGetIsThreatIndicatorCapableRadarShown() end
 
----**`UITUTORIAL` ``**  
+---**`UITUTORIAL` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC2E0A5E9ED4E1B4)  
 ---This native does not have an official description.
 ---@return boolean
 function UitutorialGetIsThreatIndicatorOn() end
 
----**`UITUTORIAL` ``**  
+---**`UITUTORIAL` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC116E6DF68DCE667)  
 ---enum eRpgIcons
 ---{

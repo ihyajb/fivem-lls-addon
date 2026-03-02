@@ -1,13 +1,13 @@
 ---@meta
 
----**`IK` ``**  
+---**`IK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66F9EB44342BB4C5)  
 ---This native does not have an official description.
 ---@param ped integer
 ---@return any
 function InverseKinematicsRequestLookAt(ped) end
 
----**`IK` ``**  
+---**`IK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EABF182FBB63D72)  
 ---Seems to disable IK on ped
 ---@param ped integer
@@ -15,14 +15,14 @@ function InverseKinematicsRequestLookAt(ped) end
 ---@param p2 boolean
 function InverseKinematicsSetDisabledForPed(ped, p1, p2) end
 
----**`IK` ``**  
+---**`IK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0B9F7A01EC50448D)  
 ---This native does not have an official description.
 ---@param ped integer
 ---@return any
 function N_0x0b9f7a01ec50448d(ped) end
 
----**`IK` ``**  
+---**`IK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6098139150DCC745)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -30,7 +30,7 @@ function N_0x0b9f7a01ec50448d(ped) end
 ---@return boolean
 function N_0x6098139150dcc745(ped, p1) end
 
----**`IK` ``**  
+---**`IK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x873C792E07A32C8B)  
 ---This native does not have an official description.
 ---@param ped1 integer

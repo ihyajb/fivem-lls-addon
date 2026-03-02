@@ -1,13 +1,13 @@
 ---@meta
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE555EC27D65EDE80)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string
 ---@return boolean
 function CanLaunchUiappByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16F47D434B6086BF)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string
@@ -15,95 +15,95 @@ function CanLaunchUiappByHash(appNameHash) end
 ---@return boolean
 function CanLaunchUiappByHashWithEntry(appNameHash, entryHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAD7B70F7230C5A12)  
 ---Closes All UI Apps with transition
 function CloseAllUiapps() end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12769EEB8DBD7A7B)  
 ---Immediately Closes all Native UI Apps
 function CloseAllUiappsImmediate() end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x818C6CA9B659E8EC)  
 ---This native does not have an official description.
 ---@param appName string
 function CloseUiapp(appName) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2FF10C9C3F92277E)  
 ---Closes Ui App by hash
 ---@param appNameHash integer | string
 function CloseUiappByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x04428420A248A354)  
 ---Immediately closes the specified UI app by its hash.
 ---@param appNameHash integer | string
 function CloseUiappByHashImmediate(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3015635426D1B17C)  
 ---This native does not have an official description.
 ---@param appName string
 function CloseUiappImmediate(appName) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x96FD694FE5BE55DC)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string
 ---@return integer
 function GetUiappCurrentActivityByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAC959AB99AAF3D9F)  
 ---This native does not have an official description.
 ---@return boolean
 function IsAnyUiappActive() end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDB30BEC7A7A5CBD3)  
 ---This native does not have an official description.
 ---@return boolean
 function IsAnyUiappRunning() end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x25B7A0206BDFAC76)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string
 ---@return boolean
 function IsUiappActiveByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE4A9B35D028979F)  
 ---Returns true if the Native UI Application is running. 
 ---@param appName string
 ---@return boolean
 function IsUiappRunning(appName) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4E511D093A86AD49)  
 ---Checks to see if the specified UI app is currently running by its hash.
 ---@param appNameHash integer | string
 ---@return boolean
 function IsUiappRunningByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42095B886D30DE66)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string
 ---@return boolean
 function IsUiappTransitioningByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC8FC7F4E4CF4F581)  
 ---Lauches the specified UI app by its hash.
 ---@param appNameHash integer | string
 ---@return integer
 function LaunchUiappByHash(appNameHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC1BCF31E975B3195)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string
@@ -111,7 +111,7 @@ function LaunchUiappByHash(appNameHash) end
 ---@return integer
 function LaunchUiappByHashWithEntry(appNameHash, entryHash) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7B2027BAC5C8EC89)  
 ---This native does not have an official description.
 ---@param appName string
@@ -119,7 +119,7 @@ function LaunchUiappByHashWithEntry(appNameHash, entryHash) end
 ---@return integer
 function LaunchUiappWithEntry(appName, entry) end
 
----**`UIAPPS` ``**  
+---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7689CD255655BFD7)  
 ---This native does not have an official description.
 ---@param appNameHash integer | string

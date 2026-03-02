@@ -1,19 +1,19 @@
 ---@meta
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x466BC8769CF26A7A)  
 ---This native does not have an official description.
 ---@param amount integer
 ---@return boolean
 function MoneyDecrementCashBalance(amount) end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C02DABFA3B98176)  
 ---This native does not have an official description.
 ---@return integer
 function MoneyGetCashBalance() end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC3422DC91667621)  
 ---This native does not have an official description.
 ---@param amount integer
@@ -21,7 +21,7 @@ function MoneyGetCashBalance() end
 ---@return boolean
 function MoneyIncrementCashBalance(amount, addReason) end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x07AD9E43FD478527)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -29,25 +29,25 @@ function MoneyIncrementCashBalance(amount, addReason) end
 ---@return boolean
 function N_0x07ad9e43fd478527(p0, p1) end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA46FD001D1BE896C)  
 ---This native does not have an official description.
 ---@return any
 function N_0xa46fd001d1be896c() end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8A67120DBC299525)  
 ---This native does not have an official description.
 ---@return integer
 function NetworkGetCashBalance() end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x282D36FF103D78DF)  
 ---This native does not have an official description.
 ---@return any
 function NetworkGetStringCashBalance() end
 
----**`MONEY` ``**  
+---**`MONEY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAEC5F0119867E457)  
 ---This native does not have an official description.
 ---@param cashBalance integer
