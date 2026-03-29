@@ -482,10 +482,10 @@ function StatIdIncrementFloat(value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6A0184E904CDF25E)  
----statId: see STAT_ID_IS_VALID
----@param value integer
+---Increments an integer stat by the supplied amount. `statId` is not a raw stat hash; it is a stat-id buffer/struct in the same format used by STAT_ID_IS_VALID. In common usage this is an 8-byte buffer with the stat hash written as int32 at offset 0 and 0 written as int32 at offset 4. Use this for counter-style stats, for example incrementing FISH_ESCAPED by 1. The first argument is not a plain integer stat hash; it is a stat-id buffer.
+---@param amount integer
 ---@return any
-function StatIdIncrementInt(value) end
+function StatIdIncrementInt(amount) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC48FE1971C9743FF)  

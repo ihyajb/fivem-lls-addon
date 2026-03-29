@@ -713,10 +713,10 @@ function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 ---@param posY number
 ---@param posZ number
 ---@param size number
+---@param alpha integer
 ---@param red integer
 ---@param green integer
 ---@param blue integer
----@param alpha integer
 ---@param intensity number
 ---@param zBias number
 ---@param dirX number
@@ -726,7 +726,7 @@ function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 ---@param innerAngle number
 ---@param outerAngle number
 ---@param flags integer
-function DrawCorona(posX, posY, posZ, size, red, green, blue, alpha, intensity, zBias, dirX, dirY, dirZ, viewThreshold, innerAngle, outerAngle, flags) end
+function DrawCorona(posX, posY, posZ, size, alpha, red, green, blue, intensity, zBias, dirX, dirY, dirZ, viewThreshold, innerAngle, outerAngle, flags) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2EDCA2)  
