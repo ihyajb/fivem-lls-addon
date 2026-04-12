@@ -926,12 +926,12 @@ function IsPlayerTargettingAnything(player) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x27F89FDC16688A7A)  
----This native does not have an official description.
+---p2 will return true if player is targetting entity with a weapon if false will return true if player is targetting entity without a weapon
 ---@param player integer
 ---@param entity integer
----@param p2 boolean
+---@param withWeapon boolean
 ---@return boolean
-function IsPlayerTargettingEntity(player, entity, p2) end
+function IsPlayerTargettingEntity(player, entity, withWeapon) end
 
 ---**`PLAYER` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x085EEAEB8783FEB5)  
