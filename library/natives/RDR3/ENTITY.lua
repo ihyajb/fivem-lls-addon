@@ -50,7 +50,7 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, component, i
 ---@param offsetx number
 ---@param offsety number
 ---@param offsetz number
----@param p7 number
+---@param timer number
 ---@param p8 boolean
 ---@param p9 integer
 ---@param p10 integer
@@ -58,7 +58,7 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, component, i
 ---@param p12 integer
 ---@param p13 integer
 ---@param p14 integer
-function AttachEntityToCoordsPhysically(entity, x, y, z, offsetx, offsety, offsetz, p7, p8, p9, p10, p11, p12, p13, p14) end
+function AttachEntityToCoordsPhysically(entity, x, y, z, offsetx, offsety, offsetz, timer, p8, p9, p10, p11, p12, p13, p14) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B9BBD38AB0796DF)  
@@ -1882,9 +1882,9 @@ function SetEntityAnimSpeed(entity, animDict, animName, speedMultiplier) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC19C288082E586E)  
 ---Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.
 ---@param entity integer
----@param p1 boolean
----@param p2 boolean
-function SetEntityAsMissionEntity(entity, p1, p2) end
+---@param scriptHostObject boolean
+---@param grabFromOtherScript boolean
+function SetEntityAsMissionEntity(entity, scriptHostObject, grabFromOtherScript) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4971D2F8162B9674)  
@@ -2232,10 +2232,10 @@ function SetEntityVisible(entity, toggle) end
 ---heres some of the labels/names found 
 ---tumbler_fill, Canvas, Stew_Fill, from Chip01_Ctrl to Chip10_Ctrl, from empty_jug01_Ctrl to empty_jug20_Ctrl, from full_jug01_Ctrl to full_jug20_Ctrl, CTRL_cupFill, Food_DOF_Fill, from WhiteChip_Ctrl_0 to WhiteChip_Ctrl_10, from BlueChip_Ctrl_0 to BlueChip_Ctrl_10, from BlackChip_Ctrl_0 to BlackChip_Ctrl_10, from RedChip_Ctrl_0 to RedChip_Ctrl_10,
 ---@param entity integer
----@param p1 integer
----@param p2 string
----@param fill number
-function SetFillInStateForEntity(entity, p1, p2, fill) end
+---@param expressionType integer
+---@param dofName string
+---@param fillState number
+function SetMaterialFillLevelForEntity(entity, expressionType, dofName, fillState) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3AE22DEB5BA5A3E6)  

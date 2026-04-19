@@ -528,10 +528,10 @@ function N_0x44a5eef54f62e823(p0) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4A98E228A936DBCC)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x4a98e228a936dbcc(p0) end
+---Gets the hash for the currently playing speech line.
+---@param ped integer
+---@return integer
+function N_0x4a98e228a936dbcc(ped) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4BE3EC91C01F0FE8)  
@@ -726,13 +726,13 @@ function N_0x935dbd96d4a3da1f(p0, currentScriptedConvoLine) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D6DEC9791A4E501)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return any
-function N_0x9d6dec9791a4e501(p0, p1, p2, p3) end
+---Returns true or false if the ped can say a specific speech line with PLAY_PED_AMBIENT_SPEECH_NATIVE, similar to DOES_CONTEXT_EXIST_FOR_THIS_PED
+---@param ped integer
+---@param speechName string
+---@param p2 boolean
+---@param p3 boolean
+---@return boolean
+function N_0x9d6dec9791a4e501(ped, speechName, p2, p3) end
 
 ---**`AUDIO` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9EB779765E68C52E)  

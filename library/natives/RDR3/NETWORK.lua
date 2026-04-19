@@ -3059,16 +3059,16 @@ function NetworkSessionRequestSessionPrivate(flags, numPlayers, userHash) end
 function NetworkSessionRequestSessionSeamless(flags, seamlessType, userHash) end
 
 ---**`NETWORK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xFD4272A137703449)  
----Only used in R* Script startup_clip Seems to just kill the network connection, sets the players coords to 0, 0, 0 when doing GetEntityCoords
-function NetworkSessionRequestTerminate() end
-
----**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0AE241A4A9ADEEEC)  
 ---This native does not have an official description.
 ---@param flags integer
 ---@return boolean
 function NetworkSessionSetPlayerFlags(flags) end
+
+---**`NETWORK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xFD4272A137703449)  
+---Only used in R* Script startup_clip Seems to just kill the network connection, sets the players coords to 0, 0, 0 when doing GetEntityCoords
+function NetworkSessionShutdown() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF20B18A330E6DB5C)  

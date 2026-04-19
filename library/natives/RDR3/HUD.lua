@@ -160,6 +160,7 @@ function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ) end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7EC0D68233E391AC)  
 ---Returns the state of a specific HUD Component
+---eHudVisibilitySlotType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eHudVisibilitySlotType
 ---@param hudComponent integer
 ---@return integer
 function GetHudState(hudComponent) end
@@ -220,6 +221,15 @@ function GetStringFromHashKey(labelHash) end
 function GetTextSubstring_2(text, length) end
 
 ---**`HUD` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x806862E5D266CF38)  
+---Example: HUD::_0x806862E5D266CF38(&string1, 0, HUD::GET_LENGTH_OF_LITERAL_STRING(&string1) - HUD::GET_LENGTH_OF_LITERAL_STRING("_DUALWIELD"))
+---@param text string
+---@param begin integer
+---@param length integer
+---@return any
+function GetTextSubstring_3(text, begin, length) end
+
+---**`HUD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x36CDD81627A6FCD2)  
 ---This native does not have an official description.
 function HideHudAndRadarThisFrame() end
@@ -237,10 +247,10 @@ function HideLoadingOnFadeThisFrame() end
 ---**`HUD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C409BBC492CB5B1)  
 ---Returns the hash of the currently highlighted item in the weapon wheel.
----Only works while the wheel is open will return false
+---Only works while the wheel is open otherwise will return false
 ---
 ---Use in conjunction with IS_CONTROL_JUST_RELEASED(0, 'INPUT_OPEN_WHEEL_MENU') to detect item selection/usage.
----@return any
+---@return integer
 function HudWeaponWheelGetSelectedItemHash() end
 
 ---**`HUD` `client`**  
@@ -442,15 +452,6 @@ function N_0x53ce46c01a089da1(prompt, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5651516D947ABC53)  
 ---This native does not have an official description.
 function N_0x5651516d947abc53() end
-
----**`HUD` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x806862E5D266CF38)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0x806862e5d266cf38(p0, p1, p2) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8A59D44189AF2BC5)  
@@ -1254,10 +1255,10 @@ function UiPromptSetSpinnerSpeed(prompt, p1) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x74C7D7B72ED0D3CF)  
----Hashes: SHORT_TIMED_EVENT_MP, SHORT_TIMED_EVENT, MEDIUM_TIMED_EVENT, LONG_TIMED_EVENT, RUSTLING_CALM_TIMING, PLAYER_FOCUS_TIMING, PLAYER_REACTION_TIMING
+---HoldType Hashes: SHORT_TIMED_EVENT_MP, SHORT_TIMED_EVENT, MEDIUM_TIMED_EVENT, LONG_TIMED_EVENT, RUSTLING_CALM_TIMING, PLAYER_FOCUS_TIMING, PLAYER_REACTION_TIMING
 ---@param prompt integer
----@param timedEventHash integer | string
-function UiPromptSetStandardizedHoldMode(prompt, timedEventHash) end
+---@param holdType integer | string
+function UiPromptSetStandardizedHoldMode(prompt, holdType) end
 
 ---**`HUD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCC6656799977741B)  

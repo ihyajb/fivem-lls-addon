@@ -235,6 +235,13 @@ function GetAmmoInClipByInventoryUid(ped) end
 function GetAmmoInPedWeapon(ped, weaponHash) end
 
 ---**`WEAPON` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xEC97101A8F311282)  
+---This native does not have an official description.
+---@param weaponHash integer | string
+---@return integer
+function GetAmmoRecommendedTypeForWeapon(weaponHash) end
+
+---**`WEAPON` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5C2EA6C44F515F34)  
 ---This native does not have an official description.
 ---@param weaponHash integer | string
@@ -589,7 +596,7 @@ function GetWeaponEmoteVariation(ped, variation) end
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9EEFD670F10656D7)  
 ---this native gets the weapon hash from the default ped weapon collection (see GetDefaultPedWeaponCollection for more info) will randomly return one of it's weapons
----@param weaponCollection integer
+---@param weaponCollection integer | string
 ---@param weaponGroup integer | string
 ---@return integer
 function GetWeaponFromDefaultPedWeaponCollection(weaponCollection, weaponGroup) end
@@ -1291,13 +1298,6 @@ function N_0xd53846b9c931c181(p0, p1, p2) end
 function N_0xe9b3fec825668291(p0, p1, p2) end
 
 ---**`WEAPON` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xEC97101A8F311282)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0xec97101a8f311282(p0) end
-
----**`WEAPON` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xECBB26529A737EF6)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1534,8 +1534,8 @@ function SetAmmoTypeForPedWeaponInventory(ped, ammoHash) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x2EBF70E1D8C06683)  
 ---Sets the visual trail FX for arrows fired from a Bow by the given ped
 ---@param ped integer
----@param p1 integer | string
-function SetArrowTrail(ped, p1) end
+---@param trailHash integer | string
+function SetArrowTrailFx(ped, trailHash) end
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75C55983C2C39DAA)  

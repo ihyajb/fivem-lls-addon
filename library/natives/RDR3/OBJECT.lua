@@ -61,14 +61,14 @@ function ConvertOldPickupTypeToNew(pickupHash) end
 ---@param y number
 ---@param z number
 ---@param flags integer
----@param value integer
+---@param amount integer
 ---@param modelHash integer | string
----@param p7 boolean
----@param p8 boolean
----@param p9 integer
+---@param createAsScriptObject boolean
+---@param scriptHostObject boolean
+---@param customAmmoType integer
 ---@param p10 number
 ---@return integer
-function CreateAmbientPickup(pickupHash, x, y, z, flags, value, modelHash, p7, p8, p9, p10) end
+function CreateAmbientPickup(pickupHash, x, y, z, flags, amount, modelHash, createAsScriptObject, scriptHostObject, customAmmoType, p10) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x509D5878EB39E842)  
@@ -768,13 +768,6 @@ function N_0xb3b1546d23df8de1(p0, p1, p2, p3, p4) end
 function N_0xc07b91b996c1de89(p0, p1) end
 
 ---**`OBJECT` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xCAAF2BCCFEF37F77)  
----_SET_OBJECT_*
----@param object integer
----@param p1 any
-function N_0xcaaf2bccfef37f77(object, p1) end
-
----**`OBJECT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCBFBD38F2E0A263B)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1030,6 +1023,13 @@ function SetObjectBurnOpacity(object, opacity) end
 ---@param speed number
 ---@param p2 number
 function SetObjectBurnSpeed(object, speed, p2) end
+
+---**`OBJECT` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xCAAF2BCCFEF37F77)  
+---This native does not have an official description.
+---@param object integer
+---@param presetFlags integer
+function SetObjectInteractionPreset(object, presetFlags) end
 
 ---**`OBJECT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7017DA4D498269F)  

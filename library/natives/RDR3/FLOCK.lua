@@ -10,8 +10,8 @@ function AddPedToFlock(p0, ped) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x67A43EA3F6FE0076)  
 ---Clear the herd.
----@param herd integer
-function ClearHerd(herd) end
+---@param herdHandle integer
+function ClearHerd(herdHandle) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB4EF7EDAE2E16F1)  

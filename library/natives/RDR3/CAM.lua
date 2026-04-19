@@ -1159,8 +1159,8 @@ function ReactivatePedHeadshotExecuteSlowcam(ped, p1) end
 ---@param easeTime integer
 ---@param p3 boolean
 ---@param p4 boolean
----@param p5 integer
-function RenderScriptCams(render, ease, easeTime, p3, p4, p5) end
+---@param renderingFlags integer
+function RenderScriptCams(render, ease, easeTime, p3, p4, renderingFlags) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x69D65E89FFD72313)  
@@ -1277,12 +1277,12 @@ function SetCamNearClip(cam, nearClip) end
 ---@param rotZ number
 ---@param fieldOfView number
 ---@param p8 any
----@param p9 integer
----@param p10 integer
----@param p11 integer
+---@param graphType1 integer
+---@param graphType2 integer
+---@param rotationOrder integer
 ---@param p12 any
 ---@param p13 any
-function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, p8, p9, p10, p11, p12, p13) end
+function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, p8, graphType1, graphType2, rotationOrder, p12, p13) end
 
 ---**`CAM` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x63DFA6810AD78719)  

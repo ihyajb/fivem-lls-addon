@@ -40,6 +40,21 @@ function AddCoverBlockingVolume(volume, p1, p2, p3, p4) end
 function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x59872EA4CBD11C56)  
+---Returns the entity coverpoint with offset.
+---@param entity integer
+---@param xOffset number
+---@param yOffset number
+---@param zOffset number
+---@param heading number
+---@param p5 integer
+---@param p6 integer
+---@param p7 integer
+---@param p8 integer
+---@return integer
+function AddCoverpointForEntity(entity, xOffset, yOffset, zOffset, heading, p5, p6, p7, p8) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE8F1A5B4CED3725A)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -359,6 +374,20 @@ function DoesScenarioPointHaveProps(scenario) end
 function DoesScriptedCoverPointExistAtCoords(p0, p1, p2, p3) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x1ECF56C040FD839C)  
+---This native does not have an official description.
+---@param ped integer
+---@param direction number
+function EmitPedCarriableStruggleDirection(ped, direction) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xBD1C3C0F271C39D3)  
+---This native does not have an official description.
+---@param ped integer
+---@param intensity number
+function EmitPedCarriableStruggleIntensity(ped, intensity) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEED08A3A98B847E2)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -367,11 +396,29 @@ function DoesScriptedCoverPointExistAtCoords(p0, p1, p2, p3) end
 function EndDuel(ped, p1, p2) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x6AFD84AEAA3EA538)  
+---This native does not have an official description.
+---@param ped integer
+---@return boolean
+function EvaluatePedCarriableStruggleAvailable(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE47DD64B9F02677D)  
 ---This native does not have an official description.
 ---@param item integer | string
 ---@return integer
 function FindModelForItem(item) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x244430C13BA5258E)  
+---Finds the nearest ped around the specified originPed, with optional filters for life state and predator/fish behavior
+---(all false) returns the nearest ped regardless of alive/dead state
+---@param animalPed integer
+---@param aliveOnly boolean
+---@param deadOnly boolean
+---@param preferDeadPredators boolean
+---@return integer
+function FindNearestPedAroundAnimal(animalPed, aliveOnly, deadOnly, preferDeadPredators) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8E213D02F37947D)  
@@ -441,21 +488,6 @@ function ForceScenarioGroupPriority(p0, p1) end
 function GetActiveVehicleMissionType(vehicle) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x59872EA4CBD11C56)  
----Returns the entity coverpoint with offset.
----@param entity integer
----@param xOffset number
----@param yOffset number
----@param zOffset number
----@param heading number
----@param p5 integer
----@param p6 integer
----@param p7 integer
----@param p8 integer
----@return integer
-function GetCoverpointFromEntityWithOffset(entity, xOffset, yOffset, zOffset, heading, p5, p6, p7, p8) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE62754D09354F6CF)  
 ---Returns the seat index currently set as the driving seat for the specified vehicle vehicle: The vehicle to query. Returns: Seat index (default = -1 for driver seat, custom index if changed with SET_DRIVING_SEAT)
 ---@param vehicle integer
@@ -475,6 +507,12 @@ function GetHerbCompositeNumEntities(compositeId) end
 ---@param ped integer
 ---@return number
 function GetHogtieEscapeTimer(ped) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x5952DFA38FA529FE)  
+---returns an int in decompiles usually 0 or 1
+---@return integer
+function GetHoldToReelSettingEnabled() end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x351F74ED6177EBE7)  
@@ -549,6 +587,15 @@ function GetItemInteractionState(ped) end
 ---@param ped integer
 ---@return integer
 function GetLedHorseFromPed(ped) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xE7BBC4E56B989449)  
+---Fills an output array with scenario points linked (chained) to a given parent scenario point. Returns the number of linked points found. Writes up to maxPoints and zeroes remaining entries. Useful for flows like chained put-down scenarios.
+---@param scenarioPoint any
+---@param outPoints any
+---@param maxPoints any
+---@return any
+function GetLinkedScenarioPoints(scenarioPoint, outPoints, maxPoints) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x03D741CB4052E26C)  
@@ -791,6 +838,22 @@ function GetTaskMoveNetworkPhaseFloat(ped, phaseName) end
 function GetTaskMoveNetworkState(ped) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x6BA606AB3A83BC4D)  
+---Returns 0.0-1.0 progress for the current mount-leap task, or -1.0f if no leap is active.
+---@param ped integer
+---@return number
+function GetTaskPedMountLeapProgress(ped) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x9420FB11B8D77948)  
+---Returns a coarse state for the mount-leap task (jumping from your mount onto another mount/wagon/train).
+----1 = no task; 0 = in-air/ongoing; 1 = boarded/mounted; 2 = boarded rear train trailer
+---Use with _GET_TASK_PED_MOUNT_LEAP_PROGRESS for timing
+---@param ped integer
+---@return integer
+function GetTaskPedMountLeapState(ped) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3DC971EB22F73447)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -820,11 +883,27 @@ function GetVehicleWaypointTargetPoint(vehicle) end
 function GetWaypointDistanceAlongRoute(waypointRecording, p1) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x78D8C1D4EB80C588)  
+---Returns the maximum (target) whistle/call distance associated with the next horse bonding level.
+---Used together with the current level's minimum to derive an effective whistle range based on the horse's bonding progress toward the next rank
+---@param bondingLevel integer
+---@return number
+function GetWhistleRangeMaxForBondingLevel(bondingLevel) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xEB67D4E056C85A81)  
+---Returns the minimum (baseline) whistle/call distance for the given horse bonding level.
+---This value represents the lower bound used when computing whether a horse is considered near or far relative to the player, and is interpolated against the next level's max.
+---@param bondingLevel integer
+---@return number
+function GetWhistleRangeMinForBondingLevel(bondingLevel) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8F52A3F84A7CC59)  
 ---list of carriable configs  https://gist.github.com/outsider31000/6272561fb992ccff80efbd130e0e9b9f
----@param hash integer | string
+---@param carriableConfig integer | string
 ---@return boolean
-function HasCarriableConfigHashLoaded(hash) end
+function HasCarriableConfigHashLoaded(carriableConfig) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7CB99FADDE73CD1B)  
@@ -1293,22 +1372,6 @@ function N_0x1a7d63cb1b0bb223(p0) end
 function N_0x1ac5a8ab50cfaa33(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x1D125814EBC517EB)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x1d125814ebc517eb(p0, p1, p2, p3) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x1ECF56C040FD839C)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x1ecf56c040fd839c(p0, p1) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F298C7BD30D1240)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -1349,18 +1412,6 @@ function N_0x22cdbf317c40a122(ped) end
 ---@param p0 any
 ---@param p1 any
 function N_0x23767d80c7eed7c6(p0, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x244430C13BA5258E)  
----_FIND_NEAREST_PED_*
----Finds the nearest ped around the specified originPed, with optional filters for life state and predator/fish behavior
----(all false) returns the nearest ped regardless of alive/dead state
----@param originPed integer
----@param aliveOnly boolean
----@param deadOnly boolean
----@param predatorPreferDead boolean
----@return integer
-function N_0x244430c13ba5258e(originPed, aliveOnly, deadOnly, predatorPreferDead) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x28EF780BDEA8A639)  
@@ -1476,20 +1527,6 @@ function N_0x3f8387db1b9f31b7(p1) end
 function N_0x3feb770d8ed9047a(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x3FFCD7BBA074CC80)  
----This native does not have an official description.
----@param ped integer
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@param p8 any
-function N_0x3ffcd7bba074cc80(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x41D1331AFAD5A091)  
 ---_SET_PED_*
 ---@param ped integer
@@ -1547,18 +1584,6 @@ function N_0x508f5053e3f6f0c4(ped, x, y, z, p4) end
 function N_0x50aa09a0da64e73c(p0, p1, p2, p3, p4, p5, p6) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x517D01BF27B682D1)  
----This native does not have an official description.
----@param ped integer
----@param entity integer
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 integer
-function N_0x517d01bf27b682d1(ped, entity, p2, p3, p4, p5, p6) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5217B7B6DB78E1F3)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1567,12 +1592,6 @@ function N_0x517d01bf27b682d1(ped, entity, p2, p3, p4, p5, p6) end
 ---@param p3 any
 ---@param p4 any
 function N_0x5217b7b6db78e1f3(p0, p1, p2, p3, p4) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x5952DFA38FA529FE)  
----This native does not have an official description.
----@return any
-function N_0x5952dfa38fa529fe() end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59AE5CA4FFB4E378)  
@@ -1664,32 +1683,6 @@ function N_0x673a8779d229ba5a(p0, p1, p2, p3, p4, p5) end
 function N_0x678d3226cf70b9c8(ped, p1) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x6A1AF481407BF6E9)  
----This native does not have an official description.
----@param p0 any
-function N_0x6a1af481407bf6e9(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x6AFD84AEAA3EA538)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x6afd84aeaa3ea538(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x6AFDA2264925BD11)  
----This native does not have an official description.
----@param p0 any
-function N_0x6afda2264925bd11(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x6BA606AB3A83BC4D)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x6ba606ab3a83bc4d(p0) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C269F673C47031E)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1743,25 +1736,6 @@ function N_0x764db5a48390fbad(p0, p1) end
 function N_0x76610d12a838ebde(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x78D8C1D4EB80C588)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x78d8c1d4eb80c588(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x79197F7D2BB5E73A)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@return any
-function N_0x79197f7d2bb5e73a(p0, p1, p2, p3, p4, p5) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7FB78B2199C10E92)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1775,13 +1749,6 @@ function N_0x7fb78b2199c10e92(p0) end
 ---@param p2 any
 ---@param p3 any
 function N_0x801bd27403f3cba0(p0, p1, p2, p3) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x816A3ACD265E2297)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0x816a3acd265e2297(p0, p1) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x827A58CED9D4D5B4)  
@@ -1825,13 +1792,6 @@ function N_0x885d19ac2b6fbff4(p0, p1) end
 function N_0x88fd60d846d9cd63(ped) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x8B1FDF63C3193EDA)  
----This native does not have an official description.
----@param ped integer
----@param p1 number
-function N_0x8b1fdf63c3193eda(ped, p1) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E1DDE26D270CC5E)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -1872,13 +1832,6 @@ function N_0x91cb5e431f579ba1(p0) end
 ---@param p0 any
 ---@return any
 function N_0x920684be432875b1(p0) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x9420FB11B8D77948)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0x9420fb11b8d77948(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x954451EA2D2120FB)  
@@ -2001,13 +1954,6 @@ function N_0xb8e3486d107f4194(p0, p1) end
 ---@param p0 any
 ---@param p1 any
 function N_0xbc3f847ae2c3dc65(p0, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xBD1C3C0F271C39D3)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
-function N_0xbd1c3c0f271c39d3(p0, p1) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD70108D01875299)  
@@ -2133,15 +2079,6 @@ function N_0xe69fda40aac3efc0(p0, p1) end
 function N_0xe6a151364c600b24(p0) end
 
 ---**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xE7BBC4E56B989449)  
----This native does not have an official description.
----@param p0 any
----@param p1 any
----@param p2 any
----@return any
-function N_0xe7bbc4e56b989449(p0, p1, p2) end
-
----**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE9225354FB7437A7)  
 ---This native does not have an official description.
 ---@param p0 any
@@ -2161,13 +2098,6 @@ function N_0xe9a6400d1a0e7a55(p0) end
 ---@param p0 any
 ---@param p1 any
 function N_0xeaf87da2be78a15b(p0, p1) end
-
----**`TASK` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xEB67D4E056C85A81)  
----This native does not have an official description.
----@param p0 any
----@return any
-function N_0xeb67d4e056c85a81(p0) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBA2081E0A5F4D17)  
@@ -2337,6 +2267,12 @@ function ReactLookAtEnd(ped, exitAnimation, p2) end
 function RemoveAllCoverBlockingAreas() end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x6AFDA2264925BD11)  
+---This native does not have an official description.
+---@param carriableConfig integer | string
+function RemoveCarriableConfig(carriableConfig) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAE287C923D891715)  
 ---This native does not have an official description.
 ---@param coverpoint integer
@@ -2414,6 +2350,18 @@ function ResetScenarioScript(scenario) end
 function ResetScenarioTypesEnabled() end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x517D01BF27B682D1)  
+---Set a ped's boat-local offset and/or facing (degrees). Boats only. Flags: 0=apply both; 1=heading only (lock offset); 2=offset only (lock heading); 3=apply neither.
+---@param ped integer
+---@param boat integer
+---@param offsetX number
+---@param offsetY number
+---@param offsetZ number
+---@param heading number
+---@param flags integer
+function SetAboardPedBoatPose(ped, boat, offsetX, offsetY, offsetZ, heading, flags) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x87B66D77D545DB66)  
 ---This native does not have an official description.
 ---@param entity integer
@@ -2430,6 +2378,13 @@ function SetAnimFilter(entity, filterName, priority, secondary) end
 ---@param p2 any
 ---@param p3 boolean
 function SetAnimRate(p0, p1, p2, p3) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x816A3ACD265E2297)  
+---Enables or disables the interaction prompt for a given carriable config (e.g. DEAD_CARRIABLE_HUMAN).
+---@param carriableConfig integer | string
+---@param toggle boolean
+function SetCarriableConfigPromptEnabled(carriableConfig, toggle) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA21AA2F0C2180125)  
@@ -2873,7 +2828,7 @@ function StopAnimTask(ped, animDictionary, animationName, p3) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC7F71CF49F70B6B)  
 ---Swaps the horse drawn wagon/coach reings control between the ped and their adjacent front-seat partner
 ---@param ped integer
-function SwapReins(ped) end
+function SwapReinsForPed(ped) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE01F55B2896F6B37)  
@@ -2898,23 +2853,23 @@ function TaskAchieveHeading(ped, heading, timeout) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4AF1D73861212F52)  
 ---This native does not have an official description.
 ---@param ped integer
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
+---@param x number
+---@param y number
+---@param z number
+---@param time integer
 ---@param p5 any
 ---@param p6 any
-function TaskAimAtCoord(ped, p1, p2, p3, p4, p5, p6) end
+function TaskAimAtCoord(ped, x, y, z, time, p5, p6) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF7569BD0FB480A0)  
 ---This native does not have an official description.
 ---@param ped integer
----@param p1 any
----@param p2 any
+---@param targetEntity integer
+---@param time integer
 ---@param p3 any
 ---@param p4 any
-function TaskAimAtEntity(ped, p1, p2, p3, p4) end
+function TaskAimAtEntity(ped, targetEntity, time, p3, p4) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6671F3EEC681BDA1)  
@@ -2967,11 +2922,11 @@ function TaskAnimalAlerted(ped, p1, p2) end
 ---This native does not have an official description.
 ---@param ped integer
 ---@param killer integer
----@param p2 boolean
+---@param flee boolean
 ---@param weaponHash integer | string
 ---@param p4 integer
----@param p5 integer
-function TaskAnimalBleedOut(ped, killer, p2, weaponHash, p4, p5) end
+---@param boneId integer
+function TaskAnimalBleedOut(ped, killer, flee, weaponHash, p4, boneId) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA899B61C66F09134)  
@@ -3031,9 +2986,9 @@ function TaskBark(ped, barkAtTarget, mood) end
 ---@param vehicle integer
 ---@param p2 any
 ---@param p3 any
----@param p4 any
----@param p5 any
-function TaskBoardVehicle(ped, vehicle, p2, p3, p4, p5) end
+---@param speed number
+---@param boardingFlags integer
+function TaskBoardVehicle(ped, vehicle, p2, p3, speed, boardingFlags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE41A09C8DDFF7AA4)  
@@ -3041,9 +2996,9 @@ function TaskBoardVehicle(ped, vehicle, p2, p3, p4, p5) end
 ---@param ped integer
 ---@param p1 any
 ---@param p2 any
----@param p3 number
----@param flags integer
-function TaskBoardVehicle_2(ped, p1, p2, p3, flags) end
+---@param speed number
+---@param boardingFlags integer
+function TaskBoardVehicle_2(ped, p1, p2, speed, boardingFlags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x15C86013127CE63F)  
@@ -3337,6 +3292,13 @@ function TaskDumpCarriableFromParent(ped, ped2, entity) end
 ---@param p1 any
 ---@param p2 any
 function TaskEat(ped, p1, p2) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x6A1AF481407BF6E9)  
+---Triggers the 'action / flourish' sub-clip of the ped's currently playing emote.
+---@param ped integer
+---@return boolean
+function TaskEmoteAction(ped) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBDFEEB7600BCD938)  
@@ -3735,7 +3697,7 @@ function TaskForceMotionState(ped, motionStateHash, p2) end
 ---@param duration integer
 ---@param p3 boolean
 ---@param p4 boolean
-function TaskForceThrowableAtEntityWhenAiming(ped, targetEntity, duration, p3, p4) end
+function TaskForceThrowableAtEntityWhileAiming(ped, targetEntity, duration, p3, p4) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD76B57B44F1E6F8B)  
@@ -3744,12 +3706,12 @@ function TaskForceThrowableAtEntityWhenAiming(ped, targetEntity, duration, p3, p
 ---@param x number
 ---@param y number
 ---@param z number
----@param moveBlendRatio number
+---@param moveBlendSpeedY number
 ---@param timeBeforeTeleport integer
 ---@param finalHeading number
 ---@param targetRadius number
 ---@param p8 integer
-function TaskGoStraightToCoord(ped, x, y, z, moveBlendRatio, timeBeforeTeleport, finalHeading, targetRadius, p8) end
+function TaskGoStraightToCoord(ped, x, y, z, moveBlendSpeedY, timeBeforeTeleport, finalHeading, targetRadius, p8) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x61E360B7E040D12E)  
@@ -4266,11 +4228,12 @@ function TaskKnockedOut(ped, p1, permanently) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42AC6401ABB8C7E5)  
----This native does not have an official description.
+---koTimeOffset (seconds): offset applied to the knockout timer—positive delays recovery (longer KO), negative brings recovery sooner, 0.0 initializes with no extension (immediate baseline).
+---flags (bitmask): 1 = default variant (forwarded to the KO task ctor; R* commonly uses 1), 2 = sets an unk internal synced toggle for this task, 4 = sets another unk internal synced toggle.
 ---@param ped integer
----@param p1 number
----@param p2 integer
-function TaskKnockedOutAndHogtied(ped, p1, p2) end
+---@param koTimeOffset number
+---@param flags integer
+function TaskKnockedOutAndHogtied(ped, koTimeOffset, flags) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFB520A3E16F7B7B)  
@@ -4278,6 +4241,13 @@ function TaskKnockedOutAndHogtied(ped, p1, p2) end
 ---@param ped integer
 ---@param p1 number
 function TaskKnockedOutSetDuration(ped, p1) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x8B1FDF63C3193EDA)  
+---Sets an unknown float tuning setting for a ped that is currently in the knocked-out state.
+---@param ped integer
+---@param tuning number
+function TaskKnockedOutSetTuning(ped, tuning) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC716EB2BD16370A3)  
@@ -4875,11 +4845,11 @@ function TaskRideTrain(ped, train, scenarioPoint, scenarioHash) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x7BB967F85D8CCBDB)  
 ---This native does not have an official description.
 ---@param ped integer
----@param p1 any
+---@param target any
 ---@param p2 any
----@param p3 any
+---@param flag integer
 ---@param p4 any
-function TaskRobPed(ped, p1, p2, p3, p4) end
+function TaskRobPed(ped, target, p2, flag, p4) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x126EF75F1E17ABE5)  
@@ -5314,6 +5284,15 @@ function TaskUseScenarioPoint(ped, scenario, conditionalAnim, p3, p4, p5, p6, p7
 function TaskUseScenarioPoint_2(ped, ped2, p2, p3, p4, p5, p6, p7) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x1D125814EBC517EB)  
+---Adds a waypoint to an AI vehicle's active drive-to-destination task; only the last 3 points are kept (ignored if no such task).
+---@param vehicle integer
+---@param x number
+---@param y number
+---@param z number
+function TaskVehicleAddNextDestination(vehicle, x, y, z) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x447C1E9EF844BC0F)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -5676,6 +5655,19 @@ function TaskWeapon(ped) end
 function TaskWhistleAnim(ped, audPedWhistleType, p2) end
 
 ---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x79197F7D2BB5E73A)  
+---Smoothly transitions an active scenario actor (ped) into a specific conditional / clipset defined in the scenario's conditional-anim graph, breaking or restarting the scenario.
+---Returns `true` if the transition was successfully triggered, or `false` if it failed
+---@param ped integer
+---@param scenarioPoint integer
+---@param clipsetDict string
+---@param clipsetName string
+---@param fromConditionalAnim string
+---@param flags integer
+---@return boolean
+function TransitionScenarioToConditionalAnim(ped, scenarioPoint, clipsetDict, clipsetName, fromConditionalAnim, flags) end
+
+---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x67406F2C8F87FC4F)  
 ---This native does not have an official description.
 ---@param ped integer
@@ -5691,6 +5683,20 @@ function UncuffPed(ped) end
 ---@param p4 string
 ---@param p5 number
 function UnhogtiePed(ped, flags, getupSetHash, p3, p4, p5) end
+
+---**`TASK` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x3FFCD7BBA074CC80)  
+---In-place update for a running follow-to-offset/go-to task: sets new target coords + local offset, with speed and arrival tolerance (foot or mount; no effect if no compatible task)
+---@param ped integer
+---@param targetX number
+---@param targetY number
+---@param targetZ number
+---@param offsetX number
+---@param offsetY number
+---@param offsetZ number
+---@param speed number
+---@param tolerance number
+function UpdateTaskGoToCoordWithOffset(ped, targetX, targetY, targetZ, offsetX, offsetY, offsetZ, speed, tolerance) end
 
 ---**`TASK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA98FCAFD7893C834)  

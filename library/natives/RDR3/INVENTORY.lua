@@ -26,6 +26,26 @@ function GetItemRoleMaxLevelCount(inventoryId, eRoleMaxLevel) end
 function GetItemSlotMaxCount(provision, slotId) end
 
 ---**`INVENTORY` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x9D21B185ABC2DBC4)  
+---Adds an effects entry to the CatalogItemInspection container, return int to be used with _0x75CFAC49301E134F
+---@param entryId integer
+---@param name string
+---@param unk1 boolean
+---@param unk2 boolean
+---@return integer
+function InventoryAddCatalogItemInspectionEffectsEntry(entryId, name, unk1, unk2) end
+
+---**`INVENTORY` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x9D21B185ABC2DBC5)  
+---Returns stats entry id of CatalogItemInspection container
+---@param entryId integer
+---@param name string
+---@param unk1 integer
+---@param playerid integer
+---@return integer
+function InventoryAddCatalogItemInspectionStatsEntry(entryId, name, unk1, playerid) end
+
+---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB5D11F9508A928D)  
 ---inventoryItemSlotHash: https://pastebin.com/P6fyr3vr
 ---@param inventoryId integer
@@ -37,8 +57,16 @@ function GetItemSlotMaxCount(provision, slotId) end
 function InventoryAddItemWithGuid(inventoryId, item, inventoryItemSlot, p5, addReason) end
 
 ---**`INVENTORY` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x75CFAC49301E134F)  
+---entry id from _INVENTORY_ADD_CATALOG_ITEM_INSPECTION_EFFECTS_ENTRY
+---@param databindingEntryId integer | string
+---@param p1 boolean
+---@param p2 boolean
+function InventoryApplyItemEffectToStatsEntry(databindingEntryId, p1, p2) end
+
+---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75CFAC49301E134E)  
----Apply the weapon stats to the CatalogItemInspection stats entry id. get entryId with _INVENTORY_GET_CATALOG_ITEM_INSPECTION_STATS_ENTRY
+---Apply the weapon stats to the CatalogItemInspection stats entry id. get entryId with _INVENTORY_ADD_CATALOG_ITEM_INSPECTION_STATS_ENTRY
 ---@param entryId integer
 ---@param weapon integer | string
 ---@param ped integer
@@ -174,26 +202,6 @@ function InventoryEquipItemWithGuid(inventoryId, bEquipped) end
 ---@param slotId integer | string
 ---@return boolean
 function InventoryFitsSlotId(item, slotId) end
-
----**`INVENTORY` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x9D21B185ABC2DBC4)  
----Returns effects entry id of CatalogItemInspection container.
----@param entryId integer
----@param name string
----@param unk1 boolean
----@param unk2 boolean
----@return integer
-function InventoryGetCatalogItemInspectionEffectsEntry(entryId, name, unk1, unk2) end
-
----**`INVENTORY` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x9D21B185ABC2DBC5)  
----Returns stats entry id of CatalogItemInspection container
----@param entryId integer
----@param name string
----@param unk1 integer
----@param playerid integer
----@return integer
-function InventoryGetCatalogItemInspectionStatsEntry(entryId, name, unk1, playerid) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE843D21A8E2498AA)  
@@ -356,6 +364,14 @@ function InventoryGetInventoryItemInUse(inventoryId) end
 ---@param item integer | string
 ---@return boolean
 function InventoryGetInventoryItemIsAnimalPelt(item) end
+
+---**`INVENTORY` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x112BCA290D2EB53C)  
+---Returns the last creation date of an inventory item
+---@param inventoryId integer
+---@param item integer | string
+---@return boolean, integer, integer, integer, integer, integer, integer
+function InventoryGetInventoryItemLastCreation(inventoryId, item) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2E1CDC1FF3B8473E)  
@@ -575,14 +591,6 @@ function InventoryUseSatchelItem(inventoryId, eInventoryItem, p2) end
 function N_0x0349404a22736740(p0, inventoryId) end
 
 ---**`INVENTORY` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x112BCA290D2EB53C)  
----Only used in R* SP Scripts
----@param inventoryId integer
----@param p1 integer | string
----@return boolean, integer, integer, integer, integer, integer, integer
-function N_0x112bca290d2eb53c(inventoryId, p1) end
-
----**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x46DB71883EE9D5AF)  
 ---Returns databindingEntryId to be used with 0x951847CEF3D829FF (p0)
 ---@param data any
@@ -604,14 +612,6 @@ function N_0x6862e4d93f64cf01(inventoryId, p2) end
 ---Only used in R* SP Scripts
 ---@param inventoryId integer
 function N_0x6968ce7ac32f6788(inventoryId) end
-
----**`INVENTORY` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x75CFAC49301E134F)  
----p1, p2: 0
----@param databindingEntryId integer | string
----@param p1 boolean
----@param p2 boolean
-function N_0x75cfac49301e134f(databindingEntryId, p1, p2) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x951847CEF3D829FF)  

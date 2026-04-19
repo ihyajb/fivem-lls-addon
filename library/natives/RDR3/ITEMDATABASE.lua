@@ -122,7 +122,7 @@ function ItemdatabaseFilloutItemEffectIds(key) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE90ABBCBFDC13B2)  
----This native does not have an official description.
+---outputs struct ItemInfo { Hash category; Hash itemType; Hash unk2; Hash model; Hash award; }
 ---@param key integer | string
 ---@return boolean, any
 function ItemdatabaseFilloutItemInfo(key) end
@@ -224,6 +224,13 @@ function ItemdatabaseGetAwardAcquireCostCountFromCostType(award, costtype) end
 ---@param award integer | string
 ---@return boolean, any
 function ItemdatabaseGetAwardCostModifiers(award) end
+
+---**`ITEMDATABASE` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0xD076DB9B96FAADF1)  
+---This native does not have an official description.
+---@param award integer | string
+---@return boolean, any
+function ItemdatabaseGetAwardInfo(award) end
 
 ---**`ITEMDATABASE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FAA928A79591761)  
@@ -646,11 +653,4 @@ function N_0xaa29a5f13b2c20b2(p0, p1) end
 ---@param p3 any
 ---@return boolean
 function N_0xc4146375d8a0b374(bundle, p1, index, p3) end
-
----**`ITEMDATABASE` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0xD076DB9B96FAADF1)  
----_ITEMDATABASE_GET_AWARD_*
----@param award integer | string
----@return boolean, any
-function N_0xd076db9b96faadf1(award) end
 

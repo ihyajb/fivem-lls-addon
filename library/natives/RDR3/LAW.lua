@@ -140,6 +140,13 @@ function GetBountyHunterGlobalCooldown(p0) end
 function GetCrimeBountyAmountByType(crimeType) end
 
 ---**`LAW` `client`**  
+---[Native Documentation](https://rdr3natives.com/?native=0x148E7AC8141C9E64)  
+---This native does not have an official description.
+---@param player integer
+---@return integer
+function GetCrimeDispatchTypeForPlayer(player) end
+
+---**`LAW` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x259CE340A8738814)  
 ---See _REPORT_CRIME
 ---@param player integer
@@ -254,13 +261,6 @@ function N_0x0eaf918f751f27ba(ped) end
 ---@param player integer
 ---@return boolean
 function N_0x0f230de0ddbe3649(player) end
-
----**`LAW` `client`**  
----[Native Documentation](https://rdr3natives.com/?native=0x148E7AC8141C9E64)  
----This native does not have an official description.
----@param player integer
----@return integer
-function N_0x148e7ac8141c9e64(player) end
 
 ---**`LAW` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x15ABD5004CAD2D99)  
