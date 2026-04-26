@@ -1146,7 +1146,7 @@ function MakePedDropWeapon(ped, p1, attachPoint, p3, p4) end
 
 ---**`WEAPON` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x79E1E511FF7EFB13)  
----This native does not have an official description.
+---only works if there is ammo in the reserve, can reload while sprinting/walking/running
 ---@param ped integer
 ---@return any
 function MakePedReload(ped) end
