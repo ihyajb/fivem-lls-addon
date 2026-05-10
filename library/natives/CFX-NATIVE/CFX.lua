@@ -5673,7 +5673,7 @@ function SetBackfaceculling(toggle) end
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8DBBB0B9)  
 ---Sets the displayed sprite for a specific blip.
----There's a [list of sprites](https://docs.fivem.net/game-references/blips/) on the FiveM documentation site.
+---There's a [list of sprites](https://docs.fivem.net/docs/game-references/blips/) on the FiveM documentation site.
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_BLIP_SPRITE](?\_0xDF735600A4696DAF).**
 ---@param blip integer
