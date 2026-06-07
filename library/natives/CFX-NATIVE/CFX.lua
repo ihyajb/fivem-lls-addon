@@ -282,6 +282,8 @@ function CancelEvent() end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x429461C3)  
+---> This native is deprecated and may be removed in a future version. Use the [Tebex API](https://docs.tebex.io/) instead.
+---
 ---Returns whether or not the specified player has enough information to start a commerce session for.
 ---@param playerSrc string
 ---@return boolean
@@ -628,6 +630,8 @@ function DoesPlayerExist(playerSrc) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x167ABA27)  
+---> This native is deprecated and may be removed in a future version. Use [`DOES_PLAYER_OWN_SKU_EXT`](#\_0xDEF0480B) instead.
+---
 ---Requests whether or not the player owns the specified SKU.
 ---@param playerSrc string
 ---@param skuId integer
@@ -2182,7 +2186,7 @@ function GetNumPlayerTokens(playerSrc) end
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x776E864)  
 ---Gets the amount of metadata values with the specified key existing in the specified resource's manifest.
----See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/)
+---See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/)
 ---@param resourceName string
 ---@param metadataKey string
 ---@return integer
@@ -2927,7 +2931,7 @@ function GetResourceKvpString(key) end
 ---**`CFX` `shared`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x964BAB1D)  
 ---Gets the metadata value at a specified key/index from a resource's manifest.
----See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/)
+---See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/)
 ---@param resourceName string
 ---@param metadataKey string
 ---@param index integer
@@ -4380,6 +4384,12 @@ function IsEntityVisible(entity) end
 ---@return boolean
 function IsFlashLightOn(ped) end
 
+---**`CFX` `client`**  
+---[Native Documentation](https://docs.fivem.net/natives/?_0x4DD998F6)  
+---This native does not have an official description.
+---@return boolean
+function IsGameEnhancedVersion() end
+
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x23E46BD7)  
 ---This is a getter for [SET_HELI_TAIL_EXPLODE_THROW_DASHBOARD](#\_0x3EC8BF18AA453FE9)
@@ -4511,6 +4521,8 @@ function IsPlayerAceAllowed(playerSrc, object) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBEFE93F4)  
+---> This native is deprecated and may be removed in a future version. Use [`IS_PLAYER_COMMERCE_INFO_LOADED_EXT`](#\_0x1D14F4FE) instead.
+---
 ---Requests whether or not the commerce data for the specified player has loaded.
 ---@param playerSrc string
 ---@return boolean
@@ -4720,6 +4732,8 @@ function LeaveCursorMode() end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA8F63EAB)  
+---> This native is deprecated and may be removed in a future version. Use [`LOAD_PLAYER_COMMERCE_DATA_EXT`](#\_0x7995539E) instead.
+---
 ---Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
 ---@param playerSrc string
 function LoadPlayerCommerceData(playerSrc) end
@@ -5439,6 +5453,8 @@ function RemoveWeaponFromPed(ped, weaponHash) end
 
 ---**`CFX` `server`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x96F93CCE)  
+---> This native is deprecated and may be removed in a future version. Use the [Tebex API](https://docs.tebex.io/) instead.
+---
 ---Requests the specified player to buy the passed SKU. This'll pop up a prompt on the client, which upon acceptance
 ---will open the browser prompting further purchase details.
 ---@param playerSrc string
@@ -6580,7 +6596,7 @@ function SetLightVolumetricFadeDistance(volumetricFadeDistance) end
 
 ---**`CFX` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1722C938)  
----**Note**: This native is deprecated and doesn't work anymore. Use [loadscreen_manual_shutdown](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/#loadscreen_manual_shutdown) in the fxmanifest.lua instead.
+---**Note**: This native is deprecated and doesn't work anymore. Use [loadscreen_manual_shutdown](https://docs.fivem.net/docs/scripting-reference/resource-manifest/#loadscreen_manual_shutdown) in the fxmanifest.lua instead.
 ---@param manualShutdown boolean
 function SetManualShutdownLoadingScreenNui(manualShutdown) end
 
