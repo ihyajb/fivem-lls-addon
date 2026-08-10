@@ -24,6 +24,23 @@ jobs:
           wget https://github.com/ihyajb/rage-lua-natives/archive/master.zip -O repo.zip
           unzip repo.zip
           cd rage-lua-natives-master
+
+          # The generator still points at runtime.fivem.net/doc/natives_cfx.json, which is a
+          # stale mirror (943 natives) missing everything Cfx has shipped for GTA V Enhanced --
+          # the whole COLSHAPE family included. static.cfx.re is the endpoint the official docs
+          # use and carries the full set (973). Remove this patch once rage-lua-natives is fixed.
+          OLD_CFX_URL="https://runtime.fivem.net/doc/natives_cfx.json"
+          NEW_CFX_URL="https://static.cfx.re/natives/natives_cfx.json"
+          if grep -qF "$OLD_CFX_URL" main.ts; then
+            sed -i "s#$OLD_CFX_URL#$NEW_CFX_URL#g" main.ts
+            echo "Patched CFX native source -> $NEW_CFX_URL"
+          elif grep -qF "$NEW_CFX_URL" main.ts; then
+            echo "CFX native source already points at $NEW_CFX_URL; patch no longer needed"
+          else
+            echo "::error::Neither the old nor the new natives_cfx.json URL was found in main.ts" >&2
+            exit 1
+          fi
+
           pnpm i --frozen-lockfile
           pnpm start
           cd ..
