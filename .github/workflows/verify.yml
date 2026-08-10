@@ -11,12 +11,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - uses: oven-sh/setup-bun@v2
         with:
-          node-version: 22
+          bun-version: latest
 
       # Catches a library edited without rebuilding the index, and any parse
       # regression: the builder cross-checks its own declaration count against
       # the files and enforces a floor per game.
       - name: Check native index is current
-        run: node scripts/build-index.mjs --check
+        run: bun scripts/build-index.mjs --check

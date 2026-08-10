@@ -60,9 +60,12 @@ It is derived from the definitions that ship rather than from upstream, so the
 two cannot disagree:
 
 ```sh
-node scripts/build-index.mjs          # rebuild
-node scripts/build-index.mjs --check  # verify the committed index is current
+bun scripts/build-index.mjs          # rebuild
+bun scripts/build-index.mjs --check  # verify the committed index is current
 ```
+
+CI runs it under [Bun](https://bun.sh); the script uses only `node:` built-ins, so
+`node scripts/build-index.mjs` works identically if that is what you have.
 
 The builder refuses to write an index that is missing a hash, that parses fewer
 declarations than the files contain, that falls below a per-game floor, or that

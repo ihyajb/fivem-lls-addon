@@ -17,7 +17,6 @@
  * if it does not, without writing anything.
  */
 
-import { createHash } from 'node:crypto';
 import { readdir, readFile, writeFile } from 'node:fs/promises';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -313,11 +312,9 @@ if (checking) {
     process.exit(1);
   }
 
-  const digest = (buffer) => createHash('sha256').update(buffer).digest('hex');
-
-  // gzip output is deterministic for identical input and settings, so comparing
-  // the compressed bytes is enough to detect a stale index.
-  if (digest(current) !== digest(payload)) {
+  // Compared after decompression: gzip output is only byte-identical for the
+  // same zlib build and settings, and this runs under both node and bun.
+  if (gunzipSync(current).toString('utf8') !== JSON.stringify(index)) {
     console.error(
       'natives-index.json.gz is out of date; run node scripts/build-index.mjs',
     );
