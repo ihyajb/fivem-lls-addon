@@ -15,7 +15,10 @@ function OnSetText(uri, text)
 	local diffs = {}
 	local count = 0
 
-	-- prevent diagnostic errors in fxmanifest.lua and __resource.lua files
+	-- The manifest DSL is declared in library/manifest/fxmanifest.lua, so the
+	-- documented keys have signatures and completion. A manifest may also carry
+	-- arbitrary metadata keys, which nothing can declare ahead of time, so
+	-- undefined-global stays off for these files.
 	if str_find(uri, 'fxmanifest%.lua$') or str_find(uri, '__resource%.lua$') then
 		count = count + 1
 		diffs[count] = {

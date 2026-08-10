@@ -1,0 +1,95 @@
+name: Update native definitions
+on:
+  workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: Commit even if the library shrinks by more than 2%
+        type: boolean
+        default: false
+  schedule:
+    - cron: 0 0 * * SUN
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ihyajb/rage-lua-natives
+          path: .generator
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install generator
+        working-directory: .generator
+        run: pnpm install --frozen-lockfile
+
+      # Runs before generation so a broken generator fails the job while the
+      # committed library is still intact.
+      - name: Test generator
+        working-directory: .generator
+        run: pnpm test
+
+      - name: Generate natives
+        working-directory: .generator
+        run: pnpm start
+
+      # The generator exits non-zero if a game came back short, so reaching this
+      # step means all three sets cleared their floors. Only the shape of the
+      # build directory is re-checked here, before anything is deleted.
+      - name: Replace definitions
+        run: |
+          set -euo pipefail
+
+          for set in CFX-NATIVE GTAV RDR3; do
+            if [ ! -d ".generator/build/cfx/$set" ]; then
+              echo "::error::generator produced no $set directory"
+              exit 1
+            fi
+          done
+
+          if [ ! -f .generator/build/cfx/CFX-NATIVE/_handles.lua ]; then
+            echo "::error::generator produced no _handles.lua; every handle alias would be undefined"
+            exit 1
+          fi
+
+          rm -rf library/natives
+          mkdir -p library/natives
+          mv .generator/build/cfx/CFX-NATIVE \
+             .generator/build/cfx/GTAV \
+             .generator/build/cfx/RDR3 \
+             library/natives/
+          rm -rf .generator
+
+      # Rebuilds the index the editor integrations read, and refuses to proceed
+      # if any set lost more than 2% of its natives.
+      - name: Rebuild native index
+        run: >-
+          node scripts/build-index.mjs
+          ${{ inputs.allow_shrink && '--allow-shrink' || '' }}
+
+      - name: Commit update
+        run: |
+          set -euo pipefail
+
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add library natives-index.json.gz
+
+          if git diff-index --quiet HEAD --; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "ci: generate native definitions"
+          git push
