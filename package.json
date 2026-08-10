@@ -1,0 +1,15 @@
+{
+  "name": "fivem-lls-addon",
+  "private": true,
+  "type": "module",
+  "description": "Lua Language Server definitions for FiveM and RedM",
+  "license": "MIT",
+  "scripts": {
+    "index": "bun scripts/build-index.mjs",
+    "index:check": "bun scripts/build-index.mjs --check",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "wasmoon": "^1.16.0"
+  }
+}
