@@ -1,0 +1,28 @@
+name: Verify
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - run: bun install --frozen-lockfile
+
+      # Runs plugin.lua in a real Lua 5.4 runtime. It is the hottest code here —
+      # the language server calls it for every Lua file on every edit.
+      - name: Test the language server plugin
+        run: bun test
+
+      # Catches a library edited without rebuilding the artifacts, and any parse
+      # regression: the builder cross-checks its own declaration count against
+      # the files and enforces a floor per game.
+      - name: Check native index is current
+        run: bun scripts/build-index.mjs --check
