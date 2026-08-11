@@ -9,6 +9,11 @@
 -- for completion, hover text and argument checking on the keys that do have a
 -- defined meaning.
 --
+-- Values are suggested for completion but never enforced: every value-taking key
+-- below accepts a plain string as well as the listed values. The platform adds
+-- new ones, and a manifest must never be flagged for using one this file has not
+-- heard of.
+--
 -- Reference: https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/
 
 ---@alias fxversion
@@ -21,28 +26,26 @@
 
 ---@alias fxgame
 ---Grand Theft Auto V (FiveM).
----| 'gtav'
+---| 'gta5'
 ---Red Dead Redemption 2 (RedM).
 ---| 'rdr3'
 ---Any game.
 ---| 'common'
----Server-only resources.
----| 'server'
 
 ---@alias fxtoggle 'yes' | 'no' | 'true' | 'false' | 'on' | 'off'
 
 ---@alias fxfiles string | string[]
 
 ---Declares which manifest format the resource uses. Required.
----@param version fxversion
+---@param version fxversion | string
 function fx_version(version) end
 
 ---The game this resource targets. Use `games` for more than one.
----@param game fxgame
+---@param game fxgame | string
 function game(game) end
 
 ---The games this resource targets.
----@param games fxgame[]
+---@param games (fxgame | string)[]
 function games(games) end
 
 ---Acknowledges that RedM support is unfinished. Required by RedM resources.
@@ -70,11 +73,11 @@ function license(license) end
 
 ---Enables the Lua 5.4 runtime, which is required for the type definitions and
 ---nonstandard operators this extension configures.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function lua54(enabled) end
 
 ---Opts into the experimental fxv2 object-oriented API layer.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function use_experimental_fxv2_oal(enabled) end
 
 ---Scripts loaded on the client.
@@ -118,11 +121,11 @@ function ui_page(path) end
 function loadscreen(path) end
 
 ---Keep the loading screen up until the resource shuts it down itself.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function loadscreen_manual_shutdown(enabled) end
 
 ---Show the cursor on the loading screen.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function loadscreen_cursor(enabled) end
 
 ---Registers a game data file. Called as `data_file 'TYPE' 'path'`.
@@ -132,11 +135,11 @@ function loadscreen_cursor(enabled) end
 function data_file(fileType) end
 
 ---Marks this resource as a map, so the game loads it as one.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function this_is_a_map(enabled) end
 
 ---Prevents the resource from starting on the client.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function server_only(enabled) end
 
 ---Another resource that must start before this one.
@@ -179,15 +182,15 @@ function chat_theme(name) end
 function escrow_ignore(files) end
 
 ---Turns off lazy native loading for this resource.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function disable_lazy_natives(enabled) end
 
 ---Turns off the CLR task scheduler for this resource.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function clr_disable_task_scheduler(enabled) end
 
 ---Requires NUI callbacks to be registered before they are used.
----@param enabled fxtoggle
+---@param enabled fxtoggle | string
 function nui_callback_strict_mode(enabled) end
 
 ---Groups this resource's convars under a category in the server UI.
