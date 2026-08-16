@@ -5,7 +5,7 @@
 ---```
 ---Returns whether or not the specified property is set for the entity.  
 ---```
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return boolean
 function DecorExistOn(entity, propertyName) end
@@ -13,7 +13,7 @@ function DecorExistOn(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDACE671663F2F5DB)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return boolean
 function DecorGetBool(entity, propertyName) end
@@ -21,7 +21,7 @@ function DecorGetBool(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6524A2F114706F43)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return number
 function DecorGetFloat(entity, propertyName) end
@@ -29,7 +29,7 @@ function DecorGetFloat(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA06C969B02A97298)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return integer
 function DecorGetInt(entity, propertyName) end
@@ -68,7 +68,7 @@ function DecorRegisterLock() end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x00EE9F297C738720)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return boolean
 function DecorRemove(entity, propertyName) end
@@ -78,7 +78,7 @@ function DecorRemove(entity, propertyName) end
 ---```
 ---This function sets metadata of type bool to specified entity.  
 ---```
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value boolean
 ---@return boolean
@@ -87,7 +87,7 @@ function DecorSetBool(entity, propertyName, value) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x211AB1DD8D0F363A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value number
 ---@return boolean
@@ -98,7 +98,7 @@ function DecorSetFloat(entity, propertyName, value) end
 ---```
 ---Sets property to int.  
 ---```
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value integer
 ---@return boolean
@@ -107,7 +107,7 @@ function DecorSetInt(entity, propertyName, value) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x95AED7B8E39ECAA4)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param timestamp integer
 ---@return boolean

@@ -10,7 +10,7 @@ function N_0x2a4765812202e671() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x763637F9B838B0A7)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 string
 function N_0x763637f9b838b0a7(p0, p1, p2) end
 
@@ -48,8 +48,8 @@ function N_0xda0a30153fcc0ffd() end
 ---@param x number
 ---@param y number
 ---@param z number
----@param p5 integer | string
----@param p6 integer | string
+---@param p5 Hash | string
+---@param p6 Hash | string
 ---@param p7 any
 function UilogAddEntryHash(p0, p1, x, y, z, p5, p6, p7) end
 
@@ -70,8 +70,8 @@ function UilogAddItemToTaskList(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB43163388484CC87)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
----@param p2 integer | string
+---@param p1 Hash | string
+---@param p2 Hash | string
 ---@param p3 string
 ---@param p4 boolean
 ---@param p5 boolean
@@ -81,11 +81,11 @@ function UilogAddOrUpdateObjective(p0, p1, p2, p3, p4, p5, p6) end
 ---**`UILOG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x60C59968E8E87E6B)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
+---@param p0 Hash | string
+---@param p1 Hash | string
 ---@param p2 string
 ---@param p3 string
----@param p4 integer | string
+---@param p4 Hash | string
 function UilogAddTotalTakeEntry(p0, p1, p2, p3, p4) end
 
 ---**`UILOG` `client`**  
@@ -119,7 +119,7 @@ function UilogHasDisplayedCachedObjective() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8188CCF52202475)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return boolean
 function UilogIsEntryRegistered(p0, p1) end
 
@@ -134,7 +134,7 @@ function UilogMarkAllEntriesAvailability(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x13E8D7DD08543482)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 integer
 ---@param p3 string
 function UilogMarkEntryAvailability(p0, p1, p2, p3) end
@@ -142,13 +142,13 @@ function UilogMarkEntryAvailability(p0, p1, p2, p3) end
 ---**`UILOG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE31D66D1E54C471)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function UilogMarkMissionCompleted(p0) end
 
 ---**`UILOG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x49E58FE6EF40B987)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any data
 function UilogPostNotification() end
 
 ---**`UILOG` `client`**  
@@ -160,7 +160,7 @@ function UilogPrintCachedObjective() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD594A19BE09A75C6)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 function UilogRemoveEntry(p0, p1) end
 
 ---**`UILOG` `client`**  
@@ -173,7 +173,7 @@ function UilogSetCachedObjective(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xA31013798FADCADC)  
 ---This native does not have an official description.
 ---@param logEntryType integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 boolean
 function UilogSetDisplayCompletionRating(logEntryType, p1, p2) end
 
@@ -181,25 +181,25 @@ function UilogSetDisplayCompletionRating(logEntryType, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x69684D9936958D8F)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
----@param texture integer | string
----@param textureDictionary integer | string
+---@param p1 Hash | string
+---@param texture Hash | string
+---@param textureDictionary Hash | string
 function UilogSetEntryBriefTexture(p0, p1, texture, textureDictionary) end
 
 ---**`UILOG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6965469934958D8F)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
----@param icon integer | string
----@param iconDictionary integer | string
+---@param p1 Hash | string
+---@param icon Hash | string
+---@param iconDictionary Hash | string
 function UilogSetEntryIconTexture(p0, p1, icon, iconDictionary) end
 
 ---**`UILOG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x72A5CD214B342568)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 boolean
 function UilogSetEntryPinned(p0, p1, p2) end
 
@@ -212,7 +212,7 @@ function UilogSetHasDisplayedCachedObjective() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x136A027CF37B0A4F)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function UilogSetPendingDetailsId(p0, p1) end
 
@@ -227,7 +227,7 @@ function UilogSetTotalTakeSummary(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x80D6524190258C3E)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 string
 function UilogUpdateEntrySubheader(p0, p1, p2) end
 

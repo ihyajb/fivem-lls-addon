@@ -19,7 +19,7 @@ function GetIsLoadingScreenActive() end
 ---Always returns true.
 ---```
 ---@param unused any
----@return boolean, boolean
+---@return boolean, boolean variable
 function HasCloudRequestsFinished(unused) end
 
 ---@deprecated
@@ -35,7 +35,7 @@ Nullify = HasCloudRequestsFinished
 ---0xB119F6D
 ---0x96F02EE6
 ---```
----@param dlcHash integer | string
+---@param dlcHash Hash | string
 ---@return boolean
 function IsDlcPresent(dlcHash) end
 

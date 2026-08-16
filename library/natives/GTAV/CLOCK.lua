@@ -87,7 +87,7 @@ function GetClockYear() end
 ---or use std::tm struct  
 ---TIME::GET_LOCAL_TIME(&year, &month, &day, &hour, &minute, &second);  
 ---```
----@return integer, integer, integer, integer, integer, integer
+---@return integer year, integer month, integer day, integer hour, integer minute, integer second
 function GetLocalTime() end
 
 ---**`CLOCK` `client`**  
@@ -110,7 +110,7 @@ function GetMillisecondsPerGameMinute() end
 ---	int second;  
 ---	TIME::GET_POSIX_TIME(&year, &month, &day, &hour, &minute, &second);  
 ---```
----@return integer, integer, integer, integer, integer, integer
+---@return integer year, integer month, integer day, integer hour, integer minute, integer second
 function GetPosixTime() end
 
 ---**`CLOCK` `client`**  
@@ -118,7 +118,7 @@ function GetPosixTime() end
 ---```
 ---Gets current UTC time
 ---```
----@return integer, integer, integer, integer, integer, integer
+---@return integer year, integer month, integer day, integer hour, integer minute, integer second
 function GetUtcTime() end
 
 ---**`CLOCK` `client`**  

@@ -17,7 +17,7 @@ function BgEndContext(contextName) end
 ---
 ---NativeDB Introduced: v323
 ---```
----@param contextHash integer | string
+---@param contextHash Hash | string
 function BgEndContextHash(contextHash) end
 
 ---**`SCRIPT` `client`**  
@@ -37,7 +37,7 @@ function BgStartContext(contextName) end
 ---
 ---NativeDB Introduced: v323
 ---```
----@param contextHash integer | string
+---@param contextHash Hash | string
 function BgStartContextHash(contextHash) end
 
 ---**`SCRIPT` `client`**  
@@ -50,7 +50,7 @@ function DoesScriptExist(scriptName) end
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF86AA3C56BA31381)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@return boolean
 function DoesScriptWithNameHashExist(scriptHash) end
 
@@ -73,7 +73,7 @@ function GetEventAtIndex(eventGroup, eventIndex) end
 ---@param eventGroup integer
 ---@param eventIndex integer
 ---@param eventDataSize integer
----@return boolean, integer
+---@return boolean, integer eventData
 function GetEventData(eventGroup, eventIndex, eventDataSize) end
 
 ---**`SCRIPT` `client`**  
@@ -89,7 +89,7 @@ function GetEventExists(eventGroup, eventIndex) end
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8A1C8B1738FFE87E)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GetHashOfThisScriptName() end
 
 ---@deprecated
@@ -135,7 +135,7 @@ function GetNumberOfEvents(eventGroup) end
 ---	v3 = rage::scrProgram::GetNumRefs(program) - 1;
 ---return v3;
 ---```
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@return integer
 function GetNumberOfReferencesOfScriptWithNameHash(scriptHash) end
 
@@ -160,7 +160,7 @@ function HasScriptLoaded(scriptName) end
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5F0F0C783EB16C04)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@return boolean
 function HasScriptWithNameHashLoaded(scriptHash) end
 
@@ -221,7 +221,7 @@ function N_0x760910b49d2b98ea() end
 ---
 ---NativeDB Introduced: v323
 ---```
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return integer
 function N_0x829cd22e043a2577(p0) end
 
@@ -248,7 +248,7 @@ function RequestScript(scriptName) end
 ---```
 ---formerly _REQUEST_STREAMED_SCRIPT  
 ---```
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 function RequestScriptWithNameHash(scriptHash) end
 
 ---@deprecated
@@ -289,7 +289,7 @@ function SetScriptAsNoLongerNeeded(scriptName) end
 ---**`SCRIPT` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC5BC038960E9DB27)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 
 ---@deprecated
@@ -323,7 +323,7 @@ function TerminateThread(threadId) end
 ---@param eventGroup integer
 ---@param eventDataSize integer
 ---@param playerBits integer
----@return integer
+---@return integer eventData
 function TriggerScriptEvent(eventGroup, eventDataSize, playerBits) end
 
 ---**`SCRIPT` `client`**  
@@ -334,6 +334,6 @@ function TriggerScriptEvent(eventGroup, eventDataSize, playerBits) end
 ---@param eventGroup integer
 ---@param eventDataSize integer
 ---@param playerBits integer
----@return integer
+---@return integer eventData
 function TriggerScriptEvent_2(eventGroup, eventDataSize, playerBits) end
 

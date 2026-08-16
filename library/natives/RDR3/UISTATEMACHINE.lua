@@ -52,7 +52,7 @@ function UiStateMachineDestroy(p0) end
 ---**`UISTATEMACHINE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2738D68D2B4E09E7)  
 ---This native does not have an official description.
----@return any
+---@return any p0
 function UiStateMachineDestroyAndClear() end
 
 ---**`UISTATEMACHINE` `client`**  
@@ -65,7 +65,7 @@ function UiStateMachineExists(p0) end
 ---**`UISTATEMACHINE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11E73195E735B25B)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return boolean
 function UiStateMachineIsExited(p0) end
 

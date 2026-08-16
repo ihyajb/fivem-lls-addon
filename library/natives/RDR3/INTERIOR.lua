@@ -3,7 +3,7 @@
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x174D0AAB11CED739)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/interiors/interior_sets
----@param interior integer
+---@param interior Interior
 ---@param entitySetName string
 ---@param p2 integer
 function ActivateInteriorEntitySet(interior, entitySetName, p2) end
@@ -11,7 +11,7 @@ function ActivateInteriorEntitySet(interior, entitySetName, p2) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1762D5BBFCA13A8)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function ClearRoomForEntity(entity) end
 
 ---**`INTERIOR` `client`**  
@@ -22,7 +22,7 @@ function ClearRoomForGameViewport() end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x33B81A2C07A51FFF)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@param entitySetName string
 ---@param p2 boolean
 function DeactivateInteriorEntitySet(interior, entitySetName, p2) end
@@ -30,23 +30,23 @@ function DeactivateInteriorEntitySet(interior, entitySetName, p2) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C2B92A1A07D4FCE)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@param toggle boolean
 function DisableInterior(interior, toggle) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC29A9894C976945)  
 ---This native does not have an official description.
----@param entity integer
----@param interior integer
----@param roomHashKey integer | string
+---@param entity Entity
+---@param interior Interior
+---@param roomHashKey Hash | string
 function ForceRoomForEntity(entity, interior, roomHashKey) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x115B4AA8FB28AB43)  
 ---This native does not have an official description.
 ---@param interiorID integer
----@param roomHashKey integer | string
+---@param roomHashKey Hash | string
 function ForceRoomForGameViewport(interiorID, roomHashKey) end
 
 ---**`INTERIOR` `client`**  
@@ -55,7 +55,7 @@ function ForceRoomForGameViewport(interiorID, roomHashKey) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return integer
+---@return Interior
 function GetInteriorAtCoords(x, y, z) end
 
 ---**`INTERIOR` `client`**  
@@ -65,7 +65,7 @@ function GetInteriorAtCoords(x, y, z) end
 ---@param y number
 ---@param z number
 ---@param interiorType string
----@return integer
+---@return Interior
 function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 
 ---**`INTERIOR` `client`**  
@@ -74,8 +74,8 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param typeHash integer | string
----@return integer
+---@param typeHash Hash | string
+---@return Interior
 function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 
 ---**`INTERIOR` `client`**  
@@ -90,49 +90,49 @@ function GetInteriorFromCollision(x, y, z) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB417689857646F61)  
 ---Returns the handle of the interior that the entity is in. Returns 0 if outside.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Interior
 function GetInteriorFromEntity(entity) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC8A281FF125C655)  
 ---This native does not have an official description.
----@return integer
+---@return Interior
 function GetInteriorFromPrimaryView() end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8451E87D3C2B0286)  
 ---This native does not have an official description.
----@param interior integer
----@return vector3, integer
+---@param interior Interior
+---@return vector3 position, Hash nameHash
 function GetInteriorLocationAndNamehash(interior) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3039BE60B3749716)  
 ---This native does not have an official description.
----@param interior integer
----@return integer
+---@param interior Interior
+---@return Hash
 function GetInteriorMinimapHash(interior) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2C9746D0CA15BE1C)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@return vector3
 function GetInteriorPosition(interior) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x27D7B6F79E1F4603)  
 ---Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetKeyForEntityInRoom(entity) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x076E46E0EB52AFC6)  
 ---Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetRoomKeyFromEntity(entity) end
 
 ---**`INTERIOR` `client`**  
@@ -147,7 +147,7 @@ function IsCollisionMarkedOutside(x, y, z) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x32810CA2125F5842)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@param entitySetName string
 ---@return boolean
 function IsInteriorEntitySetActive(interior, entitySetName) end
@@ -155,7 +155,7 @@ function IsInteriorEntitySetActive(interior, entitySetName) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD56FF170710FC826)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@param entitySetName string
 ---@return boolean
 function IsInteriorEntitySetValid(interior, entitySetName) end
@@ -163,7 +163,7 @@ function IsInteriorEntitySetValid(interior, entitySetName) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x941560D2D45DBFC8)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@return boolean
 function IsInteriorReady(interior) end
 
@@ -176,7 +176,7 @@ function IsInteriorScene() end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x017C1B3159F79F6C)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 ---@return boolean
 function IsValidInterior(interior) end
 
@@ -197,20 +197,20 @@ function N_0xfe2b3d5500b1b2e4(p0, p1) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD3D33EABF680168)  
 ---This native does not have an official description.
----@param interior integer
+---@param interior Interior
 function PinInteriorInMemory(interior) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5BD616735F16BF5C)  
 ---This native does not have an official description.
----@param entity integer
----@param interior integer
+---@param entity Entity
+---@param interior Interior
 function RetainEntityInInterior(entity, interior) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB5EF6FEF2DC9EBED)  
 ---Actually returns void in IDA but the script header defines a BOOL return type
----@param interior integer
+---@param interior Interior
 ---@return boolean
 function SetInteriorInUse(interior) end
 
@@ -219,6 +219,6 @@ function SetInteriorInUse(interior) end
 ---Does something similar to INTERIOR::DISABLE_INTERIOR.
 ---
 ---You don't fall through the floor but everything is invisible inside and looks the same as when INTERIOR::DISABLE_INTERIOR is used. Peds behaves normally inside. 
----@param interior integer
+---@param interior Interior
 function UnpinInterior(interior) end
 

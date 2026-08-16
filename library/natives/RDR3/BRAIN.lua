@@ -15,7 +15,7 @@ function EnableScriptBrainSet(brainSet) end
 ---**`BRAIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6818D1A194E29983)  
 ---This native does not have an official description.
----@return integer
+---@return Entity
 function GetScriptBrainEntity() end
 
 ---**`BRAIN` `client`**  
@@ -50,7 +50,7 @@ function ReactivateNamedObjectBrainsWaitingTillOutOfRange(scriptName) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x16AF9B4EEAC3B305)  
 ---Registers a script for any object with a specific model hash.
 ---@param scriptName string
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param p2 integer
 ---@param activationRange number
 ---@param p4 integer
@@ -60,13 +60,13 @@ function RegisterObjectScriptBrain(scriptName, modelHash, p2, activationRange, p
 ---**`BRAIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x38F1E09224EECA09)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function RemoveScriptBrainEntity(entity) end
 
 ---**`BRAIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4E4507CC5E4DB869)  
 ---Returns threadId
----@param entity integer
+---@param entity Entity
 ---@param scriptName string
 ---@param scriptStackSize integer
 ---@param p3 boolean
@@ -76,11 +76,11 @@ function StartPreloadedScriptBrain(entity, scriptName, scriptStackSize, p3) end
 ---**`BRAIN` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F62FAE266DCFC81)  
 ---Returns threadId
----@param entity integer
+---@param entity Entity
 ---@param scriptName string
 ---@param p2 integer
 ---@param p4 integer
 ---@param p5 boolean
----@return integer, any
+---@return integer, any p3
 function StartScriptBrain(entity, scriptName, p2, p4, p5) end
 

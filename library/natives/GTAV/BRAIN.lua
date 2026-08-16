@@ -9,7 +9,7 @@
 ---Hardcoded to not work in Multiplayer.
 ---```
 ---@param name string
----@param model integer | string
+---@param model Hash | string
 ---@param p2 number
 ---@param p3 number
 function AddScriptToRandomPed(name, model, p2, p3) end
@@ -29,7 +29,7 @@ function EnableScriptBrainSet(brainSet) end
 ---**`BRAIN` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCBA154209823057)  
 ---This native does not have an official description.
----@param object integer
+---@param object Object
 ---@return boolean
 function IsObjectWithinBrainActivationRange(object) end
 
@@ -106,7 +106,7 @@ function N_0x6e91b04e08773030(action) end
 ---BRAIN::REGISTER_OBJECT_SCRIPT_BRAIN("ob_telescope", ${prop_telescope_01}, 100, 4.0, -1, 9);
 ---```
 ---@param scriptName string
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param p2 integer
 ---@param activationRange number
 ---@param p4 integer

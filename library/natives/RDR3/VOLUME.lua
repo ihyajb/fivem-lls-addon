@@ -3,14 +3,14 @@
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6E0D3C3F828DA773)  
 ---_ADD_R* - _ADD_V(OLUME?)*
----@param volume integer
----@param aggregate integer
+---@param volume Volume
+---@param aggregate Volume
 function AddBoundsToAggregateVolume(volume, aggregate) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x39816F6F94F385AD)  
 ---This native does not have an official description.
----@param aggregate integer
+---@param aggregate Volume
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -25,7 +25,7 @@ function AddBoxVolumeToVolumeAggregate(aggregate, p1, p2, p3, p4, p5, p6, p7, p8
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBCE668AAF83608BE)  
 ---This native does not have an official description.
----@param aggregate integer
+---@param aggregate Volume
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -40,13 +40,13 @@ function AddCylinderVolumeToVolumeAggregate(aggregate, p1, p2, p3, p4, p5, p6, p
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58D3803FA639A3BB)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any args
 function AddEntryVolumeLock() end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5B7D7BF36D2DE18B)  
 ---This native does not have an official description.
----@param aggregate integer
+---@param aggregate Volume
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -61,8 +61,8 @@ function AddSphereVolumeToVolumeAggregate(aggregate, p1, p2, p3, p4, p5, p6, p7,
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12FCAA23F2320422)  
 ---This native does not have an official description.
----@param aggregate integer
----@param typeHash integer | string
+---@param aggregate Volume
+---@param typeHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -77,7 +77,7 @@ function AddVolumeToVolumeAggregate(aggregate, typeHash, x, y, z, rotX, rotY, ro
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EB78C2B156635B1)  
 ---This native does not have an official description.
----@param volumeType integer | string
+---@param volumeType Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -87,7 +87,7 @@ function AddVolumeToVolumeAggregate(aggregate, typeHash, x, y, z, rotX, rotY, ro
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
----@return integer
+---@return Volume
 function CreateAntiGriefVolume(volumeType, x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
 ---**`VOLUME` `client`**  
@@ -108,20 +108,20 @@ function CreateAntiGriefVolume(volumeType, x, y, z, rotX, rotY, rotZ, scaleX, sc
 ---@param p12 any
 ---@param p13 any
 ---@param p14 any
----@return integer
+---@return Volume
 function CreateSpeedVolume(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59F6F5C1D129F106)  
 ---This native does not have an official description.
----@return integer
+---@return Volume
 function CreateVolumeAggregate() end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5D580DE6398BB162)  
 ---This native does not have an official description.
 ---@param name string
----@return integer
+---@return Volume
 function CreateVolumeAggregateWithCustomName(name) end
 
 ---**`VOLUME` `client`**  
@@ -136,7 +136,7 @@ function CreateVolumeAggregateWithCustomName(name) end
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
----@return integer
+---@return Volume
 function CreateVolumeBox(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
 ---**`VOLUME` `client`**  
@@ -152,13 +152,13 @@ function CreateVolumeBox(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 ---@param scaleY number
 ---@param scaleZ number
 ---@param name string
----@return integer
+---@return Volume
 function CreateVolumeBoxWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, name) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x502022FA1AF9DC86)  
 ---This native does not have an official description.
----@param volumeType integer | string
+---@param volumeType Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -168,13 +168,13 @@ function CreateVolumeBoxWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, scaleY
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
----@return integer
+---@return Volume
 function CreateVolumeByHash(volumeType, x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F85E4AC774A201E)  
 ---This native does not have an official description.
----@param volumeType integer | string
+---@param volumeType Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -185,7 +185,7 @@ function CreateVolumeByHash(volumeType, x, y, z, rotX, rotY, rotZ, scaleX, scale
 ---@param scaleY number
 ---@param scaleZ number
 ---@param name string
----@return integer
+---@return Volume
 function CreateVolumeByHashWithCustomName(volumeType, x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, name) end
 
 ---**`VOLUME` `client`**  
@@ -200,7 +200,7 @@ function CreateVolumeByHashWithCustomName(volumeType, x, y, z, rotX, rotY, rotZ,
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
----@return integer
+---@return Volume
 function CreateVolumeCylinder(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
 ---**`VOLUME` `client`**  
@@ -216,7 +216,7 @@ function CreateVolumeCylinder(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ)
 ---@param scaleY number
 ---@param scaleZ number
 ---@param name string
----@return integer
+---@return Volume
 function CreateVolumeCylinderWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, name) end
 
 ---**`VOLUME` `client`**  
@@ -228,17 +228,17 @@ function CreateVolumeCylinderWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, s
 ---@param radius number
 ---@param flag integer
 ---@param p5 any
----@return integer
+---@return Volume
 function CreateVolumeLock(x, y, z, radius, flag, p5) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF383E96C4904DF0C)  
 ---Params: p3 is always 0
----@param entity integer
+---@param entity Entity
 ---@param radius number
 ---@param flag integer
 ---@param p3 any
----@return integer
+---@return Volume
 function CreateVolumeLockAttachedToEntity(entity, radius, flag, p3) end
 
 ---**`VOLUME` `client`**  
@@ -253,7 +253,7 @@ function CreateVolumeLockAttachedToEntity(entity, radius, flag, p3) end
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
----@return integer
+---@return Volume
 function CreateVolumeSphere(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
 ---**`VOLUME` `client`**  
@@ -269,7 +269,7 @@ function CreateVolumeSphere(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) e
 ---@param scaleY number
 ---@param scaleZ number
 ---@param name string
----@return integer
+---@return Volume
 function CreateVolumeSphereWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, name) end
 
 ---**`VOLUME` `client`**  
@@ -288,13 +288,13 @@ function CreateVolumeSphereWithCustomName(x, y, z, rotX, rotY, rotZ, scaleX, sca
 ---@param p10 any
 ---@param p11 any
 ---@param p12 any
----@return integer
+---@return Volume
 function CreateWalkAndTalkVolume(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x43F867EF5C463A53)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 function DeleteVolume(volume) end
 
 ---**`VOLUME` `client`**  
@@ -313,14 +313,14 @@ function DoesVolumeCollideWithAnyVolumeLock(x, y, z, radius, p4, p5, p6) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x92A78D0BEDB332A3)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return boolean
 function DoesVolumeExist(volume) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x77A6E4AD0C496F81)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any args
 function FindVolumeLockRequestIdWithArgs() end
 
 ---**`VOLUME` `client`**  
@@ -331,21 +331,21 @@ function FindVolumeLockRequestIdWithArgs() end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param itemSet integer
+---@param itemSet ItemSet
 ---@return integer
 function GetVolumeAmountOfIndexedItems(x, y, z, radius, itemSet) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5737199AF2DC609F)  
 ---This native does not have an official description.
----@param volume integer
----@return vector3, vector3
+---@param volume Volume
+---@return vector3 min, vector3 max
 function GetVolumeBounds(volume) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF70F00013A62F866)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return vector3
 function GetVolumeCoords(volume) end
 
@@ -366,35 +366,35 @@ function GetVolumeLockRequestStatus(volLockRequestId) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x666C2F53ABEFC952)  
 ---Returns relationshipGroup Hash
----@param volume integer
----@return integer
+---@param volume Volume
+---@return Hash
 function GetVolumeRelationship(volume) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x18675BC914891122)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return vector3
 function GetVolumeRotation(volume) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3E2A25B2416DD67E)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return vector3
 function GetVolumeScale(volume) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFEFF01B5725BCD22)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return boolean
 function IsAggregateVolume(volume) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF256A75210C5C0EB)  
 ---Old name: _IS_POSITION_INSIDE_VOLUME
----@param volume integer
+---@param volume Volume
 ---@param x number
 ---@param y number
 ---@param z number
@@ -569,7 +569,7 @@ function N_0xac355980681a7f89(p0) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB440F4E35393FC39)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 any
 function N_0xb440f4e35393fc39(volume, p1) end
 
@@ -603,7 +603,7 @@ function N_0xca5c90d40665d5ce(p0, p1) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD460135C98940274)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 any
 function N_0xd460135c98940274(volume, p1) end
 
@@ -685,8 +685,8 @@ function ReleaseLockVolume(volLockRequestId) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF92FA8890DECECF6)  
 ---_REMOVE_E* - _REMOVE_R*
----@param volume integer
----@param aggregate integer
+---@param volume Volume
+---@param aggregate Volume
 function RemoveBoundsFromAggregateVolume(volume, aggregate) end
 
 ---**`VOLUME` `client`**  
@@ -704,27 +704,27 @@ function RequestVolumeLock(x, y, z, radius, p4, p5) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x183C0B6CFEFFCAE4)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any args
 function RequestVolumeLockWithArgs() end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBE551C2CC421185D)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param toggle boolean
 function SetAntiGriefVolumeBlocksHorse(volume, toggle) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5B23DFF8E0948BB2)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param toggle boolean
 function SetAntiGriefVolumeBlocksPlayer(volume, toggle) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x541B8576615C33DE)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -734,22 +734,22 @@ function SetVolumeCoords(volume, posX, posY, posZ) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE2BE6FFA4A13CBB0)  
 ---This native does not have an official description.
----@param volume integer
----@param persChar integer
+---@param volume Volume
+---@param persChar PersChar
 ---@param p2 boolean
 function SetVolumeOwnerPersistentCharacter(volume, persChar, p2) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFD010A2154B40676)  
 ---This native does not have an official description.
----@param volume integer
----@param relationshipGroup integer | string
+---@param volume Volume
+---@param relationshipGroup Hash | string
 function SetVolumeRelationship(volume, relationshipGroup) end
 
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA07CF1B21B56F041)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param rotX number
 ---@param rotY number
 ---@param rotZ number
@@ -759,7 +759,7 @@ function SetVolumeRotation(volume, rotX, rotY, rotZ) end
 ---**`VOLUME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA46E98BDC407E23D)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number

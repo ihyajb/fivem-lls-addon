@@ -3,21 +3,21 @@
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57E798B65C45EE17)  
 ---This native does not have an official description.
----@param missionId integer | string
----@return integer
+---@param missionId Hash | string
+---@return Hash
 function MissiondataGetCatagory(missionId) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9AABABF8313C3516)  
 ---This native does not have an official description.
----@param missionId integer | string
+---@param missionId Hash | string
 ---@return integer
 function MissiondataGetHighScore(missionId) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57E798B54C45EE1A)  
 ---This native does not have an official description.
----@param missionId integer | string
+---@param missionId Hash | string
 ---@return integer
 function MissiondataGetRating(missionId) end
 
@@ -31,28 +31,28 @@ function MissiondataGetReplayState(p0) end
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57E798B56C45EE15)  
 ---This native does not have an official description.
----@param missionId integer | string
----@return integer
+---@param missionId Hash | string
+---@return Hash
 function MissiondataGetTextureName(missionId) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57E798B57C45EE16)  
 ---This native does not have an official description.
----@param missionId integer | string
----@return integer
+---@param missionId Hash | string
+---@return Hash
 function MissiondataGetTextureTxd(missionId) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE145864DECC34219)  
 ---This native does not have an official description.
----@param category integer | string
+---@param category Hash | string
 ---@return boolean
 function MissiondataIsReplayCategoryLocked(category) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE824CE7D13FCB35E)  
 ---This native does not have an official description.
----@param missionId integer | string
+---@param missionId Hash | string
 ---@return boolean
 function MissiondataIsRequiredStoryMission(missionId) end
 
@@ -66,7 +66,7 @@ function MissiondataIsValid(p0) end
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3A04F0169DA87A9D)  
 ---This native does not have an official description.
----@param missionId integer | string
+---@param missionId Hash | string
 ---@param score integer
 function MissiondataSetHighScore(missionId, score) end
 
@@ -78,14 +78,14 @@ function MissiondataSetHighScore(missionId, score) end
 ---MISSION_RATING_BRONZE,
 ---MISSION_RATING_SILVER,
 ---MISSION_RATING_GOLD,
----@param missionId integer | string
+---@param missionId Hash | string
 ---@param rating integer
 function MissiondataSetMissionRating(missionId, rating) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12F65317708749A5)  
 ---This native does not have an official description.
----@param missionId integer | string
+---@param missionId Hash | string
 ---@param bronzeScore integer
 ---@param silverScore integer
 ---@param goldScore integer
@@ -94,14 +94,14 @@ function MissiondataSetRatingScores(missionId, bronzeScore, silverScore, goldSco
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x957A830C9B4B99EA)  
 ---This native does not have an official description.
----@param category integer | string
+---@param category Hash | string
 ---@param locked boolean
 function MissiondataSetReplayLockedForCategory(category, locked) end
 
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE4E2C581F127A11C)  
 ---replayState: MISSIONDATA_GET_REPLAY_STATE
----@param missionId integer | string
+---@param missionId Hash | string
 ---@param replayState integer
 function MissiondataSetReplayStateLocked(missionId, replayState) end
 
@@ -125,7 +125,7 @@ function MissiondataTimecycleBoxSetModifier(timecycleName) end
 ---**`MISSIONDATA` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE54DC27571D5EDC4)  
 ---see: missions.meta
----@param missionId integer | string
+---@param missionId Hash | string
 ---@return boolean
 function MissiondataWasCompleted(missionId) end
 

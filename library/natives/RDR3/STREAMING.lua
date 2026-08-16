@@ -31,8 +31,8 @@ function EndSrl() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C77964B0E07B633)  
 ---Outputs IPL position and radius (previously wrongly named heading)
 ---https://github.com/femga/rdr3_discoveries/blob/master/imaps/imaps_with_coords_and_heading.lua
----@param iplHash integer | string
----@return boolean, vector3, number
+---@param iplHash Hash | string
+---@return boolean, vector3 position, number radius
 function GetIplBoundingSphere(iplHash) end
 
 ---**`STREAMING` `client`**  
@@ -71,7 +71,7 @@ function HasClipSetLoaded_2(clipset) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x210A79C9EC89778F)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function HasCollisionForModelLoaded(model) end
 
@@ -87,7 +87,7 @@ function HasCollisionLoadedAtCoord(x, y, z) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1283B8B89DD5D1B6)  
 ---Checks if the specified model has loaded into memory.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function HasModelLoaded(model) end
 
@@ -101,7 +101,7 @@ function HasMoveNetworkDefLoaded(name) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x65BB72F29138F5D6)  
 ---This native does not have an official description.
----@param fxNameHash integer | string
+---@param fxNameHash Hash | string
 ---@return boolean
 function HasNamedPtfxAssetLoaded(fxNameHash) end
 
@@ -121,7 +121,7 @@ function HasScenarioTypeForPedLoaded(scenarioTypeId) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9427C94D2E4094A4)  
 ---This native does not have an official description.
----@param scenarioType integer | string
+---@param scenarioType Hash | string
 ---@param p1 boolean
 ---@return boolean
 function HasScenarioTypeLoaded(scenarioType, p1) end
@@ -158,21 +158,21 @@ function IplGroupSwapStart(iplName1, iplName2) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF87DE697E9A06EC6)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityFocus(entity) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x93AC1B91CB6D9913)  
 ---Old name: _IS_IMAP_ACTIVE_2
----@param iplHash integer | string
+---@param iplHash Hash | string
 ---@return boolean
 function IsIplActiveByHash(iplHash) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD779B9B910BD3B7C)  
 ---Old name: _IS_IMAP_ACTIVE
----@param iplHash integer | string
+---@param iplHash Hash | string
 ---@return boolean
 function IsIplActiveHash(iplHash) end
 
@@ -191,35 +191,35 @@ function IsLoadSceneLoaded() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x274EE1B90CFA669E)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelAnObject(model) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3F09DE9D6D17DDA)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelAPed(model) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x354F62672DE7DB0A)  
 ---Returns whether the specified model represents a vehicle.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelAVehicle(model) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD6F3B6D7716CFF8E)  
 ---Returns whether the specified model exists in the game.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelInCdimage(model) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x392C8D8E07B70EFC)  
 ---Returns whether the specified model is valid
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelValid(model) end
 
@@ -232,7 +232,7 @@ function IsPlayerSwitchInProgress() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x73B40D97D7BAAD77)  
 ---Returns true if IPL is streamed in (?)
----@param iplHash integer | string
+---@param iplHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -284,7 +284,7 @@ function LoadSceneStop() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x032A14D082A9B269)  
 ---_SET_E* or _SET_F*
----@param p0 integer | string
+---@param p0 Hash | string
 function N_0x032a14d082a9b269(p0) end
 
 ---**`STREAMING` `client`**  
@@ -519,13 +519,13 @@ function RemoveClipSet_2(clipset) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x431E3AB760629B34)  
 ---Old name: _REMOVE_IMAP_2
----@param iplHash integer | string
+---@param iplHash Hash | string
 function RemoveIplByHash(iplHash) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A3E5CF7B4014B96)  
 ---Old name: _REMOVE_IMAP
----@param iplHash integer | string
+---@param iplHash Hash | string
 function RemoveIplHash(iplHash) end
 
 ---**`STREAMING` `client`**  
@@ -537,7 +537,7 @@ function RemoveMoveNetworkDef(name) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF20866829E1C81A2)  
 ---This native does not have an official description.
----@param fxNameHash integer | string
+---@param fxNameHash Hash | string
 function RemoveNamedPtfxAsset(fxNameHash) end
 
 ---**`STREAMING` `client`**  
@@ -548,7 +548,7 @@ function RemovePtfxAsset() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4EDDD9E9CA5AF985)  
 ---This native does not have an official description.
----@param scenarioType integer | string
+---@param scenarioType Hash | string
 ---@return any
 function RemoveScenarioAsset(scenarioType) end
 
@@ -587,7 +587,7 @@ function RequestClipSet_2(clipset) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAC37644A538F7524)  
 ---This native does not have an official description.
----@param clipSetHash integer | string
+---@param clipSetHash Hash | string
 function RequestClipSetByHash(clipSetHash) end
 
 ---**`STREAMING` `client`**  
@@ -601,19 +601,19 @@ function RequestCollisionAtCoord(x, y, z) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF1767BE37F661551)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 function RequestCollisionForModel(model) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E211A378F95C97C)  
 ---Old name: _REQUEST_IMAP_2
----@param iplHash integer | string
+---@param iplHash Hash | string
 function RequestIplByHash(iplHash) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59767C5A7A9AE6DA)  
 ---Old name: _REQUEST_IMAP
----@param iplHash integer | string
+---@param iplHash Hash | string
 function RequestIplHash(iplHash) end
 
 ---**`STREAMING` `client`**  
@@ -627,7 +627,7 @@ function RequestMetadataAtCoord(x, y, z) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFA28FE3A6246FC30)  
 ---Request a model to be loaded into memory.
----@param model integer | string
+---@param model Hash | string
 ---@param p1 boolean
 function RequestModel(model, p1) end
 
@@ -640,7 +640,7 @@ function RequestMoveNetworkDef(name) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2B2353BBC0D4E8F)  
 ---This native does not have an official description.
----@param fxNameHash integer | string
+---@param fxNameHash Hash | string
 function RequestNamedPtfxAsset(fxNameHash) end
 
 ---**`STREAMING` `client`**  
@@ -651,20 +651,20 @@ function RequestPtfxAsset() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x19A6BE7D9C6884D3)  
 ---p1 seems to be some kind of flag? p2 can be 0 or entity model accepts hash joaat("a_c_bear_01") or with GetEntityModel(entity) p3 can be 0 or pass the conditional anim or using _GET_ACTIVE_DYNAMIC_SCENARIO
----@param scenarioType integer | string
+---@param scenarioType Hash | string
 ---@param p1 integer
----@param entityModel integer | string
----@param conditionalAnim integer | string
+---@param entityModel Hash | string
+---@param conditionalAnim Hash | string
 ---@return integer
 function RequestScenarioType(scenarioType, p1, entityModel, conditionalAnim) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB223249B7798EEED)  
 ---requests a scenario type just like _REQUEST_SCENARIO_TYPE but for a specifc ped p2 is a flag unknown
----@param ped integer
----@param scenarioType integer | string
+---@param ped Ped
+---@param scenarioType Hash | string
 ---@param flag integer
----@param consitionalAnim integer | string
+---@param consitionalAnim Hash | string
 ---@return integer
 function RequestScenarioTypeForPed(ped, scenarioType, flag, consitionalAnim) end
 
@@ -677,7 +677,7 @@ function SetAllMapdataCulled(p0) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x955AEDD58F4BD309)  
 ---It seems to make the entity's coords mark the point from which LOD-distances are measured. In my testing, setting a vehicle as the focus entity and moving that vehicle more than 300 distance units away from the player will make the level of detail around the player go down drastically (shadows disappear, textures go extremely low res, etc). The player seems to be the default focus entity.
----@param entity integer
+---@param entity Entity
 function SetFocusEntity(entity) end
 
 ---**`STREAMING` `client`**  
@@ -722,7 +722,7 @@ function SetMapdatacullboxEnabled(name, toggle) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4AD96EF928BD4F9A)  
 ---Marks the model as no longer needed.
----@param model integer | string
+---@param model Hash | string
 function SetModelAsNoLongerNeeded(model) end
 
 ---**`STREAMING` `client`**  

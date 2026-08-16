@@ -3,69 +3,69 @@
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4F76E3676583D951)  
 ---This native does not have an official description.
----@param hash integer | string
----@return integer
+---@param hash Hash | string
+---@return PersChar
 function CreatePersistentCharacter(hash) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC77C5B44D5FF7C0)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function DeletePerschar(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7B204F88F6C3D287)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function ForceDespawnPerschar(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0CADC3A977997472)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 ---@param p1 boolean
----@return integer
+---@return Entity
 function ForceSpawnPerschar(persChar, p1) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x32A1E3B83D501096)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return PersChar
 function GetPerscharIndexFromPedIndex(ped) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA00DF706C60173D1)  
 ---This native does not have an official description.
----@param persCharHash integer | string
----@return integer
+---@param persCharHash Hash | string
+---@return Hash
 function GetPerscharModelName(persCharHash) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC9655D47DEC0353)  
 ---This native does not have an official description.
----@param persCharHash integer | string
----@return integer
+---@param persCharHash Hash | string
+---@return Hash
 function GetPerscharOutfit(persCharHash) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x31C70A716CAE1FEE)  
 ---This native does not have an official description.
----@param persChar integer
----@return integer
+---@param persChar PersChar
+---@return Ped
 function GetPerscharPedIndex(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB98B38CA60742D7)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 ---@return boolean
 function IsPersistentCharacterDead(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x800DF3FC913355F3)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 ---@return boolean
 function IsPersistentCharacterValid(persChar) end
 
@@ -74,7 +74,7 @@ function IsPersistentCharacterValid(persChar) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 boolean
----@return integer
+---@return Entity
 function N_0x08fc896d2cb31fcc(p0, p1) end
 
 ---**`PERSCHAR` `client`**  
@@ -86,8 +86,8 @@ function N_0x0b3a99ab6713aa52(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x112DDF56300BC6E5)  
 ---Returns the PersChar index of the persCharHash passed
----@param persCharHash integer | string
----@return integer
+---@param persCharHash Hash | string
+---@return PersChar
 function N_0x112ddf56300bc6e5(persCharHash) end
 
 ---**`PERSCHAR` `client`**  
@@ -111,7 +111,7 @@ function N_0x4afc7288c77238b3(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4F81EAD1DE8FA19B)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function N_0x4f81ead1de8fa19b(persChar) end
 
 ---**`PERSCHAR` `client`**  
@@ -154,7 +154,7 @@ function N_0x669c25840c6f7ae2(p0, p1) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6759BEE6762E140B)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function N_0x6759bee6762e140b(persChar) end
 
 ---**`PERSCHAR` `client`**  
@@ -231,7 +231,7 @@ function N_0xa8120ebeaf290c7a(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA8C406C2A56EDC16)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function N_0xa8c406c2a56edc16(persChar) end
 
 ---**`PERSCHAR` `client`**  
@@ -242,13 +242,13 @@ function N_0xb173599d61faeb31() end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB65E7F733956CF25)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function N_0xb65e7f733956cf25(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB68908CD11AEBDC)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function N_0xbb68908cd11aebdc(persChar) end
 
 ---**`PERSCHAR` `client`**  
@@ -306,39 +306,39 @@ function N_0xf8de7154f7d1458f(p0) end
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFCC6DB8DBE709BC8)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function N_0xfcc6db8dbe709bc8(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8B44273A92CD406C)  
 ---This native does not have an official description.
----@param persCharHash integer | string
+---@param persCharHash Hash | string
 function ResetPerscharSchedule(persCharHash) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x631CD2D77FDC0316)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 function RetaskPersistentCharacter(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x49A8C2CD97815215)  
 ---This native does not have an official description.
----@param persChar integer
+---@param persChar PersChar
 ---@return boolean
 function RevivePerschar(persChar) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2DF89CD2ED1D0BDE)  
 ---This native does not have an official description.
----@param persCharHash integer | string
----@param outfit integer | string
+---@param persCharHash Hash | string
+---@param outfit Hash | string
 function SetPerscharOutfit(persCharHash, outfit) end
 
 ---**`PERSCHAR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x187D65F3AEC5D679)  
 ---This native does not have an official description.
----@param persCharHash integer | string
+---@param persCharHash Hash | string
 ---@param schedule string
 function SetPerscharSchedule(persCharHash, schedule) end
 

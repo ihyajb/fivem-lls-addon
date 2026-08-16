@@ -43,7 +43,7 @@ function N_0x9bb83c4dd7be0802(p0, p1, p2, p3, p4) end
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA7ECEBAFBAF997A5)  
 ---This native does not have an official description.
----@param savegameType integer | string
+---@param savegameType Hash | string
 ---@return any
 function N_0xa7ecebafbaf997a5(savegameType) end
 
@@ -89,21 +89,21 @@ function N_0xed4b0c1057892b2e(p0, p1, p2, p3) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB7F4273C186BC4B)  
 ---Does the exact same as 0x529B9CCD0972AF4E
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetBool(variableName) end
 
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x35DEFECAE36D4FAE)  
 ---This native does not have an official description.
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetFloat(variableName) end
 
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x529B9CCD0972AF4E)  
 ---This native does not have an official description.
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetInt(variableName) end
 
 ---**`SAVE` `client`**  
@@ -111,7 +111,7 @@ function SavegameGetInt(variableName) end
 ---Does the exact same as 0x529B9CCD0972AF4E
 ---Commonly used with time/timestamps
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetInt_2(variableName) end
 
 ---**`SAVE` `client`**  
@@ -119,28 +119,28 @@ function SavegameGetInt_2(variableName) end
 ---Does the exact same as 0x529B9CCD0972AF4E
 ---Commonly used with enums and flags
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetInt_3(variableName) end
 
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A10D6506B2F2C63)  
 ---This native does not have an official description.
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetTextLabel_23(variableName) end
 
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4845E7E7643A908C)  
 ---This native does not have an official description.
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetTextLabel_31(variableName) end
 
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x186608A2AC6F9E88)  
 ---This native does not have an official description.
 ---@param variableName string
----@return any
+---@return any p0
 function SavegameGetTextLabel_63(variableName) end
 
 ---**`SAVE` `client`**  
@@ -158,7 +158,7 @@ function SavegameIsSavePending() end
 ---**`SAVE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1840F3B30ED0105F)  
 ---See SAVEGAME_SAVE_SP
----@param savegameType integer | string
+---@param savegameType Hash | string
 ---@return boolean
 function SavegameSaveMp(savegameType) end
 
@@ -180,7 +180,7 @@ function SavegameSaveMp(savegameType) end
 ---	SAVEGAMETYPE_SP_DEBUG = 0x6A8122FD,
 ---	SAVEGAMETYPE_SP_PROPERTY = 0xAE0AB38E
 ---};
----@param savegameType integer | string
+---@param savegameType Hash | string
 ---@return boolean
 function SavegameSaveSp(savegameType) end
 

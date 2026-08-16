@@ -28,7 +28,7 @@ function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return integer
+---@return Hash
 function GetHashOfMapAreaAtCoords(x, y, z) end
 
 ---**`ZONE` `client`**  
@@ -189,7 +189,7 @@ function GetZoneScumminess(zoneId) end
 ---STREAMING::REQUEST_MODEL(vehicleHash);  
 ---```
 ---@param scheduleId integer
----@param vehicleHash integer | string
+---@param vehicleHash Hash | string
 function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 
 ---**`ZONE` `client`**  

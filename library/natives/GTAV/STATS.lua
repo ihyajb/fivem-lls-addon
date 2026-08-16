@@ -24,7 +24,7 @@
 ---@param charStat boolean
 ---@param character integer
 ---@param section string
----@return integer
+---@return Hash
 function GetNgstatBoolHash(index, spStat, charStat, character, section) end
 
 ---**`STATS` `client`**  
@@ -54,7 +54,7 @@ function GetNgstatBoolHash(index, spStat, charStat, character, section) end
 ---@param charStat boolean
 ---@param character integer
 ---@param section string
----@return integer
+---@return Hash
 function GetNgstatIntHash(index, spStat, charStat, character, section) end
 
 ---**`STATS` `client`**  
@@ -64,7 +64,7 @@ function GetNgstatIntHash(index, spStat, charStat, character, section) end
 ---@param spStat boolean
 ---@param charStat boolean
 ---@param character integer
----@return integer
+---@return Hash
 function GetPackedBoolStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
@@ -77,7 +77,7 @@ GetPstatBoolHash = GetPackedBoolStatKey
 ---@param spStat boolean
 ---@param charStat boolean
 ---@param character integer
----@return integer
+---@return Hash
 function GetPackedIntStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
@@ -90,7 +90,7 @@ GetPstatIntHash = GetPackedIntStatKey
 ---@param spStat boolean
 ---@param charStat boolean
 ---@param character integer
----@return integer
+---@return Hash
 function GetPackedTuBoolStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
@@ -105,7 +105,7 @@ GetPackedTitleUpdateBoolStatKey = GetPackedTuBoolStatKey
 ---@param spStat boolean
 ---@param charStat boolean
 ---@param character integer
----@return integer
+---@return Hash
 function GetPackedTuIntStatKey(index, spStat, charStat, character) end
 
 ---@deprecated
@@ -123,7 +123,7 @@ function HiredLimo(p0, p1) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC30713A383BFBF0E)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any p0, any p1
 function Leaderboards2ReadByHandle() end
 
 ---**`STATS` `client`**  
@@ -131,14 +131,14 @@ function Leaderboards2ReadByHandle() end
 ---This native does not have an official description.
 ---@param gamerHandleCsv string
 ---@param platformName string
----@return boolean, any
+---@return boolean, any p0
 function Leaderboards2ReadByPlatform(gamerHandleCsv, platformName) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5CE587FB5A42C8C4)  
 ---This native does not have an official description.
 ---@param p1 any
----@return boolean, any, any
+---@return boolean, any p0, any p2
 function Leaderboards2ReadByRadius(p1) end
 
 ---**`STATS` `client`**  
@@ -146,7 +146,7 @@ function Leaderboards2ReadByRadius(p1) end
 ---This native does not have an official description.
 ---@param p1 any
 ---@param p2 any
----@return boolean, any
+---@return boolean, any p0
 function Leaderboards2ReadByRank(p1, p2) end
 
 ---**`STATS` `client`**  
@@ -155,7 +155,7 @@ function Leaderboards2ReadByRank(p1, p2) end
 ---@param p2 any
 ---@param p4 any
 ---@param p6 any
----@return boolean, any, any, any, any
+---@return boolean, any p0, any p1, any p3, any p5
 function Leaderboards2ReadByRow(p2, p4, p6) end
 
 ---**`STATS` `client`**  
@@ -163,7 +163,7 @@ function Leaderboards2ReadByRow(p2, p4, p6) end
 ---This native does not have an official description.
 ---@param p1 number
 ---@param p2 any
----@return boolean, any
+---@return boolean, any p0
 function Leaderboards2ReadByScoreFloat(p1, p2) end
 
 ---**`STATS` `client`**  
@@ -171,7 +171,7 @@ function Leaderboards2ReadByScoreFloat(p1, p2) end
 ---This native does not have an official description.
 ---@param p1 any
 ---@param p2 any
----@return boolean, any
+---@return boolean, any p0
 function Leaderboards2ReadByScoreInt(p1, p2) end
 
 ---**`STATS` `client`**  
@@ -181,31 +181,31 @@ function Leaderboards2ReadByScoreInt(p1, p2) end
 ---@param p3 boolean
 ---@param p4 any
 ---@param p5 any
----@return boolean, any, any
+---@return boolean, any p0, any p1
 function Leaderboards2ReadFriendsByRow(p2, p3, p4, p5) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC38DC1E90D22547C)  
 ---This native does not have an official description.
----@return boolean, any, any, any
+---@return boolean, any p0, any p1, any p2
 function Leaderboards2ReadRankPrediction() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xAE2206545888AE49)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function Leaderboards2WriteData() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC980E62E33DF1D5C)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any p0, any p1
 function Leaderboards2WriteDataForEventType() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB9BB18E2C40142ED)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function LeaderboardsCacheDataRow() end
 
 ---**`STATS` `client`**  
@@ -216,7 +216,7 @@ function LeaderboardsClearCacheData() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x428EAF89E24F6C36)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param value number
 function LeaderboardsDeaths(statName, value) end
 
@@ -225,7 +225,7 @@ function LeaderboardsDeaths(statName, value) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
----@return boolean, any
+---@return boolean, any p2
 function LeaderboardsGetCacheDataRow(p0, p1) end
 
 ---**`STATS` `client`**  
@@ -399,7 +399,7 @@ function N_0x0d01d20616fc73fb(p0, p1) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x14E0B2D1AD1044E0)  
 ---This native does not have an official description.
----@return any, any, any, any
+---@return any p0, any p1, any p2, any p3
 function N_0x14e0b2d1ad1044e0() end
 
 ---**`STATS` `client`**  
@@ -423,7 +423,7 @@ function N_0x1a7ce7cd3e653485(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1A8EA222F9C67DBB)  
 ---This native does not have an official description.
----@return any, number
+---@return any, number p0
 function N_0x1a8ea222f9c67dbb() end
 
 ---**`STATS` `client`**  
@@ -541,7 +541,7 @@ function N_0x33d72899e24c3365(p0, p1) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34770B9CE0E03B91)  
 ---This native does not have an official description.
 ---@param p0 any
----@return boolean, any
+---@return boolean, any p1
 function N_0x34770b9ce0e03b91(p0) end
 
 ---**`STATS` `client`**  
@@ -722,7 +722,7 @@ function N_0x629526aba383bcaa() end
 ---@param p0 any
 ---@param p1 any
 ---@param p2 any
----@return any
+---@return any p3
 function N_0x6483c25849031c4f(p0, p1, p2) end
 
 ---**`STATS` `client`**  
@@ -755,7 +755,7 @@ function N_0x6a7f19756f1a9016() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6BC0ACD0673ACEBE)  
 ---This native does not have an official description.
 ---@param p0 any
----@return integer, integer
+---@return integer valueA, integer valueB
 function N_0x6bc0acd0673acebe(p0) end
 
 ---**`STATS` `client`**  
@@ -771,7 +771,7 @@ function N_0x6bccf9948492fd85(p0, p1, p2, p3, p4) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x6DEE77AFF8C21BD1)  
 ---This native does not have an official description.
----@return boolean, integer, integer
+---@return boolean, integer playerAccountId, integer posixTime
 function N_0x6dee77aff8c21bd1() end
 
 ---**`STATS` `client`**  
@@ -999,7 +999,7 @@ function N_0x9ec8858184cd253a() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA0F93D5465B3094D)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function N_0xa0f93d5465b3094d() end
 
 ---**`STATS` `client`**  
@@ -1018,7 +1018,7 @@ function N_0xa6f54bb2ffca35ea(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA736CF7FB7C5BFF4)  
 ---This native does not have an official description.
----@return any, any, any, any
+---@return any p0, any p1, any p2, any p3
 function N_0xa736cf7fb7c5bff4() end
 
 ---**`STATS` `client`**  
@@ -1112,9 +1112,9 @@ function N_0xbe3db208333d9844() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBED9F5693F34ED17)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param p1 integer
----@return boolean, number
+---@return boolean, number outValue
 function N_0xbed9f5693f34ed17(statName, p1) end
 
 ---**`STATS` `client`**  
@@ -1257,7 +1257,7 @@ function N_0xdaf80797fc534bec(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEAAF77EB3687E97)  
 ---This native does not have an official description.
 ---@param p0 any
----@return any, any
+---@return any, any p1
 function N_0xdeaaf77eb3687e97(p0) end
 
 ---**`STATS` `client`**  
@@ -1318,7 +1318,7 @@ function N_0xf06a6f41cb445443(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF11F01D98113536A)  
 ---This native does not have an official description.
----@return any, number
+---@return any, number p0
 function N_0xf11f01d98113536a() end
 
 ---**`STATS` `client`**  
@@ -1342,7 +1342,7 @@ function N_0xf534d94dfa2ead26(p0, p1, p2, p3, p4) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF8C54A461C3E11DC)  
 ---This native does not have an official description.
----@return any, any, any, any
+---@return any p0, any p1, any p2, any p3
 function N_0xf8c54a461c3e11dc() end
 
 ---**`STATS` `client`**  
@@ -1370,7 +1370,7 @@ function N_0xfcc228e07217fcac(p0) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
----@param vehicleHash integer | string
+---@param vehicleHash Hash | string
 function OrderedBossVehicle(p0, p1, vehicleHash) end
 
 ---**`STATS` `client`**  
@@ -1404,7 +1404,7 @@ function PlaystatsArcadegame(p0, p1, p2, p3, p4, p5) end
 ---```
 ---NativeDB Introduced: v1604
 ---```
----@return any
+---@return any data
 function PlaystatsArenaWarsEnded() end
 
 ---**`STATS` `client`**  
@@ -1429,8 +1429,8 @@ function PlaystatsAwardBadsport(id) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46F917F6B4128FE4)  
 ---This native does not have an official description.
 ---@param amount integer
----@param type integer | string
----@param category integer | string
+---@param type Hash | string
+---@param category Hash | string
 function PlaystatsAwardXp(amount, type, category) end
 
 ---**`STATS` `client`**  
@@ -1449,7 +1449,7 @@ function PlaystatsBanAlert(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD6781E42755531F7)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsBuyContraband() end
 
 ---**`STATS` `client`**  
@@ -1533,7 +1533,7 @@ function PlaystatsCasinoLuckyseven(p0) end
 ---```
 ---NativeDB Introduced: v1734
 ---```
----@return any
+---@return any data
 function PlaystatsCasinoMissionEnded() end
 
 ---**`STATS` `client`**  
@@ -1683,19 +1683,19 @@ PlaystatsCrateDrop = PlaystatsCrateDropMissionDone
 ---```
 ---NativeDB Introduced: v1290
 ---```
----@return any
+---@return any data
 function PlaystatsDarMissionEnd() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2605663BD4F23B5D)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsDefendContraband() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x46326E13DA4E0546)  
 ---This native does not have an official description.
----@return any
+---@return any p0
 function PlaystatsDirectorMode() end
 
 ---**`STATS` `client`**  
@@ -1711,7 +1711,7 @@ function PlaystatsDroneUsage(p0, p1, p2) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x848B66100EE33B05)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsDupeDetection() end
 
 ---**`STATS` `client`**  
@@ -1730,7 +1730,7 @@ function PlaystatsEarnedMcPoints(p0, p1, p2, p3, p4, p5) end
 ---```
 ---NativeDB Introduced: v1290
 ---```
----@return any
+---@return any data
 function PlaystatsEnterSessionPack() end
 
 ---**`STATS` `client`**  
@@ -1751,7 +1751,7 @@ function PlaystatsFriendActivity(p0, p1) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0EACDF8487D5155A)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsGunrunMissionEnded() end
 
 ---**`STATS` `client`**  
@@ -1759,7 +1759,7 @@ function PlaystatsGunrunMissionEnded() end
 ---```
 ---NativeDB Introduced: v1290
 ---```
----@return any
+---@return any data
 function PlaystatsH2FmprepEnd() end
 
 ---**`STATS` `client`**  
@@ -1770,13 +1770,13 @@ function PlaystatsH2FmprepEnd() end
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
----@return any
+---@return any data
 function PlaystatsH2InstanceEnd(p1, p2, p3) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF4FF020A08BC8863)  
 ---This native does not have an official description.
----@param hash integer | string
+---@param hash Hash | string
 ---@param p1 integer
 function PlaystatsHeistSaveCheat(hash, p1) end
 
@@ -1823,7 +1823,7 @@ function PlaystatsInventory(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF5BB8DAC426A52C0)  
 ---This native does not have an official description.
----@return any, any, any, any
+---@return any p0, any p1, any p2, any p3
 function PlaystatsJobBend() end
 
 ---**`STATS` `client`**  
@@ -1859,7 +1859,7 @@ function PlaystatsMatchStarted(p0, p1, p2, p3, p4, p5, p6) end
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
----@return any
+---@return any p0
 function PlaystatsMissionCheckpoint(p1, p2, p3) end
 
 ---**`STATS` `client`**  
@@ -1870,7 +1870,7 @@ function PlaystatsMissionCheckpoint(p1, p2, p3) end
 ---@param p3 boolean
 ---@param p4 boolean
 ---@param p5 boolean
----@return any
+---@return any p0
 function PlaystatsMissionOver(p1, p2, p3, p4, p5) end
 
 ---**`STATS` `client`**  
@@ -1879,13 +1879,13 @@ function PlaystatsMissionOver(p1, p2, p3, p4, p5) end
 ---@param p1 any
 ---@param p2 any
 ---@param p3 boolean
----@return any
+---@return any p0
 function PlaystatsMissionStarted(p1, p2, p3) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x93054C88E6AA7C44)  
 ---This native does not have an official description.
----@return any
+---@return any p0
 function PlaystatsNpcInvite() end
 
 ---**`STATS` `client`**  
@@ -1912,13 +1912,13 @@ function PlaystatsPassiveMode(p0, p1, p2, p3) end
 ---```
 ---NativeDB Introduced: v1180
 ---```
----@param modelHash integer | string
+---@param modelHash Hash | string
 function PlaystatsPegasaircraft(modelHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x203B381133817079)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsPiMenuHideSettings() end
 
 ---**`STATS` `client`**  
@@ -1990,7 +1990,7 @@ function PlaystatsRankUp(rank) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x04D90BA8207ADA2D)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsRecoverContraband() end
 
 ---**`STATS` `client`**  
@@ -2014,14 +2014,14 @@ function PlaystatsRobberyPrep(p0) end
 ---This native does not have an official description.
 ---@param amount integer
 ---@param act integer
----@param player integer
+---@param player Player
 ---@param cm number
 function PlaystatsRosBet(amount, act, player, cm) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC729991A9065376E)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function PlaystatsSellContraband() end
 
 ---**`STATS` `client`**  
@@ -2045,7 +2045,7 @@ function PlaystatsShopItem(p0, p1, p2, p3, p4) end
 ---```
 ---NativeDB Introduced: v1180
 ---```
----@return any
+---@return any data
 function PlaystatsSmugMissionEnded() end
 
 ---**`STATS` `client`**  
@@ -2101,7 +2101,7 @@ PlaystatsStuntPerformedEventAllowTrigger = PlaystatsStartTrackingStunts
 ---```
 ---NativeDB Introduced: v1493
 ---```
----@return any
+---@return any data
 function PlaystatsStoneHatchetEnd() end
 
 ---**`STATS` `client`**  
@@ -2115,22 +2115,22 @@ PlaystatsStuntPerformedEventDisallowTrigger = PlaystatsStopTrackingStunts
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE95C8A1875A02CA4)  
 ---This native does not have an official description.
----@param weaponHash integer | string
----@param componentHashTo integer | string
----@param componentHashFrom integer | string
+---@param weaponHash Hash | string
+---@param componentHashTo Hash | string
+---@param componentHashFrom Hash | string
 function PlaystatsWeaponModeChange(weaponHash, componentHashTo, componentHashFrom) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDDF24D535060F811)  
 ---This native does not have an official description.
----@param scaleformHash integer | string
+---@param scaleformHash Hash | string
 ---@param p1 integer
 function PlaystatsWebsiteVisited(scaleformHash, p1) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x30A6614C1F7799B8)  
 ---This native does not have an official description.
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param value number
 ---@param p2 integer
 function PresenceEventUpdatestatFloat(statHash, value, p2) end
@@ -2141,7 +2141,7 @@ UpdateStatFloat = PresenceEventUpdatestatFloat
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)  
 ---This native does not have an official description.
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param value integer
 ---@param p2 integer
 function PresenceEventUpdatestatInt(statHash, value, p2) end
@@ -2193,9 +2193,9 @@ function StatDeleteSlot(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11B5E6D2AE73F48E)  
 ---This native does not have an official description.
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param p2 any
----@return boolean, boolean
+---@return boolean, boolean outValue
 function StatGetBool(statHash, p2) end
 
 ---**`STATS` `client`**  
@@ -2203,7 +2203,7 @@ function StatGetBool(statHash, p2) end
 ---```
 ---p2 - Default value? Seems to be -1 most of the time.  
 ---```
----@param statName integer | string
+---@param statName Hash | string
 ---@param mask integer
 ---@param p2 integer
 ---@return boolean
@@ -2218,18 +2218,18 @@ function StatGetCancelSaveMigrationStatus() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8B0FACEFC36C824B)  
 ---This native does not have an official description.
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param p2 any
 ---@param p3 any
----@return boolean, any
+---@return boolean, any p1
 function StatGetDate(statHash, p2, p3) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD7AE6C9C9C6AC54C)  
 ---This native does not have an official description.
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param p2 any
----@return boolean, number
+---@return boolean, number outValue
 function StatGetFloat(statHash, p2) end
 
 ---**`STATS` `client`**  
@@ -2237,15 +2237,15 @@ function StatGetFloat(statHash, p2) end
 ---```
 ---p2 appears to always be -1  
 ---```
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param p2 integer
----@return boolean, integer
+---@return boolean, integer outValue
 function StatGetInt(statHash, p2) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5473D4195058B2E4)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@return string
 function StatGetLicensePlate(statName) end
 
@@ -2256,34 +2256,34 @@ function StatGetLicensePlate(statName) end
 ---@param p2 any
 ---@param p3 any
 ---@param p4 any
----@return boolean, any
+---@return boolean, any p1
 function StatGetMaskedInt(p0, p2, p3, p4) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0E854F5280FB769)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@return integer
 function StatGetNumberOfDays(statName) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF2D4B2FE415AAFC3)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@return integer
 function StatGetNumberOfHours(statName) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7583B4BE4C5A41B5)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@return integer
 function StatGetNumberOfMinutes(statName) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2CE056FF3723F00B)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@return integer
 function StatGetNumberOfSeconds(statName) end
 
@@ -2310,19 +2310,19 @@ function StatGetPackedIntMask(p0) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p4 any
----@return boolean, any, any, any
+---@return boolean, any p1, any p2, any p3
 function StatGetPos(p0, p4) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCE5AA445ABA8DEE0)  
 ---This native does not have an official description.
----@return integer, integer
+---@return integer, integer p0
 function StatGetSaveMigrationConsumeContentUnlockStatus() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x886913BBEACA68C1)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any data
 function StatGetSaveMigrationStatus() end
 
 ---**`STATS` `client`**  
@@ -2330,7 +2330,7 @@ function StatGetSaveMigrationStatus() end
 ---```
 ---p1 is always -1 in the script files  
 ---```
----@param statHash integer | string
+---@param statHash Hash | string
 ---@param p1 integer
 ---@return string
 function StatGetString(statHash, p1) end
@@ -2347,7 +2347,7 @@ function StatGetUserId(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x9B5A68C6489E9909)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param value number
 function StatIncrement(statName, value) end
 
@@ -2394,7 +2394,7 @@ function StatSaveMigrationCancel() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3270F67EED31FBC1)  
 ---This native does not have an official description.
----@param contentId integer | string
+---@param contentId Hash | string
 ---@param srcPlatform string
 ---@param srcGamerHandle string
 ---@return boolean
@@ -2430,7 +2430,7 @@ function StatSetBlockSaves(toggle) end
 ---Example:
 --- STATS::STAT_SET_BOOL(MISC::GET_HASH_KEY("MPPLY_MELEECHLENGECOMPLETED"), trur, true);
 ---```
----@param statName integer | string
+---@param statName Hash | string
 ---@param value boolean
 ---@param save boolean
 ---@return boolean
@@ -2439,7 +2439,7 @@ function StatSetBool(statName, value, save) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5BC62EC1937B9E5B)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param value boolean
 ---@param mask integer
 ---@param save boolean
@@ -2456,7 +2456,7 @@ function StatSetCheatIsActive() end
 ---```
 ---p1 always true.  
 ---```
----@param statName integer | string
+---@param statName Hash | string
 ---@param p1 boolean
 ---@return boolean
 function StatSetCurrentPosixTime(statName, p1) end
@@ -2475,10 +2475,10 @@ function StatSetCurrentPosixTime(statName, p1) end
 ---int millisecond  
 ---The decompiled scripts use TIME::GET_POSIX_TIME to fill this structure.  
 ---```
----@param statName integer | string
+---@param statName Hash | string
 ---@param numFields integer
 ---@param save boolean
----@return boolean, any
+---@return boolean, any value
 function StatSetDate(statName, numFields, save) end
 
 ---**`STATS` `client`**  
@@ -2487,7 +2487,7 @@ function StatSetDate(statName, numFields, save) end
 ---Example:
 --- STATS::STAT_SET_FLOAT(MISC::GET_HASH_KEY("MP0_WEAPON_ACCURACY"), 66.6f, true);
 ---```
----@param statName integer | string
+---@param statName Hash | string
 ---@param value number
 ---@param save boolean
 ---@return boolean
@@ -2561,7 +2561,7 @@ function StatSetFloat(statName, value, save) end
 ---"RC_TON4"  
 ---"RC_TON5"  
 ---```
----@param statName integer | string
+---@param statName Hash | string
 ---@param value string
 ---@param save boolean
 ---@return boolean
@@ -2570,7 +2570,7 @@ function StatSetGxtLabel(statName, value, save) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB3271D7AB655B441)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param value integer
 ---@param save boolean
 ---@return boolean
@@ -2579,7 +2579,7 @@ function StatSetInt(statName, value, save) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x69FF13266D7296DA)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param str string
 ---@return boolean
 function StatSetLicensePlate(statName, str) end
@@ -2587,7 +2587,7 @@ function StatSetLicensePlate(statName, str) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7BBB1B54583ED410)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param p1 any
 ---@param p2 any
 ---@param p3 integer
@@ -2598,7 +2598,7 @@ function StatSetMaskedInt(statName, p1, p2, p3, save) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDB283FDE680FE72E)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2622,7 +2622,7 @@ StatSetProfileSetting = StatSetProfileSettingValue
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA87B2335D12531D7)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param value string
 ---@param save boolean
 ---@return boolean
@@ -2631,7 +2631,7 @@ function StatSetString(statName, value, save) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8CDDF1E452BABE11)  
 ---This native does not have an official description.
----@param statName integer | string
+---@param statName Hash | string
 ---@param value string
 ---@param save boolean
 ---@return boolean

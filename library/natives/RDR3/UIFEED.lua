@@ -5,14 +5,14 @@
 ---Only used in R* SP Script beat_animal_attack
 ---Returns feedMessage
 ---@param p1 boolean
----@return integer, any
+---@return integer, any p0
 function N_0x0fd07141ad048aae(p1) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4E88A65968A55C78)  
 ---Returns feedMessage
 ---@param p1 boolean
----@return integer, any
+---@return integer, any p0
 function N_0x4e88a65968a55c78(p1) end
 
 ---**`UIFEED` `client`**  
@@ -70,29 +70,29 @@ function UiFeedGetMessageState(feedMessage) end
 ---notification you need dataview
 ---@param p2 boolean
 ---@param p3 boolean
----@param collectableCategory integer | string
----@return integer, any, any
+---@param collectableCategory Hash | string
+---@return integer, any p0, any p1
 function UiFeedPostCollectorToast(p2, p3, collectableCategory) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB2920B9760F0F36B)  
 ---Display text on right of the screen, Example : https://pastebin.com/n1YmNe25
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostFeedTicker(p2) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8D1249BD28791878)  
 ---This native does not have an official description.
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostGameUpdateShard(p2) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x049D5C615BD38BAD)  
 ---Example : https://pastebin.com/GvdBp8Dh
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostHelpText(p2) end
 
 ---**`UIFEED` `client`**  
@@ -100,7 +100,7 @@ function UiFeedPostHelpText(p2) end
 ---notification you need dataview
 ---@param p2 boolean
 ---@param p3 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostInteractiveToast(p2, p3) end
 
 ---**`UIFEED` `client`**  
@@ -108,28 +108,28 @@ function UiFeedPostInteractiveToast(p2, p3) end
 ---Example : https://pastebin.com/h1YzycuR
 ---@param p2 boolean
 ---@param p3 boolean
----@return integer, any, any
+---@return integer, any duration, any data
 function UiFeedPostLocationShard(p2, p3) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2024F4F333095FB1)  
 ---This native does not have an official description.
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostMissionName(p2) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCEDBF17EFCC0E4A4)  
 ---Example : https://pastebin.com/13tuRa63
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostObjective(p2) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x860DDFE97CC94DF0)  
 ---This native does not have an official description.
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostOneTextShard(p2) end
 
 ---**`UIFEED` `client`**  
@@ -137,14 +137,14 @@ function UiFeedPostOneTextShard(p2) end
 ---This native does not have an official description.
 ---@param p2 integer
 ---@param p3 integer
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostRankupToast(p2, p3) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x893128CDB4B81FBB)  
 ---This native does not have an official description.
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostReticleMessage(p2) end
 
 ---**`UIFEED` `client`**  
@@ -152,7 +152,7 @@ function UiFeedPostReticleMessage(p2) end
 ---Example : https://pastebin.com/kAtEMQTD
 ---@param p2 integer
 ---@param p3 integer
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostSampleNotification(p2, p3) end
 
 ---**`UIFEED` `client`**  
@@ -160,14 +160,14 @@ function UiFeedPostSampleNotification(p2, p3) end
 ---Example : https://pastebin.com/YZMBkAmW
 ---@param p2 boolean
 ---@param p3 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostSampleToast(p2, p3) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB249EBCB30DD88E0)  
 ---This native does not have an official description.
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostSampleToastRight(p2) end
 
 ---**`UIFEED` `client`**  
@@ -176,7 +176,7 @@ function UiFeedPostSampleToastRight(p2) end
 ---@param p2 boolean
 ---@param p3 boolean
 ---@param p4 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostSampleToastWithAppLink(p2, p3, p4) end
 
 ---**`UIFEED` `client`**  
@@ -185,7 +185,7 @@ function UiFeedPostSampleToastWithAppLink(p2, p3, p4) end
 ---@param p2 boolean
 ---@param p3 boolean
 ---@param p4 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostThreeTextShard(p2, p3, p4) end
 
 ---**`UIFEED` `client`**  
@@ -193,13 +193,13 @@ function UiFeedPostThreeTextShard(p2, p3, p4) end
 ---This native does not have an official description.
 ---@param p2 boolean
 ---@param p3 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostTwoTextShard(p2, p3) end
 
 ---**`UIFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC48152BC6B3E821C)  
 ---This native does not have an official description.
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiFeedPostVoiceChatFeed(p2) end
 

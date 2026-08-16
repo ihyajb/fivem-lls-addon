@@ -10,21 +10,21 @@ function UiStickyFeedClearMessage(msgId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x815C4065AE6E6071)  
 ---Example: https://pastebin.com/JygJShNU
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiStickyFeedCreateDeathFailMessage(p2) end
 
 ---**`UISTICKYFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F2CC2439A04E7BA)  
 ---Example: https://pastebin.com/EJD7ytnz
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiStickyFeedCreateErrorMessage(p2) end
 
 ---**`UISTICKYFEED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x339E16B41780FC35)  
 ---Example: https://pastebin.com/6mLtee2S
 ---@param p2 boolean
----@return integer, any, any
+---@return integer, any p0, any p1
 function UiStickyFeedCreateWarningMessage(p2) end
 
 ---**`UISTICKYFEED` `client`**  
@@ -53,6 +53,6 @@ function UiStickyFeedIsChannelActive(stickyFeedChannel) end
 ---Example: https://pastebin.com/nDrJyWq2
 ---@param msgId integer
 ---@param p2 boolean
----@return any
+---@return any p1
 function UiStickyFeedUpdateMessage(msgId, p2) end
 

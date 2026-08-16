@@ -21,7 +21,7 @@ function GetSpecialEditionCoreStatsBonusEnabled() end
 ---**`DLC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2763DC12BBE2BB6F)  
 ---This native does not have an official description.
----@param dlcHash integer | string
+---@param dlcHash Hash | string
 ---@return boolean
 function IsDlcPresent(dlcHash) end
 

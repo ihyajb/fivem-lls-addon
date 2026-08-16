@@ -8,7 +8,7 @@
 ---
 ---Unless the return value is 2, the other return values are undefined.
 ---@param shapeTestHandle integer
----@return integer, boolean, vector3, vector3, integer
+---@return integer, boolean hit, vector3 endCoords, vector3 surfaceNormal, Entity entityHit
 function GetShapeTestResult(shapeTestHandle) end
 
 ---@deprecated
@@ -22,7 +22,7 @@ GetRaycastResult = GetShapeTestResult
 ---
 ---Unless the return value is 2, the other return values are undefined.
 ---@param shapeTestHandle integer
----@return integer, boolean, vector3, vector3, integer, integer
+---@return integer, boolean hit, vector3 endCoords, vector3 surfaceNormal, Hash materialHash, Entity entityHit
 function GetShapeTestResultIncludingMaterial(shapeTestHandle) end
 
 ---@deprecated
@@ -32,7 +32,7 @@ GetShapeTestResultEx = GetShapeTestResultIncludingMaterial
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2B3334BCA57CD799)  
 ---Invalidates the entity handle passed by removing the fwScriptGuid from the entity. This should be used when receiving an
 ---ambient entity from shape testing natives, but can also be used for other natives returning an 'irrelevant' entity handle.
----@param entity integer
+---@param entity Entity
 function ReleaseScriptGuidFromEntity(entity) end
 
 ---@deprecated
@@ -50,7 +50,7 @@ ShapeTestResultEntity = ReleaseScriptGuidFromEntity
 ---@param y2 number
 ---@param z2 number
 ---@param flags integer
----@param entity integer
+---@param entity Entity
 ---@param p8 integer
 ---@return integer
 function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
@@ -63,7 +63,7 @@ StartShapeTestRay = StartExpensiveSynchronousShapeTestLosProbe
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x37181417CE7C8900)  
 ---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
----@param entity integer
+---@param entity Entity
 ---@param flags1 integer
 ---@param flags2 integer
 ---@return integer
@@ -72,7 +72,7 @@ function StartShapeTestBound(entity, flags1, flags2) end
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x052837721A854EC7)  
 ---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.
----@param entity integer
+---@param entity Entity
 ---@param flags1 integer
 ---@param flags2 integer
 ---@return integer
@@ -92,7 +92,7 @@ function StartShapeTestBoundingBox(entity, flags1, flags2) end
 ---@param rotZ number
 ---@param p9 integer
 ---@param flags integer
----@param entity integer
+---@param entity Entity
 ---@param p12 integer
 ---@return integer
 function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, entity, p12) end
@@ -108,7 +108,7 @@ function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, ent
 ---@param z2 number
 ---@param radius number
 ---@param flags integer
----@param entity integer
+---@param entity Entity
 ---@param p9 integer
 ---@return integer
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
@@ -160,7 +160,7 @@ Cast_3dRayPointToPoint = StartShapeTestCapsule
 ---@param y2 number
 ---@param z2 number
 ---@param traceFlags integer
----@param entity integer
+---@param entity Entity
 ---@param optionFlags integer
 ---@return integer
 function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, traceFlags, entity, optionFlags) end
@@ -180,7 +180,7 @@ function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, traceFlags, entity, opti
 ---@param pVec1 vector3
 ---@param pVec2 vector3
 ---@param flag integer
----@param entity integer
+---@param entity Entity
 ---@param flag2 integer
 ---@return integer
 function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
@@ -196,7 +196,7 @@ function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 ---@param z2 number
 ---@param radius number
 ---@param flags integer
----@param entity integer
+---@param entity Entity
 ---@param p9 integer
 ---@return integer
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end

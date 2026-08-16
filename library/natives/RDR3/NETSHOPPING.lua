@@ -9,7 +9,7 @@ function CashinventoryInitSessionIsFaulted() end
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC019112F8995DC1C)  
 ---This native does not have an official description.
----@return boolean, integer, integer
+---@return boolean, integer p0, integer p1
 function CashinventoryInitSessionStatus() end
 
 ---**`NETSHOPPING` `client`**  
@@ -28,8 +28,8 @@ function CashinventoryIsSessionReady() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x52BDE32F21BA3B6D)  
 ---This native does not have an official description.
 ---@param id integer
----@param hash integer | string
----@return boolean, any, any
+---@param hash Hash | string
+---@return boolean, any p2, any p3
 function CashinventoryTransactionAddAward(id, hash) end
 
 ---**`NETSHOPPING` `client`**  
@@ -43,7 +43,7 @@ function CashinventoryTransactionCheckout(id) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x26C008791D066F37)  
 ---This native does not have an official description.
 ---@param id integer
----@return boolean, integer
+---@return boolean, integer status
 function CashinventoryTransactionCheckoutStatus(id) end
 
 ---**`NETSHOPPING` `client`**  
@@ -56,16 +56,16 @@ function CashinventoryTransactionDelete(id) end
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFEA09CCEC4AF32F)  
 ---This native does not have an official description.
----@param actionHash integer | string
+---@param actionHash Hash | string
 ---@param p3 integer
----@return boolean, integer, any
+---@return boolean, integer id, any item
 function CashinventoryTransactionFireAndForgetItem(actionHash, p3) end
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD2D520C51CCFF52)  
 ---This native does not have an official description.
 ---@param id integer
----@return integer
+---@return Hash
 function CashinventoryTransactionGetAction(id) end
 
 ---**`NETSHOPPING` `client`**  
@@ -80,7 +80,7 @@ function CashinventoryTransactionGetBasketIsValid(id) end
 ---This native does not have an official description.
 ---@param id integer
 ---@param index integer
----@return boolean, any
+---@return boolean, any itemInfo
 function CashinventoryTransactionGetItemInfo(id, index) end
 
 ---**`NETSHOPPING` `client`**  
@@ -95,22 +95,22 @@ function CashinventoryTransactionGetNumOfItems(id) end
 ---This native does not have an official description.
 ---@param id integer
 ---@param index integer
----@return boolean, any
+---@return boolean, any itemInfo
 function CashinventoryTransactionResponseGetItemInfo(id, index) end
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF039EC27F4490E96)  
 ---This native does not have an official description.
----@param type integer | string
----@param actionHash integer | string
----@return boolean, integer
+---@param type Hash | string
+---@param actionHash Hash | string
+---@return boolean, integer id
 function CashinventoryTransactionStart(type, actionHash) end
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C9F12700BCE69F4)  
 ---This native does not have an official description.
----@param p0 integer | string
----@return integer, any
+---@param p0 Hash | string
+---@return integer, any p1
 function CashinventoryTransactionValidateItem(p0) end
 
 ---**`NETSHOPPING` `client`**  
@@ -123,7 +123,7 @@ function N_0x38640a8c2def011b(p0) end
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FA09DD57B93C0DE)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
 ---@param p2 integer
 ---@param p3 any
@@ -136,13 +136,13 @@ function N_0x3fa09dd57b93c0de(p0, p1, p2, p3, p4) end
 ---This native does not have an official description.
 ---@param id integer
 ---@param index integer
----@return boolean, any
+---@return boolean, any p2
 function N_0x92a32ba29622763f(id, index) end
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA0B7094629724974)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 any
 ---@return boolean
 function N_0xa0b7094629724974(p0, p1) end
@@ -151,10 +151,10 @@ function N_0xa0b7094629724974(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xA3B8D31C13CB4239)  
 ---This native does not have an official description.
 ---@param p0 integer
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p3 integer
 ---@param p5 integer
----@return boolean, any, any
+---@return boolean, any p2, any p4
 function N_0xa3b8d31c13cb4239(p0, p1, p3, p5) end
 
 ---**`NETSHOPPING` `client`**  
@@ -168,14 +168,14 @@ function N_0xb6f4557060ef0fb4(p0, p1) end
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE54C9ABE6FBC6DB)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return boolean
 function N_0xce54c9abe6fbc6db(p0) end
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD1555FBC96C88444)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
 ---@param p2 integer
 ---@param p3 any

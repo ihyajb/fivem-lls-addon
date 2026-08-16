@@ -12,8 +12,8 @@
 ---	SHAPETEST_STATUS_RESULTS_NOTREADY,
 ---	SHAPETEST_STATUS_RESULTS_READY
 ---};
----@param shapeTestHandle integer
----@return integer, boolean, vector3, vector3, integer
+---@param shapeTestHandle ScrHandle
+---@return integer, boolean hit, vector3 endCoords, vector3 surfaceNormal, Entity entityHit
 function GetShapeTestResult(shapeTestHandle) end
 
 ---**`SHAPETEST` `client`**  
@@ -34,9 +34,9 @@ function N_0x04aa59ca40571c2e(p0, p1) end
 ---@param y2 number
 ---@param z2 number
 ---@param flags integer
----@param entityToIgnore integer
+---@param entityToIgnore Entity
 ---@param p8 integer
----@return integer
+---@return ScrHandle
 function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entityToIgnore, p8) end
 
 ---**`SHAPETEST` `client`**  
@@ -53,9 +53,9 @@ function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flag
 ---@param rotZ number
 ---@param rotationOrder integer
 ---@param flags integer
----@param entityToIgnore integer
+---@param entityToIgnore Entity
 ---@param options integer
----@return integer
+---@return ScrHandle
 function StartShapeTestBox(posX, posY, posZ, dimensionsX, dimensionsY, dimensionsZ, rotX, rotY, rotZ, rotationOrder, flags, entityToIgnore, options) end
 
 ---**`SHAPETEST` `client`**  
@@ -69,9 +69,9 @@ function StartShapeTestBox(posX, posY, posZ, dimensionsX, dimensionsY, dimension
 ---@param z2 number
 ---@param radius number
 ---@param flags integer
----@param entityToIgnore integer
+---@param entityToIgnore Entity
 ---@param p9 integer
----@return integer
+---@return ScrHandle
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entityToIgnore, p9) end
 
 ---**`SHAPETEST` `client`**  
@@ -88,18 +88,18 @@ function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entityToIg
 ---@param y2 number
 ---@param z2 number
 ---@param flags integer
----@param entity integer
+---@param entity Entity
 ---@param p8 integer
----@return integer
+---@return ScrHandle
 function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
 ---**`SHAPETEST` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9839013D8B6014F1)  
 ---Old name: _START_SHAPE_TEST_SURROUNDING_COORDS
 ---@param flag integer
----@param entity integer
+---@param entity Entity
 ---@param flag2 integer
----@return integer, vector3, vector3
+---@return ScrHandle, vector3 pVec1, vector3 pVec2
 function StartShapeTestMouseCursorLosProbe(flag, entity, flag2) end
 
 ---**`SHAPETEST` `client`**  
@@ -113,8 +113,8 @@ function StartShapeTestMouseCursorLosProbe(flag, entity, flag2) end
 ---@param z2 number
 ---@param radius number
 ---@param flags integer
----@param entity integer
+---@param entity Entity
 ---@param p9 any
----@return integer
+---@return ScrHandle
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 

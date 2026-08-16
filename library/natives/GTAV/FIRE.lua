@@ -119,7 +119,7 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---@param y number
 ---@param z number
 ---@param explosionType integer
----@param explosionFx integer | string
+---@param explosionFx Hash | string
 ---@param damageScale number
 ---@param isAudible boolean
 ---@param isInvisible boolean
@@ -132,7 +132,7 @@ AddSpecfxExplosion = AddExplosionWithUserVfx
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -151,7 +151,7 @@ function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, 
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetClosestFirePos(x, y, z) end
 
 ---**`FIRE` `client`**  
@@ -167,7 +167,7 @@ function GetClosestFirePos(x, y, z) end
 ---@param y2 number
 ---@param z2 number
 ---@param radius number
----@return integer
+---@return Entity
 function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
 ---@deprecated
@@ -183,7 +183,7 @@ GetPedInsideExplosionArea = GetEntityInsideExplosionArea
 ---@param y number
 ---@param z number
 ---@param radius number
----@return integer
+---@return Entity
 function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
 
 ---**`FIRE` `client`**  
@@ -199,7 +199,7 @@ function GetNumberOfFiresInRange(x, y, z, radius) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x28D3FED7190D3A0B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityOnFire(entity) end
 
@@ -257,7 +257,7 @@ function IsExplosionInSphere(explosionType, x, y, z, radius) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7FF548385680673F)  
 ---This native does not have an official description.
----@param fireHandle integer
+---@param fireHandle FireId
 function RemoveScriptFire(fireHandle) end
 
 ---**`FIRE` `client`**  
@@ -273,8 +273,8 @@ function SetFireSpreadRate(p0) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF6A9D9708F6F23DF)  
 ---This native does not have an official description.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return FireId
 function StartEntityFire(entity) end
 
 ---**`FIRE` `client`**  
@@ -290,13 +290,13 @@ function StartEntityFire(entity) end
 ---@param Z number
 ---@param maxChildren integer
 ---@param isGasFire boolean
----@return integer
+---@return FireId
 function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7F0DD2EBBB651AFF)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function StopEntityFire(entity) end
 
 ---**`FIRE` `client`**  

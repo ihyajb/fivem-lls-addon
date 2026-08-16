@@ -59,7 +59,7 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7DF150605EEDC9B)  
 ---Add explosion with and assign an entity as damage causer.
 ---explosionType: https://github.com/femga/rdr3_discoveries/blob/master/graphics/explosions/README.md
----@param entity integer
+---@param entity Entity
 ---@param p1 integer
 ---@param x number
 ---@param y number
@@ -79,7 +79,7 @@ function AddExplosionWithDamageCauser(entity, p1, x, y, z, explosionType, damage
 ---@param y number
 ---@param z number
 ---@param explosionType integer
----@param explosionFx integer | string
+---@param explosionFx Hash | string
 ---@param damageScale number
 ---@param isAudible boolean
 ---@param isInvisible boolean
@@ -91,13 +91,13 @@ function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScal
 ---Add explosion with vfx and assign an entity as damage causer.
 ---explosionType: https://github.com/femga/rdr3_discoveries/blob/master/graphics/explosions/README.md
 ---explosionFx: https://github.com/femga/rdr3_discoveries/blob/master/graphics/explosions/explosion_vfxTags.lua
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param explosionType integer
----@param explosionFx integer | string
+---@param explosionFx Hash | string
 ---@param damageScale number
 ---@param isAudible boolean
 ---@param isInvisible boolean
@@ -107,7 +107,7 @@ function AddExplosionWithUserVfxAndDamageCauser(entity, p1, x, y, z, explosionTy
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD84A917A64D4D016)  
 ---explosionType: see ADD_EXPLOSION
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -124,7 +124,7 @@ function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, 
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetClosestFirePos(x, y, z) end
 
 ---**`FIRE` `client`**  
@@ -139,7 +139,7 @@ function GetClosestFirePos(x, y, z) end
 ---@param scaleX number
 ---@param scaleY number
 ---@param scaleZ number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetClosestFirePosInVolume(posX, posY, posZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ) end
 
 ---**`FIRE` `client`**  
@@ -163,27 +163,27 @@ function GetNumberOfFiresInRange(x, y, z, radius) end
 ---@param y2 number
 ---@param z2 number
 ---@param radius number
----@return integer
+---@return Entity
 function GetOwnerOfExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCDC25355C0D65963)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityConsumedByFire(entity) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4454592DCF7C992)  
 ---this natives only returns true if entity is damaged by fire , once damaged caused to entity by fire (like burned appearance) has cleared (they clear over time) then returns false
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityDamagedByFire(entity) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1BD7C371CE257C3E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityOnFire(entity) end
 
@@ -242,14 +242,14 @@ function IsExplosionInSphere(explosionType, x, y, z, radius) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE24822A4CFC9107A)  
 ---explosionType: see ADD_EXPLOSION
 ---@param explosionType integer
----@param volume integer
+---@param volume Volume
 ---@return boolean
 function IsExplosionInVolume(explosionType, volume) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB7993BA61A4674F)  
 ---Tested with fire & dynamite. Only returns true using value p1 = 1 and when the ped is affected by fire.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@return boolean
 function IsPedShockingEventActive(ped, p1) end
@@ -294,13 +294,13 @@ function N_0x754937c28271bc65(p0) end
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x790125C36E194069)  
 ---This native does not have an official description.
----@param fireHandle integer
+---@param fireHandle FireId
 function RemoveScriptFire(fireHandle) end
 
 ---**`FIRE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC4DC7418A44D6822)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param intensity number
 ---@param boneIndex integer
 ---@param fireFlags integer
@@ -322,7 +322,7 @@ function StartEntityFire(entity, intensity, boneIndex, fireFlags) end
 ---@param soundsetName string
 ---@param p7 number
 ---@param p8 integer
----@return integer
+---@return FireId
 function StartScriptFire(x, y, z, p3, p4, p5, soundsetName, p7, p8) end
 
 ---**`FIRE` `client`**  

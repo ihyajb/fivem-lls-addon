@@ -121,7 +121,7 @@ function DoesNavmeshBlockingObjectExist(p0) end
 ---@param y number
 ---@param z number
 ---@param p3 boolean
----@return integer, integer, number, number
+---@return integer, integer direction, number vehicle, number distToNxJunction
 function GenerateDirectionsToCoord(x, y, z, p3) end
 
 ---**`PATHFIND` `client`**  
@@ -132,7 +132,7 @@ function GenerateDirectionsToCoord(x, y, z, p3) end
 ---@param z number
 ---@param zMeasureMult number
 ---@param zTolerance integer
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetClosestMajorVehicleNode(x, y, z, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -144,7 +144,7 @@ function GetClosestMajorVehicleNode(x, y, z, zMeasureMult, zTolerance) end
 ---@param minimumEdgeLength number
 ---@param minimumLaneCount integer
 ---@param onlyMajorRoads boolean
----@return boolean, vector3, vector3, integer, integer, number
+---@return boolean, vector3 srcNode, vector3 targetNode, integer laneCountForward, integer laneCountBackward, number width
 function GetClosestRoad(x, y, z, minimumEdgeLength, minimumLaneCount, onlyMajorRoads) end
 
 ---**`PATHFIND` `client`**  
@@ -165,7 +165,7 @@ function GetClosestRoad(x, y, z, minimumEdgeLength, minimumLaneCount, onlyMajorR
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetClosestVehicleNode(x, y, z, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -177,7 +177,7 @@ function GetClosestVehicleNode(x, y, z, nodeFlags, zMeasureMult, zTolerance) end
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance integer
----@return boolean, vector3, number
+---@return boolean, vector3 outPosition, number outHeading
 function GetClosestVehicleNodeWithHeading(x, y, z, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -257,7 +257,7 @@ function GetNextGpsDisabledZoneIndex(index) end
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetNthClosestVehicleNode(x, y, z, nthClosest, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -273,7 +273,7 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, nodeFlags, zMeasureMult, 
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance number
----@return boolean, vector3, number
+---@return boolean, vector3 outPosition, number outHeading
 function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, desiredZ, nthClosest, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -299,7 +299,7 @@ function GetNthClosestVehicleNodeId(x, y, z, nthClosest, nodeFlags, zMeasureMult
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance number
----@return integer, vector3, number
+---@return integer, vector3 outPosition, number outHeading
 function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -312,7 +312,7 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, z
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance number
----@return boolean, vector3, number, integer
+---@return boolean, vector3 outPosition, number outHeading, integer totalLanes
 function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -334,7 +334,7 @@ function GetNumNavmeshesExistingInArea(posMinX, posMinY, posMinZ, posMaxX, posMa
 ---@param y number
 ---@param z number
 ---@param p3 integer
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetPointOnRoadSide(x, y, z, p3) end
 
 ---**`PATHFIND` `client`**  
@@ -352,7 +352,7 @@ function GetPointOnRoadSide(x, y, z, p3) end
 ---@param bStartAtPlayerPos boolean
 ---@param fDistanceAlongRoute number
 ---@param slotType integer
----@return boolean, vector3
+---@return boolean, vector3 result
 function GetPosAlongGpsTypeRoute(bStartAtPlayerPos, fDistanceAlongRoute, slotType) end
 
 ---@deprecated
@@ -368,7 +368,7 @@ GetGpsWaypointRouteEnd = GetPosAlongGpsTypeRoute
 ---@param p4 boolean
 ---@param p5 boolean
 ---@param p6 boolean
----@return boolean, vector3, integer
+---@return boolean, vector3 outPosition, integer nodeId
 function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
 
 ---**`PATHFIND` `client`**  
@@ -378,7 +378,7 @@ function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
 ---@param y number
 ---@param z number
 ---@param heading number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetRoadBoundaryUsingHeading(x, y, z, heading) end
 
 ---@deprecated
@@ -407,7 +407,7 @@ GetRoadSidePointWithHeading = GetRoadBoundaryUsingHeading
 ---@param z number
 ---@param onlyOnPavement boolean
 ---@param flags integer
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetSafeCoordForPed(x, y, z, onlyOnPavement, flags) end
 
 ---**`PATHFIND` `client`**  
@@ -422,7 +422,7 @@ function GetSafeCoordForPed(x, y, z, onlyOnPavement, flags) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return integer, integer
+---@return Hash streetName, Hash crossingRoad
 function GetStreetNameAtCoord(x, y, z) end
 
 ---**`PATHFIND` `client`**  
@@ -460,7 +460,7 @@ GetIsSlowRoadFlag = GetVehicleNodeIsSwitchedOff
 ---Eg. IS_VEHICLE_NODE_ID_VALID(1) will return true, but will crash when calling GET_VEHICLE_NODE_POSITION().
 ---```
 ---@param nodeId integer
----@return vector3
+---@return vector3 outPosition
 function GetVehicleNodePosition(nodeId) end
 
 ---**`PATHFIND` `client`**  
@@ -486,7 +486,7 @@ function GetVehicleNodePosition(nodeId) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, integer, integer
+---@return boolean, integer density, integer flags
 function GetVehicleNodeProperties(x, y, z) end
 
 ---**`PATHFIND` `client`**  
@@ -521,7 +521,7 @@ function IsNavmeshRequiredRegionOwnedByAnyThread() end
 ---@param x number
 ---@param y number
 ---@param z number
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsPointOnRoad(x, y, z, vehicle) end
 
@@ -752,7 +752,7 @@ function SetRoadsInArea(x1, y1, z1, x2, y2, z2, nodeEnabled, unknown2) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x109E99373F290687)  
 ---This native does not have an official description.
----@param object integer
+---@param object Object
 ---@param posX number
 ---@param posY number
 ---@param posZ number

@@ -30,7 +30,7 @@ CellCamDisableThisFrame = CellCamActivateSelfieMode
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x439E9BC95B7E7FBE)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function CellCamIsCharVisibleNoFaceCheck(entity) end
 
@@ -132,20 +132,20 @@ function DestroyMobilePhone() end
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x584FDFDA48805B86)  
 ---This native does not have an official description.
----@return vector3
+---@return vector3 position
 function GetMobilePhonePosition() end
 
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB4A53E05F68B6FA1)  
 ---This native does not have an official description.
----@return integer
+---@return integer renderId
 function GetMobilePhoneRenderId() end
 
 ---**`MOBILE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1CEFB61F193070AE)  
 ---This native does not have an official description.
----@param p1 integer
----@return vector3
+---@param p1 Vehicle
+---@return vector3 rotation
 function GetMobilePhoneRotation(p1) end
 
 ---**`MOBILE` `client`**  
@@ -163,7 +163,7 @@ function GetMobilePhoneRotation(p1) end
 ---    MOBILE::_0xC273BB4D(1); // TRUE
 ---}
 ---```
----@return integer
+---@return integer toggle
 function N_0xa2ccbe62cd4c91a4() end
 
 ---**`MOBILE` `client`**  

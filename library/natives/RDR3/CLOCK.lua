@@ -3,7 +3,7 @@
 ---**`CLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x28EEACE9B43D9597)  
 ---This native does not have an official description.
----@return any, any, any
+---@return any inDateTime, any timeToAdd, any outDateTime
 function AddTimeToDateTime() end
 
 ---**`CLOCK` `client`**  
@@ -81,13 +81,13 @@ function GetMillisecondsPerGameMinute() end
 ---**`CLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x90338AD4A784E455)  
 ---This native does not have an official description.
----@return integer, integer, integer, integer, integer, integer
+---@return integer year, integer month, integer day, integer hour, integer minute, integer second
 function GetPosixTime() end
 
 ---**`CLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86A68E84E5884951)  
 ---Same as GET_POSIX_TIME except that it takes a single pointer to a struct.
----@return any
+---@return any outTime
 function GetPosixTimeStruct() end
 
 ---**`CLOCK` `client`**  

@@ -12,14 +12,14 @@
 ---};
 ---
 ---Old name: _EVENT_MANAGER_GET_EVENT
----@param hash integer | string
----@return boolean, any
+---@param hash Hash | string
+---@return boolean, any eventData
 function EventsUiGetMessage(hash) end
 
 ---**`UIEVENTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x67ED5A7963F2F722)  
 ---Old name: _EVENT_MANAGER_IS_EVENT_PENDING
----@param hash integer | string
+---@param hash Hash | string
 ---@return boolean
 function EventsUiIsPending(hash) end
 
@@ -28,13 +28,13 @@ function EventsUiIsPending(hash) end
 ---eventData: see EVENTS_UI_GET_MESSAGE
 ---
 ---Old name: _EVENT_MANAGER_PEEK_EVENT
----@param hash integer | string
----@return boolean, any
+---@param hash Hash | string
+---@return boolean, any eventData
 function EventsUiPeekMessage(hash) end
 
 ---**`UIEVENTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E8A2369F48EC839)  
 ---Old name: _EVENT_MANAGER_POP_EVENT
----@param hash integer | string
+---@param hash Hash | string
 function EventsUiPopMessage(hash) end
 

@@ -40,7 +40,7 @@ function ScCommunityEventGetEventIdForType(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x060BBAD634C2B44B)  
 ---This native does not have an official description.
 ---@param p0 string
----@return boolean, number
+---@return boolean, number p1
 function ScCommunityEventGetExtraDataFloat(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -48,7 +48,7 @@ function ScCommunityEventGetExtraDataFloat(p0) end
 ---This native does not have an official description.
 ---@param p0 integer
 ---@param p1 string
----@return boolean, number
+---@return boolean, number p2
 function ScCommunityEventGetExtraDataFloatById(p0, p1) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -56,14 +56,14 @@ function ScCommunityEventGetExtraDataFloatById(p0, p1) end
 ---This native does not have an official description.
 ---@param p0 string
 ---@param p2 string
----@return boolean, number
+---@return boolean, number p1
 function ScCommunityEventGetExtraDataFloatForType(p0, p2) end
 
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB4411D4D6B81438E)  
 ---This native does not have an official description.
 ---@param p0 string
----@return boolean, integer
+---@return boolean, integer p1
 function ScCommunityEventGetExtraDataInt(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -71,7 +71,7 @@ function ScCommunityEventGetExtraDataInt(p0) end
 ---This native does not have an official description.
 ---@param p0 integer
 ---@param p1 string
----@return boolean, integer
+---@return boolean, integer p2
 function ScCommunityEventGetExtraDataIntById(p0, p1) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -79,7 +79,7 @@ function ScCommunityEventGetExtraDataIntById(p0, p1) end
 ---This native does not have an official description.
 ---@param p0 string
 ---@param p2 string
----@return boolean, integer
+---@return boolean, integer p1
 function ScCommunityEventGetExtraDataIntForType(p0, p2) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -139,7 +139,7 @@ function ScInboxGetMessageIsReadAtIndex(msgIndex) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF92537C4DDC1241)  
 ---This native does not have an official description.
 ---@param msgIndex integer
----@return integer
+---@return Hash
 function ScInboxGetMessageTypeAtIndex(msgIndex) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -153,7 +153,7 @@ function ScInboxGetTotalNumMessages() end
 ---This native does not have an official description.
 ---@param p0 integer
 ---@param context string
----@return boolean, integer
+---@return boolean, integer out
 function ScInboxMessageGetDataInt(p0, context) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -182,7 +182,7 @@ function ScInboxSetMessageAsReadAtIndex(msgIndex) end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA31DAFCDC33775E9)  
 ---This native does not have an official description.
----@param attrHash integer | string
+---@param attrHash Hash | string
 ---@param value number
 ---@return boolean
 function ScPresenceAttrSetFloat(attrHash, value) end
@@ -218,7 +218,7 @@ function ScPresenceAttrSetStringEx(attrName, value, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C74AC9D87B3FFF4)  
 ---Starts a task to check an entered string for profanity on the ROS/Social Club services.
 ---@param string string
----@return boolean, integer
+---@return boolean, integer token
 function ScProfanityCheckString(string) end
 
 ---**`SOCIALCLUB` `client`**  

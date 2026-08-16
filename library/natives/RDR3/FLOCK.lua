@@ -4,32 +4,32 @@
 ---[Native Documentation](https://rdr3natives.com/?native=0x933E5D31A7D13069)  
 ---This native does not have an official description.
 ---@param p0 any
----@param ped integer
+---@param ped Ped
 function AddPedToFlock(p0, ped) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x67A43EA3F6FE0076)  
 ---Clear the herd.
----@param herdHandle integer
+---@param herdHandle Entity
 function ClearHerd(herdHandle) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB4EF7EDAE2E16F1)  
 ---This native does not have an official description.
----@return integer
+---@return ScrHandle
 function CreateHerd() end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE0961AED72642B80)  
 ---Delete and invalidate the herd.
----@param herd integer
+---@param herd Entity
 function DeleteHerd(herd) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3B005FF0538ED2A9)  
 ---Ped (horse) will run away from players and mounting will trigger them to buck until disabled.
 ---Used for: REL_DOMESTICATED_ANIMAL
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetAnimalIsWild(ped) end
 
@@ -42,7 +42,7 @@ function GetAnimalIsWild(ped) end
 ---	ARL_LEGENDARY,
 ---	ARL_NUMRARITYLEVELS
 ---};
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetAnimalRarity(ped) end
 
@@ -50,7 +50,7 @@ function GetAnimalRarity(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x1C1993824A396603)  
 ---index: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eAnimalTuningBools
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/ANIMAL_TUNING_BOOL_PARAMS
----@param animal integer
+---@param animal Ped
 ---@param index integer
 ---@return boolean
 function GetAnimalTuningBoolParam(animal, index) end
@@ -59,7 +59,7 @@ function GetAnimalTuningBoolParam(animal, index) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4BC3ECFDA0297E27)  
 ---index: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eAnimalTuningFloats
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/ANIMAL_TUNING_FLOAT_PARAMS
----@param animal integer
+---@param animal Ped
 ---@param index integer
 ---@return number
 function GetAnimalTuningFloatParam(animal, index) end
@@ -67,7 +67,7 @@ function GetAnimalTuningFloatParam(animal, index) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE108489621422F91)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
 ---@param p2 integer
 ---@return number
@@ -76,15 +76,15 @@ function GetSpeciesTuningFloatParam(p0, p1, p2) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8D913E493BAFE0A3)  
 ---This native does not have an official description.
----@param herdHandle integer
+---@param herdHandle ScrHandle
 ---@return boolean
 function IsHerdValid(herdHandle) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E13ACC38BA8F9C3)  
 ---Return whether the ped is in the herd.
----@param herd integer
----@param ped integer
+---@param herd Entity
+---@param ped Ped
 ---@return boolean
 function IsPedInHerd(herd, ped) end
 
@@ -272,7 +272,7 @@ function N_0xe93415b3307208e5(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2CCA7B68CFAB2B9)  
 ---species: SPECIES_BIRD_CROW
----@param species integer | string
+---@param species Hash | string
 ---@param x1 number
 ---@param y1 number
 ---@param z1 number
@@ -320,42 +320,42 @@ function N_0xff1e339ce40eaaaf(p0, p1) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x408D1149C5E39C1E)  
 ---Remove the ped from a herd.
----@param herd integer
----@param ped integer
+---@param herd Entity
+---@param ped Ped
 function RemoveHerdPed(herd, ped) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x96AA1304D30E6BC3)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param index integer
 function ResetAnimalTuningBoolParam(animal, index) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE776A195488FC520)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param index integer
 function ResetAnimalTuningFloatParam(animal, index) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAEB97D84CDF3C00B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetAnimalIsWild(ped, toggle) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8B6F0F59B1B99801)  
 ---rarityLevel: see _GET_ANIMAL_RARITY
----@param ped integer
+---@param ped Ped
 ---@param rarityLevel integer
 function SetAnimalRarity(ped, rarityLevel) end
 
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9FF1E042FA597187)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param index integer
 ---@param value boolean
 function SetAnimalTuningBoolParam(animal, index, value) end
@@ -363,7 +363,7 @@ function SetAnimalTuningBoolParam(animal, index, value) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCBDA22C87977244F)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param index integer
 ---@param value number
 function SetAnimalTuningFloatParam(animal, index, value) end
@@ -371,7 +371,7 @@ function SetAnimalTuningFloatParam(animal, index, value) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D1D94C2459B42EE)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
 ---@param p2 integer
 ---@param p3 boolean
@@ -380,7 +380,7 @@ function SetSpeciesTuningBoolParam(p0, p1, p2, p3) end
 ---**`FLOCK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x963240B6C252BA49)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
 ---@param p2 integer
 ---@param p3 number

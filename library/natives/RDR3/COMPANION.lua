@@ -9,7 +9,7 @@ function ActivateCompanionAnalysis(groupId) end
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEB369F6AD168C58)  
 ---Used for Script Function NET_FETCH_CLIENT_ACTIVATE_COMAPNION_ANALYSIS: Hiding! Ped
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function AddCompanionFlag(ped, p1) end
 
@@ -23,7 +23,7 @@ function DeactivateCompanionAnalysis(groupId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7E0590C86E1711F)  
 ---enum _0x18F77396
 ---@param groupId integer
----@return integer
+---@return Hash
 function GetCompanionActivity(groupId) end
 
 ---**`COMPANION` `client`**  
@@ -43,21 +43,21 @@ function N_0x0c6a00dae896614c(p0, p1) end
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0DE02DA3C0F66955)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function N_0x0de02da3c0f66955(ped, p1) end
 
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2917E634206B9E17)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x2917e634206b9e17(ped, p1) end
 
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3CAAD93FA5B9579A)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 integer
 ---@param p2 integer
 function N_0x3caad93fa5b9579a(volume, p1, p2) end
@@ -135,7 +135,7 @@ function N_0xce27824b5968b79a(p0, p1) end
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD428C3F92FC3F6F8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 string
 function N_0xd428c3f92fc3f6f8(ped, p1) end
 
@@ -151,8 +151,8 @@ function N_0xd55a871e1ce3481b(p0, p1, p2, p3) end
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD730281E496621FB)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function N_0xd730281e496621fb(ped, p1) end
 
 ---**`COMPANION` `client`**  
@@ -171,7 +171,7 @@ function N_0xf06cbb8ccca823c0(p0, p1) end
 ---**`COMPANION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1740E3DEE0AE4D27)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function RemoveCompanionFlag(ped, p1) end
 
@@ -179,6 +179,6 @@ function RemoveCompanionFlag(ped, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x0F1CD8CA9E65D5F6)  
 ---enum _0x18F77396
 ---@param groupId integer
----@param activity integer | string
+---@param activity Hash | string
 function SetCompanionActivity(groupId, activity) end
 

@@ -4,41 +4,41 @@
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB1231D2DE52F2D3)  
 ---This native does not have an official description.
 ---@param arrayIndex integer
----@return boolean, any
+---@return boolean, any arrayData
 function DataarrayGetBool(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6A885BF69239E539)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any arrayData
 function DataarrayGetCount() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA010655985853485)  
 ---This native does not have an official description.
 ---@param arrayIndex integer
----@return any, any
+---@return any, any arrayData
 function DataarrayGetDict(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA9D003CF419CB81E)  
 ---This native does not have an official description.
 ---@param arrayIndex integer
----@return number, any
+---@return number, any arrayData
 function DataarrayGetFloat(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x96DEA500B6EBBE53)  
 ---This native does not have an official description.
 ---@param arrayIndex integer
----@return integer, any
+---@return integer, any arrayData
 function DataarrayGetInt(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB6790A8FF80F889F)  
 ---This native does not have an official description.
 ---@param arrayIndex integer
----@return any, any
+---@return any, any arrayData
 function DataarrayGetString(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
@@ -52,56 +52,56 @@ function DataarrayGetString(arrayIndex) end
 ---6 = Object
 ---7 = Array
 ---@param arrayIndex integer
----@return integer, any
+---@return integer, any arrayData
 function DataarrayGetType(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x850DA2750DA14E9A)  
 ---This native does not have an official description.
 ---@param arrayIndex integer
----@return vector3, any
+---@return vector3, any arrayData
 function DataarrayGetVector(arrayIndex) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1B5447CF18544B18)  
 ---This native does not have an official description.
 ---@param key string
----@return any, any
+---@return any, any objectData
 function DatadictGetArray(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x175E915A486EE548)  
 ---This native does not have an official description.
 ---@param key string
----@return boolean, any
+---@return boolean, any objectData
 function DatadictGetBool(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4D7A30130F46AC9C)  
 ---This native does not have an official description.
 ---@param key string
----@return any, any
+---@return any, any objectData
 function DatadictGetDict(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x814643ECA258ADF5)  
 ---This native does not have an official description.
 ---@param key string
----@return number, any
+---@return number, any objectData
 function DatadictGetFloat(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D896A3B87D96E2B)  
 ---This native does not have an official description.
 ---@param key string
----@return integer, any
+---@return integer, any objectData
 function DatadictGetInt(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE37B38C0B4E95DFA)  
 ---This native does not have an official description.
 ---@param key string
----@return any, any
+---@return any, any objectData
 function DatadictGetString(key) end
 
 ---**`DATAFILE` `client`**  
@@ -115,26 +115,26 @@ function DatadictGetString(key) end
 ---6 = Object
 ---7 = Array
 ---@param key string
----@return integer, any
+---@return integer, any objectData
 function DatadictGetType(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE459C941431E0FFA)  
 ---This native does not have an official description.
 ---@param key string
----@return vector3, any
+---@return vector3, any objectData
 function DatadictGetVector(key) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB04B69CF277D15C0)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any fileDict
 function DatadictIsArrayValid() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4607D57C5F7D332A)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any fileDict
 function DatadictIsDictValid() end
 
 ---**`DATAFILE` `client`**  
@@ -142,7 +142,7 @@ function DatadictIsDictValid() end
 ---This native does not have an official description.
 ---@param key string
 ---@param value integer
----@return any
+---@return any objectData
 function DatadictSetInt(key, value) end
 
 ---**`DATAFILE` `client`**  
@@ -280,34 +280,34 @@ function N_0xe13634bb6baf0734(p0, p1) end
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA63CD20F19B961AB)  
 ---This native does not have an official description.
----@param p2 integer | string
----@return boolean, boolean, any
+---@param p2 Hash | string
+---@return boolean, boolean p0, any p1
 function ParseddataGetBool(p2) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xED4413CEE1BF142C)  
 ---Returns false when there are no entries.
----@return boolean, any
+---@return boolean, any p0
 function ParseddataGetEntries() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x91DED5DD64BB2691)  
 ---Opens file.
----@return any
+---@return any p0
 function ParseddataGetFile() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB2B42607F7867576)  
 ---This native does not have an official description.
----@param p2 integer | string
----@return boolean, any, any
+---@param p2 Hash | string
+---@return boolean, any p0, any p1
 function ParseddataGetFloat(p2) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x52FC26D2D2FC2987)  
 ---This native does not have an official description.
----@param p2 integer | string
----@return boolean, any, any
+---@param p2 Hash | string
+---@return boolean, any p0, any p1
 function ParseddataGetInt(p2) end
 
 ---**`DATAFILE` `client`**  
@@ -321,8 +321,8 @@ function ParseddataGetNumChildren(p0, p1) end
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x44B3A36933AC009C)  
 ---This native does not have an official description.
----@param section integer | string
----@return boolean, any, any
+---@param section Hash | string
+---@return boolean, any p0, any p1
 function ParseddataGetSection(section) end
 
 ---**`DATAFILE` `client`**  
@@ -343,7 +343,7 @@ function ParseddataIsFileValid(fileHandle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD97D8D905F1562F2)  
 ---LOAD_PARSEDDATA_FILE_FAILSAFE_HASH
 ---Returns parseddata script fileHandle
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return integer
 function ParseddataLoadFileHash(p0) end
 
@@ -359,51 +359,51 @@ function ParseddataRegisterQuery(p0, p1, p2) end
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D9138F3F8261DF7)  
 ---Old name: _DATAFILE_GET_BOOL
----@return boolean, boolean, any
+---@return boolean, boolean p0, any p1
 function ParseddataRqFilloutBool() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7F034FC3E891B57A)  
 ---Old name: _DATAFILE_GET_FLOAT
----@return boolean, number, any
+---@return boolean, number p0, any p1
 function ParseddataRqFilloutFloat() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFBFF3FF2F5E80C0B)  
 ---Old name: _DATAFILE_GET_HASH
----@return boolean, integer, any
+---@return boolean, Hash p0, any p1
 function ParseddataRqFilloutHash() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF44ACC657352A35)  
 ---Old name: _DATAFILE_GET_INT
----@return boolean, integer, any
+---@return boolean, integer p0, any p1
 function ParseddataRqFilloutInt() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x83C3ED532B6E5D07)  
 ---Old name: _DATAFILE_GET_DATA_NODE_INDEX
----@return boolean, integer, any
+---@return boolean, integer p0, any p1
 function ParseddataRqFilloutNode() end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x951327435DC5164B)  
 ---This native does not have an official description.
 ---@param p0 string
----@return boolean, any
+---@return boolean, any p1
 function ParseddataRqFilloutString_127(p0) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x08EAF8E9F2EB7B2E)  
 ---Old name: _DATAFILE_GET_STRING
 ---@param p0 string
----@return boolean, any
+---@return boolean, any p1
 function ParseddataRqFilloutString_63(p0) end
 
 ---**`DATAFILE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06FBF89B12DA279C)  
 ---Old name: _DATAFILE_GET_VECTOR
----@return boolean, vector3, any
+---@return boolean, vector3 p0, any p1
 function ParseddataRqFilloutVector() end
 
 ---**`DATAFILE` `client`**  

@@ -91,7 +91,7 @@ function AddDecal(decalType, posX, posY, posZ, dirX, dirY, dirZ, sideX, sideY, s
 ---GRAPHICS::ADD_ENTITY_ICON(a_0, "MP_Arrow");  
 ---I tried this and nothing happened...  
 ---```
----@param entity integer
+---@param entity Entity
 ---@param icon string
 ---@return any
 function AddEntityIcon(entity, icon) end
@@ -143,8 +143,8 @@ function AddTcmodifierOverride(modifierName1, modifierName2) end
 ---```
 ---boneIndex is always chassis_dummy in the scripts. The x/y/z params are location relative to the chassis bone.
 ---```
----@param vehicle integer
----@param ped integer
+---@param vehicle Vehicle
+---@param ped Ped
 ---@param boneIndex integer
 ---@param x1 number
 ---@param x2 number
@@ -228,7 +228,7 @@ function AnimpostfxStopAndDoUnk(effectName) end
 ---```
 ---Might be more appropriate in AUDIO?  
 ---```
----@param entity integer
+---@param entity Entity
 function AttachTvAudioToEntity(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -658,7 +658,7 @@ function DoesParticleFxLoopedExist(ptfxHandle) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x060D935D3981A275)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 integer
 ---@return boolean
 function DoesVehicleHaveCrewEmblem(vehicle, p1) end
@@ -1125,7 +1125,7 @@ function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, 
 ---p0 was always "CELEBRATION_WINNER"  
 ---```
 ---@param p0 string
----@param ped integer
+---@param ped Ped
 ---@param p2 integer
 ---@param posX number
 ---@param posY number
@@ -1537,7 +1537,7 @@ function FreeMemoryForMissionCreatorPhoto() end
 ---```
 ---NativeDB Introduced: v323
 ---```
----@return integer, integer
+---@return integer x, integer y
 function GetActualScreenResolution() end
 
 ---@deprecated
@@ -1723,7 +1723,7 @@ IsParticleFxDelayedBlink = GetScreenblurFadeCurrentTime
 ---@param worldX number
 ---@param worldY number
 ---@param worldZ number
----@return boolean, number, number
+---@return boolean, number screenX, number screenY
 function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ) end
 
 ---@deprecated
@@ -1732,7 +1732,7 @@ World3dToScreen2d = GetScreenCoordFromWorldCoord
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x888D57E407E63624)  
 ---Hardcoded to always return 1280x720. Use [`_GET_ACTIVE_SCREEN_RESOLUTION`](#\_0x873C9F3104101DD3) to retrieve the correct screen resolution.
----@return integer, integer
+---@return integer x, integer y
 function GetScreenResolution() end
 
 ---**`GRAPHICS` `client`**  
@@ -1741,7 +1741,7 @@ function GetScreenResolution() end
 ---`SET_SCRIPT_GFX_ALIGN_PARAMS`.
 ---@param x number
 ---@param y number
----@return number, number
+---@return number calculatedX, number calculatedY
 function GetScriptGfxPosition(x, y) end
 
 ---**`GRAPHICS` `client`**  
@@ -1844,7 +1844,7 @@ IsSeethroughActive = GetUsingseethrough
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFE26117A5841B2FF)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 integer
 ---@return integer
 function GetVehicleCrewEmblemRequestState(vehicle, p1) end
@@ -2011,7 +2011,7 @@ function HasScaleformMovieLoaded(scaleformHandle) end
 ---NativeDB Introduced: v3407
 ---```
 ---@param scaleformName string
----@return boolean, integer
+---@return boolean, integer scaleformHandle
 function HasScaleformMovieNamedLoaded(scaleformName) end
 
 ---**`GRAPHICS` `client`**  
@@ -2088,7 +2088,7 @@ function IsTrackedPointVisible(point) end
 ---```
 ---IS_*
 ---```
----@param videoCliphash integer | string
+---@param videoCliphash Hash | string
 ---@return boolean
 function IsTvPlaylistItemPlaying(videoCliphash) end
 
@@ -2100,7 +2100,7 @@ LoadTvChannel = IsTvPlaylistItemPlaying
 ---This native does not have an official description.
 ---@param p0 string
 ---@param p3 boolean
----@return boolean, any, any
+---@return boolean, any p1, any p2
 function LoadMissionCreatorPhoto(p0, p3) end
 
 ---**`GRAPHICS` `client`**  
@@ -2254,7 +2254,7 @@ function N_0x2fcb133ca50a49eb(p0) end
 ---
 ---NativeDB Introduced: v1493
 ---```
----@return integer
+---@return Hash
 function N_0x30432a0118736e00() end
 
 ---**`GRAPHICS` `client`**  
@@ -2737,7 +2737,7 @@ function OverrideInteriorSmokeName(name) end
 ---```
 ---Overriding ped badge texture to a passed texture. It's synced between players (even custom textures!), don't forget to request used dict on *all* clients to make it sync properly. Can be removed by passing empty strings.
 ---```
----@param ped integer
+---@param ped Ped
 ---@param txd string
 ---@param txn string
 ---@return boolean
@@ -2840,13 +2840,13 @@ function RemoveDecal(decal) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCCF71CBDDF5B6CB9)  
 ---This native does not have an official description.
----@param obj integer
+---@param obj Object
 function RemoveDecalsFromObject(obj) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6F6F70FDC6D144C)  
 ---This native does not have an official description.
----@param obj integer
+---@param obj Object
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2855,7 +2855,7 @@ function RemoveDecalsFromObjectFacing(obj, x, y, z) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE91F1B65F2B48D57)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function RemoveDecalsFromVehicle(vehicle) end
 
 ---**`GRAPHICS` `client`**  
@@ -2879,7 +2879,7 @@ function RemoveParticleFx(ptfxHandle, p1) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB8FEAEEBCC127425)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function RemoveParticleFxFromEntity(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -2906,7 +2906,7 @@ function RemoveTcmodifierOverride(p0) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD2300034310557E4)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 integer
 function RemoveVehicleCrewEmblem(vehicle, p1) end
 
@@ -3359,7 +3359,7 @@ function SetDrawOrigin(x, y, z, p3) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1D5F595CCAE2E238)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param red integer
 ---@param green integer
 ---@param blue integer
@@ -3369,7 +3369,7 @@ function SetEntityIconColor(entity, red, green, blue, alpha) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE0E8BEECCA96BA31)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityIconVisibility(entity, toggle) end
 
@@ -3464,7 +3464,7 @@ function SetParticleFxBulletImpactScale(scale) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xACEE6F360FC1F6B6)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
 
@@ -3838,7 +3838,7 @@ function SetTvVolume(volume) end
 ---NativeDB Added Parameter 16: Any p15
 ---```
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -3868,7 +3868,7 @@ StartParticleFxLoopedOnEntity_2 = StartNetworkedParticleFxLoopedOnEntity
 ---NativeDB Added Parameter 17: Any p16
 ---```
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -3918,7 +3918,7 @@ StartParticleFxNonLoopedAtCoord_2 = StartNetworkedParticleFxNonLoopedAtCoord
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -3941,7 +3941,7 @@ StartParticleFxNonLoopedOnEntity_2 = StartNetworkedParticleFxNonLoopedOnEntity
 ---NativeDB Introduced: v2189
 ---```
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -3960,7 +3960,7 @@ function StartNetworkedParticleFxNonLoopedOnEntityBone(effectName, entity, offse
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA41B6A43642AC2CF)  
 ---This native does not have an official description.
 ---@param effectName string
----@param ped integer
+---@param ped Ped
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -4003,7 +4003,7 @@ function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, sca
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1AE42C1660FD6517)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -4021,7 +4021,7 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC6EB449E33977F0B)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -4040,7 +4040,7 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF28DA9F38CD1787C)  
 ---This native does not have an official description.
 ---@param effectName string
----@param ped integer
+---@param ped Ped
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -4098,7 +4098,7 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 ---however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native  
 ---```
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -4120,7 +4120,7 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 ---list: pastebin.com/N9unUFWY  
 ---```
 ---@param effectName string
----@param ped integer
+---@param ped Ped
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -4274,7 +4274,7 @@ UndoDecalTextureOverride = UnpatchDecalDiffuseMap
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function UpdateLightsOnEntity(entity) end
 
 ---@deprecated
@@ -4303,7 +4303,7 @@ UseParticleFxAssetNextCall = UseParticleFxAsset
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5B712761429DBC14)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 number
 function WashDecalsFromVehicle(vehicle, p1) end
 

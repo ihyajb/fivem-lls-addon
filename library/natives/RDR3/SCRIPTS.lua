@@ -3,23 +3,23 @@
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7D654266025E921B)  
 ---goalContext: see <availableContexts> in common/data/stats_and_challenges/goals_*.meta
----@param goalContext integer | string
+---@param goalContext Hash | string
 function ActivateGoalContext(goalContext) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAC8FAB22A914AE34)  
 ---This native does not have an official description.
----@param awardHash integer | string
+---@param awardHash Hash | string
 ---@param itemIndex integer
----@return boolean, any, any
+---@return boolean, any rpcGuid, any outResultItem
 function AwardsGetResultItem(awardHash, itemIndex) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB9467E41DAB1CF2C)  
 ---This native does not have an official description.
----@param awardHash integer | string
+---@param awardHash Hash | string
 ---@param dataIndex integer
----@return boolean, any, any
+---@return boolean, any rpcGuid, any outUnlockData
 function AwardsGetUnlockClaimData(awardHash, dataIndex) end
 
 ---**`SCRIPTS` `client`**  
@@ -51,7 +51,7 @@ function BgEndContext(contextName) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D1431744182CDE8)  
 ---Hashed version of BG_END_CONTEXT
----@param contextHash integer | string
+---@param contextHash Hash | string
 function BgEndContextHash(contextHash) end
 
 ---**`SCRIPTS` `client`**  
@@ -65,7 +65,7 @@ function BgGetLaunchParamValue(scriptIndex, p1) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x829CD22E043A2577)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return integer
 function BgGetScriptIdFromNameHash(p0) end
 
@@ -96,46 +96,46 @@ function BgStartContext(contextName) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2EB67D564DCC09D5)  
 ---Hashed version of BG_START_CONTEXT
----@param contextHash integer | string
+---@param contextHash Hash | string
 function BgStartContextHash(contextHash) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE544B7EC0C187CC)  
 ---This native does not have an official description.
----@return any
+---@return any value
 function ClearAllPlayerBits() end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD426E2E3288469D6)  
 ---This native does not have an official description.
 ---@param bitIndex integer
----@return any
+---@return any value
 function ClearPlayerBitAtIndex(bitIndex) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2F050A3FF8738245)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any value
 function CountParticipantBits() end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x462C687BEA254BD9)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any value
 function CountPlayerBits() end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x50B72A754EE64A71)  
 ---goalContext: see _ACTIVATE_GOAL_CONTEXT
----@param goalContext integer | string
+---@param goalContext Hash | string
 function DeactivateGoalContext(goalContext) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E5B70E53DB661E5)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
----@param p2 integer | string
+---@param p0 Hash | string
+---@param p1 Hash | string
+---@param p2 Hash | string
 ---@param gamemodeName string
 ---@param title string
 ---@param subtitle string
@@ -158,7 +158,7 @@ function DoesScriptExist(scriptName) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA34E89749F628284)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@return boolean
 function DoesScriptWithNameHashExist(scriptHash) end
 
@@ -173,7 +173,7 @@ function DoesThreadExist(threadId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFA3B530A5CC693D5)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return integer, any
+---@return integer, any value
 function GetBlockOfPlayerBits(p1) end
 
 ---**`SCRIPTS` `client`**  
@@ -183,7 +183,7 @@ function GetBlockOfPlayerBits(p1) end
 ---Returns event name hash: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
 ---@param eventGroup integer
 ---@param eventIndex integer
----@return integer
+---@return Hash
 function GetEventAtIndex(eventGroup, eventIndex) end
 
 ---**`SCRIPTS` `client`**  
@@ -196,14 +196,14 @@ function GetEventAtIndex(eventGroup, eventIndex) end
 ---@param eventGroup integer
 ---@param eventIndex integer
 ---@param eventDataSize integer
----@return boolean, any
+---@return boolean, any eventData
 function GetEventData(eventGroup, eventIndex, eventDataSize) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC9F59C0A710ECD34)  
 ---eventGroup: 0 = SCRIPT_EVENT_QUEUE_AI (CEventGroupScriptAI), 1 = SCRIPT_EVENT_QUEUE_NETWORK (CEventGroupScriptNetwork), 2 = unk, 3 = unk, 4 = SCRIPT_EVENT_QUEUE_SCRIPT_ERRORS (CEventGroupScriptErrors)
 ---@param eventGroup integer
----@param eventType integer | string
+---@param eventType Hash | string
 ---@return boolean
 function GetEventExists(eventGroup, eventType) end
 
@@ -217,14 +217,14 @@ function GetGlobalBlockCanBeAccessed(index) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC2C927F5C264960)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GetHashOfThisScriptName() end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x724CB89D35B283D0)  
 ---This native does not have an official description.
 ---@param threadId integer
----@return integer
+---@return Hash
 function GetHashOfThread(threadId) end
 
 ---**`SCRIPTS` `client`**  
@@ -256,7 +256,7 @@ function GetNumberOfEvents(eventGroup) end
 ---return v3;
 ---
 ---Old name: _GET_NUMBER_OF_REFERENCES_OF_SCRIPT_WITH_NAME_HASH
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@return integer
 function GetNumberOfThreadsRunningTheScriptWithThisHash(scriptHash) end
 
@@ -264,7 +264,7 @@ function GetNumberOfThreadsRunningTheScriptWithThisHash(scriptHash) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD92FA81B64920E85)  
 ---This native does not have an official description.
 ---@param threadId integer
----@return boolean, boolean
+---@return boolean threadExists, boolean hasScriptHandler
 function GetThreadExistenceDetails(threadId) end
 
 ---**`SCRIPTS` `client`**  
@@ -290,7 +290,7 @@ function HasScriptLoaded(scriptName) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA5D8E0C2F3C7EEBC)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@return boolean
 function HasScriptWithNameHashLoaded(scriptHash) end
 
@@ -304,7 +304,7 @@ function HaveAllChildScriptsTerminated(p0) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x179A6F0EE2E79026)  
 ---This native does not have an official description.
----@return boolean, integer
+---@return boolean, integer playerBits
 function IsAnyPlayerBitSet() end
 
 ---**`SCRIPTS` `client`**  
@@ -317,7 +317,7 @@ function IsBackgroundScript(threadId) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7409669C5ED50144)  
 ---goalContext: see _ACTIVATE_GOAL_CONTEXT
----@param goalContext integer | string
+---@param goalContext Hash | string
 ---@return boolean
 function IsGoalContextActive(goalContext) end
 
@@ -331,7 +331,7 @@ function IsLoadingScreenVisible() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x72B2E00C9BAC6789)  
 ---This native does not have an official description.
 ---@param bitIndex integer
----@return boolean, any
+---@return boolean, any value
 function IsPlayerBitSetAtIndex(bitIndex) end
 
 ---**`SCRIPTS` `client`**  
@@ -359,14 +359,14 @@ function IsThreadExitRequestedForThreadWithThisId(threadId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF1E9045F5AA9E428)  
 ---This native does not have an official description.
 ---@param dataIndex integer
----@return boolean, any, any
+---@return boolean, any rpcGuid, any outLootData
 function LootGetLootClaimData(dataIndex) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4293B44A855F82CC)  
 ---This native does not have an official description.
 ---@param itemIndex integer
----@return boolean, any, any
+---@return boolean, any rpcGuid, any outResultItem
 function LootGetResultItem(itemIndex) end
 
 ---**`SCRIPTS` `client`**  
@@ -427,7 +427,7 @@ function N_0x5827be85a87b073d(p0) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x64F765D9A1F8F02C)  
 ---This native does not have an official description.
----@return any, any, any
+---@return any p0, any p1, any p2
 function N_0x64f765d9a1f8f02c() end
 
 ---**`SCRIPTS` `client`**  
@@ -479,7 +479,7 @@ function N_0xffddf802279be128(p0, p1, p2) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAC9FF854BD4BA9B5)  
 ---Returns "INVALID_NET_RPC_GUID" if netRpcGuid is invalid.
----@return any, any
+---@return any, any netRpcGuid
 function NetRpcGuidToString() end
 
 ---**`SCRIPTS` `client`**  
@@ -491,7 +491,7 @@ function RequestScript(scriptName) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6B9CE3F8D5B9B74)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 function RequestScriptWithNameHash(scriptHash) end
 
 ---**`SCRIPTS` `client`**  
@@ -503,7 +503,7 @@ function RequestThreadExit(threadId) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7423F7835770F619)  
 ---This native does not have an official description.
----@param nameHash integer | string
+---@param nameHash Hash | string
 function RequestThreadExitForAllThreadsWithThisName(nameHash) end
 
 ---**`SCRIPTS` `client`**  
@@ -534,7 +534,7 @@ function SetAllGlobalBlocksHaveBeenLoaded(toggle) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x20F4CB76689ACDBC)  
 ---This native does not have an official description.
----@return any
+---@return any value
 function SetAllPlayerBits() end
 
 ---**`SCRIPTS` `client`**  
@@ -542,7 +542,7 @@ function SetAllPlayerBits() end
 ---This native does not have an official description.
 ---@param p1 integer
 ---@param p2 integer
----@return any
+---@return any value
 function SetBlockOfPlayerBits(p1, p2) end
 
 ---**`SCRIPTS` `client`**  
@@ -570,7 +570,7 @@ function SetNoLoadingScreen(toggle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x31010318BA9897AC)  
 ---This native does not have an official description.
 ---@param bitIndex integer
----@return any
+---@return any value
 function SetPlayerBitAtIndex(bitIndex) end
 
 ---**`SCRIPTS` `client`**  
@@ -582,7 +582,7 @@ function SetScriptAsNoLongerNeeded(scriptName) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x50723A1567C8361E)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 
 ---**`SCRIPTS` `client`**  
@@ -605,13 +605,13 @@ function StartNewScript(scriptName, stackSize) end
 ---@param scriptName string
 ---@param argCount integer
 ---@param stackSize integer
----@return integer, any
+---@return integer, any args
 function StartNewScriptWithArgs(scriptName, argCount, stackSize) end
 
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB1C67C3A5333A92)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@param stackSize integer
 ---@return integer
 function StartNewScriptWithNameHash(scriptHash, stackSize) end
@@ -619,10 +619,10 @@ function StartNewScriptWithNameHash(scriptHash, stackSize) end
 ---**`SCRIPTS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC4BB298BD441BE78)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@param argCount integer
 ---@param stackSize integer
----@return integer, any
+---@return integer, any args
 function StartNewScriptWithNameHashAndArgs(scriptHash, argCount, stackSize) end
 
 ---**`SCRIPTS` `client`**  
@@ -659,7 +659,7 @@ function TerminateThread(threadId) end
 ---@param eventGroup integer
 ---@param eventDataSize integer
 ---@param scriptMetadataIndex integer
----@return any, integer
+---@return any eventData, integer playerBits
 function TriggerScriptEvent(eventGroup, eventDataSize, scriptMetadataIndex) end
 
 ---**`SCRIPTS` `client`**  
@@ -668,6 +668,6 @@ function TriggerScriptEvent(eventGroup, eventDataSize, scriptMetadataIndex) end
 ---@param eventDataSize integer
 ---@param scriptMetadataIndex integer
 ---@param threadId integer
----@return any
+---@return any eventData
 function TriggerScriptEvent_2(eventDataSize, scriptMetadataIndex, threadId) end
 

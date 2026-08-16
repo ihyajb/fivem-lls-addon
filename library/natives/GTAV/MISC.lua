@@ -481,7 +481,7 @@ function CompareStrings(str1, str2, matchCase, maxLength) end
 ---This native does not have an official description.
 ---@param src any
 ---@param size integer
----@return any
+---@return any dst
 function CopyMemory(src, size) end
 
 ---**`MISC` `client`**  
@@ -496,7 +496,7 @@ function CopyMemory(src, size) end
 ---@param z number
 ---@param numUnits integer
 ---@param radius number
----@return boolean, integer
+---@return boolean, integer outIncidentID
 function CreateIncident(dispatchService, x, y, z, numUnits, radius) end
 
 ---**`MISC` `client`**  
@@ -506,10 +506,10 @@ function CreateIncident(dispatchService, x, y, z, numUnits, radius) end
 ---NativeDB Added Parameter 7: Any p6
 ---```
 ---@param dispatchService integer
----@param ped integer
+---@param ped Ped
 ---@param numUnits integer
 ---@param radius number
----@return boolean, integer
+---@return boolean, integer outIncidentID
 function CreateIncidentWithEntity(dispatchService, ped, numUnits, radius) end
 
 ---**`MISC` `client`**  
@@ -667,7 +667,7 @@ function EnableStuntJumpSet(p0) end
 ---```
 ---Makes the ped jump around like they're in a tennis match  
 ---```
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 ---@param p2 boolean
 function EnableTennisMode(ped, toggle, p2) end
@@ -691,7 +691,7 @@ function EndReplayStats() end
 ---@param dirY number
 ---@param dirZ number
 ---@param distance number
----@return boolean, vector3
+---@return boolean, vector3 spawnPoint
 function FindSpawnPointInDirection(posX, posY, posZ, dirX, dirY, dirZ, distance) end
 
 ---**`MISC` `client`**  
@@ -744,7 +744,7 @@ function GetAngleBetween_2dVectors(x1, y1, x2, y2) end
 ---This native does not have an official description.
 ---@param p3 any
 ---@param p4 boolean
----@return boolean, any, any
+---@return boolean, any p1, any p2
 function GetBaseElementMetadata(p3, p4) end
 
 ---**`MISC` `client`**  
@@ -793,9 +793,9 @@ function GetCloudHatOpacity() end
 ---@param x2 number
 ---@param y2 number
 ---@param z2 number
----@param projectileHash integer | string
+---@param projectileHash Hash | string
 ---@param ownedByPlayer boolean
----@return boolean, vector3
+---@return boolean, vector3 projectilePos
 function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projectileHash, ownedByPlayer) end
 
 ---@deprecated
@@ -804,11 +804,11 @@ GetIsProjectileTypeInArea = GetCoordsOfProjectileTypeInArea
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDFB4138EEFED7B81)  
 ---This native does not have an official description.
----@param ped integer
----@param weaponHash integer | string
+---@param ped Ped
+---@param weaponHash Hash | string
 ---@param distance number
 ---@param ownedByPlayer boolean
----@return boolean, vector3
+---@return boolean, vector3 outCoords
 function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, ownedByPlayer) end
 
 ---@deprecated
@@ -874,7 +874,7 @@ function GetGlobalCharBuffer() end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, number, vector3
+---@return boolean, number groundZ, vector3 normal
 function GetGroundZAndNormalFor_3dCoord(x, y, z) end
 
 ---@deprecated
@@ -895,7 +895,7 @@ GetGroundZCoordWithOffsets = GetGroundZAndNormalFor_3dCoord
 ---@param y number
 ---@param z number
 ---@param waterAsGround boolean
----@return boolean, number
+---@return boolean, number groundZ
 function GetGroundZExcludingObjectsFor_3dCoord(x, y, z, waterAsGround) end
 
 ---@deprecated
@@ -913,14 +913,14 @@ GetGroundZFor_3dCoord_2 = GetGroundZExcludingObjectsFor_3dCoord
 ---@param y number
 ---@param z number
 ---@param includeWater boolean
----@return boolean, number
+---@return boolean, number groundZ
 function GetGroundZFor_3dCoord(x, y, z, includeWater) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD24D37CC275948CC)  
 ---This native converts its past string to hash. It is hashed using jenkins one at a time method.
 ---@param string string
----@return integer
+---@return Hash
 function GetHashKey(string) end
 
 ---**`MISC` `client`**  
@@ -975,7 +975,7 @@ function GetIsPlayerInAnimalForm() end
 ---@param planeNormalX number
 ---@param planeNormalY number
 ---@param planeNormalZ number
----@return boolean, number
+---@return boolean, number intersectionParameter
 function GetLinePlaneIntersection(x1, y1, z1, x2, y2, z2, planeX, planeY, planeZ, planeNormalX, planeNormalY, planeNormalZ) end
 
 ---**`MISC` `client`**  
@@ -991,14 +991,14 @@ function GetMissionFlag() end
 ---Calculate (maximum - minimum) to get the size, in which case, Y will be how long the model is.
 ---Example from the scripts: MISC::GET_MODEL_DIMENSIONS(ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()), &v_1A, &v_17);
 ---```
----@param modelHash integer | string
----@return vector3, vector3
+---@param modelHash Hash | string
+---@return vector3 minimum, vector3 maximum
 function GetModelDimensions(modelHash) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x711327CD09C8F162)  
 ---Refer to [`SET_WEATHER_TYPE_NOW`](#\_0x29B487C359E19889) for weather types.
----@return integer
+---@return Hash
 function GetNextWeatherTypeHashName() end
 
 ---@deprecated
@@ -1049,7 +1049,7 @@ function GetPowerSavingModeDuration() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x564B884A05EC45A3)  
 ---Refer to [`SET_WEATHER_TYPE_NOW`](#\_0x29B487C359E19889) for weather types.
----@return integer
+---@return Hash
 function GetPrevWeatherTypeHashName() end
 
 ---@deprecated
@@ -1065,11 +1065,11 @@ function GetProfileSetting(profileSetting) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x82FDE6A57EE4EE44)  
 ---This native does not have an official description.
----@param ped integer
----@param weaponHash integer | string
+---@param ped Ped
+---@param weaponHash Hash | string
 ---@param distance number
 ---@param ownedByPlayer boolean
----@return boolean, vector3, integer
+---@return boolean, vector3 outCoords, Object outProjectile
 function GetProjectileNearPed(ped, weaponHash, distance, ownedByPlayer) end
 
 ---**`MISC` `client`**  
@@ -1151,7 +1151,7 @@ function GetStatusOfMissionRepeatSave() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x17DF68D720AA77F8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetTennisSwingAnimComplete(ped) end
 
@@ -1164,7 +1164,7 @@ function GetTotalSuccessfulStuntJumps() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF3BBE884A14BB413)  
 ---Refer to [`SET_WEATHER_TYPE_NOW`](#\_0x29B487C359E19889) for weather types.
----@return integer, integer, number
+---@return Hash weatherType1, Hash weatherType2, number percentWeather2
 function GetWeatherTypeTransition() end
 
 ---**`MISC` `client`**  
@@ -1221,7 +1221,7 @@ function HasBulletImpactedInBox(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---This native appears on the cheat_controller script and tracks a combination of buttons, which may be used to toggle cheats in-game. Credits to ThreeSocks for the info. The hash contains the combination, while the "amount" represents the amount of buttons used in a combination. 
 ---INT_SCORES_SCORTED was a hash collision
 ---```
----@param hash integer | string
+---@param hash Hash | string
 ---@param amount integer
 ---@return boolean
 function HasButtonCombinationJustBeenEntered(hash, amount) end
@@ -1240,7 +1240,7 @@ function HasButtonCombinationJustBeenEntered(hash, amount) end
 ---}
 ---Calling this will also set the last saved string hash to zero.
 ---```
----@param hash integer | string
+---@param hash Hash | string
 ---@return boolean
 function HasCheatStringJustBeenEntered(hash) end
 
@@ -1473,7 +1473,7 @@ function IsPopMultiplierAreaUnk(id) end
 ---@param checkPeds boolean
 ---@param p7 boolean
 ---@param p8 boolean
----@param ignoreEntity integer
+---@param ignoreEntity Entity
 ---@param p10 boolean
 ---@return boolean
 function IsPositionOccupied(x, y, z, range, p4, checkVehicles, checkPeds, p7, p8, ignoreEntity, p10) end
@@ -1516,7 +1516,7 @@ function IsProjectileInArea(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 ---@param z2 number
 ---@param width number
 ---@param p7 number
----@param weaponHash integer | string
+---@param weaponHash Hash | string
 ---@param ownedByPlayer boolean
 ---@return boolean
 function IsProjectileTypeInAngledArea(x1, y1, z1, x2, y2, z2, width, p7, weaponHash, ownedByPlayer) end
@@ -1543,7 +1543,7 @@ function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param projHash integer | string
+---@param projHash Hash | string
 ---@param radius number
 ---@param ownedByPlayer boolean
 ---@return boolean
@@ -1617,7 +1617,7 @@ function IsStuntJumpMessageShowing() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5D5479D115290C3F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsTennisMode(ped) end
 
@@ -1694,7 +1694,7 @@ function N_0x1178e104409fe58c(p0, p1) end
 ---```
 ---GET_TENNIS_*; references 0xFBFEC0E9 = interruptswing
 ---```
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x19bfed045c647c49(ped) end
 
@@ -1732,7 +1732,7 @@ function N_0x23227df0b2115469() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x31125FD509D9043F)  
 ---**This native does absolutely nothing, just a nullsub**
----@return any
+---@return any p0
 function N_0x31125fd509d9043f() end
 
 ---**`MISC` `client`**  
@@ -1771,7 +1771,7 @@ function N_0x397baa01068baa96() end
 ---MISC::_48F069265A0E4BEC(&a_0._f1EC4._f12[v_A/*6*/], &v_13); // where v_13 is "MPATMLOGSCRS0" thru "MPATMLOGSCRS15"
 ---```
 ---@param name string
----@return any
+---@return any p0
 function N_0x48f069265a0e4bec(name) end
 
 ---**`MISC` `client`**  
@@ -1782,7 +1782,7 @@ function N_0x48f069265a0e4bec(name) end
 ---Related to tennis mode.
 ---SET_*
 ---```
----@param ped integer
+---@param ped Ped
 ---@param p1 string
 ---@param p2 number
 function N_0x54f157e0336a3822(ped, p1, p2) end
@@ -1866,7 +1866,7 @@ function N_0x7f8f6405f4777af6(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---MISC::_8269816F6CFD40F8(&a_0._f4B4[v_1A/*8*/], &v_5); // where v_5 is "Name0" thru "Name9", gets saved in a struct called "OUTFIT_Name"
 ---```
 ---@param name string
----@return any
+---@return any p0
 function N_0x8269816f6cfd40f8(name) end
 
 ---**`MISC` `client`**  
@@ -1927,7 +1927,7 @@ function N_0xa0ad167e4b39d9a2(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, 
 ---
 ---GET_SAVE_UNLESS_CUSTOM_DOT ?
 ---```
----@return boolean, vector3, number, boolean, boolean
+---@return boolean, vector3 p0, number p1, boolean fadeInAfterLoad, boolean p3
 function N_0xa4a0065e39c9f25c() end
 
 ---**`MISC` `client`**  
@@ -1980,7 +1980,7 @@ function N_0xe532ec1a63231b4f(p0, p1) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE95B0C7D5BA3B96B)  
 ---Related to tennis mode. Checks for `0x0FCED5ADF = swung`
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xe95b0c7d5ba3b96b(ped) end
 
@@ -2000,7 +2000,7 @@ function N_0xeb2104e905c6f2e9() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEBD3205A207939ED)  
 ---**This native does absolutely nothing, just a nullsub**
----@return any
+---@return any p0
 function N_0xebd3205a207939ed() end
 
 ---**`MISC` `client`**  
@@ -2027,7 +2027,7 @@ function N_0xfa3ffb0eebc288a3(p0) end
 ---MISC::_FAA457EF263E8763(&a_0._f5B, "RADIO_STATION");
 ---```
 ---@param name string
----@return any
+---@return any p0
 function N_0xfaa457ef263e8763(name) end
 
 ---**`MISC` `client`**  
@@ -2067,7 +2067,7 @@ function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(fontBitField) end
 ---@param p3 number
 ---@param p4 number
 ---@param p5 boolean
----@return boolean, vector3, number
+---@return boolean, vector3 p6, number p7
 function OverrideSaveHouse(p0, p1, p2, p3, p4, p5) end
 
 ---**`MISC` `client`**  
@@ -2082,7 +2082,7 @@ DisableAutomaticRespawn = PauseDeathArrestRestart
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8FA9C42FC5D7C64B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 number
 ---@param p3 number
@@ -2093,7 +2093,7 @@ function PlayTennisDiveAnim(ped, p1, p2, p3, p4, p5) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE266ED23311F24D4)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param animDict string
 ---@param animName string
 ---@param p3 number
@@ -2141,35 +2141,35 @@ ForceSocialClubUpdate = QuitGame
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC8F4131414C835A1)  
 ---This native does not have an official description.
 ---@param name string
----@return any
+---@return any p0
 function RegisterBoolToSave(name) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x10C2FA78D0E128A1)  
 ---This native does not have an official description.
 ---@param name string
----@return any
+---@return any p0
 function RegisterEnumToSave(name) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x7CAEC29ECB5DFEBB)  
 ---This native does not have an official description.
 ---@param name string
----@return any
+---@return any p0
 function RegisterFloatToSave(name) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA735353C77334EA0)  
 ---This native does not have an official description.
 ---@param name string
----@return any
+---@return any p0
 function RegisterInt64ToSave(name) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x34C9EE5986258415)  
 ---This native does not have an official description.
 ---@param name string
----@return any
+---@return any p0
 function RegisterIntToSave(name) end
 
 ---**`MISC` `client`**  
@@ -2181,14 +2181,14 @@ function RegisterIntToSave(name) end
 ---@param p3 number
 ---@param p5 any
 ---@param p6 any
----@return any, any
+---@return any, any p4
 function RegisterSaveHouse(p0, p1, p2, p3, p5, p6) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEDB1232C5BEAE62F)  
 ---This native does not have an official description.
 ---@param name string
----@return any
+---@return any p0
 function RegisterTextLabelToSave(name) end
 
 ---**`MISC` `client`**  
@@ -2201,7 +2201,7 @@ function RegisterTextLabelToSave(name) end
 ---"tl" prefix sounds like "Text Label"
 ---```
 ---@param name string
----@return any
+---@return any p0
 function RegisterTextLabelToSave_2(name) end
 
 ---**`MISC` `client`**  
@@ -2229,7 +2229,7 @@ function RemovePopMultiplierSphere(id, p1) end
 ---```
 ---Appears to remove stealth kill action from memory
 ---```
----@param hash integer | string
+---@param hash Hash | string
 ---@param p1 boolean
 function RemoveStealthKill(hash, p1) end
 
@@ -2281,8 +2281,8 @@ function SaveBenchmarkRecording() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8EF5573A1F801A5C)  
 ---This native does not have an official description.
----@param player integer
----@return boolean, integer, integer
+---@param player Player
+---@return boolean, integer p1, integer p2
 function ScriptRaceGetPlayerSplitTime(player) end
 
 ---**`MISC` `client`**  
@@ -2295,7 +2295,7 @@ function ScriptRaceGetPlayerSplitTime(player) end
 ---@param numCheckpoints integer
 ---@param numLaps integer
 ---@param numPlayers integer
----@param localPlayer integer
+---@param localPlayer Player
 function ScriptRaceInit(numCheckpoints, numLaps, numPlayers, localPlayer) end
 
 ---**`MISC` `client`**  
@@ -2305,7 +2305,7 @@ function ScriptRaceInit(numCheckpoints, numLaps, numPlayers, localPlayer) end
 ---```
 ---NativeDB Introduced: v323
 ---```
----@param ped integer
+---@param ped Ped
 ---@param checkpoint integer
 ---@param lap integer
 ---@param time integer
@@ -2319,7 +2319,7 @@ function ScriptRaceShutdown() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x438822C279B73B93)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function SetBeastModeActive(player) end
 
 ---**`MISC` `client`**  
@@ -2343,7 +2343,7 @@ function SetBit(address, offset) end
 ---@param rangeStart integer
 ---@param rangeEnd integer
 ---@param p3 integer
----@return integer
+---@return integer var
 function SetBitsInRange(rangeStart, rangeEnd, p3) end
 
 ---**`MISC` `client`**  
@@ -2402,13 +2402,13 @@ function SetDispatchTimeBetweenSpawnAttemptsMultiplier(p0, p1) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA66C71C98D5F2CFB)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function SetExplosiveAmmoThisFrame(player) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xFF1BED81BFDC0FE0)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function SetExplosiveMeleeThisFrame(player) end
 
 ---**`MISC` `client`**  
@@ -2453,7 +2453,7 @@ function SetFakeWantedLevel(fakeWantedLevel) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x11879CDD803D30F4)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function SetFireAmmoThisFrame(player) end
 
 ---**`MISC` `client`**  
@@ -2461,7 +2461,7 @@ function SetFireAmmoThisFrame(player) end
 ---```
 ---NativeDB Introduced: v1180
 ---```
----@param player integer
+---@param player Player
 function SetForcePlayerToJump(player) end
 
 ---**`MISC` `client`**  
@@ -2656,7 +2656,7 @@ function SetStuntJumpsCanTrigger(toggle) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x57FFF03E423A4C0B)  
 ---Allows the player to perform super jumps. This function must be called every frame for it to work.
 ---It basically OR's a flag for a single frame, allowing the ped to perform a super jump only when the flag is set.
----@param player integer
+---@param player Player
 function SetSuperJumpThisFrame(player) end
 
 ---**`MISC` `client`**  
@@ -2751,8 +2751,8 @@ function SetWeatherTypePersist(weatherType) end
 ---Mixes two weather types. If percentWeather2 is set to 0.0f, then the weather will be entirely of weatherType1, if it is set to 1.0f it will be entirely of weatherType2. If it's set somewhere in between, there will be a mixture of weather behaviors. To test, try this in the RPH console, and change the float to different values between 0 and 1:  
 ---execute "NativeFunction.Natives.x578C752848ECFA0C(Game.GetHashKey(""RAIN""), Game.GetHashKey(""SMOG""), 0.50f);  
 ---```
----@param weatherType1 integer | string
----@param weatherType2 integer | string
+---@param weatherType1 Hash | string
+---@param weatherType2 Hash | string
 ---@param percentWeather2 number
 function SetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) end
 
@@ -2785,8 +2785,8 @@ function SetWindSpeed(speed) end
 ---@param z2 number
 ---@param damage integer
 ---@param pureAccuracy boolean
----@param weaponHash integer | string
----@param ownerPed integer
+---@param weaponHash Hash | string
+---@param ownerPed Ped
 ---@param isAudible boolean
 ---@param isInvisible boolean
 ---@param speed number
@@ -2809,12 +2809,12 @@ function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, pureAccu
 ---@param z2 number
 ---@param damage integer
 ---@param p7 boolean
----@param weaponHash integer | string
----@param ownerPed integer
+---@param weaponHash Hash | string
+---@param ownerPed Ped
 ---@param isAudible boolean
 ---@param isInvisible boolean
 ---@param speed number
----@param entity integer
+---@param entity Entity
 function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity) end
 
 ---@deprecated
@@ -2835,12 +2835,12 @@ ShootSingleBulletBetweenCoordsPresetParams = ShootSingleBulletBetweenCoordsIgnor
 ---@param z2 number
 ---@param damage integer
 ---@param p7 boolean
----@param weaponHash integer | string
----@param ownerPed integer
+---@param weaponHash Hash | string
+---@param ownerPed Ped
 ---@param isAudible boolean
 ---@param isInvisible boolean
 ---@param speed number
----@param entity integer
+---@param entity Entity
 ---@param p14 boolean
 ---@param p15 boolean
 ---@param p16 boolean
@@ -2871,7 +2871,7 @@ IsGameUsingMetricMeasurementSystem = ShouldUseMetricMeasurements
 ---@param y1 number
 ---@param z1 number
 ---@param w1 number
----@return number, number, number, number
+---@return number outX, number outY, number outZ, number outW
 function SlerpNearQuaternion(t, x, y, z, w, x1, y1, z1, w1) end
 
 ---**`MISC` `client`**  
@@ -2886,7 +2886,7 @@ function StartBenchmarkRecording() end
 ---This native does not have an official description.
 ---@param size integer
 ---@param arrayName string
----@return any
+---@return any p0
 function StartSaveArrayWithSize(size, arrayName) end
 
 ---@deprecated
@@ -2897,7 +2897,7 @@ StartSaveArray = StartSaveArrayWithSize
 ---This native does not have an official description.
 ---@param p1 any
 ---@param p2 boolean
----@return any
+---@return any p0
 function StartSaveData(p1, p2) end
 
 ---**`MISC` `client`**  
@@ -2905,7 +2905,7 @@ function StartSaveData(p1, p2) end
 ---This native does not have an official description.
 ---@param size integer
 ---@param structName string
----@return any
+---@return any p0
 function StartSaveStructWithSize(size, structName) end
 
 ---@deprecated
@@ -2940,7 +2940,7 @@ function StopSaveStruct() end
 ---If all checks have passed successfully, the return value will be set to whatever strtol(string, 0i64, 10); returns.  
 ---```
 ---@param string string
----@return boolean, integer
+---@return boolean, integer outInteger
 function StringToInt(string) end
 
 ---**`MISC` `client`**  

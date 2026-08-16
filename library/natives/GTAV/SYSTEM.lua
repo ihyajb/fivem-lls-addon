@@ -149,13 +149,13 @@ function StartNewScript(scriptName, stackSize) end
 ---@param scriptName string
 ---@param argCount integer
 ---@param stackSize integer
----@return integer, any
+---@return integer, any args
 function StartNewScriptWithArgs(scriptName, argCount, stackSize) end
 
 ---**`SYSTEM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB1C67C3A5333A92)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@param stackSize integer
 ---@return integer
 function StartNewScriptWithNameHash(scriptHash, stackSize) end
@@ -166,10 +166,10 @@ StartNewStreamedScript = StartNewScriptWithNameHash
 ---**`SYSTEM` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC4BB298BD441BE78)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@param argCount integer
 ---@param stackSize integer
----@return integer, any
+---@return integer, any args
 function StartNewScriptWithNameHashAndArgs(scriptHash, argCount, stackSize) end
 
 ---@deprecated

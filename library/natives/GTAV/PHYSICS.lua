@@ -3,7 +3,7 @@
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x710311ADF0E20730)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function ActivatePhysics(entity) end
 
 ---**`PHYSICS` `client`**  
@@ -45,7 +45,7 @@ function ActivatePhysics(entity) end
 ---@param lockFromFront boolean
 ---@param timeMultiplier number
 ---@param breakable boolean
----@return integer, any
+---@return integer, any unkPtr
 function AddRope(x, y, z, rotX, rotY, rotZ, maxLength, ropeType, initLength, minLength, lengthChangeRate, onlyPPU, collisionOn, lockFromFront, timeMultiplier, breakable) end
 
 ---**`PHYSICS` `client`**  
@@ -66,8 +66,8 @@ function ApplyImpulseToCloth(posX, posY, posZ, vecX, vecY, vecZ, impulse) end
 ---Attaches entity 1 to entity 2.  
 ---```
 ---@param ropeId integer
----@param ent1 integer
----@param ent2 integer
+---@param ent1 Entity
+---@param ent2 Entity
 ---@param ent1_x number
 ---@param ent1_y number
 ---@param ent1_z number
@@ -87,7 +87,7 @@ function AttachEntitiesToRope(ropeId, ent1, ent2, ent1_x, ent1_y, ent1_z, ent2_x
 ---The position supplied can be anywhere, and the entity should anchor relative to that point from it's origin.  
 ---```
 ---@param ropeId integer
----@param entity integer
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -97,7 +97,7 @@ function AttachRopeToEntity(ropeId, entity, x, y, z, p5) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2E648D16F6E308F3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -130,7 +130,7 @@ function DeleteRope(ropeId) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBCF3026912A8647D)  
 ---This native does not have an official description.
 ---@param ropeId integer
----@param entity integer
+---@param entity Entity
 function DetachRopeFromEntity(ropeId, entity) end
 
 ---**`PHYSICS` `client`**  
@@ -150,7 +150,7 @@ function DoesRopeExist(ropeId) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x8214A4B5A7A33612)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return vector3
 function GetCgoffset(entity) end
 
@@ -159,7 +159,7 @@ function GetCgoffset(entity) end
 ---```
 ---NativeDB Introduced: v3407
 ---```
----@param entity integer
+---@param entity Entity
 ---@param type integer
 ---@return vector3
 function GetDamping(entity, type) end
@@ -169,7 +169,7 @@ function GetDamping(entity, type) end
 ---```
 ---GET_*
 ---```
----@param object integer
+---@param object Object
 ---@return boolean
 function GetHasObjectFragInst(object) end
 
@@ -219,7 +219,7 @@ function N_0x36ccb9be67b970fd(ropeId, p1) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x84DE3B5FB3E666F0)  
 ---This native does not have an official description.
----@return boolean, integer
+---@return boolean, integer ropeId
 function N_0x84de3b5fb3e666f0() end
 
 ---**`PHYSICS` `client`**  
@@ -238,7 +238,7 @@ function N_0x9ebd751e5787baf2(p0) end
 ---NativeDB Introduced: v1868
 ---```
 ---@param p1 boolean
----@return integer
+---@return integer ropeId
 function N_0xa1ae736541b0fca3(p1) end
 
 ---**`PHYSICS` `client`**  
@@ -284,7 +284,7 @@ function N_0xbc0ce682d4d05650(ropeId, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p
 ---```
 ---RESET_*  
 ---```
----@param object integer
+---@param object Object
 function N_0xcc6e963682533882(object) end
 
 ---**`PHYSICS` `client`**  
@@ -313,7 +313,7 @@ function RopeConvertToSimple(ropeId) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF159A63806BB5BA8)  
 ---This native does not have an official description.
 ---@param toggle boolean
----@return integer
+---@return integer ropeId
 function RopeDrawShadowEnabled(toggle) end
 
 ---**`PHYSICS` `client`**  
@@ -374,13 +374,13 @@ function RopeUnloadTextures() end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBE520D9761FF811F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function SetCgAtBoundcenter(entity) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8FA3908D7B86904)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -389,7 +389,7 @@ function SetCgoffset(entity, x, y, z) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEEA3B200A6FEB65B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param vertex integer
 ---@param value number
 function SetDamping(entity, vertex, value) end
@@ -397,21 +397,21 @@ function SetDamping(entity, vertex, value) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x5CEC1A84620E7D5B)  
 ---This native does not have an official description.
----@param object integer
+---@param object Object
 ---@param toggle boolean
 function SetDisableBreaking(object, toggle) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x01BA3AED21C16CFB)  
 ---This native does not have an official description.
----@param object integer
+---@param object Object
 ---@param toggle boolean
 function SetDisableFragDamage(object, toggle) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x15F944730C832252)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityProofUnk(entity, toggle) end
 

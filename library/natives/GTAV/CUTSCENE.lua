@@ -18,7 +18,7 @@ function CanRequestAssetsForCutsceneEntity() end
 ---modelHash (p1) was always 0 in R* scripts  
 ---```
 ---@param cutsceneEntName string
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return boolean
 function CanSetEnterStateForRegisteredEntity(cutsceneEntName, modelHash) end
 
@@ -37,7 +37,7 @@ function CanSetExitStateForCamera(p0) end
 ---
 ---Whether it is safe to start doing scripted actions on the entity, like simulating walking out of a cutscene.
 ---@param cutsceneEntName string
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return boolean
 function CanSetExitStateForRegisteredEntity(cutsceneEntName, modelHash) end
 
@@ -45,7 +45,7 @@ function CanSetExitStateForRegisteredEntity(cutsceneEntName, modelHash) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x499EF20C5DB25C59)  
 ---This native does not have an official description.
 ---@param cutsceneEntName string
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return boolean
 function DoesCutsceneEntityExist(cutsceneEntName, modelHash) end
 
@@ -101,16 +101,16 @@ function GetCutsceneTotalDuration() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0A2E9FDB9A8C62F6)  
 ---Returns the handle of a cutscene entity, can be ped
 ---@param cutsceneEntName string
----@param modelHash integer | string
----@return integer
+---@param modelHash Hash | string
+---@return Entity
 function GetEntityIndexOfCutsceneEntity(cutsceneEntName, modelHash) end
 
 ---**`CUTSCENE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC0741A26499654CD)  
 ---This native does not have an official description.
 ---@param cutsceneEntName string
----@param modelHash integer | string
----@return integer
+---@param modelHash Hash | string
+---@return Entity
 function GetEntityIndexOfRegisteredEntity(cutsceneEntName, modelHash) end
 
 ---**`CUTSCENE` `client`**  
@@ -222,7 +222,7 @@ function N_0x5edef0cf8c1dab3c() end
 ---```
 ---SET_VEHICLE_*
 ---```
----@param modelHash integer | string
+---@param modelHash Hash | string
 function N_0x7f96f23fa9b73327(modelHash) end
 
 ---**`CUTSCENE` `client`**  
@@ -258,10 +258,10 @@ function N_0xe36a98d8ab3d3c66(p0) end
 ---**`CUTSCENE` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE40C1C56DF95C2E8)  
 ---This can only be run once [`CAN_REQUEST_ASSETS_FOR_CUTSCENE_ENTITY`](#\_0xB56BBBCC2955D9CB) is true, but can be run before [`HAS_CUTSCENE_LOADED`](#\_0xC59F528E9AB9F339)
----@param cutsceneEntity integer
+---@param cutsceneEntity Entity
 ---@param cutsceneEntName string
 ---@param p2 integer
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param p4 integer
 function RegisterEntityForCutscene(cutsceneEntity, cutsceneEntName, p2, modelHash, p4) end
 
@@ -364,7 +364,7 @@ function SetCutsceneOriginAndOrientation(x1, y1, z1, x2, y2, z2, p6) end
 ---@param componentId integer
 ---@param drawableId integer
 ---@param textureId integer
----@param modelHash integer | string
+---@param modelHash Hash | string
 function SetCutscenePedComponentVariation(cutsceneEntName, componentId, drawableId, textureId, modelHash) end
 
 ---**`CUTSCENE` `client`**  
@@ -373,8 +373,8 @@ function SetCutscenePedComponentVariation(cutsceneEntName, componentId, drawable
 ---
 ---See [`REGISTER_ENTITY_FOR_CUTSCENE`](#\_0xE40C1C56DF95C2E8) for an example.
 ---@param cutsceneEntName string
----@param ped integer
----@param modelHash integer | string
+---@param ped Ped
+---@param modelHash Hash | string
 function SetCutscenePedComponentVariationFromPed(cutsceneEntName, ped, modelHash) end
 
 ---**`CUTSCENE` `client`**  
@@ -384,7 +384,7 @@ function SetCutscenePedComponentVariationFromPed(cutsceneEntName, ped, modelHash
 ---@param componentId integer
 ---@param drawableId integer
 ---@param textureId integer
----@param modelHash integer | string
+---@param modelHash Hash | string
 function SetCutscenePedPropVariation(cutsceneEntName, componentId, drawableId, textureId, modelHash) end
 
 ---**`CUTSCENE` `client`**  

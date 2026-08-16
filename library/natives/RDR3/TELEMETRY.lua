@@ -44,14 +44,14 @@ function TelemetryAmbientVignette(p0, p1, p2, p3, p4, p5, p6) end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7581972ADF5D699A)  
 ---This native does not have an official description.
----@param type integer | string
----@return any
+---@param type Hash | string
+---@return any items
 function TelemetryAnimalSkinned(type) end
 
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x52FA31DB8F3AD25D)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function TelemetryBountyTarget() end
 
 ---**`TELEMETRY` `client`**  
@@ -68,8 +68,8 @@ function TelemetryCampCreated(p0) end
 ---@param p2 any
 ---@param p3 any
 ---@param p4 any
----@param slotId integer | string
----@param p6 integer | string
+---@param slotId Hash | string
+---@param p6 Hash | string
 ---@param p7 any
 ---@param p8 boolean
 function TelemetryCampDonate(transactionId, p1, p2, p3, p4, slotId, p6, p7, p8) end
@@ -131,13 +131,13 @@ function TelemetryCraftItem(p0, p1, p2, quantity) end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE692D336F8A2A97F)  
 ---Works in MP only.
----@return boolean, any
+---@return boolean, any uuid
 function TelemetryCreateUuid() end
 
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x40914CCF2A1AB531)  
 ---This native does not have an official description.
----@return any
+---@return any args
 function TelemetryCustom() end
 
 ---**`TELEMETRY` `client`**  
@@ -159,7 +159,7 @@ function TelemetryDiscoverable(p0) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 any
----@param emote integer | string
+---@param emote Hash | string
 function TelemetryEmoteAddCategoryToSave(p0, p1, emote) end
 
 ---**`TELEMETRY` `client`**  
@@ -213,19 +213,19 @@ function TelemetryGunLocker() end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x317D9C9560529CC2)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function TelemetryGunLockerWeaponRemoved(p0) end
 
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3ADF4880784FA9C)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function TelemetryGunLockerWeaponStored(p0) end
 
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAE693EC3A178F6C2)  
 ---This native does not have an official description.
----@param herbType integer | string
+---@param herbType Hash | string
 function TelemetryHerbPicked(herbType) end
 
 ---**`TELEMETRY` `client`**  
@@ -280,7 +280,7 @@ function TelemetryLoot(p0, p1, p2, p3) end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x330029E121380CEB)  
 ---This native does not have an official description.
----@return any
+---@return any args
 function TelemetryMatchNomination() end
 
 ---**`TELEMETRY` `client`**  
@@ -308,13 +308,13 @@ function TelemetryMatchQueue(p0, p1, p2, p3, p4, p5, p6) end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF620F47B4F4A78C4)  
 ---This native does not have an official description.
----@return any, any
+---@return any p0, any p1
 function TelemetryMatchStarted() end
 
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF3C68F56BAD7B69)  
 ---This native does not have an official description.
----@return any, any
+---@return any p0, any p1
 function TelemetryMatchVote() end
 
 ---**`TELEMETRY` `client`**  
@@ -467,7 +467,7 @@ function TelemetryPlayerMenuPin(p0, p1, p2, p3) end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5DA4718DF897EB25)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function TelemetryPlayerSpawned(ped) end
 
 ---**`TELEMETRY` `client`**  
@@ -490,7 +490,7 @@ function TelemetryPokerOver(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---This native does not have an official description.
 ---@param transactionId any
 ---@param bountyAmount any
----@param ped integer
+---@param ped Ped
 ---@param completionType any
 ---@param jailTimeServed any
 ---@param jailTimeLeft any
@@ -500,7 +500,7 @@ function TelemetryPrison(transactionId, bountyAmount, ped, completionType, jailT
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD6F8A0335D821F9)  
 ---This native does not have an official description.
----@param regionHash integer | string
+---@param regionHash Hash | string
 function TelemetryRegion(regionHash) end
 
 ---**`TELEMETRY` `client`**  
@@ -587,8 +587,8 @@ function TelemetrySetIsFlow(toggle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xCA9E42F437625A85)  
 ---This native does not have an official description.
 ---@param transactionId integer
----@param p1 integer | string
----@param p2 integer | string
+---@param p1 Hash | string
+---@param p2 Hash | string
 function TelemetrySetShopForTransaction(transactionId, p1, p2) end
 
 ---**`TELEMETRY` `client`**  
@@ -652,12 +652,12 @@ function TelemetryStartGunLockerInteraction() end
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x80A02D9F948A8BCA)  
 ---Returns false when transaction request is failing
----@return boolean, any, any
+---@return boolean, any requestId, any transactionId
 function TelemetryTriggerTransactionRequest() end
 
 ---**`TELEMETRY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF184B3ECE36219CF)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any transactionId, any requestId
 function TryGetTelemetryIdFromTransactionId() end
 

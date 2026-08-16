@@ -36,7 +36,7 @@ GetCurrentIntensity = GetDeepOceanScaler
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, number
+---@return boolean, number height
 function GetWaterHeight(x, y, z) end
 
 ---**`WATER` `client`**  
@@ -47,7 +47,7 @@ function GetWaterHeight(x, y, z) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, number
+---@return boolean, number height
 function GetWaterHeightNoWaves(x, y, z) end
 
 ---**`WATER` `client`**  
@@ -111,7 +111,7 @@ SetCurrentIntensity = SetDeepOceanScaler
 ---@param y2 number
 ---@param z2 number
 ---@param flag integer
----@return boolean, vector3
+---@return boolean, vector3 result
 function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flag) end
 
 ---**`WATER` `client`**  
@@ -123,7 +123,7 @@ function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flag) end
 ---@param x2 number
 ---@param y2 number
 ---@param z2 number
----@return boolean, vector3
+---@return boolean, vector3 result
 function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2) end
 
 ---**`WATER` `client`**  
@@ -133,6 +133,6 @@ function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2) end
 ---@param y number
 ---@param z number
 ---@param flag integer
----@return boolean, number
+---@return boolean, number height
 function TestVerticalProbeAgainstAllWater(x, y, z, flag) end
 

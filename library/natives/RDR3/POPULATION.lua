@@ -3,45 +3,45 @@
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB56D41A694E42E86)  
 ---flags: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/PedFilterFlags
----@param volume integer
+---@param volume Volume
 ---@param includeFlags integer
 ---@param excludeFlags integer
----@param p3 integer | string
----@param p4 integer | string
----@param p5 integer | string
+---@param p3 Hash | string
+---@param p4 Hash | string
+---@param p5 Hash | string
 ---@param p6 integer
 function AddAmbientAvoidanceRestriction(volume, includeFlags, excludeFlags, p3, p4, p5, p6) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x18262CAFEBB5FBE1)  
 ---flags: see 0xB56D41A694E42E86
----@param volume integer
+---@param volume Volume
 ---@param includeFlags integer
 ---@param excludeFlags integer
----@param p3 integer | string
----@param p4 integer | string
----@param p5 integer | string
+---@param p3 Hash | string
+---@param p4 Hash | string
+---@param p5 Hash | string
 ---@param p6 integer
 function AddAmbientSpawnRestriction(volume, includeFlags, excludeFlags, p3, p4, p5, p6) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x217A54DE2D200305)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
+---@param p0 Hash | string
+---@param p1 Hash | string
 function ClearSpawnerInfoPriority(p0, p1) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9AC1C64FE46B6D09)  
 ---This native does not have an official description.
----@param volume integer
----@return integer
+---@param volume Volume
+---@return PopZone
 function CreatePopzoneFromVolume(volume) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6E6A66FC4CA4224)  
 ---This native does not have an official description.
----@param popZone integer
+---@param popZone PopZone
 function DeleteScriptPopzone(popZone) end
 
 ---**`POPULATION` `client`**  
@@ -58,56 +58,56 @@ function EnableAmbientRoadPopulation() end
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1E3171ED0E47564)  
 ---This native does not have an official description.
----@param popSetHash integer | string
+---@param popSetHash Hash | string
 ---@return integer
 function GetNumModelsInPopulationSet(popSetHash) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3EAFA1C533B7139E)  
 ---This native does not have an official description.
----@param popSetHash integer | string
+---@param popSetHash Hash | string
 ---@param index integer
----@return integer
+---@return Hash
 function GetPedModelNameInPopulationSet(popSetHash, index) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x595478B3BBC3076D)  
 ---Returns model hash of the closest fish
----@return integer
+---@return Hash
 function GetRandomFishTypeForLocation() end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B12ED8C77E8567B)  
 ---This native does not have an official description.
----@param popSetHash integer | string
+---@param popSetHash Hash | string
 ---@param flags integer
----@param p2 integer | string
+---@param p2 Hash | string
 ---@param p3 boolean
 ---@param p4 boolean
 ---@param x number
 ---@param y number
 ---@param z number
----@return integer
+---@return Hash
 function GetRandomModelFromPopulationSet(popSetHash, flags, p2, p3, p4, x, y, z) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA5BD585005EFCAD4)  
 ---This native does not have an official description.
----@param popZone integer
+---@param popZone PopZone
 ---@return boolean
 function IsPopzoneValid(popZone) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x08892122769770D5)  
 ---This native does not have an official description.
----@param popZone integer
+---@param popZone PopZone
 ---@param p1 boolean
 function N_0x08892122769770d5(popZone, p1) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0F1861101C9A9944)  
 ---This native does not have an official description.
----@param popZone integer
+---@param popZone PopZone
 ---@param p1 boolean
 function N_0x0f1861101c9a9944(popZone, p1) end
 
@@ -117,9 +117,9 @@ function N_0x0f1861101c9a9944(popZone, p1) end
 ---@param includeFlags integer
 ---@param excludeFlags integer
 ---@param p2 integer
----@param p3 integer | string
+---@param p3 Hash | string
 ---@param p4 integer
----@param volume integer
+---@param volume Volume
 function N_0x2161278c6322f740(includeFlags, excludeFlags, p2, p3, p4, volume) end
 
 ---**`POPULATION` `client`**  
@@ -144,7 +144,7 @@ function N_0x324ab2a68ad8aee5() end
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x578E2FA64E847C60)  
 ---This native does not have an official description.
----@param popZone integer
+---@param popZone PopZone
 ---@param p1 integer
 function N_0x578e2fa64e847c60(popZone, p1) end
 
@@ -158,7 +158,7 @@ function N_0x638fcfc6042a9473(p0, p1) end
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7E6BC0B94F5928F0)  
 ---This native does not have an official description.
----@param popZone integer
+---@param popZone PopZone
 ---@param p1 integer
 ---@param p2 integer
 function N_0x7e6bc0b94f5928f0(popZone, p1, p2) end
@@ -207,34 +207,34 @@ function N_0xf45e46deecf7df6e(bitFlag, p1, p2, p3, p4) end
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x74C2B3DC0B294102)  
 ---flags: see 0xB56D41A694E42E86
----@param volume integer
+---@param volume Volume
 function RemoveAmbientAvoidanceRestriction(volume) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1CFB35069D23C23)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 function RemoveAmbientSpawnRestriction(volume) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF74E134F40192884)  
 ---Params: p1 = 1 & 2 in R* Scripts, 0 = Disable avoidance, 1 = Enabled avoidance, 2 = Enabled avoidance (?)
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function SetPedShouldIgnoreAvoidanceVolumes(ped, p1) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3E6A49D9B519E85C)  
 ---This native does not have an official description.
----@param popZone integer
----@param populationSetHash integer | string
+---@param popZone PopZone
+---@param populationSetHash Hash | string
 function SetPopzonePopulationSet(popZone, populationSetHash) end
 
 ---**`POPULATION` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x60CDE717A6D47769)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
+---@param p0 Hash | string
+---@param p1 Hash | string
 ---@param priority integer
 function SetSpawnerInfoPriority(p0, p1, priority) end
 

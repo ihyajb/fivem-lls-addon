@@ -3,13 +3,13 @@
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1AD922AB5038DEF3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function AddEntityTrackingTrails(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF15E8F5D333F09C4)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param forceFlags integer
 ---@param x number
 ---@param y number
@@ -29,7 +29,7 @@ function ApplyForceToEntity(entity, forceFlags, x, y, z, offX, offY, offZ, boneI
 ---[Native Documentation](https://rdr3natives.com/?native=0x31DA7CEC5334DB37)  
 ---p6/relative - makes the xyz force not relative to world coords, but to something else
 ---p7/highForce - setting false will make the force really low
----@param entity integer
+---@param entity Entity
 ---@param forceType integer
 ---@param x number
 ---@param y number
@@ -43,7 +43,7 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, component, i
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x445D7D8EA66E373E)  
 ---Attach an entity to coordinates physically better name may be perfered? seems to be used with boats `p_skiff02x` ? The last 6 params are always 0 everywhere in the base code. p7 = 500.0 some kind of time? p8 =1
----@param entity integer
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -72,8 +72,8 @@ function AttachEntityToCoordsPhysically(entity, x, y, z, offsetx, offsety, offse
 ---isPed - pitch doesn't work when false and roll will only work on negative numbers (only peds)
 ---vertexIndex - position of vertex
 ---fixedRot - if false it ignores entity vector
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param boneIndex integer
 ---@param xPos number
 ---@param yPos number
@@ -94,8 +94,8 @@ function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRo
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB629A43CA1643481)  
 ---This native does not have an official description.
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param p2 integer
 ---@param boneIndex integer
 ---@param offsetX number
@@ -122,17 +122,17 @@ function AttachEntityToEntityPhysically(entity1, entity2, p2, boneIndex, offsetX
 ---[Native Documentation](https://rdr3natives.com/?native=0x835F131E7DC8F97A)  
 ---Alters entity's health by 'amount'. Can be negative (to drain health).
 ---In the scripts entity2 and weaponHash are unused (zero).
----@param entity integer
+---@param entity Entity
 ---@param amount number
----@param entity2 integer
----@param weaponHash integer | string
+---@param entity2 Entity
+---@param weaponHash Hash | string
 ---@return boolean
 function ChangeEntityHealth(entity, amount, entity2, weaponHash) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB19AC7D4DCEFD0F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function ClearEntityLastDamageEntity(entity) end
 
 ---**`ENTITY` `client`**  
@@ -160,7 +160,7 @@ function CreateFootpathTrail(p0, waypointRecord, bUseSnowOffset, p3, p4, p5, p6,
 ---@param y number
 ---@param z number
 ---@param p3 any
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param p5 boolean
 function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 
@@ -171,7 +171,7 @@ function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param model integer | string
+---@param model Hash | string
 ---@param p5 boolean
 function CreateModelHide(x, y, z, radius, model, p5) end
 
@@ -182,7 +182,7 @@ function CreateModelHide(x, y, z, radius, model, p5) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param model integer | string
+---@param model Hash | string
 ---@param p5 boolean
 function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 
@@ -193,33 +193,33 @@ function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param originalModel integer | string
----@param newModel integer | string
+---@param originalModel Hash | string
+---@param newModel Hash | string
 ---@param p6 boolean
 function CreateModelSwap(x, y, z, radius, originalModel, newModel, p6) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D0DB2B6AF19A987)  
 ---This native does not have an official description.
----@return integer
+---@return Entity entity
 function DeleteCarriable() end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4CD38C78BD19A497)  
 ---Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
----@param entity integer
+---@param entity Entity
 function DeleteEntity(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5E94EA09E7207C16)  
 ---Must be called from a background script, otherwise it will do nothing.
----@return integer
+---@return Entity entity
 function DeleteEntity_2() end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x64CDE9D6BF8ECAD3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param collision boolean
 function DetachEntity(entity, p1, collision) end
@@ -234,7 +234,7 @@ function DisableStairsStepForVolume(volumeId) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x622B1980CBE13332)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@return boolean
 function DoesEntityBelongToThisScript(entity, p1) end
@@ -242,28 +242,28 @@ function DoesEntityBelongToThisScript(entity, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD42BD6EB2E0F1677)  
 ---Checks if the Entity exists
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function DoesEntityExist(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x20487F0DA9AF164A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function DoesEntityHaveDrawable(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA512B3F1B2A0B51C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function DoesEntityHavePhysics(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88AD6CC10D8D35B2)  
 ---Returns true if calling script owns specified entity
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function DoesThreadOwnThisEntity(entity) end
 
@@ -280,13 +280,13 @@ function EnableStairsStepForVolume(volumeId) end
 ---@param animDictionary string
 ---@param animName string
 ---@param p2 string
----@return boolean, any, any
+---@return boolean, any p3, any p4
 function FindAnimEventPhase(animDictionary, animName, p2) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C9E96473D4F1A88)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 function ForceEntityAiAndAnimationUpdate(entity, p1) end
 
@@ -301,14 +301,14 @@ function ForceEntityAiAndAnimationUpdate(entity, p1) end
 ---When toggle == false, the engine stops auto-filling this wagon. After you delete or
 ---remove the existing passengers, no new peds will spawn for that wagon until you enable
 ---it again with true.
----@param carriage integer
+---@param carriage Entity
 ---@param force boolean
 function ForceTrainWagonPopulation(carriage, force) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7D9EFB7AD6B19754)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function FreezeEntityPosition(entity, toggle) end
 
@@ -338,30 +338,30 @@ function GetAnimDuration(animDict, animName) end
 ---	CARRIABLE_STATE_BEING_PLACED_ON_GROUND_ESCAPE,
 ---	CARRIABLE_STATE_BEING_PLACED_IN_VEHICLE
 ---};
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetCarriableEntityState(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x31FEF6A20F00B963)  
 ---Returns a hash of an entity's name. (Alternative Name: _GET_ENTITY_PROMPT_NAME_HASH)
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetCarriableFromEntity(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D58167F62238284)  
 ---Returns the collision intensity currently registered on the specified entity.
 ---Used after HAS_ENTITY_COLLIDED_WITH_ANYTHING to measure how strong the impact was. Higher values indicate a stronger collision/impact
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetCollisionIntensity(vehicle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x886171A12F400B89)  
 ---This native does not have an official description.
----@param volume integer
----@param itemSet integer
+---@param volume Volume
+---@param itemSet ItemSet
 ---@param entityType integer
 ---@return integer
 function GetEntitiesInVolume(volume, itemSet, entityType) end
@@ -373,7 +373,7 @@ function GetEntitiesInVolume(volume, itemSet, entityType) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param itemSet integer
+---@param itemSet ItemSet
 ---@param p5 integer
 ---@return integer
 function GetEntitiesNearPoint(x, y, z, radius, itemSet, p5) end
@@ -382,21 +382,21 @@ function GetEntitiesNearPoint(x, y, z, radius, itemSet, p5) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x120376C23F019C6C)  
 ---returns the albedo hash by carriable hash, use Citizen.pointerValueInt() as last parameter 
 ---this native writes an albedo-related hash to the output pointer and returns whether the entity already has a valid albedo/material entry assigned if not it loads it and applies it using 0xDD03FC2089AD093C
----@param entity integer
----@return boolean, any
+---@param entity Entity
+---@return boolean, any albedoHash
 function GetEntityAlbedo(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1BB501624FAF2BEA)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityAlpha(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x627520389E288A73)  
 ---Returns a normalized value between 0.0f and 1.0f. You can get the actual anim time by multiplying this by GET_ANIM_DURATION
----@param entity integer
+---@param entity Entity
 ---@param animDict string
 ---@param animName string
 ---@return number
@@ -405,14 +405,14 @@ function GetEntityAnimCurrentTime(entity, animDict, animName) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56D713888A566481)  
 ---This native does not have an official description.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Entity
 function GetEntityAttachedTo(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBACA8FE9C76C124E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param boneName string
 ---@return integer
 function GetEntityBoneIndexByName(entity, boneName) end
@@ -421,29 +421,29 @@ function GetEntityBoneIndexByName(entity, boneName) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF7424890E4A094C0)  
 ---Params: p1 = 0 in R* Scripts (GET_DOOR_ENTITY_FROM_ID)
 ---https://github.com/femga/rdr3_discoveries/blob/master/doorHashes/doorhashes.lua
----@param doorHash integer | string
+---@param doorHash Hash | string
 ---@param p1 integer
----@return integer
+---@return Entity
 function GetEntityByDoorhash(doorHash, p1) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75DF9E73F2F005FD)  
 ---Old name: _GET_ENTITY_CAN_BE_DAMAGED
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function GetEntityCanBeDamaged(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0FD25587BB306C86)  
 ---Returns zero if the entity is not a carriable
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetEntityCarryConfig(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x808077647856DE62)  
 ---flagId: see _SET_ENTITY_CARRYING_FLAG
----@param entity integer
+---@param entity Entity
 ---@param flagId integer
 ---@return boolean
 function GetEntityCarryingFlag(entity, flagId) end
@@ -451,7 +451,7 @@ function GetEntityCarryingFlag(entity, flagId) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAA2FADD30F45A9DA)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function GetEntityCollisionDisabled(entity) end
 
@@ -460,8 +460,8 @@ function GetEntityCollisionDisabled(entity) end
 ---Returns a float that appears to represent the collision impact intensity between two entities.
 ---
 ---Based on observed usage, this value becomes large when entity1 hits entity2 with enough force. In the example below, if the returned value is greater than 500.0f, the first entity is moving, the second entity is nearly stationary, and the second entity is not already ragdolled, then SET_PED_TO_RAGDOLL is triggered.
----@param entity integer
----@param entiy2 integer
+---@param entity Entity
+---@param entiy2 Entity
 ---@return number
 function GetEntityCollisionIntensity(entity, entiy2) end
 
@@ -472,7 +472,7 @@ function GetEntityCollisionIntensity(entity, entiy2) end
 ---`alive` = Unused by the game, potentially used by debug builds in order to assert whether or not an entity was alive.
 ---
 ---If entity is a ped and it's in a vehicle or on a mount the coords of that entity are returned. Set 'realCoords' to true when you need the true ped coords.
----@param entity integer
+---@param entity Entity
 ---@param alive boolean
 ---@param realCoords boolean
 ---@return vector3
@@ -481,63 +481,63 @@ function GetEntityCoords(entity, alive, realCoords) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2412D9C05BB09B97)  
 ---Gets the entity's forward vector in XY(Z) eulers.
----@param entity integer
+---@param entity Entity
 ---@return vector3
 function GetEntityForwardVector(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x935A30AA88FB1014)  
 ---Gets the entity's forward vector in YX(Z) eulers. Similar to GET_ENTITY_FORWARD_VECTOR
----@param entity integer
+---@param entity Entity
 ---@return vector3
 function GetEntityForwardVectorYx(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDB0954E9960F6457)  
 ---Gets the X-component of the entity's forward vector.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityForwardX(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9A5C073ECBDA7EE7)  
 ---Gets the Y-component of the entity's forward vector.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityForwardY(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A77EF9BEC8518F4)  
 ---Returns the original animal (carcass) entity from which a pelt entity was obtained if it still exists
----@param pelt integer
+---@param pelt Entity
 ---@return integer
 function GetEntityFromPelt(pelt) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC230DD956E2F5507)  
 ---Returns the heading of the entity in degrees. Also know as the "Yaw" of an entity.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityHeading(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x82368787EA73C0F7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityHealth(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x96C638784DB4C815)  
 ---Returns (CUR_HEALTH / MAX_HEALTH)
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityHealthFloat(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x296DEBC84474B375)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param X number
 ---@param Y number
 ---@param Z number
@@ -549,35 +549,35 @@ function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D3B5BAEA08F63E9)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityHeightAboveGround(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDF240D0C2A948683)  
 ---Returns the LOD distance of an entity.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityLodDist(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF2D9ED7CE684F08)  
 ---Returns the entity that is looting a ped but only while the looting is active
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Entity
 function GetEntityLootingPed(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3A9B1120AF13FBF2)  
 ---This native does not have an official description.
----@param entity integer
----@return vector3, vector3, vector3, vector3
+---@param entity Entity
+---@return vector3 rightVector, vector3 forwardVector, vector3 upVector, vector3 position
 function GetEntityMatrix(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x15D757606D170C3C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@return integer
 function GetEntityMaxHealth(entity, p1) end
@@ -585,21 +585,21 @@ function GetEntityMaxHealth(entity, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDA76A9F39210D365)  
 ---Returns the model hash from the entity
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetEntityModel(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF355ABEFF7F5005)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityPitch(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xADE28862B6D7B85B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityPopulationType(entity) end
 
@@ -607,7 +607,7 @@ function GetEntityPopulationType(entity) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x6CF0DAD7FA1088EA)  
 ---Note: this native was removed in 1232 but added back in 1311
 ---Old name: _GET_ENTITY_PROOFS
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityProofs(entity) end
 
@@ -615,14 +615,14 @@ function GetEntityProofs(entity) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBF966536FA8B6879)  
 ---Displays the current ROLL axis of the entity [-180.0000/180.0000+]
 ---(Sideways Roll) such as a vehicle tipped on its side
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityRoll(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE09CAF86C32CB48F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param rotationOrder integer
 ---@return vector3
 function GetEntityRotation(entity, rotationOrder) end
@@ -630,21 +630,21 @@ function GetEntityRotation(entity, rotationOrder) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A08A32B6D49906F)  
 ---This native does not have an official description.
----@param entity integer
----@return integer, any
+---@param entity Entity
+---@return Hash, any argStruct
 function GetEntityScript(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFB6BA510A533DF81)  
 ---Result is in meters per second (m/s)
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntitySpeed(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2DB09816A419DC5)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param relative boolean
 ---@return vector3
 function GetEntitySpeedVector(entity, relative) end
@@ -652,35 +652,35 @@ function GetEntitySpeedVector(entity, relative) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4A77C3F73FD9E831)  
 ---Get how much of the entity is submerged.  1.0f is whole entity.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntitySubmergedLevel(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE12F56CB25D9CE23)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityThreatTier(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97F696ACA466B4E0)  
 ---Returns entityType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eEntityType
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetEntityType(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56398BE65160C3BE)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return number
 function GetEntityUprightValue(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4805D2B1D8CF94A9)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 integer
 ---@return vector3
 function GetEntityVelocity(entity, p1) end
@@ -688,14 +688,14 @@ function GetEntityVelocity(entity, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF3FDA9A617A15145)  
 ---This native does not have an official description.
----@param entity integer
----@return vector3, vector3
+---@param entity Entity
+---@return vector3 minimum, vector3 maximum
 function GetEntityWorldPositionOfDimensions(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3AB3A77672F6473F)  
 ---Returns the rotation/heading of a specific bone on an entity as a Vector3.
----@param entity integer
+---@param entity Entity
 ---@param boneIndex integer
 ---@param p2 integer
 ---@param p3 integer
@@ -705,28 +705,28 @@ function GetHeadingOfEntityBone(entity, boneIndex, p2, p3) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9A100F1CF4546629)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function GetIsAnimal(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC346A546612C49A9)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function GetIsBird(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x255B6DB4E3AD3C3E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function GetIsCarriablePelt(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5594AFE9DE0C01B7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function GetIsPredator(entity) end
 
@@ -734,18 +734,18 @@ function GetIsPredator(entity) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF72EC7E1B54539B)  
 ---Returns the last entity that dealt any damage to the specified entity.
 ---This native appears to retrieve the attacker responsible for the most recent damage event on the given entity.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetLastEntityToDamageEntity(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x84CCF9A12942C83D)  
 ---This native does not have an official description.
----@param volume integer
----@param itemSet integer
+---@param volume Volume
+---@param itemSet ItemSet
 ---@param entityType integer
 ---@param p3 any
----@param p4 integer | string
+---@param p4 Hash | string
 ---@param p5 string
 ---@return integer
 function GetMatchingEntities(volume, itemSet, entityType, p3, p4, p5) end
@@ -753,40 +753,40 @@ function GetMatchingEntities(volume, itemSet, entityType, p3, p4, p5) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6888A43C35A5F630)  
 ---This native does not have an official description.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Player
 function GetNearestParticipantToEntity(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x990E294FC387FB88)  
 ---This native does not have an official description.
----@param entity integer
----@param playerPedToIgnore integer
+---@param entity Entity
+---@param playerPedToIgnore Ped
 ---@param flags integer
----@return integer
+---@return Player
 function GetNearestPlayerToEntity(entity, playerPedToIgnore, flags) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB2C30C3B4AFF718C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param team integer
----@param playerPedToIgnore integer
+---@param playerPedToIgnore Ped
 ---@param flags integer
----@return integer
+---@return Player
 function GetNearestPlayerToEntityOnTeam(entity, team, playerPedToIgnore, flags) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x280BBE5601EAA983)  
 ---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Object
 function GetObjectIndexFromEntityIndex(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5E214112806591EA)  
 ---Return the offset from the entity for the selected bone index
----@param entity integer
+---@param entity Entity
 ---@param boneIndex integer
 ---@return vector3
 function GetOffsetFromEntityBone(entity, boneIndex) end
@@ -794,7 +794,7 @@ function GetOffsetFromEntityBone(entity, boneIndex) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x497C6B1A2C9AE69C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -808,7 +808,7 @@ function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 ---x = left/right
 ---y = forward/backward
 ---z = up/down
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -820,30 +820,30 @@ function GetOffsetFromEntityInWorldCoords(entity, offsetX, offsetY, offsetZ) end
 ---Valid indices: 0 - 3
 ---Index 1 always returns a `hogtied` config, doesn't matter the entity.
 ---It's for humans only and the ped must be resurrected first if it's dead.
----@param entity integer
+---@param entity Entity
 ---@param index integer
----@return integer
+---@return Hash
 function GetOptimalCarryConfig(entity, index) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x964000D355219FC0)  
 ---Returns the ped's animal type hash: https://alloc8or.re/rdr3/doc/enums/eAnimalType.txt
 ---Combine this with GET_STRING_FROM_HASH_KEY to display localized entity names
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedAnimalType(ped) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0F16D042BD640EA3)  
 ---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Ped
 function GetPedIndexFromEntityIndex(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5744562E973E33CD)  
 ---Get the pelt TXDs by the animal albedo hash, returns: normal map hash, material hash and albedo hash, this native needs dataview to be passed in, then use it to get the pelt TXDs
----@param albedoHash integer | string
+---@param albedoHash Hash | string
 ---@param txdAlbedoDV any
 ---@param txdNormalMapDV any
 ---@param txdMaterialDV any
@@ -855,28 +855,28 @@ function GetPeltTexture(albedoHash, txdAlbedoDV, txdNormalMapDV, txdMaterialDV, 
 ---[Native Documentation](https://rdr3natives.com/?native=0x4735E2A4BB83D9DA)  
 ---This native does not have an official description.
 ---@param p0 any
----@return integer
+---@return Entity
 function GetPinnedMapEntity(p0) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E804EA9B12030A4)  
 ---Returns false if entity is not a ped or object.
----@param entity integer
----@return boolean, integer
+---@param entity Entity
+---@return boolean, Hash lootTable
 function GetScriptOverrideEntityLootTablePermanent(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDF1E5AAC561AFC59)  
 ---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Vehicle
 function GetVehicleIndexFromEntityIndex(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x82CFA50E34681CA5)  
 ---Returns the coordinates of an entity-bone.
 ---https://github.com/femga/rdr3_discoveries/tree/master/boneNames
----@param entity integer
+---@param entity Entity
 ---@param boneIndex integer
 ---@return vector3
 function GetWorldPositionOfEntityBone(entity, boneIndex) end
@@ -884,15 +884,15 @@ function GetWorldPositionOfEntityBone(entity, boneIndex) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5851CC48405F4A07)  
 ---This native does not have an official description.
----@param entity integer
----@param actionHash integer | string
+---@param entity Entity
+---@param actionHash Hash | string
 ---@return boolean
 function HasAnimEventFired(entity, actionHash) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBEB1600952B9CF5C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function HasCollisionLoadedAroundEntity(entity) end
 
@@ -908,7 +908,7 @@ function HasCollisionLoadedAroundPosition(xPos, yPos, zPos) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAEB40615337EF1E3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param animDict string
 ---@param animName string
 ---@param p3 integer
@@ -918,29 +918,29 @@ function HasEntityAnimFinished(entity, animDict, animName, p3) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x73BB763880CD23A6)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function HasEntityBeenDamagedByAnyObject(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9934E9C42D52D87E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function HasEntityBeenDamagedByAnyPed(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x695D7C26DE65C423)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function HasEntityBeenDamagedByAnyVehicle(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7B6E7BEC1143AC86)  
 ---This native does not have an official description.
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param p2 boolean
 ---@param p3 boolean
 ---@return boolean
@@ -949,7 +949,7 @@ function HasEntityBeenDamagedByEntity(entity1, entity2, p2, p3) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C9DBF48C6BA6E4C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -960,8 +960,8 @@ function HasEntityClearLosToCoord(entity, x, y, z, flags) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFCDFF7B72D23A1AC)  
 ---This native does not have an official description.
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param traceType integer
 ---@return boolean
 function HasEntityClearLosToEntity(entity1, entity2, traceType) end
@@ -969,8 +969,8 @@ function HasEntityClearLosToEntity(entity1, entity2, traceType) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE88F19660651D566)  
 ---Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param traceType integer
 ---@return boolean
 function HasEntityClearLosToEntityInFront(entity1, entity2, traceType) end
@@ -978,42 +978,42 @@ function HasEntityClearLosToEntityInFront(entity1, entity2, traceType) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDF18751EC74F90FF)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function HasEntityCollidedWithAnything(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x27CFF3E5A286D3DF)  
 ---This native does not have an official description.
----@param handle integer
+---@param handle ScrHandle
 ---@return boolean
 function IsAnEntity(handle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5AFFA9DDC87846F8)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsCarriableModel(model) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x138190F64DB4BBD1)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAMissionEntity(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0A27A546A375FDEF)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAnObject(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF8176912DDA4EA5)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAPed(entity) end
 
@@ -1022,7 +1022,7 @@ function IsEntityAPed(entity) end
 ---Checks if entity is within x/y/zSize distance of x/y/z. 
 ---
 ---Last three are unknown ints, almost always p7 = 0, p8 = 1, p9 = 0
----@param entity integer
+---@param entity Entity
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -1040,8 +1040,8 @@ function IsEntityAtCoord(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, 
 ---Checks if entity1 is within the box defined by x/y/zSize of entity2.
 ---
 ---Last three parameters are almost always p5 = 0, p6 = 1, p7 = 0
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param xSize number
 ---@param ySize number
 ---@param zSize number
@@ -1054,71 +1054,71 @@ function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEE6AD63ABF59C0B7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAttached(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x306C1F6178F01AB3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAttachedToAnyObject(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC841153DED2CA89A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAttachedToAnyPed(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12DF6E0D2E736749)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAttachedToAnyVehicle(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x154A3C529497053E)  
 ---This native does not have an official description.
----@param from integer
----@param to integer
+---@param from Entity
+---@param to Entity
 ---@return boolean
 function IsEntityAttachedToEntity(from, to) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3D96AF45FCCEC4C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAVehicle(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7D5B1F88E7504BBA)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityDead(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x083D497D57B7400F)  
 ---Getter for FREEZE_ENTITY_POSITION
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityFrozen(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8DE41E9902E85756)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityFullyLooted(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x886E37EC497200B6)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 any
 ---@return boolean
 function IsEntityInAir(entity, p1) end
@@ -1128,7 +1128,7 @@ function IsEntityInAir(entity, p1) end
 ---Creates a spherical cone at origin that extends to surface with the angle specified. Then returns true if the entity is inside the spherical cone
 ---
 ---Angle is measured in degrees.
----@param entity integer
+---@param entity Entity
 ---@param originX number
 ---@param originY number
 ---@param originZ number
@@ -1145,7 +1145,7 @@ function IsEntityInAngledArea(entity, originX, originY, originZ, edgeX, edgeY, e
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C2634C40A16193E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param x1 number
 ---@param y1 number
 ---@param z1 number
@@ -1161,8 +1161,8 @@ function IsEntityInArea(entity, x1, y1, z1, x2, y2, z2, p7, p8, p9) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A5526BC09C06623)  
 ---This native does not have an official description.
----@param entity integer
----@param volume integer
+---@param entity Entity
+---@param volume ScrHandle
 ---@param p2 boolean
 ---@param p3 integer
 ---@return boolean
@@ -1171,42 +1171,42 @@ function IsEntityInVolume(entity, volume, p2, p3) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDE5C125AC446723)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityInWater(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x140188E884645624)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityOccluded(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x613C15D5D8DB781F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityOnScreen(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x857ACB0AB4BD0D55)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityOnTrainTrack(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA7E51B53309EAC97)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityOwnedByPersistenceSystem(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEE49D5CA6C49148)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param animDict string
 ---@param animName string
 ---@param animType integer
@@ -1216,7 +1216,7 @@ function IsEntityPlayingAnim(entity, animDict, animName, animType) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0B7CB1300CBFE19C)  
 ---Params: p1 (probably animType) = 1, 0
----@param entity integer
+---@param entity Entity
 ---@param p1 integer
 ---@return boolean
 function IsEntityPlayingAnyAnim(entity, p1) end
@@ -1224,30 +1224,30 @@ function IsEntityPlayingAnyAnim(entity, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86468ADFA0F6B861)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityStatic(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9A2304A64C3C8423)  
 ---This native does not have an official description.
----@param entity integer
----@param targetEntity integer
+---@param entity Entity
+---@param targetEntity Entity
 ---@return boolean
 function IsEntityTouchingEntity(entity, targetEntity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2AE3EBC8DEB9768B)  
 ---This native does not have an official description.
----@param entity integer
----@param modelHash integer | string
+---@param entity Entity
+---@param modelHash Hash | string
 ---@return boolean
 function IsEntityTouchingModel(entity, modelHash) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD4E5C1E93C466127)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@return boolean
 function IsEntityUnderwater(entity, p1) end
@@ -1255,7 +1255,7 @@ function IsEntityUnderwater(entity, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6F6AFD8D4FB2658)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param angle number
 ---@return boolean
 function IsEntityUpright(entity, angle) end
@@ -1263,28 +1263,28 @@ function IsEntityUpright(entity, angle) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x109DE3DA41AAD94A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityUpsidedown(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFC96ECB7FA404CA)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityVisible(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF213C724E77F321A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityVisibleToScript(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5E1CC2E8DC3111DD)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityWaitingForWorldCollision(entity) end
 
@@ -1300,14 +1300,14 @@ function IsMapEntityPinned(p0) end
 ---Checks whether the specified model can be handled through the vegetation modifier path.
 ---This is not limited strictly to foliage. Testing shows many natural world
 ---models can return TRUE, including rocks, trees, bushes, grass, crops, branches, roots, logs, debris, and similar environment assets.
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return boolean
 function IsModelInNeedOfVegModifier(modelHash) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC8CCDB712FBCBA92)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsTrackedEntityVisible(entity) end
 
@@ -1315,7 +1315,7 @@ function IsTrackedEntityVisible(entity) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xC2E71D7E0A7B4C89)  
 ---Checks whether the entity's interior is currently loaded by the game engine.
 ---This is mainly used for train carriages. When the player is far away or not standing on the train, the game unloads interiors of distant carriages as an optimization. If the interior of the entity is currently loaded, this native returns true
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsTrainInteriorLoaded(entity) end
 
@@ -1385,33 +1385,33 @@ function N_0x350e9211074955af(p0, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x371D179701D9C082)  
 ---Called if entity is in water and submerged level is larger than 1f. If CARRYING_FLAG_FORCE_ALLOW_WARP_TO_SAFE_GROUND_LOCATION is true, it gets disabled as well.
----@param entity integer
+---@param entity Entity
 function N_0x371d179701d9c082(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x37B01666BAE8F7EF)  
 ---Seems to return true if entity is burned / scorched
 ---_GET_ENTITY_*
----@param entity integer
+---@param entity Entity
 ---@return any
 function N_0x37b01666bae8f7ef(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x383F64263F946E45)  
 ---Used when checking if ped is in water
----@param entity integer
+---@param entity Entity
 ---@param p2 integer
----@param ped integer
+---@param ped Ped
 ---@param p4 any
 ---@param p5 integer
----@return boolean, integer
+---@return boolean, integer p0
 function N_0x383f64263f946e45(entity, p2, ped, p4, p5) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3EC28DA1FFAC9DDD)  
 ---Used in Script Function DUELING_DID_PLAYER_DISARM_OPPONENT
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param p2 any
 ---@param p3 any
 ---@return boolean
@@ -1420,7 +1420,7 @@ function N_0x3ec28da1ffac9ddd(entity1, entity2, p2, p3) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5826EFD6D73C4DE5)  
 ---_REMOVE_DECALS_* - _REMOVE_FORCED*
----@param entity integer
+---@param entity Entity
 function N_0x5826efd6d73c4de5(entity) end
 
 ---**`ENTITY` `client`**  
@@ -1448,14 +1448,14 @@ function N_0x7f20092547b4ddea(p0) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x80FDEB3A9E9AA578)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 function N_0x80fdeb3a9e9aa578(entity, p1) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x898586729DB5221D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function N_0x898586729db5221d(ped) end
 
 ---**`ENTITY` `client`**  
@@ -1473,7 +1473,7 @@ function N_0x8e10df0ffa63fb65(p0, p1, p2, p3, p4) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E46E18AA828334F)  
 ---Used in Script Function GENERIC_ITEM_HAS_ANIM_COMPLETED
 ---_GET_ENTITY_*
----@param entity integer
+---@param entity Entity
 ---@param animDict string
 ---@param animClip string
 ---@return number
@@ -1489,7 +1489,7 @@ function N_0x978aa2323ed32209(p0, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C6906EF8CB20C5F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function N_0x9c6906ef8cb20c5f(entity) end
 
 ---**`ENTITY` `client`**  
@@ -1528,7 +1528,7 @@ function N_0xba2a089e60ed1163(p0, p1, p2, p3, p4) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3ABCFBC7D74AFA5)  
 ---Returns BOOL in ida
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 boolean
 function N_0xc3abcfbc7d74afa5(ped, p1, p2) end
@@ -1551,8 +1551,8 @@ function N_0xc76e94a78127412b(p0, p1, p2) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCDB682BB47C02F0A)  
 ---This native does not have an official description.
----@param entity integer
----@param p1 integer | string
+---@param entity Entity
+---@param p1 Hash | string
 function N_0xcdb682bb47c02f0a(entity, p1) end
 
 ---**`ENTITY` `client`**  
@@ -1618,7 +1618,7 @@ function N_0xe9e7a0bac7f57746(p0, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF259AA1E097E0AD)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 any
 function N_0xef259aa1e097e0ad(entity, p1) end
 
@@ -1638,21 +1638,21 @@ function N_0xf59fde7b4d31a630(p0) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF9965C47FA404DA)  
 ---SET_ENTITY_LO*
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function N_0xff9965c47fa404da(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x36EB4D34D4A092C5)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param pause boolean
 function PauseEntityTracking(entity, pause) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F3068258A499E52)  
 ---This native does not have an official description.
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1663,14 +1663,14 @@ function PinClosestMapEntity(modelHash, x, y, z, flags) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAAACB74442C1BED3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function PinMapEntity(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9587913B9E772D29)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@return boolean
 function PlaceEntityOnGroundProperly(entity, p1) end
@@ -1678,7 +1678,7 @@ function PlaceEntityOnGroundProperly(entity, p1) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC6D22FAB76D4874)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/animations
----@param entity integer
+---@param entity Entity
 ---@param animName string
 ---@param animDict string
 ---@param p3 number
@@ -1693,7 +1693,7 @@ function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, de
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C31B06E91518269)  
 ---This native can enable interiors for train carriages that the game engine has disabled due to distance-based optimization.
----@param entity integer
+---@param entity Entity
 ---@param enabled boolean
 function PreloadEntityInterior(entity, enabled) end
 
@@ -1725,20 +1725,20 @@ function RemoveModelHide(p0, p1, p2, p3, p4, p5) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param originalModel integer | string
----@param newModel integer | string
+---@param originalModel Hash | string
+---@param newModel Hash | string
 ---@param p6 boolean
 function RemoveModelSwap(x, y, z, radius, originalModel, newModel, p6) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA88E215CEB0435C0)  
 ---This native does not have an official description.
----@param mount integer
----@param visiblelootslotrequestType integer | string
+---@param mount Ped
+---@param visiblelootslotrequestType Hash | string
 ---@param flag integer
 ---@param p4 integer
 ---@param p5 boolean
----@return boolean, any
+---@return boolean, any argStruct
 function RequestEntityLootList(mount, visiblelootslotrequestType, flag, p4, p5) end
 
 ---**`ENTITY` `client`**  
@@ -1746,36 +1746,36 @@ function RequestEntityLootList(mount, visiblelootslotrequestType, flag, p4, p5) 
 ---Enables visibility tracking for the specified entity
 ---For peds, calling this makes PED::_IS_PED_VISIBILITY_TRACKED(ped) return true.
 ---For vehicles, calling this makes VEHICLE::IS_VEHICLE_VISIBLE(vehicle) return true in the tracked/visible state context observed from scripts
----@param entity integer
+---@param entity Entity
 function RequestEntityVisibilityTracking(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x744B9EF44779D9AB)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function ResetEntityAlpha(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8C03CD6B5E0E85E8)  
 ---Sets the loot table an entity will carry. Returns true if loot table has been successfully set. Returns false if entity is not a ped or object.
 ---https://github.com/femga/rdr3_discoveries/blob/master/AI/EVENTS/loot_rewards.lua
----@param entity integer
----@param lootTable integer | string
+---@param entity Entity
+---@param lootTable Hash | string
 ---@return boolean
 function ScriptOverrideEntityLootTablePermanent(entity, lootTable) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66B2B83B94B22458)  
 ---Alternative Name: _GET_ENTITY_FROM_MAP_OBJECT; You can get existing objects and manipulate them using this native.
----@param modelHash integer | string
----@return integer
+---@param modelHash Hash | string
+---@return Entity
 function SearchBuildingPoolForEntityWithThisModel(modelHash) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD94CECFB2D65119)  
 ---Configures automatic pickup behavior for a carriable entity.
 ---This native is typically used after TASK_CARRIABLE and enables auto-pickup functionality with configurable parameters such as pickup animation behavior, pickup range, and pickup prompt state
----@param entity integer
+---@param entity Entity
 ---@param noPickupAnim boolean
 ---@param range number
 ---@param p3 number
@@ -1786,14 +1786,14 @@ function SetAutoPickup(entity, noPickupAnim, range, p3, p4, enablePickupPrompt) 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x80646744FA88F9D7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetCanAutoVaultOnEntity(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x24AED2A608F93C4C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetCanClimbOnEntity(entity, toggle) end
 
@@ -1803,7 +1803,7 @@ function SetCanClimbOnEntity(entity, toggle) end
 ---This native specifically works on entities that are carriable and can be interacted with (e.g. after TASK::_MAKE_OBJECT_CARRIABLE).
 ---- Unlike SET_PICKUP_LIGHT, this does NOT apply a generic light effect to all objects.
 ---  Instead, it only highlights entities that the player can interact with (pickup context)
----@param entity integer
+---@param entity Entity
 ---@param enabled boolean
 function SetCarriablePickupLight(entity, enabled) end
 
@@ -1811,7 +1811,7 @@ function SetCarriablePickupLight(entity, enabled) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x0DF7692B1D9E7BA7)  
 ---skin - everything alpha except skin
 ---Set entity alpha level. Ranging from 0 to 255 but changes occur after every 20 percent (after every 51).
----@param entity integer
+---@param entity Entity
 ---@param alphaLevel integer
 ---@param skin boolean
 function SetEntityAlpha(entity, alphaLevel, skin) end
@@ -1819,14 +1819,14 @@ function SetEntityAlpha(entity, alphaLevel, skin) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xACAD101E1FB66689)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityAlwaysPrerender(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11CDABDC7783B2BC)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param animDict string
 ---@param animName string
 ---@param time number
@@ -1835,7 +1835,7 @@ function SetEntityAnimCurrentTime(entity, animDict, animName, time) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEAA885BA3CEA4E4A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param animDict string
 ---@param animName string
 ---@param speedMultiplier number
@@ -1844,7 +1844,7 @@ function SetEntityAnimSpeed(entity, animDict, animName, speedMultiplier) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC19C288082E586E)  
 ---Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.
----@param entity integer
+---@param entity Entity
 ---@param scriptHostObject boolean
 ---@param grabFromOtherScript boolean
 function SetEntityAsMissionEntity(entity, scriptHostObject, grabFromOtherScript) end
@@ -1853,14 +1853,14 @@ function SetEntityAsMissionEntity(entity, scriptHostObject, grabFromOtherScript)
 ---[Native Documentation](https://rdr3natives.com/?native=0x4971D2F8162B9674)  
 ---Marks the specified entity (ped, vehicle or object) as no longer needed.
 ---Entities marked as no longer needed, will be deleted as the engine sees fit.
----@param entity integer
+---@param entity Entity
 function SetEntityAsNoLongerNeeded(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16908E859C3AB698)  
 ---Applies and updates the positional offset of an entity relative to the entity it is attached to, while also controlling whether the offset is interpreted horizontally or vertically
 ---This native is typically used after ATTACH_ENTITY_TO_ENTITY 
----@param entity integer
+---@param entity Entity
 ---@param horizontalMode boolean
 ---@param offsetX number
 ---@param offsetY number
@@ -1870,29 +1870,29 @@ function SetEntityAttachedOffset(entity, horizontalMode, offsetX, offsetY, offse
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D06D522B90E861F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityCanBeDamaged(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EF1AFB18649E015)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param bCanBeDamaged boolean
----@param relGroup integer | string
+---@param relGroup Hash | string
 function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGroup) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D09F32E284D0FB7)  
 ---Sets whether the entity can be targeted without being in line-of-sight.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF83AF534156B399)  
 ---This native does not have an official description.
----@param EntityIndex integer
+---@param EntityIndex Entity
 ---@param bOnlyDamagedWhenRunningScript boolean
 function SetEntityCanOnlyBeDamagedByScriptParticipants(EntityIndex, bOnlyDamagedWhenRunningScript) end
 
@@ -1900,8 +1900,8 @@ function SetEntityCanOnlyBeDamagedByScriptParticipants(EntityIndex, bOnlyDamaged
 ---[Native Documentation](https://rdr3natives.com/?native=0x399657ED871B3A6C)  
 ---Changes type and quality of skins
 ---type hashes: https://pastebin.com/C1WvQjCy
----@param entity integer
----@param type integer | string
+---@param entity Entity
+---@param type Hash | string
 function SetEntityCarcassType(entity, type) end
 
 ---**`ENTITY` `client`**  
@@ -1925,7 +1925,7 @@ function SetEntityCarcassType(entity, type) end
 ---	CARRYING_FLAG_DISABLE_CARRIABLE_INTERACTIONS_ON_THIS_MOUNT = 34,
 ---	CARRYING_FLAG_FORCE_HIDE_PROMPT_GROUP = 37,
 ---};
----@param entity integer
+---@param entity Entity
 ---@param flagId integer
 ---@param value boolean
 function SetEntityCarryingFlag(entity, flagId, value) end
@@ -1933,7 +1933,7 @@ function SetEntityCarryingFlag(entity, flagId, value) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF66F820909453B8C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 ---@param keepPhysics boolean
 function SetEntityCollision(entity, toggle, keepPhysics) end
@@ -1941,7 +1941,7 @@ function SetEntityCollision(entity, toggle, keepPhysics) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE0580EC84813875A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 ---@param keepPhysics boolean
 function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
@@ -1949,7 +1949,7 @@ function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06843DA7060A026B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -1962,7 +1962,7 @@ function SetEntityCoords(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis, clearAre
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x203BEFFDBE12E96A)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -1975,7 +1975,7 @@ function SetEntityCoordsAndHeading(entity, xPos, yPos, zPos, heading, xAxis, yAx
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0918E3565C20F03C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -1987,7 +1987,7 @@ function SetEntityCoordsAndHeadingNoOffset(entity, xPos, yPos, zPos, heading, p5
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x239A3351AC1DA385)  
 ---Axis - Invert Axis Flags
----@param entity integer
+---@param entity Entity
 ---@param xPos number
 ---@param yPos number
 ---@param zPos number
@@ -1999,77 +1999,77 @@ function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis) 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x482D17E45665DA44)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param radius number
 function SetEntityCustomPickupRadius(entity, radius) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56E0735D6273B227)  
 ---disables the flames only of fires like campfires
----@param entity integer
+---@param entity Entity
 ---@param enabled boolean
 function SetEntityDisableFlame(entity, enabled) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFBFC4473F66CE344)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityDynamic(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA91E6CF94404E8C9)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function SetEntityFadeIn(entity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC0EDEF16D90661EE)  
 ---Sets the intensity of the flames for a torch
----@param entity integer
+---@param entity Entity
 ---@param intensity number
 function SetEntityFlameIntensity(entity, intensity) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6BCF5F3D8FFE988D)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param looted boolean
 function SetEntityFullyLooted(entity, looted) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0CEDB728A1083FA7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityHasGravity(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF2B9C0645C4651B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param heading number
 function SetEntityHeading(entity, heading) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAC2767ED8BDFAB15)  
 ---Sets the entity's health. healthAmount sets the health value to that, and sets the maximum health core value. Setting healthAmount to 0 will kill the entity. entityKilledBy parameter can also be 0
----@param entity integer
+---@param entity Entity
 ---@param healthAmount integer
----@param entityKilledBy integer
+---@param entityKilledBy Entity
 function SetEntityHealth(entity, healthAmount, entityKilledBy) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA5C38736C426FCB8)  
 ---Sets a ped or an object totally invincible. It doesn't take any kind of damage. Peds will not ragdoll on explosions.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityInvincible(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0A5D170C44CB2189)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param p2 number
 function SetEntityIsTargetPriority(entity, p1, p2) end
@@ -2078,7 +2078,7 @@ function SetEntityIsTargetPriority(entity, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x2D40BCBFE9305DEA)  
 ---Controls a forced "lights off" state for entities that have built-in light sources.
 ---This native does not enable lights, instead it overrides the light state by forcing them off.
----@param entity integer
+---@param entity Entity
 ---@param disabled boolean
 function SetEntityLightsDisabled(entity, disabled) end
 
@@ -2088,21 +2088,21 @@ function SetEntityLightsDisabled(entity, disabled) end
 ---This native overrides the default behavior where lights typically only activate at night
 ---true  = lights are always enabled (day and night)
 ---false = original behavior is restored
----@param entity integer
+---@param entity Entity
 ---@param enabled boolean
 function SetEntityLightsEnabled(entity, enabled) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B9EE31AED48072E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityLoadCollisionFlag(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF7F3099B9FEB535)  
 ---Sets an offset for the entity's lock-on / target focus point.
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -2111,61 +2111,61 @@ function SetEntityLockonPointOffset(entity, offsetX, offsetY, offsetZ) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5FB407F0A7C877BF)  
 ---LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).
----@param entity integer
+---@param entity Entity
 ---@param value integer
 function SetEntityLodDist(entity, value) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x166E7CF68597D8B5)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param value integer
 function SetEntityMaxHealth(entity, value) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x516C6ABD18322B63)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityMotionBlur(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE037BF068223C38D)  
 ---This native does not have an official description.
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param thisFrameOnly boolean
 function SetEntityNoCollisionEntity(entity1, entity2, thisFrameOnly) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC64E597783BE9A1D)  
 ---Old name: _SET_ENTITY_DECALS_DISABLED
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityNoweapondecals(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x473598683095D430)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityOnlyDamagedByPlayer(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C1F6AA2F0ADD104)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
----@param relationshipGroup integer | string
+---@param relationshipGroup Hash | string
 function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipGroup) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDD03FC2089AD093C)  
 ---Set the pelt texture to the entity, by albedo hash and inventory item hash
 ---Examples: object: P_CS_PELT_MEDLARGE  albedo: a_c_boar_01_head_000_c0_000_ab, inventoryItem: PROVISION_BOAR_HIDE_POOR
----@param entity integer
----@param inventoryItem integer | string
----@param albedo integer | string
+---@param entity Entity
+---@param inventoryItem Hash | string
+---@param albedo Hash | string
 ---@param p3 integer
 function SetEntityPeltTexture(entity, inventoryItem, albedo, p3) end
 
@@ -2173,7 +2173,7 @@ function SetEntityPeltTexture(entity, inventoryItem, albedo, p3) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFAEE099C6F890BB8)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/ENTITY_PROOFS
 ---BOOL p2: handles an additional special proofs flag, so it simply indicates whether it should be enabled or disabled, not sure what exactly it proofs the entity from though
----@param entity integer
+---@param entity Entity
 ---@param proofsBitset integer
 ---@param specialFlag boolean
 function SetEntityProofs(entity, proofsBitset, specialFlag) end
@@ -2181,7 +2181,7 @@ function SetEntityProofs(entity, proofsBitset, specialFlag) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x100E7007D13E3687)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2191,21 +2191,21 @@ function SetEntityQuaternion(entity, x, y, z, w) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x85B8A7534E44BC23)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityRenderScorched(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x850C940EE3E7B8B5)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityRequiresMoreExpensiveRiverCheck(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9CC8314DFEDE441E)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param pitch number
 ---@param roll number
 ---@param yaw number
@@ -2218,7 +2218,7 @@ function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
 ---Sets the entity's rotation so that it becomes parallel to the direction defined by the line between coords1 and coords2, without moving the entity from its current position.
 ---
 ---This native does NOT make the entity face coords1 or coords2. Instead, it keeps the entity at its current world position and adjusts its orientation so that it is aligned parallel to the direction derived from the two coordinates
----@param entity integer
+---@param entity Entity
 ---@param coords1X number
 ---@param coords1Y number
 ---@param coords1Z number
@@ -2231,14 +2231,14 @@ function SetEntityRotationParallelToLine(entity, coords1X, coords1Y, coords1Z, c
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x740CB4F3F602C9F4)  
 ---Old name: _SET_ENTITY_CLEANUP_BY_ENGINE
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityShouldFreezeWaitingOnCollision(entity, toggle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4B436BAC8CBE9B07)  
 ---tier: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eEntityThreatTier
----@param entity integer
+---@param entity Entity
 ---@param tier integer
 ---@param p2 boolean
 function SetEntityThreatTier(entity, tier, p2) end
@@ -2246,7 +2246,7 @@ function SetEntityThreatTier(entity, tier, p2) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1C99BB7B6E96D16F)  
 ---Note that the third parameter(denoted as z) is "up and down" with positive numbers encouraging upwards movement.
----@param entity integer
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2255,7 +2255,7 @@ function SetEntityVelocity(entity, x, y, z) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1794B4FCC84D812F)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityVisible(entity, toggle) end
 
@@ -2264,7 +2264,7 @@ function SetEntityVisible(entity, toggle) end
 ---sets the fill in state for some objects like for the stew, coffee mug ,poker chips, jugs ? P1 is either 0 or 2 p2 seems to be a label/name p3 is the fill in state, max seems to be for some 3.0 (most is 1.0) - 0.0
 ---heres some of the labels/names found 
 ---tumbler_fill, Canvas, Stew_Fill, from Chip01_Ctrl to Chip10_Ctrl, from empty_jug01_Ctrl to empty_jug20_Ctrl, from full_jug01_Ctrl to full_jug20_Ctrl, CTRL_cupFill, Food_DOF_Fill, from WhiteChip_Ctrl_0 to WhiteChip_Ctrl_10, from BlueChip_Ctrl_0 to BlueChip_Ctrl_10, from BlackChip_Ctrl_0 to BlackChip_Ctrl_10, from RedChip_Ctrl_0 to RedChip_Ctrl_10,
----@param entity integer
+---@param entity Entity
 ---@param expressionType integer
 ---@param dofName string
 ---@param fillState number
@@ -2273,25 +2273,25 @@ function SetMaterialFillLevelForEntity(entity, expressionType, dofName, fillStat
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3AE22DEB5BA5A3E6)  
 ---This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.
----@param object integer
+---@param object Object
 function SetObjectAsNoLongerNeeded(object) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2595DD4236549CE3)  
 ---This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.
----@param ped integer
+---@param ped Ped
 function SetPedAsNoLongerNeeded(ped) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x629BFA74418D6239)  
 ---This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.
----@param vehicle integer
+---@param vehicle Vehicle
 function SetVehicleAsNoLongerNeeded(vehicle) end
 
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x786591D986DE9159)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param animation string
 ---@param animGroup string
 ---@param p3 number
@@ -2307,7 +2307,7 @@ function UnpinMapEntity(pinId) end
 ---**`ENTITY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3546FAB293FF2981)  
 ---This native does not have an official description.
----@param entityModelHash integer | string
+---@param entityModelHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number

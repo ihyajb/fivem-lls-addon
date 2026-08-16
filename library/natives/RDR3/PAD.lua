@@ -22,7 +22,7 @@ function DisableAllControlActions(control) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE99B66D079CF6BC)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@param disableRelatedActions boolean
 function DisableControlAction(control, action, disableRelatedActions) end
 
@@ -30,7 +30,7 @@ function DisableControlAction(control, action, disableRelatedActions) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x351220255D64C155)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@param enableRelatedActions boolean
 function EnableControlAction(control, action, enableRelatedActions) end
 
@@ -45,7 +45,7 @@ function GetControlHowLongAgo(control) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC3C9B8D5327B563)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return number
 function GetControlNormal(control, action) end
 
@@ -53,7 +53,7 @@ function GetControlNormal(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5B84D09CEC5209C5)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return number
 function GetControlUnboundNormal(control, action) end
 
@@ -61,7 +61,7 @@ function GetControlUnboundNormal(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD95E79E8686D2C27)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return integer
 function GetControlValue(control, action) end
 
@@ -69,7 +69,7 @@ function GetControlValue(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDCEB0F26C89C00F)  
 ---Gets the current control context. See: _SET_CONTROL_CONTEXT
 ---@param control integer
----@return integer
+---@return Hash
 function GetCurrentControlContext(control) end
 
 ---**`PAD` `client`**  
@@ -83,7 +83,7 @@ function GetDisabledControlHowLongAgo(control) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x11E65974A982637C)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return number
 function GetDisabledControlNormal(control, action) end
 
@@ -91,7 +91,7 @@ function GetDisabledControlNormal(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4F8A26A890FD62FB)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return number
 function GetDisabledControlUnboundNormal(control, action) end
 
@@ -105,7 +105,7 @@ function HaveControlsChanged(control) end
 ---**`PAD` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC0884BC590951C7)  
 ---This native does not have an official description.
----@param action integer | string
+---@param action Hash | string
 ---@param control integer
 ---@return boolean
 function IsControlActionValid(action, control) end
@@ -114,7 +114,7 @@ function IsControlActionValid(action, control) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x1CEA6BFDF248E5D9)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsControlEnabled(control, action) end
 
@@ -122,7 +122,7 @@ function IsControlEnabled(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x580417101DDB492F)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsControlJustPressed(control, action) end
 
@@ -130,7 +130,7 @@ function IsControlJustPressed(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x50F940259D3841E6)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsControlJustReleased(control, action) end
 
@@ -138,7 +138,7 @@ function IsControlJustReleased(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF3A21BCD95725A4A)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsControlPressed(control, action) end
 
@@ -146,7 +146,7 @@ function IsControlPressed(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x648EE3E7F38877DD)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsControlReleased(control, action) end
 
@@ -154,7 +154,7 @@ function IsControlReleased(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x91AEF906BCA88877)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsDisabledControlJustPressed(control, action) end
 
@@ -162,7 +162,7 @@ function IsDisabledControlJustPressed(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x305C8DCD79DA8B0F)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsDisabledControlJustReleased(control, action) end
 
@@ -170,7 +170,7 @@ function IsDisabledControlJustReleased(control, action) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE2587F8CBBD87B1D)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@return boolean
 function IsDisabledControlPressed(control, action) end
 
@@ -236,7 +236,7 @@ function N_0xbd629c1c4f501c80(p0) end
 ---For more information, see common:/data/control/settings.meta
 ---https://github.com/femga/rdr3_discoveries/tree/master/Controls
 ---@param control integer
----@param context integer | string
+---@param context Hash | string
 function SetControlContext(control, context) end
 
 ---**`PAD` `client`**  
@@ -293,7 +293,7 @@ function SetControlTriggerShake(control, leftDuration, leftFrequency, rightDurat
 ---
 ---Old name: _SET_CONTROL_NORMAL
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 ---@param value number
 ---@return boolean
 function SetControlValueNextFrame(control, action, value) end
@@ -302,7 +302,7 @@ function SetControlValueNextFrame(control, action, value) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xEDE476E5EE29EDB1)  
 ---This native does not have an official description.
 ---@param control integer
----@param action integer | string
+---@param action Hash | string
 function SetInputExclusive(control, action) end
 
 ---**`PAD` `client`**  

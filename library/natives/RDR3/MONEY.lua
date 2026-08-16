@@ -17,7 +17,7 @@ function MoneyGetCashBalance() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC3422DC91667621)  
 ---This native does not have an official description.
 ---@param amount integer
----@param addReason integer | string
+---@param addReason Hash | string
 ---@return boolean
 function MoneyIncrementCashBalance(amount, addReason) end
 

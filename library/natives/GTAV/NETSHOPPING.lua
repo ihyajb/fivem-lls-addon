@@ -3,13 +3,13 @@
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0395CB47B022E62C)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function N_0x0395cb47b022e62c() end
 
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x170910093218C8B9)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function N_0x170910093218c8b9() end
 
 ---**`NETSHOPPING` `client`**  
@@ -61,7 +61,7 @@ function N_0x85f6c9aba1de2bcf() end
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xC13C38E47EA5DF31)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function N_0xc13c38e47ea5df31() end
 
 ---**`NETSHOPPING` `client`**  
@@ -87,7 +87,7 @@ function N_0xe3e5a7c64ca2c6ed() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF30980718C8ED876)  
 ---This native does not have an official description.
 ---@param quantity integer
----@return boolean, any
+---@return boolean, any itemData
 function NetGameserverBasketAddItem(quantity) end
 
 ---@deprecated
@@ -97,7 +97,7 @@ NetworkShopBasketAddItem = NetGameserverBasketAddItem
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE1A0450ED46A7812)  
 ---This native does not have an official description.
 ---@param p0 any
----@return boolean, any
+---@return boolean, any p1
 function NetGameserverBasketApplyServerData(p0) end
 
 ---@deprecated
@@ -132,10 +132,10 @@ NetworkShopBasketIsFull = NetGameserverBasketIsFull
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x279F08B1A4B29B7E)  
 ---This native does not have an official description.
----@param categoryHash integer | string
----@param actionHash integer | string
+---@param categoryHash Hash | string
+---@param actionHash Hash | string
 ---@param flags integer
----@return boolean, integer
+---@return boolean, integer transactionId
 function NetGameserverBasketStart(categoryHash, actionHash, flags) end
 
 ---@deprecated
@@ -144,12 +144,12 @@ NetworkShopBasketStart = NetGameserverBasketStart
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3C5FD37B5499582E)  
 ---This native does not have an official description.
----@param categoryHash integer | string
----@param itemHash integer | string
----@param actionTypeHash integer | string
+---@param categoryHash Hash | string
+---@param itemHash Hash | string
+---@param actionTypeHash Hash | string
 ---@param value integer
 ---@param flags integer
----@return boolean, integer
+---@return boolean, integer transactionId
 function NetGameserverBeginService(categoryHash, itemHash, actionTypeHash, value, flags) end
 
 ---@deprecated
@@ -176,7 +176,7 @@ NetworkShopDoesItemExist = NetGameserverCatalogItemExists
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x247F0F73A182EA0B)  
 ---This native does not have an official description.
----@param hash integer | string
+---@param hash Hash | string
 ---@return boolean
 function NetGameserverCatalogItemExistsHash(hash) end
 
@@ -200,7 +200,7 @@ NetworkShopCheckoutStart = NetGameserverCheckoutStart
 ---This native does not have an official description.
 ---@param slot integer
 ---@param transfer boolean
----@param reason integer | string
+---@param reason Hash | string
 ---@return boolean
 function NetGameserverDeleteCharacterSlot(slot, transfer, reason) end
 
@@ -244,7 +244,7 @@ function NetGameserverGetBalance(inventory, playerbalance) end
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xCF38DAFBB49EDE5E)  
 ---This native does not have an official description.
----@return boolean, integer
+---@return boolean, integer state
 function NetGameserverGetCatalogState() end
 
 ---**`NETSHOPPING` `client`**  
@@ -252,8 +252,8 @@ function NetGameserverGetCatalogState() end
 ---```
 ---bool is always true in game scripts  
 ---```
----@param itemHash integer | string
----@param categoryHash integer | string
+---@param itemHash Hash | string
+---@param categoryHash Hash | string
 ---@param p2 boolean
 ---@return integer
 function NetGameserverGetPrice(itemHash, categoryHash, p2) end
@@ -264,7 +264,7 @@ NetworkShopGetPrice = NetGameserverGetPrice
 ---**`NETSHOPPING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x897433D292B44130)  
 ---This native does not have an official description.
----@return boolean, integer, boolean
+---@return boolean, integer p0, boolean p1
 function NetGameserverGetTransactionManagerData() end
 
 ---**`NETSHOPPING` `client`**  

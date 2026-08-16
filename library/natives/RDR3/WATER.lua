@@ -16,7 +16,7 @@ function EnableWaterLookup() end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, number
+---@return boolean, number height
 function GetWaterHeight(x, y, z) end
 
 ---**`WATER` `client`**  
@@ -25,7 +25,7 @@ function GetWaterHeight(x, y, z) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, number
+---@return boolean, number height
 function GetWaterHeightNoWaves(x, y, z) end
 
 ---**`WATER` `client`**  
@@ -44,7 +44,7 @@ function N_0x09a1c7dfdce54fbc(p0) end
 ---**`WATER` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0DCEC6A92E497E17)  
 ---Only used in native_son1 R* Script: p1 = 1
----@param entity integer
+---@param entity Entity
 ---@param p1 integer
 function N_0x0dcec6a92e497e17(entity, p1) end
 
@@ -56,7 +56,7 @@ function N_0xa33f5069b0cb89b8() end
 ---**`WATER` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB34A6009A0DB80B8)  
 ---Used in bounty1, fanale3, sean1 R* Scripts
----@param entity integer
+---@param entity Entity
 function N_0xb34a6009a0db80b8(entity) end
 
 ---**`WATER` `client`**  
@@ -67,7 +67,7 @@ function N_0xe8126623008372aa() end
 ---**`WATER` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF0FBF193F1F5C0EA)  
 ---Only used in fishing_core R* Script
----@param ped integer
+---@param ped Ped
 function N_0xf0fbf193f1f5c0ea(ped) end
 
 ---**`WATER` `client`**  
@@ -118,7 +118,7 @@ function SetWorldWaterType(waterType) end
 ---@param y2 number
 ---@param z2 number
 ---@param flags integer
----@return integer, vector3
+---@return integer, vector3 intersectionPos
 function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flags) end
 
 ---**`WATER` `client`**  
@@ -130,6 +130,6 @@ function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flags) end
 ---@param y number
 ---@param z number
 ---@param flags integer
----@return integer, number
+---@return integer, number waterHeight
 function TestVerticalProbeAgainstAllWater(x, y, z, flags) end
 

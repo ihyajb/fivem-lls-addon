@@ -72,7 +72,7 @@ function MinigamePopNextEvent() end
 ---**`MINIGAME` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6AC6085D8D6C004)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any data
 function MinigameRequestSeatAtTable() end
 
 ---**`MINIGAME` `client`**  

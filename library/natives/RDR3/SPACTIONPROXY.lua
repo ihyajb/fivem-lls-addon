@@ -3,13 +3,13 @@
 ---**`SPACTIONPROXY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F471B79ACC98BEF)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any data
 function SpactionproxyGetNextPendingBuyAction() end
 
 ---**`SPACTIONPROXY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F471B79ACC97BEF)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any data
 function SpactionproxyGetNextPendingCraftingAction() end
 
 ---**`SPACTIONPROXY` `client`**  

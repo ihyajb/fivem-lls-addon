@@ -28,13 +28,13 @@ function AddBloodPool_2(x, y, z, p3, size, p5, permanent, p7, p8) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDFCE8CE9F3EBE93F)  
 ---Creates blood pools for the given ped in some interval for a few seconds.
----@param ped integer
+---@param ped Ped
 function AddBloodPoolsForPed(ped) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC349EE1E6EFA494B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param size number
 ---@param p3 number
@@ -87,14 +87,14 @@ function AddDecal(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p1
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC6F81FCD15350323)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param mask integer
 function AddEntityToEntityMask(entity, mask) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x958DEBD9353C0935)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param mask integer
 ---@param intensity number
 function AddEntityToEntityMaskWithIntensity(entity, mask, intensity) end
@@ -125,7 +125,7 @@ function AddVegModifierSphere(x, y, z, radius, modType, flags, p6) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD3324281E8B9933)  
 ---Adds Vegetation Blocking Zone, Added Snow Flattening veg mod Zone
 ---Returns veg modifier handle
----@param volume integer
+---@param volume Volume
 ---@param p1 integer
 ---@param flags integer
 ---@param p3 integer
@@ -135,7 +135,7 @@ function AddVegModifierZone(volume, p1, flags, p3) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C348310A6E2FB91)  
 ---This native does not have an official description.
----@param pickupObject integer
+---@param pickupObject Object
 ---@param allow boolean
 function AllowPickupLightSync(pickupObject, allow) end
 
@@ -154,7 +154,7 @@ function AnimpostfxClearEffect(effectName) end
 ---MP_Trans_PhotoToScene
 ---InterrogationHit
 ---@param effectName string
----@return integer
+---@return Hash
 function AnimpostfxGetStackhash(effectName) end
 
 ---**`GRAPHICS` `client`**  
@@ -163,16 +163,16 @@ function AnimpostfxGetStackhash(effectName) end
 ---@param effectName string
 ---@param eventType integer
 ---@param peekOnly boolean
----@return boolean, boolean
+---@return boolean, boolean isRegistered
 function AnimpostfxHasEventTriggered(effectName, eventType, peekOnly) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9AB192A9EF980EED)  
 ---This native does not have an official description.
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 ---@param eventType integer
 ---@param peekOnly boolean
----@return boolean, boolean
+---@return boolean, boolean isRegistered
 function AnimpostfxHasEventTriggeredByStackhash(effectNameHash, eventType, peekOnly) end
 
 ---**`GRAPHICS` `client`**  
@@ -185,7 +185,7 @@ function AnimpostfxHasLoaded(effectName) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59EA80079B86D8C7)  
 ---This native does not have an official description.
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 ---@return boolean
 function AnimpostfxIsPreloadingByStackhash(effectNameHash) end
 
@@ -199,7 +199,7 @@ function AnimpostfxIsRunning(effectName) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEEF83A759AE06A27)  
 ---This native does not have an official description.
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 ---@return boolean
 function AnimpostfxIsStackhashPlaying(effectNameHash) end
 
@@ -219,7 +219,7 @@ function AnimpostfxPlay(effectName) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B8D5D4CB8AF58B3)  
 ---This native does not have an official description.
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 function AnimpostfxPlayTag(effectNameHash) end
 
 ---**`GRAPHICS` `client`**  
@@ -238,7 +238,7 @@ function AnimpostfxPreloadPostfx(effectName) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF3E039322BFBD4D8)  
 ---This native does not have an official description.
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 function AnimpostfxPreloadPostfxByStackhash(effectNameHash) end
 
 ---**`GRAPHICS` `client`**  
@@ -289,7 +289,7 @@ function AnimpostfxStopAll() end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEDA5CBECF56E1386)  
 ---This native does not have an official description.
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 function AnimpostfxStopStackhashPostfx(effectNameHash) end
 
 ---**`GRAPHICS` `client`**  
@@ -301,7 +301,7 @@ function AnimpostfxStopTag(effectName) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x40866A418EB8EFDE)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function AttachTvAudioToEntity(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -320,14 +320,14 @@ function BeginTakeHighQualityPhoto() end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x50C14328119E1DD1)  
 ---This native does not have an official description.
----@param pickupObject integer
+---@param pickupObject Object
 ---@param toggle boolean
 function BlockPickupObjectLight(pickupObject, toggle) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0552AA3FFC5B87AA)  
 ---This native does not have an official description.
----@param pickup integer
+---@param pickup Pickup
 ---@param toggle boolean
 function BlockPickupPlacementLight(pickup, toggle) end
 
@@ -404,7 +404,7 @@ function ClearTimecycleModifier() end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x175668836B44CBB0)  
 ---This native does not have an official description.
----@param typeHash integer | string
+---@param typeHash Hash | string
 ---@param posX1 number
 ---@param posY1 number
 ---@param posZ1 number
@@ -470,7 +470,7 @@ function DisableHdtexThisFrame() end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDD0BC0EDCB2162F6)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function DisableStaticVegModifier(p0) end
 
 ---**`GRAPHICS` `client`**  
@@ -511,7 +511,7 @@ function DrawLowQualityPhotoToPhone(p0, photoRotation) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A32FAA57B937173)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/graphics/markers/marker_types.lua
 ---Old name: _DRAW_MARKER
----@param type integer | string
+---@param type Hash | string
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -635,7 +635,7 @@ function EnableMovieSubtitles(toggle) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDFEA23EC90113657)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function EnableStaticVegModifier(p0) end
 
 ---**`GRAPHICS` `client`**  
@@ -665,7 +665,7 @@ function FreeMemoryForMissionCreatorPhoto() end
 ---_GENERATE_SWATCH_TEXTURE(0, hash, 0, true)
 ---metapedType: see 0xEC9A1261BF0CE510
 ---@param slotId integer
----@param componentHash integer | string
+---@param componentHash Hash | string
 ---@param metapedType integer
 ---@param p3 boolean
 function GenerateSwatchTexture(slotId, componentHash, metapedType, p3) end
@@ -686,8 +686,8 @@ function GetCurrentNumberOfLocalPhotos() end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE8A8378BF651079C)  
 ---This native does not have an official description.
----@param entity integer
----@return boolean, number, number, number, number
+---@param entity Entity
+---@return boolean, number layer0, number layer1, number layer2, number layer3
 function GetEntityMaskLayers(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -727,13 +727,13 @@ function GetProxyInteriorIndex(interiorId) end
 ---@param worldX number
 ---@param worldY number
 ---@param worldZ number
----@return boolean, number, number
+---@return boolean, number screenX, number screenY
 function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66773C92835D0909)  
 ---Hardcoded to always set x to 1280 and y to 720.
----@return integer, integer
+---@return integer x, integer y
 function GetScreenResolution() end
 
 ---**`GRAPHICS` `client`**  
@@ -819,15 +819,15 @@ function IsProxyInteriorIndexArtificialLightsEnabled(proxyInteriorIndex) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE9BAD3292AA6D5E)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return boolean
 function IsStaticVegModifierEnabled(p0) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA2A51869BDED733B)  
 ---This native does not have an official description.
----@param txdHash integer | string
----@param dict integer | string
+---@param txdHash Hash | string
+---@param dict Hash | string
 ---@return boolean
 function IsTextureInDict(txdHash, dict) end
 
@@ -848,7 +848,7 @@ function IsTrackedPointVisible(point) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4D562223E0EB65F3)  
 ---Old name: _IS_TV_PLAYLIST_ITEM_PLAYING
----@param videoCliphash integer | string
+---@param videoCliphash Hash | string
 ---@return boolean
 function IsTvshowCurrentlyPlaying(videoCliphash) end
 
@@ -858,7 +858,7 @@ function IsTvshowCurrentlyPlaying(videoCliphash) end
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
----@return boolean, any
+---@return boolean, any p0
 function LoadMissionCreatorPhoto(p1, p2, p3) end
 
 ---**`GRAPHICS` `client`**  
@@ -934,7 +934,7 @@ function N_0x32de2bffda43e62a() end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x38D9D50F2085E9B3)  
 ---ANIMPOSTFX_*
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 function N_0x38d9d50f2085e9b3(effectNameHash) end
 
 ---**`GRAPHICS` `client`**  
@@ -996,7 +996,7 @@ function N_0x4bd66b4e3427689b(p0) end
 ---p1: AMB_ANN_COAL_CHUTE_DIVE, AMB_ANN_COAL_CHUTE
 ---p2: EMIT
 ---p3: either 0.0f or 1.0f
----@param entity integer
+---@param entity Entity
 ---@param p1 string
 ---@param p2 string
 ---@param p3 number
@@ -1042,7 +1042,7 @@ function N_0x6c03118e9e5c1a14(p0) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x71845905BCCDE781)  
 ---ANIMPOSTFX_*
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 function N_0x71845905bccde781(effectNameHash) end
 
 ---**`GRAPHICS` `client`**  
@@ -1160,7 +1160,7 @@ function N_0xb958d97a0dfaa0c2(effectName) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC06F2F45A73EABCD)  
 ---Used in NET_CAMP_SPIRIT_ANIMAL_CLEAR_ANIMAL_VISIBILITY
----@param entity integer
+---@param entity Entity
 function N_0xc06f2f45a73eabcd(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -1187,7 +1187,7 @@ function N_0xc489fe31ac726512(p0, p1) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC76FC4C2FC5F4405)  
 ---ANIMPOSTFX_*
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 function N_0xc76fc4c2fc5f4405(effectNameHash) end
 
 ---**`GRAPHICS` `client`**  
@@ -1237,7 +1237,7 @@ function N_0xe63d68f455ca0b47(p0, p1, p2, p3, p4, p5, p6) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE75CDDEBF618C8FF)  
 ---ANIMPOSTFX_*
----@param effectNameHash integer | string
+---@param effectNameHash Hash | string
 ---@return boolean
 function N_0xe75cddebf618c8ff(effectNameHash) end
 
@@ -1319,7 +1319,7 @@ function PedshotFinishCleanupData() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD9C24F53631F2372)  
 ---This native does not have an official description.
 ---@param texture string
----@param ped integer
+---@param ped Ped
 ---@param playerSlot integer
 ---@return boolean
 function PedshotGeneratePersonaPhoto(texture, ped, playerSlot) end
@@ -1361,7 +1361,7 @@ function RemoveDecal(decal) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFB8972BAE0013140)  
 ---This native does not have an official description.
----@param obj integer
+---@param obj Object
 function RemoveDecalsFromObject(obj) end
 
 ---**`GRAPHICS` `client`**  
@@ -1376,7 +1376,7 @@ function RemoveDecalsInRange(x, y, z, range) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56A786E87FF53478)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function RemoveEntityFromEntityMask(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -1400,7 +1400,7 @@ function RemoveParticleFx(ptfxHandle, p1) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x92884B4A49D81325)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function RemoveParticleFxFromEntity(entity) end
 
 ---**`GRAPHICS` `client`**  
@@ -1531,15 +1531,15 @@ function SetEntityAura(p0, p1, p2) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE92012611461A42A)  
 ---This native does not have an official description.
----@param entity integer
----@return number, number, number, number
+---@param entity Entity
+---@return number layer0, number layer1, number layer2, number layer3
 function SetEntityMaskLayers(entity) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC38B4952B728397A)  
 ---Only used in guama1 R* SP Script while spawning the ship
 ---_SET_ENTITY_QUATERNION_* - SET_ENTITY_RENDER_*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetEntityRenderGuarmaShip(vehicle, toggle) end
 
@@ -1568,7 +1568,7 @@ function SetHidofOverride(p0, p1, p2, p3, p4, p5) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6EC2A67962296F49)  
 ---https://gfycat.com/meagerfaireyra
----@param entity integer
+---@param entity Entity
 ---@param red integer
 ---@param green integer
 ---@param blue integer
@@ -1577,14 +1577,14 @@ function SetLightsColorForEntity(entity, red, green, blue) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x07C0F87AAC57F2E4)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param intensity number
 function SetLightsIntensityForEntity(entity, intensity) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB72C67163DC4DB4)  
 ---type must be less than or equal to 20
----@param entity integer
+---@param entity Entity
 ---@param type integer
 function SetLightsTypeForEntity(entity, type) end
 
@@ -1598,7 +1598,7 @@ function SetMaskOverlay(overlay) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C61B52B00848C26)  
 ---Related to Campfires.
 ---p1: AMB_BONFIRE_MP, AMB_CAMPFIRE_LRG_MP
----@param entity integer
+---@param entity Entity
 ---@param p1 string
 ---@param r number
 ---@param g number
@@ -1714,7 +1714,7 @@ function SetParticleFxOverride(oldAsset, newAsset) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x72E30372E7CC4415)  
 ---Enables/disables a kind of 'shiny' effect on metals.
----@param object integer
+---@param object Object
 ---@param toggle boolean
 function SetPearlescentFxEnabled(object, toggle) end
 
@@ -1753,14 +1753,14 @@ function SetPhotoStudioStat(p0) end
 ---https://imgur.com/a/I2swSDJ
 ---
 ---Old name: _SET_PICKUP_OBJECT_GLOW_ENABLED
----@param object integer
+---@param object Object
 ---@param toggle boolean
 function SetPickupLight(object, toggle) end
 
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75D568607909333E)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function SetPlayerAppearInPhoto(player) end
 
 ---**`GRAPHICS` `client`**  
@@ -1883,7 +1883,7 @@ function SetTvVolume(volume) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8F90AB32E1944BDE)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -1901,7 +1901,7 @@ function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOf
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C56621462FFE7A6)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -1937,7 +1937,7 @@ function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, 
 ---[Native Documentation](https://rdr3natives.com/?native=0xE6CFE43937061143)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -1973,7 +1973,7 @@ function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, sca
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD41E1440CE39800)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -1991,7 +1991,7 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 ---[Native Documentation](https://rdr3natives.com/?native=0xD3BA6EC7F2FBD5E9)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -2010,7 +2010,7 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 ---[Native Documentation](https://rdr3natives.com/?native=0xE689C1B1432BB8AF)  
 ---This native does not have an official description.
 ---@param effectName string
----@param ped integer
+---@param ped Ped
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -2046,7 +2046,7 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF4C64C513388C12)  
 ---This native does not have an official description.
 ---@param effectName string
----@param entity integer
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -2064,7 +2064,7 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FAA72BD940C3AC0)  
 ---This native does not have an official description.
 ---@param effectName string
----@param ped integer
+---@param ped Ped
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -2083,7 +2083,7 @@ function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, of
 ---[Native Documentation](https://rdr3natives.com/?native=0xC695870B8A149B96)  
 ---This native does not have an official description.
 ---@param effectName string
----@param ped integer
+---@param ped Ped
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -2121,7 +2121,7 @@ function TogglePausedRenderphases(toggle) end
 ---**`GRAPHICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBDBACB52A03CC760)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function UpdateLightsOnEntity(entity) end
 
 ---**`GRAPHICS` `client`**  

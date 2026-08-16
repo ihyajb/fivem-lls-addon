@@ -6,6 +6,6 @@
 ---however it is being used in tty scripts: [NET_BAD_SPORT_REPORT_PLAYER] Detected bad sport behavior from Player
 ---badSportBehavior: BS_QUITTER = 0, BS_VEHICLE_DESTRUCTION = 1, BS_VOTED_OUT = 2
 ---@param badSportBehaviorType integer
----@return any
+---@return any gamerHandle
 function ReportPlayerBadSportBehavior(badSportBehaviorType) end
 

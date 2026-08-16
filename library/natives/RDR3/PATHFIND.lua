@@ -18,7 +18,7 @@ function AddNavmeshBlockingObject(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x19C7567D2F2287D6)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param flags integer
 ---@return boolean
 function AddNavmeshBlockingVolume(volume, flags) end
@@ -51,7 +51,7 @@ function DoesNavmeshBlockingObjectExist(p0) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE0EA444735C1368)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return boolean
 function DoesNavmeshBlockingVolumeExist(volume) end
 
@@ -72,7 +72,7 @@ function GetApproxFloorForPoint(x, y) end
 ---@param p3 number
 ---@param p4 integer
 ---@param p10 boolean
----@return any, vector3, vector3, any, any, number
+---@return any, vector3 p5, vector3 p6, any p7, any p8, number p9
 function GetClosestRoad(x, y, z, p3, p4, p10) end
 
 ---**`PATHFIND` `client`**  
@@ -84,7 +84,7 @@ function GetClosestRoad(x, y, z, p3, p4, p10) end
 ---@param nodeType integer
 ---@param p5 number
 ---@param p6 number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetClosestVehicleNode(x, y, z, nodeType, p5, p6) end
 
 ---**`PATHFIND` `client`**  
@@ -96,7 +96,7 @@ function GetClosestVehicleNode(x, y, z, nodeType, p5, p6) end
 ---@param nodeType integer
 ---@param p6 number
 ---@param p7 number
----@return boolean, vector3, number
+---@return boolean, vector3 outPosition, number outHeading
 function GetClosestVehicleNodeWithHeading(x, y, z, nodeType, p6, p7) end
 
 ---**`PATHFIND` `client`**  
@@ -121,7 +121,7 @@ function GetGpsBlipRouteLength() end
 ---@param unknown1 integer
 ---@param unknown2 number
 ---@param unknown3 any
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetNthClosestVehicleNode(x, y, z, nthClosest, unknown1, unknown2, unknown3) end
 
 ---**`PATHFIND` `client`**  
@@ -137,7 +137,7 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, unknown1, unknown2, unkno
 ---@param nodetype integer
 ---@param p10 any
 ---@param p11 any
----@return boolean, vector3, number
+---@return boolean, vector3 outPosition, number outHeading
 function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, desiredZ, nthClosest, nodetype, p10, p11) end
 
 ---**`PATHFIND` `client`**  
@@ -163,7 +163,7 @@ function GetNthClosestVehicleNodeId(x, y, z, nth, nodetype, p5, p6) end
 ---@param nodeFlags integer
 ---@param zMeasureMult number
 ---@param zTolerance number
----@return integer, number, integer
+---@return integer, number returnHeading, integer returnNumLanes
 function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, zMeasureMult, zTolerance) end
 
 ---**`PATHFIND` `client`**  
@@ -176,7 +176,7 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, nodeFlags, z
 ---@param unknown2 integer
 ---@param unknown3 number
 ---@param unknown4 number
----@return boolean, vector3, number, any
+---@return boolean, vector3 outPosition, number heading, any unknown1
 function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, unknown2, unknown3, unknown4) end
 
 ---**`PATHFIND` `client`**  
@@ -201,7 +201,7 @@ function GetNumNavmeshesExistingInArea(p0, p1, p2, p3, p4, p5) end
 ---@param minLanes integer
 ---@param avoidDeadEnds boolean
 ---@param avoidHighways boolean
----@return boolean, vector3, integer
+---@return boolean, vector3 outPosition, integer nodeId
 function GetRandomVehicleNode(x, y, z, radius, minLanes, avoidDeadEnds, avoidHighways) end
 
 ---**`PATHFIND` `client`**  
@@ -212,7 +212,7 @@ function GetRandomVehicleNode(x, y, z, radius, minLanes, avoidDeadEnds, avoidHig
 ---@param z number
 ---@param onGround boolean
 ---@param flags integer
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function GetSafeCoordForPed(x, y, z, onGround, flags) end
 
 ---**`PATHFIND` `client`**  
@@ -222,7 +222,7 @@ function GetSafeCoordForPed(x, y, z, onGround, flags) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return vector3, number
+---@return vector3 outCoords, number heading
 function GetSpawnDataForRoadNode(nodeId, x, y, z) end
 
 ---**`PATHFIND` `client`**  
@@ -236,7 +236,7 @@ function GetVehicleNodeIsSwitchedOff(nodeID) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E8D72FF24DEE1FB)  
 ---This native does not have an official description.
 ---@param nodeId integer
----@return vector3
+---@return vector3 outPosition
 function GetVehicleNodePosition(nodeId) end
 
 ---**`PATHFIND` `client`**  
@@ -257,7 +257,7 @@ function IsNavmeshLoadedInArea(x1, y1, z1, x2, y2, z2) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsPointOnRoad(x, y, z, vehicle) end
 
@@ -436,7 +436,7 @@ function N_0xefc535c9faf563b3(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2A2177AC848B3A8)  
 ---GPS disabled zone: p1 = 0
 ---Clearing GPS disabled zone: p1 = 1
----@param volume integer
+---@param volume Volume
 ---@param p1 integer
 ---@param p2 integer
 function N_0xf2a2177ac848b3a8(volume, p1, p2) end
@@ -451,7 +451,7 @@ function NavmeshActivateSwap(name) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x44026E3DB3CED602)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param navMeshName string
 ---@return boolean
 function NavmeshAssignNavmeshToVehicle(vehicle, navMeshName) end
@@ -535,7 +535,7 @@ function NavmeshRequestedQueryStatus(path) end
 ---Starts a nav mesh query for a path between coordinates with a given ped and returns a handle to be validated by _NAVMESH_REQUESTED_QUERY_STATUS and then _NAVMESH_REQUESTED_PATH_WAYPOINTS_FOUND
 ---
 ---Only bit flag values used in scripts are 0, 23, and 29. 23 is used with dogs and horses. 29 with legendary animals.
----@param ped integer
+---@param ped Ped
 ---@param x1 number
 ---@param y1 number
 ---@param z1 number
@@ -555,7 +555,7 @@ function RemoveNavmeshBlockingObject(p0) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2C87C3E1C7B96EE2)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 function RemoveNavmeshBlockingVolume(volume) end
 
 ---**`PATHFIND` `client`**  
@@ -571,7 +571,7 @@ function RequestPathNodesInAreaThisFrame(x1, y1, x2, y2) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD17672447692478E)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 boolean
 function ResetRoadsInVolume(volume, p1) end
 
@@ -672,7 +672,7 @@ function SetRoadsInArea(xMin, yMin, zMin, xMax, yMax, zMax, p6, p7, p8) end
 ---**`PATHFIND` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC1799FAFD2FDF52B)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 boolean
 ---@param p2 boolean
 ---@param p3 boolean

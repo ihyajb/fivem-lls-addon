@@ -3,7 +3,7 @@
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5BA652A0CD14DF2F)  
 ---Same as SET_PED_ARMOUR, but ADDS 'amount' to the armor the Ped already has.
----@param ped integer
+---@param ped Ped
 ---@param amount integer
 function AddArmourToPed(ped, amount) end
 
@@ -30,15 +30,15 @@ function AddFormationLocation(groupId, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE9B168527B337BF0)  
 ---This native does not have an official description.
----@param ped integer
----@param volume integer
+---@param ped Ped
+---@param volume Volume
 ---@return boolean
 function AddPedStayOutVolume(ped, volume) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE37287EE358939C3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function AddPedSubscribeToLegendaryBlips(ped) end
 
@@ -46,7 +46,7 @@ function AddPedSubscribeToLegendaryBlips(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF372BC22FCB88606)  
 ---The hash of the created relationship group is output in the second parameter.
 ---@param name string
----@param groupHash integer | string
+---@param groupHash Hash | string
 ---@return boolean
 function AddRelationshipGroup(name, groupHash) end
 
@@ -67,7 +67,7 @@ function AddScenarioBlockingArea(x1, y1, z1, x2, y2, z2, p6, blockingFlags) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C39C95AE5DB1329)  
 ---flag: see ADD_SCENARIO_BLOCKING_AREA
----@param volume integer
+---@param volume Volume
 ---@param p1 boolean
 ---@param flag integer
 ---@return any
@@ -76,7 +76,7 @@ function AddScenarioBlockingVolume(volume, p1, flag) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D07B371E9439019)  
 ---Forces transition now, called together with 0xD65FDC686A031C83
----@param ped integer
+---@param ped Ped
 function AddScenarioTransition(ped) end
 
 ---**`PED` `client`**  
@@ -87,9 +87,9 @@ function AddScenarioTransition(ped) end
 ---albedoHash: a hash of overlay's albedo texture
 ---colorType: a color type(from 0 to 2). 0 is used for overlays with RGB colors usually.
 ---@param textureId integer
----@param albedoHash integer | string
----@param normalHash integer | string
----@param materialHash integer | string
+---@param albedoHash Hash | string
+---@param normalHash Hash | string
+---@param materialHash Hash | string
 ---@param blendType integer
 ---@param texAlpha number
 ---@param sheetGridIndex integer
@@ -99,7 +99,7 @@ function AddTextureLayer(textureId, albedoHash, normalHash, materialHash, blendT
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F8215D0E446F593)  
 ---Apply cold intensity to ped from 0.0 to 1.0
----@param ped integer
+---@param ped Ped
 ---@param intensity number
 ---@param p2 integer
 function ApplyColdToPed(ped, intensity, p2) end
@@ -107,17 +107,17 @@ function ApplyColdToPed(ped, intensity, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x697157CED63F18D4)  
 ---damages a ped with the given amount
----@param ped integer
+---@param ped Ped
 ---@param damageAmount integer
 ---@param damageArmour boolean
 ---@param boneId integer
----@param pedKiller integer
+---@param pedKiller Ped
 function ApplyDamageToPed(ped, damageAmount, damageArmour, boneId, pedKiller) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF0D582CBF2D9B0F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 ---@param p2 number
 ---@param p3 number
@@ -125,13 +125,13 @@ function ApplyDamageToPed(ped, damageAmount, damageArmour, boneId, pedKiller) en
 ---@param p5 number
 ---@param p6 any
 ---@param p7 number
----@return any
+---@return any p8
 function ApplyPedBloodSpecific(ped, p1, p2, p3, p4, p5, p6, p7) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x46DF918788CB093F)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/peds_customization/ped_decals.lua
----@param ped integer
+---@param ped Ped
 ---@param damagePack string
 ---@param damage number
 ---@param mult number
@@ -140,7 +140,7 @@ function ApplyPedDamagePack(ped, damagePack, damage, mult) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58D32261AE0F0843)  
 ---seems to only work with PD_Vomit ? 
----@param ped integer
+---@param ped Ped
 ---@param boneId integer
 ---@param xOffset number
 ---@param yOffset number
@@ -155,7 +155,7 @@ function ApplyPedDamagePackToBone(ped, boneId, xOffset, yOffset, zOffset, xRot, 
 ---[Native Documentation](https://rdr3natives.com/?native=0x74F512E29CB717E2)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/clothes/metaped_outfits.lua
 ---@param requestId integer
----@param ped integer
+---@param ped Ped
 ---@param p2 boolean
 ---@param p3 boolean
 ---@return boolean
@@ -164,8 +164,8 @@ function ApplyPedMetaPedOutfit(requestId, ped, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD3A7B003ED343FD9)  
 ---This native does not have an official description.
----@param ped integer
----@param componentHash integer | string
+---@param ped Ped
+---@param componentHash Hash | string
 ---@param immediately boolean
 ---@param isMp boolean
 ---@param p4 boolean
@@ -174,8 +174,8 @@ function ApplyShopItemToPed(ped, componentHash, immediately, isMp, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0B46E25761519058)  
 ---This native does not have an official description.
----@param ped integer
----@param componentHash integer | string
+---@param ped Ped
+---@param componentHash Hash | string
 ---@param textureId integer
 function ApplyTextureOnPed(ped, componentHash, textureId) end
 
@@ -188,8 +188,8 @@ function AreAllAmbientPedReservationsReady() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C00CFC48A782DC0)  
 ---This native does not have an official description.
----@param volume integer
----@param entity integer
+---@param volume Volume
+---@param entity Entity
 ---@param offsetX number
 ---@param offsetY number
 ---@param offsetZ number
@@ -203,14 +203,14 @@ function AttachVolumeToEntity(volume, entity, offsetX, offsetY, offsetZ, rotX, r
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x51AC07A44D4F5B8A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function CanKnockPedOffVehicle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2D64376CF437363E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function CanPedBeMounted(ped) end
 
@@ -219,8 +219,8 @@ function CanPedBeMounted(ped) end
 ---Returns true if `listener` can hear `source`.
 ---If `includeNoiseBoost` is true, the source's noise radius is applied (easier to hear).
 ---It treats the source as louder—its current noise expands the effective hearing range (by subtracting noiseRadius² from dist²), while false uses the baseline distance-only check (stealth).
----@param source integer
----@param listener integer
+---@param source Ped
+---@param listener Ped
 ---@param includeNoiseBoost boolean
 ---@return number
 function CanPedHearTargetPed(source, listener, includeNoiseBoost) end
@@ -228,15 +228,15 @@ function CanPedHearTargetPed(source, listener, includeNoiseBoost) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEAD42DE3610D0721)  
 ---This native does not have an official description.
----@param ped integer
----@param target integer
+---@param ped Ped
+---@param target Ped
 ---@return boolean
 function CanPedInCombatSeeTarget(ped, target) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x128F79EDCECE4FD5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function CanPedRagdoll(ped) end
 
@@ -246,8 +246,8 @@ function CanPedRagdoll(ped) end
 ---0 - CTR_CANNOT_TARGET
 ---1 - CTR_CAN_TARGET
 ---2 - CTR_NOT_SURE_YET
----@param ped integer
----@param targetEntity integer
+---@param ped Ped
+---@param targetEntity Entity
 ---@param p2 boolean
 ---@param doFoliageCheck boolean
 ---@return integer
@@ -256,8 +256,8 @@ function CanPedSeeEntity(ped, targetEntity, p2, doFoliageCheck) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D9473CB82D83A30)  
 ---This native does not have an official description.
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 ---@param p2 boolean
 ---@return integer
 function CanPedSeePedCached(ped, targetPed, p2) end
@@ -265,7 +265,7 @@ function CanPedSeePedCached(ped, targetPed, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB643407D0B26F07)  
 ---p2 is always 0, p3 is always 0, p4 is always 1
----@param ped integer
+---@param ped Ped
 ---@param scenario integer
 ---@param p2 any
 ---@param p3 any
@@ -276,7 +276,7 @@ function CanPedUseScenarioPoint(ped, scenario, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3D4B754C0E86B9E)  
 ---Alters entity's stamina by 'amount'. Can be negative (to drain stamina). float amount: -1000.0 - 1000.0
----@param ped integer
+---@param ped Ped
 ---@param amount number
 ---@return boolean
 function ChangePedStamina(ped, amount) end
@@ -285,61 +285,61 @@ function ChangePedStamina(ped, amount) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBCC76708E5677E1D)  
 ---Used in Script Functions PLAYER_HORSE_RELEASE_HORSE_TO_AMBIENT_WORLD (p1 = true), HORSE_SETUP_PLAYER_HORSE_ATTRIBUTES (p1 = false)
 ---Set to false for player horse in scripts and seems it's only true when releasing/changing a player horse? Cannot determine what effect it has, but it doesn't seem to affect _GET_HORSE_TAMING_STATE
----@param horse integer
+---@param horse Ped
 ---@param clear boolean
 function ClearActiveAnimalOwner(horse, clear) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x726256CC1EEB182F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ClearFacialIdleAnimOverride(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x949B2F9ED2917F5D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param actionDisableFlag integer
 function ClearPedActionDisableFlag(ped, actionDisableFlag) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8FE22675A5A45817)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ClearPedBloodDamage(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56E3B78C5408D9F4)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function ClearPedBloodDamageByZone(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7F5D88333EE8A86F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function ClearPedBloodDamageFacial(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x78815FC52832B690)  
 ---Params: p1 = 1 in R* Scripts
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function ClearPedCombatStyle(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1FA132CBCD7CB239)  
 ---_CLEAR_PED_COMBAT_*
----@param ped integer
----@param combatStyleModHash integer | string
+---@param ped Ped
+---@param combatStyleModHash Hash | string
 function ClearPedCombatStyleMod(ped, combatStyleModHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x523C79AEEFCC4A2A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 string
 function ClearPedDamageDecalByZone(ped, p1, p2) end
@@ -347,38 +347,38 @@ function ClearPedDamageDecalByZone(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E5173C163976E38)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ClearPedDecorations(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4FD80C3DD84B817B)  
 ---Clears locomotion archetype
----@param ped integer
+---@param ped Ped
 function ClearPedDesiredLocoForModel(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58F7DB5BD8FA2288)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ClearPedDesiredLocoMotionType(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6585D955A68452A5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ClearPedEnvDirt(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEAE3B5B019C8D23F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param flag integer
 function ClearPedGrappleFlag(ped, flag) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8EF6B7AC68E2F01B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ClearPedLastDamageBone(ped) end
 
 ---**`PED` `client`**  
@@ -389,7 +389,7 @@ function ClearPedNonCreationArea() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBBF6D1D07C02D00A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param actionDisableFlag integer
 function ClearPedTargetActionDisableFlag(ped, actionDisableFlag) end
 
@@ -403,20 +403,20 @@ function ClearPedTexture(textureId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C720776DAA43E7E)  
 ---It clears the wetness of the selected Ped/Player. Clothes have to be wet to notice the difference.
----@param ped integer
+---@param ped Ped
 function ClearPedWetness(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x627F7F3A0C4C51FF)  
 ---This native does not have an official description.
----@param horse integer
+---@param horse Ped
 ---@param peltId integer
 function ClearPeltFromHorse(horse, peltId) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD86D101FCFD00A4B)  
 ---flags: see SET_RAGDOLL_BLOCKING_FLAGS
----@param ped integer
+---@param ped Ped
 ---@param flags integer
 function ClearRagdollBlockingFlags(ped, flags) end
 
@@ -424,33 +424,33 @@ function ClearRagdollBlockingFlags(ped, flags) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5E29243FB56FC6D4)  
 ---This native does not have an official description.
 ---@param relationship integer
----@param group1 integer | string
----@param group2 integer | string
+---@param group1 Hash | string
+---@param group2 Hash | string
 function ClearRelationshipBetweenGroups(relationship, group1, group2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF29A16337FACADB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param isNetwork boolean
 ---@param bScriptHostPed boolean
 ---@param copyHeadBlendFlag boolean
----@return integer
+---@return Ped
 function ClonePed(ped, isNetwork, bScriptHostPed, copyHeadBlendFlag) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE952D6431689AD9A)  
 ---Copies ped's components and props to targetPed.
 ---Can be used to clear anything from a ped by cloning it, including bullet holes.
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 function ClonePedToTarget(ped, targetPed) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x46BF2A810679D6E6)  
 ---Returns vehicle (desired) speed
 ---_COMPUTE_(VEHICLE_SPEED_USING_BLEND_RATIO?)*
----@param ped integer
+---@param ped Ped
 ---@param maxMoveBlendRatio number
 ---@return number
 function ComputePedMoveBlendRatioForMaxSpeed(ped, maxMoveBlendRatio) end
@@ -459,17 +459,17 @@ function ComputePedMoveBlendRatioForMaxSpeed(ped, maxMoveBlendRatio) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B89FAA36FC909A3)  
 ---Related to dead animals items/loots
 ---Notice: skinningQuality is partially calculated using pedQuality
----@param ped integer
+---@param ped Ped
 ---@param damageCleanliness integer
 ---@param skinningQuality integer
----@return integer, any
+---@return integer, any outInventoryItemArray
 function ComputeSatchelItemForPedCarcass(ped, damageCleanliness, skinningQuality) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E7738B291706746)  
 ---This native does not have an official description.
 ---@param p0 any
----@param pedAttached integer
+---@param pedAttached Ped
 ---@param damageCleanliness integer
 ---@return boolean
 function ComputeSatchelItemForPedDamage(p0, pedAttached, damageCleanliness) end
@@ -477,7 +477,7 @@ function ComputeSatchelItemForPedDamage(p0, pedAttached, damageCleanliness) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCA95924C893A0C91)  
 ---Returns vehicle speed
----@param ped integer
+---@param ped Ped
 ---@param speed number
 ---@return number
 function ComputeSpeedForPedMoveBlendRatio(ped, speed) end
@@ -488,18 +488,18 @@ function ComputeSpeedForPedMoveBlendRatio(ped, speed) end
 ---counts how many peds that the ADD_SHOCKING_EVENT_FOR_ENTITY were add to based on position and radius, p0 is handleId from ADD_SHOCKING_EVENT_FOR_ENTITY
 ---p3 is a collection of entities where max is 15 (in source code), its using itemSet to get them from a volume
 ---this count seems to be used to add a task reactions etc to these peds
----@param shockingEvent integer
+---@param shockingEvent ScrHandle
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param radius number
----@return integer, integer
+---@return integer, integer entities
 function CountPedsAwareOfEvent(shockingEvent, x, y, z, radius) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5407B7288D0478B7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param flag integer
 ---@return integer
 function CountPedsInCombatWithTarget(ped, flag) end
@@ -507,7 +507,7 @@ function CountPedsInCombatWithTarget(ped, flag) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x336B3D200AB007CB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -560,7 +560,7 @@ function CreateGroup(taskAllocator) end
 ---@param p7 boolean
 ---@param p8 boolean
 ---@param p9 boolean
----@return integer
+---@return Ped
 function CreateMetaPed(requestId, x, y, z, heading, p5, p6, p7, p8, p9) end
 
 ---**`PED` `client`**  
@@ -568,7 +568,7 @@ function CreateMetaPed(requestId, x, y, z, heading, p5, p6, p7, p8, p9) end
 ---Creates prop from metaped asset bundle
 ---https://github.com/femga/rdr3_discoveries/blob/master/objects/metaped_asset_bundles_list.lua
 ---Creates a pickup-able metaped component. asset doesn't seems to be related to component hashes. Hash example : 0xD20354AB (https ://i.imgur.com/dzHkcDb.png)
----@param asset integer | string
+---@param asset Hash | string
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -578,7 +578,7 @@ function CreateMetaPed(requestId, x, y, z, heading, p5, p6, p7, p8, p9) end
 ---@param p7 boolean
 ---@param p8 boolean
 ---@param p9 boolean
----@return integer
+---@return Entity
 function CreateMetaPedAsset(asset, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p9) end
 
 ---**`PED` `client`**  
@@ -593,13 +593,13 @@ function CreateMetaPedAsset(asset, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p
 ---@param p6 boolean
 ---@param p7 boolean
 ---@param p8 boolean
----@return integer
+---@return Ped
 function CreateMetaPedOutfitPed(requestId, x, y, z, heading, p5, p6, p7, p8) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD49F9B0955C367DE)  
 ---This native does not have an official description.
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -608,7 +608,7 @@ function CreateMetaPedOutfitPed(requestId, x, y, z, heading, p5, p6, p7, p8) end
 ---@param bScriptHostPed boolean
 ---@param p7 boolean
 ---@param p8 boolean
----@return integer
+---@return Ped
 function CreatePed(modelHash, x, y, z, heading, isNetwork, bScriptHostPed, p7, p8) end
 
 ---**`PED` `client`**  
@@ -629,38 +629,38 @@ function CreatePed(modelHash, x, y, z, heading, isNetwork, bScriptHostPed, p7, p
 ---	VS_EXTRA_RIGHT_3,
 ---	VS_NUM_SEATS
 ---};
----@param vehicle integer
----@param modelHash integer | string
+---@param vehicle Vehicle
+---@param modelHash Hash | string
 ---@param seatIndex integer
 ---@param p3 boolean
 ---@param p4 boolean
 ---@param p5 boolean
----@return integer
+---@return Ped
 function CreatePedInsideVehicle(vehicle, modelHash, seatIndex, p3, p4, p5) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF89AA2BD01FC06B7)  
 ---This native does not have an official description.
----@param mount integer
----@param modelHash integer | string
+---@param mount Ped
+---@param modelHash Hash | string
 ---@param index integer
 ---@param p3 boolean
 ---@param p4 boolean
 ---@param p5 boolean
 ---@param p6 boolean
----@return integer
+---@return Ped
 function CreatePedOnMount(mount, modelHash, index, p3, p4, p5, p6) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCC0EF140F99365C5)  
 ---Deletes the specified ped, then sets the handle pointed to by the pointer to NULL.
----@param ped integer
+---@param ped Ped
 function DeletePed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xED00D72F81CF7278)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param p2 boolean
 function DetachCarriableEntity(entity, p1, p2) end
@@ -668,14 +668,14 @@ function DetachCarriableEntity(entity, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x19C975B81BE53C28)  
 ---This native does not have an official description.
----@param volume integer
----@param entity integer
+---@param volume Volume
+---@param entity Entity
 function DetachVolumeFromEntity(volume, entity) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE1965A380342BE1F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function DisableAllLookAtRequests(ped, p1) end
 
@@ -689,7 +689,7 @@ function DisableAmbientLookAtRequests(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x733C87D4CE22BEA2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function DisablePedInjuredOnGroundBehaviour(ped) end
 
 ---**`PED` `client`**  
@@ -702,17 +702,17 @@ function DoesGroupExist(groupId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC0E880B7A441164D)  
 ---This native does not have an official description.
----@param outfit integer | string
----@param model integer | string
+---@param outfit Hash | string
+---@param model Hash | string
 ---@return boolean
 function DoesMetaPedOutfitExistForPedModel(outfit, model) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4FF3C2B4E6A196C1)  
 ---This native does not have an official description.
----@param outfit integer | string
----@param suboutfit integer | string
----@param model integer | string
+---@param outfit Hash | string
+---@param suboutfit Hash | string
+---@param model Hash | string
 ---@return boolean
 function DoesMetaPedSuboutfitExistForPedModel(outfit, suboutfit, model) end
 
@@ -753,8 +753,8 @@ function DoesMetaPedSuboutfitExistForPedModel(outfit, suboutfit, model) end
 ---https://github.com/femga/rdr3_discoveries/blob/master/peds_customization/ped_outfits.lua
 ---
 ---Alt name: _EQUIP_META_PED_OUTFIT_COMPONENT
----@param ped integer
----@param hash integer | string
+---@param ped Ped
+---@param hash Hash | string
 function EquipMetaPedOutfit(ped, hash) end
 
 ---**`PED` `client`**  
@@ -764,7 +764,7 @@ function EquipMetaPedOutfit(ped, hash) end
 ---Body shape for mp_male from 124 - 128, 110 - 115 for mp_female
 ---Face shape for mp_male from 110 - 123, 96 - 109 for mp_female
 ---Cloth type for mp_male from 0 - 109, 0 - 95 for mp_female
----@param ped integer
+---@param ped Ped
 ---@param component integer
 ---@param p2 any
 ---@param p3 any
@@ -775,7 +775,7 @@ function EquipMetaPedOutfitExtra(ped, component, p2, p3) end
 ---Sets the outfit preset for the ped. The presetId is an index which determines its preset outfit. p2 is always false in the scripts.
 ---If p2 is true as player, then certain components like facial hair and hair will not be removed.
 ---Old name: _SET_PED_OUTFIT_PRESET
----@param ped integer
+---@param ped Ped
 ---@param presetId integer
 ---@param p2 boolean
 function EquipMetaPedOutfitPreset(ped, presetId, p2) end
@@ -783,8 +783,8 @@ function EquipMetaPedOutfitPreset(ped, presetId, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66FF395445A88A6E)  
 ---This native does not have an official description.
----@param ped integer
----@param suboutfit integer | string
+---@param ped Ped
+---@param suboutfit Hash | string
 ---@param p2 integer
 function EquipMetaPedSuboutfit(ped, suboutfit, p2) end
 
@@ -793,40 +793,40 @@ function EquipMetaPedSuboutfit(ped, suboutfit, p2) end
 ---Forces the ped to fall back and kills it.
 ---
 ---It doesn't really explode the ped's head but it kills the ped
----@param ped integer
----@param weaponHash integer | string
+---@param ped Ped
+---@param weaponHash Hash | string
 function ExplodePedHead(ped, weaponHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7043D0681285BA2D)  
 ---This native does not have an official description.
----@return integer
+---@return Ped ped
 function FadeAndDestroyPed() end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8B3CB08158E98481)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param enabled boolean
 function FakeSetPedLocoInjured(ped, enabled) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB5ACE8B23A438EC0)  
 ---This native does not have an official description.
----@param ped integer
----@param itemset integer
+---@param ped Ped
+---@param itemset ItemSet
 function FindAllAttachedCarriableEntities(ped, itemset) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF287323B0E2C69A)  
 ---Old name: _FREEZE_PED_CAMERA_ROTATION
----@param ped integer
+---@param ped Ped
 function ForceAllHeadingValuesToAlign(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2208438012482A1A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 function ForcePedAiAndAnimationUpdate(ped, p1, p2) end
@@ -834,16 +834,16 @@ function ForcePedAiAndAnimationUpdate(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1CE875505D45338A)  
 ---This native does not have an official description.
----@param ped integer
----@param pedKiller integer
----@param weapon integer | string
+---@param ped Ped
+---@param pedKiller Ped
+---@param weapon Hash | string
 function ForcePedDeath(ped, pedKiller, weapon) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF28965D04F570DCA)  
 ---motionStateHash: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/CPedMotionStates__eMotionState
----@param ped integer
----@param motionStateHash integer | string
+---@param ped Ped
+---@param motionStateHash Hash | string
 ---@param p2 boolean
 ---@param p3 integer
 ---@param p4 boolean
@@ -853,29 +853,29 @@ function ForcePedMotionState(ped, motionStateHash, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC9273D95976BA22)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetAccuracyAgainstLocalPlayerModifier(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF103823FFE72BB49)  
 ---This native does not have an official description.
----@param animal integer
----@return integer
+---@param animal Ped
+---@return Ped
 function GetActiveAnimalOwner(animal) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x569F1E1237508DEB)  
 ---Returns kneeling, sitting, squating, and sleeping scenario hashes
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetActiveDynamicScenario(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC22AA08A8ADB87D4)  
 ---Returns kneeling, sitting, squating, and sleeping scenario hashes
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetActiveDynamicScenario_2(ped) end
 
 ---**`PED` `client`**  
@@ -913,7 +913,7 @@ function GetAnimInitialOffsetRotation(animDict, animName, x, y, z, xRot, yRot, z
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x268B3AEBF032A88D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetBlockingOfNonTemporaryEvents(ped) end
 
@@ -926,47 +926,47 @@ function GetBlockingOfNonTemporaryEvents(ped) end
 ---- ped: Ped to check
 ---- carriableSlot: int See TASK_CARRIABLE for available slots
 ---- p3: int always 0 in R* scripts
----@param ped integer
+---@param ped Ped
 ---@param carriableSlot integer
 ---@param p3 integer
----@return boolean, any
+---@return boolean, any outData
 function GetCarriedAttachedInfoForSlot(ped, carriableSlot, p3) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F43C351A5D51E2F)  
 ---This native does not have an official description.
----@param mount integer
----@return integer, any
+---@param mount Ped
+---@return integer, any outData
 function GetCarriedPeltSkins(mount) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x79443D56C8DF45EE)  
 ---This native does not have an official description.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Ped
 function GetCarrierAsHuman(entity) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA033D7E4BBF9844D)  
 ---This native does not have an official description.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Ped
 function GetCarrierAsMount(entity) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x09B83E68DE004CD4)  
 ---This native does not have an official description.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Ped
 function GetCarrierAsPed(entity) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B90842304C938A7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param componentIndex integer
 ---@param p2 any
----@return integer
+---@return Hash
 function GetCategoryOfComponentAtIndex(ped, componentIndex, p2) end
 
 ---**`PED` `client`**  
@@ -976,7 +976,7 @@ function GetCategoryOfComponentAtIndex(ped, componentIndex, p2) end
 ---For index, see: _SET_CHAR_EXPRESSION
 ---
 ---Old name: _GET_PED_FACE_FEATURE
----@param ped integer
+---@param ped Ped
 ---@param index integer
 ---@return number
 function GetCharExpression(ped, index) end
@@ -994,13 +994,13 @@ function GetCharExpression(ped, index) end
 ---@param p8 boolean
 ---@param p9 boolean
 ---@param pedType integer
----@return boolean, integer
+---@return boolean, Ped outPed
 function GetClosestPed(x, y, z, radius, p4, p5, p7, p8, p9, pedType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x52DFF8A10508090A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param combatType integer
 ---@return number
 function GetCombatFloat(ped, combatType) end
@@ -1008,14 +1008,14 @@ function GetCombatFloat(ped, combatType) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD66FEA29400A0B5)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetCurrentTargetForPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD5003B097200F36)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@return vector3
@@ -1024,15 +1024,15 @@ function GetDeadPedPickupCoords(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3CC4A718C258BDD0)  
 ---This native does not have an official description.
----@param modelHash integer | string
----@return integer
+---@param modelHash Hash | string
+---@return Hash
 function GetDefaultRelationshipGroupHash(modelHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD806CD2A4F2C2996)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetFirstEntityPedIsCarrying(ped) end
 
 ---**`PED` `client`**  
@@ -1046,13 +1046,13 @@ function GetGroupFormation(groupId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8DE69FE35CA09A45)  
 ---This native does not have an official description.
 ---@param groupId integer
----@return boolean, integer
+---@return boolean hasLeader, integer numberOfFollowers
 function GetGroupSize(groupId) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x95B8E397B8F4360F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetHealthRechargeMultiplier(ped) end
 
@@ -1073,14 +1073,14 @@ function GetHealthRechargeMultiplier(ped) end
 ---	ATS_RETREATING,
 ---	ATS_FLEEING
 ---};
----@param horse integer
+---@param horse Ped
 ---@return integer
 function GetHorseTamingState(horse) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88D9D76D78065487)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetIncapacitationTimeRemaining(ped) end
 
@@ -1088,8 +1088,8 @@ function GetIncapacitationTimeRemaining(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE33F98BD76490ABC)  
 ---If p2 is false, then this native will return true until the interaction is complete. If true, the native will return true until player pockets robbery item.
 ---_GET_IS_PED_[M-R]*
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param trueUntilPlayerPocketsItem boolean
 ---@return boolean
 function GetIsPedBeingRobbed(ped, player, trueUntilPlayerPocketsItem) end
@@ -1097,23 +1097,23 @@ function GetIsPedBeingRobbed(ped, player, trueUntilPlayerPocketsItem) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x68821369A2CEADD5)  
 ---This native does not have an official description.
----@param ped integer
----@param commandHash integer | string
+---@param ped Ped
+---@param commandHash Hash | string
 ---@return boolean
 function GetIsPedCommandHashPresent(ped, commandHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x331550B212014B92)  
 ---Returns true if ped is in a dispute another ped (pedInDisputeWith can also be 0)
----@param ped integer
----@param pedInDisputeWith integer
+---@param ped Ped
+---@param pedInDisputeWith Ped
 ---@return boolean
 function GetIsPedInDisputeWithPed(ped, pedInDisputeWith) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x33FA048675821DA7)  
 ---motivationState: see _SET_PED_MOTIVATION
----@param ped integer
+---@param ped Ped
 ---@param motivationState integer
 ---@return boolean
 function GetIsPedMotivationStateEnabled(ped, motivationState) end
@@ -1121,72 +1121,72 @@ function GetIsPedMotivationStateEnabled(ped, motivationState) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA454D234E45BB6E5)  
 ---This native does not have an official description.
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@return boolean
 function GetIsPedRespondingToNegativeInteraction(ped, player) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9337183FDA2E9035)  
 ---This native does not have an official description.
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@return boolean
 function GetIsPedRespondingToPositiveInteraction(ped, player) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5486A79D9FBD342D)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetJackTarget(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C31C51168E80365)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetLassoedLassoer(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x833F0053340EF413)  
 ---_IS_PED_S* - _IS_PED_U*
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetLassoerOfPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB65A4DAB460A19BD)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetLassoTarget(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x693126B5D0457D0D)  
 ---Returns last horse the ped was leading
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetLastLedMount(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C8B59171957BCF7)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetLastMount(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5064DB5083C29921)  
 ---This native does not have an official description.
----@param horse integer
----@return integer
+---@param horse Ped
+---@return Vehicle
 function GetLastVehicleDraftHorseWasAttachedTo(horse) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE4C11F104620DDCE)  
 ---lootFlag: see SET_LOOTING_FLAG
----@param ped integer
+---@param ped Ped
 ---@param lootFlag integer
 ---@return boolean
 function GetLootingFlag(ped, lootFlag) end
@@ -1194,15 +1194,15 @@ function GetLootingFlag(ped, lootFlag) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x14169FA823679E41)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetLootingPickupTargetEntity(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x18A3E9EE1297FD39)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetMeleeTargetForPed(ped) end
 
 ---**`PED` `client`**  
@@ -1210,23 +1210,23 @@ function GetMeleeTargetForPed(ped) end
 ---This is a way to get what drawables a ped has equipped
 ---Example: you are able to tell if the ped has the drawable PLAYER_ZERO_HAT_017 attached
 ---Note: this works with non shop components, direct .ydd files.
----@param ped integer
+---@param ped Ped
 ---@param index integer
----@return boolean, integer, integer, integer, integer
+---@return boolean, Hash drawable, Hash albedo, Hash normal, Hash material
 function GetMetaPedAssetGuids(ped, index) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE7998FEC53A33BBE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param index integer
----@return boolean, integer, integer, integer, integer
+---@return boolean, Hash pallete, integer tint0, integer tint1, integer tint2
 function GetMetaPedAssetTint(ped, index) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x62FDF4E678E40CC6)  
 ---Returns p1 value for 0x8E84119A23C16623,  get index outfit using GET_NUM_META_PED_OUTFITS
----@param entity integer
+---@param entity Entity
 ---@param index integer
 ---@return integer
 function GetMetapedOutfitByIndex(entity, index) end
@@ -1234,8 +1234,8 @@ function GetMetapedOutfitByIndex(entity, index) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB292203008EBBAAC)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetMetaPedRace(ped) end
 
 ---**`PED` `client`**  
@@ -1248,28 +1248,28 @@ function GetMetaPedRace(ped) end
 ---	MPT_ANIMAL,
 ---	MPT_NONE
 ---};
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetMetaPedType(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE7E11B8DCBED1058)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetMount(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA622E66EEE92A08D)  
 ---Works similar to 0x90403E8107B60E81 (_GET_NUM_COMPONENTS_IN_PED) but is used to get category hashes instead
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetNumComponentCategoriesInPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x90403E8107B60E81)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetNumComponentsInPed(ped) end
 
@@ -1282,7 +1282,7 @@ function GetNumFreeSlotsInPedPool() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x10C70A515BC03707)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetNumMetaPedOutfits(ped) end
 
@@ -1301,21 +1301,21 @@ function GetNumReservedAmbientPedsReady() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16F2C8C084AB2092)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return any
 function GetNumReservedHealth(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC3B580C4380B5B7)  
 ---returns the number of reserved stamina similar to _GET_NUM_RESERVED_HEALTH
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetNumReservedStamina(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x37F4AD56ECBC0CD6)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedAccuracy(ped) end
 
@@ -1323,7 +1323,7 @@ function GetPedAccuracy(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5CCE68DBD5FE93EC)  
 ---This native does not have an official description.
 ---@param groupID integer
----@return integer
+---@return Ped
 function GetPedAsGroupLeader(groupID) end
 
 ---**`PED` `client`**  
@@ -1331,7 +1331,7 @@ function GetPedAsGroupLeader(groupID) end
 ---This native does not have an official description.
 ---@param groupID integer
 ---@param memberNumber integer
----@return integer
+---@return Ped
 function GetPedAsGroupMember(groupID, memberNumber) end
 
 ---**`PED` `client`**  
@@ -1341,15 +1341,15 @@ function GetPedAsGroupMember(groupID, memberNumber) end
 ---AI_ATTITUDE_WARY,
 ---AI_ATTITUDE_COMBATIVE,
 ---AI_ATTITUDE_NEVER_MET
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@return integer
 function GetPedAttitude(ped, player) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x498F2E77982D6945)  
 ---Can be used to get a peds foliage active status: variableName = FoliageActive
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@return boolean
 function GetPedBlackboardBool(ped, variableName) end
@@ -1357,7 +1357,7 @@ function GetPedBlackboardBool(ped, variableName) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56E58D4D118FB45E)  
 ---Can be used to get a peds foliage raw height: variableName = FoliageHeight
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@return number
 function GetPedBlackboardFloat(ped, variableName) end
@@ -1365,15 +1365,15 @@ function GetPedBlackboardFloat(ped, variableName) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBF5E791BBBF90A3C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
----@return integer
+---@return Hash
 function GetPedBlackboardHash(ped, variableName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4912DFE492DB98CD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@return boolean
 function GetPedBlackboardScriptBool(ped, variableName) end
@@ -1381,7 +1381,7 @@ function GetPedBlackboardScriptBool(ped, variableName) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA29FD00D45311EB7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@return number
 function GetPedBlackboardScriptFloat(ped, variableName) end
@@ -1389,7 +1389,7 @@ function GetPedBlackboardScriptFloat(ped, variableName) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB71B91B398F8F067)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@return integer
 function GetPedBlackboardScriptInt(ped, variableName) end
@@ -1403,7 +1403,7 @@ function GetPedBlackboardScriptInt(ped, variableName) end
 ---offsetX: The X-component of the offset to add to the position relative to the bone's rotation.
 ---offsetY: The Y-component of the offset to add to the position relative to the bone's rotation.
 ---offsetZ: The Z-component of the offset to add to the position relative to the bone's rotation.
----@param ped integer
+---@param ped Ped
 ---@param boneId integer
 ---@param offsetX number
 ---@param offsetY number
@@ -1414,7 +1414,7 @@ function GetPedBoneCoords(ped, boneId, offsetX, offsetY, offsetZ) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3F428D08BE5AAE31)  
 ---no bone = -1
----@param ped integer
+---@param ped Ped
 ---@param boneId integer
 ---@return integer
 function GetPedBoneIndex(ped, boneId) end
@@ -1422,28 +1422,28 @@ function GetPedBoneIndex(ped, boneId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC6B59BE445FEC51)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedBrawlingStyle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7A4E00364B5D727B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedCanBeIncapacitatedThisFrame(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16FFE42AB2D2DC59)  
 ---Returns the hash of the weapon/model/object that killed the ped.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedCauseOfDeath(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCC2B20596E29E4E3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return boolean
 function GetPedCombatAttribute(ped, attributeIndex) end
@@ -1451,22 +1451,22 @@ function GetPedCombatAttribute(ped, attributeIndex) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEA92412FCAEB3F5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedCombatMovement(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCCB97B51893C662F)  
 ---Returns category hash that each ped component has. Hash examples: MASKS, HATS, HEADS, HORSE_MANES
----@param ped integer
+---@param ped Ped
 ---@param index integer
----@return integer
+---@return Hash
 function GetPedComponentCategoryByIndex(ped, index) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7EE53118C892B513)  
 ---flagId: see SET_PED_CONFIG_FLAG
----@param ped integer
+---@param ped Ped
 ---@param flagId integer
 ---@param p2 boolean
 ---@return boolean
@@ -1475,15 +1475,15 @@ function GetPedConfigFlag(ped, flagId, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD5FE956C70FF370B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedCrouchMovement(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF60165E1D2C5370B)  
 ---Old name: _GET_PED_CURRENT_MOVEMENT_SPEED
----@param ped integer
----@return boolean, number, number
+---@param ped Ped
+---@return boolean, number speedX, number speedY
 function GetPedCurrentMoveBlendRatio(ped) end
 
 ---**`PED` `client`**  
@@ -1494,21 +1494,21 @@ function GetPedCurrentMoveBlendRatio(ped) end
 ---	PED_DAMAGE_CLEANLINESS_GOOD,
 ---	PED_DAMAGE_CLEANLINESS_PERFECT
 ---};
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedDamageCleanliness(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6CFC373008A1EDAF)  
 ---Returns true if _GET_PED_DAMAGE_CLEANLINESS was ever lower than 2
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedDamaged(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C06B8786DD94CD1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@return vector3
 function GetPedDefensiveAreaPosition(ped, p1) end
@@ -1516,16 +1516,16 @@ function GetPedDefensiveAreaPosition(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF2E6F870783369B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
----@return integer
+---@return Volume
 function GetPedDefensiveVolume(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0105FEE8F9091255)  
 ---Return the dirt level of the ped (0.0 - 1.0). p1 is always set to 1.
 ---The second parameter is treated as a boolean selector (0 or 1). Internally it indexes a 2-slot graphics/appearance bank (base + 0xB8 * index + 0xE4); Rockstar scripts pass 1.
----@param ped integer
+---@param ped Ped
 ---@param useCompositeLayer boolean
 ---@return number
 function GetPedDirtLevel(ped, useCompositeLayer) end
@@ -1534,49 +1534,49 @@ function GetPedDirtLevel(ped, useCompositeLayer) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x6FB76442469ABD68)  
 ---Returns ped drunk level
 ---_H* or _I*
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedDrunkness(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF3C873ED0C595109)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedGrappleFlag(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD0B7AEB56229D317)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetPedGrappler(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2311F15D971AA680)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedGrappleState(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x753B15AD0FD6F3E3)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedGrappleStyle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF162E133B4E7A675)  
 ---Returns the groupId of which the specified ped is a member of.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedGroupIndex(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3995D396F1D97B6)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param memoryType integer
 ---@param ms integer
 ---@return boolean
@@ -1585,28 +1585,28 @@ function GetPedHasSimplePlayerMemoryChanged(ped, memoryType, ms) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x900CA00CE703E1E2)  
 ---Returns the hearing range of a ped. To use with SET_PED_HEARING_RANGE
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedHearingRange(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1D491CCF7211FB74)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedHeight(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x31167ED4324B758D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedIdRange(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x89BFDF6D53145545)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedIncapacitationHealth(ped) end
 
@@ -1615,36 +1615,36 @@ function GetPedIncapacitationHealth(ped) end
 ---Used for AUDIO / ANIMSCENE (REFERENCE_REGIONAL_CHARACTER)
 ---Params: p1 = 0
 ---_GET_PED_IN*
----@param perscharModel integer | string
+---@param perscharModel Hash | string
 ---@param p1 integer
----@return integer
+---@return Entity
 function GetPedIndexFromPerscharHash(perscharModel, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD7AD3C7EBAF88C92)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedInteractionPersonality(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3BDFCF25B58B0415)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedIsBeingGrappled(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC48A9EB0D499B3E5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedIsDoingCombatRoll(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E99E3BF11BB6367)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedIsGrappling(ped) end
 
@@ -1652,7 +1652,7 @@ function GetPedIsGrappling(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x2C76FA0E01681F8D)  
 ---https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/Lasso%20Hogtie%20Flags
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/LASSO_HOGTIE_FLAG
----@param ped integer
+---@param ped Ped
 ---@param flagId integer
 ---@return boolean
 function GetPedLassoHogtieFlag(ped, flagId) end
@@ -1660,21 +1660,21 @@ function GetPedLassoHogtieFlag(ped, flagId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD75960F6BD9EA49C)  
 ---This native does not have an official description.
----@param ped integer
----@return boolean, integer
+---@param ped Ped
+---@return boolean, integer outBone
 function GetPedLastDamageBone(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F714E7A9DADFC42)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Object
 function GetPedLastDroppedHat(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1B710E6F4AB69341)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedLodMultiplier(ped) end
 
@@ -1687,36 +1687,36 @@ function GetPedLodMultiplier(ped) end
 ---	PLS_SAMPLING,
 ---	PLS_SKINNING
 ---};
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedLootStatusMp(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4700A416E8324EF3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedMaxHealth(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB42AFE2B613EE55)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedMaxStamina(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6127F25ED21C533C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedMeleeActionPhase(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x30569F348D126A5A)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedMetaOutfitHash(ped) end
 
 ---**`PED` `client`**  
@@ -1726,47 +1726,47 @@ function GetPedMetaOutfitHash(ped) end
 ---PS_MEDIUM_LARGE,
 ---PS_LARGE,
 ---PS_EXTRA_LARGE
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return integer
 function GetPedModelSizeFromHash(modelHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3F69145BBA87BAE7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedMoney(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x243E1B4607040057)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetPedMotionFocusEntity(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42688E94E96FD9B4)  
 ---If targetPed is set to 0 the ped motivationState affects everyone
----@param ped integer
+---@param ped Ped
 ---@param motivationState integer
----@param targetPed integer
+---@param targetPed Ped
 ---@return number
 function GetPedMotivation(ped, motivationState, targetPed) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x23F8F5FC7E8C4A6B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param ignoredPedType integer
 ---@param p3 integer
----@return integer, any
+---@return integer, any sizeAndPeds
 function GetPedNearbyPeds(ped, ignoredPedType, p3) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCFF869CBFA210D82)  
 ---This native does not have an official description.
----@param ped integer
----@return integer, any
+---@param ped Ped
+---@return integer, any sizeAndVehs
 function GetPedNearbyVehicles(ped) end
 
 ---**`PED` `client`**  
@@ -1781,14 +1781,14 @@ function GetPedNearbyVehicles(ped) end
 ---	PQ_HIGH,
 ---	PQ_MAX
 ---};
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedQuality(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC5303F460A40D21D)  
 ---Returns boneIndex
----@param ped integer
+---@param ped Ped
 ---@param boneId integer
 ---@return integer
 function GetPedRagdollBoneIndex(ped, boneId) end
@@ -1798,24 +1798,24 @@ function GetPedRagdollBoneIndex(ped, boneId) end
 ---Gets a registered/attached prop entity for a particular ped. Second parameter will detach the prop entity from the ped if true. Props primarily appear to come from scenarios, such as a broom or hay bale.
 ---
 ---Known props: https://pastebin.com/ap2NEJqB
----@param ped integer
+---@param ped Ped
 ---@param propName string
 ---@param detachProp boolean
----@return integer
+---@return Entity
 function GetPedRegisterProp(ped, propName, detachProp) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42FDD0F017B1E38E)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedRelationshipGroupDefaultHash(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7DBDD04862D95F04)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Hash
 function GetPedRelationshipGroupHash(ped) end
 
 ---**`PED` `client`**  
@@ -1826,7 +1826,7 @@ function GetPedRelationshipGroupHash(ped) end
 ----1.0                        DEAD
 ---
 ---Returns some value from AI task 562 (unknown).
----@param ped integer
+---@param ped Ped
 ---@param normalized boolean
 ---@return number
 function GetPedRemainingRevivalTime(ped, normalized) end
@@ -1834,7 +1834,7 @@ function GetPedRemainingRevivalTime(ped, normalized) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF9E59B1B1FBF2A0)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param flagId integer
 ---@return boolean
 function GetPedResetFlag(ped, flagId) end
@@ -1842,15 +1842,15 @@ function GetPedResetFlag(ped, flagId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BA9D7BF629F920C)  
 ---Returns the seeing range of a ped. To use with SET_PED_SEEING_RANGE
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedSeeingRange(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7BE607DAFF382FD2)  
 ---This native does not have an official description.
----@param ped integer
----@param itemset integer
+---@param ped Ped
+---@param itemset ItemSet
 ---@param flag integer
 ---@return integer
 function GetPedsInCombatWithTarget(ped, itemset, flag) end
@@ -1858,8 +1858,8 @@ function GetPedsInCombatWithTarget(ped, itemset, flag) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B128DC36C1E04CF)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetPedsJacker(ped) end
 
 ---**`PED` `client`**  
@@ -1867,79 +1867,79 @@ function GetPedsJacker(ped) end
 ---Returns the entity that killed the ped
 ---
 ---It is best to check if the Ped is dead before asking for its killer.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetPedSourceOfDeath(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C8AA850617651D9)  
 ---Returns wether `0x1E017404784AA6A3` was applied on the ped.
 --- some hashs MAR2_RIDE1, MAR2_RIDE1, RBCH1_RIDE1, SAD5_RIDE1
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@return any
 function GetPedSpeechRelationship(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x775A1CA7893AA8B5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedStamina(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x22F2A386D43048A9)  
 ---Returns stamina normalizedValue / normalizedUnlockedMax
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedStaminaNormalized(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C2AC9CA66575FBF)  
 ---Returns whether the entity is in stealth mode
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function GetPedStealthMovement(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E98817B311AE98A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedTimeOfDeath(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x936E7CAD0AE2EE14)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPedToPlayerWeaponDamageModifier(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x65C75FDCCAC86464)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetPedTranquilizer(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF059E1E4C01E63C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedType(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3D9F958834AB9C30)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function GetPedWhoHogitiedThisPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0CEEB6F4780B1F2F)  
 ---Returns peltId
----@param horse integer
+---@param horse Ped
 ---@param index integer
 ---@return integer
 function GetPeltFromHorse(horse, index) end
@@ -1947,23 +1947,23 @@ function GetPeltFromHorse(horse, index) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEE2D5C819A65BF26)  
 ---Returns animal skin quality modifier
----@param player integer
+---@param player Player
 ---@return number
 function GetPlayerCurrentAnimalDamageModifier(player) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE8D1CCB9375C101B)  
 ---Returns dismounted timestamp
----@param mount integer
----@param player integer
+---@param mount Ped
+---@param player Player
 ---@return integer
 function GetPlayerDismountTimestamp(mount, player) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6A3975DEA89F9A17)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Player
 function GetPlayerPedIsFollowing(ped) end
 
 ---**`PED` `client`**  
@@ -1971,81 +1971,81 @@ function GetPlayerPedIsFollowing(ped) end
 ---Returns how deep the water is below the ped (if in water)
 ----1.0f = Not in water
 ---10.0f = Max water depth
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetPlayerPedWaterDepth(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E6B70061662AE5C)  
 ---This native does not have an official description.
----@param group1 integer | string
----@param group2 integer | string
+---@param group1 Hash | string
+---@param group2 Hash | string
 ---@return integer
 function GetRelationshipBetweenGroups(group1, group2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBA5AD3A0EAF7121)  
 ---This native does not have an official description.
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 ---@return integer
 function GetRelationshipBetweenPeds(ped1, ped2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB676EFDA03DADA52)  
 ---This native does not have an official description.
----@param mount integer
+---@param mount Ped
 ---@param p1 boolean
----@return integer
+---@return Ped
 function GetRiderOfMount(mount, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F4C85ACD641BCD2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetSeatPedIsTryingToEnter(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4E76CB57222A00E5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetSeatPedIsUsing(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x63342C50EC115CE8)  
 ---This native does not have an official description.
----@param shopItem integer | string
+---@param shopItem Hash | string
 ---@param p1 any
----@param ped integer
+---@param ped Ped
 ---@param metapedType integer
 ---@param p4 boolean
----@return boolean, integer, integer, integer, integer, integer, integer, integer, integer
+---@return boolean, Hash drawable, Hash albedo, Hash normal, Hash material, Hash p9, Hash p10, Hash p11, Hash p12
 function GetShopItemBaseLayers(shopItem, p1, ped, metapedType, p4) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x77BA37622E22023B)  
 ---Returns the current shop item component at index and it's wearable state
----@param ped integer
+---@param ped Ped
 ---@param index integer
 ---@param p2 boolean
----@return integer, any, integer
+---@return Hash, any argStruct, Hash wearableState
 function GetShopItemComponentAtIndex(ped, index, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5FF9A878C3D115B8)  
 ---This native does not have an official description.
----@param componentHash integer | string
+---@param componentHash Hash | string
 ---@param metapedType integer
 ---@param isMP boolean
----@return integer
+---@return Hash
 function GetShopItemComponentCategory(componentHash, metapedType, isMP) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7E02E4218D916B94)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param metapedType integer
 ---@param p2 boolean
 ---@return any
@@ -2056,7 +2056,7 @@ function GetShopItemHatComponent(ped, metapedType, p2) end
 ---Returns the number of wearable states available for a shop item / component. p2 seems to be true in scripts.
 ---
 ---For use with 0x6243635AF2F1B826 (_GET_SHOP_ITEM_AVAILABLE_WEARABLE_STATE_BY_INDEX)
----@param componentHash integer | string
+---@param componentHash Hash | string
 ---@param isMpFemale boolean
 ---@param p2 boolean
 ---@return integer
@@ -2067,60 +2067,60 @@ function GetShopItemNumWearableStates(componentHash, isMpFemale, p2) end
 ---Gets an available wearable state by index for a shop item / component - it does not retreive what the current state is. p3 seems to be true in scripts.
 ---
 ---Use 0xFFCC2DB2D9953401 (_GET_SHOP_ITEM_NUM_WEARABLE_STATES) to get the number of available wearable states
----@param componentHash integer | string
+---@param componentHash Hash | string
 ---@param wearableStateIndex integer
 ---@param isMpFemale boolean
 ---@param p3 boolean
----@return integer
+---@return Hash
 function GetShopItemWearableStateByIndex(componentHash, wearableStateIndex, isMpFemale, p3) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x825F6DD559A0895B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetStaminaDepletionMultiplier(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE7687EB2F634ABF0)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetStaminaRechargeMultiplier(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x92C8EACA29F6BED6)  
 ---_GET_WA*
----@param ped integer
+---@param ped Ped
 ---@return number
 function GetTotalPedDamageFromAi(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x511F1A683387C7E2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetTrackedPedPixelcount(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x849BD6C6314793D0)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Entity
 function GetTransportPedIsSeatedOn(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE4770DA1B8FF4FD1)  
 ---This native does not have an official description.
----@param horse integer
----@return integer
+---@param horse Ped
+---@return Vehicle
 function GetVehicleDraftHorseIsAttachedTo(horse) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF92691AED837A5FC)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Vehicle
 function GetVehiclePedIsEntering(ped) end
 
 ---**`PED` `client`**  
@@ -2128,35 +2128,35 @@ function GetVehiclePedIsEntering(ped) end
 ---Gets the vehicle the specified Ped is in.
 ---
 ---If the Ped is not in a vehicle and includeLastVehicle is true, the vehicle they were last in is returned.
----@param ped integer
+---@param ped Ped
 ---@param lastVehicle boolean
----@return integer
+---@return Vehicle
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6094AD011A2EA87D)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Vehicle
 function GetVehiclePedIsUsing(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD65FDC686A031C83)  
 ---Ped Command Hash are special commands, that can be activated to change conditional anim variations or trigger transitions between conditional anims.
 ---https://github.com/femga/rdr3_discoveries/blob/master/animations/scenarios
----@param ped integer
----@param commandHash integer | string
+---@param ped Ped
+---@param commandHash Hash | string
 ---@param activationDuration number
 function GivePedHashCommand(ped, commandHash, activationDuration) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2B02DB082258625F)  
 ---This native does not have an official description.
----@param ped integer
----@param object integer
+---@param ped Ped
+---@param object Object
 ---@param conditionalAnim string
----@param scenarioType integer | string
----@param p4 integer | string
+---@param scenarioType Hash | string
+---@param p4 Hash | string
 ---@param p5 boolean
 ---@return boolean
 function GivePedHashScenarioProp(ped, object, conditionalAnim, scenarioType, p4, p5) end
@@ -2164,8 +2164,8 @@ function GivePedHashScenarioProp(ped, object, conditionalAnim, scenarioType, p4,
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3BBDD6143FF16F98)  
 ---This native does not have an official description.
----@param ped integer
----@param object integer
+---@param ped Ped
+---@param object Object
 ---@param conditionalAnim string
 ---@param p3 string
 ---@param p4 string
@@ -2176,8 +2176,8 @@ function GivePedScenarioProp(ped, object, conditionalAnim, p3, p4, p5) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA0774E388CE4A679)  
 ---Only used in SP R* Script rcm_jack2
----@param ped integer
----@param object integer
+---@param ped Ped
+---@param object Object
 ---@param p2 string
 ---@param p3 string
 ---@param p4 boolean
@@ -2208,16 +2208,16 @@ function HasMetaPedRequestLoaded(requestId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x854BC9B1A1CCD034)  
 ---This native does not have an official description.
----@param nameHash integer | string
----@param ped integer
+---@param nameHash Hash | string
+---@param ped Ped
 ---@return boolean
 function HasMotionTypeAssetLoaded(nameHash, ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C81338B2E62CE0A)  
 ---this native checks if player has shot a specific ped for the duration passed p2 is in milliseconds 
----@param player integer
----@param ped integer
+---@param player Player
+---@param ped Ped
 ---@param duration integer
 ---@return boolean
 function HasPedBeenShotByPlayerRecently(player, ped, duration) end
@@ -2225,7 +2225,7 @@ function HasPedBeenShotByPlayerRecently(player, ped, duration) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x29FCE825613FEFCA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param ms integer
 ---@return boolean
 function HasPedBeenShovedRecently(ped, ms) end
@@ -2233,7 +2233,7 @@ function HasPedBeenShovedRecently(ped, ms) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE3904B22695D9F9)  
 ---See _REQUEST_PED_EMOTIONAL_PRESET
----@param ped integer
+---@param ped Ped
 ---@param name string
 ---@return boolean
 function HasPedEmotionalPresetLoaded(ped, name) end
@@ -2242,8 +2242,8 @@ function HasPedEmotionalPresetLoaded(ped, name) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x947E43F544B6AB34)  
 ---Returns whether a ped has interacted with a player recently.
 ---flags: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/0x947E43F544B6AB34
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param flag integer
 ---@param ms integer
 ---@return boolean
@@ -2255,14 +2255,14 @@ function HasPedInteractedWithPlayerRecently(ped, player, flag, ms) end
 ---This is typically used together with SET_DOOR_KNOCKING_WHEN_LOCKED.
 ---If a door is configured to use knocking behavior when locked, and the player interacts
 ---with it, this native returns true AFTER the knocking interaction/animation has completed 
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function HasPedKnockedOnDoor(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB7DBB2986B87E230)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param seconds number
 ---@return boolean
 function HasPedShotRecently(ped, seconds) end
@@ -2270,7 +2270,7 @@ function HasPedShotRecently(ped, seconds) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBA208A8D6399A3AC)  
 ---limb: 3 = Left Hand, 4 = Left Arm, 6 = Right Hand, 7 = Right Arm, 9 = Left Foot, 10 = Left Leg, 12 = Right Foot, 13 = Right Leg, 37 = Head
----@param ped integer
+---@param ped Ped
 ---@param limb integer
 ---@return boolean
 function HasPedTakenGoreDamage(ped, limb) end
@@ -2278,27 +2278,27 @@ function HasPedTakenGoreDamage(ped, limb) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCAC43D060099EA72)  
 ---Hides the reins of the mount
----@param mount integer
+---@param mount Ped
 function HideMountReins(mount) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBAE08F00021BFFB2)  
 ---_H* - _I*
----@param mount integer
+---@param mount Ped
 ---@param kickOffRider boolean
 function HorseAgitate(mount, kickOffRider) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6262491C7704A63)  
 ---This native does not have an official description.
----@param ped integer
----@param ped2 integer
+---@param ped Ped
+---@param ped2 Ped
 function IncapacitatedRevive(ped, ped2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7DD7FB3480D8083E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function InitPedDefaultHealth(ped) end
 
 ---**`PED` `client`**  
@@ -2310,36 +2310,36 @@ function InstantlyFillPedPopulation() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E2F43516F998269)  
 ---Returns true only if it's a player ped and an animal as well.
 ---_IS_ANY_* - _IS_CONTROL_*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsAnimalControlledByAPlayer(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD543D3A8FDE4F185)  
 ---This native does not have an official description.
----@param ped integer
----@param animal integer
+---@param ped Ped
+---@param animal Ped
 ---@return boolean
 function IsAnimalInteractionPossible(ped, animal) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7FC84E85D98F063D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsAnimalInteractionRunning(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88A5564B19C15391)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsAnimalSkinned(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x68772DB2B2526F9F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2374,8 +2374,8 @@ function IsAnyPedShootingInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC8D523BF5BBD3808)  
 ---This native does not have an official description.
----@param ped integer
----@param eventType integer | string
+---@param ped Ped
+---@param eventType Hash | string
 ---@return boolean
 function IsEventInQueue(ped, eventType) end
 
@@ -2395,7 +2395,7 @@ function IsInstantlyFillPedPopulationFinished() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFB1E7998B8595825)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@return boolean
 function IsLocationSpawnSafe(ped, p1) end
@@ -2411,15 +2411,15 @@ function IsMetaPedAssetValid(requestId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x118D476A6F1A13F1)  
 ---Returns true if given ped is a fish.
 ---_IS_ME* - _IS_MO*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsMetaPedFish(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x98082246107A6ACF)  
 ---Used in script function HORSE_IS_META_PED_OUTFIT_SADDLE_EQUIPPED
----@param ped integer
----@param outfit integer | string
+---@param ped Ped
+---@param outfit Hash | string
 ---@return boolean
 function IsMetaPedOutfitEquipped(ped, outfit) end
 
@@ -2442,15 +2442,15 @@ function IsMetaPedRequestValid(requestId) end
 ---checks if a ped is using a component category
 ---see component category hashes here https://raw.githubusercontent.com/femga/rdr3_discoveries/refs/heads/master/clothes/cloth_hash_names.lua
 ---Old name: _IS_META_PED_USING_COMPONENT
----@param ped integer
----@param componentCategory integer | string
+---@param ped Ped
+---@param componentCategory Hash | string
 ---@return boolean
 function IsMetaPedUsingComponentCategory(ped, componentCategory) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAAB0FE202E9FC9F0)  
 ---This native does not have an official description.
----@param mount integer
+---@param mount Ped
 ---@param seat integer
 ---@return boolean
 function IsMountSeatFree(mount, seat) end
@@ -2458,7 +2458,7 @@ function IsMountSeatFree(mount, seat) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB346C85D49CC998E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param actionDisableFlag integer
 ---@return boolean
 function IsPedActionDisableFlagEnabled(ped, actionDisableFlag) end
@@ -2466,99 +2466,99 @@ function IsPedActionDisableFlagEnabled(ped, actionDisableFlag) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC88D06719070C39)  
 ---detects if ped is afloat in water like swimming or in a boat (driving or standing on it)
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedAfloat(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3998B1276A3300E5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedAimingFromCover(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12534C348C6CB68B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedAPlayer(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF3A8772F085B4AA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedBeingDragged(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD453BB601D4A606E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedBeingHogtied(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9A497FE2DF198913)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedBeingJacked(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x863B23EFDE9C5DF2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedBeingStealthKilled(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4FBACCE3B4138EE8)  
 ---This native does not have an official description.
----@param ped integer
----@param weaponType integer | string
+---@param ped Ped
+---@param weaponType Hash | string
 ---@return boolean
 function IsPedBeingStunned(ped, weaponType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA911EE21EDF69DAF)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedCarryingSomething(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x137772000DAF42C5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedChild(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x53E8CB4F48BFE623)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedClimbing(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59643424B68D52B5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedClimbingLadder(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB086C8C0F5701D14)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedCowering(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3317DEDB88C95038)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@return boolean
 function IsPedDeadOrDying(ped, p1) end
@@ -2566,7 +2566,7 @@ function IsPedDeadOrDying(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBA63D9FE45412247)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@return boolean
 function IsPedDefensiveAreaActive(ped, p1) end
@@ -2574,50 +2574,50 @@ function IsPedDefensiveAreaActive(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5527B8246FEF9B11)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedDiving(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC488B8C0E52560D8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedDoingScenarioTransition(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x226CF9B159E38F42)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedDragging(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x50F124E6EF188B22)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedDrunk(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1D46B417F926D34D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedEnteringAnyTransport(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x414641C26E105898)  
 ---Presumably returns the Entity that the Ped is currently diving out of the way of.
----@param ped integer
----@return boolean, integer
+---@param ped Ped
+---@return boolean, Entity evadingEntity
 function IsPedEvasiveDiving(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD71649DB0A545AA3)  
 ---angle is ped's view cone
----@param ped integer
----@param otherPed integer
+---@param ped Ped
+---@param otherPed Ped
 ---@param angle number
 ---@return boolean
 function IsPedFacingPed(ped, otherPed, angle) end
@@ -2625,14 +2625,14 @@ function IsPedFacingPed(ped, otherPed, angle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFB92A102F1C4DFA3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedFalling(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3E592D0486DEC0F6)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedFallingOver(ped) end
 
@@ -2640,21 +2640,21 @@ function IsPedFallingOver(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD839450756ED5A80)  
 ---Gets a value indicating whether this ped's health is below its fatally injured threshold. The default threshold is 100.
 ---If the handle is invalid, the function returns true.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedFatallyInjured(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBBCCE00B381F8482)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedFleeing(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x95CBC65780DE7EB1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@return boolean
 function IsPedFullyOnMount(ped, p1) end
@@ -2662,21 +2662,21 @@ function IsPedFullyOnMount(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB062B2B5722478E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedGettingIntoAVehicle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F65DBC537E59AD5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedGoingIntoCover(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x878B68960C1C2A35)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param groupId integer
 ---@return boolean
 function IsPedGroupLeader(ped, groupId) end
@@ -2684,7 +2684,7 @@ function IsPedGroupLeader(ped, groupId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9BB01E3834671191)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param groupId integer
 ---@param p2 boolean
 ---@return boolean
@@ -2693,14 +2693,14 @@ function IsPedGroupMember(ped, groupId, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1C86D8AEF8254B78)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedHangingOnToVehicle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFCF37A457CB96DC0)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2711,79 +2711,79 @@ function IsPedHeadingTowardsPosition(ped, x, y, z, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x813A0A7C9D2E831F)  
 ---This native does not have an official description.
----@param ped integer
----@param entity integer
+---@param ped Ped
+---@param entity Entity
 ---@return boolean
 function IsPedHeadtrackingEntity(ped, entity) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5CD3CB88A7F8850D)  
 ---This native does not have an official description.
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 ---@return boolean
 function IsPedHeadtrackingPed(ped1, ped2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3AA24CCC0D451379)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedHogtied(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42429C674B61238B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedHogtying(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB980061DA992779D)  
 ---Returns true/false if the ped is/isn't humanoid.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedHuman(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2E0E1C2B4F6CB339)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInAnyBoat(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x298B91AE825E5705)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInAnyHeli(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5FFF4CFC74D8FB80)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInAnyPlane(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6E575D6A898AB852)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInAnyTaxi(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F972C1AB75A1ED0)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInAnyTrain(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x997ABD671D25CA0B)  
 ---Gets a value indicating whether the specified ped is in any vehicle.
----@param ped integer
+---@param ped Ped
 ---@param atGetIn boolean
 ---@return boolean
 function IsPedInAnyVehicle(ped, atGetIn) end
@@ -2791,22 +2791,22 @@ function IsPedInAnyVehicle(ped, atGetIn) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB655DB7582AEC805)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedIncapacitated(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4859F1FC66A6278E)  
 ---This native does not have an official description.
----@param ped integer
----@param target integer
+---@param ped Ped
+---@param target Ped
 ---@return boolean
 function IsPedInCombat(ped, target) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x60DFD0691A170B88)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 ---@return boolean
@@ -2815,21 +2815,21 @@ function IsPedInCover(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x845333B3150583AB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInCoverFacingLeft(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9134873537FA419C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInFlyingVehicle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5891CAC5D4ACFF74)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInGroup(ped) end
 
@@ -2838,7 +2838,7 @@ function IsPedInGroup(ped) end
 ---Gets a value indicating whether this ped's health is below its injured threshold.
 ---
 ---The default threshold is 100.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInjured(ped) end
 
@@ -2852,15 +2852,15 @@ function IsPedInjured(ped) end
 ---C.) Is locked-on to an enemy (arms up, strafing/skipping in the default fighting-stance, ready to dodge+counter). 
 ---
 ---You don't have to be holding the melee-targeting button to be in this stance; you stay in it by default for a few seconds after swinging at someone. If you do a sprinting punch, it returns true for the duration of the punch animation and then returns false again, even if you've punched and made-angry many peds
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInMeleeCombat(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x796D90EFB19AA332)  
 ---This native does not have an official description.
----@param ped integer
----@param modelHash integer | string
+---@param ped Ped
+---@param modelHash Hash | string
 ---@return boolean
 function IsPedInModel(ped, modelHash) end
 
@@ -2869,7 +2869,7 @@ function IsPedInModel(ped, modelHash) end
 ---If returned true: There are enemy peds near friendly turn in ped. Going to aggro.
 ---If returned false: Moving back to idle as there aren't any remaining enemy peds near ped
 ---_IS_PED_IN_*
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2881,15 +2881,15 @@ function IsPedInPoint(ped, x, y, z, radius, p5) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57779B55B83E2BEA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedIntimidated(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA3EE4A07279BB9DB)  
 ---Gets a value indicating whether the specified ped is in the specified vehicle.
----@param ped integer
----@param vehicle integer
+---@param ped Ped
+---@param vehicle Vehicle
 ---@param atGetIn boolean
 ---@return boolean
 function IsPedInVehicle(ped, vehicle, atGetIn) end
@@ -2897,79 +2897,79 @@ function IsPedInVehicle(ped, vehicle, atGetIn) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7583A9D35248B83F)  
 ---_IS_PED_IN*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedInvestigating(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4AE4FF911DFB61DA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedJacking(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCEDABC5900A0BF97)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedJumping(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9682F850056C9ADE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedLassoed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x917760CFE7A0E0F1)  
 ---_IS_PED_L* - _IS_PED_M*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedLeadingAnyGroup(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D9F5FAA7488BA46)  
 ---Returns true/false if the ped is/isn't male.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedMale(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC9D55B1A358A5BF7)  
 ---This native does not have an official description.
----@param ped integer
----@param modelHash integer | string
+---@param ped Ped
+---@param modelHash Hash | string
 ---@return boolean
 function IsPedModel(ped, modelHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAA9F048DCF69B6DC)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsPedModelSuppressed(model) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01FEE67DB37F59B2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedOnFoot(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x460BC76A0E10655E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedOnMount(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC5F66E459AF3BB2)  
 ---This native does not have an official description.
----@param ped integer
----@param vehicle integer
+---@param ped Ped
+---@param vehicle Vehicle
 ---@return boolean
 function IsPedOnSpecificVehicle(ped, vehicle) end
 
@@ -2979,7 +2979,7 @@ function IsPedOnSpecificVehicle(ped, vehicle) end
 ---
 ---Return 1 when ped is on vehicle.
 ---Return 0 when ped is not on a vehicle.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@return boolean
 function IsPedOnVehicle(ped, p1) end
@@ -2989,101 +2989,101 @@ function IsPedOnVehicle(ped, p1) end
 ---Returns true if the ped is currently opening a door (CTaskOpenDoor).
 ---
 ---Old name: _IS_PED_OPENING_A_DOOR
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedOpeningDoor(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDCCA191DF9980FD7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
----@param p2 integer | string
+---@param p2 Hash | string
 ---@return boolean
 function IsPedPerformingMeleeAction(ped, p1, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC70B5FAE151982D8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedPlantingBomb(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD6A86331A537A7B9)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedProne(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8D9BFCE3352DE47F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedQueuedForDeletion(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x47E4E977581C5B55)  
 ---If the ped handle passed through the parenthesis is in a ragdoll state this will return true.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedRagdoll(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA0BC8FAED8CFEB3C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedReadyToRender(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x24B100C68C645951)  
 ---Returns whether the specified ped is reloading.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedReloading(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x625B774D75C87068)  
 ---eventType: https://alloc8or.re/rdr3/doc/enums/eEventType.txt
----@param ped integer
----@param eventType integer | string
+---@param ped Ped
+---@param eventType Hash | string
 ---@return boolean
 function IsPedRespondingToEvent(ped, eventType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x77525BBF433F2CD6)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedRespondingToThreat(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2AFE52F782F25775)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedRunningMobilePhoneTask(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE3B6097CC25AA69E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedRunningRagdollTask(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x34616828CD07F1A1)  
 ---Returns whether the specified ped is shooting.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedShooting(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x84D0BF2B21862059)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedSitting(ped) end
 
@@ -3091,7 +3091,7 @@ function IsPedSitting(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x826AA586EDB9FEF8)  
 ---Detect if ped is in any vehicle
 ---[True/False]
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedSittingInAnyVehicle(ped) end
 
@@ -3099,43 +3099,43 @@ function IsPedSittingInAnyVehicle(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xA808AA1D79230FC2)  
 ---Detect if ped is sitting in the specified vehicle
 ---[True/False]
----@param ped integer
----@param vehicle integer
+---@param ped Ped
+---@param vehicle Vehicle
 ---@return boolean
 function IsPedSittingInVehicle(ped, vehicle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD6740E14E4CEFC0B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedSliding(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x530944F6F4B8A214)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedStopped(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9DE327631295B4C2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedSwimming(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC024869A53992F34)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedSwimmingUnderWater(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x02AA2096FE00F3E1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param actionDisableFlag integer
 ---@return boolean
 function IsPedTargetActionDisableFlagEnabled(ped, actionDisableFlag) end
@@ -3143,36 +3143,36 @@ function IsPedTargetActionDisableFlagEnabled(ped, actionDisableFlag) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x00E73468D085F745)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedUsingActionMode(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBB208D6AE712C03)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedUsingActionMode_2(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57AB4A3080F85143)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedUsingAnyScenario(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x34D6AC1157C8226C)  
 ---Equivalent to IS_PED_USING_SCENARIO from V but takes a hash instead of a string.
----@param ped integer
----@param scenarioHash integer | string
+---@param ped Ped
+---@param scenarioHash Hash | string
 ---@return boolean
 function IsPedUsingScenarioHash(ped, scenarioHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C54041BB66BCF9E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param scenario integer
 ---@return boolean
 function IsPedUsingThisScenario(ped, scenario) end
@@ -3180,14 +3180,14 @@ function IsPedUsingThisScenario(ped, scenario) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x117C70D1F5730B5E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedVaulting(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5102307CE88798EB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedVisibilityTracked(ped) end
 
@@ -3201,8 +3201,8 @@ function IsScenarioBlockingAreaValid(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6E5CBCB3941D7D08)  
 ---This native does not have an official description.
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 ---@return boolean
 function IsTarget(ped, targetPed) end
 
@@ -3210,8 +3210,8 @@ function IsTarget(ped, targetPed) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x06087579E7AA85A9)  
 ---Returns true if ped is in perception (focused and looking at target ped)
 ---Most float params are -1.f in R* Scripts
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 ---@param p2 number
 ---@param customDistance number
 ---@param p4 number
@@ -3229,14 +3229,14 @@ function IsTextureValid(textureId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x772A1969F649E902)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsThisModelAHorse(model) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x164CECC59E70DF86)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param percent number
 ---@return boolean
 function IsTrackedPedVisibilityPercentageNotLessThan(ped, percent) end
@@ -3245,21 +3245,21 @@ function IsTrackedPedVisibilityPercentageNotLessThan(ped, percent) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x91C8E617F64188AC)  
 ---Returns whether or not a ped is visible within your FOV, not this check auto's to false after a certain distance.
 ---Target needs to be tracked first, won't work otherwise.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsTrackedPedVisible(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF61B3CD8C3B82C3)  
 ---_IS_TRACKED_* - IS_V*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsUsingSlipstream(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6FD7816A36615F48)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 ---@param p3 boolean
@@ -3269,7 +3269,7 @@ function KnockOffPedProp(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x45BBCBA77C29A841)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function KnockPedOffVehicle(ped) end
 
 ---**`PED` `client`**  
@@ -3282,14 +3282,14 @@ function N_0x00b380ff2df6ab7a(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x024EC9B649111915)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x024ec9b649111915(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x02E741E19E39628C)  
 ---_SET_PLAYER_SN* - _SET_PLAYER_STAMINA*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x02e741e19e39628c(ped, p1) end
 
@@ -3303,7 +3303,7 @@ function N_0x0455546f23ff08e4(groupId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06A10B4D7F50B0C3)  
 ---_GET_PED_D*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x06a10b4d7f50b0c3(ped) end
 
@@ -3341,7 +3341,7 @@ function N_0x095c2277fed731db(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x09D7AFD3716DA8E1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@return boolean
 function N_0x09d7afd3716da8e1(ped, p1) end
@@ -3368,7 +3368,7 @@ function N_0x0b787a37eedd226f(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D3B1568917EBDA0)  
 ---_IS_PED_M*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@return boolean
 function N_0x0d3b1568917ebda0(ped, p1) end
@@ -3383,7 +3383,7 @@ function N_0x0d497aa69059fe40(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EEF7A81C17679DB)  
 ---_IS_PED_L* - _IS_PED_M*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x0eef7a81c17679db(ped) end
 
@@ -3416,25 +3416,25 @@ function N_0x0ffdf937e5c11382(p0, p1, p2, p3, p4, p5) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x101B45C5F56D970F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param damageCleanliness integer
 ---@param p3 integer
----@return boolean, any
+---@return boolean, any p0
 function N_0x101b45c5f56d970f(ped, damageCleanliness, p3) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x10F96086123B939F)  
 ---NB_CUSTOM_CLIENT_ON_CREATE_COMPLETE - set legendary to not avoid prey
----@param legendaryPed integer
----@param preyPed integer
+---@param legendaryPed Ped
+---@param preyPed Ped
 ---@param p2 number
 function N_0x10f96086123b939f(legendaryPed, preyPed, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1148F706CF4EBDDA)  
 ---_CAN_PED_SEE* - _CAN_PED_USE_(SCENARIO_HASH?)*
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@param p2 integer
 ---@return boolean
 function N_0x1148f706cf4ebdda(ped, p1, p2) end
@@ -3448,21 +3448,21 @@ function N_0x1298b3d8e4c2409f(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12EB4E31F092C9B3)  
 ---_GET_IS_PED_(BLEEDING_OUT?)*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x12eb4e31f092c9b3(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12F2D161BF4031FC)  
 ---_SET_A* - _SET_B*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x12f2d161bf4031fc(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x134775B093AD5C38)  
 ---_GET_PED_M*
----@param ped integer
+---@param ped Ped
 ---@return number
 function N_0x134775b093ad5c38(ped) end
 
@@ -3493,7 +3493,7 @@ function N_0x16802c32b2fca06b(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16F798A05BB9E3B5)  
 ---_PED_COWER_M*
----@param ped integer
+---@param ped Ped
 function N_0x16f798a05bb9e3b5(ped) end
 
 ---**`PED` `client`**  
@@ -3506,7 +3506,7 @@ function N_0x1d23d3f70606d788(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1D4636C90BBEFACB)  
 ---_SET_PED_CA* - _SET_PED_CO*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x1d4636c90bbefacb(ped, p1) end
 
@@ -3515,7 +3515,7 @@ function N_0x1d4636c90bbefacb(ped, p1) end
 ---Only used in SP R* Scripts
 ---Params: p2 = same as p2 of 0x3C529A827998F9B3
 ---_SET_PED_TA* - _SET_PED_TO_*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 integer
 function N_0x1f44b7e283c09ede(ped, p1, p2) end
@@ -3523,13 +3523,13 @@ function N_0x1f44b7e283c09ede(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2371C39D4F91C288)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function N_0x2371c39d4f91c288(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x23BDE06596A22CEC)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 number
 ---@param p3 any
@@ -3545,7 +3545,7 @@ function N_0x242edf85d4e87b65(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x256EDD55C6BE1482)  
 ---_IS_PED_FL* - _IS_PED_FU*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x256edd55c6be1482(ped) end
 
@@ -3575,14 +3575,14 @@ function N_0x28508173c6a7cc18(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x290B2E6CCDE532E1)  
 ---_IS_PED_L* - _IS_PED_M*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x290b2e6ccde532e1(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x29924EB8EE9DB926)  
 ---_SET_PED_K* or _SET_PED_L*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x29924eb8ee9db926(ped, p1) end
 
@@ -3596,21 +3596,21 @@ function N_0x29f3539189d3e277(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2D976DBDC731DF80)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function N_0x2d976dbdc731df80(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2DC0E8DCBD3546E9)  
 ---_IS_PED_D*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x2dc0e8dcbd3546e9(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2DD4E0E26DFAD97D)  
 ---_IS_PED_M* - _IS_PED_O*
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 ---@param p2 number
 ---@return boolean
 function N_0x2dd4e0e26dfad97d(ped1, ped2, p2) end
@@ -3618,7 +3618,7 @@ function N_0x2dd4e0e26dfad97d(ped1, ped2, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2E5B5D1F1453E08E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x2e5b5d1f1453e08e(ped, p1) end
 
@@ -3634,8 +3634,8 @@ function N_0x2fa568bfa725f8d6(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x31B2E7F2E3C58B89)  
 ---_GET_SHOP_ITEM_NUM_*? returns a number of ? p1 seems to be always joaat("base") 
----@param componentHash integer | string
----@param p1 integer | string
+---@param componentHash Hash | string
+---@param p1 Hash | string
 ---@param metapedType integer
 ---@param isMP boolean
 ---@return integer
@@ -3653,36 +3653,36 @@ function N_0x32417cb860a3bdc4(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x326F7951EF0D7F75)  
 ---Only used in R* SP Script short_update
 ---_GET_TARGET_* - _GET_TRACKED*
----@param ped integer
----@param eventType integer | string
+---@param ped Ped
+---@param eventType Hash | string
 ---@return any
 function N_0x326f7951ef0d7f75(ped, eventType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x329772C47DBB2FBC)  
 ---_SET_PED_P* - _SET_PED_R*
----@param ped integer
+---@param ped Ped
 function N_0x329772c47dbb2fbc(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x32CCAD8A981B53D3)  
 ---_STOP_(?)*
----@param ped integer
+---@param ped Ped
 function N_0x32ccad8a981b53d3(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x32CEDA9A0AB4CEF7)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@param p2 boolean
 function N_0x32ceda9a0ab4cef7(ped, p1, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x34B5CEAC180A5D6E)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@param p2 boolean
 function N_0x34b5ceac180a5d6e(ped, p1, p2) end
 
@@ -3696,28 +3696,28 @@ function N_0x34c11114887150fd(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x34EDDD59364AD74A)  
 ---This native does not have an official description.
----@param ped integer
----@return any
+---@param ped Ped
+---@return any p1
 function N_0x34eddd59364ad74a(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x354CA4DDDEEC397A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function N_0x354ca4dddeec397a(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x370A973252741AC4)  
 ---_RESET_PED_*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x370a973252741ac4(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3A5697B80FED5EBE)  
 ---_SET_PED_MO*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -3730,27 +3730,27 @@ function N_0x3a5697b80fed5ebe(ped, p1, p2, p3, p4) end
 ---Params: p1 = 4/5/6, p5 = 40.f/100.f, coords = Player ped
 ---Perhaps returns some distance (Clearing that the local player is able to use ILO while in combat because they are near the recipient but also near hated peds)
 ---_GET_NUM_M* - _GET_PEDS_J*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param p5 number
----@param itemset integer
+---@param itemset ItemSet
 ---@return integer
 function N_0x3acce14dfa6ba8c2(ped, p1, x, y, z, p5, itemset) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3AEC4A410ECAF30D)  
 ---_IS_PED_R*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x3aec4a410ecaf30d(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C529A827998F9B3)  
 ---_SET_PED_TA* - _SET_PED_TO_*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 integer
 function N_0x3c529a827998f9b3(ped, p1, p2) end
@@ -3765,10 +3765,10 @@ function N_0x3efed081b4834ba1(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FCBB5FCFD968698)  
 ---Used for script function PROCESS_PLAYER_HAT_EVENT
 ---Returns requestId to be used with 0x13E7320C762F0477
----@param drawable integer | string
----@param albedo integer | string
----@param normal integer | string
----@param material integer | string
+---@param drawable Hash | string
+---@param albedo Hash | string
+---@param normal Hash | string
+---@param material Hash | string
 ---@param p4 any
 ---@return integer
 function N_0x3fcbb5fcfd968698(drawable, albedo, normal, material, p4) end
@@ -3787,7 +3787,7 @@ function N_0x3fdbb99efd8ce4af(p0, p1, p2) end
 ---INITIALISE_NEW_ROLE - Applying Super Jump buffs: p1 = 10, p2 = 0.0f
 ---INITIALISE_NEW_ROLE - Clearing up Super Jump buffs: p1 = 10, p2 = 1.0f
 ---_SET_D*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 number
 function N_0x3fdcc1f8c17e303e(ped, p1, p2) end
@@ -3795,7 +3795,7 @@ function N_0x3fdcc1f8c17e303e(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x405180B14DA5A935)  
 ---_SET_PED_A*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x405180b14da5a935(ped, p1) end
 
@@ -3809,7 +3809,7 @@ function N_0x40c3524d4ed83554(groupId, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x40C9155AF8BC13F3)  
 ---_IS_PED_RE*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x40c9155af8bc13f3(ped) end
 
@@ -3824,14 +3824,14 @@ function N_0x413697ec260aabbf(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x41C23A8E6B344867)  
 ---_SET_PED_IN*
----@param ped integer
+---@param ped Ped
 ---@param p1 string
 function N_0x41c23a8e6b344867(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x45FEA6D5539BD474)  
 ---_SET_PED_IN*
----@param ped integer
+---@param ped Ped
 ---@param p1 string
 function N_0x45fea6d5539bd474(ped, p1) end
 
@@ -3846,32 +3846,32 @@ function N_0x49dadfc4cd808b0a(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4B19F171450E0D4F)  
 ---This native does not have an official description.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function N_0x4b19f171450e0d4f(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4E68C7EF706DF35D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param p4 number
----@param relationshipGroup integer | string
+---@param relationshipGroup Hash | string
 function N_0x4e68c7ef706df35d(ped, x, y, z, p4, relationshipGroup) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4EC4EA2F72B36358)  
 ---_SET_PED_A*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x4ec4ea2f72b36358(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4F27603E44A8E4C0)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 boolean
 function N_0x4f27603e44a8e4c0(ped, p1, p2) end
@@ -3880,14 +3880,14 @@ function N_0x4f27603e44a8e4c0(ped, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4F63433CE3C08230)  
 ---Only used in R* Script shop_harriet
 ---_SET_PED_F*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x4f63433ce3c08230(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5203038FF8BAE577)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 integer
 ---@return boolean
@@ -3903,7 +3903,7 @@ function N_0x52250b92ea70be3d(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x52A24D8A1DA89658)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 boolean
 function N_0x52a24d8a1da89658(ped, p1, p2) end
@@ -3918,15 +3918,15 @@ function N_0x53ba7d96b9a421d9(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x54D3CD482742C482)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param p2 number
 function N_0x54d3cd482742c482(animal, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x550CB89DD7F4FA3D)  
 ---_HAS_PED_*
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 ---@return boolean
 function N_0x550cb89dd7f4fa3d(ped1, ped2) end
 
@@ -3955,28 +3955,28 @@ function N_0x56e4bad93d33453c(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x577C60BA06D0EA64)  
 ---_IS_PED_C* - _IS_PED_D*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x577c60ba06d0ea64(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57F35552E771BE9D)  
 ---_SET_PED_M*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x57f35552e771be9d(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A1A929C8B729B4A)  
 ---_C*
----@param ped integer
+---@param ped Ped
 function N_0x5a1a929c8b729b4a(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5AF24CA9C974E51A)  
 ---_SET_C*
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 function N_0x5af24ca9c974e51a(ped1, ped2) end
 
 ---**`PED` `client`**  
@@ -3999,14 +3999,14 @@ function N_0x5bb04bc74a474b47(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5BF0B9D9A8E227A0)  
 ---_IS_PED_B* - _IS_PED_C*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x5bf0b9d9a8e227a0(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5C6C7C70CA302801)  
 ---_IS_PED_IN*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x5c6c7c70ca302801(ped) end
 
@@ -4019,14 +4019,14 @@ function N_0x5c90e20c25e6d83c(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5CA20FBE49891BBD)  
 ---Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_FLOW & PROCESS_GENERIC_PLAYER_INITIALIZATION
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x5ca20fbe49891bbd(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5CB2EBB467BE3ED6)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param p2 number
 function N_0x5cb2ebb467be3ed6(animal, p2) end
 
@@ -4034,7 +4034,7 @@ function N_0x5cb2ebb467be3ed6(animal, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5D4CD22A8C82A81A)  
 ---Related to ped hat
 ---_SET_PED_LA* - _SET_PED_LE*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x5d4cd22a8c82a81a(ped, p1) end
 
@@ -4051,9 +4051,9 @@ function N_0x5da36cccb63c0895(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5E9FAF6C513347B4)  
 ---Only used in R* SP Scripts
 ---_GET_PED_IN*
----@param ped integer
----@param eventType integer | string
----@return integer
+---@param ped Ped
+---@param eventType Hash | string
+---@return Entity
 function N_0x5e9faf6c513347b4(ped, eventType) end
 
 ---**`PED` `client`**  
@@ -4076,7 +4076,7 @@ function N_0x5fcf25d584065bfd(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x600BBDD29820370C)  
 ---Not implemented.
----@param ped integer
+---@param ped Ped
 function N_0x600bbdd29820370c(ped) end
 
 ---**`PED` `client`**  
@@ -4090,7 +4090,7 @@ function N_0x604e1010e3162e86(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x606D529DADA3C940)  
 ---Not implemented.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 function N_0x606d529dada3c940(ped, p1) end
 
@@ -4104,8 +4104,8 @@ function N_0x633f83b301c87994(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x642720D8D69328B6)  
 ---_SET_PED_M*
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function N_0x642720d8d69328b6(ped, p1) end
 
 ---**`PED` `client`**  
@@ -4121,7 +4121,7 @@ function N_0x6507ac3bd7c99009(x, y, z, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6734F0A6A52C371C)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param horseSlot integer
 function N_0x6734f0a6a52c371c(player, horseSlot) end
 
@@ -4140,7 +4140,7 @@ function N_0x6a489892e813951a(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6E8B87139854022D)  
 ---Only used in SP R* Script train_robbery3: p1 = CLIPSET@VEH_TRAIN@HANDCART@BASE_PANIC & CLIPSET@VEH_TRAIN@HANDCART@BASE_PANIC_JOHN
----@param ped integer
+---@param ped Ped
 ---@param clipset string
 function N_0x6e8b87139854022d(ped, clipset) end
 
@@ -4154,27 +4154,27 @@ function N_0x6f46f8acb44c4fc1(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7020839C7302D8AC)  
 ---_HAS_*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x7020839c7302d8ac(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x704C908E9C405136)  
 ---_CLEAR*
----@param ped integer
+---@param ped Ped
 function N_0x704c908e9c405136(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x712B2C2B2471B493)  
 ---_SET_PED_MO*
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function N_0x712b2c2b2471b493(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x735662994E60A710)  
 ---_SET_PED_F*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x735662994e60a710(ped, p1) end
 
@@ -4187,7 +4187,7 @@ function N_0x7406c71f4ac2ffcc(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x758F081DB204DDDE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x758f081db204ddde(ped) end
 
@@ -4211,21 +4211,21 @@ function N_0x75d3333409cd33ce(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x763FA8A9D76EE3A7)  
 ---Used in Script Function NB_EVENT_OVERRIDE__HANDLE__EVENT_DAMAGE_ENTITY
----@param ped integer
+---@param ped Ped
 ---@return number
 function N_0x763fa8a9d76ee3a7(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x77243ED4F7CAAA55)  
 ---_IS_I* - _IS_L*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x77243ed4f7caaa55(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7ABBD9E449E0DB00)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x7abbd9e449e0db00(ped, p1) end
 
@@ -4247,14 +4247,14 @@ function N_0x7bb810e8b343ac7b(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C08E7CB8D951B70)  
 ---Only used in SP
 ---_SET_REMOVE_PED*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x7c08e7cb8d951b70(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C10221CE718AA72)  
 ---_CLEAR_PED_M*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x7c10221ce718aa72(ped, p1) end
 
@@ -4277,20 +4277,20 @@ function N_0x7e8f9949b7aabbf0(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x7EDB3C766B0D073F)  
 ---Only used in R* Script net_moonshine_property
 ---_A* - _B*
----@param ped integer
+---@param ped Ped
 function N_0x7edb3c766b0d073f(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7EE3A8660F38797E)  
 ---_IS_PED_H* - _IS_PED_I*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x7ee3a8660f38797e(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7F090958AE95B61B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@return boolean
 function N_0x7f090958ae95b61b(ped, p1) end
@@ -4298,14 +4298,14 @@ function N_0x7f090958ae95b61b(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8101BA1C0B462412)  
 ---_ATTACH_*
----@param ped integer
+---@param ped Ped
 ---@param ropeId integer
 function N_0x8101ba1c0b462412(ped, ropeId) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x815C0074A1BC0D93)  
 ---_SET_PED_COMBAT_R - _SET_PED_C*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x815c0074a1bc0d93(ped, p1) end
 
@@ -4327,14 +4327,14 @@ function N_0x851966e1e35af491(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x85F500F4E24CA43E)  
 ---Used in Script Function SKCS_PLAYER_ROBBING
 ---_SET_PED_A*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x85f500f4e24ca43e(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86F0B6730C32AC14)  
 ---_SET_PED_*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x86f0b6730c32ac14(ped, p1) end
 
@@ -4348,21 +4348,21 @@ function N_0x86fafc18e3d4380c(groupId, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x878E8104FA27CDAE)  
 ---This native does not have an official description.
----@param vehicle integer
----@param p1 integer | string
+---@param vehicle Vehicle
+---@param p1 Hash | string
 function N_0x878e8104fa27cdae(vehicle, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x87C2724A56F66020)  
 ---_CLEAR_PED_E* - _CLEAR_PED_L*
----@param ped integer
+---@param ped Ped
 function N_0x87c2724a56f66020(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8822F124788B8D0A)  
 ---Only used in R* Script train_robbery4
 ---_SET_PED_D*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x8822f124788b8d0a(ped, p1) end
 
@@ -4370,7 +4370,7 @@ function N_0x8822f124788b8d0a(ped, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8822F139408B8D0A)  
 ---If returned true, SET_ENABLE_BOUND_ANKLES is called in R* Script guama2
 ---_GET_D* - _GET_E*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x8822f139408b8d0a(ped) end
 
@@ -4378,20 +4378,20 @@ function N_0x8822f139408b8d0a(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x88A95BB640FC186F)  
 ---Used in R* Script generic_weight_control_item
 ---_CLEAR_PED_E* - CLEAR_PED_(G?)L*
----@param ped integer
+---@param ped Ped
 function N_0x88a95bb640fc186f(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88B2026A3B0BE33D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x88b2026a3b0be33d(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x897934E868EDDD6C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 number
 ---@param p3 number
@@ -4401,14 +4401,14 @@ function N_0x897934e868eddd6c(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x89816B58C3466262)  
 ---_GET_PED_B* - _GET_PED_C*
----@param ped integer
+---@param ped Ped
 ---@return any
 function N_0x89816b58c3466262(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x899DFA0009AC93DE)  
 ---_SET_PED_O*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x899dfa0009ac93de(ped, p1) end
 
@@ -4422,8 +4422,8 @@ function N_0x89e59dbd15e21177(groupId, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8AF46E5159A5B620)  
 ---_SET_PED_IN*
----@param ped integer
----@param speechParams integer | string
+---@param ped Ped
+---@param speechParams Hash | string
 function N_0x8af46e5159a5b620(ped, speechParams) end
 
 ---**`PED` `client`**  
@@ -4431,7 +4431,7 @@ function N_0x8af46e5159a5b620(ped, speechParams) end
 ---Returns offset (0 < 32) to be used with MISC::SET_BIT
 ---_GET_PED_CR*
 ---@param groupId integer
----@param ped integer
+---@param ped Ped
 ---@return integer
 function N_0x8af8e647d6b2a649(groupId, ped) end
 
@@ -4454,14 +4454,14 @@ function N_0x8ba0c65ac15a7d33(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8BE24D74D74C6E9B)  
 ---Used in Script Function NET_CAMP_DOG_CLIENT_HANDLE_ANIMAL_INTERACTION
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Ped
 function N_0x8be24d74d74c6e9b(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8CB2553C559102C1)  
 ---_SET_PED_T* - SET_PED_U*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 boolean
 function N_0x8cb2553c559102c1(ped, p1, p2) end
@@ -4481,7 +4481,7 @@ function N_0x9078fb0557364099(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x913D04A5176F84C9)  
 ---_IS_PED_S* - _IS_PED_U*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x913d04a5176f84c9(ped) end
 
@@ -4509,14 +4509,14 @@ function N_0x92a1b55a59720395(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x94132D7C8D3575C4)  
 ---_GET_IS_PED_*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x94132d7c8d3575c4(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9629FAF6460D35CB)  
 ---This native does not have an official description.
----@param group integer | string
+---@param group Hash | string
 ---@param p1 boolean
 function N_0x9629faf6460d35cb(group, p1) end
 
@@ -4524,7 +4524,7 @@ function N_0x9629faf6460d35cb(group, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x96595B36D6A2279B)  
 ---Only used in R* Script mob4 combined with SET_ANIMAL_TUNING_BOOL_PARAM
 ---_SET_PED_S* - _SET_PED_TARGET_*
----@param animal integer
+---@param animal Ped
 ---@param toggle boolean
 function N_0x96595b36d6a2279b(animal, toggle) end
 
@@ -4548,15 +4548,15 @@ function N_0x96c7b659854de629(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97A38B65EBDA3D50)  
 ---_SET_PED_D*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x97a38b65ebda3d50(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97B06669AC569003)  
 ---_CLEAR*
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 function N_0x97b06669ac569003(ped1, ped2) end
 
 ---**`PED` `client`**  
@@ -4587,8 +4587,8 @@ function N_0x992187d975635df5(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x99DF2639DA76C1DC)  
 ---_CAN_PED_*
----@param ped1 integer
----@param ped2 integer
+---@param ped1 Ped
+---@param ped2 Ped
 ---@param p2 integer
 ---@return boolean
 function N_0x99df2639da76c1dc(ped1, ped2, p2) end
@@ -4602,7 +4602,7 @@ function N_0x9a4ac116cc1eee14(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9AB33CB5834885B3)  
 ---_SET_PED_M*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -4612,7 +4612,7 @@ function N_0x9ab33cb5834885b3(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B65444C07B782BF)  
 ---Only used in SP R* Script winter1: p1 = Winter1Mount
----@param ped integer
+---@param ped Ped
 ---@param p1 string
 function N_0x9b65444c07b782bf(ped, p1) end
 
@@ -4620,21 +4620,21 @@ function N_0x9b65444c07b782bf(ped, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B9B9FA0EA283E3D)  
 ---Used in Script Function SKCS_PLAYER_ROBBING
 ---_SET_PED_SHOULD_PLAY_* - _SET_PED_SW*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0x9b9b9fa0ea283e3d(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9BBEAF8B0C007F1E)  
 ---_SET_PLAYER_CAN_B* - _SET_PLAYER_CAN_U*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0x9bbeaf8b0c007f1e(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D8DFE2DE9CB4DFC)  
 ---_RESET_PED_*
----@param ped integer
+---@param ped Ped
 function N_0x9d8dfe2de9cb4dfc(ped) end
 
 ---**`PED` `client`**  
@@ -4647,14 +4647,14 @@ function N_0x9e66708b2b41f14a(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F0F28B42C4EE80A)  
 ---This native does not have an official description.
----@param animal integer
+---@param animal Ped
 ---@param p2 number
 function N_0x9f0f28b42c4ee80a(animal, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F933E0985E12C51)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -4678,14 +4678,14 @@ function N_0xa180fbd502a03125(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1FBAC56D38563E2)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return boolean
 function N_0xa1fbac56d38563e2(volume) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA2116C1E4ED85C24)  
 ---_SET_PED_*
----@param ped integer
+---@param ped Ped
 ---@param inverted boolean
 function N_0xa2116c1e4ed85c24(ped, inverted) end
 
@@ -4744,27 +4744,27 @@ function N_0xa4ac05b1a364ebc5(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4B6432E3880F2F9)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xa4b6432e3880f2f9(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6D6F03095C88F59)  
 ---_DELETE_*
----@param ped integer
+---@param ped Ped
 function N_0xa6d6f03095c88f59(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA7A806677F8DE138)  
 ---Washing player's face/hands now
 ---_CLEAR_PED_E* - _CLEAR_PED_L*
----@param ped integer
+---@param ped Ped
 function N_0xa7a806677f8de138(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA7DC9266ED6A4E51)  
 ---_CLEAR_PED_B* - _CLEAR_PED_C*
----@param ped integer
+---@param ped Ped
 function N_0xa7dc9266ed6a4e51(ped) end
 
 ---**`PED` `client`**  
@@ -4778,7 +4778,7 @@ function N_0xa8a95cecb1906ea2(groupId, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xA90684ED185CCB4B)  
 ---Only used in R* Script mob4 and rcm_mason4
 ---_SET_PED_DEFENSIVE_* - _SET_PED_DESIRED_*
----@param animal integer
+---@param animal Ped
 ---@param p1 boolean
 ---@param p2 number
 ---@param p3 number
@@ -4787,22 +4787,22 @@ function N_0xa90684ed185ccb4b(animal, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA967D6A8ED2D713B)  
 ---_SET_PED_P* - _SET_PED_R*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0xa967d6a8ed2d713b(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAA6C49AE90A32299)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function N_0xaa6c49ae90a32299(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAAC0EE3B4999ABB5)  
 ---This native does not have an official description.
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 function N_0xaac0ee3b4999abb5(ped, targetPed) end
 
 ---**`PED` `client`**  
@@ -4821,7 +4821,7 @@ function N_0xae6b68a83abbe7c0(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF041C10756C30FB)  
 ---_CLEAR_PED_D*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 ---@param p3 boolean
@@ -4848,22 +4848,22 @@ function N_0xb06f5f1def417216(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB29C553BA582D09E)  
 ---Used in Script Function SATCHEL_COUNT_BREAKDOWN_COMPONENTS
----@param model integer | string
+---@param model Hash | string
 ---@param damageCleanliness integer
 ---@param p3 integer
----@return any, any
+---@return any, any p0
 function N_0xb29c553ba582d09e(model, damageCleanliness, p3) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB4B7C92FCE7347B7)  
 ---_RESET_PED_C*
----@param ped integer
+---@param ped Ped
 function N_0xb4b7c92fce7347b7(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB65927F861E7AE39)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@return boolean
 function N_0xb65927f861e7ae39(ped, p1) end
@@ -4878,7 +4878,7 @@ function N_0xb8e2d655e1d5bd39(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB91AB3BE7F655D49)  
 ---_IS_PED_J* - _IS_PED_L*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xb91ab3be7f655d49(ped) end
 
@@ -4907,7 +4907,7 @@ function N_0xbc1dc48270468444(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD0E4F52F6D95242)  
 ---_IS_PED_M* - _IS_PED_O*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xbd0e4f52f6d95242(ped) end
 
@@ -4926,7 +4926,7 @@ function N_0xbfa6b7731c3baf02() end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC2722B252C79E641)  
 ---_FORCE_PED_*
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 ---@param p2 any
 ---@param p3 boolean
@@ -4942,7 +4942,7 @@ function N_0xc2ef407645beecdc(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC5B78E41DCF8227C)  
 ---_SET_H* - _SET_I*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0xc5b78e41dcf8227c(ped, p1) end
 
@@ -4968,20 +4968,20 @@ function N_0xc6c4e15cf7d52fea(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC9151483CC06A414)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function N_0xc9151483cc06a414(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC991EF46FE323867)  
 ---Not implemented.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 function N_0xc991ef46fe323867(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC99F104BDF8C7F5A)  
 ---_SET_PLAYER_N* - _SET_PLAYER_S*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0xc99f104bdf8c7f5a(ped, p1) end
 
@@ -5014,9 +5014,9 @@ function N_0xcb86d3e3e3708901(p0, p1, p2, p3, p4) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB8F4C9343EBE240)  
 ---Only used in R* SP Scripts
 ---_GET_PLAYER_W* - _GET_RANDOM_*
----@param ped integer
----@param eventType integer | string
----@return boolean, vector3
+---@param ped Ped
+---@param eventType Hash | string
+---@return boolean, vector3 coords
 function N_0xcb8f4c9343ebe240(ped, eventType) end
 
 ---**`PED` `client`**  
@@ -5030,7 +5030,7 @@ function N_0xcbde59c48f2b06f5(p0, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD9E5F94A2F38683)  
 ---_SET_PED_R* - _SET_PED_S*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0xcd9e5f94a2f38683(ped, p1) end
 
@@ -5046,7 +5046,7 @@ function N_0xcdfb8c04d4c95d9b(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF0B19806473D324)  
 ---_SET_PED_COMBAT_*
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -5065,8 +5065,8 @@ function N_0xd049920cd29f6cc8(p0, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD049FDAF089FDDB0)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@param p2 number
 function N_0xd049fdaf089fddb0(ped, p1, p2) end
 
@@ -5074,7 +5074,7 @@ function N_0xd049fdaf089fddb0(ped, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD103F6DBB5442BE8)  
 ---Params: p1 either a 1 or 0, so perhaps BOOL
 ---_SET_PED_A*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0xd103f6dbb5442be8(ped, p1) end
 
@@ -5088,7 +5088,7 @@ function N_0xd2f0fe8805d91647(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD355E2F1BB41087E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@return boolean
 function N_0xd355e2f1bb41087e(ped, p1) end
@@ -5096,7 +5096,7 @@ function N_0xd355e2f1bb41087e(ped, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD4D403EA031F351C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xd4d403ea031f351c(ped) end
 
@@ -5104,7 +5104,7 @@ function N_0xd4d403ea031f351c(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD55DB4466D00A258)  
 ---Used in Script Function LA_CHECK_ALERTED
 ---_GET_IS_PED_*
----@param legendaryAnimal integer
+---@param legendaryAnimal Ped
 ---@return boolean
 function N_0xd55db4466d00a258(legendaryAnimal) end
 
@@ -5136,7 +5136,7 @@ function N_0xd7d2f45c56a4f4df(p0, p1, p2) end
 ---METAPED_PLAYER_COMPONENTS_SET_META_TYPE_TO_BE_BYPASSED: Setting visibility
 ---p1 is mostly 10
 ---_CLEAR_PED_N* - _CLEAR_PED_W*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0xd8544f6260f5f01e(ped, p1) end
 
@@ -5181,8 +5181,8 @@ function N_0xdedbed3020da49dc(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEE8D30AA5C2E28D)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@param p2 boolean
 function N_0xdee8d30aa5c2e28d(ped, p1, p2) end
 
@@ -5204,8 +5204,8 @@ function N_0xe1103300f3456de7(groupId, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE1AADD0055D76603)  
 ---_C*
----@param ped integer
----@param entity integer
+---@param ped Ped
+---@param entity Entity
 ---@param boneIndex1 integer
 ---@param boneIndex2 integer
 ---@param x number
@@ -5220,7 +5220,7 @@ function N_0xe1aadd0055d76603(ped, entity, boneIndex1, boneIndex2, x, y, z, p7, 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE1B3BE07D3AADDED)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 boolean
 function N_0xe1b3be07d3aadded(ped, p1, p2) end
@@ -5235,20 +5235,20 @@ function N_0xe20027b414bfe6c7(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE29D8CD66553DBAA)  
 ---_SET_PED_R* -_SET_PED_S*
----@param horse integer
+---@param horse Ped
 function N_0xe29d8cd66553dbaa(horse) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE37ACEE15AC50C7E)  
 ---_SET_PED_IN*
----@param ped integer
+---@param ped Ped
 ---@param p1 string
 function N_0xe37acee15ac50c7e(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE4C95E0AE31C6512)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 function N_0xe4c95e0ae31c6512(ped, p1) end
 
@@ -5261,8 +5261,8 @@ function N_0xe4ef4382e22c780c(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE50C9816B3F22D8B)  
 ---_SET_D*
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@param p2 number
 function N_0xe50c9816b3f22d8b(ped, p1, p2) end
 
@@ -5282,8 +5282,8 @@ function N_0xe735a7da22e88359(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE737D5F14304A2EC)  
 ---Only used in R* Script nb_animal_attack: p2 = 120000
 ---_SET_PED_SH* - _SET_PED_SP*
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param p2 integer
 function N_0xe737d5f14304a2ec(ped, player, p2) end
 
@@ -5315,7 +5315,7 @@ function N_0xea8763e505afd49a(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB8886E1065654CD)  
 ---Washing player's face/hands now
 ---_FA* - _FI*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p2 string
 ---@param p3 number
@@ -5326,7 +5326,7 @@ function N_0xeb8886e1065654cd(ped, p1, p2, p3) end
 ---If returned true: PROCESS_RESIZING_TRACKING_BOUNDS_VOLUME - Scaling UP the bounds due to tracking
 ---If returned false: PROCESS_RESIZING_TRACKING_BOUNDS_VOLUME - Scaling DOWN the bounds due to tracking
 ---_IS_PED_T* - _IS_PED_U*
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xebaac9a750e7563b(ped) end
 
@@ -5340,14 +5340,14 @@ function N_0xebd49472bccf7642(p0, p1) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC60D1D225BC50AA)  
 ---_SET_C*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function N_0xec60d1d225bc50aa(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xED1C764997A86D5A)  
 ---Only used in R* Script nb_stalking_hunter
----@param ped integer
+---@param ped Ped
 ---@param mount integer
 function N_0xed1c764997a86d5a(ped, mount) end
 
@@ -5369,20 +5369,20 @@ function N_0xeedc9b29314b2733(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF371232BC6053E1)  
 ---_ADD_*
----@param ped integer
+---@param ped Ped
 function N_0xef371232bc6053e1(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF47D54B986F0A346)  
 ---Used in Script Function MOONSHINE_BAND_CLIENT_PATRON_UPDATE
----@param ped integer
+---@param ped Ped
 ---@param danceIntensity integer
 function N_0xf47d54b986f0a346(ped, danceIntensity) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF634E2892220EF34)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 function N_0xf634e2892220ef34(ped, p1) end
 
@@ -5416,15 +5416,15 @@ function N_0xf917f92bf22ecbab(p0) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9331B3A314EB49D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0xf9331b3a314eb49d(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9CBD46433E36713)  
 ---Used in Script Function PLAYER_HEAD_TRACKING_MAINTAIN
----@param ped integer
----@param targetEntity integer
+---@param ped Ped
+---@param targetEntity Entity
 ---@param p2 number
 ---@param p3 number
 ---@param p4 number
@@ -5465,7 +5465,7 @@ function N_0xfc23348f0f4e245f(p0, p1, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFD3C31A2E45671E7)  
 ---_DISABLE_A* - _DISABLE_C*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0xfd3c31a2e45671e7(ped, p1) end
 
@@ -5480,14 +5480,14 @@ function N_0xfd8e853f0bc2e942(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFEA6126C34DF2532)  
 ---METAPED_PLAYER_COMPONENTS_SET_META_TYPE_TO_BE_BYPASSED: Setting visibility
 ---_SET_M* - _SET_P*
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0xfea6126c34df2532(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFDE295662405B25)  
 ---_GET_PED_COMBAT_M* - _GET_PED_C*
----@param ped integer
+---@param ped Ped
 ---@return integer
 function N_0xffde295662405b25(ped) end
 
@@ -5495,39 +5495,39 @@ function N_0xffde295662405b25(ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E017404784AA6A3)  
 ---something to do with speech lines? 
 --- some hashs MAR2_RIDE1, MAR2_RIDE1, RBCH1_RIDE1, SAD5_RIDE1
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 ---@return boolean
 function PedApplySpeechRelationship(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x935CF6E42BAF7F4D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function PedClearLocoMotion(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6E1E9F47A7686F8)  
 ---This native does not have an official description.
----@param ped integer
----@param ped2 integer
+---@param ped Ped
+---@param ped2 Ped
 function PedCowerInPlace(ped, ped2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E4C940233FC0C6F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
----@param ped2 integer
+---@param ped2 Ped
 ---@param p5 number
 function PedCowerMoveToPoint(ped, p1, p2, p3, ped2, p5) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD6B242B8BD5543A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function PedDuelingDidPlayerHeadshotOpponent(ped) end
 
@@ -5536,9 +5536,9 @@ function PedDuelingDidPlayerHeadshotOpponent(ped) end
 ---target: 0 affects everyone
 ---duration: -1 indefinite
 ---flag: always 4 in R* Scripts
----@param ped integer
+---@param ped Ped
 ---@param presetName string
----@param targetPed integer
+---@param targetPed Ped
 ---@param duration integer
 ---@param flag integer
 function PedEmotionalPresetLocoMotion(ped, presetName, targetPed, duration, flag) end
@@ -5546,29 +5546,29 @@ function PedEmotionalPresetLocoMotion(ped, presetName, targetPed, duration, flag
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2B4CE170DE09F346)  
 ---This native does not have an official description.
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function PedRemoveSpeechRelationship(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC494C76A34266E82)  
 ---memoryType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/_PED_SET_SIMPLE_PLAYER_MEMORY
----@param ped integer
+---@param ped Ped
 ---@param memoryType integer
 function PedSetSimplePlayerMemory(ped, memoryType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06FA94C835787C64)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function PedWasKilledByHeadshot(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE7A6C1D5CDE1F9D)  
 ---Plays a conditional locomotion animation with an attached prop item,commonly used for LOCO attachment interactions (e.g., attaching/carrying a crate) ex conditionalAnimName: LOCO_ATTACH_CRATE_TNT
----@param ped integer
----@param object integer
+---@param ped Ped
+---@param object Object
 ---@param propItemName string
 ---@param conditionalAnimName string
 function PlayConditionalAnimWithPropitem(ped, object, propItemName, conditionalAnimName) end
@@ -5576,10 +5576,10 @@ function PlayConditionalAnimWithPropitem(ped, object, propItemName, conditionalA
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B67320E0D57856A)  
 ---Retruns the carried ped
----@param ped integer
+---@param ped Ped
 ---@param p2 integer
 ---@param p3 boolean
----@return any
+---@return any carriedPed
 function RefreshCarriedPedForPed(ped, p2, p3) end
 
 ---**`PED` `client`**  
@@ -5599,31 +5599,31 @@ function RefreshCarriedPedForPed(ped, p2, p3) end
 ---};
 ---
 ---_POSSE_* - _REGISTER_HATED*
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param p3 integer
 ---@param p4 integer
----@return integer, integer
+---@return integer, Ped lootTarget
 function RefreshLootStateForPed(ped, p1, p3, p4) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59BD177A1A48600A)  
 ---p1 is always 1
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function RefreshMetaPedShopItems(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9222F300BF8354FE)  
 ---Based on TASK_COMBAT_HATED_TARGETS_AROUND_PED, the parameters are likely similar (PedHandle, and area to attack in).
----@param ped integer
+---@param ped Ped
 ---@param radius number
 function RegisterHatedTargetsAroundPed(ped, radius) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD8736EFDA38EDC5C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -5633,8 +5633,8 @@ function RegisterHatedTargetsInArea(ped, x, y, z, radius) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2F25D9AEFA34FBA2)  
 ---This native does not have an official description.
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 ---@param p2 boolean
 function RegisterTarget(ped, targetPed, p2) end
 
@@ -5659,7 +5659,7 @@ function ReleaseMetaPedRequest(requestId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3088634CF8C819CF)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ReleasePedVisibilityTracking(ped) end
 
 ---**`PED` `client`**  
@@ -5683,62 +5683,62 @@ function RemoveGroup(groupId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE7B2B4144906CDF)  
 ---This native does not have an official description.
----@param nameHash integer | string
----@param ped integer
+---@param nameHash Hash | string
+---@param ped Ped
 function RemoveMotionTypeAsset(nameHash, ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6F67BEC53379A32)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 function RemovePedBlackboardBool(ped, variableName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x411189E51B8020BA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 function RemovePedBlackboardFloat(ped, variableName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E17378642156790)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 function RemovePedBlackboardHash(ped, variableName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x81B75428A7813E67)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 function RemovePedBlackboardInt(ped, variableName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x74D4E028107450A9)  
 ---Ped will no longer get angry when you stay near him.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function RemovePedDefensiveArea(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC3BAB1801A8255A)  
 ---See _REQUEST_PED_EMOTIONAL_PRESET
----@param ped integer
+---@param ped Ped
 ---@param name string
 function RemovePedEmotionalPreset(ped, name) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xED74007FFB146BC2)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function RemovePedFromGroup(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5337B721C51883A9)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 function RemovePedFromMount(ped, p1, p2) end
@@ -5754,29 +5754,29 @@ function RemovePedOverlay(textureId, overlayId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x3A50753042B6891B)  
 ---Stops and clears a running conditional locomotion animation previously started by _PLAY_CONDITIONAL_ANIM_WITH_PROPITEM ex: P_CS_CRATETNT01X_PH_R_HAND
 ---This does not remove the physical prop entity itself, but rather ends the active locomotion/conditional animation associated with it.
----@param ped integer
+---@param ped Ped
 ---@param propItemName string
 function RemovePedPropitemConditonalAnim(ped, propItemName) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0CAB404CD2DB41F5)  
 ---This native does not have an official description.
----@param ped integer
----@param volume integer
+---@param ped Ped
+---@param volume Volume
 ---@return boolean
 function RemovePedStayOutVolume(ped, volume) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x011A42FD923D41CA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function RemovePedSubscribeToLegendaryBlips(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB6BA2444AB393DA2)  
 ---This native does not have an official description.
----@param groupHash integer | string
+---@param groupHash Hash | string
 function RemoveRelationshipGroup(groupHash) end
 
 ---**`PED` `client`**  
@@ -5795,8 +5795,8 @@ function RemoveScenarioBlockingAreas() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D7FFA1B2F69ED82)  
 ---Directly removes a shop item component from a ped
 ---Params: p2 and p3 are always 0
----@param ped integer
----@param componentHash integer | string
+---@param ped Ped
+---@param componentHash Hash | string
 ---@param p2 integer
 ---@param p3 boolean
 function RemoveShopItemFromPed(ped, componentHash, p2, p3) end
@@ -5804,8 +5804,8 @@ function RemoveShopItemFromPed(ped, componentHash, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDF631E4BCE1B1FC4)  
 ---Params: p2, p3 usually 0 in R* Scripts
----@param ped integer
----@param componentCategory integer | string
+---@param ped Ped
+---@param componentCategory Hash | string
 ---@param p2 integer
 ---@param p3 boolean
 function RemoveShopItemFromPedByCategory(ped, componentCategory, p2, p3) end
@@ -5813,23 +5813,23 @@ function RemoveShopItemFromPedByCategory(ped, componentCategory, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD710A5007C2AC539)  
 ---This native does not have an official description.
----@param ped integer
----@param component integer | string
+---@param ped Ped
+---@param component Hash | string
 ---@param p2 integer
 function RemoveTagFromMetaPed(ped, component, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4707E9C23D8CA3FE)  
 ---This native does not have an official description.
----@param ped integer
----@param targetPed integer
+---@param ped Ped
+---@param targetPed Ped
 function RemoveTarget(ped, targetPed) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF97C34C33487D569)  
 ---Returns requestId
 ---Params: p1 = 1 in R* Scripts (Used in SP only)
----@param model integer | string
+---@param model Hash | string
 ---@param p1 integer
 ---@return integer
 function RequestMetaPed(model, p1) end
@@ -5838,7 +5838,7 @@ function RequestMetaPed(model, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x91FE941F9FCFB702)  
 ---Returns requestId
 ---Params: p1 = 1 in R* Scripts
----@param asset integer | string
+---@param asset Hash | string
 ---@param p1 integer
 ---@return integer
 function RequestMetaPedAssetBundle(asset, p1) end
@@ -5858,16 +5858,16 @@ function RequestMetaPedComponent(metaPedType, p1, p2, p3, p4) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x13154A76CE0CF9AB)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/clothes/metaped_outfits.lua
 ---Returns requestId, to be used with 0x74F512E29CB717E2
----@param model integer | string
----@param outfit integer | string
+---@param model Hash | string
+---@param outfit Hash | string
 ---@return integer
 function RequestMetaPedOutfit(model, outfit) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF7EA250B9A919E03)  
 ---This native does not have an official description.
----@param nameHash integer | string
----@param ped integer
+---@param nameHash Hash | string
+---@param ped Ped
 function RequestMotionTypeAsset(nameHash, ped) end
 
 ---**`PED` `client`**  
@@ -5896,17 +5896,17 @@ function RequestMotionTypeAsset(nameHash, ped) end
 ---`ENTITY_ONLY = 0,
 ---NOTHING = 1,
 ---ENTITY_AND_TAKEN_FROM_ENTITY = 2`
----@param ped integer
+---@param ped Ped
 ---@param carryingType integer
 ---@param outEntsCount integer
 ---@param filterFlags integer
----@return integer, integer
+---@return integer, integer outEntities
 function RequestPedCarryingState(ped, carryingType, outEntsCount, filterFlags) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5C3C55EAAD19915F)  
 ---For more information, see common:/data/emotional_presets.meta
----@param ped integer
+---@param ped Ped
 ---@param name string
 function RequestPedEmotionalPreset(ped, name) end
 
@@ -5914,18 +5914,18 @@ function RequestPedEmotionalPreset(ped, name) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8B3B71C80A29A4BB)  
 ---mood: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/fwFacialAnimRequest__Mood
 ---Params: p2 = 6 in R* Scripts
----@param ped integer
----@param mood integer | string
+---@param ped Ped
+---@param mood Hash | string
 ---@param p2 integer
 function RequestPedFacialMoodThisFrame(ped, mood, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBDED916A9F9B0604)  
 ---This native does not have an official description.
----@param ped integer
----@param object integer
+---@param ped Ped
+---@param object Object
 ---@param p2 string
----@param scenarioType integer | string
+---@param scenarioType Hash | string
 ---@param p4 string
 ---@param p5 boolean
 ---@return any
@@ -5934,35 +5934,35 @@ function RequestPedForScenarioType(ped, object, p2, scenarioType, p4, p5) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEAA8242C8479C27D)  
 ---Known get up animation types: REAR, FRONT
----@param ped integer
+---@param ped Ped
 ---@param getUpType string
 function RequestPedGetupAnimation(ped, getUpType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75BA1CB3B7D40CAF)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function RequestPedUseSmallBboxVisibilityTracking(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BC338A7B21F4608)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function RequestPedVehicleVisibilityTracking(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7D7A2E43E74E2EB8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function RequestPedVisibilityTracking(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBEC65C6049B3219D)  
 ---This native does not have an official description.
----@param ped integer
----@param object integer
+---@param ped Ped
+---@param object Object
 ---@param p2 string
 ---@param p3 string
 ---@param p4 string
@@ -5980,9 +5980,9 @@ function RequestPropScenarioPed(ped, object, p2, p3, p4, p5) end
 ---
 ---https://github.com/femga/rdr3_discoveries/blob/master/clothes/change_overlays_script.lua
 ---materialHash: https://github.com/femga/rdr3_discoveries/blob/master/clothes/cloth_drawable_albedo_normal_material_TEMPORARY.lua
----@param albedoHash integer | string
----@param normalHash integer | string
----@param materialHash integer | string
+---@param albedoHash Hash | string
+---@param normalHash Hash | string
+---@param materialHash Hash | string
 ---@return integer
 function RequestTexture(albedoHash, normalHash, materialHash) end
 
@@ -6012,49 +6012,49 @@ function ResetGroupFormationDefaultSpacing(groupId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A5AFD2B8381A6E1)  
 ---This native does not have an official description.
----@param horse integer
+---@param horse Ped
 function ResetHorseAvoidanceLevelToDefault(horse) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0BFA1BD465CDFEFD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ResetPedComponents(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4B9668DB91DC39B8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ResetPedIncapacitationBleedOutDuration(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x22EF8FF8778030EB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ResetPedInVehicleContext(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x801917E7D7BCE418)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ResetPedLadderMovementSpeedModifier(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB8DE8CF6A8DD8BB)  
 ---Resets the value for the last vehicle driven by the Ped.
----@param ped integer
+---@param ped Ped
 function ResetPedLastVehicle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9FA4664CF62E47E8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ResetPedRagdollTimer(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x36513AFFC703C60D)  
 ---Seems to set the peds stamina to 30%
----@param ped integer
+---@param ped Ped
 function ResetPedStamina(ped) end
 
 ---**`PED` `client`**  
@@ -6067,13 +6067,13 @@ function ResetPedTexture(textureId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97B0DB5B4AA74E77)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ResetPedWeaponMovementClipset(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x675680D089BFA21F)  
 ---0.0 <= stamina <= 100.0
----@param ped integer
+---@param ped Ped
 ---@param stamina number
 function RestorePedStamina(ped, stamina) end
 
@@ -6084,19 +6084,19 @@ function RestorePedStamina(ped, stamina) end
 ---Before calling this function, you may want to declare the position, where your Resurrected ped to be spawn at because theres a chance the ped will fall through the map
 ---
 ---Also, disabling any assigned task immediately helped in the number of scenarios, where If you want peds to perform certain decided tasks.
----@param ped integer
+---@param ped Ped
 function ResurrectPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8D8ACD8388CD99CE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function ReviveInjuredPed(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC2266AA617668AD3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param modifier number
 function SetAccuracyAgainstLocalPlayerModifier(ped, modifier) end
 
@@ -6106,7 +6106,7 @@ function SetAccuracyAgainstLocalPlayerModifier(ped, modifier) end
 ---Can be used to fix missing outfit changes, always paired with _UPDATE_PED_VARIATION
 ---_S*
 ---Doesn't actually return anything.
----@param ped integer
+---@param ped Ped
 ---@param isMP boolean
 ---@return any
 function SetActiveMetaPedComponentsUpdated(ped, isMP) end
@@ -6144,7 +6144,7 @@ function SetAmbientPedDensityMultiplierThisFrame(multiplier) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F8AA94D6D97DBF4)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetBlockingOfNonTemporaryEvents(ped, toggle) end
 
@@ -6168,7 +6168,7 @@ function SetBlockingOfNonTemporaryEventsForAmbientPedsThisFrame(p0) end
 ---This native also allows you to change a horse's gender.
 ---
 ---Old name: _SET_PED_FACE_FEATURE
----@param ped integer
+---@param ped Ped
 ---@param index integer
 ---@param value number
 function SetCharExpression(ped, index, value) end
@@ -6178,7 +6178,7 @@ function SetCharExpression(ped, index, value) end
 ---combatType can be between 0-14. See GET_COMBAT_FLOAT below for a list of possible parameters.
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_FLOATS 
 ---https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eCombatAttributeFloats
----@param ped integer
+---@param ped Ped
 ---@param combatType integer
 ---@param newValue number
 function SetCombatFloat(ped, combatType, newValue) end
@@ -6192,28 +6192,28 @@ function SetCreateRandomCops(toggle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x069EDDF1FD4DEB0A)  
 ---This native does not have an official description.
----@param horse integer
+---@param horse Ped
 ---@param modifier number
 function SetCurrentDefenseAgainstPlayersModifier(horse, modifier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B6808EC46BE849B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param modifier number
 function SetDefenseModifierForPed(ped, modifier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC52E0F855C58FC2E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetEnableBoundAnkles(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDF1AF8B5D56542FA)  
 ---Ped can not pull out a weapon when true
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 function SetEnableHandcuffs(ped, p1, p2) end
@@ -6221,7 +6221,7 @@ function SetEnableHandcuffs(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFC24B988B938B38)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param animName string
 ---@param animDict string
 function SetFacialIdleAnimOverride(ped, animName, animDict) end
@@ -6272,7 +6272,7 @@ function SetGroupSeparationRange(groupId, separationRange) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE1B1907A83A1550)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param multiplier integer
 function SetHealthRechargeMultiplier(ped, multiplier) end
 
@@ -6282,23 +6282,23 @@ function SetHealthRechargeMultiplier(ped, multiplier) end
 --- 0 - HORSE_ASSIST__MANUAL
 --- 1 - HORSE_ASSIST__SEMIASSIST
 --- 2 - HORSE_ASSIST__FULLASSIST
----@param horse integer
+---@param horse Ped
 ---@param avoidanceLevel integer
 function SetHorseAvoidanceLevel(horse, avoidanceLevel) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8AB265426CFE6DD)  
 ---Sets some flag on a horse
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetHorseScriptedFlag(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC32779C16FCEECD9)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param ikIndex integer
----@param entityLookAt integer
+---@param entityLookAt Entity
 ---@param boneLookAt integer
 ---@param offsetX number
 ---@param offsetY number
@@ -6311,8 +6311,8 @@ function SetIkTarget(ped, ikIndex, entityLookAt, boneLookAt, offsetX, offsetY, o
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFECA2081F61ED2CD)  
 ---This native does not have an official description.
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param flag integer
 ---@param enable boolean
 function SetInteractionLockonFlag(ped, player, flag, enable) end
@@ -6329,7 +6329,7 @@ function SetInteractionLockonFlag(ped, player, flag, enable) end
 ---	LOOT_FLAG_IGNORE_WATER_CHECKS = 8,
 ---	LOOT_FLAG_ANIMAL_FLAGGED_FOR_TAGGING = 23,
 ---};
----@param ped integer
+---@param ped Ped
 ---@param lootFlag integer
 ---@param enabled boolean
 function SetLootingFlag(ped, lootFlag, enabled) end
@@ -6338,12 +6338,12 @@ function SetLootingFlag(ped, lootFlag, enabled) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC6DF00D7A4A6819)  
 ---Use to apply metaped player components
 ---Replaces asset, alternatively you can remove assets using REMOVE_TAG_FROM_META_PED
----@param ped integer
----@param drawable integer | string
----@param albedo integer | string
----@param normal integer | string
----@param material integer | string
----@param palette integer | string
+---@param ped Ped
+---@param drawable Hash | string
+---@param albedo Hash | string
+---@param normal Hash | string
+---@param material Hash | string
+---@param palette Hash | string
 ---@param tint0 integer
 ---@param tint1 integer
 ---@param tint2 integer
@@ -6352,49 +6352,49 @@ function SetMetaPedTag(ped, drawable, albedo, normal, material, palette, tint0, 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x314C5465195F3B30)  
 ---Sets ped eye redness, weariness: 0.f to 1.f
----@param ped integer
+---@param ped Ped
 ---@param weariness number
 function SetMetaPedWeariness(ped, weariness) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7883AA809DF43D98)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param healthAmount number
 function SetMinPedHealthThreshold(ped, healthAmount) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA69899995997A63B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param bondingLevel integer
 function SetMountBondingLevel(ped, bondingLevel) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11E6B9629C46D6EC)  
 ---Note: this native was added in build 1232.40
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetMountSecurityEnabled(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x925A160133003AC6)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPausePedWritheBleedout(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7AEFB85C1D49DEB6)  
 ---accuracy = 0-100, 100 being perfectly accurate
----@param ped integer
+---@param ped Ped
 ---@param accuracy integer
 function SetPedAccuracy(ped, accuracy) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8DE69D9473B7593)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_ACTION_DISABLE_FLAGS
----@param ped integer
+---@param ped Ped
 ---@param actionDisableFlag integer
 function SetPedActionDisableFlag(ped, actionDisableFlag) end
 
@@ -6405,7 +6405,7 @@ function SetPedActionDisableFlag(ped, actionDisableFlag) end
 ---bloodFountainDirection: 1.0 left side, -1.0 right side
 ---bloodFountainPulse: from 0.1 (low) till 1.0 (fast)
 ---make blood fountain from your stomach: _SET_PED_ACTIVATE_WOUND_EFFECT(ped, unk, 2, 14411, 0.0, 0.1, 0.0, 0.0, 3.0, -1.0, 1.0)
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 ---@param boneId integer
 ---@param moveWoundLeftRight number
@@ -6421,14 +6421,14 @@ function SetPedActivateWoundEffect(ped, p1, boneId, moveWoundLeftRight, bloodFou
 ---[Native Documentation](https://rdr3natives.com/?native=0xB285AD0EC870B2DF)  
 ---Params: hash - ARTHUR or JOHN
 ---_SET_PED_(A-D)*
----@param ped integer
----@param playerType integer | string
+---@param ped Ped
+---@param playerType Hash | string
 function SetPedActivePlayerType(ped, playerType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x43CA928E892CFDB8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param modifier number
 function SetPedAnimalDetectionModifier(ped, modifier) end
 
@@ -6436,14 +6436,14 @@ function SetPedAnimalDetectionModifier(ped, modifier) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB03C38DD3FB7FFD)  
 ---Turns the desired ped into a cop. If you use this on the player ped, you will become almost invisible to cops dispatched for you. You will also report your own crimes, get a generic cop voice, get a cop-vision-cone on the radar, and you will be unable to shoot at other cops. Toggling ped as "false" has no effect; you must change p0's ped model to disable the effect.
 ---toggle = bSetRelGroup
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedAsCop(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A7819605465FBCE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param groupId integer
 ---@param p2 boolean
 function SetPedAsGroupLeader(ped, groupId, p2) end
@@ -6451,21 +6451,21 @@ function SetPedAsGroupLeader(ped, groupId, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F3480FE65DB31B5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param groupId integer
 function SetPedAsGroupMember(ped, groupId) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6DBF2D78709AD70B)  
 ---NET_FETCH_CLIENT_UPDATE_PED_FIGHT_PROFICIENCY: Changing parry multiplier for ped
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function SetPedBeatMultiplier(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB9401F918CB0F75)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@param value boolean
 ---@param removeTimer integer
@@ -6474,7 +6474,7 @@ function SetPedBlackboardBool(ped, variableName, value, removeTimer) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x437C08DB4FEBE2BD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@param value number
 ---@param removeTimer integer
@@ -6490,7 +6490,7 @@ function SetPedBlackboardFloat(ped, variableName, value, removeTimer) end
 ---LeftLeg
 ---Legs
 ---RightArm
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@param value string
 ---@param removeTimer integer
@@ -6503,7 +6503,7 @@ function SetPedBlackboardHash(ped, variableName, value, removeTimer) end
 ---Blackboard bools, floats and strings are subdivided into 6 sections: "all", "animation", "any", "code", "global" and "script"
 ---Most changes are only visible for "script" blackboards, some "script" blackboards change ped motions
 ---"removeTimer" is self-removal timer, can be "-1" so your data will not be removed by the game (forever); 100 = 1 second
----@param ped integer
+---@param ped Ped
 ---@param variableName string
 ---@param value integer
 ---@param removeTimer integer
@@ -6519,8 +6519,8 @@ function SetPedBlackboardInt(ped, variableName, value, removeTimer) end
 ---Human_Mission
 ---
 ---For more information, see common/data/ai/peddamageinfo.meta
----@param ped integer
----@param bleedoutProfile integer | string
+---@param ped Ped
+---@param bleedoutProfile Hash | string
 function SetPedBleedoutProfile(ped, bleedoutProfile) end
 
 ---**`PED` `client`**  
@@ -6570,21 +6570,21 @@ function SetPedBleedoutProfile(ped, bleedoutProfile) end
 ---	BS_TIMID = 0x431AEF77,
 ---	BS_WOLF = 0xA8F023D4
 ---};
----@param ped integer
----@param brawlingStyle integer | string
+---@param ped Ped
+---@param brawlingStyle Hash | string
 function SetPedBrawlingStyle(ped, brawlingStyle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C3B4D6D13B4C841)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanArmIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5240864E847C691C)  
 ---When set on a player ped, its just like when you die in RDO
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanBeIncapacitated(ped, toggle) end
 
@@ -6598,36 +6598,36 @@ function SetPedCanBeIncapacitated(ped, toggle) end
 ---	KNOCKOFFVEHICLE_EASY,
 ---	KNOCKOFFVEHICLE_HARD
 ---};
----@param ped integer
+---@param ped Ped
 ---@param state integer
 function SetPedCanBeKnockedOffVehicle(ped, state) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFD6943B6DF77E449)  
 ---SET_PED_CAN_*
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanBeLassoed(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x63F58F7C80513AAD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanBeTargetted(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66B57B72E0836A76)  
 ---This native does not have an official description.
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param toggle boolean
 function SetPedCanBeTargettedByPlayer(ped, player, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBF1CA77833E58F2C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param team integer
 ---@param toggle boolean
 function SetPedCanBeTargettedByTeam(ped, team, toggle) end
@@ -6635,42 +6635,42 @@ function SetPedCanBeTargettedByTeam(ped, team, toggle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEE9DF765990E8D1D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanBodyRecoilIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC11C18092C5530DC)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanHeadIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x73518ECE2485412B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanLegIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6373D1349925A70E)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanPlayAmbientAnims(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EB0585D15254740)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanPlayAmbientBaseAnims(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBAF20C5432058024)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 ---@param p2 any
 function SetPedCanPlayGestureAnims(ped, p1, p2) end
@@ -6678,14 +6678,14 @@ function SetPedCanPlayGestureAnims(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB128377056A54E2A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanRagdoll(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDF993EE5E90ABA25)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanRagdollFromPlayerImpact(ped, toggle) end
 
@@ -6694,7 +6694,7 @@ function SetPedCanRagdollFromPlayerImpact(ped, toggle) end
 ---This only will teleport the ped to the group leader if the group leader teleports (sets coords).
 ---
 ---Only works in singleplayer
----@param pedHandle integer
+---@param pedHandle Ped
 ---@param groupId integer
 ---@param toggle boolean
 function SetPedCanTeleportToGroupLeader(pedHandle, groupId, toggle) end
@@ -6702,28 +6702,28 @@ function SetPedCanTeleportToGroupLeader(pedHandle, groupId, toggle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2B7106D37947CE0)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanTorsoIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF5846EDB26A98A24)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanTorsoReactIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6647C5F6F5792496)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanTorsoVehicleIk(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC4686EC06434678)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedCanUseAutoConversationLookat(ped, toggle) end
 
@@ -6733,14 +6733,14 @@ function SetPedCanUseAutoConversationLookat(ped, toggle) end
 ---Must be called every tick to be effective.
 ---
 ---Setting this to 0.001 will allow warping through some objects.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedCapsule(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x78C4E9961DB3EB5B)  
 ---Old name: SET_PED_CLOTH_PACKAGE_INDEX
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function SetPedClothPinFrames(ped, p1) end
 
@@ -6753,7 +6753,7 @@ function SetPedClothPinFrames(ped, p1) end
 ---	CAL_AVERAGE,
 ---	CAL_PROFESSIONAL
 ---};
----@param ped integer
+---@param ped Ped
 ---@param abilityLevel integer
 function SetPedCombatAbility(ped, abilityLevel) end
 
@@ -6761,15 +6761,15 @@ function SetPedCombatAbility(ped, abilityLevel) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD75500141E4725C)  
 ---Hashes: GUARD, COMBAT_ANIMAL, LAW, LAW_SHERIFF
 ---_SET_PED_COMBAT_A* - _SET_PED_COMBAT_M*
----@param ped integer
----@param p1 integer | string
+---@param ped Ped
+---@param p1 Hash | string
 function SetPedCombatAttributeHash(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F7794730795E019)  
 ---attributeIndex: https://alloc8or.re/rdr3/doc/enums/eCombatAttribute.txt
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_ATTRIBUTES
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param enabled boolean
 function SetPedCombatAttributes(ped, attributeIndex, enabled) end
@@ -6777,8 +6777,8 @@ function SetPedCombatAttributes(ped, attributeIndex, enabled) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9238A3D970BBB0A9)  
 ---This native does not have an official description.
----@param ped integer
----@param behaviour integer | string
+---@param ped Ped
+---@param behaviour Hash | string
 function SetPedCombatBehaviour(ped, behaviour) end
 
 ---**`PED` `client`**  
@@ -6787,7 +6787,7 @@ function SetPedCombatBehaviour(ped, behaviour) end
 ---1 - Defensive (Will try to find cover and very likely to blind fire)
 ---2 - Offensive (Will attempt to charge at enemy but take cover as well)
 ---3 - Suicidal Offensive (Will try to flank enemy in a suicidal attack)
----@param ped integer
+---@param ped Ped
 ---@param combatMovement integer
 function SetPedCombatMovement(ped, combatMovement) end
 
@@ -6801,7 +6801,7 @@ function SetPedCombatMovement(ped, combatMovement) end
 ---	CR_FAR,
 ---	CR_VERY_FAR
 ---};
----@param ped integer
+---@param ped Ped
 ---@param range integer
 function SetPedCombatRange(ped, range) end
 
@@ -6810,8 +6810,8 @@ function SetPedCombatRange(ped, range) end
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/COMBAT_STYLES
 ---Params: p2 is usually 1, sometimes 0 or 2
 ---duration in seconds, -1.0 = forever
----@param ped integer
----@param combatStyleHash integer | string
+---@param ped Ped
+---@param combatStyleHash Hash | string
 ---@param p2 integer
 ---@param duration number
 function SetPedCombatStyle(ped, combatStyleHash, p2, duration) end
@@ -6819,8 +6819,8 @@ function SetPedCombatStyle(ped, combatStyleHash, p2, duration) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8B1E8E35A6E814EA)  
 ---duration in seconds, -1.0 = forever
----@param ped integer
----@param combatStyleModHash integer | string
+---@param ped Ped
+---@param combatStyleModHash Hash | string
 ---@param duration number
 function SetPedCombatStyleMod(ped, combatStyleModHash, duration) end
 
@@ -6829,7 +6829,7 @@ function SetPedCombatStyleMod(ped, combatStyleModHash, duration) end
 ---flagId: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/ePedScriptConfigFlags
 ---https://alloc8or.re/rdr3/doc/enums/ePedScriptConfigFlags.txt
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/CPED_CONFIG_FLAGS
----@param ped integer
+---@param ped Ped
 ---@param flagId integer
 ---@param value boolean
 function SetPedConfigFlag(ped, flagId, value) end
@@ -6837,7 +6837,7 @@ function SetPedConfigFlag(ped, flagId, value) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7DE9692C6F64CFE8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param state boolean
 ---@param p2 integer
 ---@param immediately boolean
@@ -6846,7 +6846,7 @@ function SetPedCrouchMovement(ped, state, p2, immediately) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8AC1D721B2097B6E)  
 ---The higher the multiplier the less the engine renders culls (https://docs.unity3d.com/Manual/OcclusionCulling.html)
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 function SetPedCullRange(ped, p1, p2) end
@@ -6854,21 +6854,21 @@ function SetPedCullRange(ped, p1, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7528720101A807A5)  
 ---damageCleanliness: see _GET_PED_DAMAGE_CLEANLINESS
----@param ped integer
+---@param ped Ped
 ---@param damageCleanliness integer
 function SetPedDamageCleanliness(ped, damageCleanliness) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDACE03C65C6666DB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param damaged boolean
 function SetPedDamaged(ped, damaged) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x413C6C763A4AFFAD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -6878,7 +6878,7 @@ function SetPedDefensiveAreaDirection(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB2BFE5D009F0331)  
 ---_SET_PED_(A?)*
----@param ped integer
+---@param ped Ped
 ---@param x1 number
 ---@param y1 number
 ---@param z1 number
@@ -6888,15 +6888,15 @@ function SetPedDefensiveAreaDirection(ped, p1, p2, p3, p4) end
 ---@param p7 any
 ---@param p8 boolean
 ---@param p9 boolean
----@param entity integer
+---@param entity Entity
 ---@param p11 boolean
 function SetPedDefensiveAreaToAngledArea(ped, x1, y1, z1, x2, y2, z2, p7, p8, p9, entity, p11) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC3DB99C8144CD81)  
 ---This native does not have an official description.
----@param ped integer
----@param volume integer
+---@param ped Ped
+---@param volume Volume
 ---@param p2 boolean
 ---@param p3 boolean
 ---@param p4 boolean
@@ -6905,8 +6905,8 @@ function SetPedDefensiveAreaVolume(ped, volume, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1854217C640B39EC)  
 ---This native does not have an official description.
----@param ped integer
----@param entity integer
+---@param ped Ped
+---@param entity Entity
 ---@param x number
 ---@param y number
 ---@param z number
@@ -6918,7 +6918,7 @@ function SetPedDefensiveSphereAttachedToEntity(ped, entity, x, y, z, radius, p6,
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAA5A7ECE2AA8FE70)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param heading number
 function SetPedDesiredHeading(ped, heading) end
 
@@ -6950,21 +6950,21 @@ function SetPedDesiredHeading(ped, heading) end
 ---rally
 ---waiter
 ---war_veteran
----@param ped integer
+---@param ped Ped
 ---@param locomotionArchetype string
 function SetPedDesiredLocoForModel(ped, locomotionArchetype) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x89F5E7ADECCCB49C)  
 ---Sets peds motion type
----@param ped integer
+---@param ped Ped
 ---@param locoMotionType string
 function SetPedDesiredLocoMotionType(ped, locoMotionType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBAD2A311667A50D7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedDesiresGroup(ped, toggle) end
 
@@ -6972,7 +6972,7 @@ function SetPedDesiresGroup(ped, toggle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE3144B932DFDFF65)  
 ---Params: ped, 0f, -1, true, true in R* MP Scripts
 ---_SET_PED_DE* - _SET_PED_F*
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 integer
 ---@param p3 boolean
@@ -6982,14 +6982,14 @@ function SetPedDirtCleaned(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xADD31A5C7A5FAA73)  
 ---Disables being able to kick move ped.
----@param ped integer
+---@param ped Ped
 ---@param disable boolean
 function SetPedDisableKickMove(ped, disable) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x406CCF555B04FAD3)  
 ---SOBER = 0.0f, SLIGHTLY_DRUNK = 0.25f, MODERATELY_DRUNK = 0.5f, VERY_DRUNK = 1.0f
----@param ped integer
+---@param ped Ped
 ---@param enabled boolean
 ---@param drunknessLevel number
 function SetPedDrunkness(ped, enabled, drunknessLevel) end
@@ -6997,22 +6997,22 @@ function SetPedDrunkness(ped, enabled, drunknessLevel) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9AC577F5A12AD8A9)  
 ---Used in various R* MP & SP Scripts
----@param ped integer
----@param patternHash integer | string
+---@param ped Ped
+---@param patternHash Hash | string
 function SetPedFiringPattern(ped, patternHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x20E54854DEF6A54A)  
 ---Used in R* MP Script fm_mission_controller and various R* SP Scripts for ambush*
----@param ped integer
----@param patternHash integer | string
+---@param ped Ped
+---@param patternHash Hash | string
 function SetPedFiringPattern_2(ped, patternHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x244E8C282188E40F)  
 ---Only used in R* MP Script fm_mission_controller
----@param ped integer
----@param patternHash integer | string
+---@param ped Ped
+---@param patternHash Hash | string
 function SetPedFiringPattern_3(ped, patternHash) end
 
 ---**`PED` `client`**  
@@ -7026,7 +7026,7 @@ function SetPedFiringPattern_3(ped, patternHash) end
 ---	FA_DISABLE_MOUNT_USAGE = (1 << 20),
 ---	FA_DISABLE_ENTER_VEHICLES = (1 << 22),
 ---};
----@param ped integer
+---@param ped Ped
 ---@param attributeFlags integer
 ---@param enable boolean
 function SetPedFleeAttributes(ped, attributeFlags, enable) end
@@ -7034,7 +7034,7 @@ function SetPedFleeAttributes(ped, attributeFlags, enable) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E9E95FDEDCC9D35)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param position integer
 ---@param toggle boolean
 function SetPedFormationPosition(ped, position, toggle) end
@@ -7042,7 +7042,7 @@ function SetPedFormationPosition(ped, position, toggle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDF803377F94AAA8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param gesture string
 ---@param p2 integer
 function SetPedGestureGroup(ped, gesture, p2) end
@@ -7050,7 +7050,7 @@ function SetPedGestureGroup(ped, gesture, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3AE3552E7C207CC5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param animName string
 ---@param p2 boolean
 function SetPedGetupAnimation(ped, animName, p2) end
@@ -7058,21 +7058,21 @@ function SetPedGetupAnimation(ped, animName, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8301D87B1B89E219)  
 ---This native does not have an official description.
----@param ped integer
----@param grappleAction integer | string
+---@param ped Ped
+---@param grappleAction Hash | string
 function SetPedGrappleAction(ped, grappleAction) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x56E9C26CD29D1ED6)  
 ---This native does not have an official description.
----@param ped integer
----@param grappleAnim integer | string
+---@param ped Ped
+---@param grappleAnim Hash | string
 function SetPedGrappleAnimation(ped, grappleAnim) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x99A6E246C315BF60)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param multiplier number
 ---@return any
 function SetPedGrappleEffectMultiplier(ped, multiplier) end
@@ -7080,7 +7080,7 @@ function SetPedGrappleEffectMultiplier(ped, multiplier) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x789DABD18E9024DB)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param flag integer
 ---@param enable boolean
 function SetPedGrappleFlag(ped, flag, enable) end
@@ -7088,64 +7088,64 @@ function SetPedGrappleFlag(ped, flag, enable) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x604190F0CF0DF158)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param grappleSequence string
 function SetPedGrappleSequence(ped, grappleSequence) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x630E7B01F091A197)  
 ---Hashes: GS_DRAGGING, GS_FACE_TO_BACK, GS_FACE_TO_FACE, GS_FACE_TO_FACE_WALL, GS_MOUNTED
----@param ped integer
----@param style integer | string
+---@param ped Ped
+---@param style Hash | string
 ---@return any
 function SetPedGrappleStyle(ped, style) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9FF447B6B6AD960A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedGravity(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0BDDB8D9EC6BCF3C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param index integer
 function SetPedGroupMemberPassengerIndex(ped, index) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BA918C823B8BA56)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param multiplier number
 function SetPedHeadshotDamageMultiplier(ped, multiplier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6B82FCE03B43A37)  
 ---configHash: see pedhealth.meta
----@param ped integer
----@param configHash integer | string
+---@param ped Ped
+---@param configHash Hash | string
 function SetPedHealthConfig(ped, configHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x33A8F7F7D5F7F33C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedHearingRange(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x52D59AB61DDC05DD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedHighlyPerceptive(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF107E836A70DCE05)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedIdRange(ped, value) end
 
@@ -7153,21 +7153,21 @@ function SetPedIdRange(ped, value) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x7FB0088E8769CDDB)  
 ---Only used in R* Script beat_sharp_shooter
 ---Blocks ped from swimming underwater
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedImmersionFlag(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD67B6F3BCF81BA47)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param flags integer
 function SetPedIncapacitationFlags(ped, flags) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x39ED303390DDEAC7)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param canBeIncapacitated boolean
 ---@param threshold integer
 ---@param bleedoutTime integer
@@ -7177,21 +7177,21 @@ function SetPedIncapacitationModifiers(ped, canBeIncapacitated, threshold, bleed
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2890418B39BC8FFF)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param duration number
 function SetPedIncapacitationTotalBleedOutDuration(ped, duration) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC4B4B3B9908052A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param unk number
 function SetPedInjuredOnGroundBehaviour(ped, unk) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA3C53CDE922BC78B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param speech string
 function SetPedInteractionNegativeResponse(ped, speech) end
 
@@ -7199,14 +7199,14 @@ function SetPedInteractionNegativeResponse(ped, speech) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x24C82EF607105FAA)  
 ---personality (script_mp_rel): NONE, AGGRESSIVE, TIMID (non-aggressive), CRIPPS, SCRIPTEDINTIMIDATION, MAGGIE, MARCEL, SCRIPTEDSALOON
 ---personality (script_rel): AVOID, SCRIPTEDOUTLAW, TIMIDGUARDDOG, SCRIPTEDTIMIDROB, AGGRESSIVECAMPER, LAZYDOG, KIERANTIEDUP, SCRIPTEDGALA
----@param ped integer
----@param personality integer | string
+---@param ped Ped
+---@param personality Hash | string
 function SetPedInteractionPersonality(ped, personality) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x20C5459379D75C1C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param speech string
 function SetPedInteractionPositiveResponse(ped, speech) end
 
@@ -7215,36 +7215,36 @@ function SetPedInteractionPositiveResponse(ped, speech) end
 ---Ped: The ped to warp.
 ---vehicle: The vehicle to warp the ped into.
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
----@param ped integer
----@param vehicle integer
+---@param ped Ped
+---@param vehicle Vehicle
 ---@param seatIndex integer
 function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x971D38760FBC02EF)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedKeepTask(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5BCF0B79D4F5DBA3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function SetPedKnockedByOneHit(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x05CE6AF4DF071D23)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 function SetPedLadderMovementSpeedModifier(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAE6004120C18DF97)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param flagId integer
 ---@param value boolean
 function SetPedLassoHogtieFlag(ped, flagId, value) end
@@ -7252,56 +7252,56 @@ function SetPedLassoHogtieFlag(ped, flagId, value) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC396F5B86FF9FEBD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param mode integer
 function SetPedLegIkMode(ped, mode) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x13A210949FCBD92B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedLights(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC2C5C242AAC342B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param multiplier number
 function SetPedLodMultiplier(ped, multiplier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF5F6378C4F3419D3)  
 ---Sets the maximum health of a ped.
----@param ped integer
+---@param ped Ped
 ---@param value integer
 function SetPedMaxHealth(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x433083750C5E064A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedMaxMoveBlendRatio(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x43C851690662113D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedMaxTimeInWater(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6BA428C528D9E522)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedMaxTimeUnderwater(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6DB875AFC584FA32)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param durationMs integer
 ---@return any
 function SetPedMeleeForcedDuration(ped, durationMs) end
@@ -7309,21 +7309,21 @@ function SetPedMeleeForcedDuration(ped, durationMs) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01A898D26E2333DD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedMinMoveBlendRatio(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE163A4BCE4DE6F11)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@param toggle boolean
 function SetPedModelIsSuppressed(model, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA9C8960E8684C1B5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param amount integer
 function SetPedMoney(ped, amount) end
 
@@ -7345,16 +7345,16 @@ function SetPedMoney(ped, amount) end
 ---};
 ---
 ---If targetPed is set to 0 the ped motivationState affects everyone
----@param ped integer
+---@param ped Ped
 ---@param motivationState integer
 ---@param threshold number
----@param targetPed integer
+---@param targetPed Ped
 function SetPedMotivation(ped, motivationState, threshold, targetPed) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1EB5D029E0191D3)  
 ---The higher the modifier, the slower the motivationState value will decrease
----@param ped integer
+---@param ped Ped
 ---@param motivationState integer
 ---@param modifier number
 function SetPedMotivationModifier(ped, motivationState, modifier) end
@@ -7362,7 +7362,7 @@ function SetPedMotivationModifier(ped, motivationState, modifier) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2EB75FB86C41F026)  
 ---motivationState: see _SET_PED_MOTIVATION
----@param ped integer
+---@param ped Ped
 ---@param motivationState integer
 ---@param enabled boolean
 function SetPedMotivationStateOverride(ped, motivationState, enabled) end
@@ -7370,29 +7370,29 @@ function SetPedMotivationStateOverride(ped, motivationState, enabled) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E8C908F41584ECD)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function SetPedMoveAnimsBlendOut(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x085BF80FA50A39D1)  
 ---Min: 0.0f
 ---Max: 1.15f
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedMoveRateOverride(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x98EFA132A4117BE1)  
 ---nullsub, doesn't do anything
----@param ped integer
+---@param ped Ped
 ---@param name string
 function SetPedNameDebug(ped, name) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC48AF420371C7407)  
 ---Sets the next melee attack of a ped eg AR_ATTACK_HAYMAKER_TO_HEAD_RIGHT_HAND_DIST_MED_V01 AR_GRAPPLE_MOUNT_FACEDOWN_FROM_FRONT
----@param ped integer
----@param actionHash integer | string
+---@param ped Ped
+---@param actionHash Hash | string
 ---@return any
 function SetPedNextMeleeAttack(ped, actionHash) end
 
@@ -7410,8 +7410,8 @@ function SetPedNonCreationArea(x1, y1, z1, x2, y2, z2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x028F76B6E78246EB)  
 ---This native does not have an official description.
----@param ped integer
----@param mount integer
+---@param ped Ped
+---@param mount Ped
 ---@param seatIndex integer
 ---@param p3 boolean
 function SetPedOntoMount(ped, mount, seatIndex, p3) end
@@ -7419,22 +7419,22 @@ function SetPedOntoMount(ped, mount, seatIndex, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFA1594703ED27CA)  
 ---doesnt seem to work on story characters possibly need to uese the metaped natives for those
----@param ped integer
+---@param ped Ped
 ---@param index integer
 function SetPedOutfitPreset(ped, index) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x931B241409216C1F)  
 ---enables horse items wheel
----@param ped integer
----@param animal integer
+---@param ped Ped
+---@param animal Ped
 ---@param p2 boolean
 function SetPedOwnsAnimal(ped, animal, p2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE07FF6495D52E2A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7445,49 +7445,49 @@ function SetPedPanicExitScenario(ped, x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8B6430EAD2D2437)  
 ---Hashes: STANDARD_PED_AGRO_GUARD, BOUNTY_HUNTER, PLAYER_HORSE, LAW_POLICE, GUARD_DOG, ATTACK_DOG
 ---Personalities can also be found in common:/data/ai/interactionpersonalities
----@param ped integer
----@param personality integer | string
+---@param ped Ped
+---@param personality Hash | string
 function SetPedPersonality(ped, personality) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4A48B6E03BABB4AC)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param name string
 function SetPedPromptName(ped, name) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x19B14E04B009E28B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param name string
 function SetPedPromptName_2(ped, name) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFCA8FB9E15FA80D3)  
 ---This native does not have an official description.
----@param ped integer
----@param gxtEntryHash integer | string
+---@param ped Ped
+---@param gxtEntryHash Hash | string
 function SetPedPromptNameFromGxtEntry(ped, gxtEntryHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC2745D9261664901)  
 ---This native does not have an official description.
----@param ped integer
----@param gxtEntryHash integer | string
+---@param ped Ped
+---@param gxtEntryHash Hash | string
 function SetPedPromptNameFromGxtEntry_2(ped, gxtEntryHash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE6B874286D640BB)  
 ---quality: see _GET_PED_QUALITY
----@param ped integer
+---@param ped Ped
 ---@param quality integer
 function SetPedQuality(ped, quality) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC17A94CC8FC3C61A)  
 ---seems to modify the size/scale of the collision capsule (hitbox) for a specific ped bone
----@param entity integer
+---@param entity Entity
 ---@param boneId integer
 ---@param p2 number
 ---@param p3 number
@@ -7497,13 +7497,13 @@ function SetPedRagdollBoneScale(entity, boneId, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01F6594B923B9251)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function SetPedRagdollForceFall(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF0A4F1BBF4FA7497)  
 ---Causes Ped to ragdoll on collision with any object (e.g Running into trashcan). If applied to player you will sometimes trip on the sidewalk.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 ---@param p2 boolean
 function SetPedRagdollOnCollision(ped, toggle, p2) end
@@ -7511,22 +7511,22 @@ function SetPedRagdollOnCollision(ped, toggle, p2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC8A9481A01E63C28)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function SetPedRandomComponentVariation(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xADB3F206518799E8)  
 ---This native does not have an official description.
----@param ped integer
----@param hash integer | string
+---@param ped Ped
+---@param hash Hash | string
 function SetPedRelationshipGroupDefaultHash(ped, hash) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC80A74AC829DDD92)  
 ---This native does not have an official description.
----@param ped integer
----@param relationshipGroup integer | string
+---@param ped Ped
+---@param relationshipGroup Hash | string
 function SetPedRelationshipGroupHash(ped, relationshipGroup) end
 
 ---**`PED` `client`**  
@@ -7535,7 +7535,7 @@ function SetPedRelationshipGroupHash(ped, relationshipGroup) end
 ---
 ---flagid:https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/ePedScriptResetFlags
 ---https://github.com/femga/rdr3_discoveries/tree/master/AI/CPED_RESET_FLAGS
----@param ped integer
+---@param ped Ped
 ---@param flagId integer
 ---@param doReset boolean
 function SetPedResetFlag(ped, flagId, doReset) end
@@ -7543,7 +7543,7 @@ function SetPedResetFlag(ped, flagId, doReset) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x25ACFC650B65C538)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param scale number
 function SetPedScale(ped, scale) end
 
@@ -7551,28 +7551,28 @@ function SetPedScale(ped, scale) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x01B21B81865E2A1F)  
 ---0.0 - 1.0
 ---Modifies the "scent line" on the ped's body when using Eagle Eye.
----@param ped integer
+---@param ped Ped
 ---@param scent number
 function SetPedScent(ped, scent) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF29CF591C4BF6CEE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedSeeingRange(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x614DA022990752DC)  
 ---Params: shootRate = 0 - 1000
----@param ped integer
+---@param ped Ped
 ---@param shootRate integer
 function SetPedShootRate(ped, shootRate) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x802092B07E3B1EEA)  
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7583,7 +7583,7 @@ function SetPedShouldPlayCombatScenarioExit(ped, x, y, z, lookIntensity) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC6935EBE0847B90)  
 ---Old name: _SET_PED_SHOULD_PLAY_DIRECTED_SCENARIO_EXIT
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7593,7 +7593,7 @@ function SetPedShouldPlayDirectedNormalScenarioExit(ped, x, y, z) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x62FDAD5E01D2DD47)  
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7609,7 +7609,7 @@ function SetPedShouldPlayEmotionalScenarioExit(ped, x, y, z, lookIntensity, p5) 
 ---1 - REACT_LOOK_LOW
 ---2 - REACT_LOOK_MEDIUM
 ---3 - REACT_LOOK_HIGH
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7620,19 +7620,19 @@ function SetPedShouldPlayFleeScenarioExit(ped, x, y, z, lookIntensity) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF1C03A5352243A30)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function SetPedShouldPlayImmediateScenarioExit(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA3A9299C4F2ADB98)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function SetPedShouldPlayNormalScenarioExit(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x463803429297117C)  
 ---lookIntensity: see SET_PED_SHOULD_PLAY_FLEE_SCENARIO_EXIT
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7644,7 +7644,7 @@ function SetPedShouldPlayQuickScenarioExit(ped, x, y, z, lookIntensity, p5) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D3151A373974804)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -7657,7 +7657,7 @@ function SetPedSphereDefensiveArea(ped, x, y, z, radius, p5, p6, p7) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88CBB5CEB96B7BD2)  
 ---Not implemented.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 ---@param p2 any
 ---@param p3 any
@@ -7666,14 +7666,14 @@ function SetPedStealthMovement(ped, toggle, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x27B0405F59637D1F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param sweat number
 function SetPedSweat(ped, sweat) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC163DAC52AC975D3)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param actionDisableFlag integer
 function SetPedTargetActionDisableFlag(ped, actionDisableFlag) end
 
@@ -7682,14 +7682,14 @@ function SetPedTargetActionDisableFlag(ped, actionDisableFlag) end
 ---TLR_ExitTask = 0,
 ---TLR_NeverLoseTarget,
 ---TLR_SearchForTarget
----@param ped integer
+---@param ped Ped
 ---@param responseType integer
 function SetPedTargetLossResponse(ped, responseType) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x36E4B61DC56DE77C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 number
 ---@param p2 number
 ---@param p3 integer
@@ -7699,14 +7699,14 @@ function SetPedToBeRemoved(ped, p1, p2, p3, p4) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x221F4D9912B7FE86)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedToDisableRagdoll(ped, toggle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x112942C6E708F70B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param radius number
 ---@param maxFriends integer
 function SetPedToInformRespectedFriends(ped, radius, maxFriends) end
@@ -7714,14 +7714,14 @@ function SetPedToInformRespectedFriends(ped, radius, maxFriends) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD77AE48611B7B10A)  
 ---Old name: _SET_PED_DAMAGE_MODIFIER
----@param ped integer
+---@param ped Ped
 ---@param damageModifier number
 function SetPedToPlayerWeaponDamageModifier(ped, damageModifier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAE99FB955581844A)  
 ---nmTaskMessageParameterName: See physicstasks.ymt. Search for DraggedByCart or 0xD00820D7 (Used in R* SP Script marston8)
----@param ped integer
+---@param ped Ped
 ---@param timeMin integer
 ---@param timeMax integer
 ---@param ragdollType integer
@@ -7734,7 +7734,7 @@ function SetPedToRagdoll(ped, timeMin, timeMax, ragdollType, abortIfInjured, abo
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD76632D99E4966C8)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param timeMin integer
 ---@param timeMax integer
 ---@param ragdollType integer
@@ -7756,8 +7756,8 @@ function SetPedToRagdollWithFall(ped, timeMin, timeMax, ragdollType, falldirX, f
 ---The native WILL NOT WORK if the specific component containing the VFX node is not equipped on the ped (e.g., the torch outfit -368114487 must be equipped first via _EQUIP_META_PED_OUTFIT).
 ---It only colors the smoke/volumetrics, leaving the core fire sprites untouched.
 ---Values greater than 1.0f are clamped to 1.0f by the engine. To achieve specific RGB shades, you MUST normalize 0-255 values by dividing them by 255.0f (e.g., 128 becomes 0.5f)
----@param ped integer
----@param vfxNodeHash integer | string
+---@param ped Ped
+---@param vfxNodeHash Hash | string
 ---@param r number
 ---@param g number
 ---@param b number
@@ -7766,7 +7766,7 @@ function SetPedTorchVfxColor(ped, vfxNodeHash, r, g, b) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA5950E16B8F31052)  
 ---duration in seconds
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param duration number
 function SetPedTrailEffect(ped, p1, duration) end
@@ -7774,7 +7774,7 @@ function SetPedTrailEffect(ped, p1, duration) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB72453B6F5B45B0)  
 ---Doesn't actually return anything.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 ---@return any
 function SetPedUseHorseMapCollision(ped, toggle) end
@@ -7782,7 +7782,7 @@ function SetPedUseHorseMapCollision(ped, toggle) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD75ACCF5E0FB5367)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param bActionModeEnabled boolean
 ---@param p2 integer
 ---@param action string
@@ -7791,62 +7791,62 @@ function SetPedUsingActionMode(ped, bActionModeEnabled, p2, action) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3B6405E8AB34A907)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param angle number
 function SetPedVisualFieldCenterAngle(ped, angle) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x70793BDCA1E854D4)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedVisualFieldMaxAngle(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2DB492222FB21E26)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param value number
 function SetPedVisualFieldMinAngle(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9C74B0BC831B753A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param range number
 function SetPedVisualFieldPeripheralRange(ped, range) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD05AD61F242C626B)  
 ---_SET_PED_S* - _SET_PED_T*
----@param ped integer
+---@param ped Ped
 ---@param volume number
 function SetPedVoiceVolume(ped, volume) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9CFF5BB70E8A2CB)  
 ---only works when you use SET_PED_WETNESS_HEIGHT first , if you do 0.0 (it resets) you need to apply again with SET_PED_WETNESS_HEIGHT to see the wetness effects again
----@param ped integer
+---@param ped Ped
 ---@param amount number
 function SetPedWetnessAmount(ped, amount) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB5485E4907B53019)  
 ---combined with PED::SET_PED_WETNESS_HEIGHT(), this native makes the ped drenched in water up to the height specified in the other function
----@param ped integer
+---@param ped Ped
 function SetPedWetnessEnabledThisFrame(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x44CB6447D2571AA0)  
 ---It adds the wetness level to the player clothing/outfit. As if player just got out from water surface.
----@param ped integer
+---@param ped Ped
 ---@param height number
 function SetPedWetnessHeight(ped, height) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4DB9D03AC4E1FA84)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param writhingDuration1 number
 ---@param writhingDuration2 number
 ---@param p3 integer
@@ -7855,7 +7855,7 @@ function SetPedWrithingDuration(ped, writhingDuration1, writhingDuration2, p3) e
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA73F50E8796150D5)  
 ---This native does not have an official description.
----@param horse integer
+---@param horse Ped
 ---@param peltId integer
 function SetPeltForHorse(horse, peltId) end
 
@@ -7865,18 +7865,18 @@ function SetPeltForHorse(horse, peltId) end
 ---EXAMPLE:
 ---local mount = GetMountOwnedByPlayer(PlayerId())
 ---Citizen.InvokeNative(0xC412AA1C73111FE0,mount,GetHashKey('PROVISION_DEER_HIDE_POOR'),GetHashKey('a_c_deer_01_uppr_000_c0_001_ab'),0,0)
----@param horse integer
----@param inventoryItem integer | string
----@param albedoHash integer | string
----@param normalHash integer | string
+---@param horse Ped
+---@param inventoryItem Hash | string
+---@param albedoHash Hash | string
+---@param normalHash Hash | string
 ---@param p4 boolean
 function SetPeltForHorseByInventoryItem(horse, inventoryItem, albedoHash, normalHash, p4) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5708EDD71B50C008)  
 ---This native does not have an official description.
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param duration integer
 function SetPlayerAntagonizeDisabledForPed(ped, player, duration) end
 
@@ -7884,7 +7884,7 @@ function SetPlayerAntagonizeDisabledForPed(ped, player, duration) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9EFF3C91DF38304F)  
 ---Animal Skin Quality Modifier
 ---Params: p2 = 2, p3 = 3 in R* Scripts
----@param player integer
+---@param player Player
 ---@param modifier number
 ---@param p2 integer
 ---@param p3 integer
@@ -7894,16 +7894,16 @@ function SetPlayerCurrentAnimalDamageModifier(player, modifier, p2, p3) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA691C10054275290)  
 ---dismountTimer gets called with the data from `_GET_PLAYER_DISMOUNT_TIMESTAMP`
----@param mount integer
----@param player integer
+---@param mount Ped
+---@param player Player
 ---@param dismountedTimestamp integer
 function SetPlayerDismountTimestamp(mount, player, dismountedTimestamp) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x19173C3F15367B54)  
 ---This native does not have an official description.
----@param ped integer
----@param player integer
+---@param ped Ped
+---@param player Player
 ---@param duration integer
 function SetPlayerGreetDisabledForPed(ped, player, duration) end
 
@@ -7945,14 +7945,14 @@ function SetPopControlSphereThisFrame(p0, p1, p2, p3, p4) end
 ---	RBF_HORSE_BUMP = (1 << 18),
 ---	RBF_ACTIVATE_ON_COLLISION = (1 << 19)
 ---};
----@param ped integer
+---@param ped Ped
 ---@param flags integer
 function SetRagdollBlockingFlags(ped, flags) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x283978A15512B2FE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function SetRandomOutfitVariation(ped, p1) end
 
@@ -7974,22 +7974,22 @@ function SetRandomOutfitVariation(ped, p1) end
 ---
 --- https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/eRelationType
 ---@param relationship integer
----@param group1 integer | string
----@param group2 integer | string
+---@param group1 Hash | string
+---@param group2 Hash | string
 function SetRelationshipBetweenGroups(relationship, group1, group2) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDC91F22F09BC6C2F)  
 ---Used in Script Function MP_MAIN_OFFLINE__INITIALIZE_GAME
 ---_SET_RELATIONSHIP_*
----@param group integer | string
+---@param group Hash | string
 ---@param unregister boolean
 function SetRelationshipGroupScriptRegistered(group, unregister) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x39A2FC5AF55A52B1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function SetRemovePedNetworked(ped, p1) end
 
@@ -8026,7 +8026,7 @@ function SetScenarioPedDensityMultiplierThisFrame(multiplier) end
 ---- VANHORN
 ---
 ---See common/data/ai/densityscoringconfigs.meta for more information.
----@param configHash integer | string
+---@param configHash Hash | string
 function SetScenarioPedDensityThisFrame(configHash) end
 
 ---**`PED` `client`**  
@@ -8038,33 +8038,33 @@ function SetScenarioPedRangeMultiplierThisFrame(multiplier) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E3842E5DAD69F80)  
 ---Only used in SP R* Script loanshark_hunter
----@param volume integer
+---@param volume Volume
 function SetScenarioPedVolumeReference(volume) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x028E7B3BBA0BD2FC)  
 ---_SET_ST* - _SET_SW* Sets a ped config flag for the specified ped
----@param ped integer
+---@param ped Ped
 function SetStagedPedFlag(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF5A3D2285D8924B)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param multiplier integer
 function SetStaminaDepletionMultiplier(ped, multiplier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x345C9F993A8AB4A4)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param multiplier integer
 function SetStaminaRechargeMultiplier(ped, multiplier) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7FF72DE061DF55E2)  
 ---Size will be permanent
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param size number
 function SetTankAttributeSize(ped, attributeIndex, size) end
@@ -8082,7 +8082,7 @@ function SetTextureLayerAlpha(textureId, layerId, texAlpha) end
 ---This native does not have an official description.
 ---@param textureId integer
 ---@param layerId integer
----@param modTextureHash integer | string
+---@param modTextureHash Hash | string
 ---@param modAlpha number
 ---@param modChannel integer
 function SetTextureLayerMod(textureId, layerId, modTextureHash, modAlpha, modChannel) end
@@ -8092,7 +8092,7 @@ function SetTextureLayerMod(textureId, layerId, modTextureHash, modAlpha, modCha
 ---paletteHash: https://raw.githubusercontent.com/femga/rdr3_discoveries/master/clothes/cloth_color_palletes.lua
 ---@param textureId integer
 ---@param layerId integer
----@param paletteHash integer | string
+---@param paletteHash Hash | string
 function SetTextureLayerPallete(textureId, layerId, paletteHash) end
 
 ---**`PED` `client`**  
@@ -8116,9 +8116,9 @@ function SetTextureLayerSheetGridIndex(textureId, layerId, sheetGridIndex) end
 ---This native does not have an official description.
 ---@param textureId integer
 ---@param layerId integer
----@param albedoHash integer | string
----@param normalHash integer | string
----@param materialHash integer | string
+---@param albedoHash Hash | string
+---@param normalHash Hash | string
+---@param materialHash Hash | string
 function SetTextureLayerTextureMap(textureId, layerId, albedoHash, normalHash, materialHash) end
 
 ---**`PED` `client`**  
@@ -8134,9 +8134,9 @@ function SetTextureLayerTint(textureId, layerId, tint0, tint1, tint2) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4EFC1F8FF1AD94DE)  
 ---Used in script function METAPED_CLOTHING__XML__APPLY_OUTFIT_TINTS_TO_PED
----@param ped integer
----@param componentCategory integer | string
----@param palette integer | string
+---@param ped Ped
+---@param componentCategory Hash | string
+---@param palette Hash | string
 ---@param tint0 integer
 ---@param tint1 integer
 ---@param tint2 integer
@@ -8145,14 +8145,14 @@ function SetTextureOutfitTints(ped, componentCategory, palette, tint0, tint1, ti
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x932786CE3C76477C)  
 ---_SET_W(EAPON?)*
----@param ped integer
+---@param ped Ped
 ---@param bonus number
 function SetTotalPedDamageFalloffBonus(ped, bonus) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x73B6F907B913C860)  
 ---_SET_W(EAPON?)*
----@param ped integer
+---@param ped Ped
 ---@param totalDamage number
 function SetTotalPedDamageFromAi(ped, totalDamage) end
 
@@ -8160,7 +8160,7 @@ function SetTotalPedDamageFromAi(ped, totalDamage) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C57F27D1554E6B0)  
 ---Triggers a gunshot
 ---Params: p5 = -1 in R* Scripts
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -8186,14 +8186,14 @@ function SpawnpointsGetNumSearchResults() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x280C7E3AC7F56E90)  
 ---This native does not have an official description.
 ---@param randomInt integer
----@return number, any, number
+---@return number x, any y, number z
 function SpawnpointsGetSearchResult(randomInt) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB782F8238512BAD5)  
 ---This native does not have an official description.
 ---@param p0 any
----@return any
+---@return any p1
 function SpawnpointsGetSearchResultFlags(p0) end
 
 ---**`PED` `client`**  
@@ -8247,7 +8247,7 @@ function SpawnpointsStartSearchInAngledArea(x1, y1, z1, x2, y2, z2, width, spawn
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x83ED1FC9DF3411F5)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param spawnpointsFlag integer
 ---@param p2 number
 ---@param duration integer
@@ -8257,21 +8257,21 @@ function SpawnpointsStartSearchWithVolume(volume, spawnpointsFlag, p2, duration,
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9ACF4A08098EA25)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function SpecialFunctionDoNotUse(ped, p1) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x285D36C5C72B0569)  
 ---Returns time since the specified ped last shot, in seconds. (fPlayerJustShotTime)
----@param ped integer
+---@param ped Ped
 ---@return number
 function TimeSincePedLastShot(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x09E378C52B1433B5)  
 ---_TOGGLE_S* - _UPDATE_*
----@param ped integer
+---@param ped Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -8284,7 +8284,7 @@ function TogglePlayerPedFlinch(ped, x, y, z, scale) end
 ---If toggle is false, the ped will not be scared anymore and continue his scenario
 ---
 ---Old name: _SET_PED_SCARED_WHEN_USING_SCENARIO
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function ToggleScenarioPedCowerInPlace(ped, toggle) end
 
@@ -8297,7 +8297,7 @@ function UnreserveAmbientPeds(numPeds) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0F9E754EBE8FDBFA)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function UpdateAnimalDamageModifier(player) end
 
 ---**`PED` `client`**  
@@ -8311,7 +8311,7 @@ function UpdatePedTexture(textureId) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCC8CA3E88256E58F)  
 ---Update variation on ped, needed after first creation, or when component or texture/overlay is changed
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
 ---@param p3 boolean
@@ -8322,16 +8322,16 @@ function UpdatePedVariation(ped, p1, p2, p3, p4, p5) end
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66B1CB778D911F49)  
 ---Params: 0.0f to remove wound effects
----@param ped integer
+---@param ped Ped
 ---@param value number
 function UpdatePedWoundEffect(ped, value) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x66B957AAC2EAAEAB)  
 ---This native does not have an official description.
----@param ped integer
----@param componentHash integer | string
----@param wearableState integer | string
+---@param ped Ped
+---@param componentHash Hash | string
+---@param wearableState Hash | string
 ---@param p3 integer
 ---@param isMp boolean
 ---@param p5 integer
@@ -8340,13 +8340,13 @@ function UpdateShopItemWearableState(ped, componentHash, wearableState, p3, isMp
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE0B61ED8BB37712F)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function WarpPedOutOfVehicle(ped) end
 
 ---**`PED` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11B499C1E0FF8559)  
 ---Despite this function's name, it simply returns whether the specified handle is a Ped.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function WasPedSkeletonUpdated(ped) end
 

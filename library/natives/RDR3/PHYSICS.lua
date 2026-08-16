@@ -3,7 +3,7 @@
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x710311ADF0E20730)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function ActivatePhysics(entity) end
 
 ---**`PHYSICS` `client`**  
@@ -28,7 +28,7 @@ function ActivatePhysics(entity) end
 ---@param p14 number
 ---@param breakWhenShot boolean
 ---@param p17 boolean
----@return integer, any
+---@return integer, any unkPtr
 function AddRope(x, y, z, rotX, rotY, rotZ, length, ropeType, maxLength, minLength, p10, p11, p12, rigid, p14, breakWhenShot, p17) end
 
 ---**`PHYSICS` `client`**  
@@ -52,8 +52,8 @@ function AddRope_2(x, y, z, rotX, rotY, rotZ, length, ropeType, isNetworked, p9,
 ---[Native Documentation](https://rdr3natives.com/?native=0xE9CD9A67834985A7)  
 ---This native does not have an official description.
 ---@param ropeId integer
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param p3 number
 ---@param p4 number
 ---@param p5 number
@@ -69,8 +69,8 @@ function AttachEntitesToRope_3(ropeId, entity1, entity2, p3, p4, p5, p6, p7, p8,
 ---Attaches entity 1 to entity 2.
 ---If you use a boneName (p12/p13) make sure boneId (p15/p16) is set to -1.
 ---@param ropeId integer
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param ent1X number
 ---@param ent1Y number
 ---@param ent1Z number
@@ -95,8 +95,8 @@ function AttachEntitiesToRope(ropeId, entity1, entity2, ent1X, ent1Y, ent1Z, ent
 ---[Native Documentation](https://rdr3natives.com/?native=0x462FF2A432733A44)  
 ---Attaches a rope to two entities: binds two bones from two entities; one entity can be an object, i.e. a suspension point, the other an NPC bone
 ---@param ropeId integer
----@param entity1 integer
----@param entity2 integer
+---@param entity1 Entity
+---@param entity2 Entity
 ---@param ent1X number
 ---@param ent1Y number
 ---@param ent1Z number
@@ -110,7 +110,7 @@ function AttachEntitiesToRope_2(ropeId, entity1, entity2, ent1X, ent1Y, ent1Z, e
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2E648D16F6E308F3)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 number
 ---@param p2 number
 ---@param p3 number
@@ -130,7 +130,7 @@ function BreakEntityGlass(entity, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 ---@param offsetY number
 ---@param offsetZ number
 ---@param p6 integer
----@return integer, integer, integer
+---@return integer ropeId, integer ropeTop, integer ropeBottom
 function BreakRope(offsetX, offsetY, offsetZ, p6) end
 
 ---**`PHYSICS` `client`**  
@@ -162,7 +162,7 @@ function DeleteRope(ropeId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBCF3026912A8647D)  
 ---This native does not have an official description.
 ---@param ropeId integer
----@param entity integer
+---@param entity Entity
 function DetachRopeFromEntity(ropeId, entity) end
 
 ---**`PHYSICS` `client`**  
@@ -197,7 +197,7 @@ function GetRopeVertexCount(ropeId) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06AADE17334F7A40)  
 ---This native does not have an official description.
----@param horse integer
+---@param horse Ped
 ---@param x number
 ---@param y number
 ---@param z number
@@ -207,7 +207,7 @@ function HitchHorse(horse, x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B4F7E3E4F9C77B3)  
 ---This native does not have an official description.
 ---@param ropeId integer
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsRopeAttachedToEntity(ropeId, entity) end
 
@@ -518,14 +518,14 @@ function ReleaseRope(ropeId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x7A54D82227A139DB)  
 ---This native does not have an official description.
 ---@param visible boolean
----@return integer
+---@return integer ropeId
 function RopeChangeVisibility(visible) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF159A63806BB5BA8)  
 ---This native does not have an official description.
 ---@param toggle boolean
----@return integer
+---@return integer ropeId
 function RopeDrawShadowEnabled(toggle) end
 
 ---**`PHYSICS` `client`**  
@@ -546,7 +546,7 @@ function RopeForceLength(ropeId, length) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xEE360CFC80C8B2BC)  
 ---This native does not have an official description.
 ---@param ropeId integer
----@return integer
+---@return Player
 function RopeGetBreakerOfRope(ropeId) end
 
 ---**`PHYSICS` `client`**  
@@ -566,7 +566,7 @@ function RopeSetUpdateOrder(ropeId, p1) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEEA3B200A6FEB65B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param vertex integer
 ---@param value number
 function SetDamping(entity, vertex, value) end
@@ -574,14 +574,14 @@ function SetDamping(entity, vertex, value) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5CEC1A84620E7D5B)  
 ---This native does not have an official description.
----@param object integer
+---@param object Object
 ---@param toggle boolean
 function SetDisableBreaking(object, toggle) end
 
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01BA3AED21C16CFB)  
 ---This native does not have an official description.
----@param object integer
+---@param object Object
 ---@param toggle boolean
 function SetDisableFragDamage(object, toggle) end
 
@@ -624,6 +624,6 @@ function StopRopeWinding(ropeId) end
 ---**`PHYSICS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0348469DAA17576C)  
 ---This native does not have an official description.
----@param horse integer
+---@param horse Ped
 function UnhitchHorse(horse) end
 

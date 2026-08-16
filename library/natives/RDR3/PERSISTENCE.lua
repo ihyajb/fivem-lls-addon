@@ -143,14 +143,14 @@ function PersistenceIsScenarioMarkedAsLootedAtCoords(x, y, z) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function PersistenceIsScenarioMarkedAsLootedAtCoordsWithModel(x, y, z, model) end
 
 ---**`PERSISTENCE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEFB5F34CC0953B27)  
 ---Only used in R* script long_update.ysc in script function REFRESH_CLOSEST_TOWN
----@param volume integer
+---@param volume Volume
 function PersistenceRefreshTownVolume(volume) end
 
 ---**`PERSISTENCE` `client`**  

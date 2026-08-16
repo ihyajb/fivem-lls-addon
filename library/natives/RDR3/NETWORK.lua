@@ -10,7 +10,7 @@ function ActivateDamageTrackerOnNetworkId(netID, toggle) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE0D73CDDEA79DDCD)  
 ---This native does not have an official description.
----@param animScene integer
+---@param animScene AnimScene
 ---@return integer
 function AnimSceneToNet(animScene) end
 
@@ -109,7 +109,7 @@ function CommerceStoreIsOpen() end
 ---    int PADDING6;
 ---};
 ---@param posixTime integer
----@return any
+---@return any timeStructure
 function ConvertPosixTime(posixTime) end
 
 ---**`NETWORK` `client`**  
@@ -239,7 +239,7 @@ function GetNumReservedMissionVehicles(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDCC4B7F7112E8AB7)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function GetPlayerWaypointIsActive(player) end
 
@@ -247,7 +247,7 @@ function GetPlayerWaypointIsActive(player) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x99AAC89C510DEB0D)  
 ---Only used in R* Script net_stable_manager
 ---@param threadId integer
----@return integer, integer, integer, integer, integer, integer
+---@return integer pedMax, integer vehicleMax, integer unkMax, integer pedMin, integer vehicleMin, integer unkMin
 function GetReservedMissionEntitiesForThread(threadId) end
 
 ---**`NETWORK` `client`**  
@@ -260,7 +260,7 @@ function GetReservedMissionEntitiesForThread(threadId) end
 ---@param y number
 ---@param z number
 ---@param p3 boolean
----@return integer, integer, integer, integer
+---@return integer peds, integer vehicles, integer objects, integer pickups
 function GetReservedMissionEntitiesInArea(x, y, z, p3) end
 
 ---**`NETWORK` `client`**  
@@ -297,7 +297,7 @@ function GetTimeOffset(timeA, timeB) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x07F723401B9D921C)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return integer
 function GetUniqueIntForPlayer(player) end
 
@@ -317,7 +317,7 @@ function IsDamageTrackerActiveOnNetworkId(netID) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x21D04D7BC538C146)  
 ---Old name: _IS_ENTITY_GHOSTED_TO_LOCAL_PLAYER
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityAGhost(entity) end
 
@@ -395,7 +395,7 @@ function LocalPlayerPedshotTextureDownloadRequest(playerSlot, personaPhotoLocalC
 ---@param p1 integer
 ---@param name string
 ---@param p3 boolean
----@return integer, any
+---@return integer, any gamerHandle
 function MugshotTextureDownloadRequest(p1, name, p3) end
 
 ---**`NETWORK` `client`**  
@@ -409,7 +409,7 @@ function N_0x02b3cdd652b3cdd6() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x02C4C6C2900D84DF)  
 ---Only used in SP R* Script dominoes_sp: p1 = 0
----@param player integer
+---@param player Player
 ---@param p1 any
 function N_0x02c4c6c2900d84df(player, p1) end
 
@@ -472,7 +472,7 @@ function N_0x106cbdd5077dede1(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x13F592FC3BF0EA84)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 boolean
 ---@param originalWeight number
 ---@param p3 any
@@ -495,7 +495,7 @@ function N_0x160f0ce6d76a39c9() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x16EFB123C4451032)  
 ---This native does not have an official description.
 ---@param p0 integer
----@return boolean, any
+---@return boolean, any gamerHandle
 function N_0x16efb123c4451032(p0) end
 
 ---**`NETWORK` `client`**  
@@ -507,7 +507,7 @@ function N_0x18b94666cf610aeb() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x19447FCAE97704DC)  
 ---Note: this native was added in build 1311.23
----@param ctx integer | string
+---@param ctx Hash | string
 ---@param ec integer
 ---@param ex boolean
 ---@param ro boolean
@@ -534,9 +534,9 @@ function N_0x232e1eb23cdb313c() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x236321F1178A5446)  
 ---_NETWORK_GET_A* - _NETWORK_GET_D*
----@param player integer
----@param ped integer
----@return boolean, any
+---@param player Player
+---@param ped Ped
+---@return boolean, any p2
 function N_0x236321f1178a5446(player, ped) end
 
 ---**`NETWORK` `client`**  
@@ -551,7 +551,7 @@ function N_0x2686bd9566b65eda(x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x26A867C0B7A456D1)  
 ---_GET_LAUNCH_PARAM_(RESPOT?)*
 ---Name is probably invalid since this native only reads data from parsed entity.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function N_0x26a867c0b7a456d1(entity) end
 
@@ -662,7 +662,7 @@ function N_0x3f2ee18a3e294801(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x405DDEFB1F531B18)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 boolean
 ---@param p2 any
 ---@param p3 any
@@ -694,7 +694,7 @@ function N_0x43cf999205084b4b() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4538EE7C321590BC)  
 ---Returns the entity associated with the given network ID.
 ---@param networkId integer
----@return integer
+---@return Entity
 function N_0x4538ee7c321590bc(networkId) end
 
 ---**`NETWORK` `client`**  
@@ -724,7 +724,7 @@ function N_0x5133cf81924f1129() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x51951DE06C0D1C40)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param type integer
 function N_0x51951de06c0d1c40(player, type) end
 
@@ -737,13 +737,13 @@ function N_0x564552c6af1eeab1() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x5759160AC17C13CE)  
 ---This native does not have an official description.
 ---@param message string
----@return any
+---@return any gamerHandle
 function N_0x5759160ac17c13ce(message) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A91BCEF74944E93)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param p1 number
 function N_0x5a91bcef74944e93(player, p1) end
 
@@ -767,7 +767,7 @@ function N_0x5cd3aad8ff9ed121(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5D3C528B7A7DF836)  
 ---_NETWORK_SPAWN_CONFIG_*
----@param nsctf integer | string
+---@param nsctf Hash | string
 function N_0x5d3c528b7a7df836(nsctf) end
 
 ---**`NETWORK` `client`**  
@@ -827,7 +827,7 @@ function N_0x67ccdf74c4df7169() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x691E4DE5309EAEFC)  
 ---This native does not have an official description.
 ---@param p0 any
----@return any
+---@return any p1
 function N_0x691e4de5309eaefc(p0) end
 
 ---**`NETWORK` `client`**  
@@ -850,8 +850,8 @@ function N_0x6cee2e30021daec6() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6CF82A7F65A5AD5F)  
 ---_NETWORK_GET_A* - _NETWORK_GET_D*
----@param ped integer
----@return integer, any
+---@param ped Ped
+---@return Player, any p1
 function N_0x6cf82a7f65a5ad5f(ped) end
 
 ---**`NETWORK` `client`**  
@@ -876,9 +876,9 @@ function N_0x744bfbb0ca908161(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75FC34A2BA345BD1)  
 ---This native does not have an official description.
----@param entity integer
----@param player integer
----@return boolean, any
+---@param entity Entity
+---@param player Player
+---@return boolean, any p2
 function N_0x75fc34a2ba345bd1(entity, player) end
 
 ---**`NETWORK` `client`**  
@@ -920,14 +920,14 @@ function N_0x7a8e8df782b47eb0(p0, p1, p2) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7B3FF2D193628126)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function N_0x7b3ff2d193628126(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7BCA0A3972708436)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return integer, any
+---@return integer, any outData
 function N_0x7bca0a3972708436(p1) end
 
 ---**`NETWORK` `client`**  
@@ -947,7 +947,7 @@ function N_0x7bca0a3972708436(p1) end
 ---@param p12 integer
 ---@param p13 integer
 ---@param p14 integer
----@return any
+---@return any p0
 function N_0x7e300b5b86ab1d1a(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14) end
 
 ---**`NETWORK` `client`**  
@@ -958,8 +958,8 @@ function N_0x814729078aed6d30() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x862C5040F4888741)  
 ---This native does not have an official description.
----@param player1 integer
----@param player2 integer
+---@param player1 Player
+---@param player2 Player
 ---@return boolean
 function N_0x862c5040f4888741(player1, player2) end
 
@@ -971,7 +971,7 @@ function N_0x862c5040f4888741(player1, player2) end
 ---@param z number
 ---@param p5 number
 ---@param p6 any
----@return boolean, any, any
+---@return boolean, any p0, any p1
 function N_0x880a7202301e282b(x, y, z, p5, p6) end
 
 ---**`NETWORK` `client`**  
@@ -1005,7 +1005,7 @@ function N_0x950acd8f05b7b9df(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x979765465A6F25FC)  
 ---Must be called from a background script, otherwise it will do nothing.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 function N_0x979765465a6f25fc(entity, p1) end
 
@@ -1061,7 +1061,7 @@ function N_0xa63e4f050f20021f() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6F1BAABFF6AD7B9)  
 ---This native does not have an official description.
----@return any
+---@return any p0
 function N_0xa6f1baabff6ad7b9() end
 
 ---**`NETWORK` `client`**  
@@ -1090,7 +1090,7 @@ function N_0xacc44768af229042() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAFA14F98327791CE)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function N_0xafa14f98327791ce() end
 
 ---**`NETWORK` `client`**  
@@ -1114,7 +1114,7 @@ function N_0xbaf7e2979442b29f(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB1EC8C2EEF33BAA)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function N_0xbb1ec8c2eef33baa(entity) end
 
 ---**`NETWORK` `client`**  
@@ -1243,7 +1243,7 @@ function N_0xd637d327080cd86e(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD78A26024BB13E08)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function N_0xd78a26024bb13e08(player) end
 
 ---**`NETWORK` `client`**  
@@ -1349,20 +1349,20 @@ function N_0xec089f84a9c16c62() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF23A6D6C11D8EC15)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function N_0xf23a6d6c11d8ec15() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF260AF6F43953316)  
 ---Same Native Handler as VEH_TO_NET, PED_TO_NET, OBJ_TO_NET and NETWORK_GET_NETWORK_ID_FROM_ENTITY
----@param handle integer
+---@param handle ScrHandle
 ---@return integer
 function N_0xf260af6f43953316(handle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF302AB9D978352EE)  
 ---Returns the entity's network ID.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function N_0xf302ab9d978352ee(entity) end
 
@@ -1398,8 +1398,8 @@ function N_0xfd8112109a96877c() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE53B1F8D43F19BF)  
 ---This native does not have an official description.
----@param player1 integer
----@param player2 integer
+---@param player1 Player
+---@param player2 Player
 ---@return integer
 function N_0xfe53b1f8d43f19bf(player1, player2) end
 
@@ -1413,42 +1413,42 @@ function N_0xff36f36b07e69059(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD7F6781A0ABAF6FB)  
 ---This native does not have an official description.
 ---@param netId integer
----@return integer
+---@return AnimScene
 function NetToAnimScene(netId) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBFFEAB45A9A9094A)  
 ---gets the entity id of a network id
 ---@param netHandle integer
----@return integer
+---@return Entity
 function NetToEnt(netHandle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD8515F5FEA14CB3F)  
 ---gets the object id of a network id
 ---@param netHandle integer
----@return integer
+---@return Object
 function NetToObj(netHandle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBDCD95FC216A8B3E)  
 ---gets the ped id of a network id
 ---@param netHandle integer
----@return integer
+---@return Ped
 function NetToPed(netHandle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD08066E00D26C448)  
 ---This native does not have an official description.
 ---@param netId integer
----@return integer
+---@return PropSet
 function NetToPropset(netId) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x367B936610BA360C)  
 ---This native does not have an official description.
 ---@param netHandle integer
----@return integer
+---@return Vehicle
 function NetToVeh(netHandle) end
 
 ---**`NETWORK` `client`**  
@@ -1461,17 +1461,17 @@ function NetworkAcceptRsInvite(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAA6A47A573ABB75A)  
 ---This native does not have an official description.
----@param tunableContext integer | string
----@param tunableName integer | string
+---@param tunableContext Hash | string
+---@param tunableName Hash | string
 ---@return boolean
 function NetworkAccessTunableBool(tunableContext, tunableName) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8BE1146DFD5D4468)  
 ---This native does not have an official description.
----@param tunableContext integer | string
----@param tunableName integer | string
----@return boolean, integer
+---@param tunableContext Hash | string
+---@param tunableName Hash | string
+---@return boolean, integer value
 function NetworkAccessTunableInt(tunableContext, tunableName) end
 
 ---**`NETWORK` `client`**  
@@ -1495,21 +1495,21 @@ function NetworkActivitySetCurrent(netPlaylistActivity) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E02D73914064223)  
 ---This native does not have an official description.
 ---@param message string
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkAddFriend(message) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x157D8F3DE12B307F)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param p1 integer
 function NetworkAddPlayerToRecentGamersList(player, p1) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1BAA028F52EED310)  
 ---This native does not have an official description.
----@param ctx integer | string
----@param lh integer | string
+---@param ctx Hash | string
+---@param lh Hash | string
 ---@param ec integer
 ---@param h integer
 function NetworkAlert(ctx, lh, ec, h) end
@@ -1523,21 +1523,21 @@ function NetworkAllowAllEntityFadingForInstances(toggle) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF3354D6CA46F419D)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function NetworkAllowEntityFadingForInstances(entity, toggle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x267C78C60E806B9A)  
 ---Old name: _NETWORK_ALLOW_LOCAL_ENTITY_ATTACHMENT
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function NetworkAllowRemoteAttachmentModification(entity, toggle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x57DBA049E110F217)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any gamerHandle1, any gamerHandle2
 function NetworkAreHandlesTheSame() end
 
 ---**`NETWORK` `client`**  
@@ -1549,13 +1549,13 @@ function NetworkAreOnlineNotificationsShownInStoryMode() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11820D1AE80DEA39)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any gamerHandle1, any gamerHandle2
 function NetworkArePlayersInSamePlatformParty() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9DE986FC9A87C474)  
 ---Old name: _NETWORK_IS_PLAYER_EQUAL_TO_INDEX
----@param player integer
+---@param player Player
 ---@param index integer
 ---@return boolean
 function NetworkArePlayersInSameTutorialSession(player, index) end
@@ -1563,7 +1563,7 @@ function NetworkArePlayersInSameTutorialSession(player, index) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE404BFF0ABA23CDC)  
 ---This native does not have an official description.
----@return boolean, integer
+---@return boolean, integer p0
 function NetworkAutoSessionCanSplitSession() end
 
 ---**`NETWORK` `client`**  
@@ -1606,7 +1606,7 @@ function NetworkAutoSessionIsProcessingSessionSplit() end
 ---This native does not have an official description.
 ---@param toggle boolean
 ---@param p2 integer
----@return any
+---@return any p1
 function NetworkAutoSessionSetAllowedToMerge(toggle, p2) end
 
 ---**`NETWORK` `client`**  
@@ -1647,19 +1647,19 @@ function NetworkAwardHasReachedMaxclaim(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF50DA1A3F8B1BA4)  
 ---This native does not have an official description.
----@return boolean, integer
+---@return boolean, integer loadingState
 function NetworkCanAccessMultiplayer() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x99ABE9BF9DADA162)  
 ---On PC this returns true if gamerHandle is a valid handle.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkCanAddFriend() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF23D6475640D29EB)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkCanReceiveInviteFromHandle() end
 
 ---**`NETWORK` `client`**  
@@ -1677,7 +1677,7 @@ function NetworkCanSessionEnd() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x246545C37C27A717)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkCanViewGamerUserContent() end
 
 ---**`NETWORK` `client`**  
@@ -1750,14 +1750,14 @@ function NetworkClockTimeOverride_2(hour, minute, second, transitionTime, pauseC
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBBDF066252829606)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param toggle boolean
 function NetworkConcealPlayer(player, toggle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFA38B52F91B59075)  
 ---Must be called from a background script, otherwise it will do nothing.
----@return any
+---@return any p0
 function NetworkDebugRequestEntityPosition() end
 
 ---**`NETWORK` `client`**  
@@ -1799,7 +1799,7 @@ function NetworkDisableRealtimeMultiplayer() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD66C9E72B3CC4982)  
 ---Hardcoded to return -1.
 ---@param p1 any
----@return integer, any
+---@return integer, any p0
 function NetworkDisplaynamesFromHandlesStart(p1) end
 
 ---**`NETWORK` `client`**  
@@ -1812,8 +1812,8 @@ function NetworkDoesNetworkIdExist(netID) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x85E5F8B9B898B20A)  
 ---This native does not have an official description.
----@param tunableContext integer | string
----@param tunableName integer | string
+---@param tunableContext Hash | string
+---@param tunableName Hash | string
 ---@return boolean
 function NetworkDoesTunableExist(tunableContext, tunableName) end
 
@@ -1830,22 +1830,22 @@ function NetworkEndTutorialSession() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4CACA84440FA26F6)  
 ---This native does not have an official description.
----@param player integer
----@param entity integer
----@return boolean, integer
+---@param player Player
+---@param entity Entity
+---@return boolean, integer p2
 function NetworkGetAssistedDamageOfEntity(player, entity) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD414BE129BB81B32)  
 ---Old name: _NETWORK_GET_AVERAGE_LATENCY_FOR_PLAYER
----@param player integer
+---@param player Player
 ---@return number
 function NetworkGetAverageLatency(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x350C23949E43686C)  
 ---Old name: _NETWORK_GET_AVERAGE_PACKET_LOSS_FOR_PLAYER
----@param player integer
+---@param player Player
 ---@return number
 function NetworkGetAveragePacketLoss(player) end
 
@@ -1854,21 +1854,21 @@ function NetworkGetAveragePacketLoss(player) end
 ---Same as NETWORK_GET_AVERAGE_LATENCY (0xD414BE129BB81B32)
 ---
 ---Old name: _NETWORK_GET_AVERAGE_LATENCY_FOR_PLAYER_2
----@param player integer
+---@param player Player
 ---@return number
 function NetworkGetAveragePing(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA3EEC0A5AFF3FC5B)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function NetworkGetCurrentFriendPageData() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7A1ADEEF01740A24)  
 ---This native does not have an official description.
 ---@param netId integer
----@return integer, integer
+---@return integer, Hash weaponHash
 function NetworkGetDestroyerOfNetworkId(netId) end
 
 ---**`NETWORK` `client`**  
@@ -1881,7 +1881,7 @@ function NetworkGetDestroyerOfNetworkId(netId) end
 ---	// use displayName
 ---}
 ---@param displayName string
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkGetDisplayNameFromHandle(displayName) end
 
 ---**`NETWORK` `client`**  
@@ -1897,21 +1897,21 @@ function NetworkGetDisplaynamesFromHandles(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE4E5D9B0A4FF560)  
 ---This native does not have an official description.
 ---@param netId integer
----@return integer
+---@return Entity
 function NetworkGetEntityFromNetworkId(netId) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC7827959479DCC78)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function NetworkGetEntityIsNetworked(entity) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42B2DAA6B596F5F8)  
 ---This native does not have an official description.
----@param player integer
----@return integer, integer
+---@param player Player
+---@return Entity, Hash weaponHash
 function NetworkGetEntityKillerOfPlayer(player) end
 
 ---**`NETWORK` `client`**  
@@ -1924,51 +1924,51 @@ function NetworkGetGameMode() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFBDFE1C1356E12E8)  
 ---This native does not have an official description.
 ---@param count integer
----@return boolean, any
+---@return boolean, any data
 function NetworkGetGamerSessionFromHandle(count) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDAEB478E58F8DEA)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return integer, any
+---@return integer, any gamerHandle
 function NetworkGetGamerStatus(p1) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5659D87BE674AB17)  
 ---This native does not have an official description.
----@return any, any
+---@return any, any gamerHandle
 function NetworkGetGamertagFromFriend() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x426141162EBE5CDB)  
 ---Always returns a null string.
----@return any, any
+---@return any, any gamerHandle
 function NetworkGetGamertagFromHandle() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11A7ADCD629E170F)  
 ---This native does not have an official description.
----@return boolean, integer, integer, integer
+---@return boolean, integer hour, integer minute, integer second
 function NetworkGetGlobalClock() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDD7806FD0543BC3D)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function NetworkGetGlobalEntityFlags(entity) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D03BFBD643B2A02)  
 ---This native does not have an official description.
----@return integer, integer, integer
+---@return integer hours, integer minutes, integer seconds
 function NetworkGetGlobalMultiplayerClock() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x52C1EADAF7B10302)  
 ---Old name: _NETWORK_GET_OLDEST_RESEND_COUNT_FOR_PLAYER
----@param player integer
+---@param player Player
 ---@return integer
 function NetworkGetHighestReliableResendCount(player) end
 
@@ -1978,20 +1978,20 @@ function NetworkGetHighestReliableResendCount(player) end
 ---@param scriptName string
 ---@param p1 integer
 ---@param p2 integer
----@return integer
+---@return Player
 function NetworkGetHostOfScript(scriptName, p1, p2) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC7B4D79B01FA7A5C)  
 ---This native does not have an official description.
----@return integer
+---@return Player
 function NetworkGetHostOfThisScript() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB4A25351D79B444C)  
 ---This native does not have an official description.
 ---@param threadId integer
----@return integer
+---@return Player
 function NetworkGetHostOfThread(threadId) end
 
 ---**`NETWORK` `client`**  
@@ -2010,7 +2010,7 @@ function NetworkGetInstanceIdOfThread(threadId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE86051786B66CD8E)  
 ---This native does not have an official description.
----@return any
+---@return any gamerHandle
 function NetworkGetLocalHandle() end
 
 ---**`NETWORK` `client`**  
@@ -2033,7 +2033,7 @@ function NetworkGetNetStatisticsInfo() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA11700682F3AD45C)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return integer
 function NetworkGetNetworkIdFromEntity(entity) end
 
@@ -2086,14 +2086,14 @@ function NetworkGetNumRecentGamers() end
 ---This native does not have an official description.
 ---@param scriptName string
 ---@param instanceId integer
----@param position integer | string
+---@param position Hash | string
 ---@return integer
 function NetworkGetNumScriptParticipants(scriptName, instanceId, position) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF8FCF9FFC458A1C)  
 ---Old name: _NETWORK_GET_NUM_UNACKED_FOR_PLAYER
----@param player integer
+---@param player Player
 ---@return integer
 function NetworkGetNumUnackedReliables(player) end
 
@@ -2113,35 +2113,35 @@ function NetworkGetPlatformInviteId() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD9267375834C5EAB)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return integer
 function NetworkGetPlayerFastInstanceId(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE5F689CF5A0A49D)  
 ---This native does not have an official description.
----@return integer, any
+---@return Player, any gamerHandle
 function NetworkGetPlayerFromGamerHandle() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x24FB80D107371267)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return integer
 function NetworkGetPlayerIndex(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C0E2E0125610278)  
 ---Returns the Player associated to a given Ped when in an online session.
----@param ped integer
----@return integer
+---@param ped Ped
+---@return Player
 function NetworkGetPlayerIndexFromPed(ped) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6C0787443C9583E)  
 ---This native does not have an official description.
 ---@param netId integer
----@return integer
+---@return Player
 function NetworkGetPlayerOwnerOfNetworkId(netId) end
 
 ---**`NETWORK` `client`**  
@@ -2170,7 +2170,7 @@ function NetworkGetRank() end
 ---@param p0 integer
 ---@param p1 integer
 ---@param dataSize integer
----@return boolean, any
+---@return boolean, any outData
 function NetworkGetRecentGamerNames(p0, p1, dataSize) end
 
 ---**`NETWORK` `client`**  
@@ -2195,19 +2195,19 @@ function NetworkGetScriptStatus() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8DC9AA3B508B1A85)  
 ---This native does not have an official description.
----@return integer
+---@return Player
 function NetworkGetSessionHost() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBA24095EA96DFE17)  
 ---This native does not have an official description.
----@return integer, integer
+---@return integer, integer p0
 function NetworkGetSizeOfHostBroadcastDataStorage() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x690806BC83BC8CA2)  
 ---This native does not have an official description.
----@return integer, integer
+---@return integer, integer p0
 function NetworkGetSizeOfPlayerBroadcastDataStorage() end
 
 ---**`NETWORK` `client`**  
@@ -2243,7 +2243,7 @@ function NetworkGetTunableCloudCrc() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3765C3A3E8192E10)  
 ---Old name: _NETWORK_GET_UNRELIABLE_RESEND_COUNT_FOR_PLAYER
----@param player integer
+---@param player Player
 ---@return integer
 function NetworkGetUnreliableResendCount(player) end
 
@@ -2257,14 +2257,14 @@ function NetworkGetXp() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD45CB817D7E177D2)  
 ---This native does not have an official description.
 ---@param friendIndex integer
----@return any
+---@return any gamerHandle
 function NetworkHandleFromFriend(friendIndex) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x388EB2B86C73B6B3)  
 ---This native does not have an official description.
----@param player integer
----@return any
+---@param player Player
+---@return any gamerHandle
 function NetworkHandleFromPlayer(player) end
 
 ---**`NETWORK` `client`**  
@@ -2276,14 +2276,14 @@ function NetworkHasCompletedMpIntroFlowOnCurrentSlot() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x26A5C12FACFF8724)  
 ---This native does not have an official description.
----@param animScene integer
+---@param animScene AnimScene
 ---@return boolean
 function NetworkHasControlOfAnimScene(animScene) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01BF60A500E28887)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function NetworkHasControlOfEntity(entity) end
 
@@ -2297,7 +2297,7 @@ function NetworkHasControlOfNetworkId(netId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5BC9495F0B3B6FA6)  
 ---This native does not have an official description.
----@param pickup integer
+---@param pickup Pickup
 ---@return boolean
 function NetworkHasControlOfPickup(pickup) end
 
@@ -2317,15 +2317,15 @@ function NetworkHasCurrentGetGamerStatusStarted() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB07D3185E11657A5)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function NetworkHasEntityBeenRegisteredWithThisThread(entity) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC1D768F2F5D6C05)  
 ---This native does not have an official description.
----@param player integer
----@return integer
+---@param player Player
+---@return Hash
 function NetworkHashFromPlayerHandle(player) end
 
 ---**`NETWORK` `client`**  
@@ -2374,7 +2374,7 @@ function NetworkHaveRosBannedPriv() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E7CE19219669AEB)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsAimCamActive(player) end
 
@@ -2393,7 +2393,7 @@ function NetworkIsCloudAvailable() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16D3D49902F697BB)  
 ---Old name: _NETWORK_IS_CONNECTION_ENDPOINT_RELAY_SERVER
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsConnectedViaRelay(player) end
 
@@ -2419,19 +2419,19 @@ function NetworkIsFindingGamers() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1A24A179F9B31654)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkIsFriend() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x665161D250850A9F)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkIsFriendHandleInSameTitle() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE348D1404BD80146)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkIsFriendHandleOnline() end
 
 ---**`NETWORK` `client`**  
@@ -2443,13 +2443,13 @@ function NetworkIsGameInProgress() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0F10B05DDF8D16E9)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkIsGamerInMySession() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F79B93B0A8E4133)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkIsHandleValid() end
 
 ---**`NETWORK` `client`**  
@@ -2516,7 +2516,7 @@ function NetworkIsParticipantActive(p0) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0BE73DA6984A6E33)  
 ---Hardcoded to return false.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkIsPendingFriend() end
 
 ---**`NETWORK` `client`**  
@@ -2528,57 +2528,57 @@ function NetworkIsPlatformInvitePending() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB8DFD30D6973E135)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerActive(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3CA58F6CB7CBD784)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerAParticipant(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1AD5B71586B94820)  
 ---This native does not have an official description.
----@param p0 integer
+---@param p0 Player
 ---@param p2 any
----@return boolean, any
+---@return boolean, any p1
 function NetworkIsPlayerAParticipantOnScript(p0, p2) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x919B3C98ED8292F9)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerConcealed(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x93DC1BE4E1ABE9D1)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerConnected(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x255A5EF65EDA9167)  
 ---Returns true if the passed value is less than 32.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerIndexValid(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x63F9EE203C3619F2)  
 ---Note: scripts seem to indicate that this was renamed to NETWORK_IS_PLAYER_IN_MP_FAST_INSTANCE
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerInMpCutscene(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5B709519997ECF0F)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsPlayerInSpectatorMode(player) end
 
@@ -2619,7 +2619,7 @@ function NetworkIsScriptActive(scriptName, p1, p2, p3) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1B89BC43B6E69107)  
 ---This native does not have an official description.
----@param scriptHash integer | string
+---@param scriptHash Hash | string
 ---@param p1 integer
 ---@param p2 boolean
 ---@param p3 integer
@@ -2654,8 +2654,8 @@ function NetworkIsThreadActive(threadId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE525878A35B9EEBD)  
 ---This native does not have an official description.
----@param player integer
----@param trackedPlayer integer
+---@param player Player
+---@param trackedPlayer Player
 ---@return boolean
 function NetworkIsTrackedPlayerVisible(player, trackedPlayer) end
 
@@ -2704,7 +2704,7 @@ function NetworkRefreshCurrentFriendPage() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06FAACD625D80CAA)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function NetworkRegisterEntityAsNetworked(entity) end
 
 ---**`NETWORK` `client`**  
@@ -2726,7 +2726,7 @@ function NetworkRegisterPlayerBroadcastVariables(p0, p1, p2) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x55F618F68AB854D3)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkRemoveFriend() end
 
 ---**`NETWORK` `client`**  
@@ -2737,14 +2737,14 @@ function NetworkRequestCloudTunables() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAAA92B631B13F614)  
 ---This native does not have an official description.
----@param animScene integer
+---@param animScene AnimScene
 ---@return boolean
 function NetworkRequestControlOfAnimScene(animScene) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB69317BF5E782347)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function NetworkRequestControlOfEntity(entity) end
 
@@ -2796,7 +2796,7 @@ function NetworkRequestRecentGamerNames(p0, playerCount) end
 ---};
 ---@param flags integer
 ---@param seamlessType integer
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkRequestSessionSeamless(flags, seamlessType) end
 
 ---**`NETWORK` `client`**  
@@ -2823,7 +2823,7 @@ function NetworkResurrectLocalPlayer(x, y, z, heading, p4, p5, p6, p7) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4154B7D8C75E5DCF)  
 ---This native does not have an official description.
----@return any
+---@return any args
 function NetworkResurrectLocalPlayer_2() end
 
 ---**`NETWORK` `client`**  
@@ -2839,7 +2839,7 @@ function NetworkSeedRandomNumberGenerator(seed) end
 ---@param dataSize integer
 ---@param p4 integer
 ---@param flags integer
----@return boolean, any, any
+---@return boolean, any gamerHandle, any data
 function NetworkSendSessionInvite(contentId, dataSize, p4, flags) end
 
 ---**`NETWORK` `client`**  
@@ -2867,13 +2867,13 @@ function NetworkSessionAddSessionFlags(flags) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4DEC5000F7B508F0)  
 ---Note: this native was added in build 1311.23
----@return boolean, any, any
+---@return boolean, any sessionId1, any sessionId2
 function NetworkSessionAreSessionIdsEqual() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE72E5C1289BD1F40)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionCancelRequest() end
 
 ---**`NETWORK` `client`**  
@@ -2885,7 +2885,7 @@ function NetworkSessionGetSessionFlags() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE9B356C330C0A806)  
 ---Note: this native was added in build 1311.23
----@return any
+---@return any sessionId
 function NetworkSessionGetSessionId() end
 
 ---**`NETWORK` `client`**  
@@ -2900,7 +2900,7 @@ function NetworkSessionGetSessionId() end
 ---6 - PLAYER_SET_TOO_LARGE
 ---7 - MATCH_ACCEPTED
 ---8 - OTHER
----@return integer, any, integer
+---@return integer, any sessionRequestId, integer p1
 function NetworkSessionGetSessionRequestResult() end
 
 ---**`NETWORK` `client`**  
@@ -2918,7 +2918,7 @@ function NetworkSessionIsAnyRequestInProgress() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0F44A5C78D114922)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionIsNsrrSuccess() end
 
 ---**`NETWORK` `client`**  
@@ -2930,7 +2930,7 @@ function NetworkSessionIsPrivate() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8FB7C254CFCBF78E)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionIsRequestInProgress() end
 
 ---**`NETWORK` `client`**  
@@ -2943,13 +2943,13 @@ function NetworkSessionIsRequestInProgressByQueueGroup(queueGroup) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCCF878D50F8AB10D)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionIsRequestPendingTransition() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2F54B146D3EDCE4D)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionIsSessionRequestIdValid() end
 
 ---**`NETWORK` `client`**  
@@ -2967,7 +2967,7 @@ function NetworkSessionLeaveSession() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xECE6A0C1B59CD8BE)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionLeftQueueOrRequestedSession() end
 
 ---**`NETWORK` `client`**  
@@ -3010,7 +3010,7 @@ function NetworkSessionRemoveSessionFlags(flags) end
 ---@param matchType integer
 ---@param userHash integer
 ---@param p3 integer
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionRequestSessionCompetitive(flags, matchType, userHash, p3) end
 
 ---**`NETWORK` `client`**  
@@ -3019,7 +3019,7 @@ function NetworkSessionRequestSessionCompetitive(flags, matchType, userHash, p3)
 ---@param flags integer
 ---@param userHash integer
 ---@param p2 integer
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionRequestSessionNominated(flags, userHash, p2) end
 
 ---**`NETWORK` `client`**  
@@ -3033,7 +3033,7 @@ function NetworkSessionRequestSessionNominated(flags, userHash, p2) end
 ---@param flags integer
 ---@param category integer
 ---@param userHash integer
----@return boolean, any, any
+---@return boolean, any p2, any sessionRequestId
 function NetworkSessionRequestSessionOnCall(flags, category, userHash) end
 
 ---**`NETWORK` `client`**  
@@ -3043,7 +3043,7 @@ function NetworkSessionRequestSessionOnCall(flags, category, userHash) end
 ---@param flags integer
 ---@param numPlayers integer
 ---@param userHash integer
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionRequestSessionPrivate(flags, numPlayers, userHash) end
 
 ---**`NETWORK` `client`**  
@@ -3055,7 +3055,7 @@ function NetworkSessionRequestSessionPrivate(flags, numPlayers, userHash) end
 ---@param flags integer
 ---@param seamlessType integer
 ---@param userHash integer
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionRequestSessionSeamless(flags, seamlessType, userHash) end
 
 ---**`NETWORK` `client`**  
@@ -3073,7 +3073,7 @@ function NetworkSessionShutdown() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF20B18A330E6DB5C)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any sessionRequestId
 function NetworkSessionTransitionToSession() end
 
 ---**`NETWORK` `client`**  
@@ -3095,14 +3095,14 @@ function NetworkSetCompletedMpIntroFlowOnCurrentSlot(completed) end
 ---^^ last-gen
 ---
 ---Old name: _NETWORK_SET_ENTITY_INVISIBLE_TO_NETWORK
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function NetworkSetEntityOnlyExistsForParticipants(entity, toggle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD785864798258032)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function NetworkSetEntityRemainsWhenUnnetworked(entity, toggle) end
 
@@ -3125,7 +3125,7 @@ function NetworkSetInMpCutscene(p0, p1, p2, p3) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x423DE3854BB50894)  
 ---This native does not have an official description.
 ---@param toggle boolean
----@param playerPed integer
+---@param playerPed Ped
 function NetworkSetInSpectatorMode(toggle, playerPed) end
 
 ---**`NETWORK` `client`**  
@@ -3186,7 +3186,7 @@ function NetworkSetRecentGamersEnabled(toggle) end
 ---@param p0 integer
 ---@param p2 integer
 ---@param p3 integer
----@return any
+---@return any p1
 function NetworkSetRichPresence(p0, p2, p3) end
 
 ---**`NETWORK` `client`**  
@@ -3217,13 +3217,13 @@ function NetworkShowAccountUpgradeUi() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6BFF5F84102DF80A)  
 ---nullsub, doesn't do anything
----@param player integer
+---@param player Player
 function NetworkShowChatRestrictionMsc(player) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x859ED1CEA343FCA8)  
 ---This native does not have an official description.
----@return any
+---@return any gamerHandle
 function NetworkShowProfileUi() end
 
 ---**`NETWORK` `client`**  
@@ -3234,7 +3234,7 @@ function NetworkShowPsnUgcRestriction() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEEB7818B1D307212)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 function NetworkSpawnConfigAddExclusionVolume(volume) end
 
 ---**`NETWORK` `client`**  
@@ -3264,7 +3264,7 @@ function NetworkSpawnConfigAddSpawnPoint(x, y, z, heading) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA35E7BF20FA269E0)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 function NetworkSpawnConfigRemoveExclusionVolume(volume) end
 
 ---**`NETWORK` `client`**  
@@ -3299,7 +3299,7 @@ function NetworkSpawnConfigSetLevelWaterDepth(waterDepthLevel) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0608326F7B98C08D)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 number
 function NetworkSpawnConfigSetTuningFloat(p0, p1) end
 
@@ -3311,21 +3311,21 @@ function NetworkStartSoloTutorialSession() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEB2B99A1AF1A2A6)  
 ---Always returns -1. Seems to be XB1 specific.
----@return integer, any
+---@return integer, any gamerHandle
 function NetworkStartUserContentPermissionsCheck() end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C8BC052AE87D744)  
 ---Old name: _NETWORK_SET_VEHICLE_WHEELS_DESTRUCTIBLE
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 function NetworkTriggerDamageEventForZeroDamage(entity, p1) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB2AD5D29A99D4B26)  
 ---This native does not have an official description.
----@param tunableContext integer | string
----@param tunableName integer | string
+---@param tunableContext Hash | string
+---@param tunableName Hash | string
 ---@param defaultValue boolean
 ---@return boolean
 function NetworkTryAccessTunableBoolHash(tunableContext, tunableName, defaultValue) end
@@ -3333,8 +3333,8 @@ function NetworkTryAccessTunableBoolHash(tunableContext, tunableName, defaultVal
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA18393089C05E49C)  
 ---This native does not have an official description.
----@param tunableContext integer | string
----@param tunableName integer | string
+---@param tunableContext Hash | string
+---@param tunableName Hash | string
 ---@param defaultValue number
 ---@return number
 function NetworkTryAccessTunableFloatHash(tunableContext, tunableName, defaultValue) end
@@ -3342,8 +3342,8 @@ function NetworkTryAccessTunableFloatHash(tunableContext, tunableName, defaultVa
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA25E006B36719774)  
 ---This native does not have an official description.
----@param tunableContext integer | string
----@param tunableName integer | string
+---@param tunableContext Hash | string
+---@param tunableName Hash | string
 ---@param defaultValue integer
 ---@return integer
 function NetworkTryAccessTunableIntHash(tunableContext, tunableName, defaultValue) end
@@ -3351,20 +3351,20 @@ function NetworkTryAccessTunableIntHash(tunableContext, tunableName, defaultValu
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE31A04513237DC89)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function NetworkUnregisterNetworkedEntity(entity) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x99BFDC94A603E541)  
 ---Returns the network ID of the given object.
----@param object integer
+---@param object Object
 ---@return integer
 function ObjToNet(object) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x90986E8876CE0A83)  
 ---Return the local Participant ID
----@return integer
+---@return Player
 function ParticipantId() end
 
 ---**`NETWORK` `client`**  
@@ -3396,7 +3396,7 @@ function PedmugshotTake() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EDEC3C276198689)  
 ---Returns the network ID of the given ped.
----@param ped integer
+---@param ped Ped
 ---@return integer
 function PedToNet(ped) end
 
@@ -3415,14 +3415,14 @@ function PreventNetworkIdMigration(netId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x74F99EF7EF503398)  
 ---This native does not have an official description.
----@param propSet integer
+---@param propSet PropSet
 ---@return integer
 function PropsetToNet(propSet) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA197C35F73AC0F12)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param reportType integer
 ---@param description string
 ---@param horseName string
@@ -3440,14 +3440,14 @@ function RequestPedshotTextureLocalBackupDownload(player, personaPhotoLocalCache
 ---[Native Documentation](https://rdr3natives.com/?native=0xCAF4CA2F87779F8F)  
 ---Only used in R* SP Script map_app_event_handler
 ---@param p1 integer
----@return any, any
+---@return any, any gamerHandle
 function RequestPedshotTextureLocalDownload(p1) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB5C4B18B12A2AF23)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return any, any
+---@return any, any gamerHandle
 function RequestPedshotTextureMultiplayerDownload(p1) end
 
 ---**`NETWORK` `client`**  
@@ -3489,7 +3489,7 @@ function ReserveNetworkMissionVehicles(amount) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x51D99497ABF3F451)  
 ---This native does not have an official description.
----@param doorHash integer | string
+---@param doorHash Hash | string
 function SetDoorNetworked(doorHash) end
 
 ---**`NETWORK` `client`**  
@@ -3502,14 +3502,14 @@ function SetDoorUnnetworked(p0, toggle) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEE5AE9956743BA20)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function SetEntityGhostedToLocalPlayer(entity, toggle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE0031D3C8F36AB82)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param p2 boolean
 ---@param p3 integer
@@ -3537,7 +3537,7 @@ function SetLocalPlayerAsGhost(toggle) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD041A32992A55F84)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param damageMultiplier number
 function SetLocalPlayerDamageMultiplierForPlayer(player, damageMultiplier) end
 
@@ -3559,7 +3559,7 @@ function SetLocalPlayerVisibleInCutscene(_local, remote, instanceId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xA8A024587329F36A)  
 ---This native does not have an official description.
 ---@param netId integer
----@param player integer
+---@param player Player
 ---@param toggle boolean
 function SetNetworkIdAlwaysExistsForPlayer(netId, player, toggle) end
 
@@ -3589,7 +3589,7 @@ function SetNetworkIdVisibleInCutscene(p0, p1, p2, p3) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x442B4347B6EC36E8)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param timer integer
 ---@param p2 boolean
 function SetNetworkRespotTimer(entity, timer, p2) end
@@ -3597,21 +3597,21 @@ function SetNetworkRespotTimer(entity, timer, p2) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12B37D54667DB0B8)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param toggle boolean
 function SetPlayerInvisibleLocally(player, toggle) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDCA6ABDB9288FBE4)  
 ---_SET_PLAYER_V* - _SET_S*
----@param player integer
+---@param player Player
 ---@param disabled boolean
 function SetPlayerVisibilityToLocalPlayerDisabled(player, disabled) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFAA10F1FAFB11AF2)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@param toggle boolean
 function SetPlayerVisibleLocally(player, toggle) end
 
@@ -3646,7 +3646,7 @@ function TextureDownloadReleaseByName(name) end
 ---@param filePath string
 ---@param name string
 ---@param p3 boolean
----@return integer, any
+---@return integer, any gamerHandle
 function TextureDownloadRequest(filePath, name, p3) end
 
 ---**`NETWORK` `client`**  
@@ -3665,7 +3665,7 @@ function UgcClearQueryResults(ugcRequestId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x162C23CA83ED0A62)  
 ---This native does not have an official description.
----@param description integer | string
+---@param description Hash | string
 ---@return boolean
 function UgcDidDescriptionRequestSucceed(description) end
 
@@ -3679,7 +3679,7 @@ function UgcDidRequestSucceed(ugcRequestId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x40F7E66472DF3E5C)  
 ---This native does not have an official description.
----@param description integer | string
+---@param description Hash | string
 ---@param length integer
 ---@return any
 function UgcGetCachedDescription(description, length) end
@@ -3687,7 +3687,7 @@ function UgcGetCachedDescription(description, length) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBFA8D50ADDC54C4)  
 ---This native does not have an official description.
----@param description integer | string
+---@param description Hash | string
 ---@return boolean
 function UgcHasDescriptionRequestFinished(description) end
 
@@ -3714,7 +3714,7 @@ function UgcIsBookMarked(contentId) end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2D5DC831176D0114)  
 ---This native does not have an official description.
----@param description integer | string
+---@param description Hash | string
 ---@return boolean
 function UgcIsDescriptionRequestInProgress(description) end
 
@@ -3793,7 +3793,7 @@ function UgcQueryGetContentNum(ugcRequestId) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param index integer
----@return any, any
+---@return any, any gamerHandle
 function UgcQueryGetCreatorHandle(p0, index) end
 
 ---**`NETWORK` `client`**  
@@ -3810,7 +3810,7 @@ function UgcQueryGetCreatorPhoto(p0, p1, p2) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param index integer
----@return any
+---@return any p2
 function UgcQueryGetDate(p0, index) end
 
 ---**`NETWORK` `client`**  
@@ -3826,7 +3826,7 @@ function UgcQueryGetLanguage(p0, index) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param index integer
----@return integer
+---@return Hash
 function UgcQueryGetMissionDescHash(p0, index) end
 
 ---**`NETWORK` `client`**  
@@ -3918,14 +3918,14 @@ function UgcReleaseAllCachedDescriptions() end
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A34CD9C3C5BEC44)  
 ---This native does not have an official description.
----@param description integer | string
+---@param description Hash | string
 ---@return boolean
 function UgcReleaseCachedDescription(description) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5E0165278F6339EE)  
 ---This native does not have an official description.
----@param description integer | string
+---@param description Hash | string
 ---@return integer
 function UgcRequestCachedDescription(description) end
 
@@ -3953,13 +3953,13 @@ function UgcSetQueryDataFromOffline(p0) end
 ---@param p2 any
 ---@param p3 any
 ---@param p5 boolean
----@return integer, any, any
+---@return integer, any p0, any p4
 function UgcTextureDownloadRequest(p1, p2, p3, p5) end
 
 ---**`NETWORK` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB4C94523F023419C)  
 ---Returns the network ID of the given vehicle.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function VehToNet(vehicle) end
 

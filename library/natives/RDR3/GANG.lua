@@ -52,7 +52,7 @@ function N_0x53a94294fddcf98c(p0, p1) end
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6102830F764B3DE1)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function N_0x6102830f764b3de1(player) end
 
@@ -67,7 +67,7 @@ function N_0x644e02f24f9d4e98(p0, p1) end
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7933754F260B428A)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return any
 function N_0x7933754f260b428a(player) end
 
@@ -117,7 +117,7 @@ function N_0xc81a9e2c8efd28d5(p0) end
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDA801F7F6A5278D3)  
 ---_NETWORK_GET_* or _NETWORK_IS_*
----@param player integer
+---@param player Player
 ---@return boolean
 function N_0xda801f7f6a5278d3(player) end
 
@@ -142,7 +142,7 @@ function N_0xfa7c5b7e087a4ceb() end
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x901E0DC25080C8B9)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return any
 function NetworkGetGangId(player) end
 
@@ -150,21 +150,21 @@ function NetworkGetGangId(player) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4BE6C13A45CCA8EC)  
 ---This native does not have an official description.
 ---@param gangId any
----@return integer
+---@return Player
 function NetworkGetGangLeader(gangId) end
 
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE88A261DCBBA0D9)  
 ---This native does not have an official description.
 ---@param gangId any
----@return boolean, any
+---@return boolean, any gamerHandle
 function NetworkGetGangLeaderHandle(gangId) end
 
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD1BF325C8252A982)  
 ---This native does not have an official description.
 ---@param gangId any
----@return integer, any
+---@return integer, any memberHandles
 function NetworkGetGangMembers(gangId) end
 
 ---**`GANG` `client`**  
@@ -211,7 +211,7 @@ function NetworkIsGangInSession(gangId) end
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x424B17A7DC5C90BC)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsGangLeader(player) end
 
@@ -219,7 +219,7 @@ function NetworkIsGangLeader(player) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9BE7DCB22D32CCBE)  
 ---This native does not have an official description.
 ---@param gangId any
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsGangMember(gangId, player) end
 
@@ -233,22 +233,22 @@ function NetworkIsGangOpen(gangId) end
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x81FB74C83C2ED69F)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 ---@return boolean
 function NetworkIsInMyGang(player) end
 
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3F59FE6F37869576)  
 ---This native does not have an official description.
----@param player1 integer
----@param player2 integer
+---@param player1 Player
+---@param player2 Player
 ---@return boolean
 function NetworkIsInSameGang(player1, player2) end
 
 ---**`GANG` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD9E2D9BC52FD80F)  
 ---banTimeSeconds is 120 in R* Scripts
----@param player integer
+---@param player Player
 ---@param banTimeSeconds integer
 function NetworkKickGangMember(player, banTimeSeconds) end
 

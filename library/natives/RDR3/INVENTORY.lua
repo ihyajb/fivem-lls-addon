@@ -4,24 +4,24 @@
 ---[Native Documentation](https://rdr3natives.com/?native=0x6452B1D357D81742)  
 ---p1: WARDROBE, KIT_CAMP, CHARACTER, KIT_MOONSHINER_PROPERTY
 ---Returns slot hash
----@param item integer | string
----@param p1 integer | string
----@return integer
+---@param item Hash | string
+---@param p1 Hash | string
+---@return Hash
 function GetDefaultItemSlotInfo(item, p1) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xADDD1E7C0ECF7D95)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param eRoleMaxLevel integer | string
+---@param eRoleMaxLevel Hash | string
 ---@return integer
 function GetItemRoleMaxLevelCount(inventoryId, eRoleMaxLevel) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE80E50BEE276A54A)  
 ---This native does not have an official description.
----@param provision integer | string
----@param slotId integer | string
+---@param provision Hash | string
+---@param slotId Hash | string
 ---@return integer
 function GetItemSlotMaxCount(provision, slotId) end
 
@@ -41,7 +41,7 @@ function InventoryAddCatalogItemInspectionEffectsEntry(entryId, name, unk1, unk2
 ---@param entryId integer
 ---@param name string
 ---@param unk1 integer
----@param playerid integer
+---@param playerid Player
 ---@return integer
 function InventoryAddCatalogItemInspectionStatsEntry(entryId, name, unk1, playerid) end
 
@@ -49,17 +49,17 @@ function InventoryAddCatalogItemInspectionStatsEntry(entryId, name, unk1, player
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB5D11F9508A928D)  
 ---inventoryItemSlotHash: https://pastebin.com/P6fyr3vr
 ---@param inventoryId integer
----@param item integer | string
----@param inventoryItemSlot integer | string
+---@param item Hash | string
+---@param inventoryItemSlot Hash | string
 ---@param p5 integer
----@param addReason integer | string
----@return boolean, any, any
+---@param addReason Hash | string
+---@return boolean, any guid1, any guid2
 function InventoryAddItemWithGuid(inventoryId, item, inventoryItemSlot, p5, addReason) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75CFAC49301E134F)  
 ---entry id from _INVENTORY_ADD_CATALOG_ITEM_INSPECTION_EFFECTS_ENTRY
----@param databindingEntryId integer | string
+---@param databindingEntryId Hash | string
 ---@param p1 boolean
 ---@param p2 boolean
 function InventoryApplyItemEffectToStatsEntry(databindingEntryId, p1, p2) end
@@ -68,8 +68,8 @@ function InventoryApplyItemEffectToStatsEntry(databindingEntryId, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x75CFAC49301E134E)  
 ---Apply the weapon stats to the CatalogItemInspection stats entry id. get entryId with _INVENTORY_ADD_CATALOG_ITEM_INSPECTION_STATS_ENTRY
 ---@param entryId integer
----@param weapon integer | string
----@param ped integer
+---@param weapon Hash | string
+---@param ped Ped
 function InventoryApplyWeaponStatsToEntry(entryId, weapon, ped) end
 
 ---**`INVENTORY` `client`**  
@@ -82,7 +82,7 @@ function InventoryAreLocalChangesAllowed(inventoryId) end
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C543D5DFCD2DAFD)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any guid1, any guid2
 function InventoryCompareGuids() end
 
 ---**`INVENTORY` `client`**  
@@ -91,14 +91,14 @@ function InventoryCompareGuids() end
 ---@param inventoryId integer
 ---@param inventoryIdCloned integer
 ---@param p3 any
----@return any
+---@return any p2
 function InventoryCopyItemToInventory(inventoryId, inventoryIdCloned, p3) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3112ADB9D5F3426B)  
 ---This native does not have an official description.
 ---@param p1 boolean
----@return any
+---@return any guid
 function InventoryCopyItemToMissionInventory(p1) end
 
 ---**`INVENTORY` `client`**  
@@ -120,21 +120,21 @@ function InventoryCopyMpInventoryToMissionInventory(p0, p1, bCopySatchelItems, b
 ---Returns collectionId
 ---@param inventoryId integer
 ---@param filterName string
----@param slotId integer | string
----@return integer, integer
+---@param slotId Hash | string
+---@return integer, integer size
 function InventoryCreateItemCollection(inventoryId, filterName, slotId) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97A3646645727F42)  
 ---Returns collectionId
----@return integer, integer
+---@return integer, integer collectionSize
 function InventoryCreateItemCollection_2() end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x640F890C3E5A3FFD)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@return integer, any, integer
+---@return integer, any filter, integer numInCollection
 function InventoryCreateItemCollectionWithFilter(inventoryId) end
 
 ---**`INVENTORY` `client`**  
@@ -143,15 +143,15 @@ function InventoryCreateItemCollectionWithFilter(inventoryId) end
 ---Returns collectionId
 ---@param inventoryId integer
 ---@param p1 integer
----@return integer, integer
+---@return integer, integer size
 function InventoryCreateSortedCollection(inventoryId, p1) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x766315A564594401)  
 ---Example: (1, WEAPON_REVOLVER_CATTLEMAN, 0) - disables cattleman revolver on weapon wheel
 ---@param inventoryId integer
----@param item integer | string
----@param gtxReason integer | string
+---@param item Hash | string
+---@param gtxReason Hash | string
 function InventoryDisableItem(inventoryId, item, gtxReason) end
 
 ---**`INVENTORY` `client`**  
@@ -170,15 +170,15 @@ function InventoryDisableWeapons(inventoryId, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x88B58B83A43A8CAB)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param item integer | string
----@return boolean, any
+---@param item Hash | string
+---@return boolean, any guid
 function InventoryDoesItemOwnEquipment(inventoryId, item) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6A564540FAC12211)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param item integer | string
+---@param item Hash | string
 function InventoryEnableItem(inventoryId, item) end
 
 ---**`INVENTORY` `client`**  
@@ -192,14 +192,14 @@ function InventoryEnableWeapons(inventoryId) end
 ---This native does not have an official description.
 ---@param inventoryId integer
 ---@param bEquipped boolean
----@return boolean, any
+---@return boolean, any guid
 function InventoryEquipItemWithGuid(inventoryId, bEquipped) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x780C5B9AE2819807)  
 ---This native does not have an official description.
----@param item integer | string
----@param slotId integer | string
+---@param item Hash | string
+---@param slotId Hash | string
 ---@return boolean
 function InventoryFitsSlotId(item, slotId) end
 
@@ -207,15 +207,15 @@ function InventoryFitsSlotId(item, slotId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE843D21A8E2498AA)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@return integer, any
+---@return integer, any parentGuid
 function InventoryGetChildrenCount(inventoryId) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x033EE4B89F3AC545)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param slotId integer | string
----@return integer, any
+---@param slotId Hash | string
+---@return integer, any guid
 function InventoryGetChildrenInSlotCount(inventoryId, slotId) end
 
 ---**`INVENTORY` `client`**  
@@ -224,16 +224,16 @@ function InventoryGetChildrenInSlotCount(inventoryId, slotId) end
 ---@param inventoryId integer
 ---@param p3 integer
 ---@param p4 integer
----@return boolean, any, any
+---@return boolean, any guid, any p2
 function InventoryGetFullInventoryItemData(inventoryId, p3, p4) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x886DFD3E185C8A89)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param p2 integer | string
----@param slotId integer | string
----@return boolean, any, any
+---@param p2 Hash | string
+---@param slotId Hash | string
+---@return boolean, any guid, any outGuid
 function InventoryGetGuidFromItemid(inventoryId, p2, slotId) end
 
 ---**`INVENTORY` `client`**  
@@ -259,7 +259,7 @@ function InventoryGetGuidFromItemid(inventoryId, p2, slotId) end
 ---	INVENTORY_MAX_ID = 11,
 ---	INVENTORY_IDS_COUNT
 ---};
----@param ped integer
+---@param ped Ped
 ---@return integer
 function InventoryGetInventoryIdFromPed(ped) end
 
@@ -268,7 +268,7 @@ function InventoryGetInventoryIdFromPed(ped) end
 ---This native does not have an official description.
 ---@param inventoryId integer
 ---@param p3 boolean
----@return boolean, any, any
+---@return boolean, any inData, any outData
 function InventoryGetInventoryItem(inventoryId, p3) end
 
 ---**`INVENTORY` `client`**  
@@ -276,16 +276,16 @@ function InventoryGetInventoryItem(inventoryId, p3) end
 ---This native does not have an official description.
 ---@param inventoryId integer
 ---@param childIndex any
----@return boolean, any, any
+---@return boolean, any parentGuid, any outInventoryItem
 function InventoryGetInventoryItemChild(inventoryId, childIndex) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9AC53CB6907B4428)  
 ---p1 (out) and p2 (in) are both script arrays?
 ---item: can be a component item, see SHOP_CATALOG_BUILD_LIST_OF_WEAPON_COMPONENTS
----@param item integer | string
+---@param item Hash | string
 ---@param maxResults integer
----@return boolean, any
+---@return boolean, any outSlotIds
 function InventoryGetInventoryItemCompatibleSlots(item, maxResults) end
 
 ---**`INVENTORY` `client`**  
@@ -293,14 +293,14 @@ function InventoryGetInventoryItemCompatibleSlots(item, maxResults) end
 ---This native does not have an official description.
 ---@param inventoryId integer
 ---@param p2 boolean
----@return integer, any
+---@return integer, any guid
 function InventoryGetInventoryItemCountWithGuid(inventoryId, p2) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE787F05DFC977BDE)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param eInventoryItem integer | string
+---@param eInventoryItem Hash | string
 ---@param p2 boolean
 ---@return integer
 function InventoryGetInventoryItemCountWithItemid(inventoryId, eInventoryItem, p2) end
@@ -308,60 +308,60 @@ function InventoryGetInventoryItemCountWithItemid(inventoryId, eInventoryItem, p
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4550FE9C512E3DD)  
 ---This native does not have an official description.
----@param item integer | string
----@return integer
+---@param item Hash | string
+---@return Hash
 function InventoryGetInventoryItemDescriptionHash(item) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBE012571B25F5ACA)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param slotId integer | string
+---@param slotId Hash | string
 ---@param p3 integer
----@return integer, any, any
+---@return integer, any guid, any p4
 function InventoryGetInventoryItemEquippedInSlot(inventoryId, slotId, p3) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x22E590F108289A9D)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param slotId integer | string
----@return boolean, any, any
+---@param slotId Hash | string
+---@return boolean, any guid, any outGuid
 function InventoryGetInventoryItemEquippedInSlotByRef(inventoryId, slotId) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB991FE166FAF84FD)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p2 integer
----@return boolean, any
+---@return boolean, any p1
 function InventoryGetInventoryItemFitSlot(p0, p2) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9933164965533B7)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@return boolean, any
+---@return boolean, any guid
 function InventoryGetInventoryItemHidden(inventoryId) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C093C1787F18519)  
 ---This native does not have an official description.
----@param item integer | string
----@return boolean, any
+---@param item Hash | string
+---@return boolean, any info
 function InventoryGetInventoryItemInspectionInfo(item) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x70E3A884ED000A01)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@return boolean, any
+---@return boolean, any guid
 function InventoryGetInventoryItemInUse(inventoryId) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4AEF1FB5B9011D75)  
 ---This native does not have an official description.
----@param item integer | string
+---@param item Hash | string
 ---@return boolean
 function InventoryGetInventoryItemIsAnimalPelt(item) end
 
@@ -369,30 +369,30 @@ function InventoryGetInventoryItemIsAnimalPelt(item) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x112BCA290D2EB53C)  
 ---Returns the last creation date of an inventory item
 ---@param inventoryId integer
----@param item integer | string
----@return boolean, integer, integer, integer, integer, integer, integer
+---@param item Hash | string
+---@return boolean, integer year, integer month, integer day, integer hour, integer minute, integer second
 function InventoryGetInventoryItemLastCreation(inventoryId, item) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2E1CDC1FF3B8473E)  
 ---soundType: see 0x2BAE4880DCDD560B
 ---Returns item Hash to be used with _IS_SCRIPTED_AUDIO_CUSTOM and _PLAY_SOUND_FROM_ITEM (p0)
----@param item integer | string
+---@param item Hash | string
 ---@param soundType integer
----@return integer
+---@return Hash
 function InventoryGetInventoryItemSound(item, soundType) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB5F12746A099A0E)  
 ---Returns CopyID
 ---@param inventoryId integer
----@return integer, any
+---@return integer, any guid
 function InventoryGetInventoryItemWeaponCopyId(inventoryId) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BAE4880DCDD560B)  
 ---soundType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/CItemInfoSoundsInterface__sSoundsInfo__eSoundType
----@param item integer | string
+---@param item Hash | string
 ---@param soundType integer
 ---@return boolean
 function InventoryGetIsInventoryItemSoundValid(item, soundType) end
@@ -400,7 +400,7 @@ function InventoryGetIsInventoryItemSoundValid(item, soundType) end
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4A606C17276E1BCC)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any itemGUID
 function InventoryGetItemExpiryTime() end
 
 ---**`INVENTORY` `client`**  
@@ -408,20 +408,20 @@ function InventoryGetItemExpiryTime() end
 ---collectionId is < outCollectionSize
 ---@param collectionId integer
 ---@param itemIndex integer
----@return boolean, any
+---@return boolean, any itemData
 function InventoryGetItemFromCollectionIndex(collectionId, itemIndex) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB881CA836CC4B6D4)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any guid
 function InventoryIsGuidValid() end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3D10D7179D7034AF)  
 ---Alternative Name: _INVENTORY_IS_ITEM_DISABLED
 ---@param inventoryId integer
----@param item integer | string
+---@param item Hash | string
 ---@param p2 boolean
 ---@return boolean
 function InventoryIsInventoryItemEquipped(inventoryId, item, p2) end
@@ -430,7 +430,7 @@ function InventoryIsInventoryItemEquipped(inventoryId, item, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x245D07651B1D183B)  
 ---flag: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/ItemDatabaseItemFlags
 ---2097152 (is item read?), 8388608 (is item sent/received/mailable?), 16777216 (is item consumable?)
----@param item integer | string
+---@param item Hash | string
 ---@param flag integer
 ---@return boolean
 function InventoryIsInventoryItemFlagEnabled(item, flag) end
@@ -438,7 +438,7 @@ function InventoryIsInventoryItemFlagEnabled(item, flag) end
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0137C77A2EC64536)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any itemGUID
 function InventoryIsItemExpired() end
 
 ---**`INVENTORY` `client`**  
@@ -459,9 +459,9 @@ function InventoryIsUsingBackupInventory() end
 ---guid2: new parent GUID
 ---guid3: new item GUID (out param)
 ---@param inventoryId integer
----@param slotId integer | string
+---@param slotId Hash | string
 ---@param quantity integer
----@return boolean, any, any, any
+---@return boolean, any guid1, any guid2, any outGuid
 function InventoryMoveInventoryItem(inventoryId, slotId, quantity) end
 
 ---**`INVENTORY` `client`**  
@@ -477,7 +477,7 @@ function InventoryReleaseItemCollection(collectionId) end
 ---Example: INVENTORY::_0x5D6182F3BCE1333B(1, joaat("REMOVE_REASON_DEFAULT")); -> clears weapon wheel
 ---Only used in R* SP Scripts
 ---@param inventoryId integer
----@param removeReason integer | string
+---@param removeReason Hash | string
 ---@return boolean
 function InventoryRemoveInventoryItems(inventoryId, removeReason) end
 
@@ -486,17 +486,17 @@ function InventoryRemoveInventoryItems(inventoryId, removeReason) end
 ---This native does not have an official description.
 ---@param inventoryId integer
 ---@param quantity integer
----@param removeReason integer | string
----@return boolean, any
+---@param removeReason Hash | string
+---@return boolean, any guid
 function InventoryRemoveInventoryItemWithGuid(inventoryId, quantity, removeReason) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB4158C8C9A3B5DCE)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@param item integer | string
+---@param item Hash | string
 ---@param quantity integer
----@param removeReason integer | string
+---@param removeReason Hash | string
 ---@return boolean
 function InventoryRemoveInventoryItemWithItemid(inventoryId, item, quantity, removeReason) end
 
@@ -505,7 +505,7 @@ function InventoryRemoveInventoryItemWithItemid(inventoryId, item, quantity, rem
 ---Used with CClothingItem
 ---@param inventoryId integer
 ---@param hidden boolean
----@return any
+---@return any guid
 function InventorySetInventoryItemHidden(inventoryId, hidden) end
 
 ---**`INVENTORY` `client`**  
@@ -513,7 +513,7 @@ function InventorySetInventoryItemHidden(inventoryId, hidden) end
 ---Used with CSatchelItem, R* Script usage: fisihing_core
 ---@param inventoryId integer
 ---@param hidden boolean
----@return any
+---@return any guid
 function InventorySetInventoryItemHidden_2(inventoryId, hidden) end
 
 ---**`INVENTORY` `client`**  
@@ -521,7 +521,7 @@ function InventorySetInventoryItemHidden_2(inventoryId, hidden) end
 ---This native does not have an official description.
 ---@param inventoryId integer
 ---@param enabled boolean
----@return boolean, any
+---@return boolean, any p1
 function InventorySetInventoryItemInspectionEnabled(inventoryId, enabled) end
 
 ---**`INVENTORY` `client`**  
@@ -529,7 +529,7 @@ function InventorySetInventoryItemInspectionEnabled(inventoryId, enabled) end
 ---Only works on CClothingItem
 ---@param inventoryId integer
 ---@param inUse boolean
----@return any
+---@return any guid
 function InventorySetInventoryItemInUse(inventoryId, inUse) end
 
 ---**`INVENTORY` `client`**  
@@ -541,14 +541,14 @@ function InventorySetInventoryItemInUse(inventoryId, inUse) end
 ---OWE_GOOD_IN_ALL
 ---@param inventoryId integer
 ---@param weatherEffectiveness integer
----@return any
+---@return any guid
 function InventorySetInventoryItemWeatherEffectiveness(inventoryId, weatherEffectiveness) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2753D691BCDA314)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@return boolean, any, any
+---@return boolean, any guid1, any guid2
 function InventorySwapInventoryItem(inventoryId) end
 
 ---**`INVENTORY` `client`**  
@@ -556,7 +556,7 @@ function InventorySwapInventoryItem(inventoryId) end
 ---Getter: _INVENTORY_GET_FULL_INVENTORY_ITEM_DATA
 ---@param inventoryId integer
 ---@param p3 integer
----@return boolean, any, any
+---@return boolean, any guid1, any guid2
 function InventoryUpdateInventoryItem(inventoryId, p3) end
 
 ---**`INVENTORY` `client`**  
@@ -577,7 +577,7 @@ function InventoryUseMissionInventory(enable, mirrorTransactions) end
 ---eInventoryItem: CLOTHING_FANCY_SUIT, CLOTHING_GUNSLINGER_OUTFIT, etc.
 ---Only used in R* SP Scripts
 ---@param inventoryId integer
----@param eInventoryItem integer | string
+---@param eInventoryItem Hash | string
 ---@param p2 boolean
 function InventoryUseSatchelItem(inventoryId, eInventoryItem, p2) end
 
@@ -587,7 +587,7 @@ function InventoryUseSatchelItem(inventoryId, eInventoryItem, p2) end
 ---Only used in R* SP Scripts
 ---@param p0 boolean
 ---@param inventoryId integer
----@return any
+---@return any guid
 function N_0x0349404a22736740(p0, inventoryId) end
 
 ---**`INVENTORY` `client`**  
@@ -595,16 +595,16 @@ function N_0x0349404a22736740(p0, inventoryId) end
 ---Returns databindingEntryId to be used with 0x951847CEF3D829FF (p0)
 ---@param data any
 ---@param stats string
----@param ped integer
----@return integer, any
+---@param ped Ped
+---@return Hash, any guid
 function N_0x46db71883ee9d5af(data, stats, ped) end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6862E4D93F64CF01)  
 ---Only used in R* SP Scripts
 ---@param inventoryId integer
----@param p2 integer | string
----@return boolean, any, any
+---@param p2 Hash | string
+---@return boolean, any guid, any p3
 function N_0x6862e4d93f64cf01(inventoryId, p2) end
 
 ---**`INVENTORY` `client`**  
@@ -617,8 +617,8 @@ function N_0x6968ce7ac32f6788(inventoryId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x951847CEF3D829FF)  
 ---p0: value returned by 0x46DB71883EE9D5AF
 ---@param p0 any
----@param ped integer
----@return any
+---@param ped Ped
+---@return any outGuid
 function N_0x951847cef3d829ff(p0, ped) end
 
 ---**`INVENTORY` `client`**  
@@ -630,7 +630,7 @@ function N_0x9b4e793b1cb6550a() end
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E58207B194488AC)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 integer
 function N_0x9e58207b194488ac(ped, p1) end
 
@@ -638,7 +638,7 @@ function N_0x9e58207b194488ac(ped, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB1DD74A1F5536622)  
 ---This native does not have an official description.
 ---@param inventoryId integer
----@return boolean, any
+---@return boolean, any itemGUID
 function N_0xb1dd74a1f5536622(inventoryId) end
 
 ---**`INVENTORY` `client`**  
@@ -646,7 +646,7 @@ function N_0xb1dd74a1f5536622(inventoryId) end
 ---Params: p3 returns an int between 0 and 20 (?)
 ---Only used in R* SP Scripts
 ---@param inventoryId integer
----@return boolean, any, integer, integer
+---@return boolean, any guid, integer p2, integer p3
 function N_0xd08685ba892dbfab(inventoryId) end
 
 ---**`INVENTORY` `client`**  
@@ -658,13 +658,13 @@ function N_0xe1f45a67a9f0dcbc(inventoryId) end
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF666EF30F4F0AC4E)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function SetCarriableCarryActionPromptOverride() end
 
 ---**`INVENTORY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFD41D1D4350F6413)  
 ---This native does not have an official description.
----@return any
+---@return any p0
 function SetItemPromptInfoRequest() end
 
 ---**`INVENTORY` `client`**  

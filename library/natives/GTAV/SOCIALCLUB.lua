@@ -29,7 +29,7 @@ function N_0x16da8172459434aa() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x19853B5B17D77BCA)  
 ---This native does not have an official description.
 ---@param p0 any
----@return boolean, any
+---@return boolean, any p1
 function N_0x19853b5b17d77bca(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -46,7 +46,7 @@ function N_0x1d12a56fc95be92e() end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x225798743970412B)  
 ---This native does not have an official description.
----@return boolean, integer
+---@return boolean, integer p0
 function N_0x225798743970412b() end
 
 ---**`SOCIALCLUB` `client`**  
@@ -88,7 +88,7 @@ function N_0x33df47cc0642061b() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x44ACA259D67651DB)  
 ---This native does not have an official description.
 ---@param p1 any
----@return any
+---@return any p0
 function N_0x44aca259d67651db(p1) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -104,7 +104,7 @@ function N_0x450819d8cf90c416() end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4737980E8A283806)  
 ---This native does not have an official description.
 ---@param p0 integer
----@return boolean, any
+---@return boolean, any p1
 function N_0x4737980e8a283806(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -118,7 +118,7 @@ function N_0x487912fd248efddf(p0, p1) end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x4A7D6E727F941747)  
 ---This native does not have an official description.
----@return any, any
+---@return any, any p0
 function N_0x4a7d6e727f941747() end
 
 ---**`SOCIALCLUB` `client`**  
@@ -149,7 +149,7 @@ function N_0x675721c9f644d161() end
 ---This native does not have an official description.
 ---@param p0 integer
 ---@param p1 string
----@return boolean, any
+---@return boolean, any p2
 function N_0x699e4a5c8c893a18(p0, p1) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -188,7 +188,7 @@ function N_0x7ffcbfee44ecfabf() end
 ---```
 ---NativeDB Introduced: v1290
 ---```
----@return boolean, any
+---@return boolean, any newsStoryData
 function N_0x8a4416c0db05fa66() end
 
 ---**`SOCIALCLUB` `client`**  
@@ -196,7 +196,7 @@ function N_0x8a4416c0db05fa66() end
 ---This native does not have an official description.
 ---@param p0 integer
 ---@param p1 string
----@return boolean, any
+---@return boolean, any p2
 function N_0x8cc469ab4d349b7c(p0, p1) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -210,7 +210,7 @@ function N_0x9237e334f6e43156(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x92DA6E70EF249BD1)  
 ---This native does not have an official description.
 ---@param p0 string
----@return boolean, integer
+---@return boolean, integer p1
 function N_0x92da6e70ef249bd1(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -296,7 +296,7 @@ function N_0xf22ca0fd74b80e7a(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF6BAAAF762E1BF40)  
 ---This native does not have an official description.
 ---@param p0 string
----@return boolean, integer
+---@return boolean, integer p1
 function N_0xf6baaaf762e1bf40(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -327,7 +327,7 @@ function ScEmailMessageClearRecipList() end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2330C12A7A605D16)  
 ---This native does not have an official description.
----@return integer
+---@return integer networkHandle
 function ScEmailMessagePushGamerToRecipList() end
 
 ---**`SOCIALCLUB` `client`**  
@@ -350,7 +350,7 @@ ScGetIsProfileAttributeSet = ScGamerdataGetBool
 ---NativeDB Introduced: v323
 ---```
 ---@param name string
----@return boolean, number
+---@return boolean, number outValue
 function ScGamerdataGetFloat(name) end
 
 ---@deprecated
@@ -362,7 +362,7 @@ N_0xa770c8eec6fb2ac5 = ScGamerdataGetFloat
 ---NativeDB Introduced: v323
 ---```
 ---@param name string
----@return boolean, integer
+---@return boolean, integer outValue
 function ScGamerdataGetInt(name) end
 
 ---@deprecated
@@ -406,7 +406,7 @@ IsScInboxValid = ScInboxGetMessageIsReadAtIndex
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xBB8EA16ECBC976C4)  
 ---This native does not have an official description.
 ---@param msgIndex integer
----@return integer
+---@return Hash
 function ScInboxGetMessageTypeAtIndex(msgIndex) end
 
 ---@deprecated
@@ -435,7 +435,7 @@ ScInboxMessagePush = ScInboxMessageDoApply
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x87E0052F08BD64E6)  
 ---This native does not have an official description.
 ---@param index integer
----@return boolean, integer
+---@return boolean, integer outData
 function ScInboxMessageGetBountyData(index) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -451,7 +451,7 @@ function ScInboxMessageGetDataBool(p0, p1) end
 ---This native does not have an official description.
 ---@param p0 integer
 ---@param context string
----@return boolean, integer
+---@return boolean, integer out
 function ScInboxMessageGetDataInt(p0, context) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -474,7 +474,7 @@ function ScInboxMessageGetString(p0) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x69D82604A1A5A254)  
 ---This native does not have an official description.
 ---@param p0 any
----@return boolean, any
+---@return boolean, any p1
 function ScInboxMessageGetUgcdata(p0) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -487,7 +487,7 @@ function ScInboxMessagePop(p0) end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xDA024BDBD600F44A)  
 ---This native does not have an official description.
----@return integer
+---@return integer networkHandle
 function ScInboxMessagePushGamerToEventRecipList() end
 
 ---**`SOCIALCLUB` `client`**  
@@ -508,7 +508,7 @@ function ScInboxMessageSendUgcStatUpdateEvent(data) end
 ---Social Club native to add license plate for the user
 ---@param plateText string
 ---@param plateData string
----@return boolean, integer
+---@return boolean, integer tokenOut
 function ScLicenseplateAdd(plateText, plateData) end
 
 ---**`SOCIALCLUB` `client`**  
@@ -567,7 +567,7 @@ function ScLicenseplateGetPlateData(token, plateIndex) end
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0F73393BAC7E6730)  
 ---SC native to start a request for if license plate text is valid
 ---@param plateText string
----@return boolean, integer
+---@return boolean, integer tokenOut
 function ScLicenseplateIsvalid(plateText) end
 
 ---@deprecated
@@ -595,7 +595,7 @@ function ScPresenceAttrSetFloat() end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x1F1E9682483697C7)  
 ---This native does not have an official description.
----@param attrHash integer | string
+---@param attrHash Hash | string
 ---@param value integer
 ---@return boolean
 function ScPresenceAttrSetInt(attrHash, value) end
@@ -603,7 +603,7 @@ function ScPresenceAttrSetInt(attrHash, value) end
 ---**`SOCIALCLUB` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x287F1F75D2803595)  
 ---This native does not have an official description.
----@param attrHash integer | string
+---@param attrHash Hash | string
 ---@param value string
 ---@return boolean
 function ScPresenceAttrSetString(attrHash, value) end
@@ -614,7 +614,7 @@ function ScPresenceAttrSetString(attrHash, value) end
 ---
 ---See also: [`SC_PROFANITY_GET_CHECK_IS_VALID`](#\_0x1753344C770358AE) and [`SC_PROFANITY_GET_CHECK_IS_PENDING`](#\_0x82E4A58BABC15AE7).
 ---@param string string
----@return boolean, integer
+---@return boolean, integer token
 function ScProfanityCheckString(string) end
 
 ---@deprecated
@@ -624,7 +624,7 @@ ScStartCheckStringTask = ScProfanityCheckString
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xEB2BF817463DFA28)  
 ---This native does not have an official description.
 ---@param string string
----@return boolean, integer
+---@return boolean, integer token
 function ScProfanityCheckUgcString(string) end
 
 ---**`SOCIALCLUB` `client`**  

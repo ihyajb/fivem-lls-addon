@@ -3,7 +3,7 @@
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEEDE7C41742E011)  
 ---It's unclear what exactly this does, but I assume it marks the blip as "no longer needed"
----@param blip integer
+---@param blip Blip
 function AbandonBlip(blip) end
 
 ---**`MAP` `client`**  
@@ -23,7 +23,7 @@ function AddPointToGpsMultiRoute(x, y, z, p3) end
 ---variation 2  https://i.imgur.com/eKV0Tcm.png
 ---variation 4 https://i.imgur.com/rjwOgEH.png
 ---there are more and you can find them in the decompiles
----@param minimapProp integer | string
+---@param minimapProp Hash | string
 ---@param x number
 ---@param y number
 ---@param rotation number
@@ -39,7 +39,7 @@ function AllowSonarBlips(toggle) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEC174ADBCB611ECC)  
 ---This native does not have an official description.
----@param blipHash integer | string
+---@param blipHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -47,60 +47,60 @@ function AllowSonarBlips(toggle) end
 ---@param scaleY number
 ---@param scaleZ number
 ---@param p7 integer
----@return integer
+---@return Blip
 function BlipAddForArea(blipHash, x, y, z, scaleX, scaleY, scaleZ, p7) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x554D9D53F696D002)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/textures/blips_mp
----@param blipHash integer | string
+---@param blipHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
----@return integer
+---@return Blip
 function BlipAddForCoords(blipHash, x, y, z) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x23F74C2FDA6E7C61)  
 ---This native does not have an official description.
----@param blipHash integer | string
----@param entity integer
----@return integer
+---@param blipHash Hash | string
+---@param entity Entity
+---@return Blip
 function BlipAddForEntity(blipHash, entity) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA486008892065FB9)  
 ---This native does not have an official description.
----@param blipHash integer | string
----@param pickup integer
----@return integer
+---@param blipHash Hash | string
+---@param pickup Pickup
+---@return Blip
 function BlipAddForPickupPlacement(blipHash, pickup) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x45F13B7E0A15C880)  
 ---This native does not have an official description.
----@param blipHash integer | string
+---@param blipHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param radius number
----@return integer
+---@return Blip
 function BlipAddForRadius(blipHash, x, y, z, radius) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3E593DF9C2962EC6)  
 ---This native does not have an official description.
----@param styleHash integer | string
----@return integer
+---@param styleHash Hash | string
+---@return Blip
 function BlipAddForStyle(styleHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6EF0C54A3443E70)  
 ---This native does not have an official description.
----@param blipHash integer | string
----@param volume integer
----@return integer
+---@param blipHash Hash | string
+---@param volume Volume
+---@return Blip
 function BlipAddForVolume(blipHash, volume) end
 
 ---**`MAP` `client`**  
@@ -109,16 +109,16 @@ function BlipAddForVolume(blipHash, volume) end
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/blip_modifiers
 ---
 ---Old name: _BLIP_SET_MODIFIER
----@param blip integer
----@param modifierHash integer | string
+---@param blip Blip
+---@param modifierHash Hash | string
 ---@return boolean
 function BlipAddModifier(blip, modifierHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD62D98799A3DAF0)  
 ---This native does not have an official description.
----@param blip integer
----@param styleHash integer | string
+---@param blip Blip
+---@param styleHash Hash | string
 ---@return boolean
 function BlipAddStyle(blip, styleHash) end
 
@@ -126,14 +126,14 @@ function BlipAddStyle(blip, styleHash) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x250C75EB1728CC0D)  
 ---Not official native name
 ---Removes the blip from an entity and makes it static on the map, try it on GetMainPlayerBlipId() for a demonstration
----@param blip integer
+---@param blip Blip
 function BlipDetachFromEntity(blip) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB059D7BD3D78C16F)  
 ---If modifierHash is 0, ALL modifiers will be removed.
----@param blip integer
----@param modifierHash integer | string
+---@param blip Blip
+---@param modifierHash Hash | string
 ---@return boolean
 function BlipRemoveModifier(blip, modifierHash) end
 
@@ -141,22 +141,22 @@ function BlipRemoveModifier(blip, modifierHash) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xEDD964B7984AC291)  
 ---https://github.com/femga/rdr3_discoveries/tree/master/useful_info_from_rpfs/blip_styles
 ---Removes any existing modifiers and sets the style.
----@param blip integer
----@param styleHash integer | string
+---@param blip Blip
+---@param styleHash Hash | string
 ---@return boolean
 function BlipSetStyle(blip, styleHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01B928CA2E198B01)  
 ---Clear blip data. It must be used before RemoveBlip I'm pretty sure that blips are handled internally with databinding. This function should then allow you to clear blip container and therefore free up memory?.
----@param blip integer
+---@param blip Blip
 ---@return any
 function ClearBlip(blip) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x44813684F72B563C)  
 ---will remove the blip icon from the entity lockon prompt,p1 = GET_BLIP_FROM_ENTITY
----@param entity integer
+---@param entity Entity
 ---@param blip integer
 function ClearBlipIconFromLockonEntityPrompt(entity, blip) end
 
@@ -194,14 +194,14 @@ function DisplayRadar(toggle) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD82FA174080B3B1)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@return boolean
 function DoesBlipExist(blip) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9FA00E2FC134A9D0)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function DoesEntityHaveBlip(entity) end
 
@@ -211,7 +211,7 @@ function DoesEntityHaveBlip(entity) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, vector3
+---@return boolean, vector3 outPosition
 function FindClosestGpsPosition(x, y, z) end
 
 ---**`MAP` `client`**  
@@ -223,21 +223,21 @@ function ForceSonarBlipsThisFrame() end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x201C319797BDA603)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@return vector3
 function GetBlipCoords(blip) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6D2C41A8BD6D6FD0)  
 ---Returns the Blip handle of given Entity.
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Blip
 function GetBlipFromEntity(entity) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5CD2889B2B381D45)  
 ---This native does not have an official description.
----@return integer
+---@return Blip
 function GetMainPlayerBlipId() end
 
 ---**`MAP` `client`**  
@@ -249,7 +249,7 @@ function GetWaypointCoords() end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF08E42BFA46BDFF8)  
 ---Unlike `GET_WAYPOINT_COORDS - 0x29B30D07C3F7873B`, which returns a single value, this native returns the x and y coordinates of the waypoint separately as floats from pointer. To retrieve each coordinate, `Citizen.PointerValueFloat()` must be used with this function.
----@return any, number, number
+---@return any, number x, number y
 function GetWaypointPosition() end
 
 ---**`MAP` `client`**  
@@ -260,14 +260,14 @@ function HideActivePointsOfInterest() end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE9F676788F8D5E1E)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@return boolean
 function IsBlipAttachedToAnyEntity(blip) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3CB8859F04763C78)  
 ---checks if the entity lockon prompt contains an icon
----@param entity integer
+---@param entity Entity
 ---@param blip integer
 ---@return boolean
 function IsBlipIconOnLockonEntityPrompt(entity, blip) end
@@ -275,7 +275,7 @@ function IsBlipIconOnLockonEntityPrompt(entity, blip) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x46534526B9CD2D17)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@return boolean
 function IsBlipOnMinimap(blip) end
 
@@ -302,40 +302,40 @@ function LockMinimapAngle(angle) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6786D7AFAC3162B3)  
 ---This native does not have an official description.
----@param regionHash integer | string
+---@param regionHash Hash | string
 function MapDisableRegionBlip(regionHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD8C7162AB2E2AF45)  
 ---This native does not have an official description.
----@param discoveryHash integer | string
+---@param discoveryHash Hash | string
 function MapDiscoverRegion(discoveryHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDA98246C7A3C2189)  
 ---This native does not have an official description.
----@param discoveryHash integer | string
+---@param discoveryHash Hash | string
 function MapDiscoverySetEnabled(discoveryHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x563FCB6620523917)  
 ---regionHash: https://github.com/femga/rdr3_discoveries/tree/master/graphics/minimap/wanted_regions
----@param regionHash integer | string
----@param styleHash integer | string
+---@param regionHash Hash | string
+---@param styleHash Hash | string
 function MapEnableRegionBlip(regionHash, styleHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3F81EA4275D39D6F)  
 ---This native does not have an official description.
----@param discoveryHash integer | string
+---@param discoveryHash Hash | string
 ---@return boolean
 function MapIsDiscoveryActive(discoveryHash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE38450DBCBC70E3D)  
 ---This native does not have an official description.
----@param regionHash integer | string
----@param styleHash integer | string
+---@param regionHash Hash | string
+---@param styleHash Hash | string
 ---@return boolean
 function MapIsRegionHighlightedWithStyle(regionHash, styleHash) end
 
@@ -348,7 +348,7 @@ function N_0xd3f58e9316b7fc2a(p0) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2C3C9DA47AAA54A)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 function RemoveBlip(blip) end
 
 ---**`MAP` `client`**  
@@ -356,32 +356,32 @@ function RemoveBlip(blip) end
 ---
 ---in the decompiles this doesnt seem to ever be executed the param needed needs to be above 0 but its always passed as 0
 --- removes the icon from lockon prompt
----@param entity integer
+---@param entity Entity
 ---@param p1 integer
 function RemoveBlipIconFromEntityLockonPrompt(entity, p1) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE057FEA9A22EB3EE)  
 ---This native does not have an official description.
----@param minimapProp integer | string
+---@param minimapProp Hash | string
 function RemovePropFromMinimap(minimapProp) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB3CB3386C775D72)  
 ---This native does not have an official description.
----@param hash integer | string
+---@param hash Hash | string
 function ResetMinimapFow(hash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF8096DF9B87246E3)  
 ---This native does not have an official description.
----@param hash integer | string
+---@param hash Hash | string
 function RevealMinimapFow(hash) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4FF674F5E23D49CE)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@param posX number
 ---@param posY number
 ---@param posZ number
@@ -391,8 +391,8 @@ function SetBlipCoords(blip, posX, posY, posZ) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x0DF2B55F717DDB10)  
 ---_GET_BLIP_MAP_CARD_INFO this should be the name there is no flash timer for blips
 ---
----@param blip integer
----@return boolean, integer, integer
+---@param blip Blip
+---@return boolean, integer p1, Hash p2
 function SetBlipFlashes(blip) end
 
 ---**`MAP` `client`**  
@@ -400,72 +400,72 @@ function SetBlipFlashes(blip) end
 ---_SET_BLIP_MAP_CARD_INFO this should be the name there is no flash timer for blips
 ---blipType can be any number, but you can use blipTypes
 ---mapCardId joaat("SHOP_MOONSHINE_STILL") possibly to get the card info by this hash
----@param blip integer
+---@param blip Blip
 ---@param blipType integer
----@param mapCardId integer | string
+---@param mapCardId Hash | string
 function SetBlipFlashTimer(blip, blipType, mapCardId) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1726963E6049DB53)  
 ---It adds blip a icon to active prompts like from scenarios or pickups without the need to use lockon
----@param entity integer
----@param blipIcon integer | string
+---@param entity Entity
+---@param blipIcon Hash | string
 function SetBlipIconOnEntityActivePrompt(entity, blipIcon) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7563CBCA99253D1A)  
 ---will add a blip icon to the entity lockon prompt that you specify
----@param entity integer
----@param blipIcon integer | string
+---@param entity Entity
+---@param blipIcon Hash | string
 function SetBlipIconToLockonEntityPrompt(entity, blipIcon) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9CB1A1623062F402)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@param name string
 function SetBlipName(blip, name) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0A062D6D7C0B2C2C)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@param textLabel string
 function SetBlipNameFromTextFile(blip, textLabel) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x093DD5A31BC2B459)  
 ---This native does not have an official description.
----@param blip integer
----@param player integer
+---@param blip Blip
+---@param player Player
 function SetBlipNameToPlayerName(blip, player) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6049966A94FBE706)  
 ---This native does not have an official description.
----@param blip integer
+---@param blip Blip
 ---@param rotation integer
 function SetBlipRotation(blip, rotation) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD38744167B2FA257)  
 ---only works for BLIP_ADD_FOR_RADIUS AND BLIP_ADD_FOR_AREA, this native works as a radius not really a scale
----@param blip integer
+---@param blip Blip
 ---@param scale number
 function SetBlipScale(blip, scale) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x74F74D3207ED525C)  
 ---This native does not have an official description.
----@param blip integer
----@param hash integer | string
+---@param blip Blip
+---@param hash Hash | string
 ---@param p2 boolean
 function SetBlipSprite(blip, hash, p2) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97F6F158CC5B5CA2)  
 ---adds the entity blip icon to the entity lockon prompt if wrong param will remove the icon if had any
----@param entity integer
+---@param entity Entity
 ---@param blipId integer
 function SetEntityBlipIconToLockonEntityPrompt(entity, blipId) end
 
@@ -474,7 +474,7 @@ function SetEntityBlipIconToLockonEntityPrompt(entity, blipId) end
 ---Used for GUARMA MODE; Enabled: toggle = false, 0; Disabled: toggle = true, 0
 ---Hash p1 seems to be unused, always 0
 ---@param toggle boolean
----@param p1 integer | string
+---@param p1 Hash | string
 function SetFowUpdatePlayerOverride(toggle, p1) end
 
 ---**`MAP` `client`**  
@@ -502,7 +502,7 @@ function SetGpsMultiRouteRender(toggle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE5A7F70B7C0F3271)  
 ---This native does not have an official description.
 ---@param scale number
----@param p1 integer | string
+---@param p1 Hash | string
 function SetMinimapFowOverrideRevealScale(scale, p1) end
 
 ---**`MAP` `client`**  
@@ -511,21 +511,21 @@ function SetMinimapFowOverrideRevealScale(scale, p1) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param p3 integer | string
+---@param p3 Hash | string
 function SetMinimapFowRevealCoordinate(x, y, z, p3) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x63CBBD6CA6F321F9)  
 ---This native does not have an official description.
----@param volume integer
----@param p1 integer | string
+---@param volume Volume
+---@param p1 Hash | string
 function SetMinimapFowRevealVolume(volume, p1) end
 
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x632AA10BF7EA53D3)  
 ---This native does not have an official description.
 ---@param toggle boolean
----@param p1 integer | string
+---@param p1 Hash | string
 function SetMinimapFowShouldUpdate(toggle, p1) end
 
 ---**`MAP` `client`**  
@@ -537,7 +537,7 @@ function SetMinimapHideFow(toggle) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA657EC9DBC6CC900)  
 ---hash can be the hash of "guarma" or "world".
----@param zone integer | string
+---@param zone Hash | string
 function SetMinimapZone(zone) end
 
 ---**`MAP` `client`**  
@@ -559,8 +559,8 @@ function SetRadarAsExteriorThisFrame() end
 ---https://github.com/femga/rdr3_discoveries/blob/master/graphics/minimap/radar/radar_configs.lua
 ---configHash: -1943724816, 347777538, -117986897, -789269373, -547506804, -1986542417, 2080113112
 ---p1: usually 898171178 or 0 in R* scripts (doesn't seems to have any effect)
----@param configHash integer | string
----@param p1 integer | string
+---@param configHash Hash | string
+---@param p1 Hash | string
 function SetRadarConfigType(configHash, p1) end
 
 ---**`MAP` `client`**  
@@ -585,7 +585,7 @@ function ShowActivePointsOfInterest() end
 ---@param waypointRecording string
 ---@param point integer
 ---@param numPoints integer
----@param colorNameHash integer | string
+---@param colorNameHash Hash | string
 ---@param p4 boolean
 ---@param p5 boolean
 function StartGpsCustomRouteFromWaypointRecordingRoute(waypointRecording, point, numPoints, colorNameHash, p4, p5) end
@@ -593,7 +593,7 @@ function StartGpsCustomRouteFromWaypointRecordingRoute(waypointRecording, point,
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3D3D15AF7BCAAF83)  
 ---This native does not have an official description.
----@param colorNameHash integer | string
+---@param colorNameHash Hash | string
 ---@param onFoot boolean
 ---@param inVehicle boolean
 function StartGpsMultiRoute(colorNameHash, onFoot, inVehicle) end
@@ -601,7 +601,7 @@ function StartGpsMultiRoute(colorNameHash, onFoot, inVehicle) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x72DD432F3CDFC0EE)  
 ---This native does not have an official description.
----@param typeHash integer | string
+---@param typeHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -610,8 +610,8 @@ function TriggerSonarBlip(typeHash, x, y, z) end
 ---**`MAP` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C7A2289A5C4D7C9)  
 ---This native does not have an official description.
----@param typeHash integer | string
----@param entity integer
+---@param typeHash Hash | string
+---@param entity Entity
 function TriggerSonarBlipOnEntity(typeHash, entity) end
 
 ---**`MAP` `client`**  

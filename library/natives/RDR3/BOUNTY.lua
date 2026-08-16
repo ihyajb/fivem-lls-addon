@@ -23,40 +23,40 @@ function BountyClearBeingTarget() end
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4EF23E04A0C8FF51)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any gamerHandle, any bountyData
 function BountyGetBountyOnPlayer() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8FAF4D262FABA99C)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function BountyGetCooldownCollection() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x85E4D7B225A30ED1)  
 ---This native does not have an official description.
 ---@param p0 any
----@return boolean, any
+---@return boolean, any p1
 function BountyGetLegendaryTarget(p0) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB395A44A0C7CA615)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
----@return boolean, any
+---@param p0 Hash | string
+---@param p1 Hash | string
+---@return boolean, any p2
 function BountyGetWantedPosterSlot(p0, p1) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x03B61CD51097DE60)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any rpcGuid
 function BountyIsRequestPending() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB096547D61868254)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestBecomeTargetOfCharacterBountyHunt() end
 
 ---**`BOUNTY` `client`**  
@@ -64,7 +64,7 @@ function BountyRequestBecomeTargetOfCharacterBountyHunt() end
 ---This native does not have an official description.
 ---@param p1 integer
 ---@param p2 integer
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestBeginLegendaryMission(p1, p2) end
 
 ---**`BOUNTY` `client`**  
@@ -72,129 +72,129 @@ function BountyRequestBeginLegendaryMission(p1, p2) end
 ---This native does not have an official description.
 ---@param p1 integer
 ---@param p2 integer
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestBeginLegendaryMissionForPosse(p1, p2) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFFA13742E43507E3)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestBeginWantedPoster(p1) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x28717806D3BDD0D0)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestBribeJailGuard(p1) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA9C3B0F746375162)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return boolean, any, any
+---@return boolean, any outRpcGuid, any p2
 function BountyRequestClaimCharacterBounty(p1) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA7309AC0DCF6D950)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any outRpcGuid, any p1
 function BountyRequestCompleteLegendaryMission() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFBD137BF0EC50FC9)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any outRpcGuid, any p1
 function BountyRequestCompleteSplitWantedPoster() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x727AB6F008BB9F29)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any outRpcGuid, any p1
 function BountyRequestCompleteWantedPoster() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x12E981D53B07BF48)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestEscapedCharacterBountyHunt() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x537CE992BD2D7BCB)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestPayOffBounty() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x587BCEC31D64F382)  
 ---This native does not have an official description.
----@param p1 integer | string
----@param costType integer | string
----@return boolean, any
+---@param p1 Hash | string
+---@param costType Hash | string
+---@return boolean, any outRpcGuid
 function BountyRequestPayOffBountyEx(p1, costType) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5B53CA0E2AC3FF45)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return boolean, any, any
+---@return boolean, any outRpcGuid, any p2
 function BountyRequestPosseLeaderClaimCharacterBounty(p1) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2D874BA20E8E1F20)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestPosseLeaderEscapedCharacterBountyHunt() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x22D3A61CE053270C)  
 ---This native does not have an official description.
----@return boolean, any, any
+---@return boolean, any outRpcGuid, any p1
 function BountyRequestPosseMemberClaimCharacterBountyShare() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8521C2E235558278)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestPosseMemberEscapedCharacterBountyHunt() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x188B748861B5BA17)  
 ---crimeType: see _REPORT_CRIME
----@param crimeType integer | string
+---@param crimeType Hash | string
 ---@param p2 boolean
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestSelfReportCrime(crimeType, p2) end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB462D69D406A2602)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestSelfReportKilledByBountyHunter() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3F73AED12A5EF0FF)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any outRpcGuid
 function BountyRequestServedFullJailSentence() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x27D3A0E1FE090A43)  
 ---_BOUNTY_IS_* or _BOUNTY_REQUEST_*
----@return boolean, any
+---@return boolean, any p0
 function N_0x27d3a0e1fe090a43() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x81847C2134039BDC)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any p0
 function N_0x81847c2134039bdc() end
 
 ---**`BOUNTY` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86EC5F83867C4B70)  
 ---_BOUNTY_C* or _BOUNTY_GET_*
----@return boolean, any
+---@return boolean, any p0
 function N_0x86ec5f83867c4b70() end
 
 ---**`BOUNTY` `client`**  

@@ -3,15 +3,15 @@
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE555EC27D65EDE80)  
 ---This native does not have an official description.
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 ---@return boolean
 function CanLaunchUiappByHash(appNameHash) end
 
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x16F47D434B6086BF)  
 ---This native does not have an official description.
----@param appNameHash integer | string
----@param entryHash integer | string
+---@param appNameHash Hash | string
+---@param entryHash Hash | string
 ---@return boolean
 function CanLaunchUiappByHashWithEntry(appNameHash, entryHash) end
 
@@ -34,13 +34,13 @@ function CloseUiapp(appName) end
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2FF10C9C3F92277E)  
 ---Closes Ui App by hash
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 function CloseUiappByHash(appNameHash) end
 
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x04428420A248A354)  
 ---Immediately closes the specified UI app by its hash.
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 function CloseUiappByHashImmediate(appNameHash) end
 
 ---**`UIAPPS` `client`**  
@@ -52,8 +52,8 @@ function CloseUiappImmediate(appName) end
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x96FD694FE5BE55DC)  
 ---This native does not have an official description.
----@param appNameHash integer | string
----@return integer
+---@param appNameHash Hash | string
+---@return Hash
 function GetUiappCurrentActivityByHash(appNameHash) end
 
 ---**`UIAPPS` `client`**  
@@ -71,7 +71,7 @@ function IsAnyUiappRunning() end
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x25B7A0206BDFAC76)  
 ---This native does not have an official description.
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 ---@return boolean
 function IsUiappActiveByHash(appNameHash) end
 
@@ -85,29 +85,29 @@ function IsUiappRunning(appName) end
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4E511D093A86AD49)  
 ---Checks to see if the specified UI app is currently running by its hash.
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 ---@return boolean
 function IsUiappRunningByHash(appNameHash) end
 
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42095B886D30DE66)  
 ---This native does not have an official description.
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 ---@return boolean
 function IsUiappTransitioningByHash(appNameHash) end
 
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC8FC7F4E4CF4F581)  
 ---Lauches the specified UI app by its hash.
----@param appNameHash integer | string
+---@param appNameHash Hash | string
 ---@return integer
 function LaunchUiappByHash(appNameHash) end
 
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC1BCF31E975B3195)  
 ---This native does not have an official description.
----@param appNameHash integer | string
----@param entryHash integer | string
+---@param appNameHash Hash | string
+---@param entryHash Hash | string
 ---@return integer
 function LaunchUiappByHashWithEntry(appNameHash, entryHash) end
 
@@ -122,8 +122,8 @@ function LaunchUiappWithEntry(appName, entry) end
 ---**`UIAPPS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7689CD255655BFD7)  
 ---This native does not have an official description.
----@param appNameHash integer | string
----@param transitionHash integer | string
+---@param appNameHash Hash | string
+---@param transitionHash Hash | string
 ---@return boolean
 function RequestUiappTransitionByHash(appNameHash, transitionHash) end
 

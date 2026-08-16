@@ -3,7 +3,7 @@
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75415EE0CB583760)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param p2 integer
 function AddAttributePoints(ped, attributeIndex, p2) end
@@ -11,7 +11,7 @@ function AddAttributePoints(ped, attributeIndex, p2) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF8DAC3D85636C241)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 function DisableAttributeOverpower(ped, attributeIndex) end
 
@@ -20,7 +20,7 @@ function DisableAttributeOverpower(ped, attributeIndex) end
 ---coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
 ---
 ---Previously incorrectly named ENABLE_ATTRIBUTE_OVERPOWER
----@param ped integer
+---@param ped Ped
 ---@param coreIndex integer
 ---@param value number
 ---@param makeSound boolean
@@ -31,7 +31,7 @@ function EnableAttributeCoreOverpower(ped, coreIndex, value, makeSound) end
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
 ---
 ---Old name: _SET_ATTRIBUTE_OVERPOWER_VALUE
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param value number
 ---@param makeSound boolean
@@ -40,7 +40,7 @@ function EnableAttributeOverpower(ped, attributeIndex, value, makeSound) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x147149F2E909323C)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return integer
 function GetAttributeBaseRank(ped, attributeIndex) end
@@ -48,7 +48,7 @@ function GetAttributeBaseRank(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0EFA71F4B4330E04)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param coreIndex integer
 ---@return integer
 function GetAttributeBonusRank(ped, coreIndex) end
@@ -56,7 +56,7 @@ function GetAttributeBonusRank(ped, coreIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB429F58803D285B1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param coreIndex integer
 ---@return number
 function GetAttributeCoreOverpowerSecondsLeft(ped, coreIndex) end
@@ -65,7 +65,7 @@ function GetAttributeCoreOverpowerSecondsLeft(ped, coreIndex) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x36731AC041289BB1)  
 ---Gets the ped's core value on a scale of 0 to 100.
 ---coreIndex: see _SET_ATTRIBUTE_CORE_VALUE
----@param ped integer
+---@param ped Ped
 ---@param coreIndex integer
 ---@return integer
 function GetAttributeCoreValue(ped, coreIndex) end
@@ -73,7 +73,7 @@ function GetAttributeCoreValue(ped, coreIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C9F782180712742)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return number
 function GetAttributeOverpowerSecondsLeft(ped, attributeIndex) end
@@ -81,7 +81,7 @@ function GetAttributeOverpowerSecondsLeft(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x219DA04BAA9CB065)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return integer
 function GetAttributePoints(ped, attributeIndex) end
@@ -89,7 +89,7 @@ function GetAttributePoints(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4C8E23E29040DE0)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return integer
 function GetAttributeRank(ped, attributeIndex) end
@@ -97,7 +97,7 @@ function GetAttributeRank(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x94A7F191DB49A44D)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param attributeIndex integer
 ---@param rank integer
 ---@return integer
@@ -106,7 +106,7 @@ function GetDefaultAttributePointsNeededForRank(modelHash, attributeIndex, rank)
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x958DD43D41F89A47)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return integer
 function GetDefaultAttributeRank(ped, attributeIndex) end
@@ -114,7 +114,7 @@ function GetDefaultAttributeRank(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C059C55AD940CB4)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param attributeIndex integer
 ---@return integer
 function GetDefaultMaxAttributeRank(modelHash, attributeIndex) end
@@ -122,7 +122,7 @@ function GetDefaultMaxAttributeRank(modelHash, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x223BF310F854871C)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return integer
 function GetMaxAttributePoints(ped, attributeIndex) end
@@ -130,7 +130,7 @@ function GetMaxAttributePoints(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x704674A0535A471D)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return integer
 function GetMaxAttributeRank(ped, attributeIndex) end
@@ -138,7 +138,7 @@ function GetMaxAttributeRank(ped, attributeIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x200373A8DF081F22)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param coreIndex integer
 ---@return boolean
 function IsAttributeCoreOverpowered(ped, coreIndex) end
@@ -146,7 +146,7 @@ function IsAttributeCoreOverpowered(ped, coreIndex) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x103C2F885ABEB00B)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@return boolean
 function IsAttributeOverpowered(ped, attributeIndex) end
@@ -180,7 +180,7 @@ function IsAttributeOverpowered(ped, attributeIndex) end
 ---	PA_UNRULINESS,
 ---	SA_DIRTINESSSKIN
 ---};
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param newValue integer
 function SetAttributeBaseRank(ped, attributeIndex, newValue) end
@@ -188,7 +188,7 @@ function SetAttributeBaseRank(ped, attributeIndex, newValue) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x920F9488BD115EFB)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param newValue integer
 function SetAttributeBonusRank(ped, attributeIndex, newValue) end
@@ -202,7 +202,7 @@ function SetAttributeBonusRank(ped, attributeIndex, newValue) end
 ---	ATTRIBUTE_CORE_STAMINA,
 ---	ATTRIBUTE_CORE_DEADEYE
 ---};
----@param ped integer
+---@param ped Ped
 ---@param coreIndex integer
 ---@param value integer
 function SetAttributeCoreValue(ped, coreIndex, value) end
@@ -210,7 +210,7 @@ function SetAttributeCoreValue(ped, coreIndex, value) end
 ---**`ATTRIBUTE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x09A59688C26D88DF)  
 ---attributeIndex: see SET_ATTRIBUTE_BASE_RANK
----@param ped integer
+---@param ped Ped
 ---@param attributeIndex integer
 ---@param p2 integer
 function SetAttributePoints(ped, attributeIndex, p2) end

@@ -13,7 +13,7 @@ function DatabindingAddDataBool(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC95D3AE2ECA70D6)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 boolean
 ---@return any
 function DatabindingAddDataBoolByHash(p0, p1, p2) end
@@ -30,16 +30,16 @@ function DatabindingAddDataBoolFromPath(p0, p1, p2) end
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB4F9A3537EEABCD)  
 ---Returns entryId Hash
----@param entryId integer | string
+---@param entryId Hash | string
 ---@param p1 string
----@return integer
+---@return Hash
 function DatabindingAddDataContainer(entryId, p1) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x98BB14345BB68257)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function DatabindingAddDataContainerByHash(p0, p1) end
 
@@ -55,7 +55,7 @@ function DatabindingAddDataContainerFromPath(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD7DB94AB78E8EBE4)  
 ---p0 seems to always be empty string, p1 is the hash of the path
 ---@param p0 string
----@param path integer | string
+---@param path Hash | string
 ---@return any
 function DatabindingAddDataContainerFromPathByHash(p0, path) end
 
@@ -82,7 +82,7 @@ function DatabindingAddDataGangId(p0, p1, gangId) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 string
----@param p2 integer | string
+---@param p2 Hash | string
 ---@return any
 function DatabindingAddDataHash(p0, p1, p2) end
 
@@ -90,8 +90,8 @@ function DatabindingAddDataHash(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E173DFB041993C6)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
----@param p2 integer | string
+---@param p1 Hash | string
+---@param p2 Hash | string
 ---@return any
 function DatabindingAddDataHashByHash(p0, p1, p2) end
 
@@ -100,7 +100,7 @@ function DatabindingAddDataHashByHash(p0, p1, p2) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 string
----@param p2 integer | string
+---@param p2 Hash | string
 ---@return any
 function DatabindingAddDataInt(p0, p1, p2) end
 
@@ -108,7 +108,7 @@ function DatabindingAddDataInt(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x267F9527F4350ADE)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 integer
 ---@return any
 function DatabindingAddDataIntByHash(p0, p1, p2) end
@@ -135,7 +135,7 @@ function DatabindingAddDataString(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xEAD09E76E22630C3)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 string
 ---@return any
 function DatabindingAddDataStringByHash(p0, p1, p2) end
@@ -177,7 +177,7 @@ function DatabindingAddUiItemList(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C7799283325181B)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function DatabindingAddUiItemListByHash(p0, p1) end
 
@@ -192,20 +192,20 @@ function DatabindingAddUiItemListFromPath(p0, p1) end
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA1F15C1D03DF802D)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 function DatabindingClearBindingArray(entryId) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD23F5DE04FE717E2)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 ---@return any
 function DatabindingGetArrayCount(entryId) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C827D175F1292F3)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 ---@param p1 integer
 ---@return any
 function DatabindingGetDataContainerFromChildIndex(entryId, p1) end
@@ -230,7 +230,7 @@ function DatabindingGetItemContextByIndex(p0, index) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param index integer
----@param p2 integer | string
+---@param p2 Hash | string
 ---@param p3 any
 function DatabindingInsertUiItemToListFromContextHashAlias(p0, index, p2, p3) end
 
@@ -255,7 +255,7 @@ function DatabindingInsertUiItemToListFromPathStringAlias(p0, p1, p2, p3) end
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E7130793AAAAB8D)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 ---@return boolean
 function DatabindingIsEntryValid(entryId) end
 
@@ -278,7 +278,7 @@ function DatabindingReadDataBoolFromParent(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4CDC3FDDFAE07EB3)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function DatabindingReadDataBoolFromParentByHash(p0, p1) end
 
@@ -294,7 +294,7 @@ function DatabindingReadDataHashStringFromParent(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F43BC25A119B252)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function DatabindingReadDataHashStringFromParentByHash(p0, p1) end
 
@@ -310,7 +310,7 @@ function DatabindingReadDataIntFromParent(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB5F668B648EC0970)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function DatabindingReadDataIntFromParentByHash(p0, p1) end
 
@@ -332,15 +332,15 @@ function DatabindingReadDataStringFromParent(p0, p1) end
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5FE444EB67C70AD4)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 ---@return number
 function DatabindingReadFloat(entryId) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x81D7183E7A8ECA72)  
 ---This native does not have an official description.
----@param entryId integer | string
----@return integer
+---@param entryId Hash | string
+---@return Hash
 function DatabindingReadHash(entryId) end
 
 ---**`DATABINDING` `client`**  
@@ -354,19 +354,19 @@ function DatabindingReadInt(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF68B1726EAF7B285)  
 ---This native does not have an official description.
 ---@param p0 any
----@param entryId integer | string
+---@param entryId Hash | string
 function DatabindingRemoveBindingArrayItemByDataContextId(p0, entryId) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0AE9938D0541F2DA)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 function DatabindingRemoveDataEntry(entryId) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6318FB3BE37E11B3)  
 ---Removes a UI item from it's list by index
----@param entryId integer | string
+---@param entryId Hash | string
 ---@param index integer
 function DatabindingRemoveUiItemFromListByIndex(entryId, index) end
 
@@ -375,7 +375,7 @@ function DatabindingRemoveUiItemFromListByIndex(entryId, index) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 integer
----@param p2 integer | string
+---@param p2 Hash | string
 function DatabindingSetTemplatedUiItemHashAlias(p0, p1, p2) end
 
 ---**`DATABINDING` `client`**  
@@ -419,7 +419,7 @@ function DatabindingWriteDataGangId(p0, p1, gangId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xACDEF586BD71B1FD)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 function DatabindingWriteDataHashString(p0, p1) end
 
 ---**`DATABINDING` `client`**  
@@ -427,14 +427,14 @@ function DatabindingWriteDataHashString(p0, p1) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param p1 string
----@param p2 integer | string
+---@param p2 Hash | string
 function DatabindingWriteDataHashStringFromParent(p0, p1, p2) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x20209529689E0953)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 any
 function DatabindingWriteDataHashStringFromParentByHash(p0, p1, p2) end
 
@@ -457,7 +457,7 @@ function DatabindingWriteDataIntFromParent(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D6E10A41D6ED6EC)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 any
 function DatabindingWriteDataIntFromParentByHash(p0, p1, p2) end
 
@@ -488,7 +488,7 @@ function DatabindingWriteDataString(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xA3BD6FF95E713EE5)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 string
 function DatabindingWriteStringFromHash(p0, p1, p2) end
 
@@ -503,7 +503,7 @@ function DatabindingWriteStringFromParent(p0, p1, p2) end
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x02B21B6BEEDD83CC)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 ---@param p1 integer
 ---@return any
 function N_0x02b21b6beedd83cc(entryId, p1) end
@@ -536,21 +536,21 @@ function N_0x294af5323f44b053(p0, p1, p2) end
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3BF0767CF33FCC88)  
 ---This native does not have an official description.
----@param entryId integer | string
+---@param entryId Hash | string
 function N_0x3bf0767cf33fcc88(entryId) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x422179C7F6AD9304)  
 ---This native does not have an official description.
 ---@param p0 any
----@return any
+---@return any gamerHandle
 function N_0x422179c7f6ad9304(p0) end
 
 ---**`DATABINDING` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6329C34BEE5BFF4B)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@return any
 function N_0x6329c34bee5bff4b(p0, p1) end
 
@@ -558,7 +558,7 @@ function N_0x6329c34bee5bff4b(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x7FC60C94C83C5CD7)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 integer
 function N_0x7fc60c94c83c5cd7(p0, p1, p2) end
 
@@ -574,7 +574,7 @@ function N_0xb138ca787f3dd858(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBFC83DA249BEFCC9)  
 ---_DATABINDING_WRITE_DATA_*
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param p2 any
 function N_0xbfc83da249befcc9(p0, p1, p2) end
 
@@ -630,7 +630,7 @@ function VirtualCollectionExists(p0) end
 ---This native does not have an official description.
 ---@param p0 any
 ---@param index integer
----@param p2 integer | string
+---@param p2 Hash | string
 ---@param p3 any
 function VirtualCollectionItemAdd(p0, index, p2, p3) end
 

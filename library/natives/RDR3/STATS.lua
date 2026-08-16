@@ -3,140 +3,140 @@
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x808712E428F697B8)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
+---@param p0 Hash | string
+---@param p1 Hash | string
 ---@return integer
 function ChalAchievementGetProgressInt(p0, p1) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x77B97A827739D434)  
 ---This native does not have an official description.
----@param p0 integer | string
----@param p1 integer | string
+---@param p0 Hash | string
+---@param p1 Hash | string
 ---@return boolean
 function ChalAchievementIsComplete(p0, p1) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86922D8C02FB7703)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 ---@param value number
 function ChalAddGoalProgressFloat(chalHash, goalHash, value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86922D8C02FB7705)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param value number
 function ChalAddGoalProgressFloatByScoreId(p0, value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDBD560745B1EE9A)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 ---@param value integer
 function ChalAddGoalProgressInt(chalHash, goalHash, value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDBD560745B1EE9C)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param value integer
 function ChalAddGoalProgressIntByScoreId(p0, value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58CB53DB63F84DEA)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@return integer
 function ChalGetMaxRanks(chalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58CB53DB63F84DE9)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@return integer
 function ChalGetNumRanksCompleted(chalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x04DAC3929796EB87)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/AI/EVENTS/challenge_goals.lua
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 ---@return boolean
 function ChalIsGoalActive(chalHash, goalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x97E18E7C098626DE)  
 ---This native does not have an official description.
----@param missionHash integer | string
----@param goalHash integer | string
+---@param missionHash Hash | string
+---@param goalHash Hash | string
 ---@param value integer
 function ChalMissionAddGoalProgressInt(missionHash, goalHash, value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0B0576DD3A75E58D)  
 ---This native does not have an official description.
----@param missionHash integer | string
+---@param missionHash Hash | string
 ---@return integer
 function ChalMissionGetNumGoals(missionHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA785A52B59B7E7B2)  
 ---This native does not have an official description.
----@param missionHash integer | string
+---@param missionHash Hash | string
 ---@return integer
 function ChalMissionGetNumGoalsComplete(missionHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC0BB774787BBF301)  
 ---This native does not have an official description.
----@param missionHash integer | string
----@param goalHash integer | string
+---@param missionHash Hash | string
+---@param goalHash Hash | string
 ---@return boolean
 function ChalMissionIsGoalComplete(missionHash, goalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4ABF7E4DB6279E8F)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 function ChalNetStartChal(chalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC3FCB47344DCB638)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 function ChalNetStartGoal(chalHash, goalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x43B0163154A50C86)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 function ChalNetStopChal(chalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x00CE6A93324A590B)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 function ChalNetStopGoal(chalHash, goalHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF63DF9EE16393343)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 ---@param disabled boolean
 function ChalSetGoalDisabled(chalHash, goalHash, disabled) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDBD560745B1EE9B)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
+---@param chalHash Hash | string
+---@param goalHash Hash | string
 ---@param value integer
 function ChalSetGoalProgressInt(chalHash, goalHash, value) end
 
@@ -149,7 +149,7 @@ function N_0x025e98e317652cdd(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0FEE2561120F3333)  
 ---statId: see STAT_ID_IS_VALID
----@return any
+---@return any statId
 function N_0x0fee2561120f3333() end
 
 ---**`STATS` `client`**  
@@ -160,8 +160,8 @@ function N_0x218f7710a139d012() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x302E71C1D9EE75B9)  
 ---statId: see STAT_ID_IS_VALID
----@param p1 integer | string
----@return boolean, any, integer
+---@param p1 Hash | string
+---@return boolean, any statId, integer p2
 function N_0x302e71c1d9ee75b9(p1) end
 
 ---**`STATS` `client`**  
@@ -179,7 +179,7 @@ function N_0x3aeabae3f3c7600c() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3EB2791A1FBC8A42)  
 ---This native does not have an official description.
----@param statItem integer | string
+---@param statItem Hash | string
 ---@param p1 integer
 function N_0x3eb2791a1fbc8a42(statItem, p1) end
 
@@ -209,7 +209,7 @@ function N_0x4f2d5fa23db992de() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4FCBCC0584CD08E9)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function N_0x4fcbcc0584cd08e9(p0) end
 
 ---**`STATS` `client`**  
@@ -225,35 +225,35 @@ function N_0x6123e2832c34243d(p0, p1, p2, p3, p4) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8312F09C56149A8A)  
 ---Only used in R* SP Scripts
----@param animalType integer | string
+---@param animalType Hash | string
 function N_0x8312f09c56149a8a(animalType) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8BA3D7B1E83EF803)  
 ---This native does not have an official description.
----@param p0 integer | string
----@return integer
+---@param p0 Hash | string
+---@return Hash
 function N_0x8ba3d7b1e83ef803(p0) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8C889E4CBB4B2356)  
 ---This native does not have an official description.
 ---@param p0 any
----@param ped integer
+---@param ped Ped
 function N_0x8c889e4cbb4b2356(p0, ped) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x91A4F58E01ED5E4C)  
 ---statId: see STAT_ID_IS_VALID
 ---@param value integer
----@return any
+---@return any statId
 function N_0x91a4f58e01ed5e4c(value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x99230691875FC218)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
+---@param p1 Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -268,7 +268,7 @@ function N_0x9d0f5d2e1951cd84() end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA2E2BEA4E83F6270)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return any
 function N_0xa2e2bea4e83f6270(p0) end
 
@@ -284,14 +284,14 @@ function N_0xa59590050f80ff2e(p0, p1, p2, p3) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA596890CF55B5095)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 function N_0xa596890cf55b5095(ped, p1) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB112B9262EC29C20)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
 ---@return any
 function N_0xb112b9262ec29c20(p0, p1) end
@@ -299,23 +299,23 @@ function N_0xb112b9262ec29c20(p0, p1) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB5E2EDA2135E0FA1)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 integer
----@return boolean, integer
+---@return boolean, Hash scheduleLocation
 function N_0xb5e2eda2135e0fa1(p0, p1) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBE66B26B6529E943)  
 ---This native does not have an official description.
----@param unlockHash integer | string
----@param ped integer
----@param animalType integer | string
+---@param unlockHash Hash | string
+---@param ped Ped
+---@param animalType Hash | string
 function N_0xbe66b26b6529e943(unlockHash, ped, animalType) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCA1F0B5103936891)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return boolean
 function N_0xca1f0b5103936891(p0) end
 
@@ -334,8 +334,8 @@ function N_0xca41e86545413b5b(p0, p1, p2, p3, p4, p5, p6) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD64DBC8B0424135F)  
 ---This native does not have an official description.
----@param ped integer
----@param animalType integer | string
+---@param ped Ped
+---@param animalType Hash | string
 function N_0xd64dbc8b0424135f(ped, animalType) end
 
 ---**`STATS` `client`**  
@@ -347,9 +347,9 @@ function N_0xda26263c07cce9c2(p0) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDBD560745B1EE98)  
 ---This native does not have an official description.
----@param chalHash integer | string
----@param goalHash integer | string
----@param player integer
+---@param chalHash Hash | string
+---@param goalHash Hash | string
+---@param player Player
 ---@return integer
 function N_0xddbd560745b1ee98(chalHash, goalHash, player) end
 
@@ -364,7 +364,7 @@ function N_0xdf95df488a645ce7() end
 ---Only used in R* SP Scripts
 ---_STAT_ID_SET_*
 ---@param value number
----@return any
+---@return any statId
 function N_0xe141f6b40b1e3683(value) end
 
 ---**`STATS` `client`**  
@@ -377,47 +377,47 @@ function N_0xe5a680a5d8b1f687(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF21A5D66874FCEDD)  
 ---This native does not have an official description.
 ---@param p0 any
----@param p1 integer | string
----@param p2 integer | string
+---@param p1 Hash | string
+---@param p2 Hash | string
 function N_0xf21a5d66874fcedd(p0, p1, p2) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2B5ABDE09958689)  
 ---This native does not have an official description.
----@param unlockHash integer | string
----@param ped1 integer
----@param ped2 integer
+---@param unlockHash Hash | string
+---@param ped1 Ped
+---@param ped2 Ped
 function N_0xf2b5abde09958689(unlockHash, ped1, ped2) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF8181B5EF156862C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function N_0xf8181b5ef156862c(ped) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x90E9A5DADBABC918)  
 ---Related to animal tagging
----@param animalType integer | string
+---@param animalType Hash | string
 function StatAddAnimalSampleTarget(animalType) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B1044FDC2B09101)  
 ---This native does not have an official description.
----@param unlockHash integer | string
----@param ped integer
+---@param unlockHash Hash | string
+---@param ped Ped
 function StatAddBountyTarget(unlockHash, ped) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x262EF7CF49CF1EB9)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function StatBountyCaptured(entity) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB22F05732F72F70C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function StatBountyEscaped(ped) end
 
 ---**`STATS` `client`**  
@@ -430,7 +430,7 @@ function StatCalculateCooldown(value) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x831BF01C56149A8A)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function StatCarriedSatchelItemFromPed(ped) end
 
 ---**`STATS` `client`**  
@@ -446,45 +446,45 @@ function StatDonateIncrementItem(item, slot, p2, p3) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD861AE8A5181ED7)  
 ---statId: see STAT_ID_IS_VALID
 ---@param value integer
----@return any
+---@return any statId
 function StatIdDecrementInt(value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x11B5E6D2AE73F48F)  
 ---statId: see STAT_ID_IS_VALID
----@return boolean, any, boolean
+---@return boolean, any statId, boolean value
 function StatIdGetBool() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8B0FACEFC36C824C)  
 ---statId: see STAT_ID_IS_VALID
----@return boolean, any, any
+---@return boolean, any statId, any date
 function StatIdGetDate() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD7AE6C9C9C6AC54D)  
 ---statId: see STAT_ID_IS_VALID
----@return boolean, any, number
+---@return boolean, any statId, number value
 function StatIdGetFloat() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x767FBC2AC802EF3E)  
 ---statId: see STAT_ID_IS_VALID
----@return boolean, any, integer
+---@return boolean, any statId, integer p1
 function StatIdGetInt() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4A47E38EA3D60939)  
 ---statId: see STAT_ID_IS_VALID
 ---@param value number
----@return any
+---@return any statId
 function StatIdIncrementFloat(value) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6A0184E904CDF25E)  
 ---Increments an integer stat by the supplied amount. `statId` is not a raw stat hash; it is a stat-id buffer/struct in the same format used by STAT_ID_IS_VALID. In common usage this is an 8-byte buffer with the stat hash written as int32 at offset 0 and 0 written as int32 at offset 4. Use this for counter-style stats, for example incrementing FISH_ESCAPED by 1. The first argument is not a plain integer stat hash; it is a stat-id buffer.
 ---@param amount integer
----@return any
+---@return any statId
 function StatIdIncrementInt(amount) end
 
 ---**`STATS` `client`**  
@@ -494,7 +494,7 @@ function StatIdIncrementInt(amount) end
 ---	alignas(8) Hash BaseId;
 ---	alignas(8) Hash PermutationId;
 ---}
----@return boolean, any
+---@return boolean, any statId
 function StatIdIsValid() end
 
 ---**`STATS` `client`**  
@@ -502,14 +502,14 @@ function StatIdIsValid() end
 ---statId: see STAT_ID_IS_VALID
 ---@param value boolean
 ---@param p2 boolean
----@return boolean, any
+---@return boolean, any statId
 function StatIdSetBool(value, p2) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1FAE9B2FAA2DFE06)  
 ---statId: see STAT_ID_IS_VALID
 ---@param p2 boolean
----@return boolean, any, any
+---@return boolean, any statId, any date
 function StatIdSetDate(p2) end
 
 ---**`STATS` `client`**  
@@ -517,7 +517,7 @@ function StatIdSetDate(p2) end
 ---statId: see STAT_ID_IS_VALID
 ---@param value number
 ---@param p2 boolean
----@return boolean, any
+---@return boolean, any statId
 function StatIdSetFloat(value, p2) end
 
 ---**`STATS` `client`**  
@@ -525,7 +525,7 @@ function StatIdSetFloat(value, p2) end
 ---statId: see STAT_ID_IS_VALID
 ---@param label string
 ---@param p2 boolean
----@return boolean, any
+---@return boolean, any statId
 function StatIdSetGxtLabel(label, p2) end
 
 ---**`STATS` `client`**  
@@ -533,47 +533,47 @@ function StatIdSetGxtLabel(label, p2) end
 ---statId: see STAT_ID_IS_VALID
 ---@param value integer
 ---@param p2 boolean
----@return boolean, any
+---@return boolean, any statId
 function StatIdSetInt(value, p2) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x34B22DE38477EDB4)  
 ---statId: see STAT_ID_IS_VALID
----@return any
+---@return any statId
 function StatIdSetToPosseId() end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDA26263C87CCE9C1)  
 ---This native does not have an official description.
----@param fish integer
+---@param fish Ped
 ---@param weight number
----@param category integer | string
----@param subcategory integer | string
+---@param category Hash | string
+---@param subcategory Hash | string
 function StatItemFishCaught(fish, weight, category, subcategory) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5420D398A42917FC)  
 ---statId: see STAT_ID_IS_VALID
----@param entity integer
----@return boolean, any
+---@param entity Entity
+---@return boolean, any statId
 function StatPheromoneCooldownLegendaryAnimal(entity) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4D31051A4CA83787)  
 ---This native does not have an official description.
----@param itemset integer
+---@param itemset ItemSet
 function StatPhotographTaken(itemset) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCD0D69C65BB0E8B9)  
 ---This native does not have an official description.
----@param deedHash integer | string
+---@param deedHash Hash | string
 function StatRegisterLegendaryAnimalDeed(deedHash) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB2A38826E5886E83)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@param p1 any
 function StatstrackerDeedStarted(p0, p1) end
 
@@ -581,47 +581,47 @@ function StatstrackerDeedStarted(p0, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xD5910ECF81A2278C)  
 ---This native does not have an official description.
 ---@param deedType integer
----@param deedHash integer | string
+---@param deedHash Hash | string
 ---@param missionStatus integer
----@return any
+---@return any data
 function StatstrackerDeedStatus(deedType, deedHash, missionStatus) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01F4D242765C6B24)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return boolean
 function StatstrackerIsInitialized(p0) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBA61BA6205A3F5A8)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@param setIndex integer
 ---@param itemIndex integer
----@return boolean, integer, integer
+---@return boolean, Hash p3, integer p4
 function WeeklyCollectibleGetItemInSet(chalHash, setIndex, itemIndex) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x610783F646894D25)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@param index integer
----@return integer
+---@return Hash
 function WeeklyCollectibleGetItemSetBuyAward(chalHash, index) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBFFA88522FF0F730)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@param index integer
----@return integer
+---@return Hash
 function WeeklyCollectibleGetItemSetLabel(chalHash, index) end
 
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7D675C9DDDB365BE)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@param index integer
 ---@return integer
 function WeeklyCollectibleGetNumItemsInSet(chalHash, index) end
@@ -629,7 +629,7 @@ function WeeklyCollectibleGetNumItemsInSet(chalHash, index) end
 ---**`STATS` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8F5317729F791D10)  
 ---This native does not have an official description.
----@param chalHash integer | string
+---@param chalHash Hash | string
 ---@return integer
 function WeeklyCollectibleGetNumSets(chalHash) end
 

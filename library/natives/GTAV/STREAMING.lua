@@ -3,7 +3,7 @@
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0BC3144DEB678666)  
 ---This native does not have an official description.
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return boolean
 function AddModelToCreatorBudget(modelHash) end
 
@@ -179,7 +179,7 @@ function HasClipSetLoaded(clipSet) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x22CCA434E368F03A)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function HasCollisionForModelLoaded(model) end
 
@@ -188,7 +188,7 @@ function HasCollisionForModelLoaded(model) end
 ---Returns whether the specified model (archetype) is currently loaded.
 ---
 ---Note that this will return 'true' even if the model has been requested and loaded by something other than the current script, if you're intending to actually use the model in a later frame, you should call REQUEST_MODEL anyway.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function HasModelLoaded(model) end
 
@@ -216,7 +216,7 @@ LoadMissionCreatorData = InitCreatorBudget
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x2DDFF3FB9075D747)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function IsEntityFocus(entity) end
 
@@ -230,7 +230,7 @@ function IsIplActive(iplName) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x75816577FEA6DAD5)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelAPed(model) end
 
@@ -239,7 +239,7 @@ function IsModelAPed(model) end
 ---```
 ---Returns whether the specified model represents a vehicle.  
 ---```
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelAVehicle(model) end
 
@@ -248,7 +248,7 @@ function IsModelAVehicle(model) end
 ---```
 ---Check if model is in cdimage(rpf)  
 ---```
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelInCdimage(model) end
 
@@ -257,7 +257,7 @@ function IsModelInCdimage(model) end
 ---```
 ---Returns whether the specified model exists in the game.  
 ---```
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsModelValid(model) end
 
@@ -347,7 +347,7 @@ function N_0x03f1a106bda7dd3e() end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x0811381EF5062FEC)  
 ---This native does not have an official description.
----@param p0 integer
+---@param p0 Entity
 function N_0x0811381ef5062fec(p0) end
 
 ---**`STREAMING` `client`**  
@@ -554,7 +554,7 @@ function RemoveIpl(iplName) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xF086AD9354FAC3A3)  
 ---This native does not have an official description.
----@param modelHash integer | string
+---@param modelHash Hash | string
 function RemoveModelFromCreatorBudget(modelHash) end
 
 ---**`STREAMING` `client`**  
@@ -605,7 +605,7 @@ function RequestCollisionAtCoord(x, y, z) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x923CB32A3B874FCB)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 function RequestCollisionForModel(model) end
 
 ---**`STREAMING` `client`**  
@@ -619,13 +619,13 @@ function RequestIpl(iplName) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA0261AEF7ACFC51E)  
 ---Calls [`REQUEST_MODEL`](#\_0x963D27A58DF860AC) with the `STRFLAG_PRIORITY_LOAD` and `STRFLAG_FORCE_LOAD` set.
----@param model integer | string
+---@param model Hash | string
 function RequestMenuPedModel(model) end
 
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x963D27A58DF860AC)  
 ---Request a model (archetype) to be loaded for use by the current script. Use SET_MODEL_AS_NO_LONGER_NEEDED when done using the model in script.
----@param model integer | string
+---@param model Hash | string
 function RequestModel(model) end
 
 ---**`STREAMING` `client`**  
@@ -686,7 +686,7 @@ function SetDitchPoliceModels(toggle) end
 ---```
 ---It seems to make the entity's coords mark the point from which LOD-distances are measured. In my testing, setting a vehicle as the focus entity and moving that vehicle more than 300 distance units away from the player will make the level of detail around the player go down drastically (shadows disappear, textures go extremely low res, etc). The player seems to be the default focus entity.  
 ---```
----@param entity integer
+---@param entity Entity
 function SetFocusEntity(entity) end
 
 ---**`STREAMING` `client`**  
@@ -756,7 +756,7 @@ function SetMapdatacullboxEnabled(name, toggle) end
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xE532F5D78798DAAB)  
 ---Releases the script ownership assigned by REQUEST_MODEL. This command should be used when done using a specific model hash in script.
----@param model integer | string
+---@param model Hash | string
 function SetModelAsNoLongerNeeded(model) end
 
 ---**`STREAMING` `client`**  
@@ -866,8 +866,8 @@ function ShutdownCreatorBudget() end
 ---	DELAY_ASCENT_FX = 32768
 ---}
 ---```
----@param from integer
----@param to integer
+---@param from Ped
+---@param to Ped
 ---@param flags integer
 ---@param switchType integer
 function StartPlayerSwitch(from, to, flags, switchType) end
@@ -951,7 +951,7 @@ function StreamvolIsValid(unused) end
 ---You can check if the player is in a Switch state with [`IS_PLAYER_SWITCH_IN_PROGRESS`](#\_0xD9D2CFFF49FAB35F).
 ---
 ---***Note:** Doesn't act normally when used on Mount Chiliad.*
----@param ped integer
+---@param ped Ped
 ---@param flags integer
 ---@param switchType integer
 function SwitchToMultiFirstpart(ped, flags, switchType) end
@@ -962,7 +962,7 @@ SwitchOutPlayer = SwitchToMultiFirstpart
 ---**`STREAMING` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xD8295AF639FD9CB8)  
 ---After using [`SWITCH_TO_MULTI_FIRSTPART`](#\_0xAAB3200ED59016BC) , use this native to smoothly return the camera to the player's character.
----@param ped integer
+---@param ped Ped
 function SwitchToMultiSecondpart(ped) end
 
 ---@deprecated

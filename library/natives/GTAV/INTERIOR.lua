@@ -15,7 +15,7 @@ EnableInteriorProp = ActivateInteriorEntitySet
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x3F6167F351168730)  
 ---This native does not have an official description.
----@param pickup integer
+---@param pickup Pickup
 ---@param roomName string
 function AddPickupToInteriorRoomByName(pickup, roomName) end
 
@@ -35,13 +35,13 @@ function CapInterior(interiorID, toggle) end
 ---```
 ---NativeDB Introduced: v2189
 ---```
----@param entity integer
+---@param entity Entity
 function ClearInteriorForEntity(entity) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xB365FC0C4E27FFA7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 function ClearRoomForEntity(entity) end
 
 ---**`INTERIOR` `client`**  
@@ -75,7 +75,7 @@ function DisableInterior(interiorID, toggle) end
 ---```
 ---This is the native that is used to hide the exterior of GTA Online apartment buildings when you are inside an apartment.
 ---```
----@param mapObjectHash integer | string
+---@param mapObjectHash Hash | string
 function EnableExteriorCullModelThisFrame(mapObjectHash) end
 
 ---@deprecated
@@ -84,7 +84,7 @@ HideMapObjectThisFrame = EnableExteriorCullModelThisFrame
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x50C375537449F369)  
 ---This native does not have an official description.
----@param mapObjectHash integer | string
+---@param mapObjectHash Hash | string
 function EnableScriptCullModelThisFrame(mapObjectHash) end
 
 ---**`INTERIOR` `client`**  
@@ -92,16 +92,16 @@ function EnableScriptCullModelThisFrame(mapObjectHash) end
 ---```
 ---Forces the particular room in an interior to load incase not teleporting into the portal.
 ---```
----@param entity integer
+---@param entity Entity
 ---@param interior integer
----@param roomHashKey integer | string
+---@param roomHashKey Hash | string
 function ForceRoomForEntity(entity, interior, roomHashKey) end
 
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x920D853F3E17F1DA)  
 ---This native does not have an official description.
 ---@param interiorID integer
----@param roomHashKey integer | string
+---@param roomHashKey Hash | string
 function ForceRoomForGameViewport(interiorID, roomHashKey) end
 
 ---**`INTERIOR` `client`**  
@@ -140,7 +140,7 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param typeHash integer | string
+---@param typeHash Hash | string
 ---@return integer
 function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 
@@ -161,7 +161,7 @@ function GetInteriorFromCollision(x, y, z) end
 ---```
 ---Returns the handle of the interior that the entity is in. Returns 0 if outside.  
 ---```
----@param entity integer
+---@param entity Entity
 ---@return integer
 function GetInteriorFromEntity(entity) end
 
@@ -200,7 +200,7 @@ function GetInteriorHeading(interior) end
 ---NativeDB Introduced: v1290
 ---```
 ---@param interior integer
----@return vector3, integer
+---@return vector3 position, Hash nameHash
 function GetInteriorLocationAndNamehash(interior) end
 
 ---@deprecated
@@ -211,8 +211,8 @@ GetInteriorInfo = GetInteriorLocationAndNamehash
 ---```
 ---Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY  
 ---```
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetKeyForEntityInRoom(entity) end
 
 ---**`INTERIOR` `client`**  
@@ -228,7 +228,7 @@ function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0xA6575914D2A0B450)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GetRoomKeyForGameViewport() end
 
 ---@deprecated
@@ -239,8 +239,8 @@ GetRoomKeyFromGameplayCam = GetRoomKeyForGameViewport
 ---```
 ---Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.  
 ---```
----@param entity integer
----@return integer
+---@param entity Entity
+---@return Hash
 function GetRoomKeyFromEntity(entity) end
 
 ---**`INTERIOR` `client`**  
@@ -314,7 +314,7 @@ function N_0x38c1cb1cb119a016(p0, p1) end
 ---```
 ---Usage: INTERIOR::_0x405DC2AEF6AF95B9(INTERIOR::GET_KEY_FOR_ENTITY_IN_ROOM(PLAYER::PLAYER_PED_ID()));  
 ---```
----@param roomHashKey integer | string
+---@param roomHashKey Hash | string
 function N_0x405dc2aef6af95b9(roomHashKey) end
 
 ---**`INTERIOR` `client`**  
@@ -337,7 +337,7 @@ function N_0x4c2330e61d3deb56(interior) end
 ---```
 ---Jenkins hash _might_ be 0xFC227584.
 ---```
----@param entity integer
+---@param entity Entity
 ---@param toggle boolean
 function N_0x7241ccb7d020db69(entity, toggle) end
 
@@ -352,7 +352,7 @@ function N_0x7ecdf98587e92dec(p0) end
 ---**`INTERIOR` `client`**  
 ---[Native Documentation](https://docs.fivem.net/natives/?_0x82EBB79E258FA2B7)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param interiorID integer
 function N_0x82ebb79e258fa2b7(entity, interiorID) end
 

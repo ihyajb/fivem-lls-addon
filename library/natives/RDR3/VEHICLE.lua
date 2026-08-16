@@ -20,7 +20,7 @@ function AddRoadNodeSpeedZone(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x41503629D1139ABC)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param trackIndex integer
 ---@param x number
 ---@param y number
@@ -30,22 +30,22 @@ function AddTrainTemporaryStop(train, trackIndex, x, y, z) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA0A424505A1B6429)  
 ---Returns false if every seat is occupied.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function AreAnyVehicleSeatsFree(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x18714953CCED17D3)  
 ---returns true if any wheel is destroyed/detached
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function AreAnyVehicleWheelsDestroyed(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x316CDB5B6E8F4110)  
 ---This native does not have an official description.
----@param mount integer
----@param draft integer
+---@param mount Ped
+---@param draft Vehicle
 ---@param harnessId integer
 ---@return boolean
 function AttachDraftVehicleHarnessPed(mount, draft, harnessId) end
@@ -54,7 +54,7 @@ function AttachDraftVehicleHarnessPed(mount, draft, harnessId) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xC372B6A88F6E4AD8)  
 ---Params: destroyingForce is usually 100f in R* Scripts
 ---Similar to 0xD4F5EFB55769D272, _A*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param wheelIndex integer
 ---@param destroyingForce number
 function BreakOffDraftWheel(vehicle, wheelIndex, destroyingForce) end
@@ -62,21 +62,21 @@ function BreakOffDraftWheel(vehicle, wheelIndex, destroyingForce) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9D12796EF4BF9EA9)  
 ---Breaks off the padlock of a vehicle if the vehicle contains the closed compartment to be looted
----@param vehicle integer
+---@param vehicle Vehicle
 function BreakOffVehiclePadlock(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD4F5EFB55769D272)  
 ---wheelIndex 0: left, wheelIndex 1: right, 4 & 5: unknown
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param wheelIndex integer
----@return integer
+---@return Entity
 function BreakOffVehicleWheel(vehicle, wheelIndex) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD1EFA8D68BF5D63D)  
 ---Only used to break draft vehicle log straps. Coords is always equal to the vehicle coords.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param x number
 ---@param y number
 ---@param z number
@@ -87,7 +87,7 @@ function BreakVehicleStraps(vehicle, x, y, z) end
 ---This native makes the vehicle stop immediately
 ---
 ---distance defines how far it will travel until stopping.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param distance number
 ---@param duration integer
 ---@param unknown boolean
@@ -96,14 +96,14 @@ function BringVehicleToHalt(vehicle, distance, duration, unknown) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC075176CFB8B4128)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function CanAnchorBoatHere(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF8B2D32A2231FD24)  
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param seatIndex integer
 ---@return boolean
 function CanShuffleSeat(vehicle, seatIndex) end
@@ -116,14 +116,14 @@ function ClearLastDrivenVehicle() end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDBC28A8C683CD80B)  
 ---Copies sourceVehicle's damage (broken bumpers, broken lights, etc.) to targetVehicle.
----@param sourceVehicle integer
----@param targetVehicle integer
+---@param sourceVehicle Vehicle
+---@param targetVehicle Vehicle
 function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x214651FB1DFEBA89)  
 ---Identical to CREATE_VEHICLE but allows to set draftAnimalPopGroup (see popgroups.#mt for DRAFT_HORSES_*)
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -131,9 +131,9 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---@param isNetwork boolean
 ---@param bScriptHostVeh boolean
 ---@param bDontAutoCreateDraftAnimals boolean
----@param draftAnimalPopGroup integer | string
+---@param draftAnimalPopGroup Hash | string
 ---@param p9 boolean
----@return integer
+---@return Vehicle
 function CreateDraftVehicle(modelHash, x, y, z, heading, isNetwork, bScriptHostVeh, bDontAutoCreateDraftAnimals, draftAnimalPopGroup, p9) end
 
 ---**`VEHICLE` `client`**  
@@ -141,7 +141,7 @@ function CreateDraftVehicle(modelHash, x, y, z, heading, isNetwork, bScriptHostV
 ---configHash: https://alloc8or.re/rdr3/doc/enums/eTrainConfig.txt
 ---For more information, see trainconfigs.ymt
 ---To make the train AI controlled, set conductor to true and set the speed once.
----@param configHash integer | string
+---@param configHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -149,13 +149,13 @@ function CreateDraftVehicle(modelHash, x, y, z, heading, isNetwork, bScriptHostV
 ---@param passengers boolean
 ---@param p6 boolean
 ---@param conductor boolean
----@return integer
+---@return Vehicle
 function CreateMissionTrain(configHash, x, y, z, direction, passengers, p6, conductor) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF35D0D2583051B0)  
 ---This native does not have an official description.
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -164,7 +164,7 @@ function CreateMissionTrain(configHash, x, y, z, direction, passengers, p6, cond
 ---@param bScriptHostVeh boolean
 ---@param bDontAutoCreateDraftAnimals boolean
 ---@param p8 boolean
----@return integer
+---@return Vehicle
 function CreateVehicle(modelHash, x, y, z, heading, isNetwork, bScriptHostVeh, bDontAutoCreateDraftAnimals, p8) end
 
 ---**`VEHICLE` `client`**  
@@ -175,7 +175,7 @@ function DeleteAllTrains() end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D3630FB07E8B570)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 function DeleteMissionTrain(train) end
 
 ---**`VEHICLE` `client`**  
@@ -188,20 +188,20 @@ function DeleteMissionTrain(train) end
 ---DELETE_VEHICLE(&vehicle);
 ---
 ---Deletes the specified vehicle, then sets the handle pointed to by the pointer to NULL.
----@param vehicle integer
+---@param vehicle Vehicle
 function DeleteVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE1A83D4A3B5D7938)  
 ---Spawn without lanterns set
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function DeleteVehicleLanterns(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4402960666000E62)  
 ---This native does not have an official description.
----@param draft integer
+---@param draft Vehicle
 ---@param harnessId integer
 ---@return boolean
 function DetachDraftVehicleHarnessFromIndex(draft, harnessId) end
@@ -209,8 +209,8 @@ function DetachDraftVehicleHarnessFromIndex(draft, harnessId) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB36D3EC70963BE60)  
 ---This native does not have an official description.
----@param draft integer
----@param ped integer
+---@param draft Vehicle
+---@param ped Ped
 ---@return boolean
 function DetachDraftVehicleHarnessPed(draft, ped) end
 
@@ -218,7 +218,7 @@ function DetachDraftVehicleHarnessPed(draft, ped) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x54CBDD6E1B4CB4DF)  
 ---Only used in train_robbery4 R* Script
 ---_C* - _DEL*
----@param entity integer
+---@param entity Entity
 function DetachWagonEntityFromTrain(entity) end
 
 ---**`VEHICLE` `client`**  
@@ -229,24 +229,24 @@ function DetachWagonEntityFromTrain(entity) end
 ---* 1  = Compartment available / unopened
 ---* 57 = Vehicle has no valid compartment/storage
 ---* 72 = Compartment opened, resolved or depleted
----@param vehicle integer
----@param ped integer
----@return boolean, any
+---@param vehicle Vehicle
+---@param ped Ped
+---@return boolean, any outState
 function DetermineVehicleCompartmentState(vehicle, ped) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x94B1E71B144356A5)  
 ---This native does not have an official description.
 ---@param disabled boolean
----@param weaponHash integer | string
----@param vehicle integer
----@param owner integer
+---@param weaponHash Hash | string
+---@param vehicle Vehicle
+---@param owner Ped
 function DisableVehicleWeapon(disabled, weaponHash, vehicle, owner) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF5E7E9A7620FFB5)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param extraId integer
 ---@return boolean
 function DoesExtraExist(vehicle, extraId) end
@@ -267,7 +267,7 @@ function DoesTrainExistOnTrack(trackIndex) end
 ---BOOL isInvisible = If the explosion is invisible or not.
 ---
 ---First BOOL does not give any visual explosion, the vehicle just falls apart completely but slowly and starts to burn.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param isAudible boolean
 ---@param isInvisible boolean
 ---@param p3 any
@@ -277,13 +277,13 @@ function ExplodeVehicle(vehicle, isAudible, isInvisible, p3, p4) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x35DC1877312FBA0F)  
 ---This native does not have an official description.
----@return integer
+---@return Vehicle vehicle
 function FadeAndDestroyVehicle() end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59ECA796021B0539)  
 ---Often called after START_PLAYBACK_RECORDED_VEHICLE and SKIP_TIME_IN_PLAYBACK_RECORDED_VEHICLE; similar in use to FORCE_ENTITY_AI_AND_ANIMATION_UPDATE.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function ForcePlaybackRecordedVehicleUpdate(vehicle, p1) end
 
@@ -296,8 +296,8 @@ function ForcePlaybackRecordedVehicleUpdate(vehicle, p1) end
 ---  (ENTITY::_0x119A5714578F4E05(wagon, false)).
 ---- Itemset may contain dead peds; filter with IS_ENTITY_DEAD if needed.
 ---- Often used alongside wagon auto-population management.
----@param train integer
----@param itemset integer
+---@param train Vehicle
+---@param itemset ItemSet
 ---@return integer
 function GetAllTrainWagonPassengers(train, itemset) end
 
@@ -312,22 +312,22 @@ function GetAllTrainWagonPassengers(train, itemset) end
 ---Notes:
 ---- Only useful for hot air balloon vehicles.
 ---- The returned handle is typically an OBJECT, not a PED or VEHICLE.
----@param vehicle integer
----@return integer
+---@param vehicle Vehicle
+---@return Entity
 function GetBalloonObjectFromVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x58F2244C1286D09A)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param index integer
----@return integer
+---@return Object
 function GetBreakableVehicleLockObject(vehicle, index) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE015CF1F2C0959D8)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetBreakableVehicleLocksState(vehicle) end
 
@@ -350,50 +350,50 @@ function GetCheckpointTrainSpawnLocation(trackIndex, x, y, z, distance, directio
 ---@param y number
 ---@param z number
 ---@param radius number
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@param flags integer
----@return integer
+---@return Vehicle
 function GetClosestVehicle(x, y, z, radius, modelHash, flags) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86FA6D8B48667D75)  
 ---Returns p1 for 0xBA958F68031DDBFC (stationIndex)
----@param train integer
+---@param train Vehicle
 ---@return integer
 function GetCurrentStationForTrain(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAF787E081AC4A8EE)  
 ---Returns p0 for 0xBA958F68031DDBFC (trackIndex)
----@param train integer
+---@param train Vehicle
 ---@return integer
 function GetCurrentTrackForTrain(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA19447D83294E29F)  
 ---This native does not have an official description.
----@param vehicle integer
----@return boolean, integer, integer
+---@param vehicle Vehicle
+---@return boolean, integer expected, integer actual
 function GetDraftAnimalCount(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC6D7DDC843176701)  
 ---Returns rage::NumericLimits<float>::kMax (3.402823466e+38) if vehicle is not a valid vehicle of type VEHICLE_TYPE_DRAFT.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetDraftVehicleDesiredSpeed(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2963B5C1637E8A27)  
 ---This native does not have an official description.
----@param vehicle integer
----@return integer
+---@param vehicle Vehicle
+---@return Ped
 function GetDriverOfVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x785639D89F8451AB)  
 ---Returns the world coordinates of a junction node for the given train track configuration. trainTrack: see _RETURN_TRAIN_INFO_FROM_HANDLE.
----@param trainTrack integer | string
+---@param trainTrack Hash | string
 ---@param junctionIndex integer
 ---@return vector3
 function GetJunctionCoordsForTrainTrack(trainTrack, junctionIndex) end
@@ -401,15 +401,15 @@ function GetJunctionCoordsForTrainTrack(trainTrack, junctionIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA94F3E0AB9695E19)  
 ---This native does not have an official description.
----@return integer
+---@return Vehicle
 function GetLastDrivenVehicle() end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x74583B19FEEAFDA7)  
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param seatIndex integer
----@return integer
+---@return Ped
 function GetLastPedInVehicleSeat(vehicle, seatIndex) end
 
 ---**`VEHICLE` `client`**  
@@ -424,35 +424,35 @@ function GetNearestTrainTrackPosition(x, y, z) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2FA86833E3617E2D)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetNumBreakableVehicleLockObjects(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x635423D55CA84FC8)  
 ---Returns amount for CAN_REGISTER_MISSION_VEHICLES
----@param trainConfig integer | string
+---@param trainConfig Hash | string
 ---@return integer
 function GetNumCarsFromTrainConfig(trainConfig) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5B1A26BB18E7D451)  
 ---Returns number of horses a wagon can have
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return integer
 function GetNumDraftVehicleHarnessPed(modelHash) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x288CBB414C3C2FBB)  
 ---Return the number of logs on a draft vehicle.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetNumDraftVehicleLogs(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1121B07088ED3013)  
 ---Return the number of straps that hold the logs of a draft vehicle.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetNumDraftVehicleStraps(vehicle) end
 
@@ -468,17 +468,17 @@ function GetNumDraftVehicleStraps(vehicle) end
 ---	DRAFT_HARNESS_RF,
 ---	DRAFT_HARNESS_COUNT
 ---};
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param harnessId integer
----@return integer
+---@return Ped
 function GetPedInDraftHarness(vehicle, harnessId) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB40DD2270B65366)  
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param seatIndex integer
----@return integer
+---@return Ped
 function GetPedInVehicleSeat(vehicle, seatIndex) end
 
 ---**`VEHICLE` `client`**  
@@ -506,8 +506,8 @@ function GetRotationOfVehicleRecordingAtTime(recording, time, script) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA6E210FB4283B767)  
 ---Returns handles of boat paddles entities.
----@param vehicle integer
----@return integer, integer
+---@param vehicle Vehicle
+---@return Entity left, Entity right
 function GetRowingOars(vehicle) end
 
 ---**`VEHICLE` `client`**  
@@ -527,20 +527,20 @@ function GetStationCoordsFromTrainStationData(trackIndex, stationIndex) end
 ---- stationIndex: int — From 0 to 7
 ---@param trackIndex integer
 ---@param stationIndex integer
----@return integer
+---@return Hash
 function GetStationFromTrainStationIndex(trackIndex, stationIndex) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x233B51C7913FA031)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetTimePositionInRecording(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x13C190302369308B)  
 ---Requires a visibility tracker on the vehicle (TRACK_VEHICLE_VISIBILITY)
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetTrackAmountOfVisiblePixels(vehicle) end
 
@@ -557,37 +557,37 @@ function GetTrackIndexFromCoords(x, y, z) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x865FEC2FA899F29C)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@return integer
 function GetTrackIndexOfTrain(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x671A07C9A1CD50A5)  
 ---Returns train car, use GET_TRAIN_CARRIAGE when trailerNumber is bigger than 0
----@param train integer
----@return integer
+---@param train Vehicle
+---@return Entity
 function GetTrainCar(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD0FB093A4CDB932C)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param trailerNumber integer
----@return integer
+---@return Vehicle
 function GetTrainCarriage(train, trailerNumber) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x60B7D1DCC312697D)  
 ---Returns iNumCars - to be used with GET_TRAIN_CARRIAGE (trailerNumber)
 ---_C* (O, P, Q, R)
----@param train integer
+---@param train Vehicle
 ---@return integer
 function GetTrainCarriageTrailerNumber(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C9628A811CBD724)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@return boolean
 function GetTrainDirection(train) end
 
@@ -601,9 +601,9 @@ function GetTrainDirectionFromIndex(trackIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8DF5F6A19F99F0D5)  
 ---Returns modelHash
----@param trainConfig integer | string
+---@param trainConfig Hash | string
 ---@param trainCarIndex integer
----@return integer
+---@return Hash
 function GetTrainModelFromTrainConfigByCarIndex(trainConfig, trainCarIndex) end
 
 ---**`VEHICLE` `client`**  
@@ -616,25 +616,25 @@ function GetTrainPositionOnTrack(trackIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x45853F4E17D847D5)  
 ---Returns trackIndex
----@param train integer
+---@param train Vehicle
 ---@return integer
 function GetTrainTrackFromTrainVehicle(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x86AFC343CF7F0B34)  
 ---Outputs junctionIndex, to be used with 0xE6C5E2125EB210C1
----@param trainTrack integer | string
+---@param trainTrack Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, integer
+---@return boolean, integer junctionIndex
 function GetTrainTrackJunctionAtCoords(trainTrack, x, y, z) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6E585A616ABB8401)  
 ---Returns train
 ---@param trackIndex integer
----@return integer
+---@return Vehicle
 function GetTrainVehicleFromTrackIndex(trackIndex) end
 
 ---**`VEHICLE` `client`**  
@@ -642,29 +642,29 @@ function GetTrainVehicleFromTrackIndex(trackIndex) end
 ---Seems related to vehicle health, like the one in IV.
 ---Max 1000, min 0.
 ---Vehicle does not necessarily explode or become undrivable at 0.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetVehicleBodyHealth(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC867FD144F2469D3)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetVehicleDoorLockStatus(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFA2CDDFEB8BC898B)  
 ---This native does not have an official description.
----@param vehicle integer
----@param player integer
+---@param vehicle Vehicle
+---@param player Player
 ---@return boolean
 function GetVehicleDoorsLockedForPlayer(vehicle, player) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDD1E1393D966D39A)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param team integer
 ---@return boolean
 function GetVehicleDoorsLockedForTeam(vehicle, team) end
@@ -680,85 +680,85 @@ function GetVehicleDoorsLockedForTeam(vehicle, team) end
 ---0 and below: Engine catches fire and health rapidly declines
 ---300: Engine is smoking and losing functionality
 ---1000: Engine is perfect
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetVehicleEngineHealth(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE52F34491529F0B)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetVehicleEstimatedMaxSpeed(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD798DF5DB67B1659)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function GetVehicleIsPropSetApplied(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB765B8FD49A796C)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetVehicleLivery(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA9C55F1C15E62E06)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetVehicleMaxNumberOfPassengers(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9A578736FF3A17C3)  
 ---This native does not have an official description.
----@param modelHash integer | string
+---@param modelHash Hash | string
 ---@return integer
 function GetVehicleModelNumberOfSeats(modelHash) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59F3F16577CD79B2)  
 ---Gets the number of passengers, NOT including the driver. Use IS_VEHICLE_SEAT_FREE(Vehicle, -1) to also check for the driver
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetVehicleNumberOfPassengers(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB729679356A889AE)  
 ---This native does not have an official description.
----@param vehicle integer
----@return integer
+---@param vehicle Vehicle
+---@return Entity
 function GetVehicleOwner(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1E5A9B356D5098BE)  
 ---1000 is max health
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return number
 function GetVehiclePetrolTankHealth(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA44D65E6C624526F)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return integer
 function GetVehicleTint(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF867A239EC30741)  
 ---Gets the trailer of a vehicle and puts it into the trailer parameter.
----@param vehicle integer
----@return boolean, integer
+---@param vehicle Vehicle
+---@return boolean, Vehicle trailer
 function GetVehicleTrailerVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFF5791B7639C2A46)  
 ---This native does not have an official description.
----@param vehicle integer
----@return boolean, integer
+---@param vehicle Vehicle
+---@return boolean, integer seatIndex
 function GetVehicleTurretSeat(vehicle) end
 
 ---**`VEHICLE` `client`**  
@@ -770,14 +770,14 @@ function HasInstantFillVehiclePopulationFinished() end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD3C4A2ED509205E)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@return boolean
 function HasTrainLoaded(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB935F3154BC913C8)  
 ---This native does not have an official description.
----@param vehicleAsset integer | string
+---@param vehicleAsset Hash | string
 ---@return boolean
 function HasVehicleAssetLoaded(vehicleAsset) end
 
@@ -792,7 +792,7 @@ function HasVehicleRecordingBeenLoaded(recording, script) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x201B8ED4FF7FE9F5)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function HideHorseReins(vehicle) end
 
 ---**`VEHICLE` `client`**  
@@ -813,22 +813,22 @@ function IsAnyVehicleNearPoint(x, y, z, radius) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x30D86B2B7622D0EB)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsBoatGrounded(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEA44E97849E9F3DD)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsDraftVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x80DDCCB2F4A3EB57)  
 ---This native does not have an official description.
----@param ped integer
----@param vehicle integer
+---@param ped Ped
+---@param vehicle Vehicle
 ---@param seatIndex integer
 ---@param side boolean
 ---@param onEnter boolean
@@ -838,29 +838,29 @@ function IsEntryPointForSeatClear(ped, vehicle, seatIndex, side, onEnter) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB213D2A560B2E48B)  
 ---This native does not have an official description.
----@param ped integer
----@param vehicle integer
----@return boolean, integer
+---@param ped Ped
+---@param vehicle Vehicle
+---@return boolean, integer outIndex
 function IsPedExclusiveDriverOfVehicle(ped, vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x02774B3A9034278F)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsPlaybackGoingOnForVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5A7472606EC5B7C1)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsPlaybackUsingAiGoingOnForVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7892685BF6D9775E)  
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param seatIndex integer
 ---@return boolean
 function IsSeatWarpOnly(vehicle, seatIndex) end
@@ -868,7 +868,7 @@ function IsSeatWarpOnly(vehicle, seatIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF05DFAF1ADFEF2CD)  
 ---Return true if the specified train can be spawned at the location (automatically snap to the nearest track from coords) with the direction.
----@param trainConfig integer | string
+---@param trainConfig Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -880,49 +880,49 @@ function IsSpawnPositionValidForTrain(trainConfig, x, y, z, direction, p5) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x799CFC7C5B743B15)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsThisModelABoat(model) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB9D5BDDA88E1BB66)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsThisModelADraftVehicle(model) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC08C8F8C1EDF174)  
 ---This native does not have an official description.
----@param model integer | string
+---@param model Hash | string
 ---@return boolean
 function IsThisModelATrain(model) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE887BD31D97793F6)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@return boolean
 function IsTrainWaitingAtStation(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x404527BC03DA0E6C)  
 ---Only returns true if BRING_VEHICLE_TO_HALT is called on vehicle beforehand
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleBroughtToHalt(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x51C7694E140FAE43)  
 ---true if the vehicle is colliding with vegetation/bushes, false if it is in the clear.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleCollidingWithVegetation(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE979BB5602AD3402)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@return boolean
 function IsVehicleDoorBroken(vehicle, doorId) end
@@ -930,7 +930,7 @@ function IsVehicleDoorBroken(vehicle, doorId) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7AE191143C7A9107)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@return boolean
 function IsVehicleDoorFullyOpen(vehicle, doorId) end
@@ -938,7 +938,7 @@ function IsVehicleDoorFullyOpen(vehicle, doorId) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB86D29B10F627379)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 ---@param p2 boolean
 ---@return boolean
@@ -947,7 +947,7 @@ function IsVehicleDriveable(vehicle, p1, p2) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFA9A55D9C4351625)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param extraId integer
 ---@return boolean
 function IsVehicleExtraTurnedOn(vehicle, extraId) end
@@ -955,36 +955,36 @@ function IsVehicleExtraTurnedOn(vehicle, extraId) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5136B284B67B35C7)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleFadingOut(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3F5029A8FC060C48)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleInBurnout(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0045A54EC7A22455)  
 ---This native does not have an official description.
----@param vehicle integer
----@param model integer | string
+---@param vehicle Vehicle
+---@param model Hash | string
 ---@return boolean
 function IsVehicleModel(vehicle, model) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D5D119529654EE0)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleOnAllWheels(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E3BF7ED4169EC43)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleOnFire(vehicle) end
 
@@ -992,7 +992,7 @@ function IsVehicleOnFire(vehicle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE052C1B1CAA4ECE4)  
 ---seatIndex: see CREATE_PED_INSIDE_VEHICLE
 ---Use GET_VEHICLE_MAX_NUMBER_OF_PASSENGERS(vehicle) - 1 for last seat index.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param seatIndex integer
 ---@return boolean
 function IsVehicleSeatFree(vehicle, seatIndex) end
@@ -1002,7 +1002,7 @@ function IsVehicleSeatFree(vehicle, seatIndex) end
 ---Returns true if the vehicle's current speed is less than, or equal to 0.0025f.
 ---
 ---For some vehicles it returns true if the current speed is <= 0.00039999999.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleStopped(vehicle) end
 
@@ -1012,7 +1012,7 @@ function IsVehicleStopped(vehicle) end
 ---VEH_STUCK_ON_SIDE,
 ---VEH_STUCK_HUNG_UP,
 ---VEH_STUCK_JAMMED
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param stuckType integer
 ---@param ms integer
 ---@return boolean
@@ -1021,14 +1021,14 @@ function IsVehicleStuckTimerUp(vehicle, stuckType, ms) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x424910CD5DE8C246)  
 ---Requires a visibility tracker on the vehicle (TRACK_VEHICLE_VISIBILITY)
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleVisible(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCB2CA620C48BC875)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param wheel integer
 ---@return boolean
 function IsVehicleWheelDestroyed(vehicle, wheel) end
@@ -1036,7 +1036,7 @@ function IsVehicleWheelDestroyed(vehicle, wheel) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0E7910A63E05B12C)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param windowIndex integer
 ---@return boolean
 function IsVehicleWindowIntact(vehicle, windowIndex) end
@@ -1044,20 +1044,20 @@ function IsVehicleWindowIntact(vehicle, windowIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDDBEA5506C848227)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return boolean
 function IsVehicleWrecked(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1EF36558FBDE2DAA)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function LockDoorsWhenNoLongerNeeded(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x35AD938C74CACD6A)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param value number
 function ModifyVehicleTopSpeed(vehicle, value) end
 
@@ -1079,7 +1079,7 @@ function N_0x0355fe37240e2c77(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x04F0579DBDD32F34)  
 ---_SET_VEHICLE_*
----@param vehicle integer
+---@param vehicle Vehicle
 function N_0x04f0579dbdd32f34(vehicle) end
 
 ---**`VEHICLE` `client`**  
@@ -1092,7 +1092,7 @@ function N_0x0516fae561276efc(trackIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0794199B25E499E1)  
 ---_SET_VEHICLE_S*
----@param wagon integer
+---@param wagon Vehicle
 ---@param p1 boolean
 function N_0x0794199b25e499e1(wagon, p1) end
 
@@ -1125,7 +1125,7 @@ function N_0x0fddee66e3465726(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x104D9A7B1C0D0783)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 number
 function N_0x104d9a7b1c0d0783(vehicle, p1) end
 
@@ -1133,7 +1133,7 @@ function N_0x104d9a7b1c0d0783(vehicle, p1) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x1180A2974D251B7B)  
 ---Returns p1 for 0xBA958F68031DDBFC (stationIndex)
 ---_GET_N* (NEAREST_STATION_FOR_TRAIN?)
----@param train integer
+---@param train Vehicle
 ---@return integer
 function N_0x1180a2974d251b7b(train) end
 
@@ -1141,7 +1141,7 @@ function N_0x1180a2974d251b7b(train) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x12F6C6ED3EFF42DE)  
 ---Params: coords = GET_ENTITY_VELOCITY
 ---_SET_VELOCITY*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1171,14 +1171,14 @@ function N_0x15206e88ff7617df(trackIndex, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x15CC8C33D7FFCC4A)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 integer
 function N_0x15cc8c33d7ffcc4a(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x160C1B5AB48AB87C)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param p1 number
 function N_0x160c1b5ab48ab87c(train, p1) end
 
@@ -1202,7 +1202,7 @@ function N_0x172e9dd35858dcd7(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1A861F899EBBE17C)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param p1 boolean
 function N_0x1a861f899ebbe17c(train, p1) end
 
@@ -1265,7 +1265,7 @@ function N_0x3137edc899e6dae4(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x331CBD247FC5DAA8)  
 ---Returns trackIndex
----@param configHash integer | string
+---@param configHash Hash | string
 ---@param x number
 ---@param y number
 ---@param z number
@@ -1298,7 +1298,7 @@ function N_0x38e7dd70a242d5cb(trackIndex, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3ABFA128F5BF5A70)  
 ---Called together with 0xE6C5E2125EB210C1 in R* Script medium_update
----@param trainTrack integer | string
+---@param trainTrack Hash | string
 ---@param junctionIndex integer
 ---@param enabled boolean
 function N_0x3abfa128f5bf5a70(trainTrack, junctionIndex, enabled) end
@@ -1320,7 +1320,7 @@ function N_0x41365db586cd9e8e(trackIndex, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x41F0B254DDF71473)  
 ---_H*
----@param wagon integer
+---@param wagon Vehicle
 function N_0x41f0b254ddf71473(wagon) end
 
 ---**`VEHICLE` `client`**  
@@ -1346,7 +1346,7 @@ function N_0x4c05b42a8d937796() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x4C60C333F9CCA2B6)  
 ---Params: p1 usually true in R* Scripts
 ---_SET_DRAFT_VEHICLE_*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0x4c60c333f9cca2b6(vehicle, p1) end
 
@@ -1377,7 +1377,7 @@ function N_0x63509ddf102e08e8(trackIndex, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6355602C02EDC6DF)  
 ---Only used in R* Script beat_train_holdup: p1 = 1
----@param entity integer
+---@param entity Entity
 ---@param p1 any
 function N_0x6355602c02edc6df(entity, p1) end
 
@@ -1411,7 +1411,7 @@ function N_0x6b34be961f639e21(trackIndex, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6B53F4B811E583D2)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function N_0x6b53f4b811e583d2(vehicle, toggle) end
 
@@ -1427,7 +1427,7 @@ function N_0x6c87f49bfa181db5(x, y, z) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6DE072AC8A95FFC1)  
 ---_SET_INSTANTLY_* - _SET_MISSION_TRAIN*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0x6de072ac8a95ffc1(vehicle, p1) end
 
@@ -1462,7 +1462,7 @@ function N_0x718eb706b6e998a0(trackIndex) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x73118A3EE9C9B6DB)  
 ---_SET_VEHICLE_WHEELS_*
----@param wagon integer
+---@param wagon Vehicle
 ---@param p1 integer
 ---@param p2 boolean
 function N_0x73118a3ee9c9b6db(wagon, p1, p2) end
@@ -1493,14 +1493,14 @@ function N_0x750d42c013f64ae7(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x762FDC4C19E5A981)  
 ---Seems to be related while setting a (door) state of specific trains (midlandboxcar05x, privateboxcar01x, privateboxcar02x, midlandrefrigeratorCar, privateArmoured, armoredCar01x)
----@param trainCarriage integer
+---@param trainCarriage Entity
 ---@param p1 boolean
 function N_0x762fdc4c19e5a981(trainCarriage, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7840576C50A13DBA)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param p1 boolean
 function N_0x7840576c50a13dba(train, p1) end
 
@@ -1520,7 +1520,7 @@ function N_0x8379e05871ad24e0() end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x850CE59DEC2028F3)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 any
 function N_0x850ce59dec2028f3(vehicle, p1) end
 
@@ -1533,7 +1533,7 @@ function N_0x873aaf600cc36dac(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x87B974E54C71BA7B)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0x87b974e54c71ba7b(vehicle, p1) end
 
@@ -1569,7 +1569,7 @@ function N_0x98a7598c579ee871(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x9E8711C81AA17876)  
 ---Forcing high LOD buoyancy for vehicle: p1 = false
 ---_SET_A*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0x9e8711c81aa17876(vehicle, p1) end
 
@@ -1582,7 +1582,7 @@ function N_0xa230a5dde12ed374(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA72B1BF3857B94D7)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param p1 boolean
 function N_0xa72b1bf3857b94d7(train, p1) end
 
@@ -1604,7 +1604,7 @@ function N_0xa9e185d498b9ac67(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAE7E66A61E7C17A5)  
 ---_SET_TRAIN_*
----@param train integer
+---@param train Vehicle
 ---@param p1 boolean
 function N_0xae7e66a61e7c17a5(train, p1) end
 
@@ -1623,7 +1623,7 @@ function N_0xb961dd799a837bd7() end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC325A6BAA62CF8A2)  
 ---Used in Script Function MC_LOCAL_SETUP_VEH - enabling transitions
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0xc325a6baa62cf8a2(vehicle, p1) end
 
@@ -1636,14 +1636,14 @@ function N_0xc351394b932a6a50(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC399CC89FBA05DA0)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0xc399cc89fba05da0(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC4A2C11FC0D41916)  
 ---_SET_DRAFT_VEHICLE_(STOP?)*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0xc4a2c11fc0d41916(vehicle, p1) end
 
@@ -1675,7 +1675,7 @@ function N_0xcbc7b6f9a56b79f6(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCBF88256E44D5D39)  
 ---Used in Script Function MC_LOCAL_SETUP_VEH - enabling transitions
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0xcbf88256e44d5d39(vehicle, p1) end
 
@@ -1689,7 +1689,7 @@ function N_0xceb1f1eed484a5b4(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF342503CA4C8DF1)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 number
 function N_0xcf342503ca4c8df1(vehicle, p1) end
 
@@ -1748,7 +1748,7 @@ function N_0xd4907ef4334c7602(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD826690B5CF3BEFF)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 any
 function N_0xd826690b5cf3beff(vehicle, p1) end
 
@@ -1786,7 +1786,7 @@ function N_0xdd100ce1ebbf37e3(p0, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDE8C5B9F65017FA1)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@return any
 function N_0xde8c5b9f65017fa1(train) end
 
@@ -1800,7 +1800,7 @@ function N_0xe12f5ed49f44d40d(p0) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xE1C0F8781BF130C2)  
 ---Only used in R* SP Script rcm_abigail31: p1 = 5
 ---_GET_VEHICLE_T* - _GET_VO*
----@param wagon integer
+---@param wagon Vehicle
 ---@param p1 integer
 ---@return boolean
 function N_0xe1c0f8781bf130c2(wagon, p1) end
@@ -1827,7 +1827,7 @@ function N_0xe78993ff9022c064(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEF28A614B4B264B8)  
 ---_SET_TRAIN_*
----@param train integer
+---@param train Vehicle
 ---@param p1 boolean
 function N_0xef28a614b4b264b8(train, p1) end
 
@@ -1858,7 +1858,7 @@ function N_0xf8f7da13cfbd4532(trackIndex, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFC4F15A7DDDC47B1)  
 ---_SET_DRAFT_VEHICLE_*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0xfc4f15a7dddc47b1(vehicle, p1) end
 
@@ -1879,7 +1879,7 @@ function N_0xfffe15b433300b8c(p0, p1, p2) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x42404D57D621601A)  
 ---Returns the log prop entity that is currently detaching/falling from a draft (log) wagon. Returns 0 if no log is in the falling phase. R* scripts call this repeatedly to fetch each fallen piece, then apply forces to it.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@return any
 function RecoverDraftVehicleFallingLog(vehicle) end
 
@@ -1893,14 +1893,14 @@ function RemoveRoadNodeSpeedZone(speedzone) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x888A4E675B38F5AD)  
 ---This native does not have an official description.
----@param vehicleAsset integer | string
+---@param vehicleAsset Hash | string
 function RemoveVehicleAsset(vehicleAsset) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x139E35755418F6AA)  
 ---See REQUEST_VEHICLE_RECORDING
 ---@param p0 any
----@return any
+---@return any p1
 function RemoveVehicleRecording(p0) end
 
 ---**`VEHICLE` `client`**  
@@ -1921,29 +1921,29 @@ function RemoveVehiclesFromGeneratorsInArea(p0, p1, p2, p3, p4, p5) end
 ---1 = Front Left Window
 ---2 = Back Right Window
 ---3 = Back Left Window
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param windowIndex integer
 function RemoveVehicleWindow(vehicle, windowIndex) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x81A15811460FAB3A)  
 ---This native does not have an official description.
----@param vehicleHash integer | string
+---@param vehicleHash Hash | string
 ---@param vehicleAsset integer
 function RequestVehicleAsset(vehicleHash, vehicleAsset) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCF9DA72002FC16BF)  
 ---This native does not have an official description.
----@param ped integer
----@param entity integer
+---@param ped Ped
+---@param entity Entity
 ---@param vehicleAsset integer
 function RequestVehicleAssetAnims(ped, entity, vehicleAsset) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x84B81EF78BD22357)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function RequestVehicleHighDetailModel(vehicle) end
 
 ---**`VEHICLE` `client`**  
@@ -1958,7 +1958,7 @@ function RequestVehicleRecording(recording, script) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x23298B468F7D88B6)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param nullAttributes integer
 function ResetVehicleStuckTimer(vehicle, nullAttributes) end
 
@@ -1966,8 +1966,8 @@ function ResetVehicleStuckTimer(vehicle, nullAttributes) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x09034479E6E3E269)  
 ---Outputs track hash and junction index on given train vehicle handle.
 ---_RESET_VEHICLE_* (?)
----@param train integer
----@return boolean, integer, integer
+---@param train Vehicle
+---@return boolean, Hash trainTrack, integer junctionIndex
 function ReturnTrainInfoFromHandle(train) end
 
 ---**`VEHICLE` `client`**  
@@ -1978,7 +1978,7 @@ function SetAllJunctionsCleared() end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8D3230A0ED7DE39F)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetAllowVehicleExplodesOnContact(vehicle, p1) end
 
@@ -2003,14 +2003,14 @@ function SetAllVehicleGeneratorsActiveInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x424FFCB9F0D2D4B5)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param toggle boolean
 function SetAllVehicleGeneratorsDisabledForVolume(volume, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB42C87521D1BDD2F)  
 ---Makes the balloon face the specified direction to fly towards it must be called every frame until it reaches destination
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2019,14 +2019,14 @@ function SetBalloonFaceDirectionThisFrame(vehicle, x, y, z) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C9E45A4CED2E8DA)  
 ---Params: 1.0f will make balloon hover
----@param balloon integer
+---@param balloon Vehicle
 ---@param p1 number
 function SetBalloonHoverState(balloon, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2200AB13CBD10F4E)  
 ---Makes the balloon go to the specified coordinates must be called every frame until it reaches destination if autoDrive is false,other wise player must drive it manually
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2038,7 +2038,7 @@ function SetBalloonRoute(vehicle, x, y, z, autoDrive, speedMultiplier) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x31F343383F19C987)  
 ---Total height is calculated using: cargo ratio + pelt ratio (by pelt count)
 ---Screenshot: https://imgur.com/a/nsomtiv
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param height number
 ---@param immediately boolean
 function SetBatchTarpHeight(vehicle, height, immediately) end
@@ -2046,7 +2046,7 @@ function SetBatchTarpHeight(vehicle, height, immediately) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAEAB044F05B92659)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetBoatAnchor(vehicle, toggle) end
 
@@ -2055,14 +2055,14 @@ function SetBoatAnchor(vehicle, toggle) end
 ---Value: mostly 99999.9f
 ---
 ---Old name: _SET_BOAT_MOVEMENT_RESISTANCE
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param value number
 function SetBoatLowLodAnchorDistance(vehicle, value) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x286771F3059A37A7)  
 ---Old name: _SET_BOAT_FROZEN_WHEN_ANCHORED
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 ---@param p2 boolean
 function SetBoatRemainsAnchoredWhilePlayerIsDriver(vehicle, p1, p2) end
@@ -2070,14 +2070,14 @@ function SetBoatRemainsAnchoredWhilePlayerIsDriver(vehicle, p1, p2) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x62A6D317A011EA1D)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetBoatSinksWhenWrecked(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBC4735F48CD983EF)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetBreakableVehicleLocksUnbreakable(vehicle, toggle) end
 
@@ -2090,35 +2090,35 @@ function SetDisableRandomTrainsThisFrame(toggle) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1716D787D9B94202)  
 ---Old name: _SET_DISABLE_SUPERDUMMY_MODE
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param disable boolean
 function SetDisableSuperdummy(vehicle, disable) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD146EE5F2B06B95E)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetDisableVehicleEngineFires(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5795FBE7A2001C14)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetDisableVehiclePetrolTankDamage(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB70986AB19B04AFF)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetDisableVehiclePetrolTankFires(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x63DC1F22C903B709)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetDontAllowPlayerToEnterVehicleIfLockedForPlayer(vehicle, p1) end
 
@@ -2127,7 +2127,7 @@ function SetDontAllowPlayerToEnterVehicleIfLockedForPlayer(vehicle, p1) end
 ---doorId: see SET_VEHICLE_DOOR_SHUT
 ---
 ---Old name: _SET_VEHICLE_DOOR_CAN_BREAK
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param isBreakable boolean
 function SetDoorAllowedToBeBrokenOff(vehicle, doorId, isBreakable) end
@@ -2135,35 +2135,35 @@ function SetDoorAllowedToBeBrokenOff(vehicle, doorId, isBreakable) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8C6D9A399126C194)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param seed integer
 function SetDraftAnimalRandomSeed(vehicle, seed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x87344305778E5415)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param allow boolean
 function SetDraftVehicleAllowDraftAnimalAutoCreation(vehicle, allow) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6090A031C69F384E)  
 ---This native does not have an official description.
----@param draft integer
+---@param draft Vehicle
 ---@param canDetach boolean
 function SetDraftVehicleAnimalsCanDetach(draft, canDetach) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0C3F0F7F92CA847C)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param speed number
 function SetDraftVehicleDesiredSpeed(vehicle, speed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x226C6A4E3346D288)  
 ---This native does not have an official description.
----@param draft integer
+---@param draft Vehicle
 ---@param canBreak boolean
 function SetDraftVehicleYokeCanBreak(draft, canBreak) end
 
@@ -2176,35 +2176,35 @@ function SetEnableVehicleSlipstreaming(p0) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF489F94BFEE12BB0)  
 ---Hashes: COACH2_BOOT_LOOT_ITEMS_COACHROB_RSC, COACH2_BOOT_LOOT_ITEMS_COACHROB, COACH2_MARY3
----@param vehicle integer
----@param coachrobberyLoot integer | string
+---@param vehicle Vehicle
+---@param coachrobberyLoot Hash | string
 function SetForceCoachRobberyLoot(vehicle, coachrobberyLoot) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x373CB1283308BD7B)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetForceHdVehicle(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1098CDA477890165)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetForceHighLodVehicle(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x75B49ACD73617437)  
 ---Sets boat to be anchored on spawn, called together with SET_BOAT_ANCHOR and _SET_BOAT_ANCHOR_BUOYANCY_COEFFICIENT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetForceLowLodAnchorMode(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7F8E2B131E1DCA6C)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetForceVehicleEngineDamageByBullet(vehicle, toggle) end
 
@@ -2220,14 +2220,14 @@ function SetHorseTrafficGroupingDistribution(p0, p1, p2, p3) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBBE7648349B49BE8)  
 ---flags = 0: DEFAULT; 1: KEEP_OLD_SPEED
----@param train integer
+---@param train Vehicle
 ---@param flags integer
 function SetMissionTrainAsNoLongerNeeded(train, flags) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7632755962AB9922)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2237,7 +2237,7 @@ function SetMissionTrainCoords(train, x, y, z) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xC9EA26893C9E4024)  
 ---Notice: BOOL p4 was wrongly named takePassengers (?)
 ---Can be used to rotate the train by setting the BOOL direction
----@param train integer
+---@param train Vehicle
 ---@param x number
 ---@param y number
 ---@param z number
@@ -2247,7 +2247,7 @@ function SetMissionTrainWarpToCoords(train, x, y, z, direction) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6835AFEA10E186F4)  
 ---3 speeds (1-3), higher it is faster it will be
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param speed integer
 function SetOarsRowingSpeed(vehicle, speed) end
 
@@ -2260,14 +2260,14 @@ function SetParkedVehicleDensityMultiplierThisFrame(multiplier) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x838C216C2B05A009)  
 ---This native does not have an official description.
----@param ped integer
----@param vehicle integer
+---@param ped Ped
+---@param vehicle Vehicle
 function SetPedOwnsVehicle(ped, vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD78084EED4CD94C6)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param speed number
 function SetPlaybackSpeed(vehicle, speed) end
 
@@ -2286,7 +2286,7 @@ function SetRandomTrains(toggle) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1BFBAFCC6760FF02)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param enabled boolean
 function SetRandomTrainsWhistleEnabled(train, enabled) end
 
@@ -2303,75 +2303,75 @@ function SetRandomVehicleDensityMultiplierThisFrame(multiplier) end
 ---When enabled, the train will automatically stop if an obstacle or possible
 ---collision is detected ahead on the track. When disabled, the train will
 ---continue moving without reacting to obstacles
----@param train integer
+---@param train Vehicle
 ---@param enabled boolean
 function SetTrainCollisionAvoidanceEnabled(train, enabled) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x01021EB2E96B793C)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param speed number
 function SetTrainCruiseSpeed(train, speed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x07E2E21E799080A0)  
 ---Enables/disables damage/explosion flags on the engine and all attached cars; typically set true before EXPLODE_VEHICLE.
----@param train integer
+---@param train Vehicle
 ---@param enabled boolean
 function SetTrainDestructionEnabled(train, enabled) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06A09A6E0C6D2A84)  
 ---true to enable train reversing moving backwards, false to not allow reversing
----@param train integer
+---@param train Vehicle
 ---@param enabled boolean
 function SetTrainEnableReversing(train, enabled) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3660BCAB3A6BB734)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 function SetTrainHalt(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x787E43477746876F)  
 ---Restarts the train
----@param train integer
+---@param train Vehicle
 function SetTrainLeaveStation(train) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9F29999DFDF2AEB8)  
 ---Maximum possible speed is 30.0 (108 km/h)
----@param train integer
+---@param train Vehicle
 ---@param speed number
 function SetTrainMaxSpeed(train, speed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8EC47DD4300BF063)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param offset number
 function SetTrainOffsetFromStation(train, offset) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDFBA6BBFF7CCAFBB)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param speed number
 function SetTrainSpeed(train, speed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4182C037AA1F0091)  
 ---This native does not have an official description.
----@param train integer
+---@param train Vehicle
 ---@param toggle boolean
 function SetTrainStopsForStations(train, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE6C5E2125EB210C1)  
 ---trainTrack: FREIGHT_GROUP, TRAINS3, BRAITHWAITES2_TRACK_CONFIG, TRAINS_OLD_WEST01, TRAINS_OLD_WEST03, TRAINS_NB1, TRAINS_INTERSECTION1_ANN
----@param trainTrack integer | string
+---@param trainTrack Hash | string
 ---@param junctionIndex integer
 ---@param enabled boolean
 function SetTrainTrackJunctionSwitch(trainTrack, junctionIndex, enabled) end
@@ -2379,28 +2379,28 @@ function SetTrainTrackJunctionSwitch(trainTrack, junctionIndex, enabled) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0893DAFBFA67110E)  
 ---Used to be incorrectly named SET_VEHICLE_EXCLUSIVE_DRIVER
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleAiCanUseExclusiveSeats(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1240E8596A8308B9)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleAllowHomingMissleLockon(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xECB9E9BC887E8060)  
 ---Makes the vehicle accept no passengers.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleAllowNoPassengersLockon(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x501354951CD942DE)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 ---@param p2 any
 ---@return any
@@ -2409,56 +2409,56 @@ function SetVehicleAutomaticallyAttaches(vehicle, p1, p2) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x55CCAAE4F28C67A0)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param value number
 function SetVehicleBodyHealth(vehicle, value) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCEC4CA2CAB8FA98C)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleBrokenPartsDontAffectAiHandling(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x05254BA0B44ADC16)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param state boolean
 function SetVehicleCanBeTargetted(vehicle, state) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE42952510F84AFDB)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleCanBeUsedByFleeingPeds(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4BF8131AE811541C)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param state boolean
 function SetVehicleCanBeVisiblyDamaged(vehicle, state) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC5ED9D59B4646611)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleCanBreak(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x065D03A9D6B2C6B5)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleCanEjectPassengersIfLocked(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF6E3D38869D0F7AD)  
 ---Opens the compartment door of a vehicle if it has one, dropping the tailgate, opening a built-in lockbox, or revealing a hidden smuggler compartment
----@param vehicle integer
+---@param vehicle Vehicle
 function SetVehicleCompartmentDoorOpen(vehicle) end
 
 ---**`VEHICLE` `client`**  
@@ -2466,7 +2466,7 @@ function SetVehicleCompartmentDoorOpen(vehicle) end
 ---Apply damage to vehicle at a location. Location is relative to vehicle model (not world).
 ---
 ---Radius of effect damage applied in a sphere at impact location
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param xOffset number
 ---@param yOffset number
 ---@param zOffset number
@@ -2484,7 +2484,7 @@ function SetVehicleDensityMultiplierThisFrame(multiplier) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8E5DA070BAD3279E)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param amount number
 ---@param p2 integer
 ---@param p3 boolean
@@ -2493,21 +2493,21 @@ function SetVehicleDeterioration(vehicle, amount, p2, p3) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x758C3460EE915D0A)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param dirtLevel number
 function SetVehicleDirtLevel(vehicle, dirtLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBAE0EEDF93F05EAA)  
 ---dirtLevel: 0.0 - 1.0
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param dirtLevel number
 function SetVehicleDirtLevel_2(vehicle, dirtLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9666CF20A1C6D780)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param deleteDoor boolean
 function SetVehicleDoorBroken(vehicle, doorId, deleteDoor) end
@@ -2515,7 +2515,7 @@ function SetVehicleDoorBroken(vehicle, doorId, deleteDoor) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD57F10EBBA814ECF)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param speed integer
 ---@param angle number
@@ -2524,7 +2524,7 @@ function SetVehicleDoorControl(vehicle, doorId, speed, angle) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x06F8A202EB312A3C)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param p2 boolean
 ---@param p3 boolean
@@ -2535,7 +2535,7 @@ function SetVehicleDoorLatched(vehicle, doorId, p2, p3, p4) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x550CE392A4672412)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
 ---Can also be used on trains and its wagons
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param loose boolean
 ---@param openInstantly boolean
@@ -2559,7 +2559,7 @@ function SetVehicleDoorOpen(vehicle, doorId, loose, openInstantly) end
 ---	VEH_EXT_BONNET,
 ---	VEH_EXT_BOOT
 ---};
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param closeInstantly boolean
 function SetVehicleDoorShut(vehicle, doorId, closeInstantly) end
@@ -2567,29 +2567,29 @@ function SetVehicleDoorShut(vehicle, doorId, closeInstantly) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x96F78A6A075D55D9)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorLockStatus integer
 function SetVehicleDoorsLocked(vehicle, doorLockStatus) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2381977DA948F8DC)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleDoorsLockedForAllPlayers(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x359A8EA1FB8D6F0F)  
 ---This native does not have an official description.
----@param vehicle integer
----@param player integer
+---@param vehicle Vehicle
+---@param player Player
 ---@param toggle boolean
 function SetVehicleDoorsLockedForPlayer(vehicle, player, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE712BC978770F105)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param team integer
 ---@param toggle boolean
 function SetVehicleDoorsLockedForTeam(vehicle, team, toggle) end
@@ -2597,21 +2597,21 @@ function SetVehicleDoorsLockedForTeam(vehicle, team, toggle) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA4FFCD645B11F25A)  
 ---Closes all doors of a vehicle:
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param closeInstantly boolean
 function SetVehicleDoorsShut(vehicle, closeInstantly) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x362CEDD2A41E0747)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleDoorsToOpenAtAnyDistance(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x48E4C137A71C2688)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleEngineCanDegrade(vehicle, toggle) end
 
@@ -2629,7 +2629,7 @@ function SetVehicleEngineCanDegrade(vehicle, toggle) end
 ---0 and below: Engine catches fire and health rapidly declines
 ---300: Engine is smoking and losing functionality
 ---1000: Engine is perfect
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param health number
 function SetVehicleEngineHealth(vehicle, health) end
 
@@ -2640,7 +2640,7 @@ function SetVehicleEngineHealth(vehicle, health) end
 ---vehicle: The vehicle to start or stop the engine on.
 ---value: true to turn the vehicle on; false to turn it off.
 ---instantly: if true, the vehicle will be set to the state immediately; otherwise, the current driver will physically turn on or off the engine.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param value boolean
 ---@param instantly boolean
 function SetVehicleEngineOn(vehicle, value, instantly) end
@@ -2650,15 +2650,15 @@ function SetVehicleEngineOn(vehicle, value, instantly) end
 ---index: 0 - 1
 ---
 ---Used to be incorrectly named _SET_VEHICLE_EXCLUSIVE_DRIVER_2
----@param vehicle integer
----@param ped integer
+---@param vehicle Vehicle
+---@param ped Ped
 ---@param index integer
 function SetVehicleExclusiveDriver(vehicle, ped, index) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA402939C6761E1A3)  
 ---Sets a vehicle to be strongly resistant to explosions. p0 is the vehicle; set p1 to false to toggle the effect on/off.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleExplodesOnHighExplosionDamage(vehicle, toggle) end
 
@@ -2666,7 +2666,7 @@ function SetVehicleExplodesOnHighExplosionDamage(vehicle, toggle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB6F89150BC9D16B)  
 ---Note: only some vehicle have extras
 ---https://github.com/femga/rdr3_discoveries/blob/master/vehicles/vehicle_modding/vehicle_extras.lua
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param extraId integer
 ---@param disable boolean
 function SetVehicleExtra(vehicle, extraId, disable) end
@@ -2675,55 +2675,55 @@ function SetVehicleExtra(vehicle, extraId, disable) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x79811282A9D1AE56)  
 ---This fixes a vehicle.
 ---If the vehicle's engine's broken then you cannot fix it with this native.
----@param vehicle integer
+---@param vehicle Vehicle
 function SetVehicleFixed(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9F92AF49F12F6E7)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param speed number
 function SetVehicleForwardSpeed(vehicle, speed) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x91BE51AEC4E99710)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleHandbrake(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBB5A3FA8ED3979C5)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param owned boolean
 function SetVehicleHasBeenOwnedByPlayer(vehicle, owned) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x252253C8A45AA1FC)  
 ---if true, axles won't bend.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleHasStrongAxles(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC903855E028A05F2)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleHasUnbreakableLights(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4EA71B4C9DB3C3F1)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleInactiveDuringPlayback(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA9F1D75195CC40F6)  
 ---doorId: see SET_VEHICLE_DOOR_SHUT
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param doorId integer
 ---@param doorLockStatus integer
 function SetVehicleIndividualDoorsLocked(vehicle, doorId, doorLockStatus) end
@@ -2731,56 +2731,56 @@ function SetVehicleIndividualDoorsLocked(vehicle, doorId, doorLockStatus) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC1842F40FD501DA2)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleInfluencesWantedLevel(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x54800D386C5825E5)  
 ---Setting this to false, makes the specified vehicle to where if you press Y your character doesn't even attempt the animation to enter the vehicle. Hence it's not considered aka ignored.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleIsConsideredByPlayer(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCE1531927AD6C9F8)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param enabled boolean
 function SetVehicleIsInHurry(vehicle, enabled) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6C32FC81DFF25C9A)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param isStolen boolean
 function SetVehicleIsStolen(vehicle, isStolen) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1549BA7FE83A2383)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleKeepEngineOnWhenAbandoned(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x629F0A0E952CAE7D)  
 ---Sets the vehicle's lights state.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param state integer
 function SetVehicleLights(vehicle, state) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8F75941C86EEBFCA)  
 ---_SET_VEHICLE_LI*
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleLimitSpeedWhenPlayerInactive(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF89D82A0582E46ED)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/vehicles/vehicle_modding/vehicle_liveries.lua
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param liveryIndex integer
 function SetVehicleLivery(vehicle, liveryIndex) end
 
@@ -2788,42 +2788,42 @@ function SetVehicleLivery(vehicle, liveryIndex) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FA7D7D1E0EA809E)  
 ---Ranges from -1 to 2? (internal type is int8)
 ---https://imgur.com/a/bPzHcft
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param lodLevel integer
 function SetVehicleLodLevel(vehicle, lodLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5F5E2B1B9EAECC0F)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param multiplier number
 function SetVehicleLodMultiplier(vehicle, multiplier) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7549B9E841940695)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleMayBeUsedByGotoPointAnyMeans(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4D15E49764CB328A)  
 ---mudLevel: 0.0 - 1.0
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param mudLevel number
 function SetVehicleMudLevel(vehicle, mudLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x09C970AE59ABF6B2)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleNotStealableAmbiently(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7263332501E07F52)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 ---@return boolean
 function SetVehicleOnGroundProperly(vehicle, p1) end
@@ -2831,28 +2831,28 @@ function SetVehicleOnGroundProperly(vehicle, p1) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6AB2918EE3BEC94C)  
 ---1000 is max health
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param health number
 function SetVehiclePetrolTankHealth(vehicle, health) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x652712478F1721F4)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleProvidesCover(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x33992A808DF1C1BA)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleRespectsLocksWhenHasDriver(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC2E62678D602853C)  
 ---Picks the road/path link nearest (start to end) and stores it on the vehicle's driving component (used by R* Scripts to choose an exit link).
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param startX number
 ---@param startY number
 ---@param startZ number
@@ -2875,14 +2875,14 @@ function SetVehicleShootAtTarget(p0, p1, p2, p3, p4, p5) end
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6F73EFAB11651D7F)  
 ---snowLevel: 0.0 - 1.0
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param snowLevel number
 function SetVehicleSnowLevel(vehicle, snowLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x23A3AB86E0807721)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleStaysFrozenWhenCleanedUp(vehicle, toggle) end
 
@@ -2896,83 +2896,83 @@ function SetVehicleStaysFrozenWhenCleanedUp(vehicle, toggle) end
 ----1.0 = full right
 ---0.0 = centered steering
 ---1.0 = full left
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param value number
 function SetVehicleSteerBias(vehicle, value) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA13028E22564A1BD)  
 ---Sets the stop distance of a vehicle when there something in it's way that forces it to stop or sets the view distance of the vehicle making it stop at a distance
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param distance number
 function SetVehicleStopDistance(vehicle, distance) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC84E138448507567)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param p1 boolean
 function SetVehicleStopInstantlyWhenPlayerInactive(vehicle, p1) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xAB315515C9F8803D)  
 ---If set to true, vehicle will not take crash damage, but is still susceptible to damage from bullets and explosives
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleStrong(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8268B098F6FCA4E2)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/vehicles/vehicle_modding/vehicle_tints.lua
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param tintId integer
 function SetVehicleTint(vehicle, tintId) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBD0A4E935106FE5)  
 ---Allows you to toggle bulletproof tires.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleTyresCanBurst(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x6E884BAB713A2A94)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleUndriveable(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5AABB09F6FBD1F87)  
 ---wetLevel: 0.0 - 1.0
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param wetLevel number
 function SetVehicleWetLevel(vehicle, wetLevel) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x839137C40275FB77)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param enabled boolean
 function SetVehicleWheelsCanBreak(vehicle, enabled) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC462C79379ABBCB1)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleWheelsCanBreakOffWhenBlowUp(vehicle, toggle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x41CDA90EE3450921)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function ShowHorseReins(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5F5E6379C59EFC56)  
 ---SET_TIME_POSITION_IN_RECORDING can be emulated by: desired_time - GET_TIME_POSITION_IN_RECORDING(vehicle)
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param time number
 function SkipTimeInPlaybackRecordedVehicle(vehicle, time) end
 
@@ -2981,7 +2981,7 @@ function SkipTimeInPlaybackRecordedVehicle(vehicle, time) end
 ---p3 is some flag related to 'trailers' (invokes CVehicle::GetTrailer).
 ---
 ---See REQUEST_VEHICLE_RECORDING
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param recording integer
 ---@param script string
 ---@param p3 boolean
@@ -2996,35 +2996,35 @@ function StartPlaybackRecordedVehicle(vehicle, recording, script, p3) end
 ---duration: The duration to sound the horn, in milliseconds.
 ---
 ---Note: If a player is in the vehicle, it will only sound briefly.
----@param vehicle integer
+---@param vehicle Vehicle
 ---@param duration integer
----@param mode integer | string
+---@param mode Hash | string
 ---@param forever boolean
 function StartVehicleHorn(vehicle, duration, mode, forever) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7C06330BFDDA182E)  
 ---Old name: _STOP_BRING_VEHICLE_TO_HALT
----@param vehicle integer
+---@param vehicle Vehicle
 function StopBringingVehicleToHalt(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBF9B4D6267E8C26D)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function StopPlaybackRecordedVehicle(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1F3969B140DEE157)  
 ---This native does not have an official description.
----@param vehicle integer
+---@param vehicle Vehicle
 function TrackVehicleVisibility(vehicle) end
 
 ---**`VEHICLE` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCFE122EC635CC2B2)  
 ---whistleSequence: ACKNOWLEDGE, BACKING_UP, CROSSING, DANGER, MOVING, NEXT_STATION, PASSING, STOPPED
 ---p2 = true seems to mute the sound
----@param train integer
+---@param train Vehicle
 ---@param whistleSequence string
 ---@param p2 boolean
 ---@param p3 boolean

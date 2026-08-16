@@ -11,19 +11,19 @@ function ActivateCoverLayer(coverLayer) end
 ---args: f_0 = Volume Handle
 ---f_1 = integer (?) (only the number 1 is ever used here, or is not used at all)
 ---f_2 = integer (-1 to 32 in R* Scripts)
----@return any
+---@return any args
 function AddCoverBlockingArea() end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x975BD6351648935F)  
 ---This native does not have an official description.
----@return integer, any
+---@return ScrHandle, any data
 function AddScriptedCoverPoint() end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x8CBE916CFC64AD5C)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function AreLoadCoverAnimsLoaded(ped) end
 
@@ -36,7 +36,7 @@ function DeactivateCoverLayer(coverLayer) end
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xC276FE69DDA22BAD)  
 ---This native does not have an official description.
----@param handle integer
+---@param handle ScrHandle
 ---@return boolean
 function DoesCoverPointExist(handle) end
 
@@ -45,7 +45,7 @@ function DoesCoverPointExist(handle) end
 ---1 = In cover while crouched
 ---2 = In cover while standing
 ---3 = Not in cover
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetCoverPointStateFromPed(ped) end
 
@@ -64,64 +64,64 @@ function GetCoverPointStateFromPed(ped) end
 ---10 - enters cover
 ---12 - leaves cover
 ---16 - changed to crouch or to standing up position
----@param ped integer
+---@param ped Ped
 ---@return integer
 function GetPedCoverPointTransitionState(ped) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x140B3CB1D424A945)  
 ---returns the ped that is using this cover point created by ADD_COVER_POINT and adding the ped using tasks like `TASK_PUT_PED_DIRECTLY_(*`
----@param coverpoint integer
----@return integer
+---@param coverpoint ScrHandle
+---@return Ped
 function GetPedFromCoverPoint(coverpoint) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3C7A9C2C953128FE)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function N_0x3c7a9c2c953128fe(ped) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x53E4D0C079CA6855)  
 ---This native does not have an official description.
----@param handle integer
----@return integer
+---@param handle ScrHandle
+---@return Entity
 function N_0x53e4d0c079ca6855(handle) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEBA51A294C73292E)  
 ---This native does not have an official description.
----@return any
+---@return any args
 function N_0xeba51a294c73292e() end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2A31D13C5F021D0D)  
 ---Makes ped flinch (if in cover) like they have been shot at
----@param ped integer
+---@param ped Ped
 function RequestFlinchCoverAnim(ped) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1A7A802B2301EDC0)  
 ---Stops running cover anims and releases them
 ---_STOP_RENDERING_* - _STOP_SCRIPTED*
----@param ped integer
+---@param ped Ped
 function StopRunningCoverAnims(ped) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x89783FDDF079C88D)  
 ---This native does not have an official description.
----@return any
+---@return any args
 function TaskAiSeekCoverToCoverPoint() end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4972A022AE6DAFA1)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function TaskEnterCover(ped) end
 
 ---**`AICOVERPOINT` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BC4A6D92D140112)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 function TaskExitCover(ped) end
 

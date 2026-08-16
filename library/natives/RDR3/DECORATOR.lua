@@ -3,7 +3,7 @@
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD9D1CDBF3464DCDF)  
 ---Returns whether or not the specified property is set for the entity.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return boolean
 function DecorExistOn(entity, propertyName) end
@@ -11,7 +11,7 @@ function DecorExistOn(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDEF3F1B071ABB197)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return boolean
 function DecorGetBool(entity, propertyName) end
@@ -19,7 +19,7 @@ function DecorGetBool(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE5FF70CD842CA9D4)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return number
 function DecorGetFloat(entity, propertyName) end
@@ -27,7 +27,7 @@ function DecorGetFloat(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x44DB62727762FD9B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return integer
 function DecorGetInt(entity, propertyName) end
@@ -35,7 +35,7 @@ function DecorGetInt(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB1682B2443F0540B)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return integer
 function DecorGetPlayerIndex(entity, propertyName) end
@@ -66,7 +66,7 @@ function DecorRegisterNetworked(propertyName, type, isNetworked) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2BA7F5877A088A1D)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@return boolean
 function DecorRemove(entity, propertyName) end
@@ -74,7 +74,7 @@ function DecorRemove(entity, propertyName) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88942780E0ADEA42)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function DecorRemoveAll(entity) end
 
@@ -82,7 +82,7 @@ function DecorRemoveAll(entity) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFE26E4609B1C3772)  
 ---This function sets metadata of type bool to specified entity.
 ---
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value boolean
 ---@return boolean
@@ -91,7 +91,7 @@ function DecorSetBool(entity, propertyName, value) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x238F8B0C1C7FE834)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value number
 ---@return boolean
@@ -100,7 +100,7 @@ function DecorSetFloat(entity, propertyName, value) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE88F4D7F52A6090F)  
 ---Sets property to int.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value integer
 ---@return boolean
@@ -109,7 +109,7 @@ function DecorSetInt(entity, propertyName, value) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4BDC83150D43772D)  
 ---Old name: _DECOR_SET_UINT8
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value integer
 ---@return boolean
@@ -118,7 +118,7 @@ function DecorSetPlayerIndex(entity, propertyName, value) end
 ---**`DECORATOR` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0671C1A3FF7AFDFC)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@param propertyName string
 ---@param value string
 ---@return boolean

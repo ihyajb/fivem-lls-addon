@@ -24,14 +24,14 @@ function Acos(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7ACF124C12A2B045)  
 ---Appears to remove stealth kill action from memory (?)
----@param hash integer | string
+---@param hash Hash | string
 ---@param enable boolean
 function ActionManagerEnableAction(hash, enable) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFD0759658268FD8E)  
 ---This native does not have an official description.
----@param hash integer | string
+---@param hash Hash | string
 ---@return boolean
 function ActionManagerIsActionEnabled(hash) end
 
@@ -69,7 +69,7 @@ function ActivityFeedPost() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xA2D5A26208421426)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return any
 function AddDispatchSpawnBlockingArea(volume) end
 
@@ -93,7 +93,7 @@ function AddPopMultiplierArea(x1, y1, z1, x2, y2, z2, pedDensity, trafficDensity
 ---[Native Documentation](https://rdr3natives.com/?native=0x3233C4EC0514C7EC)  
 ---Only used in script function PROCESS_ZONE_CREATION
 ---Returns Pop multiplier volume ID
----@param volume integer
+---@param volume Volume
 ---@param pedDensity number
 ---@param vehicleDensity number
 ---@param p3 boolean
@@ -155,7 +155,7 @@ function CancelOnscreenKeyboard() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD2D74F89DF844A50)  
 ---This native does not have an official description.
----@return any
+---@return any bitFlags
 function ClearAllBitFlags() end
 
 ---**`MISC` `client`**  
@@ -196,7 +196,7 @@ function ClearBit(address, offset) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xB909149F2BB5F6DA)  
 ---This native does not have an official description.
 ---@param flag integer
----@return any
+---@return any bitFlags
 function ClearBitFlag(flag) end
 
 ---**`MISC` `client`**  
@@ -212,7 +212,7 @@ function ClearTacticalNavMeshPoints() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2FCD528A397E5C88)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param flag integer
 function ClearVolumeArea(volume, flag) end
 
@@ -248,20 +248,20 @@ function CompareStrings(str1, str2, matchCase, maxLength) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF7AC7DC0DEE7C9BE)  
 ---Old name: _COPY_MEMORY
 ---@param size integer
----@return any, any
+---@return any dst, any src
 function CopyScriptStruct(size) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE704838F36F93B7B)  
 ---This native does not have an official description.
----@return integer, any
+---@return integer, any bitFlags
 function CountBitFlags() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x88BC5F4AEF77FC4E)  
 ---aiMemoryType: https://github.com/Halen84/RDR3-Native-Flags-And-Enums/tree/main/_CREATE_AI_MEMORY
 ---@param aiMemoryType integer
----@return any
+---@return any args
 function CreateAiMemory(aiMemoryType) end
 
 ---**`MISC` `client`**  
@@ -282,7 +282,7 @@ function CreateColorString(rgb) end
 ---@param radius number
 ---@param p7 any
 ---@param p8 any
----@return boolean, integer
+---@return boolean, integer outIncidentID
 function CreateIncident(dispatchService, x, y, z, numUnits, radius, p7, p8) end
 
 ---**`MISC` `client`**  
@@ -294,9 +294,9 @@ function CreateIncident(dispatchService, x, y, z, numUnits, radius, p7, p8) end
 ---@param x number
 ---@param y number
 ---@param z number
----@param itemSet integer
+---@param itemSet ItemSet
 ---@param radius number
----@return boolean, integer
+---@return boolean, integer outIncidentID
 function CreateIncidentWithEntities(dispatchService, x, y, z, itemSet, radius) end
 
 ---**`MISC` `client`**  
@@ -346,7 +346,7 @@ function DisplayOnscreenKeyboard(textType, windowTitle, p2, defaultText, default
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBDC6E364C9C78178)  
 ---This native does not have an official description.
----@param item integer
+---@param item ScrHandle
 ---@return boolean
 function DoesItemHaveValidBase(item) end
 
@@ -360,7 +360,7 @@ function DoesPopMultiplierAreaExist(id) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x39D6DACE323A20B6)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@return boolean
 function DoesPopMultiplierAreaExistForVolume(volume) end
 
@@ -401,7 +401,7 @@ function EnableDispatchService(dispatchService, toggle) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xCBC9A21F6A2A679C)  
 ---This native does not have an official description.
----@return any
+---@return any args
 function FireSingleBullet() end
 
 ---**`MISC` `client`**  
@@ -421,13 +421,13 @@ function ForceLightningFlashAtCoords(x, y, z, p3) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFAED234C7F53ABEB)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GameFrameworkManagerGetMode() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4CABE596D632E4B0)  
 ---This native does not have an official description.
----@param transitionMode integer | string
+---@param transitionMode Hash | string
 ---@return boolean
 function GameFrameworkManagerInit(transitionMode) end
 
@@ -440,7 +440,7 @@ function GameFrameworkManagerShutdown() end
 ---[Native Documentation](https://rdr3natives.com/?native=0xFDF38E2B711BF78E)  
 ---This native does not have an official description.
 ---@param p1 integer
----@return boolean, any
+---@return boolean, any args
 function GetAiPedDoesHaveEventMemory(p1) end
 
 ---**`MISC` `client`**  
@@ -497,12 +497,12 @@ function GetClosestPointOnLine(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD73C960A681052DF)  
 ---This native does not have an official description.
----@param ped integer
----@param weaponHash integer | string
+---@param ped Ped
+---@param weaponHash Hash | string
 ---@param distance number
 ---@param p4 boolean
 ---@param mustBeOwnedByThisPed boolean
----@return boolean, vector3
+---@return boolean, vector3 outCoords
 function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, p4, mustBeOwnedByThisPed) end
 
 ---**`MISC` `client`**  
@@ -510,7 +510,7 @@ function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, distance, p4, 
 ---Params: percentWeather2: 0f - 0.75f in R* Scripts
 ---
 ---Old name: _GET_WEATHER_TYPE_TRANSITION
----@return integer, integer, number
+---@return Hash weatherType1, Hash weatherType2, number percentWeather2
 function GetCurrWeatherState() end
 
 ---**`MISC` `client`**  
@@ -571,14 +571,14 @@ function GetEasingCurveValue(t, b, d, easingCurveType) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEE04C0AFD4EFAF0E)  
 ---This native does not have an official description.
----@param item integer
----@return integer
+---@param item ScrHandle
+---@return Entity
 function GetEntityFromItem(item) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDD560ABEF5D3784C)  
 ---Returns the weather type that has been set by a script
----@return integer, integer
+---@return Hash weather, Hash p1
 function GetForcedWeather() end
 
 ---**`MISC` `client`**  
@@ -610,7 +610,7 @@ function GetGameTimerNonScaledClipped() end
 ---Outputs the ground Z axis, its material and flags.Input flags are 17, 129 or 3423 in R* scripts.similar to flags of shapes test native
 ---@param coords any
 ---@param flags integer
----@return boolean, number, integer, integer
+---@return boolean, number groundZ, Hash material, integer outFlags
 function GetGroundZAndMaterialFor_3dCoord(coords, flags) end
 
 ---**`MISC` `client`**  
@@ -619,7 +619,7 @@ function GetGroundZAndMaterialFor_3dCoord(coords, flags) end
 ---@param x number
 ---@param y number
 ---@param z number
----@return boolean, number, vector3
+---@return boolean, number groundZ, vector3 normal
 function GetGroundZAndNormalFor_3dCoord(x, y, z) end
 
 ---**`MISC` `client`**  
@@ -629,7 +629,7 @@ function GetGroundZAndNormalFor_3dCoord(x, y, z) end
 ---@param y number
 ---@param z number
 ---@param p4 boolean
----@return boolean, number
+---@return boolean, number groundZ
 function GetGroundZFor_3dCoord(x, y, z, p4) end
 
 ---**`MISC` `client`**  
@@ -637,7 +637,7 @@ function GetGroundZFor_3dCoord(x, y, z, p4) end
 ---Computes a hash for the given string. It is hashed using Jenkins' One-at-a-Time hash algorithm (https://en.wikipedia.org/wiki/Jenkins_hash_function)
 ---Note: this implementation is case-insensitive.
 ---@param string string
----@return integer
+---@return Hash
 function GetHashKey(string) end
 
 ---**`MISC` `client`**  
@@ -665,7 +665,7 @@ function GetHeadingFromVector_2d(dx, dy) end
 ---11 = CObject
 ---12 = CItemSet
 ---13 = CPersistentCharacter
----@param handle integer
+---@param handle ScrHandle
 ---@return integer
 function GetItemType(handle) end
 
@@ -684,13 +684,13 @@ function GetItemType(handle) end
 ---@param p9 number
 ---@param p10 number
 ---@param p11 number
----@return boolean, number
+---@return boolean, number p12
 function GetLinePlaneIntersection(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF9B91C5129EABC08)  
 ---Event names in the scripts: MGBegin, MGEnd, ReadyForCut
----@param ped integer
+---@param ped Ped
 ---@param eventName string
 ---@return boolean
 function GetLootingEventHasFired(ped, eventName) end
@@ -710,20 +710,20 @@ function GetMissionFlag() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xDCB8DDD5D054A7E7)  
 ---This native does not have an official description.
----@param modelHash integer | string
----@return vector3, vector3
+---@param modelHash Hash | string
+---@return vector3 minimum, vector3 maximum
 function GetModelDimensions(modelHash) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x51021D36F62AAA83)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GetNextWeatherTypeHashName() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x970339EFA4FDE518)  
 ---returns the number of bullets that hit the entity
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param p2 boolean
 ---@return integer
@@ -763,8 +763,8 @@ function GetNumberOfMicrosecondsSinceLastCall() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x18013392501CE5DC)  
 ---This native does not have an official description.
----@param item integer
----@return integer
+---@param item ScrHandle
+---@return Object
 function GetObjectFromIndexedItem(item) end
 
 ---**`MISC` `client`**  
@@ -776,25 +776,25 @@ function GetOnscreenKeyboardResult() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x3FFB15534067DCD4)  
 ---This native does not have an official description.
----@param item integer
----@return integer
+---@param item ScrHandle
+---@return Ped
 function GetPedFromIndexedItem(item) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4BEB42AEBCA732E9)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GetPrevWeatherTypeHashName() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9578986A6105A6AD)  
 ---This native does not have an official description.
----@param ped integer
----@param weaponHash integer | string
+---@param ped Ped
+---@param weaponHash Hash | string
 ---@param distance number
 ---@param p5 boolean
 ---@param mustBeOwnedByThisPed boolean
----@return boolean, vector3, integer
+---@return boolean, vector3 outCoords, Object outProjectile
 function GetProjectileOfProjectileTypeWithinDistance(ped, weaponHash, distance, p5, mustBeOwnedByThisPed) end
 
 ---**`MISC` `client`**  
@@ -828,7 +828,7 @@ function GetRandomIntInRange(startRange, endRange) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x1359C181BC625503)  
 ---This native does not have an official description.
----@return integer
+---@return Hash
 function GetRandomWeatherType() end
 
 ---**`MISC` `client`**  
@@ -911,15 +911,15 @@ function GetTemperatureAtCoords(x, y, z) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE578C8AE173719B3)  
 ---This native does not have an official description.
----@param item integer
----@return integer
+---@param item ScrHandle
+---@return Vehicle
 function GetVehicleFromIndexedItem(item) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xF18AF483DF70BBDE)  
 ---This native does not have an official description.
----@param item integer
----@return integer
+---@param item ScrHandle
+---@return Volume
 function GetVolumeFromIndexedItem(item) end
 
 ---**`MISC` `client`**  
@@ -937,7 +937,7 @@ function GetWindSpeed() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x7A76104CC2CC69E8)  
 ---returns true if a bullet impacted the entity
----@param entity integer
+---@param entity Entity
 ---@param p1 boolean
 ---@param p2 boolean
 ---@return boolean
@@ -992,20 +992,20 @@ function IntToString(value, format, buffer) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x80E9C316EF84DD81)  
 ---This native does not have an official description.
----@return boolean, any
+---@return boolean, any bitFlags
 function IsAnyBitFlagSet() end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xFEC1D4B5C82C176F)  
 ---This native does not have an official description.
----@param handle integer
+---@param handle ScrHandle
 ---@return boolean
 function IsBaseACoverPoint(handle) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x716F17F8A0419F95)  
 ---This native does not have an official description.
----@param handle integer
+---@param handle ScrHandle
 ---@return boolean
 function IsBaseAPersistentCharacter(handle) end
 
@@ -1013,7 +1013,7 @@ function IsBaseAPersistentCharacter(handle) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x8F4F050054005C27)  
 ---This native does not have an official description.
 ---@param flag integer
----@return boolean, any
+---@return boolean, any bitFlags
 function IsBitFlagSet(flag) end
 
 ---**`MISC` `client`**  
@@ -1124,7 +1124,7 @@ function IsPcVersion() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x5170DDA6D63ACAAA)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function IsPedDecomposed(ped) end
 
@@ -1190,7 +1190,7 @@ function IsProjectileTypeInAngledArea(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 ---@param xMax number
 ---@param yMax number
 ---@param zMax number
----@param weaponType integer | string
+---@param weaponType Hash | string
 ---@param isPlayer boolean
 ---@return boolean
 function IsProjectileTypeInArea(xMin, yMin, zMin, xMax, yMax, zMax, weaponType, isPlayer) end
@@ -1237,12 +1237,12 @@ function IsStringNullOrEmptyOrSpaces(string) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x48E4D50F87A96AA5)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param p1 boolean
 ---@param p2 boolean
----@param lootTableKey integer | string
+---@param lootTableKey Hash | string
 ---@param p5 any
----@return any
+---@return any p4
 function LootTablesGetInfo(ped, p1, p2, lootTableKey, p5) end
 
 ---**`MISC` `client`**  
@@ -1270,7 +1270,7 @@ function N_0x0a487cc74a517fb5(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x0D0AE5081F88CFE1)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return boolean
 function N_0x0d0ae5081f88cfe1(p0) end
 
@@ -1289,7 +1289,7 @@ function N_0x154340e87d8cc178(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x183672FE838A661B)  
 ---This native does not have an official description.
----@return any
+---@return any data
 function N_0x183672fe838a661b() end
 
 ---**`MISC` `client`**  
@@ -1300,7 +1300,7 @@ function N_0x243cede8f916b994() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2916B30DC6C41179)  
 ---This native does not have an official description.
----@param weatherType integer | string
+---@param weatherType Hash | string
 function N_0x2916b30dc6c41179(weatherType) end
 
 ---**`MISC` `client`**  
@@ -1325,7 +1325,7 @@ function N_0x35165c658077cd0b() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x38C0C9CAE1544500)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 function N_0x38c0c9cae1544500(p0) end
 
 ---**`MISC` `client`**  
@@ -1375,7 +1375,7 @@ function N_0x4b0501a468b749f8() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x4B101DBCC9482F2D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@return boolean
 function N_0x4b101dbcc9482f2d(ped) end
 
@@ -1388,7 +1388,7 @@ function N_0x4d5c9cc7e7e23e09() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x553D67295DDD2309)  
 ---UPDATE_PICKUP_COLLECTIBLE: set Eagle Eye fountain
 ---_J*, _K*, _L*
----@param entity integer
+---@param entity Entity
 function N_0x553d67295ddd2309(entity) end
 
 ---**`MISC` `client`**  
@@ -1430,7 +1430,7 @@ function N_0x6bcf7b5cd338281a(p0, p1, p2) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x6BED40493A1AFDB8)  
 ---This native does not have an official description.
 ---@param p1 number
----@return any
+---@return any p0
 function N_0x6bed40493a1afdb8(p1) end
 
 ---**`MISC` `client`**  
@@ -1584,7 +1584,7 @@ function N_0xb08c4fa25bc29db9(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB1F6665AA54DCD5C)  
 ---This native does not have an official description.
----@param p0 integer | string
+---@param p0 Hash | string
 ---@return any
 function N_0xb1f6665aa54dcd5c(p0) end
 
@@ -1618,7 +1618,7 @@ function N_0xcc3edc5614b03f61(p0) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xD3F943B88F55376A)  
 ---This native does not have an official description.
----@param weatherType integer | string
+---@param weatherType Hash | string
 function N_0xd3f943b88f55376a(weatherType) end
 
 ---**`MISC` `client`**  
@@ -1648,7 +1648,7 @@ function N_0xde2c3b74d2b3705c(p0, p1) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xEB946B9E579729AD)  
 ---Not implemented.
----@param ped integer
+---@param ped Ped
 ---@param p1 any
 function N_0xeb946b9e579729ad(ped, p1) end
 
@@ -1707,7 +1707,7 @@ function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(fontBitField) end
 ---@param z number
 ---@param heading number
 ---@param isAutosave boolean
----@return boolean, vector3, number
+---@return boolean, vector3 returnCoords, number returnHeading
 function OverrideSaveHouse(override, x, y, z, heading, isAutosave) end
 
 ---**`MISC` `client`**  
@@ -1740,14 +1740,14 @@ function ReadIntAsFloat(value) end
 ---[Native Documentation](https://rdr3natives.com/?native=0x870708A6E147A9AD)  
 ---p3 is usually the same value of radius
 ---p8 determines whether the ILO prompt is a lock on prompt with RMB
----@param entity integer
+---@param entity Entity
 ---@param text string
 ---@param radius number
 ---@param p3 number
 ---@param flag integer
 ---@param p5 number
 ---@param p6 number
----@param prompt integer
+---@param prompt Prompt
 ---@param p8 boolean
 ---@param p9 integer
 ---@return boolean
@@ -1769,7 +1769,7 @@ function RemovePopMultiplierArea(id, p1) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBD090F5B1DB82189)  
 ---This native does not have an official description.
----@param volume integer
+---@param volume Volume
 ---@param p1 integer
 function RemovePopMultiplierAreaForVolume(volume, p1) end
 
@@ -1816,7 +1816,7 @@ function SaveEndUserBenchmark() end
 ---[Native Documentation](https://rdr3natives.com/?native=0x769E848C66E3C2BB)  
 ---This native does not have an official description.
 ---@param p0 any
----@return boolean, any, any
+---@return boolean, any p1, any p2
 function ScriptRaceGetPlayerSplitTime(p0) end
 
 ---**`MISC` `client`**  
@@ -1861,7 +1861,7 @@ function SetBit(address, offset) end
 ---The flags are stored in an int array where each int has the ability to hold 32 flags.
 ---Flags 0-31 would be stored in the first int, flags 32-63 in the second int, etc.
 ---@param flag integer
----@return any
+---@return any bitFlags
 function SetBitFlag(flag) end
 
 ---**`MISC` `client`**  
@@ -1870,7 +1870,7 @@ function SetBitFlag(flag) end
 ---@param rangeStart integer
 ---@param rangeEnd integer
 ---@param p3 integer
----@return integer
+---@return integer var
 function SetBitsInRange(rangeStart, rangeEnd, p3) end
 
 ---**`MISC` `client`**  
@@ -1909,8 +1909,8 @@ function SetCreditsActive(toggle) end
 ---Params: BOOL p3 is always true
 ---
 ---Old name: _SET_WEATHER_TYPE_TRANSITION
----@param weatherType1 integer | string
----@param weatherType2 integer | string
+---@param weatherType1 Hash | string
+---@param weatherType2 Hash | string
 ---@param percentWeather2 number
 ---@param enabled boolean
 function SetCurrWeatherState(weatherType1, weatherType2, percentWeather2, enabled) end
@@ -1972,7 +1972,7 @@ function SetIncidentUnk(incidentId) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x9B47971234169990)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param item any
 function SetLootPeltSatchelItem(ped, item) end
 
@@ -1985,13 +1985,13 @@ function SetMissionFlag(toggle) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xBE83CAE8ED77A94F)  
 ---This native does not have an official description.
----@param weatherType integer | string
+---@param weatherType Hash | string
 function SetOverrideWeather(weatherType) end
 
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x674B90BE1115846D)  
 ---This native does not have an official description.
----@param ped integer
+---@param ped Ped
 ---@param toggle boolean
 function SetPedDecomposed(ped, toggle) end
 
@@ -2030,7 +2030,7 @@ function SetSnowLevel(level) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xB3E9BE963F10C445)  
 ---This native does not have an official description.
----@param player integer
+---@param player Player
 function SetSuperJumpThisFrame(player) end
 
 ---**`MISC` `client`**  
@@ -2055,7 +2055,7 @@ function SetTimeScale(timeScale) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x59174F1AFE095B5A)  
 ---https://github.com/femga/rdr3_discoveries/blob/master/weather/weather_types.lua
----@param weatherType integer | string
+---@param weatherType Hash | string
 ---@param p1 boolean
 ---@param p2 boolean
 ---@param transition boolean
@@ -2066,7 +2066,7 @@ function SetWeatherType(weatherType, p1, p2, transition, transitionTime, p5) end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0x2C6A07AF9AEDABD8)  
 ---This native does not have an official description.
----@param weatherType integer | string
+---@param weatherType Hash | string
 ---@param p1 integer
 ---@param p2 integer
 ---@param p3 integer
@@ -2109,8 +2109,8 @@ function SetWindSpeed(speed) end
 ---@param z2 number
 ---@param damage integer
 ---@param p7 boolean
----@param weaponHash integer | string
----@param ownerPed integer
+---@param weaponHash Hash | string
+---@param ownerPed Ped
 ---@param isAudible boolean
 ---@param isInvisible boolean
 ---@param speed number
@@ -2179,7 +2179,7 @@ function StringSplitAndCountSegments(inputString, delimiters) end
 ---[Native Documentation](https://rdr3natives.com/?native=0xF2DD2298B3AF23E2)  
 ---Returns false if it's a null or empty string or if the string is too long. outInteger will be set to -999 in that case.
 ---@param string string
----@return boolean, integer
+---@return boolean, integer outInteger
 function StringToInt(string) end
 
 ---**`MISC` `client`**  
@@ -2200,7 +2200,7 @@ function UiStartedEndUserBenchmark() end
 ---**`MISC` `client`**  
 ---[Native Documentation](https://rdr3natives.com/?native=0xE98D55C5983F2509)  
 ---This native does not have an official description.
----@param entity integer
+---@param entity Entity
 ---@return boolean
 function UnregisterInteractionLockonPrompt(entity) end
 
