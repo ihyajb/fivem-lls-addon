@@ -473,34 +473,42 @@ const artifacts = [
 ];
 
 const checking = process.argv.includes('--check');
+let written = 0;
 let total = 0;
 
 for (const { file, value } of artifacts) {
   const json = JSON.stringify(value);
   const name = path.basename(file);
-
-  // Compressed once: gzip at level 9 over two megabytes is the bulk of this
-  // script's runtime, so it is not worth doing twice to report a size.
-  const payload = checking ? undefined : gzipSync(Buffer.from(json), { level: 9 });
+  // Compared after decompression: gzip output is only byte-identical for the
+  // same zlib build and settings, and this runs under both node and bun.
+  const current = await readArtifact(file);
 
   if (checking) {
-    const current = await readArtifact(file);
-
     if (current === undefined) {
       console.error(`${name} is missing; run node scripts/build-index.mjs`);
       process.exit(1);
     }
 
-    // Compared after decompression: gzip output is only byte-identical for the
-    // same zlib build and settings, and this runs under both node and bun.
     if (current !== json) {
       console.error(`${name} is out of date; run node scripts/build-index.mjs`);
       process.exit(1);
     }
-  } else if (payload !== undefined) {
-    await writeFile(file, payload);
-    total += payload.length;
+
+    continue;
   }
+
+  // An artifact whose content is unchanged is left alone. Recompressing it
+  // would still rewrite the file — the bytes differ between zlib builds — and
+  // the CI job reads the diff to decide whether there is anything to commit.
+  if (current === json) continue;
+
+  // Compressed once: gzip at level 9 over two megabytes is the bulk of this
+  // script's runtime, so it is not worth doing twice to report a size.
+  const payload = gzipSync(Buffer.from(json), { level: 9 });
+
+  await writeFile(file, payload);
+  written++;
+  total += payload.length;
 }
 
 for (const line of report) console.log(line);
@@ -508,5 +516,9 @@ for (const line of report) console.log(line);
 console.log(
   checking
     ? `checked ${artifacts.length} artifacts`
-    : `wrote ${artifacts.length} artifacts (${(total / 1024).toFixed(0)} KiB total)`,
+    : written === 0
+      ? `${artifacts.length} artifacts already current`
+      : `wrote ${written} of ${artifacts.length} artifacts (${(
+          total / 1024
+        ).toFixed(0)} KiB written)`,
 );

@@ -79,9 +79,12 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add library natives-index.json.gz
+          git add library natives-index.json.gz native-scopes.json.gz
 
-          if git diff-index --quiet HEAD --; then
+          # Staged-only: the working tree is not the question here, and a file
+          # left dirty outside these paths would otherwise send the job on to a
+          # commit with nothing staged.
+          if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
           fi
